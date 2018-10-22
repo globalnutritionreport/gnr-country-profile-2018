@@ -32,8 +32,8 @@ def condStyle(progress):
         return offCourseStyle
     else:
         return greyCenterParaStyle
-
-#Read a CSV to make this data
+        
+#Read a CSV to make this data?
 dataDictionary = {"Mozambique":{}}
 dataDictionary["Mozambique"]["country"] = "Mozambique"
 dataDictionary["Mozambique"]["table1"] = [["Gini index score*",Paragraph("Gini index rank**",style=whiteParaStyle),"Year"],[51,125,2011]]
@@ -337,9 +337,9 @@ def safeFormat(x,commas=False,precision=0):
 
 dat = pd.read_csv("data.csv")
 for country in dataDictionary.keys():
-    row = dat.loc[(dat.country == country)].iloc[0]
+    row = dat.loc[(dat.country==country)].iloc[0]
     dataDictionary[country]["country"] = country
-
+    
     # dataDictionary["Mozambique"]["table1"] = [["Gini index score*",Paragraph("Gini index rank<super>†</super>",style=whiteParaStyle),"Year"],[51,125,2011]]
     dataDictionary[country]["table1"][1] = [safeFormat(row["value_gini"]),safeFormat(row["rank_gini"]),safeFormat(row["year_gini"])]
     # dataDictionary["Mozambique"]["table2"] = [

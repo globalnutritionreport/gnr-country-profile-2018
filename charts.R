@@ -1,17 +1,10 @@
 ####Setup#####
-library(ggplot2)
-library(reshape2)
-library(data.table)
-library(scales)
-library(varhandle)
-library(Cairo)
-library(plyr)
+list.of.packages <- c("ggplot2","reshape2","data.table","scales","varhandle","Cairo","plyr")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+lapply(list.of.packages, require, character.only=T)
 
-#Needed for UTF-8
-# Sys.setlocale("LC_CTYPE","russian")
-Sys.setlocale(category="LC_ALL", locale = "English_United States.1252")
-
-wd <- "C:/git/alexm-util/DevInit/GNR/2017"
+wd <- "~/git/gnr-country-profile-2018"
 setwd(wd)
 
 dat <- read.csv("data.csv",na.strings=c("","."," "),as.is=TRUE)
@@ -26,7 +19,7 @@ dist_data$value <- dist_data$value*100
 
 countries <- unique(dat$country)
 
-wd <- "C:/Users/Alex/Documents/Data/GNR/Country profiles"
+wd <- "~/git/gnr-country-profile-2018/charts"
 setwd(wd)
 
 unlink(
