@@ -5,6 +5,6 @@
 ```
 mkdir charts
 mkdir pdfs
-./charts.R
+Rscript ./charts.R
 python3 render.py
 ```
