@@ -1,6 +1,7 @@
 import re
 import jinja2
 from PIL import Image as PILImage
+import os
 from os.path import basename, dirname, isfile
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.pdfgen import canvas
@@ -66,6 +67,7 @@ class ReportMaker(object):
         addMapping('Arial', 1, 0, 'Arial-Bold')
 
         self.country = country_name
+        self.dir_path = dirname(os.path.realpath(__file__))
         self.styles = getSampleStyleSheet()
         self.template_folder = template_folder
         templateLoader = jinja2.FileSystemLoader(searchpath="./{}/".format(self.template_folder))
@@ -106,16 +108,16 @@ class ReportMaker(object):
             self.width, self.height = int(page.get("width")), int(page.get("height"))
             self.c.setPageSize((self.width, self.height))
             for image in page.findall("image"):
-                src = image.get("src")
+                src = os.path.join(self.dir_path, image.get("src"))
                 if "charts" in src:
                     chart_name = basename(src)
                     chart_path = dirname(src)
                     dest = chart_path+"/reduced_"+chart_name
                     if not isfile(dest):
                         pilImg = PILImage.open(src)
-                        size = (pilImg.size[0]/1.5,pilImg.size[1]/1.5)
-                        pilImg.thumbnail(size,PILImage.NEAREST)
-                        pilImg.save(dest,optimize=True)
+                        size = (pilImg.size[0]/1.5, pilImg.size[1]/1.5)
+                        pilImg.thumbnail(size, PILImage.NEAREST)
+                        pilImg.save(dest, optimize=True)
                 else:
                     dest = src
                 logo = Image(dest)
@@ -129,10 +131,14 @@ class ReportMaker(object):
                     replacement = text.text
 
                     if text.get("shrink"):
+                        fontSize = float(font["size"])
+                        height = int(text.get("height"))
                         textLen = float(len(replacement))
-                        fontSizeAdj = int(font["size"])
-                        heightAdj = int(text.get("height"))*2 if textLen > 30 else int(text.get("height"))
-                        width = int(text.get("width"))
+                        divisor = max(((textLen/25.0)+(2.0/3.0)), 1)
+                        fontSizeAdj = int(fontSize / divisor)
+                        fontSizeDiff = int(float(fontSize-fontSizeAdj)/2.0)
+                        heightAdj = height-fontSizeDiff
+                        width = self.width
                     else:
                         fontSizeAdj = int(font["size"])
                         heightAdj = int(text.get("height"))
