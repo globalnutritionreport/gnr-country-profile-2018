@@ -109,17 +109,17 @@ class ReportMaker(object):
             self.c.setPageSize((self.width, self.height))
             for image in page.findall("image"):
                 src = os.path.join(self.dir_path, image.get("src"))
-                if "charts" in src:
-                    chart_name = basename(src)
-                    chart_path = dirname(src)
-                    dest = chart_path+"/reduced_"+chart_name
-                    if not isfile(dest):
-                        pilImg = PILImage.open(src)
-                        size = (pilImg.size[0]/1.5, pilImg.size[1]/1.5)
-                        pilImg.thumbnail(size, PILImage.NEAREST)
-                        pilImg.save(dest, optimize=True)
-                else:
-                    dest = src
+                # if "charts" in src:
+                #     chart_name = basename(src)
+                #     chart_path = dirname(src)
+                #     dest = chart_path+"/reduced_"+chart_name
+                #     if not isfile(dest):
+                #         pilImg = PILImage.open(src)
+                #         size = (pilImg.size[0]/1.5, pilImg.size[1]/1.5)
+                #         pilImg.thumbnail(size, PILImage.NEAREST)
+                #         pilImg.save(dest, optimize=True)
+                # else:
+                dest = src
                 logo = Image(dest)
                 logo.drawHeight = int(image.get("height"))
                 logo.drawWidth = int(image.get("width"))

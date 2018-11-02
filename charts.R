@@ -9,12 +9,12 @@ setwd(wd)
 
 dat <- read.csv("data.csv",na.strings=c("","."," "),as.is=TRUE)
 dist_data <- read.csv("dist_data.csv",na.strings=c("","."),as.is=TRUE)
-setnames(dist_data,"quin1","Poorest   ")
-setnames(dist_data,"quin2","\nSecond   \npoorest")
-setnames(dist_data,"quin3","Middle   ")
-setnames(dist_data,"quin4","\nSecond   \nwealthiest")
-setnames(dist_data,"quin5","Wealthiest   ")
-dist_data <- melt(dist_data,measure.vars=c("Poorest   ","\nSecond   \npoorest","Middle   ","\nSecond   \nwealthiest","Wealthiest   "))
+setnames(dist_data,"quin1","Poorest")
+setnames(dist_data,"quin2","Second poorest")
+setnames(dist_data,"quin3","Middle")
+setnames(dist_data,"quin4","Second wealthiest")
+setnames(dist_data,"quin5","Wealthiest")
+dist_data <- melt(dist_data,measure.vars=c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"))
 dist_data$value <- dist_data$value*100
 
 countries <- unique(dat$country)
@@ -61,32 +61,40 @@ simple_style = theme_bw() +
     ,panel.grid.minor = element_blank()
     ,axis.line = element_line(colour = "black"))
 
-yellow <- "#bfc200"
-orange <- "#de5d09"
-purple <- "#71105f"
-blue <- "#93cac9"
-grey <- "#a0adbb"
+yellow <- "#FABD62"
+orange <- "#F68516"
+red <- "#D8511B"
+blue <- "#3D5163"
+light.blue <- "#82C6BA"
+lighter.blue <- "#BFDFD4"
+grey <- "#BFCCD7"
 white <- "#ffffff"
+
+# Not used in new design
+purple <- "#71105f"
 black <- "#443e42"
 
-yellowOrangeFill <- scale_fill_manual(values=c(yellow,orange))
-yellowOrangePurpleFill <- scale_fill_manual(values=c(yellow,orange,purple))
-purpleFill <- scale_fill_manual(values=c(purple))
-orangeFill <- scale_fill_manual(values=c(orange))
-blueFill <- scale_fill_manual(values=c(blue))
-quintileFill <-  scale_fill_manual(values=c(grey,yellow,purple,blue,orange))
-purpleOrangeBlueFill <-  scale_fill_manual(values=c(purple,orange,blue))
+quintileFillValues <- c(red, orange, yellow, lighter.blue, light.blue)
 
-quintileFillValues <- c(grey,yellow,purple,blue,orange)
+yellowOrangeFill <- scale_fill_manual(values=c(yellow,orange))
+orangeYellowFill <- scale_fill_manual(values=c(orange,yellow))
+yellowOrangeRedFill <- scale_fill_manual(values=c(yellow,orange,red))
+orangeFill <- scale_fill_manual(values=c(orange))
+yellowFill <- scale_fill_manual(values=c(yellow))
+blueFill <- scale_fill_manual(values=c(blue))
+lightBlueFill <- scale_fill_manual(values=c(light.blue))
+lighterBlueFill <- scale_fill_manual(values=c(lighter.blue))
+quintileFill <-  scale_fill_manual(values=quintileFillValues)
+
+
 
 yellowOrangeColor <- scale_color_manual(values=c(yellow,orange))
-purpleColor <- scale_color_manual(values=c(purple))
+orangeYellowColor <- scale_color_manual(values=c(orange,yellow))
 orangeColor <- scale_color_manual(values=c(orange))
 blueColor <- scale_color_manual(values=c(blue))
-quintileColor <-  scale_color_manual(values=c(orange,blue,purple,yellow,grey))
-purpleOrangeBlueColor <-  scale_color_manual(values=c(purple,orange,blue))
+quintileColor <-  scale_color_manual(values=quintileFillValues)
 
-textQuintileOffset <- scale_color_manual(values=c(black,black,white,black,black))
+textQuintileOffset <- scale_color_manual(values=c(white,white,blue,blue,blue))
 
 safeFormat <- function(vec){
   results <- c()
@@ -122,11 +130,11 @@ safeFormat <- function(vec){
 }
 
 c1values <- list(
-  "$1.90/day (% pop)"=list(
+  "$1.90/day"=list(
   "poverty_190_1"="yearpov190_1"
   ,"poverty190_2"="yearpov190_2"
   ),
-  "$3.10/day (% pop)"=list("poverty310_1"="yearpov310_1"
+  "$3.10/day"=list("poverty310_1"="yearpov310_1"
   ,"poverty310_2"="yearpov310_2"
   ),
   "PPP($) GDP per capita"=list("gdp_1990"="gdp_1990_year"
@@ -158,17 +166,17 @@ c3values = list("rate_stuntingtrend1"="year_stuntingtrend1"
 c4values <- NA
 
 c5values <- list(
-  "Raised blood pressure (%), 2015"=list(
+  "Raised blood\npressure"=list(
     "BPmale" = "Men"
     ,"BPfemale" = "Women"
     # ,"BPboth" = "Both sexes"
   ),
-  "Raised blood glucose (%), 2014"=list(
+  "Raised blood\nglucose"=list(
     "BGmale" = "Men"
     ,"BGfemale" = "Women"
     # ,"BGboth" = "Both sexes"
   ),
-  "Raised blood cholesterol (%), 2008"=list(
+  "Raised blood\ncholesterol"=list(
     "cholesterol_MALE" = "Men"
     ,"cholesterol_FEMALE" = "Women"
     # ,"cholesterol_BOTH" = "Both sexes"
@@ -234,7 +242,7 @@ c10values = list(
 )
 
 c11values <- list(
-  "Surface water "=list(
+  "Surface water"=list(
     "water_surface2000" = "2000"
     ,"water_surface2010" = "2010"
     ,"water_surface2015" = "2015"
@@ -282,7 +290,7 @@ c12values <- list(
     ,"san_basic2010" = "2010"
     ,"san_basic2015" = "2015"
   ),
-  "Safely managed "=list(
+  "Safely managed"=list(
     "san_safelymanaged2000" = "2000"
     ,"san_safelymanaged2010" = "2010"
     ,"san_safelymanaged2015" = "2015"
@@ -290,7 +298,7 @@ c12values <- list(
 )
 
 c13values <- list(
-  "Agriculture "=list(
+  "Agriculture"=list(
     "totag_ppp1990" = "1990"
     ,"totag_ppp2000" = "2000"
     ,"totag_ppp2010" = "2010"
@@ -346,59 +354,62 @@ for(this.country in countries){
     names(c1wide)[2:length(c1wide)] <- substr(names(c1wide)[2:length(c1wide)],7,nchar(names(c1wide)[2:length(c1wide)]))
     c1.melt <- melt(c1wide,id.vars="year")
     c1.melt$year <- factor(c1.melt$year)
-    c1a.melt <- subset(c1.melt,variable %in% c("$1.90/day (% pop)","$3.10/day (% pop)"))
+    c1a.melt <- subset(c1.melt,variable %in% c("$1.90/day","$3.10/day"))
     c1a.melt <- subset(c1a.melt,!is.na(value))
     c1a.max <- max(c1a.melt$value,na.rm=TRUE)
     c1b.melt <- subset(c1.melt,variable == "PPP($) GDP per capita")
     c1b.melt <- subset(c1b.melt,!is.na(value))
     c1b.max <- max(c1b.melt$value,na.rm=TRUE)
-    c1a <- ggplot(c1a.melt,aes(year,value,fill=variable)) +
-      geom_bar(position="dodge",stat="identity",color="transparent") +
-      yellowOrangeFill +
+    c1a.key.data = data.frame(year=as.numeric(c(NA,NA)),variable=c("$1.90/day","$3.10/day"),value=as.numeric(c(NA,NA)))
+    c1a = ggplot(c1a.melt,aes(year,value,fill=variable)) +
+      geom_bar(position="dodge",stat="identity",color=blue,show.legend=F,size=1) +
+      geom_point(data=c1a.key.data,aes(fill=variable),size=12,color=blue,stroke=1.5,shape=21) +
+      orangeYellowFill +
       guides(fill=guide_legend(title=element_blank(),byrow=TRUE)) +
       simple_style  +
       scale_y_continuous(expand = c(0,0),limits=c(0,max(c1a.max*1.1,1))) +
       # expand_limits(y=c1a.max*1.1) +
       theme(
         legend.position="top"
-        ,legend.text = element_text(size=35,color="#443e42")
+        ,legend.text = element_text(size=35,color=blue)
         ,legend.justification=c(0,0)
         ,legend.direction="vertical"
         ,axis.title.x=element_blank()
         ,axis.title.y=element_blank()
         ,axis.ticks=element_blank()
         ,axis.line.y = element_blank()
-        ,axis.line.x = element_line(color="#443e42", size = 1.1)
+        ,axis.line.x = element_line(color=blue, size = 1.1)
         ,axis.text.y = element_blank()
-        ,axis.text.x = element_text(size=25,color="#443e42",margin=margin(t=20,r=0,b=0,l=0))
+        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
-        ,legend.key = element_rect(fill = "transparent", colour = "transparent")
-        ,legend.key.size = unit(2.2,"lines")
-      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3)
+        ,legend.key = element_blank()
+      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
     if(nrow(c1a.melt)==0){c1a.missing<-TRUE}else{c1a.missing<-FALSE}
-    c1b <- ggplot(c1b.melt,aes(year,value,fill=variable)) +
-      geom_bar(position="dodge",stat="identity",color="transparent") +
-      purpleFill +
+    c1b.key.data = data.frame(year=as.numeric(c(NA)),variable=c("PPP($) GDP per capita"),value=as.numeric(c(NA)))
+    c1b = ggplot(c1b.melt,aes(year,value,fill=variable)) +
+      geom_bar(position="dodge",stat="identity",color=blue,show.legend=F,size=1) +
+      geom_point(data=c1b.key.data,aes(fill=variable),size=12,color=blue,stroke=1.5,shape=21) +
+      lightBlueFill +
       guides(fill=guide_legend(title=element_blank(),byrow=TRUE)) +
       simple_style  +
       scale_y_continuous(expand = c(0,0)) +
       expand_limits(y=c1b.max*1.1) +
       theme(
         legend.position="top"
-        ,legend.text = element_text(size=35,color="#443e42")
+        ,legend.text = element_text(size=35,color=blue)
         ,legend.justification=c(0,0)
         ,legend.direction="vertical"
         ,axis.title.x=element_blank()
         ,axis.title.y=element_blank()
         ,axis.ticks=element_blank()
         ,axis.line.y = element_blank()
-        ,axis.line.x = element_line(color="#443e42", size = 1.1)
+        ,axis.line.x = element_line(color=blue, size = 1.1)
         ,axis.text.y = element_blank()
-        ,axis.text.x = element_text(size=25,color="#443e42",margin=margin(t=20,r=0,b=0,l=0))
+        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
-        ,legend.key = element_rect(fill = "transparent", colour = "transparent")
+        ,legend.key = element_blank()
         ,legend.key.size = unit(2.2,"lines")
-      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3)
+      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
     if(nrow(c1b.melt)==0){c1b.missing<-TRUE}else{c1b.missing<-FALSE}
   }else{
     c1a.missing <- TRUE
@@ -414,29 +425,28 @@ for(this.country in countries){
   c2.melt$year <- as.numeric(substr(c2.melt$variable,nchar(c2.melt$variable)-3,nchar(c2.melt$variable)))
   c2.max <- max(c2.melt$value,na.rm=TRUE)
   c2 <- ggplot(c2.melt,aes(year,value,fill="Deaths per 1,000 live births")) +
-    geom_bar(stat="identity",width=0.6,color="transparent") +
-    orangeFill +
-    guides(fill=guide_legend(title=element_blank())) +
+    geom_bar(stat="identity",width=0.6,color=blue,show.legend=F,size=1) +
+    yellowFill +
     simple_style  +
     scale_y_continuous(expand = c(0,0)) +
     scale_x_continuous(limits = c(2010.7,2015.3)) +
     expand_limits(y=c2.max*1.1) +
     theme(
       legend.position="top"
-      ,legend.text = element_text(size=40,color="#443e42")
+      ,legend.text = element_text(size=40,color=blue)
       ,legend.justification=c(0,0)
       ,legend.direction="vertical"
       ,axis.title.x=element_blank()
       ,axis.title.y=element_blank()
       ,axis.ticks=element_blank()
       ,axis.line.y = element_blank()
-      ,axis.line.x = element_line(color="#443e42", size = 1.1)
+      ,axis.line.x = element_line(color=blue, size = 1.1)
       ,axis.text.y = element_blank()
-      ,axis.text.x = element_text(size=40,color="#443e42",margin=margin(t=20,r=0,b=0,l=0))
+      ,axis.text.x = element_text(size=40,color=blue,margin=margin(t=20,r=0,b=0,l=0))
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.5,"lines")
-    ) + geom_text(size=13,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color="#443e42")
+    ) + geom_text(size=13,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
   #Chart 3
   indicator <- "Under-5 stunting"
   value.names <- names(c3values)
@@ -453,9 +463,9 @@ for(this.country in countries){
   }else{
     barWidth = 0.3
   }
-  c3 <- ggplot(c3data,aes(year,value,fill="Blue")) +
-    geom_bar(stat="identity",width=barWidth,color="transparent") +
-    blueFill +
+  c3 <- ggplot(c3data,aes(year,value,fill="Yellow")) +
+    geom_bar(stat="identity",width=barWidth,color=blue,size=1) +
+    yellowFill +
     guides(fill=FALSE) +
     simple_style  +
     scale_y_continuous(expand = c(0,0)) +
@@ -469,25 +479,27 @@ for(this.country in countries){
       ,axis.title.y=element_blank()
       ,axis.ticks=element_blank()
       ,axis.line.y = element_blank()
-      ,axis.line.x = element_line(color="#443e42", size = 1.1)
+      ,axis.line.x = element_line(color=blue, size = 1.1)
       ,axis.text.y = element_blank()
-      ,axis.text.x = element_text(size=40,color="#443e42",margin=margin(t=20,r=0,b=0,l=0))
+      ,axis.text.x = element_text(size=40,color=blue,margin=margin(t=20,r=0,b=0,l=0))
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.5,"lines")
-    ) + geom_text(size=13,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color="#443e42")
+    ) + geom_text(size=13,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
   #Chart 4
   country_dist <- subset(dist_data,country==this.country)
   if(nrow(country_dist)==0){
     c4 <- no.data
   }else{
     country_dist$year <- factor(country_dist$year)
-    c4 <- ggplot(country_dist,aes(x=value,y=year)) +
-      geom_line(aes(group=year),size=1,color="#adb6c0") +
-      geom_point(size=7,aes(group=variable,colour=variable)) +
+    c4.min = min(country_dist$value,na.rm=T)
+    c4.max = max(country_dist$value,na.rm=T)
+    c4 = ggplot(country_dist,aes(x=value,y=year)) +
+      geom_rect(aes(group=year,xmin=c4.min,xmax=c4.max,ymin=year,ymax=year),color=grey) +
+      geom_point(size=7,aes(group=variable,colour=variable),shape=21,fill="transparent",stroke=2) +
       scale_x_continuous(breaks = scales::pretty_breaks(n = 5)) +
       quintileColor +
-      guides(colour=guide_legend(title=element_blank(),reverse=TRUE)) +
+      guides(colour=guide_legend(title=element_blank(),reverse=TRUE,nrow=2,byrow=T)) +
       simple_style  +
       theme(
         legend.position="top"
@@ -504,8 +516,7 @@ for(this.country in countries){
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key.size = unit(2.5,"lines")
-      ) +
-      xlab("Stunting prevalence (% population)")
+      )
   }
 
   #Chart 5
@@ -523,29 +534,31 @@ for(this.country in countries){
   c5data <- rbindlist(c5list)
   c5.max <- max(c5data$value,na.rm=TRUE)
   c5data$sex <- factor(c5data$sex,levels=c("Both sexes","Men","Women"))
-  c5 <- ggplot(c5data,aes(sex,value,fill=indicator)) +
-    geom_bar(position=position_dodge(0.8),stat="identity",width=0.7,color="transparent") +
-    purpleOrangeBlueFill +
-    guides(fill=guide_legend(title=element_blank(),nrow=2,byrow=TRUE)) +
+  c5.key.data = data.frame(indicator=c("Raised blood\npressure","Raised blood\nglucose","Raised blood\ncholesterol"),sex=c(NA,NA,NA),value=as.numeric(c(NA,NA,NA)))
+  c5 = ggplot(c5data,aes(sex,value,fill=indicator)) +
+    geom_bar(position=position_dodge(0.8),stat="identity",width=0.7,color=blue,show.legend=F,size=1) +
+    geom_point(data=c5.key.data,aes(fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
+    yellowOrangeRedFill +
+    guides(fill=guide_legend(title=element_blank())) +
     simple_style  +
     scale_y_continuous(expand = c(0,0)) +
     expand_limits(y=c5.max*1.2) +
     theme(
-      legend.position="top"
-      ,legend.text = element_text(size=30,color="#443e42")
-      ,legend.justification=c(0,0)
-      ,legend.direction="horizontal"
+      legend.position="right"
+      ,legend.text = element_text(size=20,color=blue)
+      ,legend.justification=c(1,0.5)
+      ,legend.direction="vertical"
       ,axis.title.x=element_blank()
       ,axis.title.y=element_blank()
       ,axis.ticks=element_blank()
       ,axis.line.y = element_blank()
-      ,axis.line.x = element_line(color="#443e42", size = 1.1)
+      ,axis.line.x = element_line(color=blue, size = 1.1)
       ,axis.text.y = element_blank()
-      ,axis.text.x = element_text(size=35,color="#443e42",margin=margin(t=20,r=0,b=0,l=0))
+      ,axis.text.x = element_text(size=35,color=blue,margin=margin(t=20,r=0,b=0,l=0))
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
-      ,legend.key.size = unit(2.5,"lines")
-    ) + geom_text(size=10,aes(label=safeFormat(value)),position=position_dodge(0.8),vjust=-0.3,color="#443e42")
+      ,legend.key.size = unit(4,"lines")
+    ) + geom_text(size=10,aes(label=safeFormat(value)),position=position_dodge(0.8),vjust=-0.3,color=blue)
   #Chart 6
   c6list <- list()
   c6index <- 1
@@ -561,34 +574,35 @@ for(this.country in countries){
   c6data <- rbindlist(c6list)
   c6.max <- max(c6data$value,na.rm=TRUE)
   c6data$sex <- factor(c6data$sex,levels=c("Women","Men","Both sexes"))
-  c6 <- ggplot(c6data,aes(sex,value,fill=indicator)) +
-    geom_bar(position=position_dodge(0.8),stat="identity",width=0.8,color="transparent") +
+  c6.key.data = data.table(indicator=c("Obesity","Overweight"),sex=c(NA,NA),value=as.numeric(c(NA,NA)))
+  c6 = ggplot(c6data,aes(sex,value,fill=indicator)) +
+    geom_bar(position=position_dodge(0.8),stat="identity",width=0.7,color=blue,show.legend=F,size=1) +
+    geom_point(data=c6.key.data,aes(fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
     scale_fill_manual(
-      labels=c(expression("Obesity (BMI ">="30)"),expression("Overweight (BMI ">="25)"))
+      labels=c(bquote(atop("Obesity","(BMI ">="30)")),bquote(atop("Overweight","(BMI ">="25)")))
       ,breaks=c("Obesity","Overweight")
       ,values=c(yellow,orange)
-      ) +
-    guides(fill=guide_legend(title=element_blank(),nrow=2)) +
+    ) +
+    guides(fill=guide_legend(title=element_blank(),reverse=TRUE)) +
     simple_style  +
     scale_y_continuous(expand = c(0,0)) +
-    expand_limits(y=c6.max*1.1) +
+    expand_limits(y=c5.max*1.2) +
     theme(
       legend.position="right"
-      ,legend.text = element_text(size=35,color="#443e42")
-      ,legend.text.align=0
-      ,legend.justification=c(1,0)
-      ,legend.direction="horizontal"
+      ,legend.text = element_text(size=20,color=blue)
+      ,legend.justification=c(1,0.5)
+      ,legend.direction="vertical"
       ,axis.title.x=element_blank()
       ,axis.title.y=element_blank()
       ,axis.ticks=element_blank()
-      ,axis.line.x = element_blank()
-      ,axis.line.y = element_line(color="#443e42", size = 1.1)
-      ,axis.text.x = element_blank()
-      ,axis.text.y = element_text(size=35,color="#443e42",margin=margin(t=0,r=20,b=0,l=0))
+      ,axis.line.y = element_blank()
+      ,axis.line.x = element_line(color=blue, size = 1.1)
+      ,axis.text.y = element_blank()
+      ,axis.text.x = element_text(size=35,color=blue,margin=margin(t=20,r=0,b=0,l=0))
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
-      ,legend.key.size = unit(2.5,"lines")
-    ) + geom_text(size=10,aes(label=safeFormat(value)),position=position_dodge(0.8),hjust=-0.2,color="#443e42") + coord_flip()
+      ,legend.key.size = unit(4,"lines")
+    ) + geom_text(size=10,aes(label=safeFormat(value)),position=position_dodge(0.8),vjust=-0.3,color=blue)
   #Chart 7
   c7datalist <- list()
   c7index <- 1
@@ -605,12 +619,12 @@ for(this.country in countries){
       yr.adj <- 0
     }
     anctext <- paste0("Antenatal care (4+ visits) ",yr_anc)
-    ancdat <- data.frame(ypos=c7index,value=countrydat$anc4[1],label=anctext,color=purple,outline=purple,vallab=countrydat$anc4[1],valpos=countrydat$anc4[1],superscript="1",sspos=(51+yr.adj)/100)
+    ancdat <- data.frame(ypos=c7index,value=countrydat$anc4[1],label=anctext,color=lighter.blue,outline=blue,vallab=countrydat$anc4[1],valpos=countrydat$anc4[1],superscript="1",sspos=(51+yr.adj)/100)
     c7datalist[[c7index]] <- ancdat
     c7index <- c7index + 1
   }else{
     anctext <- paste0("Antenatal care (4+ visits)")
-    ancdat <- data.frame(ypos=c7index,value=NA,label=anctext,color=purple,outline=purple,vallab="No data",valpos=0,superscript="1",sspos=42/100)
+    ancdat <- data.frame(ypos=c7index,value=NA,label=anctext,color=lighter.blue,outline=blue,vallab="No data",valpos=0,superscript="1",sspos=42/100)
     c7datalist[[c7index]] <- ancdat
     c7index <- c7index + 1
     c7missing <- c7missing + 1
@@ -622,12 +636,12 @@ for(this.country in countries){
       yr.adj <- 0
     }
     sabtext <- paste0("Skilled attendant at birth ",yr_sab)
-    sabdat <- data.frame(ypos=c7index,value=countrydat$sab[1],label=sabtext,color=purple,outline=purple,vallab=countrydat$sab[1],valpos=countrydat$sab[1],superscript="1",sspos=(50+yr.adj)/100)
+    sabdat <- data.frame(ypos=c7index,value=countrydat$sab[1],label=sabtext,color=lighter.blue,outline=blue,vallab=countrydat$sab[1],valpos=countrydat$sab[1],superscript="1",sspos=(50+yr.adj)/100)
     c7datalist[[c7index]] <- sabdat
     c7index <- c7index + 1
   }else{
     sabtext <- paste0("Skilled attendant at birth")
-    sabdat <- data.frame(ypos=c7index,value=NA,label=sabtext,color=purple,outline=purple,vallab="No data",valpos=0,superscript="1",sspos=41/100)
+    sabdat <- data.frame(ypos=c7index,value=NA,label=sabtext,color=lighter.blue,outline=blue,vallab="No data",valpos=0,superscript="1",sspos=41/100)
     c7datalist[[c7index]] <- sabdat
     c7index <- c7index + 1
     c7missing <- c7missing + 1
@@ -639,12 +653,12 @@ for(this.country in countries){
       yr.adj <- 0
     }
     earlybftext <- paste0("Initiation of breastfeeding within 1 hour after birth ",yr_earlybf)
-    earlybfdat <- data.frame(ypos=c7index,value=countrydat$earlybf[1],label=earlybftext,color=purple,outline=purple,vallab=countrydat$earlybf[1],valpos=countrydat$earlybf[1],superscript="1",sspos=(91+yr.adj)/100)
+    earlybfdat <- data.frame(ypos=c7index,value=countrydat$earlybf[1],label=earlybftext,color=lighter.blue,outline=blue,vallab=countrydat$earlybf[1],valpos=countrydat$earlybf[1],superscript="1",sspos=(91+yr.adj)/100)
     c7datalist[[c7index]] <- earlybfdat
     c7index <- c7index + 1
   }else{
     earlybftext <- paste0("Initiation of breastfeeding within 1 hour after birth")
-    earlybfdat <- data.frame(ypos=c7index,value=NA,label=earlybftext,color=purple,outline=purple,vallab="No data",valpos=0,superscript="1",sspos=81/100)
+    earlybfdat <- data.frame(ypos=c7index,value=NA,label=earlybftext,color=lighter.blue,outline=blue,vallab="No data",valpos=0,superscript="1",sspos=81/100)
     c7datalist[[c7index]] <- earlybfdat
     c7index <- c7index + 1
     c7missing <- c7missing + 1
@@ -656,12 +670,12 @@ for(this.country in countries){
       yr.adj <- 0
     }
     contbftext <- paste0("Continued breastfeeding at 1 year ",yr_contbf)
-    contbfdat <- data.frame(ypos=c7index,value=countrydat$contbf[1],label=contbftext,color=purple,outline=purple,vallab=countrydat$contbf[1],valpos=countrydat$contbf[1],superscript="1",sspos=(66+yr.adj)/100)
+    contbfdat <- data.frame(ypos=c7index,value=countrydat$contbf[1],label=contbftext,color=lighter.blue,outline=blue,vallab=countrydat$contbf[1],valpos=countrydat$contbf[1],superscript="1",sspos=(66+yr.adj)/100)
     c7datalist[[c7index]] <- contbfdat
     c7index <- c7index + 1
   }else{
     contbftext <- paste0("Continued breastfeeding at 1 year")
-    contbfdat <- data.frame(ypos=c7index,value=NA,label=contbftext,color=purple,outline=purple,vallab="No data",valpos=0,superscript="1",sspos=57/100)
+    contbfdat <- data.frame(ypos=c7index,value=NA,label=contbftext,color=lighter.blue,outline=blue,vallab="No data",valpos=0,superscript="1",sspos=57/100)
     c7datalist[[c7index]] <- contbfdat
     c7index <- c7index + 1
     c7missing <- c7missing + 1
@@ -673,12 +687,12 @@ for(this.country in countries){
       yr.adj <- 0
     }
     unmet_needtext <- paste0("Unmet need for family planning ",yr_unmet_need)
-    unmet_needdat <- data.frame(ypos=c(c7index,c7index),value=c(100-countrydat$unmetneed[1],countrydat$unmetneed[1]),label=c(unmet_needtext,""),color=c("transparent",orange),outline=c(purple,orange),vallab=c("",countrydat$unmetneed[1]),valpos=c(NA,92-countrydat$unmetneed[1]),superscript=c("2",""),sspos=c((62+yr.adj)/100,0))
+    unmet_needdat <- data.frame(ypos=c(c7index,c7index),value=c(100-countrydat$unmetneed[1],countrydat$unmetneed[1]),label=c(unmet_needtext,""),color=c("transparent",orange),outline=c("transparent",blue),vallab=c("",countrydat$unmetneed[1]),valpos=c(NA,92-countrydat$unmetneed[1]),superscript=c("2",""),sspos=c((62+yr.adj)/100,0))
     c7datalist[[c7index]] <- unmet_needdat
     c7index <- c7index + 1
   }else{
     unmet_needtext <- paste0("Unmet need for family planning")
-    unmet_needdat <- data.frame(ypos=c(c7index,c7index),value=c(NA,NA),label=c(unmet_needtext,""),color=c("transparent",orange),outline=c(purple,orange),vallab=c("No data",""),valpos=c(0,NA),superscript=c("2",""),sspos=c(53/100,0))
+    unmet_needdat <- data.frame(ypos=c(c7index,c7index),value=c(NA,NA),label=c(unmet_needtext,""),color=c("transparent",orange),outline=c("transparent",blue),vallab=c("No data",""),valpos=c(0,NA),superscript=c("2",""),sspos=c(53/100,0))
     c7datalist[[c7index]] <- unmet_needdat
     c7index <- c7index + 1
     c7missing <- c7missing + 1
@@ -693,18 +707,16 @@ for(this.country in countries){
     c7data$sspos = c7data$sspos * ss.adj
     c7yposmax <- max(c7data$ypos)
     ss.y.adj = 0.1/(6-c7yposmax)
-    c7 <- ggplot(c7data,aes(y=value,x=ypos,fill=color
-                            # ,colour=outline
-                            )) +
+    c7 <- ggplot(c7data,aes(y=value,x=ypos,fill=color,colour=outline)) +
       geom_bar(stat="identity",width=0.4) +
       scale_fill_identity() +
-      # scale_color_identity() +
+      scale_color_identity() +
       simple_style  +
       scale_y_continuous(expand = c(0,0)) +
       expand_limits(y=c7max*1.1) +
       theme(
         legend.position="right"
-        ,legend.text = element_text(size=35,color="#443e42")
+        ,legend.text = element_text(size=35,color=blue)
         ,legend.text.align=0
         ,legend.justification=c(1,0)
         ,legend.direction="horizontal"
@@ -712,15 +724,15 @@ for(this.country in countries){
         ,axis.title.y=element_blank()
         ,axis.ticks=element_blank()
         ,axis.line.x = element_blank()
-        ,axis.line.y = element_line(color="#443e42", size = 1.1)
+        ,axis.line.y = element_line(color=blue, size = 1.1)
         ,axis.text.x = element_blank()
         ,axis.text.y = element_blank()
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key.size = unit(2.5,"lines")
-      ) + geom_text(size=10,aes(label=vallab,y=valpos),hjust=-0.2,color="#443e42") +
-      geom_text(size=10,aes(label=label,y=1,x=ypos+0.25),hjust=0,vjust=0,color="#443e42") +
-      geom_text(size=7,aes(label=superscript,y=sspos,x=ypos+0.25+ss.y.adj),hjust=0,vjust=0,color="#443e42") +
+      ) + geom_text(size=10,aes(label=vallab,y=valpos),hjust=-0.2,color=blue) +
+      geom_text(size=10,aes(label=label,y=1,x=ypos+0.25),hjust=0,vjust=0,color=blue) +
+      geom_text(size=7,aes(label=superscript,y=sspos,x=ypos+0.25+ss.y.adj),hjust=0,vjust=0,color=blue) +
       coord_flip()
   }
   #Chart 8
@@ -742,28 +754,28 @@ for(this.country in countries){
   }
 
   c8 <- ggplot(c8data,aes(year,value,fill="Blue")) +
-    geom_bar(stat="identity",width=barWidth,color="transparent") +
-    blueFill +
+    geom_bar(stat="identity",width=barWidth,color=blue) +
+    lighterBlueFill +
     guides(fill=FALSE) +
     simple_style  +
     scale_y_continuous(expand = c(0,0)) +
     expand_limits(y=c8.max*1.1) +
     theme(
       legend.position="top"
-      ,legend.text = element_text(size=40,color="#443e42")
+      ,legend.text = element_text(size=40,color=blue)
       ,legend.justification=c(0,0)
       ,legend.direction="vertical"
       ,axis.title.x=element_blank()
       ,axis.title.y=element_blank()
       ,axis.ticks=element_blank()
       ,axis.line.y = element_blank()
-      ,axis.line.x = element_line(color="#443e42", size = 1.1)
+      ,axis.line.x = element_line(color=blue, size = 1.1)
       ,axis.text.y = element_blank()
-      ,axis.text.x = element_text(size=40,color="#443e42",margin=margin(t=20,r=0,b=0,l=0))
+      ,axis.text.x = element_text(size=40,color=blue,margin=margin(t=20,r=0,b=0,l=0))
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.5,"lines")
-    ) + geom_text(size=13,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color="#443e42")
+    ) + geom_text(size=13,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
   #Chart 9 part a and b
   c9list <- list()
   c9index <- 1
@@ -794,9 +806,10 @@ for(this.country in countries){
     c9b.max <- max(c9b.data$value,na.rm=TRUE)
     c9c.max <- max(c9c.data$value,na.rm=TRUE)
     if(nrow(c9a.data)!=0){
+      c9a.key.data = data.frame(year=as.numeric(c(NA)),variable=c("Undernourishment\n(% population)"),value=as.numeric(c(NA)))
       c9a <- ggplot(c9a.data,aes(year,value,fill=variable)) +
-        geom_bar(position="dodge",stat="identity",color="transparent",show.legend=FALSE) +
-        geom_point(alpha=0.0,shape=22,size=12,color="transparent") +
+        geom_bar(position="dodge",stat="identity",color=blue,show.legend=FALSE,size=1) +
+        geom_point(data=c9a.key.data,aes(fill=variable),size=12,color=blue,stroke=1.5,shape=21) +
         scale_fill_manual(
           labels=c(bquote(atop('Undernourishment' ^ 1,'(% population)')))
           ,breaks=c(names(c9values)[1])
@@ -808,19 +821,19 @@ for(this.country in countries){
         expand_limits(y=c9a.max*1.1) +
         theme(
           legend.position="top"
-          ,legend.text = element_text(size=22,color="#443e42")
+          ,legend.text = element_text(size=22,color=blue)
           ,legend.justification=c(0.08,0)
           ,legend.direction="vertical"
           ,axis.title.x=element_blank()
           ,axis.title.y=element_blank()
           ,axis.ticks=element_blank()
           ,axis.line.y = element_blank()
-          ,axis.line.x = element_line(color="#443e42", size = 1.1)
+          ,axis.line.x = element_line(color=blue, size = 1.1)
           ,axis.text.y = element_blank()
-          ,axis.text.x = element_text(size=25,color="#443e42",margin=margin(t=20,r=0,b=0,l=0))
+          ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
           ,legend.background = element_rect(fill = "transparent", colour = "transparent")
           ,legend.key = element_rect(fill = "transparent", colour = "transparent")
-        ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3)
+        ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
       c9a.missing <- FALSE
     }else{
       c9a <- no.data
@@ -833,9 +846,10 @@ for(this.country in countries){
       }else{
         barWidth = 0.5
       }
+      c9b.key.data = data.frame(year=as.numeric(c(NA)),variable=c("Availability of fruit and\nvegetables (grams)"),value=as.numeric(c(NA)))
     c9b <- ggplot(c9b.data,aes(year,value,fill=variable)) +
-      geom_bar(position="dodge",stat="identity",color="transparent",width=barWidth,show.legend=FALSE) +
-      geom_point(alpha=0.0,shape=22,size=12,color="transparent") +
+      geom_bar(position="dodge",stat="identity",color=blue,width=barWidth,show.legend=FALSE,size=1) +
+      geom_point(data=c9b.key.data,aes(fill=variable),size=12,color=blue,stroke=1.5,shape=21) +
       scale_fill_manual(
         labels=c(bquote(atop('Availability of fruit and' ^ 1,'vegetables (grams)')))
         ,breaks=c(names(c9values)[2])
@@ -847,32 +861,33 @@ for(this.country in countries){
       expand_limits(y=c9b.max*1.1) +
       theme(
         legend.position="top"
-        ,legend.text = element_text(size=22,color="#443e42")
+        ,legend.text = element_text(size=22,color=blue)
         ,legend.justification=c(0.08,0)
         ,legend.direction="vertical"
         ,axis.title.x=element_blank()
         ,axis.title.y=element_blank()
         ,axis.ticks=element_blank()
         ,axis.line.y = element_blank()
-        ,axis.line.x = element_line(color="#443e42", size = 1.1)
+        ,axis.line.x = element_line(color=blue, size = 1.1)
         ,axis.text.y = element_blank()
-        ,axis.text.x = element_text(size=25,color="#443e42",margin=margin(t=20,r=0,b=0,l=0))
+        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_rect(fill = "transparent", colour = "transparent")
-      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3)
+      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
       c9b.missing <- FALSE
     }else{
       c9b <- no.data
       c9b.missing <- TRUE
     }
     if(nrow(c9c.data)!=0){
+      c9c.key.data = data.frame(year=as.numeric(c(NA)),variable=c("Available calories\nfrom non-staples (%)"),value=as.numeric(c(NA)))
     c9c <- ggplot(c9c.data,aes(year,value,fill=variable)) +
-      geom_bar(position="dodge",stat="identity",color="transparent",show.legend=FALSE) +
-      geom_point(alpha=0.0,shape=22,size=12,color="transparent") +
+      geom_bar(position="dodge",stat="identity",color=blue,show.legend=FALSE,size=1) +
+      geom_point(data=c9c.key.data,aes(fill=variable),size=12,color=blue,stroke=1.5,shape=21) +
       scale_fill_manual(
         labels=c(bquote(atop('% of total calories' ^ 2,'from non-staples')))
         ,breaks=c(names(c9values)[3])
-        ,values=c(purple)
+        ,values=c(lighter.blue)
       ) +
       guides(fill = guide_legend(title=element_blank(),byrow=TRUE,override.aes = list(alpha = 1))) +
       simple_style  +
@@ -880,19 +895,19 @@ for(this.country in countries){
       expand_limits(y=c9c.max*1.1) +
       theme(
         legend.position="top"
-        ,legend.text = element_text(size=22,color="#443e42")
+        ,legend.text = element_text(size=22,color=blue)
         ,legend.justification=c(0.08,0)
         ,legend.direction="vertical"
         ,axis.title.x=element_blank()
         ,axis.title.y=element_blank()
         ,axis.ticks=element_blank()
         ,axis.line.y = element_blank()
-        ,axis.line.x = element_line(color="#443e42", size = 1.1)
+        ,axis.line.x = element_line(color=blue, size = 1.1)
         ,axis.text.y = element_blank()
-        ,axis.text.x = element_text(size=25,color="#443e42",margin=margin(t=20,r=0,b=0,l=0))
+        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_rect(fill = "transparent", colour = "transparent")
-      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3)
+      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
       c9c.missing <- FALSE
     }else{
       c9c <- no.data
@@ -917,7 +932,7 @@ for(this.country in countries){
   c10data$year <- factor(c10data$year)
   c10.max <- max(c10data$value,na.rm=TRUE)
   c10 <- ggplot(c10data,aes(year,value,fill="Blue")) +
-    geom_bar(stat="identity",width=0.6,color="transparent") +
+    geom_bar(stat="identity",width=0.6,color=blue,size=1) +
     orangeFill +
     guides(fill=FALSE) +
     simple_style  +
@@ -925,20 +940,20 @@ for(this.country in countries){
     expand_limits(y=c10.max*1.1) +
     theme(
       legend.position="top"
-      ,legend.text = element_text(size=40,color="#443e42")
+      ,legend.text = element_text(size=40,color=blue)
       ,legend.justification=c(0,0)
       ,legend.direction="vertical"
       ,axis.title.x=element_blank()
       ,axis.title.y=element_blank()
       ,axis.ticks=element_blank()
       ,axis.line.y = element_blank()
-      ,axis.line.x = element_line(color="#443e42", size = 1.1)
+      ,axis.line.x = element_line(color=blue, size = 1.1)
       ,axis.text.y = element_blank()
-      ,axis.text.x = element_text(size=40,color="#443e42",margin=margin(t=20,r=0,b=0,l=0))
+      ,axis.text.x = element_text(size=40,color=blue,margin=margin(t=20,r=0,b=0,l=0))
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.5,"lines")
-    ) + geom_text(size=13,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color="#443e42")
+    ) + geom_text(size=13,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
   #Chart 11
   c11list <- list()
   c11index <- 1
@@ -961,8 +976,16 @@ for(this.country in countries){
                        transform, pos = cumsum(value) - (0.5 * value)
                    ,valid = sum(!is.na(value),na.rm=TRUE))
   c11data <- subset(c11data,valid>=1)
+  c11.key.data = data.frame(
+    indicator = c("Basic","Limited","Unimproved","Surface water","Safely managed"),
+    year = as.numeric(rep(NA,5)),
+    value = as.numeric(rep(NA,5)),
+    pos = as.numeric(rep(NA,5)),
+    valid = as.numeric(rep(NA,5))
+  )
   c11 <- ggplot(c11data,aes(year,value,fill=indicator)) +
-    geom_bar(stat="identity",width=0.7,color="transparent") +
+    geom_bar(stat="identity",width=0.7,color=blue,size=1,show.legend=F) +
+    geom_point(data=c11.key.data,aes(fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
     scale_fill_manual(
       labels=names(c11values)
       ,values=quintileFillValues
@@ -973,21 +996,21 @@ for(this.country in countries){
     scale_y_continuous(expand = c(0,0)) +
     theme(
       legend.position="top"
-      ,legend.text = element_text(size=30,color="#443e42")
+      ,legend.text = element_text(size=30,color=blue)
       ,legend.justification=c(0,0)
       ,legend.direction="horizontal"
       ,axis.title.x=element_blank()
       ,axis.title.y=element_blank()
       ,axis.ticks=element_blank()
       ,axis.line.y = element_blank()
-      ,axis.line.x = element_line(color="#443e42", size = 1.1)
+      ,axis.line.x = element_line(color=blue, size = 1.1)
       ,axis.text.y = element_blank()
-      ,axis.text.x = element_text(size=35,color="#443e42",margin=margin(t=20,r=0,b=0,l=0))
+      ,axis.text.x = element_text(size=35,color=blue,margin=margin(t=20,r=0,b=0,l=0))
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.2,"lines")
     ) + geom_text(data=subset(c11data,value>3),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE) +
-    scale_color_manual(breaks=names(c11values),values=c(black,black,white,black,black),drop=FALSE)
+    scale_color_manual(breaks=names(c11values),values=c(white,white,white,blue,blue),drop=FALSE)
   #Chart 12
   c12list <- list()
   c12index <- 1
@@ -1010,8 +1033,16 @@ for(this.country in countries){
                    transform, pos = cumsum(value) - (0.5 * value)
                    ,valid = sum(!is.na(value),na.rm=TRUE))
   c12data <- subset(c12data,valid>=1)
+  c12.key.data = data.frame(
+    indicator = c("Basic","Limited","Unimproved","Open defecation","Safely managed"),
+    year = as.numeric(rep(NA,5)),
+    value = as.numeric(rep(NA,5)),
+    pos = as.numeric(rep(NA,5)),
+    valid = as.numeric(rep(NA,5))
+  )
   c12 <- ggplot(c12data,aes(year,value,fill=indicator)) +
-    geom_bar(stat="identity",width=0.7,color="transparent") +
+    geom_bar(stat="identity",width=0.7,color=blue,size=1,show.legend=F) +
+    geom_point(data=c12.key.data,aes(fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
     scale_fill_manual(
       labels=names(c12values)
       ,values=quintileFillValues
@@ -1022,21 +1053,21 @@ for(this.country in countries){
     scale_y_continuous(expand = c(0,0)) +
     theme(
       legend.position="top"
-      ,legend.text = element_text(size=30,color="#443e42")
+      ,legend.text = element_text(size=30,color=blue)
       ,legend.justification=c(0,0)
       ,legend.direction="horizontal"
       ,axis.title.x=element_blank()
       ,axis.title.y=element_blank()
       ,axis.ticks=element_blank()
       ,axis.line.y = element_blank()
-      ,axis.line.x = element_line(color="#443e42", size = 1.1)
+      ,axis.line.x = element_line(color=blue, size = 1.1)
       ,axis.text.y = element_blank()
-      ,axis.text.x = element_text(size=35,color="#443e42",margin=margin(t=20,r=0,b=0,l=0))
+      ,axis.text.x = element_text(size=35,color=blue,margin=margin(t=20,r=0,b=0,l=0))
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.2,"lines")
     ) + geom_text(data=subset(c12data,value>3),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE) +
-    scale_color_manual(breaks=names(c12values),values=c(black,black,white,black,black),drop=FALSE)
+    scale_color_manual(breaks=names(c12values),values=c(white,white,white,blue,blue),drop=FALSE)
   #Chart 13
   c13list <- list()
   c13index <- 1
@@ -1067,8 +1098,16 @@ for(this.country in countries){
   }else{
     barWidth = 0.4
   }
+  c13.key.data = data.frame(
+    indicator = c("Agriculture","Education","Health","Social protection"),
+    year = as.numeric(rep(NA,4)),
+    value = as.numeric(rep(NA,4)),
+    pos = as.numeric(rep(NA,4)),
+    valid = as.numeric(rep(NA,4))
+  )
   c13 <- ggplot(c13data,aes(year,value,fill=indicator)) +
-    geom_bar(stat="identity",width=barWidth,color="transparent") +
+    geom_bar(stat="identity",width=barWidth,color=blue,size=1,show.legend=F) +
+    geom_point(data=c13.key.data,aes(fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
     scale_fill_manual(
       labels=names(c13values)
       ,values=quintileFillValues
@@ -1079,21 +1118,21 @@ for(this.country in countries){
     scale_y_continuous(expand = c(0,0)) +
     theme(
       legend.position="top"
-      ,legend.text = element_text(size=30,color="#443e42")
+      ,legend.text = element_text(size=30,color=blue)
       ,legend.justification=c(0,0)
       ,legend.direction="horizontal"
       ,axis.title.x=element_blank()
       ,axis.title.y=element_blank()
       ,axis.ticks=element_blank()
       ,axis.line.y = element_blank()
-      ,axis.line.x = element_line(color="#443e42", size = 1.1)
+      ,axis.line.x = element_line(color=blue, size = 1.1)
       ,axis.text.y = element_blank()
-      ,axis.text.x = element_text(size=35,color="#443e42",margin=margin(t=20,r=0,b=0,l=0))
+      ,axis.text.x = element_text(size=35,color=blue,margin=margin(t=20,r=0,b=0,l=0))
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.2,"lines")
     ) + geom_text(data=subset(c13data,value>0),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE) +
-    scale_color_manual(breaks=names(c13values),values=c(black,black,white,black,black),drop=FALSE)
+    scale_color_manual(breaks=names(c13values),values=c(white,white,white,blue),drop=FALSE)
   }else{
     c13 <- no.data
   }
@@ -1114,7 +1153,7 @@ for(this.country in countries){
       ,"Total weighted"
     )
     ,ypos= c(5:1)
-    ,color=c(yellow,orange,purple,blue,grey)
+    ,color=c(yellow,orange,red,light.blue,blue)
   )
   c14data <- c14data[complete.cases(c14data),]
   if(nrow(c14data)==0){
@@ -1122,7 +1161,7 @@ for(this.country in countries){
   }else{
     c14max = 100
     c14 <- ggplot(c14data,aes(y=value,x=ypos)) +
-      geom_bar(aes(y=100),stat="identity",width=0.03) +
+      geom_bar(aes(y=100),stat="identity",width=0.03,fill=blue) +
       geom_bar(aes(fill=color),stat="identity",width=0.1) +
       scale_fill_identity() +
       simple_style  +
@@ -1130,7 +1169,7 @@ for(this.country in countries){
       expand_limits(y=c14max*1.1) +
       theme(
         legend.position="right"
-        ,legend.text = element_text(size=35,color="#443e42")
+        ,legend.text = element_text(size=35,color=blue)
         ,legend.text.align=0
         ,legend.justification=c(1,0)
         ,legend.direction="horizontal"
@@ -1144,8 +1183,8 @@ for(this.country in countries){
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key.size = unit(2.5,"lines")
-      ) + geom_text(size=10,aes(y=100,x=ypos+0.25,label=safeFormat(value)),hjust=1,vjust=0,color="#443e42") +
-      geom_text(size=9,aes(label=label,y=1,x=ypos+0.25),hjust=0,vjust=0,color="#443e42") +
+      ) + geom_text(size=10,aes(y=100,x=ypos+0.25,label=safeFormat(value)),hjust=1,vjust=0,color=blue) +
+      geom_text(size=9,aes(label=label,y=1,x=ypos+0.25),hjust=0,vjust=0,color=blue) +
       coord_flip()
   }
   #Have both c1a and c1b
