@@ -7,7 +7,7 @@
 	<fontspec id="1" size="11" family="Times" color="#ffffff"/>
 	<fontspec id="2" size="59" family="Times" color="#ffffff"/>
 	<fontspec id="3" size="24" family="Times" color="#3F5467" indent="41"/>
-	<fontspec id="4" size="11" family="Times" color="#706f6f"/>
+	<fontspec id="4" size="11" family="Times" color="#3F5467"/>
 	<fontspec id="5" size="12" family="Times" color="#A6DACF"/>
 	<fontspec id="6" size="13" family="Times" color="#D9511B"/>
 	<fontspec id="7" size="10" family="Times" color="#575756"/>
@@ -67,7 +67,7 @@
 <text top="378" left="575" width="173" height="11" font="9"><b>Source</b>: 2017 projections from UN Population Division 2017.</text>
 
 <!-- Row 2 -->
-<line x1="41" x2="851" y1="410" y2="410" width="4" color="#3F5467" on="1" off="0"></line>
+<line x1="41" x2="851" y1="405" y2="405" width="4" color="#3F5467" on="1" off="0"></line>
 
 <text top="416" left="0" width="181" height="18" font="3"><b>Child anthropometry</b></text>
 
@@ -95,52 +95,59 @@
 <text top="476" left="527" width="154" height="18" font="6">Mean prevalence of stunting (%)</text>
 <image top="501" left="525" width="331" height="170" src="charts/{{country_data.country}}/c4.png"/>
 <line x1="527" x2="527" y1="673" y2="680" on="1" off="0" color="#7DBEB3" width="2"></line>
-<text top="668" left="531" width="191" height="11" font="9"><i>Source: DHS surveys 1990−2011 adapted from Bredenkamp et al. 2014.</i></text>
+<text top="668" left="531" width="191" height="11" font="9"><b>Source</b>: DHS surveys 1990−2011 adapted from Bredenkamp et al. 2014.</text>
+
+<line x1="41" x2="851" y1="695" y2="695" width="4" color="#3F5467" on="1" off="0"></line>
 
 <!-- Row 3 -->
-<text top="713" left="0" width="329" height="18" font="3">ADOLESCENT AND ADULT NUTRITION STATUS</text>
+<text top="706" left="0" width="329" height="18" font="3"><b>Adolescent and adult nutrition status</b></text>
+
+<!-- Chart 5 -->
+<text top="731" left="43" width="344" height="18" font="6"><b>Metabolic risk factors for diet-related non-communicable</b></text>
+<text top="749" left="43" width="108" height="16" font="6"><b>diseases (%)</b></text>
+<image top="767" left="36" width="330" height="140" src="charts/{{country_data.country}}/c5.png"/>
+<line x1="40" x2="40" y1="911" y2="918" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="906" left="44" width="80" height="11" font="9"><b>Sources</b>: WHO 2017 and NCD Risk Factor Collaboration 2017.</text>
+
+<!-- Chart 6 -->
+<text top="927" left="42" width="337" height="16" font="6"><b>Prevalence of adult overweight and obesity (%), 2014</b></text>
+<image top="959" left="42" width="330" height="90" src="charts/{{country_data.country}}/c6.png"/>
+<line x1="42" x2="42" y1="1056" y2="1074" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="1051" left="47" width="80" height="11" font="9"><b>Sources</b>: WHO 2017 and NCD Risk Factor Collaboration 2017.</text>
+<text top="1061" left="47" width="118" height="11" font="9"><b>Note</b>: BMI: body mass index.</text>
 
 <line x1="390" x2="390" y1="740" y2="1093" on="1" off="0" color="#BFC9D3"></line>
 
 <!-- Table 4 -->
-<text top="746" left="43" width="344" height="18" font="6">Adolescent and adult anthropometry (% population)</text>
-<table top="773" left="36" height="75" data="table4" widths="220,57.5,57.5"></table>
-<text top="856" left="42" width="145" height="11" font="9"><i>Source: WHO 2015;<super>1</super> DHS 2017.<super>2</super>  </i></text>
-<text top="867" left="42" width="103" height="11" font="9"><i>Note: NA: not available.</i></text>
+<text top="731" left="415" width="344" height="18" font="6"><b>Adolescent and adult anthropometry (% population)</b></text>
+<table top="758" left="415" height="75" data="table4" widths="220,57.5,57.5"></table>
+<line x1="415" x2="415" y1="846" y2="863" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="841" left="419" width="145" height="11" font="9"><b>Sources</b>: WHO 2015;<super>1</super> DHS 2017.<super>2</super></text>
+<text top="852" left="419" width="103" height="11" font="9"><b>Note</b>: NA = not available.</text>
 
 <!-- Table 5 -->
-<text top="746" left="415" width="225" height="18" font="6">Micronutrient status of population</text>
-<table top="773" left="415" heights="15,15,15,15,75" height="135" data="table5" widths="270,115,50"></table>
-<text top="920" left="418" width="229" height="11" font="9"><i>Source: WHO 2017;<super>1</super> Stevens et al. 2015;<super>2</super> WHO 2004.<super>3</super></i></text>
-
-<!-- Chart 5 -->
-<text top="887" left="42" width="337" height="16" font="15">Metabolic risk factors for diet-related non-communicable </text>
-<text top="903" left="42" width="108" height="16" font="15">diseases (%)</text>
-<image top="930" left="36" width="330" height="140" src="charts/{{country_data.country}}/c5.png"/>
-<text top="1085" left="40" width="80" height="11" font="9"><i>Source: WHO 2017 and NCD Risk Factor Collaboration 2017.</i></text>
-
-<!-- Chart 6 -->
-<text top="942" left="416" width="316" height="16" font="15">Prevalence of adult overweight and obesity (%), 2014</text>
-<image top="969" left="416" width="400" height="90" src="charts/{{country_data.country}}/c6.png"/>
-<text top="1075" left="414" width="80" height="11" font="9"><i>Source: WHO 2017 and NCD Risk Factor Collaboration 2017.</i></text>
-<text top="1085" left="414" width="118" height="11" font="9"><i>Note: BMI: body mass index.</i></text>
+<text top="887" left="415" width="225" height="18" font="6"><b>Micronutrient status of population</b></text>
+<table top="914" left="415" heights="15,15,15,15,75" height="135" data="table5" widths="270,115,50"></table>
+<line x1="415" x2="415" y1="1066" y2="1073" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="1061" left="419" width="229" height="11" font="9"><b>Sources</b>: WHO 2017;<super>1</super> Stevens et al. 2015;<super>2</super> WHO 2004.<super>3</super></text>
 
 <!-- Table 6 -->
-<image top="1100" left="0" width="892" height="160" src="{{template_folder}}/footer.png"/>
-<text top="1100" left="44" width="552" height="16" font="4">PROGRESS AGAINST GLOBAL NUTRITION TARGETS 2017</text>
+<image top="1100" left="0" width="892" height="165" src="{{template_folder}}/footer.png"/>
+<text top="1100" left="44" width="552" height="16" font="4"><b>Progress against global nutrition targets 2018</b></text>
 <table data="table6" top="1122" left="54" widths="165,165,165,165,130" height="30"></table>
 <table data="table6a" top="1172" left="125" widths="161,161,161,161" height="30"></table>
-<text top="1210" left="44" width="530" height="11" font="8"><i>Source:  UNICEF/WHO/World Bank Group Joint Child Malnutrition Estimates 2017, WHO 2017, Stevens GA et al 2013, and NCD Risk Factor Collaboration 2017.</i></text>
-<text top="1221" left="44" width="585" height="11" font="8"><i>Notes: Some targets are excluded from analysis as data needs further strengthening or methodological work before it can be used, these are: low birth weight, adolescent obesity,</i></text>
-<text top="1232" left="44" width="557" height="11" font="8"><i>hypertension and salt intake. See Global Nutrition Report 2017, Appendix 1 for more information. EBF: exclusive breastfeeding; NA: not available; WRA: women of reproductive age.</i></text>
+<line x1="40" x2="40" y1="1215" y2="1245" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="1210" left="44" width="530" height="11" font="9"><b>Sources</b>:  UNICEF/WHO/World Bank Group Joint Child Malnutrition Estimates 2017, WHO 2017, Stevens GA et al 2013, and NCD Risk Factor Collaboration 2017.</text>
+<text top="1221" left="44" width="585" height="11" font="9"><b>Notes</b>: Some targets are excluded from analysis as data needs further strengthening or methodological work before it can be used, these are: low birth weight, adolescent obesity,</text>
+<text top="1232" left="44" width="557" height="11" font="9">hypertension and salt intake. See Global Nutrition Report 2018, Appendix 1 for more information. EBF: exclusive breastfeeding; NA: not available; WRA: women of reproductive age.</text>
 </page>
 <page number="2" position="absolute" top="0" left="0" height="1262" width="892">
 	<fontspec id="24" size="10" family="Times" color="#575756"/>
 	<fontspec id="25" size="10" family="Times" color="#575756"/>
 
-<image top="0" left="0" width="892" height="124" src="{{template_folder}}/banner.png"/>
+<image top="0" left="0" width="892" height="84" src="{{template_folder}}/banner_p2.png"/>
 
-<text top="0" left="39" width="362" height="72" font="2" shrink="True">{{country_data.country}}</text>
+<text top="-10" left="39" width="362" height="72" font="2" shrink="True">{{country_data.country}}</text>
 
 <!--Row 1-->
 <text top="91" left="0" width="329" height="18" font="3">INTERVENTION COVERAGE AND CHILD-FEEDING PRACTICES</text>
