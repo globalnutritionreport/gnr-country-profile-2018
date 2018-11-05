@@ -157,7 +157,7 @@ class ReportMaker(object):
 
                     self.createParagraph(replacement, int(text.get("left")), (int(text.get("top"))+heightAdj), width, style)
                 else:
-                    innerText = ElementTree.tostring(text.getchildren()[0])
+                    innerText = "".join([ElementTree.tostring(elem).decode('UTF-8') for elem in text.getchildren()])
                     font = self.fonts[text.get("font")]
                     replacement = innerText
 
@@ -186,6 +186,8 @@ class ReportMaker(object):
             for line in page.findall("line"):
                 self.c.setDash(int(line.get("on")), int(line.get("off")))
                 self.c.setStrokeColor(line.get("color"))
+                lineWidth = int(line.get("width")) if line.get("width") else 1
+                self.c.setLineWidth(lineWidth)
                 self.c.line(int(line.get("x1")), self.height-int(line.get("y1")), int(line.get("x2")), self.height-int(line.get("y2")))
             for button in page.findall("button"):
                 padtop = int(button.get("pt")) if button.get("pt") else 0
@@ -241,9 +243,10 @@ if __name__ == "__main__":
     countries = list(dataDictionary.keys())
     countries.sort()
     for country in countries:
-        print(country)
-        safeFileName = "".join([c for c in country.replace(" ", "_") if re.match(r'\w', c)])
-        countryDat = dataDictionary[country]
-        doc = ReportMaker("2018_template", "pdfs/"+safeFileName+".pdf", country, countryDat)
-        doc.createDocument()
-        doc.savePDF()
+        if country == "Afghanistan":
+            print(country)
+            safeFileName = "".join([c for c in country.replace(" ", "_") if re.match(r'\w', c)])
+            countryDat = dataDictionary[country]
+            doc = ReportMaker("2018_template", "pdfs/"+safeFileName+".pdf", country, countryDat)
+            doc.createDocument()
+            doc.savePDF()

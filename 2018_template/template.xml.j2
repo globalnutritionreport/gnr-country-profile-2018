@@ -6,13 +6,13 @@
 	<fontspec id="0" size="14" family="Times" color="#ffffff"/>
 	<fontspec id="1" size="11" family="Times" color="#ffffff"/>
 	<fontspec id="2" size="59" family="Times" color="#ffffff"/>
-	<fontspec id="3" size="13" family="Times" color="#ffffff" background="#868f98" indent="41" padding="5"/>
+	<fontspec id="3" size="24" family="Times" color="#3F5467" indent="41"/>
 	<fontspec id="4" size="11" family="Times" color="#706f6f"/>
-	<fontspec id="5" size="10" family="Times" color="#575756"/>
-	<fontspec id="6" size="13" family="Times" color="#575756"/>
+	<fontspec id="5" size="12" family="Times" color="#A6DACF"/>
+	<fontspec id="6" size="13" family="Times" color="#D9511B"/>
 	<fontspec id="7" size="10" family="Times" color="#575756"/>
 	<fontspec id="8" size="7" family="Times" color="#3c3c3b"/>
-	<fontspec id="9" size="8" family="Times" color="#706f6f"/>
+	<fontspec id="9" size="8" family="Times" color="#8798A5"/>
 	<fontspec id="10" size="8" family="Times" color="#ffffff"/>
 	<fontspec id="11" size="6" family="Times" color="#ffffff"/>
 	<fontspec id="12" size="5" family="Times" color="#3c3c3b"/>
@@ -23,77 +23,84 @@
 	<fontspec id="17" size="7" family="Times" color="#ffffff"/>
 	<fontspec id="18" size="9" family="Times" color="#234c5e"/>
 
-<image top="0" left="0" width="892" height="155" src="{{template_folder}}/CountryProfileFrontGFX.png"/>
-<text top="39" left="44" width="28" height="17" font="5"><b>2017</b></text>
-<text top="36" left="73" width="4" height="22" font="6"> </text>
-<text top="39" left="77" width="178" height="17" font="7">NUTRITION COUNTRY PROFILE</text>
-<text top="115" left="587" width="131" height="14" font="7"><link href="http://www.globalnutritionreport.org">www.globalnutritionreport.org</link></text>
-<text top="45" left="39" width="362" height="72" font="2" shrink="True">{{country_data.country}}</text>
+<image top="0" left="0" width="892" height="124" src="{{template_folder}}/banner.png"/>
+<text top="15" left="44" width="28" height="17" font="5">2018 Nutrition country profile</text>
+<text top="15" left="202" width="28" height="17" font="5">|</text>
+<text top="15" left="210" width="28" height="17" font="5"><link href="http://www.globalnutritionreport.org">globalnutritionreport.org</link></text>
+<text top="20" left="39" width="362" height="72" font="2" shrink="True">{{country_data.country}}</text>
 <!-- Row 1 -->
-<text top="148" left="0" width="241" height="18" font="3">ECONOMICS AND DEMOGRAPHY</text>
+<text top="133" left="0" width="241" height="18" font="3"><b>Economics and demography</b></text>
 
 <!-- Chart 1 -->
-<text top="174" left="42" width="151" height="18" font="6">Poverty rates and GDP</text>
-<image top="201" left="42" width="115" height="170" src="charts/{{country_data.country}}/c1a.png"/>
-<image top="201" left="157" width="115" height="170" src="charts/{{country_data.country}}/c1b.png"/>
-<image top="201" left="42" width="230" height="170" src="charts/{{country_data.country}}/c1.png"/>
-<text top="397" left="43" width="104" height="11" font="9"><i>Source: World Bank 2017.</i></text>
-<text top="408" left="43" width="150" height="11" font="9"><i>Note: pop: population; PPP: purchasing power parity.</i></text>
+<text top="154" left="42" width="151" height="18" font="6"><b>Poverty rates (%) and GDP</b></text>
+<image top="185" left="42" width="115" height="170" src="charts/{{country_data.country}}/c1a.png"/>
+<image top="185" left="157" width="115" height="170" src="charts/{{country_data.country}}/c1b.png"/>
+<image top="185" left="42" width="230" height="170" src="charts/{{country_data.country}}/c1.png"/>
+<line x1="43" x2="43" y1="372" y2="391" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="367" left="48" width="104" height="11" font="9"><b>Source</b>: World Bank 2017.</text>
+<text top="378" left="48" width="150" height="11" font="9"><b>Note</b>: PPP =  purchasing power parity.</text>
 
-<line x1="290" x2="290" y1="175" y2="420" on="1" off="3" color="grey"></line>
+<line x1="290" x2="290" y1="163" y2="395" on="1" off="0" color="#BFC9D3"></line>
 
 <!-- Chart 2 -->
-<text top="174" left="323" width="147" height="18" font="6">Under-5 mortality rate</text>
-<image top="201" left="323" width="200" height="170" src="charts/{{country_data.country}}/c2.png"/>
-<text top="397" left="326" width="166" height="11" font="9"><i>Source: UN Inter-agency Group for Child </i></text>
-<text top="408" left="326" width="105" height="11" font="9"><i>Mortality Estimation 2015.</i></text>
+<text top="154" left="323" width="147" height="18" font="6"><b>Under-5 mortality rate</b></text>
+<image top="185" left="323" width="200" height="170" src="charts/{{country_data.country}}/c2.png"/>
+<line x1="326" x2="326" y1="372" y2="391" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="367" left="330" width="166" height="11" font="9"><b>Source</b>: UN Inter-agency Group for Child</text>
+<text top="378" left="330" width="105" height="11" font="9">Mortality Estimation 2015.</text>
 
-<line x1="540" x2="540" y1="175" y2="420" on="1" off="3" color="grey"></line>
+<line x1="540" x2="540" y1="163" y2="395" on="1" off="0" color="#BFC9D3"></line>
 
 <!-- Table 1 -->
-<text top="174" left="569" width="117" height="18" font="6">Income inequality</text>
-<table top="201" left="569" height="30" data="table1" widths="110,107,58"></table>
-<text top="241" left="571" width="104" height="11" font="9"><i>Source: World Bank 2017.</i></text>
-<text top="252" left="571" width="240" height="11" font="9"><i>Notes: *0 = perfect equality, **100 = perfect inequality. The </i></text>
-<text top="263" left="571" width="250" height="11" font="9"><i>countries with a Gini index are ranked from most equal (1) to </i></text>
-<text top="273" left="571" width="87" height="11" font="9"><i>most unequal (152). </i></text>
+<text top="154" left="569" width="117" height="18" font="6"><b>Income inequality</b></text>
+<table top="181" left="569" height="30" data="table1" widths="110,107,58"></table>
+<line x1="571" x2="571" y1="226" y2="267" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="221" left="575" width="104" height="11" font="9"><b>Source</b>: World Bank 2017.</text>
+<text top="232" left="575" width="240" height="11" font="9"><b>Notes</b>: <super>1</super>0 = perfect equality, 100 = perfect inequality. <super>2</super>The</text>
+<text top="243" left="575" width="260" height="11" font="9">countries with a Gini index are ranked from most equal (1) to</text>
+<text top="253" left="575" width="87" height="11" font="9">most unequal (152).</text>
 
 <!-- Table 2 -->
-<text top="293" left="568" width="72" height="18" font="6">Population</text>
-<table top="320" left="568" height="75" data="table2" widths="160,57.5,57.5"></table>
-<text top="408" left="568" width="173" height="11" font="9"><i>Source: 2017 projections from UN Population Division 2017.</i></text>
+<text top="273" left="568" width="72" height="18" font="6"><b>Population</b></text>
+<table top="300" left="568" height="75" data="table2" widths="160,57.5,57.5"></table>
+<line x1="571" x2="571" y1="383" y2="390" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="378" left="575" width="173" height="11" font="9"><b>Source</b>: 2017 projections from UN Population Division 2017.</text>
 
 <!-- Row 2 -->
-<text top="426" left="0" width="181" height="18" font="3">CHILD ANTHROPOMETRY</text>
+<line x1="41" x2="851" y1="410" y2="410" width="4" color="#3F5467" on="1" off="0"></line>
+
+<text top="416" left="0" width="181" height="18" font="3"><b>Child anthropometry</b></text>
 
 <!-- Table 3 -->
-<text top="456" left="43" width="138" height="18" font="6">Child anthropometry</text>
-<table top="483" left="43" widths="140,50,50" height="175" data="table3"></table>
-<text top="687" left="47" width="212" height="11" font="9"><i>Source: WHO/World Bank Group Joint Child</i></text>
-<text top="698" left="47" width="212" height="11" font="9"><i>Malnutrition Estimates 2017;<super>1</super> UNICEF 2015.<super>2</super></i></text>
+<text top="441" left="43" width="138" height="18" font="6"><b>Child anthropometry</b></text>
+<table top="468" left="43" widths="140,50,50" height="175" data="table3"></table>
+<line x1="47" x2="47" y1="657" y2="676" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="652" left="51" width="212" height="11" font="9"><b>Source</b>: WHO/World Bank Group Joint Child</text>
+<text top="663" left="51" width="212" height="11" font="9">Malnutrition Estimates 2017;<super>1</super> UNICEF 2015.<super>2</super></text>
 
-<line x1="290" x2="290" y1="460" y2="700" on="1" off="3" color="grey"></line>
+<line x1="290" x2="290" y1="450" y2="680" on="1" off="0" color="#BFC9D3"></line>
 
 <!-- Chart 3 -->
-<text top="456" left="304" width="149" height="18" font="6">Prevalence of stunting </text>
-<text top="474" left="304" width="82" height="18" font="6">among children under 5 (%)</text>
-<image top="501" left="304" width="190" height="160" src="charts/{{country_data.country}}/c3.png"/>
-<text top="687" left="305" width="133" height="11" font="9"><i>Source: WHO/World Bank Group Joint Child</i></text>
-<text top="698" left="305" width="133" height="11" font="9"><i>Malnutrition Estimates 2017.</i></text>
+<text top="441" left="299" width="149" height="18" font="6"><b>Prevalence of under-5 stunting (%)</b></text>
+<image top="468" left="304" width="190" height="160" src="charts/{{country_data.country}}/c3.png"/>
+<line x1="305" x2="305" y1="657" y2="676" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="652" left="309" width="133" height="11" font="9"><b>Source</b>: WHO/World Bank Group Joint Child</text>
+<text top="663" left="309" width="133" height="11" font="9">Malnutrition Estimates 2017.</text>
 
-<line x1="510" x2="510" y1="460" y2="700" on="1" off="3" color="grey"></line>
+<line x1="510" x2="510" y1="450" y2="680" on="1" off="0" color="#BFC9D3"></line>
 
 <!-- Chart 4 -->
-<text top="456" left="527" width="245" height="18" font="6">Changes in stunting prevalence over </text>
-<text top="474" left="527" width="154" height="18" font="6">time, by wealth quintile</text>
+<text top="441" left="527" width="245" height="18" font="6"><b>Changes in stunting prevalence over</b></text>
+<text top="459" left="527" width="154" height="18" font="6"><b>time, by wealth quintile</b></text>
+<text top="476" left="527" width="154" height="18" font="6">Mean prevalence of stunting (%)</text>
 <image top="501" left="525" width="331" height="170" src="charts/{{country_data.country}}/c4.png"/>
-<text top="683" left="527" width="191" height="11" font="9"><i>Source: DHS surveys 1990−2011 adapted from Bredenkamp et al. 2014.</i></text>
-<!--<text top="693" left="527" width="99" height="11" font="9"><i>Bredenkamp et al. 2014.</i></text>-->
+<line x1="527" x2="527" y1="673" y2="680" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="668" left="531" width="191" height="11" font="9"><i>Source: DHS surveys 1990−2011 adapted from Bredenkamp et al. 2014.</i></text>
 
 <!-- Row 3 -->
 <text top="713" left="0" width="329" height="18" font="3">ADOLESCENT AND ADULT NUTRITION STATUS</text>
 
-<line x1="390" x2="390" y1="740" y2="1093" on="1" off="3" color="grey"></line>
+<line x1="390" x2="390" y1="740" y2="1093" on="1" off="0" color="#BFC9D3"></line>
 
 <!-- Table 4 -->
 <text top="746" left="43" width="344" height="18" font="6">Adolescent and adult anthropometry (% population)</text>
@@ -119,22 +126,19 @@
 <text top="1085" left="414" width="118" height="11" font="9"><i>Note: BMI: body mass index.</i></text>
 
 <!-- Table 6 -->
-<image top="1100" left="0" width="892" height="160" src="{{template_folder}}/double_footer.png"/>
+<image top="1100" left="0" width="892" height="160" src="{{template_folder}}/footer.png"/>
 <text top="1100" left="44" width="552" height="16" font="4">PROGRESS AGAINST GLOBAL NUTRITION TARGETS 2017</text>
 <table data="table6" top="1122" left="54" widths="165,165,165,165,130" height="30"></table>
 <table data="table6a" top="1172" left="125" widths="161,161,161,161" height="30"></table>
-<text top="1210" left="44" width="530" height="11" font="8"><para><i>Source:  UNICEF/WHO/World Bank Group Joint Child Malnutrition Estimates 2017, WHO 2017, Stevens GA et al 2013, and NCD Risk Factor Collaboration 2017.</i></para></text>
+<text top="1210" left="44" width="530" height="11" font="8"><i>Source:  UNICEF/WHO/World Bank Group Joint Child Malnutrition Estimates 2017, WHO 2017, Stevens GA et al 2013, and NCD Risk Factor Collaboration 2017.</i></text>
 <text top="1221" left="44" width="585" height="11" font="8"><i>Notes: Some targets are excluded from analysis as data needs further strengthening or methodological work before it can be used, these are: low birth weight, adolescent obesity,</i></text>
 <text top="1232" left="44" width="557" height="11" font="8"><i>hypertension and salt intake. See Global Nutrition Report 2017, Appendix 1 for more information. EBF: exclusive breastfeeding; NA: not available; WRA: women of reproductive age.</i></text>
-<!--<text top="1210" left="44" width="530" height="11" font="8"><para><i>Source:  Definitions of progress developed by the Global Nutrition Report’s Independent Expert Group with guidance from WHO/UNICEF;<super>1</super>  WHO 2014.<super>2</super></i></para></text>-->
-<!--<text top="1221" left="44" width="585" height="11" font="8"><i>Notes: Currently it is only possible to determine whether a country is on or off course for five of the six World Health Assembly targets. The year refers to the most </i></text>-->
-<!--<text top="1232" left="44" width="557" height="11" font="8"><i>recent data available; on/off-course calculation is based on trend data. EBF: exclusive breastfeeding; NA: not available; WRA: women of reproductive age.</i></text>-->
 </page>
 <page number="2" position="absolute" top="0" left="0" height="1262" width="892">
 	<fontspec id="24" size="10" family="Times" color="#575756"/>
 	<fontspec id="25" size="10" family="Times" color="#575756"/>
 
-<image top="-30" left="0" width="892" height="134" src="{{template_folder}}/CountryProfileBackGFX.png"/>
+<image top="0" left="0" width="892" height="124" src="{{template_folder}}/banner.png"/>
 
 <text top="0" left="39" width="362" height="72" font="2" shrink="True">{{country_data.country}}</text>
 
@@ -145,7 +149,7 @@
 <image top="160" left="36" width="220" height="200" src="charts/{{country_data.country}}/c7.png"/>
 <text top="373" left="36" width="32" height="10" font="9"><i>Source: UNICEF 2016;<super>1</super> UN Population Division 2017.<super>2</super></i></text>
 
-<line x1="290" x2="290" y1="130" y2="390" on="1" off="3" color="grey"></line>
+<line x1="290" x2="290" y1="130" y2="390" on="1" off="0" color="#BFC9D3"></line>
 
 <!--Chart 8-->
 <text top="135" left="316" width="190" height="15" font="6">Rate of exclusive breastfeeding</text>
@@ -153,7 +157,7 @@
 <image top="170" left="300" width="200" height="180" src="charts/{{country_data.country}}/c8.png"/>
 <text top="373" left="316" width="76" height="10" font="9"><i>Source: UNICEF 2016.</i></text>
 
-<line x1="510" x2="510" y1="130" y2="390" on="1" off="3" color="grey"></line>
+<line x1="510" x2="510" y1="130" y2="390" on="1" off="0" color="#BFC9D3"></line>
 
 <!--Table 7-->
 <text top="135" left="525" width="160" height="15" font="6">Intervention coverage (%)</text>
@@ -179,7 +183,7 @@
 <image top="460" left="36" width="300" height="200" src="charts/{{country_data.country}}/c9.png"/>
 <text top="667" left="36" width="28" height="10" font="9"><i>Source: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></i></text>
 
-<line x1="375" x2="375" y1="440" y2="680" on="1" off="3" color="grey"></line>
+<line x1="375" x2="375" y1="440" y2="680" on="1" off="0" color="#BFC9D3"></line>
 
 <!--Table 9-->
 <text top="441" left="386" width="183" height="15" font="6">Gender-related determinants</text>
@@ -192,7 +196,7 @@
 <table top="596" left="380" height="60" data="table10" widths="150,52.5,52.5"></table>
 <text top="667" left="386" width="67" height="10" font="9"><i>Source: WHO 2017.</i></text>
 
-<line x1="640" x2="640" y1="440" y2="680" on="1" off="3" color="grey"></line>
+<line x1="640" x2="640" y1="440" y2="680" on="1" off="0" color="#BFC9D3"></line>
 
 <!--Chart 10-->
 <text top="441" left="665" width="113" height="15" font="6">Female secondary education</text>
@@ -226,14 +230,14 @@
 <image top="1030" left="36" width="260" height="180" src="charts/{{country_data.country}}/c14.png"/>
 <text top="1210" left="36" width="65" height="10" font="9"><i>Source: SUN 2017.</i></text>
 
-<line x1="300" x2="300" y1="990" y2="1220" on="1" off="3" color="grey"></line>
+<line x1="300" x2="300" y1="990" y2="1220" on="1" off="0" color="#BFC9D3"></line>
 
 <!--Table 11-->
 <text top="974" left="316" width="200" height="15" font="6">Policy and legislative provisions</text>
 <table top="994" left="306" height="216" heights="42,30,30,30,42,42" data="table11" widths="200,70,55"></table>
 <text top="1210" left="316" width="32" height="10" font="9"><i>Source: WHO/UNICEF and IBFAN 2016;<super>1</super> FAO 2003;<super>2</super> ILO 2013;<super>3</super> FFI 2015;<super>4</super> IDS 2015.<super>5</super></i></text>
 
-<line x1="640" x2="640" y1="990" y2="1220" on="1" off="3" color="grey"></line>
+<line x1="640" x2="640" y1="990" y2="1220" on="1" off="0" color="#BFC9D3"></line>
 
 <!--Table 12-->
 <text top="989" left="665" width="153" height="15" font="6">Availability and stage of</text>
