@@ -243,10 +243,9 @@ if __name__ == "__main__":
     countries = list(dataDictionary.keys())
     countries.sort()
     for country in countries:
-        if country == "Afghanistan":
-            print(country)
-            safeFileName = "".join([c for c in country.replace(" ", "_") if re.match(r'\w', c)])
-            countryDat = dataDictionary[country]
-            doc = ReportMaker("2018_template", "pdfs/"+safeFileName+".pdf", country, countryDat)
-            doc.createDocument()
-            doc.savePDF()
+        print(country)
+        safeFileName = "".join([c for c in country.replace(" ", "_") if re.match(r'\w', c)])
+        countryDat = dataDictionary[country]
+        doc = ReportMaker("2018_template", "pdfs/"+safeFileName+".pdf", country, countryDat)
+        doc.createDocument()
+        doc.savePDF()
