@@ -500,8 +500,8 @@ Q,Kenya,2014,anaemia_plan,all,,Yes
 Q,Kenya,2015,LBW_plan,all,,no
 Q,Kenya,2016,child_overweight_plan,all,,Yes
 Q,Kenya,2017,EBF_plan,all,,Yes
-Q,Kenya,2018,Wastin_Plan,all,,Yes
-Q,Kenya,2019,sodium_plam,all,,Yes
+Q,Kenya,2018,wasting_plan,all,,Yes
+Q,Kenya,2019,sodium_plan,all,,Yes
 Q,Kenya,2020,blood_pressure_plan,all,,Yes
 Q,Kenya,2021,diabetes_plan,all,,Yes
 Q,Kenya,2022,overweight_adults_adoles_plan,all,,Yes
