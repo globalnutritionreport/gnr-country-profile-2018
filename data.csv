@@ -1,298 +1,525 @@
-country,year,indicator,disaggregation,disagg.value,value
-Kenya,2018,under_5_stunting_track,all,,On track
-Kenya,2018,under_5_wasting_track,all,,On track
-Kenya,2018,under_5_overweight_track,all,,On track
-Kenya,2018,wra_anaemia_track,all,,Some progress
-Kenya,2018,ebf_track,all,,On track
-Kenya,2018,adult_fem_obesity_track,all,,Off track
-Kenya,2018,adult_mal_obesity_track,all,,Off track
-Kenya,2018,adult_fem_diabetes_track,all,,Off track
-Kenya,2018,adult_mal_diabetes_track,all,,Off track
-Kenya,2000,stunting_percent,all,,0.4
-Kenya,2003,stunting_percent,all,,0.35
-Kenya,2005,stunting_percent,all,,0.4
-Kenya,2009,stunting_percent,all,,0.35
-Kenya,2014,stunting_percent,all,,0.25
-Kenya,2014,wasting_percent,all,,0.042
-Kenya,2000,overweight_percent,all,,0.08
-Kenya,2003,overweight_percent,all,,0.06
-Kenya,2009,overweight_percent,all,,0.05
-Kenya,2014,overweight_percent,all,,0.04
-Kenya,2000,stunting_percent,income,Poorest,0.4
-Kenya,2003,stunting_percent,income,Poorest,0.35
-Kenya,2005,stunting_percent,income,Poorest,0.4
-Kenya,2009,stunting_percent,income,Poorest,0.35
-Kenya,2014,stunting_percent,income,Poorest,0.25
-Kenya,2014,wasting_percent,income,Poorest,0.042
-Kenya,2000,overweight_percent,income,Poorest,0.08
-Kenya,2003,overweight_percent,income,Poorest,0.06
-Kenya,2009,overweight_percent,income,Poorest,0.05
-Kenya,2014,overweight_percent,income,Poorest,0.04
-Kenya,2000,stunting_percent,income,Second poorest,0.4
-Kenya,2003,stunting_percent,income,Second poorest,0.35
-Kenya,2005,stunting_percent,income,Second poorest,0.4
-Kenya,2009,stunting_percent,income,Second poorest,0.35
-Kenya,2014,stunting_percent,income,Second poorest,0.25
-Kenya,2014,wasting_percent,income,Second poorest,0.042
-Kenya,2000,overweight_percent,income,Second poorest,0.08
-Kenya,2003,overweight_percent,income,Second poorest,0.06
-Kenya,2009,overweight_percent,income,Second poorest,0.05
-Kenya,2014,overweight_percent,income,Second poorest,0.04
-Kenya,2000,stunting_percent,income,Middle,0.4
-Kenya,2003,stunting_percent,income,Middle,0.35
-Kenya,2005,stunting_percent,income,Middle,0.4
-Kenya,2009,stunting_percent,income,Middle,0.35
-Kenya,2014,stunting_percent,income,Middle,0.25
-Kenya,2014,wasting_percent,income,Middle,0.042
-Kenya,2000,overweight_percent,income,Middle,0.08
-Kenya,2003,overweight_percent,income,Middle,0.06
-Kenya,2009,overweight_percent,income,Middle,0.05
-Kenya,2014,overweight_percent,income,Middle,0.04
-Kenya,2000,stunting_percent,income,Second wealthiest,0.4
-Kenya,2003,stunting_percent,income,Second wealthiest,0.35
-Kenya,2005,stunting_percent,income,Second wealthiest,0.4
-Kenya,2009,stunting_percent,income,Second wealthiest,0.35
-Kenya,2014,stunting_percent,income,Second wealthiest,0.25
-Kenya,2014,wasting_percent,income,Second wealthiest,0.042
-Kenya,2000,overweight_percent,income,Second wealthiest,0.08
-Kenya,2003,overweight_percent,income,Second wealthiest,0.06
-Kenya,2009,overweight_percent,income,Second wealthiest,0.05
-Kenya,2014,overweight_percent,income,Second wealthiest,0.04
-Kenya,2000,stunting_percent,income,Wealthiest,0.4
-Kenya,2003,stunting_percent,income,Wealthiest,0.35
-Kenya,2005,stunting_percent,income,Wealthiest,0.4
-Kenya,2009,stunting_percent,income,Wealthiest,0.35
-Kenya,2014,stunting_percent,income,Wealthiest,0.25
-Kenya,2014,wasting_percent,income,Wealthiest,0.042
-Kenya,2000,overweight_percent,income,Wealthiest,0.08
-Kenya,2003,overweight_percent,income,Wealthiest,0.06
-Kenya,2009,overweight_percent,income,Wealthiest,0.05
-Kenya,2014,overweight_percent,income,Wealthiest,0.04
-Kenya,2000,stunting_percent,gender,Male,0.4
-Kenya,2003,stunting_percent,gender,Male,0.35
-Kenya,2005,stunting_percent,gender,Male,0.4
-Kenya,2009,stunting_percent,gender,Male,0.35
-Kenya,2014,stunting_percent,gender,Male,0.25
-Kenya,2014,wasting_percent,gender,Male,0.042
-Kenya,2000,overweight_percent,gender,Male,0.08
-Kenya,2003,overweight_percent,gender,Male,0.06
-Kenya,2009,overweight_percent,gender,Male,0.05
-Kenya,2014,overweight_percent,gender,Male,0.04
-Kenya,2000,stunting_percent,gender,Female,0.4
-Kenya,2003,stunting_percent,gender,Female,0.35
-Kenya,2005,stunting_percent,gender,Female,0.4
-Kenya,2009,stunting_percent,gender,Female,0.35
-Kenya,2014,stunting_percent,gender,Female,0.25
-Kenya,2014,wasting_percent,gender,Female,0.042
-Kenya,2000,overweight_percent,gender,Female,0.08
-Kenya,2003,overweight_percent,gender,Female,0.06
-Kenya,2009,overweight_percent,gender,Female,0.05
-Kenya,2014,overweight_percent,gender,Female,0.04
-Kenya,2000,stunting_percent,location,Urban,0.4
-Kenya,2003,stunting_percent,location,Urban,0.35
-Kenya,2005,stunting_percent,location,Urban,0.4
-Kenya,2009,stunting_percent,location,Urban,0.35
-Kenya,2014,stunting_percent,location,Urban,0.25
-Kenya,2014,wasting_percent,location,Urban,0.042
-Kenya,2000,overweight_percent,location,Urban,0.08
-Kenya,2003,overweight_percent,location,Urban,0.06
-Kenya,2009,overweight_percent,location,Urban,0.05
-Kenya,2014,overweight_percent,location,Urban,0.04
-Kenya,2000,stunting_percent,location,Rural,0.4
-Kenya,2003,stunting_percent,location,Rural,0.35
-Kenya,2005,stunting_percent,location,Rural,0.4
-Kenya,2009,stunting_percent,location,Rural,0.35
-Kenya,2014,stunting_percent,location,Rural,0.25
-Kenya,2014,wasting_percent,location,Rural,0.042
-Kenya,2000,overweight_percent,location,Rural,0.08
-Kenya,2003,overweight_percent,location,Rural,0.06
-Kenya,2009,overweight_percent,location,Rural,0.05
-Kenya,2014,overweight_percent,location,Rural,0.04
-Kenya,2018,coexistence,all,"Not wasting, stunting, or overweight",0.679
-Kenya,2018,coexistence,all,Wasting and stunting,0.02
-Kenya,2018,coexistence,all,Stunting and overweight,0.02
-Kenya,2018,coexistence,all,Wasting alone,0.02
-Kenya,2018,coexistence,all,Stunting alone,0.02
-Kenya,2018,coexistence,all,Overweight alone,0.02
-Kenya,2000,adolescent_obesity,gender,Male,0.01
-Kenya,2002,adolescent_obesity,gender,Male,0.02
-Kenya,2004,adolescent_obesity,gender,Male,0.03
-Kenya,2006,adolescent_obesity,gender,Male,0.04
-Kenya,2008,adolescent_obesity,gender,Male,0.05
-Kenya,2010,adolescent_obesity,gender,Male,0.06
-Kenya,2012,adolescent_obesity,gender,Male,0.07
-Kenya,2016,adolescent_obesity,gender,Male,0.08
-Kenya,2000,adolescent_obesity,gender,Female,0.01
-Kenya,2002,adolescent_obesity,gender,Female,0.02
-Kenya,2004,adolescent_obesity,gender,Female,0.03
-Kenya,2006,adolescent_obesity,gender,Female,0.04
-Kenya,2008,adolescent_obesity,gender,Female,0.05
-Kenya,2010,adolescent_obesity,gender,Female,0.06
-Kenya,2012,adolescent_obesity,gender,Female,0.07
-Kenya,2016,adolescent_obesity,gender,Female,0.08
-Kenya,2000,adult_oveweight,gender,Male,0.01
-Kenya,2002,adult_oveweight,gender,Male,0.02
-Kenya,2004,adult_oveweight,gender,Male,0.03
-Kenya,2006,adult_oveweight,gender,Male,0.04
-Kenya,2008,adult_oveweight,gender,Male,0.05
-Kenya,2010,adult_oveweight,gender,Male,0.06
-Kenya,2012,adult_oveweight,gender,Male,0.07
-Kenya,2016,adult_oveweight,gender,Male,0.08
-Kenya,2000,adult_oveweight,gender,Female,0.01
-Kenya,2002,adult_oveweight,gender,Female,0.02
-Kenya,2004,adult_oveweight,gender,Female,0.03
-Kenya,2006,adult_oveweight,gender,Female,0.04
-Kenya,2008,adult_oveweight,gender,Female,0.05
-Kenya,2010,adult_oveweight,gender,Female,0.06
-Kenya,2012,adult_oveweight,gender,Female,0.07
-Kenya,2016,adult_oveweight,gender,Female,0.08
-Kenya,2000,adult_obesity,gender,Male,0.01
-Kenya,2002,adult_obesity,gender,Male,0.02
-Kenya,2004,adult_obesity,gender,Male,0.03
-Kenya,2006,adult_obesity,gender,Male,0.04
-Kenya,2008,adult_obesity,gender,Male,0.05
-Kenya,2010,adult_obesity,gender,Male,0.06
-Kenya,2012,adult_obesity,gender,Male,0.07
-Kenya,2016,adult_obesity,gender,Male,0.08
-Kenya,2000,adult_obesity,gender,Female,0.01
-Kenya,2002,adult_obesity,gender,Female,0.02
-Kenya,2004,adult_obesity,gender,Female,0.03
-Kenya,2006,adult_obesity,gender,Female,0.04
-Kenya,2008,adult_obesity,gender,Female,0.05
-Kenya,2010,adult_obesity,gender,Female,0.06
-Kenya,2012,adult_obesity,gender,Female,0.07
-Kenya,2016,adult_obesity,gender,Female,0.08
-Kenya,2000,adult_diabetes,gender,Male,0.01
-Kenya,2002,adult_diabetes,gender,Male,0.02
-Kenya,2004,adult_diabetes,gender,Male,0.03
-Kenya,2006,adult_diabetes,gender,Male,0.04
-Kenya,2008,adult_diabetes,gender,Male,0.05
-Kenya,2010,adult_diabetes,gender,Male,0.06
-Kenya,2012,adult_diabetes,gender,Male,0.07
-Kenya,2016,adult_diabetes,gender,Male,0.08
-Kenya,2000,adult_diabetes,gender,Female,0.01
-Kenya,2002,adult_diabetes,gender,Female,0.02
-Kenya,2004,adult_diabetes,gender,Female,0.03
-Kenya,2006,adult_diabetes,gender,Female,0.04
-Kenya,2008,adult_diabetes,gender,Female,0.05
-Kenya,2010,adult_diabetes,gender,Female,0.06
-Kenya,2012,adult_diabetes,gender,Female,0.07
-Kenya,2016,adult_diabetes,gender,Female,0.08
-Kenya,2000,adult_blood_pressure,gender,Male,0.01
-Kenya,2002,adult_blood_pressure,gender,Male,0.02
-Kenya,2004,adult_blood_pressure,gender,Male,0.03
-Kenya,2006,adult_blood_pressure,gender,Male,0.04
-Kenya,2008,adult_blood_pressure,gender,Male,0.05
-Kenya,2010,adult_blood_pressure,gender,Male,0.06
-Kenya,2012,adult_blood_pressure,gender,Male,0.07
-Kenya,2016,adult_blood_pressure,gender,Male,0.08
-Kenya,2000,adult_blood_pressure,gender,Female,0.01
-Kenya,2002,adult_blood_pressure,gender,Female,0.02
-Kenya,2004,adult_blood_pressure,gender,Female,0.03
-Kenya,2006,adult_blood_pressure,gender,Female,0.04
-Kenya,2008,adult_blood_pressure,gender,Female,0.05
-Kenya,2010,adult_blood_pressure,gender,Female,0.06
-Kenya,2012,adult_blood_pressure,gender,Female,0.07
-Kenya,2016,adult_blood_pressure,gender,Female,0.08
-Kenya,2000,adult_sodium,all,,0.01
-Kenya,2002,adult_sodium,all,,0.02
-Kenya,2004,adult_sodium,all,,0.03
-Kenya,2006,adult_sodium,all,,0.04
-Kenya,2008,adult_sodium,all,,0.05
-Kenya,2010,adult_sodium,all,,0.06
-Kenya,2012,adult_sodium,all,,0.07
-Kenya,2016,adult_sodium,all,,0.08
-Kenya,2000,adult_anaemia,gender,Male,0.01
-Kenya,2002,adult_anaemia,gender,Male,0.02
-Kenya,2004,adult_anaemia,gender,Male,0.03
-Kenya,2006,adult_anaemia,gender,Male,0.04
-Kenya,2008,adult_anaemia,gender,Male,0.05
-Kenya,2010,adult_anaemia,gender,Male,0.06
-Kenya,2012,adult_anaemia,gender,Male,0.07
-Kenya,2016,adult_anaemia,gender,Male,0.08
-Kenya,2000,adult_anaemia,gender,Female,0.01
-Kenya,2002,adult_anaemia,gender,Female,0.02
-Kenya,2004,adult_anaemia,gender,Female,0.03
-Kenya,2006,adult_anaemia,gender,Female,0.04
-Kenya,2008,adult_anaemia,gender,Female,0.05
-Kenya,2010,adult_anaemia,gender,Female,0.06
-Kenya,2012,adult_anaemia,gender,Female,0.07
-Kenya,2016,adult_anaemia,gender,Female,0.08
-Kenya,2018,early_initiation,location,Urban,1
-Kenya,2018,exclusive_breastfeeding,location,Urban,2
-Kenya,2018,solid_foods,location,Urban,3
-Kenya,2018,minimum_meal,location,Urban,4
-Kenya,2018,minimum_diet_diversity,location,Urban,5
-Kenya,2018,minimum_accept_diet,location,Urban,6
-Kenya,2018,continued_breastfeeding,location,Urban,7
-Kenya,2018,continued_breastfeeding_1yr,location,Urban,8
-Kenya,2018,continued_breastfeeding_2yr,location,Urban,9
-Kenya,2018,early_initiation,location,Rural,1
-Kenya,2018,exclusive_breastfeeding,location,Rural,2
-Kenya,2018,solid_foods,location,Rural,3
-Kenya,2018,minimum_meal,location,Rural,4
-Kenya,2018,minimum_diet_diversity,location,Rural,5
-Kenya,2018,minimum_accept_diet,location,Rural,6
-Kenya,2018,continued_breastfeeding,location,Rural,7
-Kenya,2018,continued_breastfeeding_1yr,location,Rural,8
-Kenya,2018,continued_breastfeeding_2yr,location,Rural,9
-Kenya,2018,early_initiation,income,Poorest,1
-Kenya,2018,exclusive_breastfeeding,income,Poorest,2
-Kenya,2018,solid_foods,income,Poorest,3
-Kenya,2018,minimum_meal,income,Poorest,4
-Kenya,2018,minimum_diet_diversity,income,Poorest,5
-Kenya,2018,minimum_accept_diet,income,Poorest,6
-Kenya,2018,continued_breastfeeding,income,Poorest,7
-Kenya,2018,continued_breastfeeding_1yr,income,Poorest,8
-Kenya,2018,continued_breastfeeding_2yr,income,Poorest,9
-Kenya,2018,early_initiation,income,Second poorest,1
-Kenya,2018,exclusive_breastfeeding,income,Second poorest,2
-Kenya,2018,solid_foods,income,Second poorest,3
-Kenya,2018,minimum_meal,income,Second poorest,4
-Kenya,2018,minimum_diet_diversity,income,Second poorest,5
-Kenya,2018,minimum_accept_diet,income,Second poorest,6
-Kenya,2018,continued_breastfeeding,income,Second poorest,7
-Kenya,2018,continued_breastfeeding_1yr,income,Second poorest,8
-Kenya,2018,continued_breastfeeding_2yr,income,Second poorest,9
-Kenya,2018,early_initiation,income,Middle,1
-Kenya,2018,exclusive_breastfeeding,income,Middle,2
-Kenya,2018,solid_foods,income,Middle,3
-Kenya,2018,minimum_meal,income,Middle,4
-Kenya,2018,minimum_diet_diversity,income,Middle,5
-Kenya,2018,minimum_accept_diet,income,Middle,6
-Kenya,2018,continued_breastfeeding,income,Middle,7
-Kenya,2018,continued_breastfeeding_1yr,income,Middle,8
-Kenya,2018,continued_breastfeeding_2yr,income,Middle,9
-Kenya,2018,early_initiation,income,Second wealthiest,1
-Kenya,2018,exclusive_breastfeeding,income,Second wealthiest,2
-Kenya,2018,solid_foods,income,Second wealthiest,3
-Kenya,2018,minimum_meal,income,Second wealthiest,4
-Kenya,2018,minimum_diet_diversity,income,Second wealthiest,5
-Kenya,2018,minimum_accept_diet,income,Second wealthiest,6
-Kenya,2018,continued_breastfeeding,income,Second wealthiest,7
-Kenya,2018,continued_breastfeeding_1yr,income,Second wealthiest,8
-Kenya,2018,continued_breastfeeding_2yr,income,Second wealthiest,9
-Kenya,2018,early_initiation,income,Wealthiest,1
-Kenya,2018,exclusive_breastfeeding,income,Wealthiest,2
-Kenya,2018,solid_foods,income,Wealthiest,3
-Kenya,2018,minimum_meal,income,Wealthiest,4
-Kenya,2018,minimum_diet_diversity,income,Wealthiest,5
-Kenya,2018,minimum_accept_diet,income,Wealthiest,6
-Kenya,2018,continued_breastfeeding,income,Wealthiest,7
-Kenya,2018,continued_breastfeeding_1yr,income,Wealthiest,8
-Kenya,2018,continued_breastfeeding_2yr,income,Wealthiest,9
-Kenya,2014,diarrhea_zinc,all,,0.081
-Kenya,2014,diarrhea_zinc,gender,Male,
-Kenya,2014,diarrhea_zinc,gender,Female,
-Kenya,2014,vit_a,all,,0.717
-Kenya,2014,vit_a,gender,Male,0.716
-Kenya,2014,vit_a,gender,Female,0.719
-Kenya,2014,iron_supp,all,,0.027
-Kenya,2014,iron_supp,gender,Male,0.026
-Kenya,2014,iron_supp,gender,Female,0.027
-Kenya,2014,iron_and_folic,all,,0.694
-Kenya,2014,iron_and_folic,gender,Male,
-Kenya,2014,iron_and_folic,gender,Female,
-Kenya,2014,iodised_salt,all,,0.995
-Kenya,2014,iodised_salt,gender,Male,
-Kenya,2014,iodised_salt,gender,Female,
+component,country,year,indicator,disaggregation,disagg.value,value
+A,Kenya,2018,under_5_stunting_track,all,,On track
+A,Kenya,2018,under_5_wasting_track,all,,On track
+A,Kenya,2018,under_5_overweight_track,all,,On track
+A,Kenya,2018,wra_anaemia_track,all,,Some progress
+A,Kenya,2018,ebf_track,all,,On track
+A,Kenya,2018,adult_fem_obesity_track,all,,Off track
+A,Kenya,2018,adult_mal_obesity_track,all,,Off track
+A,Kenya,2018,adult_fem_diabetes_track,all,,Off track
+A,Kenya,2018,adult_mal_diabetes_track,all,,Off track
+B,Kenya,2000,stunting_percent,all,,0.4
+B,Kenya,2003,stunting_percent,all,,0.35
+B,Kenya,2005,stunting_percent,all,,0.4
+B,Kenya,2009,stunting_percent,all,,0.35
+B,Kenya,2014,stunting_percent,all,,0.25
+B,Kenya,2014,wasting_percent,all,,0.042
+B,Kenya,2000,overweight_percent,all,,0.08
+B,Kenya,2003,overweight_percent,all,,0.06
+B,Kenya,2009,overweight_percent,all,,0.05
+B,Kenya,2014,overweight_percent,all,,0.04
+C,Kenya,2000,stunting_percent,income,Poorest,0.4
+C,Kenya,2003,stunting_percent,income,Poorest,0.35
+C,Kenya,2005,stunting_percent,income,Poorest,0.4
+C,Kenya,2009,stunting_percent,income,Poorest,0.35
+C,Kenya,2014,stunting_percent,income,Poorest,0.25
+C,Kenya,2014,wasting_percent,income,Poorest,0.042
+C,Kenya,2000,overweight_percent,income,Poorest,0.08
+C,Kenya,2003,overweight_percent,income,Poorest,0.06
+C,Kenya,2009,overweight_percent,income,Poorest,0.05
+C,Kenya,2014,overweight_percent,income,Poorest,0.04
+C,Kenya,2000,stunting_percent,income,Second poorest,0.4
+C,Kenya,2003,stunting_percent,income,Second poorest,0.35
+C,Kenya,2005,stunting_percent,income,Second poorest,0.4
+C,Kenya,2009,stunting_percent,income,Second poorest,0.35
+C,Kenya,2014,stunting_percent,income,Second poorest,0.25
+C,Kenya,2014,wasting_percent,income,Second poorest,0.042
+C,Kenya,2000,overweight_percent,income,Second poorest,0.08
+C,Kenya,2003,overweight_percent,income,Second poorest,0.06
+C,Kenya,2009,overweight_percent,income,Second poorest,0.05
+C,Kenya,2014,overweight_percent,income,Second poorest,0.04
+C,Kenya,2000,stunting_percent,income,Middle,0.4
+C,Kenya,2003,stunting_percent,income,Middle,0.35
+C,Kenya,2005,stunting_percent,income,Middle,0.4
+C,Kenya,2009,stunting_percent,income,Middle,0.35
+C,Kenya,2014,stunting_percent,income,Middle,0.25
+C,Kenya,2014,wasting_percent,income,Middle,0.042
+C,Kenya,2000,overweight_percent,income,Middle,0.08
+C,Kenya,2003,overweight_percent,income,Middle,0.06
+C,Kenya,2009,overweight_percent,income,Middle,0.05
+C,Kenya,2014,overweight_percent,income,Middle,0.04
+C,Kenya,2000,stunting_percent,income,Second wealthiest,0.4
+C,Kenya,2003,stunting_percent,income,Second wealthiest,0.35
+C,Kenya,2005,stunting_percent,income,Second wealthiest,0.4
+C,Kenya,2009,stunting_percent,income,Second wealthiest,0.35
+C,Kenya,2014,stunting_percent,income,Second wealthiest,0.25
+C,Kenya,2014,wasting_percent,income,Second wealthiest,0.042
+C,Kenya,2000,overweight_percent,income,Second wealthiest,0.08
+C,Kenya,2003,overweight_percent,income,Second wealthiest,0.06
+C,Kenya,2009,overweight_percent,income,Second wealthiest,0.05
+C,Kenya,2014,overweight_percent,income,Second wealthiest,0.04
+C,Kenya,2000,stunting_percent,income,Wealthiest,0.4
+C,Kenya,2003,stunting_percent,income,Wealthiest,0.35
+C,Kenya,2005,stunting_percent,income,Wealthiest,0.4
+C,Kenya,2009,stunting_percent,income,Wealthiest,0.35
+C,Kenya,2014,stunting_percent,income,Wealthiest,0.25
+C,Kenya,2014,wasting_percent,income,Wealthiest,0.042
+C,Kenya,2000,overweight_percent,income,Wealthiest,0.08
+C,Kenya,2003,overweight_percent,income,Wealthiest,0.06
+C,Kenya,2009,overweight_percent,income,Wealthiest,0.05
+C,Kenya,2014,overweight_percent,income,Wealthiest,0.04
+D,Kenya,2000,stunting_percent,gender,Male,0.4
+D,Kenya,2003,stunting_percent,gender,Male,0.35
+D,Kenya,2005,stunting_percent,gender,Male,0.4
+D,Kenya,2009,stunting_percent,gender,Male,0.35
+D,Kenya,2014,stunting_percent,gender,Male,0.25
+D,Kenya,2014,wasting_percent,gender,Male,0.042
+D,Kenya,2000,overweight_percent,gender,Male,0.08
+D,Kenya,2003,overweight_percent,gender,Male,0.06
+D,Kenya,2009,overweight_percent,gender,Male,0.05
+D,Kenya,2014,overweight_percent,gender,Male,0.04
+D,Kenya,2000,stunting_percent,gender,Female,0.4
+D,Kenya,2003,stunting_percent,gender,Female,0.35
+D,Kenya,2005,stunting_percent,gender,Female,0.4
+D,Kenya,2009,stunting_percent,gender,Female,0.35
+D,Kenya,2014,stunting_percent,gender,Female,0.25
+D,Kenya,2014,wasting_percent,gender,Female,0.042
+D,Kenya,2000,overweight_percent,gender,Female,0.08
+D,Kenya,2003,overweight_percent,gender,Female,0.06
+D,Kenya,2009,overweight_percent,gender,Female,0.05
+D,Kenya,2014,overweight_percent,gender,Female,0.04
+E,Kenya,2000,stunting_percent,location,Urban,0.4
+E,Kenya,2003,stunting_percent,location,Urban,0.35
+E,Kenya,2005,stunting_percent,location,Urban,0.4
+E,Kenya,2009,stunting_percent,location,Urban,0.35
+E,Kenya,2014,stunting_percent,location,Urban,0.25
+E,Kenya,2014,wasting_percent,location,Urban,0.042
+E,Kenya,2000,overweight_percent,location,Urban,0.08
+E,Kenya,2003,overweight_percent,location,Urban,0.06
+E,Kenya,2009,overweight_percent,location,Urban,0.05
+E,Kenya,2014,overweight_percent,location,Urban,0.04
+E,Kenya,2000,stunting_percent,location,Rural,0.4
+E,Kenya,2003,stunting_percent,location,Rural,0.35
+E,Kenya,2005,stunting_percent,location,Rural,0.4
+E,Kenya,2009,stunting_percent,location,Rural,0.35
+E,Kenya,2014,stunting_percent,location,Rural,0.25
+E,Kenya,2014,wasting_percent,location,Rural,0.042
+E,Kenya,2000,overweight_percent,location,Rural,0.08
+E,Kenya,2003,overweight_percent,location,Rural,0.06
+E,Kenya,2009,overweight_percent,location,Rural,0.05
+E,Kenya,2014,overweight_percent,location,Rural,0.04
+F,Kenya,2018,coexistence,all,"Not wasting, stunting, or overweight",0.679
+F,Kenya,2018,coexistence,all,Wasting and stunting,0.02
+F,Kenya,2018,coexistence,all,Stunting and overweight,0.02
+F,Kenya,2018,coexistence,all,Wasting alone,0.02
+F,Kenya,2018,coexistence,all,Stunting alone,0.02
+F,Kenya,2018,coexistence,all,Overweight alone,0.02
+G,Kenya,2000,adolescent_obesity,gender,Male,0.01
+G,Kenya,2002,adolescent_obesity,gender,Male,0.02
+G,Kenya,2004,adolescent_obesity,gender,Male,0.03
+G,Kenya,2006,adolescent_obesity,gender,Male,0.04
+G,Kenya,2008,adolescent_obesity,gender,Male,0.05
+G,Kenya,2010,adolescent_obesity,gender,Male,0.06
+G,Kenya,2012,adolescent_obesity,gender,Male,0.07
+G,Kenya,2016,adolescent_obesity,gender,Male,0.08
+G,Kenya,2000,adolescent_obesity,gender,Female,0.01
+G,Kenya,2002,adolescent_obesity,gender,Female,0.02
+G,Kenya,2004,adolescent_obesity,gender,Female,0.03
+G,Kenya,2006,adolescent_obesity,gender,Female,0.04
+G,Kenya,2008,adolescent_obesity,gender,Female,0.05
+G,Kenya,2010,adolescent_obesity,gender,Female,0.06
+G,Kenya,2012,adolescent_obesity,gender,Female,0.07
+G,Kenya,2016,adolescent_obesity,gender,Female,0.08
+H,Kenya,2000,adult_oveweight,gender,Male,0.01
+H,Kenya,2002,adult_oveweight,gender,Male,0.02
+H,Kenya,2004,adult_oveweight,gender,Male,0.03
+H,Kenya,2006,adult_oveweight,gender,Male,0.04
+H,Kenya,2008,adult_oveweight,gender,Male,0.05
+H,Kenya,2010,adult_oveweight,gender,Male,0.06
+H,Kenya,2012,adult_oveweight,gender,Male,0.07
+H,Kenya,2016,adult_oveweight,gender,Male,0.08
+H,Kenya,2000,adult_oveweight,gender,Female,0.01
+H,Kenya,2002,adult_oveweight,gender,Female,0.02
+H,Kenya,2004,adult_oveweight,gender,Female,0.03
+H,Kenya,2006,adult_oveweight,gender,Female,0.04
+H,Kenya,2008,adult_oveweight,gender,Female,0.05
+H,Kenya,2010,adult_oveweight,gender,Female,0.06
+H,Kenya,2012,adult_oveweight,gender,Female,0.07
+H,Kenya,2016,adult_oveweight,gender,Female,0.08
+H,Kenya,2000,adult_obesity,gender,Male,0.01
+H,Kenya,2002,adult_obesity,gender,Male,0.02
+H,Kenya,2004,adult_obesity,gender,Male,0.03
+H,Kenya,2006,adult_obesity,gender,Male,0.04
+H,Kenya,2008,adult_obesity,gender,Male,0.05
+H,Kenya,2010,adult_obesity,gender,Male,0.06
+H,Kenya,2012,adult_obesity,gender,Male,0.07
+H,Kenya,2016,adult_obesity,gender,Male,0.08
+H,Kenya,2000,adult_obesity,gender,Female,0.01
+H,Kenya,2002,adult_obesity,gender,Female,0.02
+H,Kenya,2004,adult_obesity,gender,Female,0.03
+H,Kenya,2006,adult_obesity,gender,Female,0.04
+H,Kenya,2008,adult_obesity,gender,Female,0.05
+H,Kenya,2010,adult_obesity,gender,Female,0.06
+H,Kenya,2012,adult_obesity,gender,Female,0.07
+H,Kenya,2016,adult_obesity,gender,Female,0.08
+H,Kenya,2000,adult_diabetes,gender,Male,0.01
+H,Kenya,2002,adult_diabetes,gender,Male,0.02
+H,Kenya,2004,adult_diabetes,gender,Male,0.03
+H,Kenya,2006,adult_diabetes,gender,Male,0.04
+H,Kenya,2008,adult_diabetes,gender,Male,0.05
+H,Kenya,2010,adult_diabetes,gender,Male,0.06
+H,Kenya,2012,adult_diabetes,gender,Male,0.07
+H,Kenya,2016,adult_diabetes,gender,Male,0.08
+H,Kenya,2000,adult_diabetes,gender,Female,0.01
+H,Kenya,2002,adult_diabetes,gender,Female,0.02
+H,Kenya,2004,adult_diabetes,gender,Female,0.03
+H,Kenya,2006,adult_diabetes,gender,Female,0.04
+H,Kenya,2008,adult_diabetes,gender,Female,0.05
+H,Kenya,2010,adult_diabetes,gender,Female,0.06
+H,Kenya,2012,adult_diabetes,gender,Female,0.07
+H,Kenya,2016,adult_diabetes,gender,Female,0.08
+I,Kenya,2000,adult_blood_pressure,gender,Male,0.01
+I,Kenya,2002,adult_blood_pressure,gender,Male,0.02
+I,Kenya,2004,adult_blood_pressure,gender,Male,0.03
+I,Kenya,2006,adult_blood_pressure,gender,Male,0.04
+I,Kenya,2008,adult_blood_pressure,gender,Male,0.05
+I,Kenya,2010,adult_blood_pressure,gender,Male,0.06
+I,Kenya,2012,adult_blood_pressure,gender,Male,0.07
+I,Kenya,2016,adult_blood_pressure,gender,Male,0.08
+I,Kenya,2000,adult_blood_pressure,gender,Female,0.01
+I,Kenya,2002,adult_blood_pressure,gender,Female,0.02
+I,Kenya,2004,adult_blood_pressure,gender,Female,0.03
+I,Kenya,2006,adult_blood_pressure,gender,Female,0.04
+I,Kenya,2008,adult_blood_pressure,gender,Female,0.05
+I,Kenya,2010,adult_blood_pressure,gender,Female,0.06
+I,Kenya,2012,adult_blood_pressure,gender,Female,0.07
+I,Kenya,2016,adult_blood_pressure,gender,Female,0.08
+I,Kenya,2000,adult_sodium,all,,0.01
+I,Kenya,2002,adult_sodium,all,,0.02
+I,Kenya,2004,adult_sodium,all,,0.03
+I,Kenya,2006,adult_sodium,all,,0.04
+I,Kenya,2008,adult_sodium,all,,0.05
+I,Kenya,2010,adult_sodium,all,,0.06
+I,Kenya,2012,adult_sodium,all,,0.07
+I,Kenya,2016,adult_sodium,all,,0.08
+I,Kenya,2000,adult_anaemia,gender,Male,0.01
+I,Kenya,2002,adult_anaemia,gender,Male,0.02
+I,Kenya,2004,adult_anaemia,gender,Male,0.03
+I,Kenya,2006,adult_anaemia,gender,Male,0.04
+I,Kenya,2008,adult_anaemia,gender,Male,0.05
+I,Kenya,2010,adult_anaemia,gender,Male,0.06
+I,Kenya,2012,adult_anaemia,gender,Male,0.07
+I,Kenya,2016,adult_anaemia,gender,Male,0.08
+I,Kenya,2000,adult_anaemia,gender,Female,0.01
+I,Kenya,2002,adult_anaemia,gender,Female,0.02
+I,Kenya,2004,adult_anaemia,gender,Female,0.03
+I,Kenya,2006,adult_anaemia,gender,Female,0.04
+I,Kenya,2008,adult_anaemia,gender,Female,0.05
+I,Kenya,2010,adult_anaemia,gender,Female,0.06
+I,Kenya,2012,adult_anaemia,gender,Female,0.07
+I,Kenya,2016,adult_anaemia,gender,Female,0.08
+J,Kenya,2018,early_initiation,location,Urban,1
+J,Kenya,2018,exclusive_breastfeeding,location,Urban,2
+J,Kenya,2018,solid_foods,location,Urban,3
+J,Kenya,2018,minimum_meal,location,Urban,4
+J,Kenya,2018,minimum_diet_diversity,location,Urban,5
+J,Kenya,2018,minimum_accept_diet,location,Urban,6
+J,Kenya,2018,continued_breastfeeding,location,Urban,7
+J,Kenya,2018,continued_breastfeeding_1yr,location,Urban,8
+J,Kenya,2018,continued_breastfeeding_2yr,location,Urban,9
+J,Kenya,2018,early_initiation,location,Rural,1
+J,Kenya,2018,exclusive_breastfeeding,location,Rural,2
+J,Kenya,2018,solid_foods,location,Rural,3
+J,Kenya,2018,minimum_meal,location,Rural,4
+J,Kenya,2018,minimum_diet_diversity,location,Rural,5
+J,Kenya,2018,minimum_accept_diet,location,Rural,6
+J,Kenya,2018,continued_breastfeeding,location,Rural,7
+J,Kenya,2018,continued_breastfeeding_1yr,location,Rural,8
+J,Kenya,2018,continued_breastfeeding_2yr,location,Rural,9
+K,Kenya,2018,early_initiation,income,Poorest,1
+K,Kenya,2018,exclusive_breastfeeding,income,Poorest,2
+K,Kenya,2018,solid_foods,income,Poorest,3
+K,Kenya,2018,minimum_meal,income,Poorest,4
+K,Kenya,2018,minimum_diet_diversity,income,Poorest,5
+K,Kenya,2018,minimum_accept_diet,income,Poorest,6
+K,Kenya,2018,continued_breastfeeding,income,Poorest,7
+K,Kenya,2018,continued_breastfeeding_1yr,income,Poorest,8
+K,Kenya,2018,continued_breastfeeding_2yr,income,Poorest,9
+K,Kenya,2018,early_initiation,income,Second poorest,1
+K,Kenya,2018,exclusive_breastfeeding,income,Second poorest,2
+K,Kenya,2018,solid_foods,income,Second poorest,3
+K,Kenya,2018,minimum_meal,income,Second poorest,4
+K,Kenya,2018,minimum_diet_diversity,income,Second poorest,5
+K,Kenya,2018,minimum_accept_diet,income,Second poorest,6
+K,Kenya,2018,continued_breastfeeding,income,Second poorest,7
+K,Kenya,2018,continued_breastfeeding_1yr,income,Second poorest,8
+K,Kenya,2018,continued_breastfeeding_2yr,income,Second poorest,9
+K,Kenya,2018,early_initiation,income,Middle,1
+K,Kenya,2018,exclusive_breastfeeding,income,Middle,2
+K,Kenya,2018,solid_foods,income,Middle,3
+K,Kenya,2018,minimum_meal,income,Middle,4
+K,Kenya,2018,minimum_diet_diversity,income,Middle,5
+K,Kenya,2018,minimum_accept_diet,income,Middle,6
+K,Kenya,2018,continued_breastfeeding,income,Middle,7
+K,Kenya,2018,continued_breastfeeding_1yr,income,Middle,8
+K,Kenya,2018,continued_breastfeeding_2yr,income,Middle,9
+K,Kenya,2018,early_initiation,income,Second wealthiest,1
+K,Kenya,2018,exclusive_breastfeeding,income,Second wealthiest,2
+K,Kenya,2018,solid_foods,income,Second wealthiest,3
+K,Kenya,2018,minimum_meal,income,Second wealthiest,4
+K,Kenya,2018,minimum_diet_diversity,income,Second wealthiest,5
+K,Kenya,2018,minimum_accept_diet,income,Second wealthiest,6
+K,Kenya,2018,continued_breastfeeding,income,Second wealthiest,7
+K,Kenya,2018,continued_breastfeeding_1yr,income,Second wealthiest,8
+K,Kenya,2018,continued_breastfeeding_2yr,income,Second wealthiest,9
+K,Kenya,2018,early_initiation,income,Wealthiest,1
+K,Kenya,2018,exclusive_breastfeeding,income,Wealthiest,2
+K,Kenya,2018,solid_foods,income,Wealthiest,3
+K,Kenya,2018,minimum_meal,income,Wealthiest,4
+K,Kenya,2018,minimum_diet_diversity,income,Wealthiest,5
+K,Kenya,2018,minimum_accept_diet,income,Wealthiest,6
+K,Kenya,2018,continued_breastfeeding,income,Wealthiest,7
+K,Kenya,2018,continued_breastfeeding_1yr,income,Wealthiest,8
+K,Kenya,2018,continued_breastfeeding_2yr,income,Wealthiest,9
+L,Kenya,2014,diarrhea_zinc,all,,0.081
+L,Kenya,2014,diarrhea_zinc,gender,Male,
+L,Kenya,2014,diarrhea_zinc,gender,Female,
+L,Kenya,2014,vit_a,all,,0.717
+L,Kenya,2014,vit_a,gender,Male,0.716
+L,Kenya,2014,vit_a,gender,Female,0.719
+L,Kenya,2014,iron_supp,all,,0.027
+L,Kenya,2014,iron_supp,gender,Male,0.026
+L,Kenya,2014,iron_supp,gender,Female,0.027
+L,Kenya,2014,iron_and_folic,all,,0.694
+L,Kenya,2014,iron_and_folic,gender,Male,
+L,Kenya,2014,iron_and_folic,gender,Female,
+L,Kenya,2014,iodised_salt,all,,0.995
+L,Kenya,2014,iodised_salt,gender,Male,
+L,Kenya,2014,iodised_salt,gender,Female,
+M,Kenya,2016,calcium,income,poorest,
+M,Kenya,2016,eggs,income,poorest,
+M,Kenya,2016,fish ,income,poorest,
+M,Kenya,2016,fruit ,income,poorest,
+M,Kenya,2016,legumes,income,poorest,
+M,Kenya,2016,milk,income,poorest,
+M,Kenya,2016,nuts,income,poorest,
+M,Kenya,2016,omega 3,income,poorest,
+M,Kenya,2016,poultry,income,poorest,
+M,Kenya,2016,processed meat,income,poorest,
+M,Kenya,2016,read meat,income,poorest,
+M,Kenya,2016,refined grains ,income,poorest,
+M,Kenya,2016,sodium ,income,poorest,
+M,Kenya,2016,SSD,income,poorest,
+M,Kenya,2016,starchy veg,income,poorest,
+M,Kenya,2016,total daity ,income,poorest,
+M,Kenya,2016,total sugar ,income,poorest,
+M,Kenya,2016,veg,income,poorest,
+M,Kenya,2016,whole grains,income,poorest,
+M,Kenya,2016,polyunsaturated fats,income,poorest,
+M,Kenya,2016,sat fat,income,poorest,
+M,Kenya,2016,transfat,income,poorest,
+M,Kenya,2016,calcium,income,lower-middle,
+M,Kenya,2016,eggs,income,lower-middle,
+M,Kenya,2016,fish ,income,lower-middle,
+M,Kenya,2016,fruit ,income,lower-middle,
+M,Kenya,2016,legumes,income,lower-middle,
+M,Kenya,2016,milk,income,lower-middle,
+M,Kenya,2016,nuts,income,lower-middle,
+M,Kenya,2016,omega 3,income,lower-middle,
+M,Kenya,2016,poultry,income,lower-middle,
+M,Kenya,2016,processed meat,income,lower-middle,
+M,Kenya,2016,read meat,income,lower-middle,
+M,Kenya,2016,refined grains ,income,lower-middle,
+M,Kenya,2016,sodium ,income,lower-middle,
+M,Kenya,2016,SSD,income,lower-middle,
+M,Kenya,2016,starchy veg,income,lower-middle,
+M,Kenya,2016,total daity ,income,lower-middle,
+M,Kenya,2016,total sugar ,income,lower-middle,
+M,Kenya,2016,veg,income,lower-middle,
+M,Kenya,2016,whole grains,income,lower-middle,
+M,Kenya,2016,polyunsaturated fats,income,lower-middle,
+M,Kenya,2016,sat fat,income,lower-middle,
+M,Kenya,2016,transfat,income,lower-middle,
+M,Kenya,2016,calcium,income,upper_middle,
+M,Kenya,2016,eggs,income,upper_middle,
+M,Kenya,2016,fish ,income,upper_middle,
+M,Kenya,2016,fruit ,income,upper_middle,
+M,Kenya,2016,legumes,income,upper_middle,
+M,Kenya,2016,milk,income,upper_middle,
+M,Kenya,2016,nuts,income,upper_middle,
+M,Kenya,2016,omega 3,income,upper_middle,
+M,Kenya,2016,poultry,income,upper_middle,
+M,Kenya,2016,processed meat,income,upper_middle,
+M,Kenya,2016,read meat,income,upper_middle,
+M,Kenya,2016,refined grains ,income,upper_middle,
+M,Kenya,2016,sodium ,income,upper_middle,
+M,Kenya,2016,SSD,income,upper_middle,
+M,Kenya,2016,starchy veg,income,upper_middle,
+M,Kenya,2016,total daity ,income,upper_middle,
+M,Kenya,2016,total sugar ,income,upper_middle,
+M,Kenya,2016,veg,income,upper_middle,
+M,Kenya,2016,whole grains,income,upper_middle,
+M,Kenya,2016,polyunsaturated fats,income,upper_middle,
+M,Kenya,2016,sat fat,income,upper_middle,
+M,Kenya,2016,transfat,income,upper_middle,
+M,Kenya,2016,calcium,income,upper,
+M,Kenya,2016,eggs,income,upper,
+M,Kenya,2016,fish ,income,upper,
+M,Kenya,2016,fruit ,income,upper,
+M,Kenya,2016,legumes,income,upper,
+M,Kenya,2016,milk,income,upper,
+M,Kenya,2016,nuts,income,upper,
+M,Kenya,2016,omega 3,income,upper,
+M,Kenya,2016,poultry,income,upper,
+M,Kenya,2016,processed meat,income,upper,
+M,Kenya,2016,read meat,income,upper,
+M,Kenya,2016,refined grains ,income,upper,
+M,Kenya,2016,sodium ,income,upper,
+M,Kenya,2016,SSD,income,upper,
+M,Kenya,2016,starchy veg,income,upper,
+M,Kenya,2016,total daity ,income,upper,
+M,Kenya,2016,total sugar ,income,upper,
+M,Kenya,2016,veg,income,upper,
+M,Kenya,2016,whole grains,income,upper,
+M,Kenya,2016,polyunsaturated fats,income,upper,
+M,Kenya,2016,sat fat,income,upper,
+M,Kenya,2016,transfat,income,upper,
+N,Kenya,2000,whole_grains,illness,colon_rectum,
+N,Kenya,2000,whole_grains,illness,diabetes_mellitus,
+N,Kenya,2000,whole_grains,illness,ischemic_stroke,
+N,Kenya,2000,whole_grains,illness,inter_hem,
+N,Kenya,2000,whole_grains,illness,ischemic_heart,
+N,Kenya,2000,whole_grains,illness,others,
+N,Kenya,2000,vegetables,illness,colon_rectum,
+N,Kenya,2000,vegetables,illness,diabetes_mellitus,
+N,Kenya,2000,vegetables,illness,ischemic_stroke,
+N,Kenya,2000,vegetables,illness,inter_hem,
+N,Kenya,2000,vegetables,illness,ischemic_heart,
+N,Kenya,2000,vegetables,illness,others,
+N,Kenya,2000,omega_3,illness,colon_rectum,
+N,Kenya,2000,omega_3,illness,diabetes_mellitus,
+N,Kenya,2000,omega_3,illness,ischemic_stroke,
+N,Kenya,2000,omega_3,illness,inter_hem,
+N,Kenya,2000,omega_3,illness,ischemic_heart,
+N,Kenya,2000,omega_3,illness,others,
+N,Kenya,2000,poly_unsat_fat,illness,colon_rectum,
+N,Kenya,2000,poly_unsat_fat,illness,diabetes_mellitus,
+N,Kenya,2000,poly_unsat_fat,illness,ischemic_stroke,
+N,Kenya,2000,poly_unsat_fat,illness,inter_hem,
+N,Kenya,2000,poly_unsat_fat,illness,ischemic_heart,
+N,Kenya,2000,poly_unsat_fat,illness,others,
+N,Kenya,2000,nuts_seeds,illness,colon_rectum,
+N,Kenya,2000,nuts_seeds,illness,diabetes_mellitus,
+N,Kenya,2000,nuts_seeds,illness,ischemic_stroke,
+N,Kenya,2000,nuts_seeds,illness,inter_hem,
+N,Kenya,2000,nuts_seeds,illness,ischemic_heart,
+N,Kenya,2000,nuts_seeds,illness,others,
+N,Kenya,2000,milk,illness,colon_rectum,
+N,Kenya,2000,milk,illness,diabetes_mellitus,
+N,Kenya,2000,milk,illness,ischemic_stroke,
+N,Kenya,2000,milk,illness,inter_hem,
+N,Kenya,2000,milk,illness,ischemic_heart,
+N,Kenya,2000,milk,illness,others,
+N,Kenya,2000,legumes,illness,colon_rectum,
+N,Kenya,2000,legumes,illness,diabetes_mellitus,
+N,Kenya,2000,legumes,illness,ischemic_stroke,
+N,Kenya,2000,legumes,illness,inter_hem,
+N,Kenya,2000,legumes,illness,ischemic_heart,
+N,Kenya,2000,legumes,illness,others,
+N,Kenya,2000,fruit,illness,colon_rectum,
+N,Kenya,2000,fruit,illness,diabetes_mellitus,
+N,Kenya,2000,fruit,illness,ischemic_stroke,
+N,Kenya,2000,fruit,illness,inter_hem,
+N,Kenya,2000,fruit,illness,ischemic_heart,
+N,Kenya,2000,fruit,illness,others,
+N,Kenya,2000,fibre,illness,colon_rectum,
+N,Kenya,2000,fibre,illness,diabetes_mellitus,
+N,Kenya,2000,fibre,illness,ischemic_stroke,
+N,Kenya,2000,fibre,illness,inter_hem,
+N,Kenya,2000,fibre,illness,ischemic_heart,
+N,Kenya,2000,fibre,illness,others,
+N,Kenya,2000,calcium,illness,colon_rectum,
+N,Kenya,2000,calcium,illness,diabetes_mellitus,
+N,Kenya,2000,calcium,illness,ischemic_stroke,
+N,Kenya,2000,calcium,illness,inter_hem,
+N,Kenya,2000,calcium,illness,ischemic_heart,
+N,Kenya,2000,calcium,illness,others,
+N,Kenya,2000,trans_fatty_acids,illness,colon_rectum,
+N,Kenya,2000,trans_fatty_acids,illness,diabetes_mellitus,
+N,Kenya,2000,trans_fatty_acids,illness,ischemic_stroke,
+N,Kenya,2000,trans_fatty_acids,illness,inter_hem,
+N,Kenya,2000,trans_fatty_acids,illness,ischemic_heart,
+N,Kenya,2000,trans_fatty_acids,illness,others,
+N,Kenya,2000,SSB,illness,colon_rectum,
+N,Kenya,2000,SSB,illness,diabetes_mellitus,
+N,Kenya,2000,SSB,illness,ischemic_stroke,
+N,Kenya,2000,SSB,illness,inter_hem,
+N,Kenya,2000,SSB,illness,ischemic_heart,
+N,Kenya,2000,SSB,illness,others,
+N,Kenya,2000,sodium,illness,colon_rectum,
+N,Kenya,2000,sodium,illness,diabetes_mellitus,
+N,Kenya,2000,sodium,illness,ischemic_stroke,
+N,Kenya,2000,sodium,illness,inter_hem,
+N,Kenya,2000,sodium,illness,ischemic_heart,
+N,Kenya,2000,sodium,illness,others,
+N,Kenya,2000,red meat,illness,colon_rectum,
+N,Kenya,2000,red meat,illness,diabetes_mellitus,
+N,Kenya,2000,red meat,illness,ischemic_stroke,
+N,Kenya,2000,red meat,illness,inter_hem,
+N,Kenya,2000,red meat,illness,ischemic_heart,
+N,Kenya,2000,red meat,illness,others,
+N,Kenya,2000,processed_meat,illness,colon_rectum,
+N,Kenya,2000,processed_meat,illness,diabetes_mellitus,
+N,Kenya,2000,processed_meat,illness,ischemic_stroke,
+N,Kenya,2000,processed_meat,illness,inter_hem,
+N,Kenya,2000,processed_meat,illness,ischemic_heart,
+N,Kenya,2000,processed_meat,illness,others,
+O,Kenya,2010,ODA_nutspecific_perceent,all,,0.15
+O,Kenya,2011,salt_leg,all,,Yes
+P,Kenya,2009,ODA_received ,all,,0.1
+P,Kenya,2010,ODA_received ,all,,1.1
+P,Kenya,2011,ODA_received ,all,,2.1
+P,Kenya,2012,ODA_received ,all,,3.1
+P,Kenya,2013,ODA_received ,all,,4.1
+P,Kenya,2014,ODA_received ,all,,5.1
+P,Kenya,2015,ODA_received ,all,,6.1
+P,Kenya,2009,ODA_specific,all,,0.1
+P,Kenya,2010,ODA_specific,all,,1.1
+P,Kenya,2011,ODA_specific,all,,2.1
+P,Kenya,2012,ODA_specific,all,,3.1
+P,Kenya,2013,ODA_specific,all,,4.1
+P,Kenya,2014,ODA_specific,all,,5.1
+P,Kenya,2015,ODA_specific,all,,6.1
+P,Kenya,2015,sugar_tax,all,,Yes
+P,Kenya,2016,multi_sec,all,,Yes
+Q,Kenya,2012,specific_nutrition_plan,all,,Yes
+Q,Kenya,2013,stunting_plan,all,,Yes
+Q,Kenya,2014,anaemia_plan,all,,Yes
+Q,Kenya,2015,LBW_plan,all,,no
+Q,Kenya,2016,child_overweight_plan,all,,Yes
+Q,Kenya,2017,EBF_plan,all,,Yes
+Q,Kenya,2018,Wastin_Plan,all,,Yes
+Q,Kenya,2019,sodium_plam,all,,Yes
+Q,Kenya,2020,blood_pressure_plan,all,,Yes
+Q,Kenya,2021,diabetes_plan,all,,Yes
+Q,Kenya,2022,overweight_adults_adoles_plan,all,,Yes
+R,Kenya,1997,190_percent,all,,22
+R,Kenya,1997,310_percent,all,,46
+R,Kenya,2005,190_percent,all,,34
+R,Kenya,2005,310_percent,all,,56
+R,Kenya,1990,GDP_capita_PPP,all,,2380
+R,Kenya,2000,GDP_capita_PPP,all,,2132
+R,Kenya,2010,GDP_capita_PPP,all,,2476
+R,Kenya,2016,GDP_capita_PPP,all,,2926
+R,Kenya,2011,u5mr,u5,,59
+R,Kenya,2012,u5mr,u5,,59
+R,Kenya,2013,u5mr,u5,,53
+R,Kenya,2014,u5mr,u5,,51
+R,Kenya,2015,u5mr,u5,,49
+R,Kenya,2017,gini,all,,49
+R,Kenya,2018,gini_rank,all,,131
+R,Kenya,2005,gini_year,all,,2005
+R,Kenya,2017,population,all,,2006
+R,Kenya,2017,u5_pop,u5,,49700
+R,Kenya,2017,urban_percent,urban,,70999
+R,Kenya,2017,65_years,65,,26
