@@ -113,7 +113,8 @@ dat = pd.read_csv("data.csv")
 for country in dataDictionary.keys():
     ctryDat = dat.loc[(dat.country == country)]
     dataDictionary[country]["country"] = country
-
+    dataDictionary[country]["country_class"] = indicator(ctryDat, "country_class")
+    dataDictionary[country]["burden_text"] = indicator(ctryDat, "burden_text")
     dataDictionary[country]["table1"][1] = [
         Paragraph(safeFormat(indicator(ctryDat, "under_5_stunting_track")), style=condStyle(indicator(ctryDat, "under_5_stunting_track"))),
         Paragraph(safeFormat(indicator(ctryDat, "under_5_wasting_track")), style=condStyle(indicator(ctryDat, "under_5_wasting_track"))),

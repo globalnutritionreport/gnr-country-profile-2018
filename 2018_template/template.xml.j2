@@ -32,17 +32,97 @@
 <text top="133" left="0" width="241" height="18" font="3"><b>Overview</b></text>
 
 <!-- Table 1 -->
-<text top="154" left="42" width="151" height="18" font="6"><b>Progress against global nutrition targets 2018</b></text>
-<!-- <image top="185" left="0" width="892" height="165" src="{{template_folder}}/footer.png"/> -->
-<table data="table1" top="207" left="54" widths="165,165,165,165,130" height="30"></table>
-<table data="table1a" top="257" left="125" widths="161,161,161,161" height="30"></table>
-<line x1="40" x2="40" y1="300" y2="330" on="1" off="0" color="#7DBEB3" width="2"></line>
-<text top="295" left="44" width="530" height="11" font="9"><b>Sources</b>:  UNICEF/WHO/World Bank Group Joint Child Malnutrition Estimates 2017, WHO 2017, Stevens GA et al 2013, and NCD Risk Factor Collaboration 2017.</text>
-<text top="306" left="44" width="585" height="11" font="9"><b>Notes</b>: Some targets are excluded from analysis as data needs further strengthening or methodological work before it can be used, these are: low birth weight, adolescent obesity,</text>
-<text top="317" left="44" width="557" height="11" font="9">hypertension and salt intake. See Global Nutrition Report 2018, Appendix 1 for more information. EBF: exclusive breastfeeding; NA: not available; WRA: women of reproductive age.</text>
+{% set top = 154 %}
+{% set left = 40 %}
+{% set right = 852 %}
+<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Progress against global nutrition targets 2018</b></text>
+<table data="table1" top="{{top+53}}" left="{{left+52}}" widths="165,165,165,165,130" height="30"></table>
+<image top="{{top+53}}" left="{{left+14}}" width="38" height="38" src="{{template_folder}}/stunting.png"/>
+<image top="{{top+53}}" left="{{left+14+(165*1)}}" width="38" height="38" src="{{template_folder}}/wasting.png"/>
+<image top="{{top+53}}" left="{{left+14+(165*2)}}" width="38" height="38" src="{{template_folder}}/overweight.png"/>
+<image top="{{top+53}}" left="{{left+14+(165*3)}}" width="38" height="38" src="{{template_folder}}/anaemia.png"/>
+<image top="{{top+53}}" left="{{left+14+(165*4)}}" width="38" height="38" src="{{template_folder}}/ebf.png"/>
+<table data="table1a" top="{{top+103}}" left="{{left+123}}" widths="161,161,161,161" height="30"></table>
+
+{% set top = top + 103 %}
+<image top="{{top}}" left="{{left+85+(161*0)}}" width="38" height="38" src="{{template_folder}}/obesity.png"/>
+<image top="{{top}}" left="{{left+85+(161*1)}}" width="38" height="38" src="{{template_folder}}/obesity.png"/>
+<image top="{{top}}" left="{{left+85+(161*2)}}"  width="38" height="38" src="{{template_folder}}/diabetes.png"/>
+<image top="{{top}}" left="{{left+85+(161*3)}}"  width="38" height="38" src="{{template_folder}}/diabetes.png"/>
+
+<text top="315" left="{{left}}" width="530" height="11" font="4"><b>Burden classification:</b> {{country_data.country}} is classified as {{country_data.country_class}}: {{country_data.burden_text}}</text>
+
+{% set top = top + 88 %}
+<line x1="{{left}}" x2="{{left}}" y1="{{top+5}}" y2="380" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top}}" left="{{left+4}}" width="530" height="11" font="9"><b>Sources</b>:  UNICEF/WHO/World Bank Group Joint Child Malnutrition Estimates 2017, WHO 2017, Stevens GA et al 2013, and NCD Risk Factor Collaboration 2017.</text>
+<text top="{{top+11}}" left="{{left+4}}" width="585" height="11" font="9"><b>Notes</b>: Some targets are excluded from analysis as data needs further strengthening or methodological work before it can be used, these are: low birth weight, adolescent obesity,</text>
+<text top="{{top+22}}" left="{{left+4}}" width="557" height="11" font="9">hypertension and salt intake. See Global Nutrition Report 2018, Appendix 1 for more information. EBF: exclusive breastfeeding; NA: not available; WRA: women of reproductive age.</text>
+
+<line x1="{{left}}" x2="{{right}}" y1="{{top+50}}" y2="{{top+50}}" width="4" color="#3F5467" on="1" off="0"></line>
 
 <!-- Row 2 -->
-<line x1="41" x2="851" y1="405" y2="405" width="4" color="#3F5467" on="1" off="0"></line>
+<text top="{{top+70}}" left="0" width="241" height="18" font="3"><b>Data</b></text>
+
+<!-- Charts 1, 2, and 3 -->
+{% set top = top + 91 %}
+<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Child (under 5) nutrition status</b></text>
+
+{% set top = top + 19 %}
+<image top="{{top}}" left="{{left}}" width="240" height="200" src="charts/{{country_data.country}}/c9a.png"/>
+<line x1="{{left+256}}" x2="{{left+256}}" y1="{{top}}" y2="{{top+200}}" on="1" off="0" color="#BFC9D3"></line>
+<image top="{{top}}" left="{{left+276}}" width="240" height="200" src="charts/{{country_data.country}}/c9b.png"/>
+<line x1="{{left+536}}" x2="{{left+536}}" y1="{{top}}" y2="{{top+200}}" on="1" off="0" color="#BFC9D3"></line>
+<image top="{{top}}" left="{{left+556}}" width="240" height="200" src="charts/{{country_data.country}}/c9c.png"/>
+
+{% set top = top + 216 %}
+<line x1="{{left}}" x2="{{left}}" y1="{{top+5}}" y2="{{top+11}}" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></text>
+
+<line x1="{{left}}" x2="{{right}}" y1="{{top+21}}" y2="{{top+21}}" width="1" color="#3F5467" on="1" off="0"></line>
+
+<!-- Charts 4, 5, and 6 -->
+{% set top = top + 26 %}
+<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Disaggregation by income</b></text>
+
+{% set top = top + 29 %}
+<image top="{{top}}" left="{{left}}" width="240" height="200" src="charts/{{country_data.country}}/c9a.png"/>
+<line x1="{{left+256}}" x2="{{left+256}}" y1="{{top}}" y2="{{top+200}}" on="1" off="0" color="#BFC9D3"></line>
+<image top="{{top}}" left="{{left+276}}" width="240" height="200" src="charts/{{country_data.country}}/c9b.png"/>
+<line x1="{{left+536}}" x2="{{left+536}}" y1="{{top}}" y2="{{top+200}}" on="1" off="0" color="#BFC9D3"></line>
+<image top="{{top}}" left="{{left+556}}" width="240" height="200" src="charts/{{country_data.country}}/c9c.png"/>
+
+{% set top = top + 216 %}
+<line x1="{{left}}" x2="{{left}}" y1="{{top+5}}" y2="{{top+11}}" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></text>
+
+<line x1="{{left}}" x2="{{right}}" y1="{{top+21}}" y2="{{top+21}}" width="1" color="#3F5467" on="1" off="0"></line>
+
+<!-- Charts 7, 8, and 9 -->
+{% set top = top + 26 %}
+<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Disaggregation by gender</b></text>
+
+{% set top = top + 29 %}
+<image top="{{top}}" left="{{left}}" width="240" height="200" src="charts/{{country_data.country}}/c9a.png"/>
+<line x1="{{left+256}}" x2="{{left+256}}" y1="{{top}}" y2="{{top+200}}" on="1" off="0" color="#BFC9D3"></line>
+<image top="{{top}}" left="{{left+276}}" width="240" height="200" src="charts/{{country_data.country}}/c9b.png"/>
+<line x1="{{left+536}}" x2="{{left+536}}" y1="{{top}}" y2="{{top+200}}" on="1" off="0" color="#BFC9D3"></line>
+<image top="{{top}}" left="{{left+556}}" width="240" height="200" src="charts/{{country_data.country}}/c9c.png"/>
+
+{% set top = top + 216 %}
+<line x1="{{left}}" x2="{{left}}" y1="{{top+5}}" y2="{{top+11}}" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></text>
+</page>
+<page number="2" position="absolute" top="0" left="0" height="1262" width="892">
+	<fontspec id="24" size="10" family="Times" color="#575756"/>
+	<fontspec id="25" size="10" family="Times" color="#575756"/>
+
+<image top="0" left="0" width="892" height="84" src="{{template_folder}}/banner_p2.png"/>
+
+<text top="-10" left="39" width="362" height="72" font="2" shrink="True">{{country_data.country}}</text>
+
+<!--Row 1-->
+{% set top = 91 %}
+<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Disaggregation by location</b></text>
 <!-- Row X
 <text top="133" left="0" width="241" height="18" font="3"><b>Economics and demography</b></text>
 
