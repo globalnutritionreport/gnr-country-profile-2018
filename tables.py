@@ -14,6 +14,9 @@ from reportlab.lib.fonts import addMapping
 
 blue = "#3D5163"
 grey = "#C7D4E0"
+orange = "#F68516"
+light_blue = "#82C6BA"
+lighter_blue = "#BFDFD4"
 
 pdfmetrics.registerFont(TTFont('Arial', 'fonts/Arial.ttf'))
 pdfmetrics.registerFont(TTFont('Arial-Bold', 'fonts/Arial-Bold.ttf'))
@@ -25,6 +28,20 @@ addMapping('Arial', 1, 0, 'Arial-Bold')
 style = getSampleStyleSheet()
 blueParaBold = ParagraphStyle('blueParaBold', parent=style['BodyText'], textColor=blue, alignment=TA_LEFT, fontName="Arial-Bold")
 blueParaStyle = ParagraphStyle('blueParaStyle', parent=style['BodyText'], textColor=blue, alignment=TA_LEFT)
+offCourseStyle = ParagraphStyle('offCourseStyle', parent=style['BodyText'], textColor=orange, alignment=TA_LEFT)
+progressStyle = ParagraphStyle('progressStyle', parent=style['BodyText'], textColor=lighter_blue, alignment=TA_LEFT)
+onCourseStyle = ParagraphStyle('onCourseStyle', parent=style['BodyText'], textColor=light_blue, alignment=TA_LEFT)
+
+
+def condStyle(progress):
+    if progress == "On course":
+        return onCourseStyle
+    elif progress == "No progress or worsening":
+        return offCourseStyle
+    elif progress == "Some progress":
+        return progressStyle
+    else:
+        return blueParaStyle
 
 dataDictionary = {"Kenya": {}}
 dataDictionary["Kenya"]["country"] = "Kenya"
@@ -98,18 +115,18 @@ for country in dataDictionary.keys():
     dataDictionary[country]["country"] = country
 
     dataDictionary[country]["table1"][1] = [
-        safeFormat(indicator(ctryDat, "under_5_stunting_track")),
-        safeFormat(indicator(ctryDat, "under_5_wasting_track")),
-        safeFormat(indicator(ctryDat, "under_5_overweight_track")),
-        safeFormat(indicator(ctryDat, "wra_anaemia_track")),
-        safeFormat(indicator(ctryDat, "ebf_track")),
+        Paragraph(safeFormat(indicator(ctryDat, "under_5_stunting_track")), style=condStyle(indicator(ctryDat, "under_5_stunting_track"))),
+        Paragraph(safeFormat(indicator(ctryDat, "under_5_wasting_track")), style=condStyle(indicator(ctryDat, "under_5_wasting_track"))),
+        Paragraph(safeFormat(indicator(ctryDat, "under_5_overweight_track")), style=condStyle(indicator(ctryDat, "under_5_overweight_track"))),
+        Paragraph(safeFormat(indicator(ctryDat, "wra_anaemia_track")), style=condStyle(indicator(ctryDat, "wra_anaemia_track"))),
+        Paragraph(safeFormat(indicator(ctryDat, "ebf_track")), style=condStyle(indicator(ctryDat, "ebf_track"))),
     ]
 
     dataDictionary[country]["table1a"][1] = [
-        safeFormat(indicator(ctryDat, "adult_fem_obesity_track")),
-        safeFormat(indicator(ctryDat, "adult_mal_obesity_track")),
-        safeFormat(indicator(ctryDat, "adult_fem_diabetes_track")),
-        safeFormat(indicator(ctryDat, "adult_mal_diabetes_track"))
+        Paragraph(safeFormat(indicator(ctryDat, "adult_fem_obesity_track")), style=condStyle(indicator(ctryDat, "adult_fem_obesity_track"))),
+        Paragraph(safeFormat(indicator(ctryDat, "adult_mal_obesity_track")), style=condStyle(indicator(ctryDat, "adult_mal_obesity_track"))),
+        Paragraph(safeFormat(indicator(ctryDat, "adult_fem_diabetes_track")), style=condStyle(indicator(ctryDat, "adult_fem_diabetes_track"))),
+        Paragraph(safeFormat(indicator(ctryDat, "adult_mal_diabetes_track")), style=condStyle(indicator(ctryDat, "adult_mal_diabetes_track"))),
     ]
 
     dataDictionary[country]["tablea"][1] = [

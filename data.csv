@@ -1,13 +1,13 @@
 component,country,year,indicator,disaggregation,disagg.value,value
-A,Kenya,2018,under_5_stunting_track,all,,On track
-A,Kenya,2018,under_5_wasting_track,all,,On track
-A,Kenya,2018,under_5_overweight_track,all,,On track
+A,Kenya,2018,under_5_stunting_track,all,,On course
+A,Kenya,2018,under_5_wasting_track,all,,On course
+A,Kenya,2018,under_5_overweight_track,all,,On course
 A,Kenya,2018,wra_anaemia_track,all,,Some progress
-A,Kenya,2018,ebf_track,all,,On track
-A,Kenya,2018,adult_fem_obesity_track,all,,Off track
-A,Kenya,2018,adult_mal_obesity_track,all,,Off track
-A,Kenya,2018,adult_fem_diabetes_track,all,,Off track
-A,Kenya,2018,adult_mal_diabetes_track,all,,Off track
+A,Kenya,2018,ebf_track,all,,On course
+A,Kenya,2018,adult_fem_obesity_track,all,,No progress or worsening
+A,Kenya,2018,adult_mal_obesity_track,all,,No progress or worsening
+A,Kenya,2018,adult_fem_diabetes_track,all,,No progress or worsening
+A,Kenya,2018,adult_mal_diabetes_track,all,,No progress or worsening
 B,Kenya,2000,stunting_percent,all,,0.4
 B,Kenya,2003,stunting_percent,all,,0.35
 B,Kenya,2005,stunting_percent,all,,0.4
