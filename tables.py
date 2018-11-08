@@ -105,14 +105,27 @@ dataDictionary["Kenya"]["table4"] = [
     ["Yes", "Yes", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes"]
 ]
 
-dataDictionary["Kenya"]["table5"] = [[Paragraph("Gini index score<super>1</super>", style=blueParaBold), Paragraph("Gini index rank<super>2</super>", style=blueParaBold), "Year"], [51, 125, 2011]]
+dataDictionary["Kenya"]["table5"] = [
+    [Paragraph("Gini index score<super>1</super>", style=blueParaBold), Paragraph("Gini index rank<super>2</super>", style=blueParaBold), "Year"], [51, 125, 2011]
+]
 
 dataDictionary["Kenya"]["table6"] = [
     ["Population (000)", format(12428, ",d"), 2015],
     ["Under-5 population (000)", format(1935, ",d"), 2015],
     ["Urban (%)", format(20, ",d"), 2015],
     [">65 years (%)", format(5, ",d"), 2015],
-    ]
+]
+
+dataDictionary["Kenya"]["table7"] = [
+    [Paragraph("Early childbearing: births by age 18 (%)<super>1</super>", style=blueParaBold), "33", "2011"],
+    [Paragraph("Gender Inequality Index (score*)<super>2</super>", style=blueParaBold), "0.529", "2013"],
+    [Paragraph("Gender Inequality Index (country rank)<super>2</super>", style=blueParaBold), "155", "2013"]
+]
+dataDictionary["Kenya"]["table8"] = [
+    ["Physicians", "0.117", "2005"],
+    ["Nurses and midwives", "1.306", "2005"],
+    ["Community health workers", "0.188", "2005"]
+]
 
 # dataDictionary["Kenya"] = copy.deepcopy(dataDictionary["Kenya"])
 
@@ -130,14 +143,17 @@ def safeFormat(x, commas=False, precision=0, percent=False):
     elif x in missingVals:
         return "NA"
     else:
+        if percent:
+            try:
+                x = float(x) * 100
+            except ValueError:
+                return replaceDash(x)
         if not isinstance(x, numbers.Number):
             return replaceDash(x)
         if precision == 0:
             x = int(round(x, precision))
         else:
             x = round(x, precision)
-        if percent:
-            x = x * 100
         if commas:
             return format(x, ",")
         else:
@@ -236,6 +252,20 @@ for country in dataDictionary.keys():
     dataDictionary[country]["table6"][3][1] = safeFormat(indicator(ctryDat, "65_years"), True)
     dataDictionary[country]["table6"][3][2] = safeFormat(year(ctryDat, "65_years"))
 
+    dataDictionary[country]["table7"][0][1] = safeFormat(indicator(ctryDat, "early_childbearing_prev"))
+    dataDictionary[country]["table7"][0][2] = safeFormat(year(ctryDat, "early_childbearing_prev"))
+    dataDictionary[country]["table7"][1][1] = safeFormat(indicator(ctryDat, "gender_inequality_score"), False, 3)
+    dataDictionary[country]["table7"][1][2] = safeFormat(year(ctryDat, "gender_inequality_score"))
+    dataDictionary[country]["table7"][2][1] = safeFormat(indicator(ctryDat, "gender_inequality_rank"))
+    dataDictionary[country]["table7"][2][2] = safeFormat(year(ctryDat, "gender_inequality_rank"))
+
+    dataDictionary[country]["table8"][0][1] = safeFormat(indicator(ctryDat, "physicians"), False, 3)
+    dataDictionary[country]["table8"][0][2] = safeFormat(year(ctryDat, "physicians"))
+    dataDictionary[country]["table8"][1][1] = safeFormat(indicator(ctryDat, "nurses_and_midwives"), False, 3)
+    dataDictionary[country]["table8"][1][2] = safeFormat(year(ctryDat, "nurses_and_midwives"))
+    dataDictionary[country]["table8"][2][1] = safeFormat(indicator(ctryDat, "community_health_workers"), False, 3)
+    dataDictionary[country]["table8"][2][2] = safeFormat(year(ctryDat, "community_health_workers"))
+
 generic_style = [
     ('TEXTCOLOR', (0, 0), (-1, -1), blue),
     ('BACKGROUND', (0, 0), (-1, -1), "white"),
@@ -256,7 +286,11 @@ tableStyles["table1"] = [
 tableStyles["table1a"] = tableStyles["table1"]
 tableStyles["table2"] = generic_style + [
     ('FONTNAME', (0, 0), (-1, 0), "Arial-Bold"),
-    ('LINEABOVE', (0, 1), (-1, 1), 1, blue)
+    ('LINEABOVE', (0, 1), (-1, 1), 1, blue),
+    ('LINEABOVE', (0, 2), (-1, 2), 1, grey),
+    ('LINEABOVE', (0, 3), (-1, 3), 1, grey),
+    ('LINEABOVE', (0, 4), (-1, 4), 1, grey),
+    ('LINEABOVE', (0, 5), (-1, 5), 1, grey),
 ]
 tableStyles["table3"] = generic_style
 tableStyles["table4"] = generic_style + [
@@ -284,3 +318,5 @@ tableStyles["table6"] = generic_style + [
     ('LINEABOVE', (0, 3), (-1, 3), 1, grey),
     ('FONTNAME', (0, 0), (0, -1), "Arial-Bold")
 ]
+tableStyles["table7"] = generic_style
+tableStyles["table8"] = generic_style
