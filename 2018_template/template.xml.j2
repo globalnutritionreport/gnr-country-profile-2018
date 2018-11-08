@@ -63,10 +63,129 @@
 <line x1="{{left}}" x2="{{right}}" y1="{{top+50}}" y2="{{top+50}}" width="4" color="#3F5467" on="1" off="0"></line>
 
 <!-- Row 2 -->
-<text top="{{top+60}}" left="0" width="241" height="18" font="3"><b>Child nutrition status</b></text>
+{% set top = top + 60 %}
+<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Economics and demography</b></text>
+
+<!-- Chart 23 (prev 1)-->
+{% set top = top + 30 %}
+<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Poverty rates (%) and GDP</b></text>
+<image top="{{top+31}}" left="{{left}}" width="115" height="170" src="charts/{{country_data.country}}/c23a.png"/>
+<image top="{{top+31}}" left="{{left+117}}" width="115" height="170" src="charts/{{country_data.country}}/c23b.png"/>
+<image top="{{top+31}}" left="{{left}}" width="230" height="170" src="charts/{{country_data.country}}/c23.png"/>
+<line x1="{{left}}" x2="{{left}}" y1="{{top+218}}" y2="{{top+236}}" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top+213}}" left="{{left+4}}" width="104" height="11" font="9"><b>Source</b>: World Bank 2017.</text>
+<text top="{{top+224}}" left="{{left+4}}" width="150" height="11" font="9"><b>Note</b>: PPP =  purchasing power parity.</text>
+
+<line x1="{{left+260}}" x2="{{left+260}}" y1="{{top+10}}" y2="{{top+235}}" on="1" off="0" color="#BFC9D3"></line>
+
+<!-- Chart 24 (prev 2) -->
+<text top="{{top}}" left="{{left+283}}" width="147" height="18" font="6"><b>Under-5 mortality rate</b></text>
+<image top="{{top+31}}" left="{{left+283}}" width="200" height="170" src="charts/{{country_data.country}}/c24.png"/>
+<line x1="{{left+283}}" x2="{{left+283}}" y1="{{top+218}}" y2="{{top+236}}" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top+213}}" left="{{left+287}}" width="166" height="11" font="9"><b>Source</b>: UN Inter-agency Group for Child</text>
+<text top="{{top+224}}" left="{{left+287}}" width="105" height="11" font="9">Mortality Estimation 2015.</text>
+
+<line x1="{{left+510}}" x2="{{left+510}}" y1="{{top+10}}" y2="{{top+235}}" on="1" off="0" color="#BFC9D3"></line>
+
+<!-- Table 5 -->
+<text top="{{top}}" left="{{left+529}}" width="117" height="18" font="6"><b>Income inequality</b></text>
+<table top="{{top+27}}" left="{{left+529}}" height="30" data="table5" widths="110,107,58"></table>
+<line x1="{{left+531}}" x2="{{left+531}}" y1="{{top+72}}" y2="{{top+113}}" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top+67}}" left="{{left+535}}" width="104" height="11" font="9"><b>Source</b>: World Bank 2017.</text>
+<text top="{{top+78}}" left="{{left+535}}" width="240" height="11" font="9"><b>Notes</b>: <super>1</super>0 = perfect equality, 100 = perfect inequality. <super>2</super>The</text>
+<text top="{{top+89}}" left="{{left+535}}" width="260" height="11" font="9">countries with a Gini index are ranked from most equal (1) to</text>
+<text top="{{top+100}}" left="{{left+535}}" width="87" height="11" font="9">most unequal (152).</text>
+
+<!-- Table 6 -->
+<text top="{{top+119}}" left="{{left+528}}" width="72" height="18" font="6"><b>Population</b></text>
+<table top="{{top+146}}" left="{{left+528}}" height="75" data="table6" widths="160,57.5,57.5"></table>
+<line x1="{{left+531}}" x2="{{left+531}}" y1="{{top+229}}" y2="{{top+237}}" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top+224}}" left="{{left+535}}" width="173" height="11" font="9"><b>Source</b>: 2017 projections from UN Population Division 2017.</text>
+
+<line x1="{{left}}" x2="{{right}}" y1="{{top+254}}" y2="{{top+254}}" width="4" color="#3F5467" on="1" off="0"></line>
+
+<!--Row 4 -->
+{% set top = top + 271 %}
+<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Underlying determinants</b></text>
+
+<!-- Chart 25 (prev 9) -->
+{% set top = top + 30 %}
+<text top="{{top}}" left="{{left}}" width="72" height="15" font="6"><b>Food supply</b></text>
+<image top="{{top+19}}" left="{{left}}" width="100" height="200" src="charts/{{country_data.country}}/c25a.png"/>
+<image top="{{top+19}}" left="{{left+100}}" width="100" height="200" src="charts/{{country_data.country}}/c25b.png"/>
+<image top="{{top+19}}" left="{{left+200}}" width="100" height="200" src="charts/{{country_data.country}}/c25c.png"/>
+<image top="{{top+19}}" left="{{left}}" width="150" height="200" src="charts/{{country_data.country}}/c25d.png"/>
+<image top="{{top+19}}" left="{{left+150}}" width="150" height="200" src="charts/{{country_data.country}}/c25e.png"/>
+<image top="{{top+19}}" left="{{left}}" width="300" height="200" src="charts/{{country_data.country}}/c25.png"/>
+<line x1="{{left}}" x2="{{left}}" y1="{{top+231}}" y2="{{top+238}}" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top+226}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></text>
+
+<line x1="{{left+315}}" x2="{{left+315}}" y1="{{top}}" y2="{{top+240}}" on="1" off="0" color="#BFC9D3"></line>
+
+<!-- Table 7 (prev 9) -->
+<text top="{{top}}" left="{{left+330}}" width="183" height="15" font="6"><b>Gender-related determinants</b></text>
+<table top="{{top+20}}" left="{{left+330}}" height="70" heights="28,16,28" data="table7" widths="195,30,30"></table>
+<text top="{{top+95}}" left="{{left+330}}" width="32" height="10" font="9"><b>Sources</b>: UNICEF 2016;<super>1</super> UNDP 2016.<super>2</super></text>
+<text top="{{top+106}}" left="{{left+330}}" width="152" height="10" font="9"><b>Note</b>:  *0: low inequality,  1: high  inequality.</text>
+<!-- Table  8 (prev 10) -->
+<text top="{{top+120}}" left="{{left+330}}" width="236" height="15" font="6"><b>Population density of health workers</b></text>
+<text top="{{top+135}}" left="{{left+330}}" width="96" height="15" font="6"><b>per 1,000 people</b></text>
+<table top="{{top+155}}" left="{{left+330}}" height="60" data="table8" widths="150,52.5,52.5"></table>
+<line x1="{{left+330}}" x2="{{left+330}}" y1="{{top+231}}" y2="{{top+238}}" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top+226}}" left="{{left+334}}" width="67" height="10" font="9"><b>Source</b>: WHO 2017.</text>
+
+<line x1="{{left+600}}" x2="{{left+600}}" y1="{{top}}" y2="{{top+240}}" on="1" off="0" color="#BFC9D3"></line>
+
+<!-- Chart 26 (prev 10) -->
+<text top="{{top}}" left="{{left+625}}" width="113" height="15" font="6"><b>Female secondary education</b></text>
+<text top="{{top+15}}" left="{{left+625}}" width="156" height="15" font="6"><b>enrolment (% population)</b></text>
+<image top="{{top+34}}" left="{{left+625}}" width="200" height="180" src="charts/{{country_data.country}}/c26.png"/>
+<line x1="{{left+625}}" x2="{{left+625}}" y1="{{top+231}}" y2="{{top+238}}" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top+226}}" left="{{left+629}}" width="156" height="10" font="9"><b>Source</b>: UNESCO Institute for Statistics 2017.</text>
+
+<!-- Row 5 -->
+<!-- Chart 27 (prev 11) -->
+{% set top = top + 259 %}
+<text top="{{top}}" left="{{left}}" width="229" height="15" font="6"><b>Drinking water coverage (% population)</b></text>
+<image top="{{top+25}}" left="{{left}}" width="200" height="185" src="charts/{{country_data.country}}/c27.png"/>
+<line x1="{{left}}" x2="{{left}}" y1="{{top+217}}" y2="{{top+224}}" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top+212}}" left="{{left+4}}" width="114" height="10" font="9"><b>Source</b>: WHO/UNICEF Joint Monitoring Programme 2017.</text>
+
+<line x1="{{left+250}}" x2="{{left+250}}" y1="{{top}}" y2="{{top+223}}" on="1" off="0" color="#BFC9D3"></line>
+
+<!-- Chart 28 (prev 12) -->
+<text top="{{top}}" left="{{left+300}}" width="201" height="15" font="6"><b>Sanitation coverage (% population)</b></text>
+<image top="{{top+25}}" left="{{left+300}}" width="200" height="185" src="charts/{{country_data.country}}/c28.png"/>
+<line x1="{{left+300}}" x2="{{left+300}}" y1="{{top+217}}" y2="{{top+224}}" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top+212}}" left="{{left+304}}" width="114" height="10" font="9"><b>Source</b>: WHO/UNICEF Joint Monitoring Programme 2017.</text>
+
+<line x1="{{left+542}}" x2="{{left+542}}" y1="{{top}}" y2="{{top+223}}" on="1" off="0" color="#BFC9D3"></line>
+
+<!-- Chart 29 (prev 13) -->
+<text top="{{top}}" left="{{left+585}}" width="177" height="15" font="6"><b>Government expenditures (% total)</b></text>
+<image top="{{top+25}}" left="{{left+585}}" width="220" height="185" src="charts/{{country_data.country}}/c29.png"/>
+<line x1="{{left+585}}" x2="{{left+585}}" y1="{{top+217}}" y2="{{top+224}}" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top+212}}" left="{{left+589}}" width="68" height="10" font="9"><b>Source</b>: IFPRI 2015.</text>
+
+<!-- Footer -->
+<image top="1233" left="0" width="892" height="29" src="{{template_folder}}/footer.png"/>
+<text top="{{bottom}}" left="{{left}}" width="28" height="17" font="4">{{page}}</text>
+{% set page = page + 1 %}
+</page>
+<page number="2" position="absolute" top="0" left="0" height="1262" width="892">
+	<fontspec id="24" size="10" family="Times" color="#575756"/>
+	<fontspec id="25" size="10" family="Times" color="#575756"/>
+
+<image top="0" left="0" width="892" height="84" src="{{template_folder}}/banner_p2.png"/>
+
+<text top="-10" left="39" width="362" height="72" font="2" shrink="True">{{country_data.country}}</text>
+
+<!-- Row 1 -->
+{% set top = 95 %}
+<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Child nutrition status</b></text>
 
 <!-- Charts 1, 2, and 3 -->
-{% set top = top + 81 %}
+{% set top = top + 30 %}
 <text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Under-5 by gender</b></text>
 <text top="{{top+11}}" left="{{left}}" width="151" height="18" font="6">Stunting</text>
 <image top="{{top + 39}}" left="{{left}}" width="240" height="190" src="charts/{{country_data.country}}/c1.png"/>
@@ -123,32 +242,40 @@
 <line x1="{{left}}" x2="{{left}}" y1="{{top+5}}" y2="{{top+11}}" on="1" off="0" color="#7DBEB3" width="2"></line>
 <text top="{{top}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></text>
 
-<!-- Footer -->
-<image top="1233" left="0" width="892" height="29" src="{{template_folder}}/footer.png"/>
-<text top="{{bottom}}" left="{{left}}" width="28" height="17" font="4">{{page}}</text>
-{% set page = page + 1 %}
-</page>
-<page number="2" position="absolute" top="0" left="0" height="1262" width="892">
-	<fontspec id="24" size="10" family="Times" color="#575756"/>
-	<fontspec id="25" size="10" family="Times" color="#575756"/>
-
-<image top="0" left="0" width="892" height="84" src="{{template_folder}}/banner_p2.png"/>
-
-<text top="-10" left="39" width="362" height="72" font="2" shrink="True">{{country_data.country}}</text>
-
-<!-- Row 1 -->
+<!-- Row 2 -->
 <!-- Chart 10 -->
-{% set top = 91 %}
+{% set top = top + 26 %}
 <text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Under-5 coexistence of wasting, stunting and overweight</b></text>
 <image top="{{top}}" left="{{left+250}}" width="370" height="340" src="charts/{{country_data.country}}/c10.png"/>
 
 <line x1="{{left}}" x2="{{left}}" y1="{{top+285}}" y2="{{top+291}}" on="1" off="0" color="#7DBEB3" width="2"></line>
 <text top="{{top+280}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></text>
 
-<line x1="{{left}}" x2="{{right}}" y1="{{top+306}}" y2="{{top+306}}" width="4" color="#3F5467" on="1" off="0"></line>
+<!-- Footer -->
+<image top="1233" left="0" width="892" height="29" src="{{template_folder}}/footer.png"/>
+<text top="{{bottom}}" left="{{left}}" width="28" height="17" font="4">{{page}}</text>
+{% set page = page + 1 %}
+</page>
+<page number="3" position="absolute" top="0" left="0" height="1262" width="892">
+
+<image top="0" left="0" width="892" height="84" src="{{template_folder}}/banner_p2.png"/>
+
+<text top="-10" left="39" width="362" height="72" font="2" shrink="True">{{country_data.country}}</text>
+
+<!--Row 1-->
+{% set top = 95 %}
+<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Child-feeding practices</b></text>
+
+<!-- Chart 20 -->
+{% set top = top + 20 %}
+<image top="{{top+20}}" left="{{left}}" width="800" height="210" src="charts/{{country_data.country}}/c20.png"/>
+<line x1="{{left}}" x2="{{left}}" y1="{{top+265}}" y2="{{top+271}}" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top+260}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></text>
+
+<line x1="{{left}}" x2="{{right}}" y1="{{top+285}}" y2="{{top+285}}" width="4" color="#3F5467" on="1" off="0"></line>
 
 <!-- Row 2 -->
-{% set top = top + 316 %}
+{% set top = top + 300 %}
 <text top="{{top}}" left="0" width="241" height="18" font="3"><b>Adolescent and adult nutrition status</b></text>
 <!-- Charts 11, 12, and 13 -->
 {% set top = top + 21 %}
@@ -212,7 +339,7 @@
 <text top="{{bottom}}" left="{{left}}" width="28" height="17" font="4">{{page}}</text>
 {% set page = page + 1 %}
 </page>
-<page number="3" position="absolute" top="0" left="0" height="1262" width="892">
+<page number="4" position="absolute" top="0" left="0" height="1262" width="892">
 
 <image top="0" left="0" width="892" height="84" src="{{template_folder}}/banner_p2.png"/>
 
@@ -220,30 +347,6 @@
 
 <!--Row 1-->
 {% set top = 95 %}
-<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Child-feeding practices</b></text>
-
-<!-- Chart 20 -->
-{% set top = top + 20 %}
-<image top="{{top+20}}" left="{{left}}" width="800" height="350" src="charts/{{country_data.country}}/c20.jpg"/>
-<line x1="{{left}}" x2="{{left}}" y1="{{top+385}}" y2="{{top+391}}" on="1" off="0" color="#7DBEB3" width="2"></line>
-<text top="{{top+380}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></text>
-
-<line x1="{{left}}" x2="{{right}}" y1="{{top+405}}" y2="{{top+405}}" width="4" color="#3F5467" on="1" off="0"></line>
-
-<!-- Row 2 -->
-{% set top = top + 420 %}
-<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Intervention coverage</b></text>
-
-<!-- Table 2 -->
-{% set top = top + 30 %}
-<table data="table2" top="{{top}}" left="{{left}}" widths="550,65,65,65,65" height="200"></table>
-<line x1="{{left}}" x2="{{left}}" y1="{{top+215}}" y2="{{top+221}}" on="1" off="0" color="#7DBEB3" width="2"></line>
-<text top="{{top+210}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></text>
-
-<line x1="{{left}}" x2="{{right}}" y1="{{top+245}}" y2="{{top+245}}" width="4" color="#3F5467" on="1" off="0"></line>
-
-<!-- Row 3 -->
-{% set top = top + 270 %}
 <text top="{{top}}" left="0" width="241" height="18" font="3"><b>Dietary needs</b></text>
 
 <!-- Chart 21 -->
@@ -252,20 +355,10 @@
 <line x1="{{left}}" x2="{{left}}" y1="{{top+355}}" y2="{{top+361}}" on="1" off="0" color="#7DBEB3" width="2"></line>
 <text top="{{top+350}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></text>
 
+<line x1="{{left}}" x2="{{right}}" y1="{{top+380}}" y2="{{top+380}}" width="4" color="#3F5467" on="1" off="0"></line>
 
-<!-- Footer -->
-<image top="1233" left="0" width="892" height="29" src="{{template_folder}}/footer.png"/>
-<text top="{{bottom}}" left="{{left}}" width="28" height="17" font="4">{{page}}</text>
-{% set page = page + 1 %}
-</page>
-<page number="3" position="absolute" top="0" left="0" height="1262" width="892">
-
-<image top="0" left="0" width="892" height="84" src="{{template_folder}}/banner_p2.png"/>
-
-<text top="-10" left="39" width="362" height="72" font="2" shrink="True">{{country_data.country}}</text>
-
-<!--Row 1-->
-{% set top = 95 %}
+<!-- Row 2 -->
+{% set top = top + 400 %}
 <text top="{{top}}" left="0" width="241" height="18" font="3"><b>Financial resources and policy, legislation, and institutional arrangements</b></text>
 
 <!-- Chart 22 -->
@@ -283,7 +376,7 @@
 <line x1="{{left+440}}" x2="{{left+440}}" y1="{{top+235}}" y2="{{top+241}}" on="1" off="0" color="#7DBEB3" width="2"></line>
 <text top="{{top+230}}" left="{{left+444}}" width="28" height="10" font="9"><b>Sources</b>: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></text>
 
-<!--Row 2-->
+<!--Row 3 -->
 {% set top = top + 245 %}
 <text top="{{top}}" left="{{left}}" width="241" height="18" font="6"><b>Targets included in national (nutrition or other) plan</b></text>
 
@@ -296,104 +389,15 @@
 <line x1="{{left}}" x2="{{right}}" y1="{{top+105}}" y2="{{top+105}}" width="4" color="#3F5467" on="1" off="0"></line>
 
 <!-- Row 3 -->
-{% set top = top + 115 %}
-<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Economics, demography and determinants</b></text>
+{% set top = top + 125 %}
+<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Intervention coverage</b></text>
 
-<!-- Chart 23 (prev 1)-->
-{% set top = top + 20 %}
-<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Poverty rates (%) and GDP</b></text>
-<image top="{{top+31}}" left="{{left}}" width="115" height="170" src="charts/{{country_data.country}}/c23a.png"/>
-<image top="{{top+31}}" left="{{left+117}}" width="115" height="170" src="charts/{{country_data.country}}/c23b.png"/>
-<image top="{{top+31}}" left="{{left}}" width="230" height="170" src="charts/{{country_data.country}}/c23.png"/>
-<line x1="{{left}}" x2="{{left}}" y1="{{top+218}}" y2="{{top+236}}" on="1" off="0" color="#7DBEB3" width="2"></line>
-<text top="{{top+213}}" left="{{left+4}}" width="104" height="11" font="9"><b>Source</b>: World Bank 2017.</text>
-<text top="{{top+224}}" left="{{left+4}}" width="150" height="11" font="9"><b>Note</b>: PPP =  purchasing power parity.</text>
+<!-- Table 2 -->
+{% set top = top + 40 %}
+<table data="table2" top="{{top}}" left="{{left}}" widths="550,65,65,65,65" height="200"></table>
+<line x1="{{left}}" x2="{{left}}" y1="{{top+215}}" y2="{{top+221}}" on="1" off="0" color="#7DBEB3" width="2"></line>
+<text top="{{top+210}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></text>
 
-<line x1="{{left+260}}" x2="{{left+260}}" y1="{{top+10}}" y2="{{top+250}}" on="1" off="0" color="#BFC9D3"></line>
-
-<!-- Chart 24 (prev 2) -->
-<text top="{{top}}" left="{{left+283}}" width="147" height="18" font="6"><b>Under-5 mortality rate</b></text>
-<image top="{{top+31}}" left="{{left+283}}" width="200" height="170" src="charts/{{country_data.country}}/c24.png"/>
-<line x1="{{left+283}}" x2="{{left+283}}" y1="{{top+218}}" y2="{{top+236}}" on="1" off="0" color="#7DBEB3" width="2"></line>
-<text top="{{top+213}}" left="{{left+287}}" width="166" height="11" font="9"><b>Source</b>: UN Inter-agency Group for Child</text>
-<text top="{{top+224}}" left="{{left+287}}" width="105" height="11" font="9">Mortality Estimation 2015.</text>
-
-<line x1="{{left+510}}" x2="{{left+510}}" y1="{{top+10}}" y2="{{top+250}}" on="1" off="0" color="#BFC9D3"></line>
-
-<!-- Table 5 -->
-<text top="{{top}}" left="{{left+529}}" width="117" height="18" font="6"><b>Income inequality</b></text>
-<table top="{{top+27}}" left="{{left+529}}" height="30" data="table5" widths="110,107,58"></table>
-<line x1="{{left+531}}" x2="{{left+531}}" y1="{{top+72}}" y2="{{top+113}}" on="1" off="0" color="#7DBEB3" width="2"></line>
-<text top="{{top+67}}" left="{{left+535}}" width="104" height="11" font="9"><b>Source</b>: World Bank 2017.</text>
-<text top="{{top+78}}" left="{{left+535}}" width="240" height="11" font="9"><b>Notes</b>: <super>1</super>0 = perfect equality, 100 = perfect inequality. <super>2</super>The</text>
-<text top="{{top+89}}" left="{{left+535}}" width="260" height="11" font="9">countries with a Gini index are ranked from most equal (1) to</text>
-<text top="{{top+100}}" left="{{left+535}}" width="87" height="11" font="9">most unequal (152).</text>
-
-<!-- Table 6 -->
-<text top="{{top+119}}" left="{{left+528}}" width="72" height="18" font="6"><b>Population</b></text>
-<table top="{{top+146}}" left="{{left+528}}" height="75" data="table6" widths="160,57.5,57.5"></table>
-<line x1="{{left+531}}" x2="{{left+531}}" y1="{{top+229}}" y2="{{top+237}}" on="1" off="0" color="#7DBEB3" width="2"></line>
-<text top="{{top+224}}" left="{{left+535}}" width="173" height="11" font="9"><b>Source</b>: 2017 projections from UN Population Division 2017.</text>
-
-<!--Row 4 -->
-{% set top = top + 241 %}
-<!-- Chart 25 (prev 9) -->
-<text top="{{top}}" left="{{left}}" width="72" height="15" font="6"><b>Food supply</b></text>
-<image top="{{top+19}}" left="{{left}}" width="100" height="200" src="charts/{{country_data.country}}/c25a.png"/>
-<image top="{{top+19}}" left="{{left+100}}" width="100" height="200" src="charts/{{country_data.country}}/c25b.png"/>
-<image top="{{top+19}}" left="{{left+200}}" width="100" height="200" src="charts/{{country_data.country}}/c25c.png"/>
-<image top="{{top+19}}" left="{{left}}" width="150" height="200" src="charts/{{country_data.country}}/c25d.png"/>
-<image top="{{top+19}}" left="{{left+150}}" width="150" height="200" src="charts/{{country_data.country}}/c25e.png"/>
-<image top="{{top+19}}" left="{{left}}" width="300" height="200" src="charts/{{country_data.country}}/c25.png"/>
-<line x1="{{left}}" x2="{{left}}" y1="{{top+231}}" y2="{{top+238}}" on="1" off="0" color="#7DBEB3" width="2"></line>
-<text top="{{top+226}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></text>
-
-<line x1="{{left+315}}" x2="{{left+315}}" y1="{{top}}" y2="{{top+240}}" on="1" off="0" color="#BFC9D3"></line>
-
-<!-- Table 7 (prev 9) -->
-<text top="{{top}}" left="{{left+330}}" width="183" height="15" font="6"><b>Gender-related determinants</b></text>
-<table top="{{top+20}}" left="{{left+330}}" height="70" heights="28,16,28" data="table7" widths="195,30,30"></table>
-<text top="{{top+95}}" left="{{left+330}}" width="32" height="10" font="9"><b>Sources</b>: UNICEF 2016;<super>1</super> UNDP 2016.<super>2</super></text>
-<text top="{{top+106}}" left="{{left+330}}" width="152" height="10" font="9"><b>Note</b>:  *0: low inequality,  1: high  inequality.</text>
-<!-- Table  8 (prev 10) -->
-<text top="{{top+120}}" left="{{left+330}}" width="236" height="15" font="6"><b>Population density of health workers</b></text>
-<text top="{{top+135}}" left="{{left+330}}" width="96" height="15" font="6"><b>per 1,000 people</b></text>
-<table top="{{top+155}}" left="{{left+330}}" height="60" data="table8" widths="150,52.5,52.5"></table>
-<line x1="{{left+330}}" x2="{{left+330}}" y1="{{top+231}}" y2="{{top+238}}" on="1" off="0" color="#7DBEB3" width="2"></line>
-<text top="{{top+226}}" left="{{left+334}}" width="67" height="10" font="9"><b>Source</b>: WHO 2017.</text>
-
-<line x1="{{left+600}}" x2="{{left+600}}" y1="{{top}}" y2="{{top+240}}" on="1" off="0" color="#BFC9D3"></line>
-
-<!-- Chart 26 (prev 10) -->
-<text top="{{top}}" left="{{left+625}}" width="113" height="15" font="6"><b>Female secondary education</b></text>
-<text top="{{top+15}}" left="{{left+625}}" width="156" height="15" font="6"><b>enrolment (% population)</b></text>
-<image top="{{top+34}}" left="{{left+625}}" width="200" height="180" src="charts/{{country_data.country}}/c26.png"/>
-<line x1="{{left+625}}" x2="{{left+625}}" y1="{{top+231}}" y2="{{top+238}}" on="1" off="0" color="#7DBEB3" width="2"></line>
-<text top="{{top+226}}" left="{{left+629}}" width="156" height="10" font="9"><b>Source</b>: UNESCO Institute for Statistics 2017.</text>
-
-<!-- Row 5 -->
-<!-- Chart 27 (prev 11) -->
-{% set top = top + 239 %}
-<text top="{{top}}" left="{{left}}" width="229" height="15" font="6"><b>Drinking water coverage (% population)</b></text>
-<image top="{{top+25}}" left="{{left}}" width="200" height="185" src="charts/{{country_data.country}}/c27.png"/>
-<line x1="{{left}}" x2="{{left}}" y1="{{top+217}}" y2="{{top+224}}" on="1" off="0" color="#7DBEB3" width="2"></line>
-<text top="{{top+212}}" left="{{left+4}}" width="114" height="10" font="9"><b>Source</b>: WHO/UNICEF Joint Monitoring Programme 2017.</text>
-
-<line x1="{{left+250}}" x2="{{left+250}}" y1="{{top}}" y2="{{top+223}}" on="1" off="0" color="#BFC9D3"></line>
-
-<!-- Chart 28 (prev 12) -->
-<text top="{{top}}" left="{{left+300}}" width="201" height="15" font="6"><b>Sanitation coverage (% population)</b></text>
-<image top="{{top+25}}" left="{{left+300}}" width="200" height="185" src="charts/{{country_data.country}}/c28.png"/>
-<line x1="{{left+300}}" x2="{{left+300}}" y1="{{top+217}}" y2="{{top+224}}" on="1" off="0" color="#7DBEB3" width="2"></line>
-<text top="{{top+212}}" left="{{left+304}}" width="114" height="10" font="9"><b>Source</b>: WHO/UNICEF Joint Monitoring Programme 2017.</text>
-
-<line x1="{{left+542}}" x2="{{left+542}}" y1="{{top}}" y2="{{top+223}}" on="1" off="0" color="#BFC9D3"></line>
-
-<!-- Chart 29 (prev 13) -->
-<text top="{{top}}" left="{{left+585}}" width="177" height="15" font="6"><b>Government expenditures (% total)</b></text>
-<image top="{{top+25}}" left="{{left+585}}" width="220" height="185" src="charts/{{country_data.country}}/c29.png"/>
-<line x1="{{left+585}}" x2="{{left+585}}" y1="{{top+217}}" y2="{{top+224}}" on="1" off="0" color="#7DBEB3" width="2"></line>
-<text top="{{top+212}}" left="{{left+589}}" width="68" height="10" font="9"><b>Source</b>: IFPRI 2015.</text>
 
 <!-- Footer -->
 <image top="1233" left="0" width="892" height="29" src="{{template_folder}}/footer.png"/>
