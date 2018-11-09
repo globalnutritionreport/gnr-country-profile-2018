@@ -8,24 +8,16 @@ wd <- "~/git/gnr-country-profile-2018"
 setwd(wd)
 
 dat <- read.csv("data.csv",na.strings=c("","."," "),as.is=TRUE)
-dist_data <- read.csv("dist_data.csv",na.strings=c("","."),as.is=TRUE)
-setnames(dist_data,"quin1","Poorest")
-setnames(dist_data,"quin2","Second poorest")
-setnames(dist_data,"quin3","Middle")
-setnames(dist_data,"quin4","Second wealthiest")
-setnames(dist_data,"quin5","Wealthiest")
-dist_data <- melt(dist_data,measure.vars=c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"))
-dist_data$value <- dist_data$value*100
 
 countries <- unique(dat$country)
 
 wd <- "~/git/gnr-country-profile-2018/charts"
 setwd(wd)
 
-unlink(
-  dir(wd, full.names = TRUE)
-  , recursive = TRUE
-)
+# unlink(
+#   dir(wd, full.names = TRUE)
+#   , recursive = TRUE
+# )
 blank <- data.frame(x=0,y=0,text="No data")
 no.data <- ggplot(blank,aes(x,y,label=text)) +
   geom_text(size=20,color="grey") +
@@ -85,8 +77,6 @@ blueFill <- scale_fill_manual(values=c(blue))
 lightBlueFill <- scale_fill_manual(values=c(light.blue))
 lighterBlueFill <- scale_fill_manual(values=c(lighter.blue))
 quintileFill <-  scale_fill_manual(values=quintileFillValues)
-
-
 
 yellowOrangeColor <- scale_color_manual(values=c(yellow,orange))
 orangeYellowColor <- scale_color_manual(values=c(orange,yellow))

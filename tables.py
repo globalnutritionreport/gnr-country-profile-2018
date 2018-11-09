@@ -69,27 +69,34 @@ dataDictionary["Kenya"]["table1a"] = [
 ]
 
 dataDictionary["Kenya"]["table2"] = [
-    [
-        Paragraph("<b>Coverage/practice indicator</b>", style=blueParaBold),
-        Paragraph("<b>%</b>", style=blueParaBold),
-        Paragraph("<b>Male</b>", style=blueParaBold),
-        Paragraph("<b>Female</b>", style=blueParaBold),
-        Paragraph("<b>Year</b>", style=blueParaBold)
-     ],
-    [u"Children 0\u201359 months with dirrhea who received zinc treatment", "8.1", "", "", "2014"],
-    [u"Children 6\u201359 months who received vitamin A supplements in last 6 months", "71.7", "71.6", "71.9", "2014"],
-    [u"Children 6\u201359 months given iron supplements in past 7 days", "2.7", "2.6", "2.7", "2014"],
-    [Paragraph("Women with a birth in last five years who received iron and folic acid during their most recent pregnancy", style=blueParaStyle), "69.4", "", "", "2014"],
-    ["Household consumption of adequately iodised salt", "99.5", "", "", "2014"],
+    [Paragraph("Gini index score<super>1</super>", style=blueParaBold), Paragraph("Gini index rank<super>2</super>", style=blueParaBold), "Year"], [51, 125, 2011]
 ]
 
 dataDictionary["Kenya"]["table3"] = [
+    ["Population (000)", format(12428, ",d"), 2015],
+    ["Under-5 population (000)", format(1935, ",d"), 2015],
+    ["Urban (%)", format(20, ",d"), 2015],
+    [">65 years (%)", format(5, ",d"), 2015],
+]
+
+dataDictionary["Kenya"]["table4"] = [
+    [Paragraph("Early childbearing: births by age 18 (%)<super>1</super>", style=blueParaBold), "33", "2011"],
+    [Paragraph("Gender Inequality Index (score*)<super>2</super>", style=blueParaBold), "0.529", "2013"],
+    [Paragraph("Gender Inequality Index (country rank)<super>2</super>", style=blueParaBold), "155", "2013"]
+]
+dataDictionary["Kenya"]["table5"] = [
+    ["Physicians", "0.117", "2005"],
+    ["Nurses and midwives", "1.306", "2005"],
+    ["Community health workers", "0.188", "2005"]
+]
+
+dataDictionary["Kenya"]["table6"] = [
     [Paragraph("Mandatory legislation for salt iodisation", style=blueParaBold), "Yes"],
     [Paragraph(u"Sugar\u2013sweeted beverage tax", style=blueParaBold), "Yes"],
     [Paragraph("Multisectoral comprehensive nutrition plan", style=blueParaBold), "Yes"],
 ]
 
-dataDictionary["Kenya"]["table4"] = [
+dataDictionary["Kenya"]["table7"] = [
     [
         Paragraph("Stunting", style=blueParaBoldCenter),
         Paragraph("Anaemia", style=blueParaBoldCenter),
@@ -105,26 +112,19 @@ dataDictionary["Kenya"]["table4"] = [
     ["Yes", "Yes", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes"]
 ]
 
-dataDictionary["Kenya"]["table5"] = [
-    [Paragraph("Gini index score<super>1</super>", style=blueParaBold), Paragraph("Gini index rank<super>2</super>", style=blueParaBold), "Year"], [51, 125, 2011]
-]
-
-dataDictionary["Kenya"]["table6"] = [
-    ["Population (000)", format(12428, ",d"), 2015],
-    ["Under-5 population (000)", format(1935, ",d"), 2015],
-    ["Urban (%)", format(20, ",d"), 2015],
-    [">65 years (%)", format(5, ",d"), 2015],
-]
-
-dataDictionary["Kenya"]["table7"] = [
-    [Paragraph("Early childbearing: births by age 18 (%)<super>1</super>", style=blueParaBold), "33", "2011"],
-    [Paragraph("Gender Inequality Index (score*)<super>2</super>", style=blueParaBold), "0.529", "2013"],
-    [Paragraph("Gender Inequality Index (country rank)<super>2</super>", style=blueParaBold), "155", "2013"]
-]
 dataDictionary["Kenya"]["table8"] = [
-    ["Physicians", "0.117", "2005"],
-    ["Nurses and midwives", "1.306", "2005"],
-    ["Community health workers", "0.188", "2005"]
+    [
+        Paragraph("<b>Coverage/practice indicator</b>", style=blueParaBold),
+        Paragraph("<b>%</b>", style=blueParaBold),
+        Paragraph("<b>Male</b>", style=blueParaBold),
+        Paragraph("<b>Female</b>", style=blueParaBold),
+        Paragraph("<b>Year</b>", style=blueParaBold)
+     ],
+    [u"Children 0\u201359 months with dirrhea who received zinc treatment", "8.1", "", "", "2014"],
+    [u"Children 6\u201359 months who received vitamin A supplements in last 6 months", "71.7", "71.6", "71.9", "2014"],
+    [u"Children 6\u201359 months given iron supplements in past 7 days", "2.7", "2.6", "2.7", "2014"],
+    [Paragraph("Women with a birth in last five years who received iron and folic acid during their most recent pregnancy", style=blueParaStyle), "69.4", "", "", "2014"],
+    ["Household consumption of adequately iodised salt", "99.5", "", "", "2014"],
 ]
 
 # dataDictionary["Kenya"] = copy.deepcopy(dataDictionary["Kenya"])
@@ -195,36 +195,40 @@ for country in dataDictionary.keys():
         Paragraph(safeFormat(indicator(ctryDat, "adult_mal_diabetes_track")), style=condStyle(indicator(ctryDat, "adult_mal_diabetes_track"))),
     ]
 
-    dataDictionary[country]["table2"][1][1] = safeFormat(indicator_disagg(ctryDat, "diarrhea_zinc", "all"), percent=True)
-    dataDictionary[country]["table2"][1][2] = safeFormat(indicator_disagg(ctryDat, "diarrhea_zinc", "gender", "Male"), percent=True)
-    dataDictionary[country]["table2"][1][3] = safeFormat(indicator_disagg(ctryDat, "diarrhea_zinc", "gender", "Female"), percent=True)
-    dataDictionary[country]["table2"][1][4] = safeFormat(year(ctryDat, "diarrhea_zinc"))
+    dataDictionary[country]["table2"][1] = [
+        safeFormat(indicator(ctryDat, "gini")),
+        safeFormat(indicator(ctryDat, "gini_rank")),
+        safeFormat(indicator(ctryDat, "gini_year"))
+    ]
 
-    dataDictionary[country]["table2"][2][1] = safeFormat(indicator_disagg(ctryDat, "vit_a", "all"), percent=True)
-    dataDictionary[country]["table2"][2][2] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Male"), percent=True)
-    dataDictionary[country]["table2"][2][3] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Female"), percent=True)
-    dataDictionary[country]["table2"][2][4] = safeFormat(year(ctryDat, "vit_a"))
+    dataDictionary[country]["table3"][0][1] = safeFormat(indicator(ctryDat, "population"), True)
+    dataDictionary[country]["table3"][0][2] = safeFormat(year(ctryDat, "population"))
+    dataDictionary[country]["table3"][1][1] = safeFormat(indicator(ctryDat, "u5_pop"), True)
+    dataDictionary[country]["table3"][1][2] = safeFormat(year(ctryDat, "u5_pop"))
+    dataDictionary[country]["table3"][2][1] = safeFormat(indicator(ctryDat, "urban_percent"))
+    dataDictionary[country]["table3"][2][2] = safeFormat(year(ctryDat, "urban_percent"))
+    dataDictionary[country]["table3"][3][1] = safeFormat(indicator(ctryDat, "65_years"), True)
+    dataDictionary[country]["table3"][3][2] = safeFormat(year(ctryDat, "65_years"))
 
-    dataDictionary[country]["table2"][3][1] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "all"), percent=True)
-    dataDictionary[country]["table2"][3][2] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Male"), percent=True)
-    dataDictionary[country]["table2"][3][3] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Female"), percent=True)
-    dataDictionary[country]["table2"][3][4] = safeFormat(year(ctryDat, "iron_supp"))
+    dataDictionary[country]["table4"][0][1] = safeFormat(indicator(ctryDat, "early_childbearing_prev"))
+    dataDictionary[country]["table4"][0][2] = safeFormat(year(ctryDat, "early_childbearing_prev"))
+    dataDictionary[country]["table4"][1][1] = safeFormat(indicator(ctryDat, "gender_inequality_score"), False, 3)
+    dataDictionary[country]["table4"][1][2] = safeFormat(year(ctryDat, "gender_inequality_score"))
+    dataDictionary[country]["table4"][2][1] = safeFormat(indicator(ctryDat, "gender_inequality_rank"))
+    dataDictionary[country]["table4"][2][2] = safeFormat(year(ctryDat, "gender_inequality_rank"))
 
-    dataDictionary[country]["table2"][4][1] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "all"), percent=True)
-    dataDictionary[country]["table2"][4][2] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "gender", "Male"), percent=True)
-    dataDictionary[country]["table2"][4][3] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "gender", "Female"), percent=True)
-    dataDictionary[country]["table2"][4][4] = safeFormat(year(ctryDat, "iron_and_folic"))
+    dataDictionary[country]["table5"][0][1] = safeFormat(indicator(ctryDat, "physicians"), False, 3)
+    dataDictionary[country]["table5"][0][2] = safeFormat(year(ctryDat, "physicians"))
+    dataDictionary[country]["table5"][1][1] = safeFormat(indicator(ctryDat, "nurses_and_midwives"), False, 3)
+    dataDictionary[country]["table5"][1][2] = safeFormat(year(ctryDat, "nurses_and_midwives"))
+    dataDictionary[country]["table5"][2][1] = safeFormat(indicator(ctryDat, "community_health_workers"), False, 3)
+    dataDictionary[country]["table5"][2][2] = safeFormat(year(ctryDat, "community_health_workers"))
 
-    dataDictionary[country]["table2"][5][1] = safeFormat(indicator_disagg(ctryDat, "iodised_salt", "all"), percent=True)
-    dataDictionary[country]["table2"][5][2] = safeFormat(indicator_disagg(ctryDat, "iodised_salt", "gender", "Male"), percent=True)
-    dataDictionary[country]["table2"][5][3] = safeFormat(indicator_disagg(ctryDat, "iodised_salt", "gender", "Female"), percent=True)
-    dataDictionary[country]["table2"][5][4] = safeFormat(year(ctryDat, "iodised_salt"))
+    dataDictionary[country]["table6"][0][1] = safeFormat(indicator(ctryDat, "salt_leg"))
+    dataDictionary[country]["table6"][1][1] = safeFormat(indicator(ctryDat, "sugar_tax"))
+    dataDictionary[country]["table6"][2][1] = safeFormat(indicator(ctryDat, "multi_sec"))
 
-    dataDictionary[country]["table3"][0][1] = safeFormat(indicator(ctryDat, "salt_leg"))
-    dataDictionary[country]["table3"][1][1] = safeFormat(indicator(ctryDat, "sugar_tax"))
-    dataDictionary[country]["table3"][2][1] = safeFormat(indicator(ctryDat, "multi_sec"))
-
-    dataDictionary[country]["table4"][1] = [
+    dataDictionary[country]["table7"][1] = [
         safeFormat(indicator(ctryDat, "stunting_plan")),
         safeFormat(indicator(ctryDat, "anaemia_plan")),
         safeFormat(indicator(ctryDat, "LBW_plan")),
@@ -237,34 +241,30 @@ for country in dataDictionary.keys():
         safeFormat(indicator(ctryDat, "overweight_adults_adoles_plan")),
     ]
 
-    dataDictionary[country]["table5"][1] = [
-        safeFormat(indicator(ctryDat, "gini")),
-        safeFormat(indicator(ctryDat, "gini_rank")),
-        safeFormat(indicator(ctryDat, "gini_year"))
-    ]
+    dataDictionary[country]["table8"][1][1] = safeFormat(indicator_disagg(ctryDat, "diarrhea_zinc", "all"), percent=True)
+    dataDictionary[country]["table8"][1][2] = safeFormat(indicator_disagg(ctryDat, "diarrhea_zinc", "gender", "Male"), percent=True)
+    dataDictionary[country]["table8"][1][3] = safeFormat(indicator_disagg(ctryDat, "diarrhea_zinc", "gender", "Female"), percent=True)
+    dataDictionary[country]["table8"][1][4] = safeFormat(year(ctryDat, "diarrhea_zinc"))
 
-    dataDictionary[country]["table6"][0][1] = safeFormat(indicator(ctryDat, "population"), True)
-    dataDictionary[country]["table6"][0][2] = safeFormat(year(ctryDat, "population"))
-    dataDictionary[country]["table6"][1][1] = safeFormat(indicator(ctryDat, "u5_pop"), True)
-    dataDictionary[country]["table6"][1][2] = safeFormat(year(ctryDat, "u5_pop"))
-    dataDictionary[country]["table6"][2][1] = safeFormat(indicator(ctryDat, "urban_percent"))
-    dataDictionary[country]["table6"][2][2] = safeFormat(year(ctryDat, "urban_percent"))
-    dataDictionary[country]["table6"][3][1] = safeFormat(indicator(ctryDat, "65_years"), True)
-    dataDictionary[country]["table6"][3][2] = safeFormat(year(ctryDat, "65_years"))
+    dataDictionary[country]["table8"][2][1] = safeFormat(indicator_disagg(ctryDat, "vit_a", "all"), percent=True)
+    dataDictionary[country]["table8"][2][2] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Male"), percent=True)
+    dataDictionary[country]["table8"][2][3] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Female"), percent=True)
+    dataDictionary[country]["table8"][2][4] = safeFormat(year(ctryDat, "vit_a"))
 
-    dataDictionary[country]["table7"][0][1] = safeFormat(indicator(ctryDat, "early_childbearing_prev"))
-    dataDictionary[country]["table7"][0][2] = safeFormat(year(ctryDat, "early_childbearing_prev"))
-    dataDictionary[country]["table7"][1][1] = safeFormat(indicator(ctryDat, "gender_inequality_score"), False, 3)
-    dataDictionary[country]["table7"][1][2] = safeFormat(year(ctryDat, "gender_inequality_score"))
-    dataDictionary[country]["table7"][2][1] = safeFormat(indicator(ctryDat, "gender_inequality_rank"))
-    dataDictionary[country]["table7"][2][2] = safeFormat(year(ctryDat, "gender_inequality_rank"))
+    dataDictionary[country]["table8"][3][1] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "all"), percent=True)
+    dataDictionary[country]["table8"][3][2] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Male"), percent=True)
+    dataDictionary[country]["table8"][3][3] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Female"), percent=True)
+    dataDictionary[country]["table8"][3][4] = safeFormat(year(ctryDat, "iron_supp"))
 
-    dataDictionary[country]["table8"][0][1] = safeFormat(indicator(ctryDat, "physicians"), False, 3)
-    dataDictionary[country]["table8"][0][2] = safeFormat(year(ctryDat, "physicians"))
-    dataDictionary[country]["table8"][1][1] = safeFormat(indicator(ctryDat, "nurses_and_midwives"), False, 3)
-    dataDictionary[country]["table8"][1][2] = safeFormat(year(ctryDat, "nurses_and_midwives"))
-    dataDictionary[country]["table8"][2][1] = safeFormat(indicator(ctryDat, "community_health_workers"), False, 3)
-    dataDictionary[country]["table8"][2][2] = safeFormat(year(ctryDat, "community_health_workers"))
+    dataDictionary[country]["table8"][4][1] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "all"), percent=True)
+    dataDictionary[country]["table8"][4][2] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "gender", "Male"), percent=True)
+    dataDictionary[country]["table8"][4][3] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "gender", "Female"), percent=True)
+    dataDictionary[country]["table8"][4][4] = safeFormat(year(ctryDat, "iron_and_folic"))
+
+    dataDictionary[country]["table8"][5][1] = safeFormat(indicator_disagg(ctryDat, "iodised_salt", "all"), percent=True)
+    dataDictionary[country]["table8"][5][2] = safeFormat(indicator_disagg(ctryDat, "iodised_salt", "gender", "Male"), percent=True)
+    dataDictionary[country]["table8"][5][3] = safeFormat(indicator_disagg(ctryDat, "iodised_salt", "gender", "Female"), percent=True)
+    dataDictionary[country]["table8"][5][4] = safeFormat(year(ctryDat, "iodised_salt"))
 
 generic_style = [
     ('TEXTCOLOR', (0, 0), (-1, -1), blue),
@@ -286,14 +286,18 @@ tableStyles["table1"] = [
 tableStyles["table1a"] = tableStyles["table1"]
 tableStyles["table2"] = generic_style + [
     ('FONTNAME', (0, 0), (-1, 0), "Arial-Bold"),
-    ('LINEABOVE', (0, 1), (-1, 1), 1, blue),
+    ('LINEABOVE', (0, 1), (-1, 1), 1, blue)
+]
+tableStyles["table3"] = generic_style + [
+    ('LINEABOVE', (0, 1), (-1, 1), 1, grey),
     ('LINEABOVE', (0, 2), (-1, 2), 1, grey),
     ('LINEABOVE', (0, 3), (-1, 3), 1, grey),
-    ('LINEABOVE', (0, 4), (-1, 4), 1, grey),
-    ('LINEABOVE', (0, 5), (-1, 5), 1, grey),
+    ('FONTNAME', (0, 0), (0, -1), "Arial-Bold")
 ]
-tableStyles["table3"] = generic_style
-tableStyles["table4"] = generic_style + [
+tableStyles["table4"] = generic_style
+tableStyles["table5"] = generic_style
+tableStyles["table6"] = generic_style
+tableStyles["table7"] = generic_style + [
     ('TEXTCOLOR', (0, 0), (-1, -1), blue),
     ('BACKGROUND', (0, 0), (-1, -1), "white"),
     ('ALIGN', (0, 0), (-1, -1), "CENTER"),
@@ -308,15 +312,11 @@ tableStyles["table4"] = generic_style + [
     ('LINEAFTER', (7, 0), (7, -1), 1, blue),
     ('LINEAFTER', (8, 0), (8, -1), 1, blue),
 ]
-tableStyles["table5"] = generic_style + [
+tableStyles["table8"] = generic_style + [
     ('FONTNAME', (0, 0), (-1, 0), "Arial-Bold"),
-    ('LINEABOVE', (0, 1), (-1, 1), 1, blue)
-]
-tableStyles["table6"] = generic_style + [
-    ('LINEABOVE', (0, 1), (-1, 1), 1, grey),
+    ('LINEABOVE', (0, 1), (-1, 1), 1, blue),
     ('LINEABOVE', (0, 2), (-1, 2), 1, grey),
     ('LINEABOVE', (0, 3), (-1, 3), 1, grey),
-    ('FONTNAME', (0, 0), (0, -1), "Arial-Bold")
+    ('LINEABOVE', (0, 4), (-1, 4), 1, grey),
+    ('LINEABOVE', (0, 5), (-1, 5), 1, grey),
 ]
-tableStyles["table7"] = generic_style
-tableStyles["table8"] = generic_style
