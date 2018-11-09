@@ -10,56 +10,56 @@ A,Kenya,2018,adult_fem_diabetes_track,all,,No progress or worsening
 A,Kenya,2018,adult_mal_diabetes_track,all,,No progress or worsening
 A,Kenya,2018,country_class,all,,a country experiencing a double burden
 A,Kenya,2018,burden_text,all,,Overweight and stunting
-B,Kenya,2000,stunting_percent,all,,0.4
-B,Kenya,2003,stunting_percent,all,,0.35
-B,Kenya,2005,stunting_percent,all,,0.4
-B,Kenya,2009,stunting_percent,all,,0.35
-B,Kenya,2014,stunting_percent,all,,0.25
-B,Kenya,2014,wasting_percent,all,,0.042
-B,Kenya,2000,overweight_percent,all,,0.08
-B,Kenya,2003,overweight_percent,all,,0.06
-B,Kenya,2009,overweight_percent,all,,0.05
-B,Kenya,2014,overweight_percent,all,,0.04
-C,Kenya,2000,stunting_percent,income,Poorest,0.4
-C,Kenya,2003,stunting_percent,income,Poorest,0.35
-C,Kenya,2005,stunting_percent,income,Poorest,0.4
-C,Kenya,2009,stunting_percent,income,Poorest,0.35
-C,Kenya,2014,stunting_percent,income,Poorest,0.25
-C,Kenya,2014,wasting_percent,income,Poorest,0.042
-C,Kenya,2000,overweight_percent,income,Poorest,0.08
-C,Kenya,2003,overweight_percent,income,Poorest,0.06
-C,Kenya,2009,overweight_percent,income,Poorest,0.05
-C,Kenya,2014,overweight_percent,income,Poorest,0.04
-C,Kenya,2000,stunting_percent,income,Second poorest,0.4
-C,Kenya,2003,stunting_percent,income,Second poorest,0.35
-C,Kenya,2005,stunting_percent,income,Second poorest,0.4
-C,Kenya,2009,stunting_percent,income,Second poorest,0.35
-C,Kenya,2014,stunting_percent,income,Second poorest,0.25
-C,Kenya,2014,wasting_percent,income,Second poorest,0.042
-C,Kenya,2000,overweight_percent,income,Second poorest,0.08
-C,Kenya,2003,overweight_percent,income,Second poorest,0.06
-C,Kenya,2009,overweight_percent,income,Second poorest,0.05
-C,Kenya,2014,overweight_percent,income,Second poorest,0.04
-C,Kenya,2000,stunting_percent,income,Middle,0.4
-C,Kenya,2003,stunting_percent,income,Middle,0.35
-C,Kenya,2005,stunting_percent,income,Middle,0.4
-C,Kenya,2009,stunting_percent,income,Middle,0.35
-C,Kenya,2014,stunting_percent,income,Middle,0.25
-C,Kenya,2014,wasting_percent,income,Middle,0.042
-C,Kenya,2000,overweight_percent,income,Middle,0.08
-C,Kenya,2003,overweight_percent,income,Middle,0.06
-C,Kenya,2009,overweight_percent,income,Middle,0.05
-C,Kenya,2014,overweight_percent,income,Middle,0.04
-C,Kenya,2000,stunting_percent,income,Second wealthiest,0.4
-C,Kenya,2003,stunting_percent,income,Second wealthiest,0.35
-C,Kenya,2005,stunting_percent,income,Second wealthiest,0.4
-C,Kenya,2009,stunting_percent,income,Second wealthiest,0.35
-C,Kenya,2014,stunting_percent,income,Second wealthiest,0.25
-C,Kenya,2014,wasting_percent,income,Second wealthiest,0.042
-C,Kenya,2000,overweight_percent,income,Second wealthiest,0.08
-C,Kenya,2003,overweight_percent,income,Second wealthiest,0.06
-C,Kenya,2009,overweight_percent,income,Second wealthiest,0.05
-C,Kenya,2014,overweight_percent,income,Second wealthiest,0.04
+B,Kenya,2000,stunting_percent,gender,Both,0.4
+B,Kenya,2003,stunting_percent,gender,Both,0.35
+B,Kenya,2005,stunting_percent,gender,Both,0.4
+B,Kenya,2009,stunting_percent,gender,Both,0.35
+B,Kenya,2014,stunting_percent,gender,Both,0.25
+B,Kenya,2014,wasting_percent,gender,Both,0.042
+B,Kenya,2000,overweight_percent,gender,Both,0.08
+B,Kenya,2003,overweight_percent,gender,Both,0.06
+B,Kenya,2009,overweight_percent,gender,Both,0.05
+B,Kenya,2014,overweight_percent,gender,Both,0.04
+C,Kenya,2000,stunting_percent,income,Poorest,0.8
+C,Kenya,2003,stunting_percent,income,Poorest,0.75
+C,Kenya,2005,stunting_percent,income,Poorest,0.8
+C,Kenya,2009,stunting_percent,income,Poorest,0.75
+C,Kenya,2014,stunting_percent,income,Poorest,0.65
+C,Kenya,2014,wasting_percent,income,Poorest,0.442
+C,Kenya,2000,overweight_percent,income,Poorest,0.48
+C,Kenya,2003,overweight_percent,income,Poorest,0.46
+C,Kenya,2009,overweight_percent,income,Poorest,0.45
+C,Kenya,2014,overweight_percent,income,Poorest,0.44
+C,Kenya,2000,stunting_percent,income,Second poorest,0.7
+C,Kenya,2003,stunting_percent,income,Second poorest,0.65
+C,Kenya,2005,stunting_percent,income,Second poorest,0.7
+C,Kenya,2009,stunting_percent,income,Second poorest,0.65
+C,Kenya,2014,stunting_percent,income,Second poorest,0.55
+C,Kenya,2014,wasting_percent,income,Second poorest,0.342
+C,Kenya,2000,overweight_percent,income,Second poorest,0.38
+C,Kenya,2003,overweight_percent,income,Second poorest,0.36
+C,Kenya,2009,overweight_percent,income,Second poorest,0.35
+C,Kenya,2014,overweight_percent,income,Second poorest,0.34
+C,Kenya,2000,stunting_percent,income,Middle,0.6
+C,Kenya,2003,stunting_percent,income,Middle,0.55
+C,Kenya,2005,stunting_percent,income,Middle,0.6
+C,Kenya,2009,stunting_percent,income,Middle,0.55
+C,Kenya,2014,stunting_percent,income,Middle,0.45
+C,Kenya,2014,wasting_percent,income,Middle,0.242
+C,Kenya,2000,overweight_percent,income,Middle,0.28
+C,Kenya,2003,overweight_percent,income,Middle,0.26
+C,Kenya,2009,overweight_percent,income,Middle,0.25
+C,Kenya,2014,overweight_percent,income,Middle,0.24
+C,Kenya,2000,stunting_percent,income,Second wealthiest,0.5
+C,Kenya,2003,stunting_percent,income,Second wealthiest,0.45
+C,Kenya,2005,stunting_percent,income,Second wealthiest,0.5
+C,Kenya,2009,stunting_percent,income,Second wealthiest,0.45
+C,Kenya,2014,stunting_percent,income,Second wealthiest,0.35
+C,Kenya,2014,wasting_percent,income,Second wealthiest,0.142
+C,Kenya,2000,overweight_percent,income,Second wealthiest,0.18
+C,Kenya,2003,overweight_percent,income,Second wealthiest,0.16
+C,Kenya,2009,overweight_percent,income,Second wealthiest,0.15
+C,Kenya,2014,overweight_percent,income,Second wealthiest,0.14
 C,Kenya,2000,stunting_percent,income,Wealthiest,0.4
 C,Kenya,2003,stunting_percent,income,Wealthiest,0.35
 C,Kenya,2005,stunting_percent,income,Wealthiest,0.4
@@ -70,46 +70,46 @@ C,Kenya,2000,overweight_percent,income,Wealthiest,0.08
 C,Kenya,2003,overweight_percent,income,Wealthiest,0.06
 C,Kenya,2009,overweight_percent,income,Wealthiest,0.05
 C,Kenya,2014,overweight_percent,income,Wealthiest,0.04
-D,Kenya,2000,stunting_percent,gender,Male,0.4
-D,Kenya,2003,stunting_percent,gender,Male,0.35
-D,Kenya,2005,stunting_percent,gender,Male,0.4
-D,Kenya,2009,stunting_percent,gender,Male,0.35
-D,Kenya,2014,stunting_percent,gender,Male,0.25
-D,Kenya,2014,wasting_percent,gender,Male,0.042
-D,Kenya,2000,overweight_percent,gender,Male,0.08
-D,Kenya,2003,overweight_percent,gender,Male,0.06
-D,Kenya,2009,overweight_percent,gender,Male,0.05
-D,Kenya,2014,overweight_percent,gender,Male,0.04
-D,Kenya,2000,stunting_percent,gender,Female,0.4
-D,Kenya,2003,stunting_percent,gender,Female,0.35
-D,Kenya,2005,stunting_percent,gender,Female,0.4
-D,Kenya,2009,stunting_percent,gender,Female,0.35
-D,Kenya,2014,stunting_percent,gender,Female,0.25
-D,Kenya,2014,wasting_percent,gender,Female,0.042
-D,Kenya,2000,overweight_percent,gender,Female,0.08
-D,Kenya,2003,overweight_percent,gender,Female,0.06
-D,Kenya,2009,overweight_percent,gender,Female,0.05
-D,Kenya,2014,overweight_percent,gender,Female,0.04
-E,Kenya,2000,stunting_percent,location,Urban,0.4
-E,Kenya,2003,stunting_percent,location,Urban,0.35
-E,Kenya,2005,stunting_percent,location,Urban,0.4
-E,Kenya,2009,stunting_percent,location,Urban,0.35
-E,Kenya,2014,stunting_percent,location,Urban,0.25
-E,Kenya,2014,wasting_percent,location,Urban,0.042
-E,Kenya,2000,overweight_percent,location,Urban,0.08
-E,Kenya,2003,overweight_percent,location,Urban,0.06
-E,Kenya,2009,overweight_percent,location,Urban,0.05
-E,Kenya,2014,overweight_percent,location,Urban,0.04
-E,Kenya,2000,stunting_percent,location,Rural,0.4
-E,Kenya,2003,stunting_percent,location,Rural,0.35
-E,Kenya,2005,stunting_percent,location,Rural,0.4
-E,Kenya,2009,stunting_percent,location,Rural,0.35
-E,Kenya,2014,stunting_percent,location,Rural,0.25
-E,Kenya,2014,wasting_percent,location,Rural,0.042
-E,Kenya,2000,overweight_percent,location,Rural,0.08
-E,Kenya,2003,overweight_percent,location,Rural,0.06
-E,Kenya,2009,overweight_percent,location,Rural,0.05
-E,Kenya,2014,overweight_percent,location,Rural,0.04
+D,Kenya,2000,stunting_percent,gender,Male,0.6
+D,Kenya,2003,stunting_percent,gender,Male,0.55
+D,Kenya,2005,stunting_percent,gender,Male,0.6
+D,Kenya,2009,stunting_percent,gender,Male,0.55
+D,Kenya,2014,stunting_percent,gender,Male,0.45
+D,Kenya,2014,wasting_percent,gender,Male,0.242
+D,Kenya,2000,overweight_percent,gender,Male,0.28
+D,Kenya,2003,overweight_percent,gender,Male,0.26
+D,Kenya,2009,overweight_percent,gender,Male,0.25
+D,Kenya,2014,overweight_percent,gender,Male,0.24
+D,Kenya,2000,stunting_percent,gender,Female,0.5
+D,Kenya,2003,stunting_percent,gender,Female,0.45
+D,Kenya,2005,stunting_percent,gender,Female,0.5
+D,Kenya,2009,stunting_percent,gender,Female,0.45
+D,Kenya,2014,stunting_percent,gender,Female,0.35
+D,Kenya,2014,wasting_percent,gender,Female,0.142
+D,Kenya,2000,overweight_percent,gender,Female,0.18
+D,Kenya,2003,overweight_percent,gender,Female,0.16
+D,Kenya,2009,overweight_percent,gender,Female,0.15
+D,Kenya,2014,overweight_percent,gender,Female,0.14
+E,Kenya,2000,stunting_percent,location,Urban,0.6
+E,Kenya,2003,stunting_percent,location,Urban,0.55
+E,Kenya,2005,stunting_percent,location,Urban,0.6
+E,Kenya,2009,stunting_percent,location,Urban,0.55
+E,Kenya,2014,stunting_percent,location,Urban,0.45
+E,Kenya,2014,wasting_percent,location,Urban,0.242
+E,Kenya,2000,overweight_percent,location,Urban,0.28
+E,Kenya,2003,overweight_percent,location,Urban,0.26
+E,Kenya,2009,overweight_percent,location,Urban,0.25
+E,Kenya,2014,overweight_percent,location,Urban,0.24
+E,Kenya,2000,stunting_percent,location,Rural,0.5
+E,Kenya,2003,stunting_percent,location,Rural,0.45
+E,Kenya,2005,stunting_percent,location,Rural,0.5
+E,Kenya,2009,stunting_percent,location,Rural,0.45
+E,Kenya,2014,stunting_percent,location,Rural,0.35
+E,Kenya,2014,wasting_percent,location,Rural,0.142
+E,Kenya,2000,overweight_percent,location,Rural,0.18
+E,Kenya,2003,overweight_percent,location,Rural,0.16
+E,Kenya,2009,overweight_percent,location,Rural,0.15
+E,Kenya,2014,overweight_percent,location,Rural,0.14
 F,Kenya,2018,coexistence,all,"Not wasting, stunting, or overweight",0.679
 F,Kenya,2018,coexistence,all,Wasting and stunting,0.02
 F,Kenya,2018,coexistence,all,Stunting and overweight,0.02

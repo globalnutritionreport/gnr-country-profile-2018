@@ -1,5 +1,5 @@
 ####Setup#####
-list.of.packages <- c("ggplot2","reshape2","data.table","scales","varhandle","Cairo","plyr")
+list.of.packages <- c("ggplot2","reshape2","data.table","scales","varhandle","Cairo","plyr","eulerr")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, require, character.only=T)
@@ -74,12 +74,14 @@ yellowOrangeRedFill <- scale_fill_manual(values=c(yellow,orange,red))
 orangeFill <- scale_fill_manual(values=c(orange))
 yellowFill <- scale_fill_manual(values=c(yellow))
 blueFill <- scale_fill_manual(values=c(blue))
+lightBlueLighterBlueFill  <- scale_fill_manual(values=c(light.blue, lighter.blue))
 lightBlueFill <- scale_fill_manual(values=c(light.blue))
 lighterBlueFill <- scale_fill_manual(values=c(lighter.blue))
 quintileFill <-  scale_fill_manual(values=quintileFillValues)
 
 yellowOrangeColor <- scale_color_manual(values=c(yellow,orange))
 orangeYellowColor <- scale_color_manual(values=c(orange,yellow))
+yellowOrangeRedColor <- scale_color_manual(values=c(yellow,orange,red))
 orangeColor <- scale_color_manual(values=c(orange))
 blueColor <- scale_color_manual(values=c(blue))
 quintileColor <-  scale_color_manual(values=quintileFillValues)
@@ -514,7 +516,7 @@ for(this.country in countries){
       ,legend.key.size = unit(2.2,"lines")
     ) + geom_text(data=subset(c6data,value>3),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE) +
     scale_color_manual(breaks=c6names,values=c(white,white,white,blue,blue),drop=FALSE)
-  #Chart 13
+  #Chart 7
   indicators = c("agriculture_expenditure","education_spending","health_spending","social_protection_spending")
   c7names = c("Agriculture","Education","Health","Social protection")
   c7data = subset(countrydat,indicator %in% indicators)
@@ -580,6 +582,128 @@ for(this.country in countries){
   }else{
     c7 <- no.data
   }
+  grouped_line = function(countrydat, ind, disagg, disagg.values, fill=orangeYellowFill, color=orangeYellowColor, percent=F, legend=F){
+    cdata = subset(countrydat, (indicator==ind & disaggregation==disagg))
+    cdata$value = as.numeric(cdata$value)
+    if(percent){
+      cdata$value = cdata$value*100
+    }
+    cdata = subset(cdata, !is.na(value))
+    cdata <- cdata[order(cdata$year),]
+    cdata$year = as.factor(cdata$year)
+    cdata$disagg.value = factor(cdata$disagg.value,levels=disagg.values)
+    c.max <- max(cdata$value,na.rm=TRUE)
+    c.key.data = data.frame(year=as.numeric(rep(NA,length(disagg.values))),disagg.value=disagg.values,value=as.numeric(rep(NA,length(disagg.values))))
+    c.key.data$disagg.value = factor(c.key.data$disagg.value,levels=disagg.values)
+    c = ggplot(cdata,aes(year,value,group=disagg.value,color=disagg.value)) +
+      geom_line(show.legend=F,size=1) +
+      geom_point(data=c.key.data,aes(group=disagg.value,fill=disagg.value),size=12,color=blue,stroke=1.5,shape=21,show.legend=legend) +
+      fill +
+      color +
+      guides(fill=guide_legend(title=element_blank(),byrow=TRUE)) +
+      simple_style  +
+      scale_y_continuous(expand = c(0,0),limits=c(0,max(c.max*1.1,1))) +
+      # expand_limits(y=c1a.max*1.1) +
+      theme(
+        legend.position="top"
+        ,legend.text = element_text(size=35,color=blue)
+        ,legend.justification=c(0,0)
+        ,legend.direction="vertical"
+        ,axis.title.x=element_blank()
+        ,axis.title.y=element_blank()
+        ,axis.ticks=element_blank()
+        ,axis.line.y = element_blank()
+        ,axis.line.x = element_line(color=blue, size = 1.1)
+        ,axis.text.y = element_blank()
+        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+        ,legend.background = element_rect(fill = "transparent", colour = "transparent")
+        ,legend.key = element_blank()
+      ) + geom_text(size=9,aes(group=disagg.value,label=safeFormat(value)),position=position_dodge(0.5),vjust=-0.3,show.legend=F) 
+    return(c)
+  }
+  grouped_bar = function(countrydat, ind, disagg, disagg.values, fill=orangeYellowFill, percent=F, legend=F){
+    cdata = subset(countrydat, (indicator==ind & disaggregation==disagg))
+    cdata$value = as.numeric(cdata$value)
+    if(percent){
+      cdata$value = cdata$value*100
+    }
+    cdata = subset(cdata, !is.na(value))
+    cdata <- cdata[order(cdata$year),]
+    cdata$year = as.factor(cdata$year)
+    cdata$disagg.value = factor(cdata$disagg.value,levels=disagg.values)
+    c.max <- max(cdata$value,na.rm=TRUE)
+    c.key.data = data.frame(year=as.numeric(rep(NA,length(disagg.values))),disagg.value=disagg.values,value=as.numeric(rep(NA,length(disagg.values))))
+    c.key.data$disagg.value = factor(c.key.data$disagg.value,levels=disagg.values)
+    c = ggplot(cdata,aes(year,value,group=disagg.value,fill=disagg.value)) +
+      geom_bar(position="dodge",stat="identity",color=blue,show.legend=F,size=1) +
+      geom_point(data=c.key.data,aes(group=disagg.value,fill=disagg.value),size=12,color=blue,stroke=1.5,shape=21,show.legend=legend) +
+      fill +
+      guides(fill=guide_legend(title=element_blank(),byrow=TRUE)) +
+      simple_style  +
+      scale_y_continuous(expand = c(0,0),limits=c(0,max(c.max*1.1,1))) +
+      # expand_limits(y=c1a.max*1.1) +
+      theme(
+        legend.position="top"
+        ,legend.text = element_text(size=35,color=blue)
+        ,legend.justification=c(0,0)
+        ,legend.direction="vertical"
+        ,axis.title.x=element_blank()
+        ,axis.title.y=element_blank()
+        ,axis.ticks=element_blank()
+        ,axis.line.y = element_blank()
+        ,axis.line.x = element_line(color=blue, size = 1.1)
+        ,axis.text.y = element_blank()
+        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+        ,legend.background = element_rect(fill = "transparent", colour = "transparent")
+        ,legend.key = element_blank()
+      ) + geom_text(size=9,aes(group=disagg.value,label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,show.legend=F,color=blue) 
+    return(c)
+  }
+  # Charts 8-16
+  c8 = grouped_line(countrydat, "stunting_percent","gender",c("Male","Female","Both"),percent=T,color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
+  c9 = grouped_bar(countrydat, "wasting_percent","gender",c("Male","Female","Both"),percent=T,fill=yellowOrangeRedFill,legend=T)
+  c10 = grouped_line(countrydat, "overweight_percent","gender",c("Male","Female","Both"),percent=T,color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
+  c11 = grouped_line(countrydat, "stunting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,color=quintileColor,fill=quintileFill)
+  c12 = grouped_bar(countrydat, "wasting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,fill=quintileFill,legend=T)
+  c13 = grouped_line(countrydat, "overweight_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,color=quintileColor,fill=quintileFill)
+  c14 = grouped_line(countrydat, "stunting_percent","location",c("Urban","Rural"),percent=T)
+  c15 = grouped_bar(countrydat, "wasting_percent","location",c("Urban","Rural"),percent=T,legend=T)
+  c16 = grouped_line(countrydat, "overweight_percent","location",c("Urban","Rural"),percent=T)
+  
+  # Chart 17
+  wasting = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Wasting alone")$value)
+  stunting = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Stunting alone")$value)
+  overweight = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Overweight alone")$value)
+  wasting_and_stunting = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Wasting and stunting")$value)
+  stunting_and_overweight = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Stunting and overweight")$value)
+  all = 1
+  
+  free = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Not wasting, stunting, or overweight")$value)
+
+  combinations = c(
+    A=0
+    ,B=0
+    ,C=0
+    ,D=all
+    ,"A&B"=0
+    ,"A&C"=0
+    ,"A&D"=wasting
+    ,"B&C"=0
+    ,"B&D"=stunting
+    ,"C&D"=overweight
+    ,"A&B&C"=0
+    ,"A&B&D"=wasting_and_stunting
+    ,"A&C&D"=0
+    ,"B&C&D"=stunting_and_overweight
+    ,"A&B&C&D"=0
+  )
+  
+  label.vals = combinations
+  label.vals["D"] = free
+  
+  label.text = percent(label.vals)
+  
+  c17 = tryCatch({euler(combinations,shape="ellipse")},error=function(e){no.data})
   #Have both c1a and c1b
   if(!c1a.missing && !c1b.missing){
     Cairo(file="c1a.png",width=400,height=600,units="px",bg="white")
@@ -810,6 +934,41 @@ for(this.country in countries){
   dev.off()
   Cairo(file="c7.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c7)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c8.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c8)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c9.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c9)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c10.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c10)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c11.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c11)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c12.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c12)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c13.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c13)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c14.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c14)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c15.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c15)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c16.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c16)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  png(filename="c17.png",width=600,height=600,units="px",bg="white",type="cairo")
+  print(plot(c17,
+       legend = list(labels=c("Wasted","Stunting","Overweight","Free from"),font="arial",fontsize=20)
+       # ,edges = list(col=blue)
+       ,quantities = list(labels=label.text,fontsize=15)
+       ,fills=list(fill=c(yellow,orange,light.blue,grey),alpha=1)
+  ))
   dev.off()
 }
 ####End loop####
