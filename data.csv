@@ -540,9 +540,9 @@ S,Kenya,1999,total_calories_non_staple,all,,13
 S,Kenya,2008,total_calories_non_staple,all,,14
 S,Kenya,2009,total_calories_non_staple,all,,15
 S,Kenya,2010,total_calories_non_staple,all,,16
-T,Kenya,2000,surface_water ,all,,14
-T,Kenya,2010,surface_water ,all,,15
-T,Kenya,2015,surface_water ,all,,16
+T,Kenya,2000,surface_water,all,,14
+T,Kenya,2010,surface_water,all,,15
+T,Kenya,2015,surface_water,all,,16
 T,Kenya,2000,basic_water,all,,17
 T,Kenya,2010,basic_water,all,,18
 T,Kenya,2015,basic_water,all,,19
@@ -566,12 +566,12 @@ U,Kenya,2012,female_secondary_enroll_net,all,,1.19
 U,Kenya,2013,female_secondary_enroll_net,all,,2.19
 U,Kenya,2014,female_secondary_enroll_net,all,,3.19
 U,Kenya,2015,female_secondary_enroll_net,all,,4.19
-V,Kenya,2000,open_defication ,all,,4.19
-V,Kenya,2010,open_defication ,all,,5.19
-V,Kenya,2015,open_defication ,all,,6.19
-V,Kenya,2000,unimproved_sanitation ,all,,4.19
-V,Kenya,2010,unimproved_sanitation ,all,,5.19
-V,Kenya,2015,unimproved_sanitation ,all,,6.19
+V,Kenya,2000,open_defecation,all,,4.19
+V,Kenya,2010,open_defecation,all,,5.19
+V,Kenya,2015,open_defecation,all,,6.19
+V,Kenya,2000,unimproved_sanitation,all,,4.19
+V,Kenya,2010,unimproved_sanitation,all,,5.19
+V,Kenya,2015,unimproved_sanitation,all,,6.19
 V,Kenya,2000,limited_sanitation,all,,4.19
 V,Kenya,2010,limited_sanitation,all,,5.19
 V,Kenya,2015,limited_sanitation,all,,6.19
@@ -585,10 +585,10 @@ V,Kenya,1990,agriculture_expenditure,all,,4.19
 V,Kenya,2000,agriculture_expenditure,all,,5.19
 V,Kenya,2010,agriculture_expenditure,all,,6.19
 V,Kenya,2012,agriculture_expenditure,all,,7.19
-V,Kenya,1990,education _spending,all,,4.19
-V,Kenya,2000,education _spending,all,,5.19
-V,Kenya,2010,education _spending,all,,6.19
-V,Kenya,2012,education _spending,all,,7.19
+V,Kenya,1990,education_spending,all,,4.19
+V,Kenya,2000,education_spending,all,,5.19
+V,Kenya,2010,education_spending,all,,6.19
+V,Kenya,2012,education_spending,all,,7.19
 V,Kenya,1990,health_spending,all,,4.19
 V,Kenya,2000,health_spending,all,,5.19
 V,Kenya,2010,health_spending,all,,6.19
