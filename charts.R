@@ -7,6 +7,8 @@ lapply(list.of.packages, require, character.only=T)
 wd <- "~/git/gnr-country-profile-2018"
 setwd(wd)
 
+set.seed(12345)
+
 dat <- read.csv("data.csv",na.strings=c("","."," "),as.is=TRUE)
 
 countries <- unique(dat$country)
