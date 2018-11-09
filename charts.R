@@ -61,6 +61,7 @@ red <- "#D8511B"
 blue <- "#3D5163"
 light.blue <- "#82C6BA"
 lighter.blue <- "#BFDFD4"
+dark.grey <- "#A0ADBB"
 grey <- "#BFCCD7"
 white <- "#ffffff"
 
@@ -616,9 +617,9 @@ for(this.country in countries){
         ,axis.ticks=element_blank()
         ,axis.line.y = element_blank()
         ,axis.line.x = element_line(color=blue, size = 1.1)
-        ,axis.text.y = element_text(size=25,color=grey)
+        ,axis.text.y = element_text(size=25,color=dark.grey)
         ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
-        ,panel.grid.major.y = element_line(color=grey)
+        ,panel.grid.major.y = element_line(color=dark.grey)
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_blank()
       ) + geom_text(size=9,aes(group=disagg.value,label=safeFormat(value)),position=position_dodge(0.5),vjust=-0.3,show.legend=F) 
