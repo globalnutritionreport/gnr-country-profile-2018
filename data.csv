@@ -112,10 +112,10 @@ E,Kenya,2009,overweight_percent,location,Rural,0.15
 E,Kenya,2014,overweight_percent,location,Rural,0.14
 F,Kenya,2018,coexistence,all,"Not wasting, stunting, or overweight",0.679
 F,Kenya,2018,coexistence,all,Wasting and stunting,0.02
-F,Kenya,2018,coexistence,all,Stunting and overweight,0.02
-F,Kenya,2018,coexistence,all,Wasting alone,0.02
-F,Kenya,2018,coexistence,all,Stunting alone,0.02
-F,Kenya,2018,coexistence,all,Overweight alone,0.02
+F,Kenya,2018,coexistence,all,Stunting and overweight,0.05
+F,Kenya,2018,coexistence,all,Wasting alone,0.1
+F,Kenya,2018,coexistence,all,Stunting alone,0.4
+F,Kenya,2018,coexistence,all,Overweight alone,0.2
 G,Kenya,2000,adolescent_obesity,gender,Male,0.01
 G,Kenya,2002,adolescent_obesity,gender,Male,0.02
 G,Kenya,2004,adolescent_obesity,gender,Male,0.03
