@@ -53,18 +53,12 @@ class ReportMaker(object):
     """"""
 
     def __init__(self, template_folder, pdf_file, country_name, country_data, template_file="template.xml.j2"):
-        pdfmetrics.registerFont(TTFont('Geomanist', 'fonts/Geomanist-Regular.ttf'))
-        pdfmetrics.registerFont(TTFont('Geomanist-Bold', 'fonts/Geomanist-Bold.ttf'))
-        pdfmetrics.registerFont(TTFont('Geomanist-Italic', 'fonts/Geomanist-RegularItalic.ttf'))
-        addMapping('Geomanist', 0, 0, 'Geomanist')
-        addMapping('Geomanist', 0, 1, 'Geomanist-Italic')
-        addMapping('Geomanist', 1, 0, 'Geomanist-Bold')
-        pdfmetrics.registerFont(TTFont('Arial', 'fonts/Arial.ttf'))
-        pdfmetrics.registerFont(TTFont('Arial-Bold', 'fonts/Arial-Bold.ttf'))
-        pdfmetrics.registerFont(TTFont('Arial-Italic', 'fonts/Arial-Italic.ttf'))
-        addMapping('Arial', 0, 0, 'Arial')
-        addMapping('Arial', 0, 1, 'Arial-Italic')
-        addMapping('Arial', 1, 0, 'Arial-Bold')
+        pdfmetrics.registerFont(TTFont('Averta', 'fonts/Averta-Regular.ttf'))
+        pdfmetrics.registerFont(TTFont('Averta-Bold', 'fonts/Averta-Bold.ttf'))
+        pdfmetrics.registerFont(TTFont('Averta-Italic', 'fonts/Averta-RegularItalic.ttf'))
+        addMapping('Averta', 0, 0, 'Averta')
+        addMapping('Averta', 0, 1, 'Averta-Italic')
+        addMapping('Averta', 1, 0, 'Averta-Bold')
 
         self.country = country_name
         self.dir_path = dirname(os.path.realpath(__file__))
@@ -146,7 +140,7 @@ class ReportMaker(object):
 
                     style = ParagraphStyle(
                         'default',
-                        fontName="Geomanist",
+                        fontName="Averta",
                         leading=fontSizeAdj,
                         fontSize=fontSizeAdj,
                         borderPadding=int(font["padding"]),
@@ -173,7 +167,7 @@ class ReportMaker(object):
 
                     style = ParagraphStyle(
                         'default',
-                        fontName="Geomanist",
+                        fontName="Averta",
                         leading=fontSizeAdj,
                         fontSize=fontSizeAdj,
                         borderPadding=int(font["padding"]),

@@ -55,19 +55,26 @@ simple_style = theme_bw() +
     ,panel.grid.minor = element_blank()
     ,axis.line = element_line(colour = "black"))
 
-yellow <- "#FABD62"
-orange <- "#F68516"
-red <- "#D8511B"
-blue <- "#3D5163"
-light.blue <- "#82C6BA"
-lighter.blue <- "#BFDFD4"
-dark.grey <- "#A0ADBB"
-grey <- "#BFCCD7"
+yellow <- "#FCC97A" #light orange
+orange <- "#F39000" #orange
+red <- "#DE5D09" #dark orange
+blue <- "#475C6D" #dark grey
+light.blue <- "#93CAC9" #aqua
+lighter.blue <- "#B2D8D7" #aqua light
+dark.grey <- "#A0ADBB" #grey
+grey <- "#CFD9E5" #light grey
 white <- "#ffffff"
 
-# Not used in new design
-purple <- "#71105f"
-black <- "#443e42"
+# dark_orange = "#DE5D09"
+# orange = "#F39000"
+# light_orange = "#FCC97A"
+# dark_aqua = "#007495"
+# aqua = "#93CAC9"
+# aqua_light = "#B2D8D7"
+# aqua_extra_light = "#D1E7E5"
+# dark_grey = "#475C6D"
+# grey = "#A0ADBB"
+# light_grey = "#CFD9E5"
 
 quintileFillValues <- c(red, orange, yellow, lighter.blue, light.blue)
 
@@ -91,7 +98,18 @@ quintileColor <-  scale_color_manual(values=quintileFillValues)
 
 textQuintileOffset <- scale_color_manual(values=c(white,white,blue,blue,blue))
 
-safeFormat <- function(vec){
+firstAndLast <- function(vec,year_vec){
+  label_df = data.frame(vec,year_vec)
+  min.year = min(year_vec,na.rm=T)
+  max.year = max(year_vec,na.rm=T)
+  label_df$include = NA
+  label_df$include[label_df$year_vec==min.year] = 1
+  label_df$include[label_df$year_vec==max.year] = 1
+  label_df$vec[which(is.na(label_df$include))] = ""
+  return(label_df$vec)
+}
+
+safeFormat <- function(vec, prefix="", suffix=""){
   results <- c()
   for(x in vec){
     #Missing
@@ -118,6 +136,9 @@ safeFormat <- function(vec){
       #Large positive
     }else{
       result <- format(round(x, digits = 0),format="d",big.mark=",")
+    }
+    if(result!=""){
+      result = paste0(prefix,result,suffix)
     }
     results <- c(results,result)
   }
@@ -174,7 +195,7 @@ for(this.country in countries){
         ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_blank()
-      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
+      ) + geom_text(size=9,aes(label=safeFormat(value,suffix="%")),position=position_dodge(1),vjust=-0.3,color=blue)
     if(nrow(c1a.melt)==0){c1a.missing<-TRUE}else{c1a.missing<-FALSE}
     c1b.key.data = data.frame(year=as.numeric(c(NA)),variable=c("PPP($) GDP per capita"),value=as.numeric(c(NA)))
     c1b = ggplot(c1b.melt,aes(year,value,fill=variable)) +
@@ -287,7 +308,7 @@ for(this.country in countries){
           ,axis.line.y = element_blank()
           ,axis.line.x = element_line(color=blue, size = 1.1)
           ,axis.text.y = element_blank()
-          ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+          ,axis.text.x = element_text(size=25,color=blue, angle=90, margin=margin(t=20,r=0,b=0,l=0), vjust=0.5)
           ,legend.background = element_rect(fill = "transparent", colour = "transparent")
           ,legend.key = element_rect(fill = "transparent", colour = "transparent")
         ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
@@ -327,7 +348,7 @@ for(this.country in countries){
         ,axis.line.y = element_blank()
         ,axis.line.x = element_line(color=blue, size = 1.1)
         ,axis.text.y = element_blank()
-        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+        ,axis.text.x = element_text(size=25,color=blue, angle=90, margin=margin(t=20,r=0,b=0,l=0), vjust=0.5)
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
@@ -361,7 +382,7 @@ for(this.country in countries){
         ,axis.line.y = element_blank()
         ,axis.line.x = element_line(color=blue, size = 1.1)
         ,axis.text.y = element_blank()
-        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+        ,axis.text.x = element_text(size=25,color=blue, angle=90, margin=margin(t=20,r=0,b=0,l=0), vjust=0.5)
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
@@ -622,10 +643,10 @@ for(this.country in countries){
         ,panel.grid.major.y = element_line(color=dark.grey)
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_blank()
-      ) + geom_text(size=9,aes(group=disagg.value,label=safeFormat(value)),position=position_dodge(0.5),vjust=-0.3,show.legend=F) 
+      ) + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value),unfactor(year))),position=position_dodge(0.5),vjust=-0.3,show.legend=F) 
     return(c)
   }
-  grouped_bar = function(countrydat, ind, disagg, disagg.values, fill=orangeYellowFill, percent=F, legend=F){
+  grouped_bar = function(countrydat, ind, disagg, disagg.values, fill=orangeYellowFill, percent=F, legend=F, spacing=1){
     cdata = subset(countrydat, (indicator==ind & disaggregation==disagg))
     cdata$value = as.numeric(cdata$value)
     if(percent){
@@ -639,7 +660,7 @@ for(this.country in countries){
     c.key.data = data.frame(year=as.numeric(rep(NA,length(disagg.values))),disagg.value=disagg.values,value=as.numeric(rep(NA,length(disagg.values))))
     c.key.data$disagg.value = factor(c.key.data$disagg.value,levels=disagg.values)
     c = ggplot(cdata,aes(year,value,group=disagg.value,fill=disagg.value)) +
-      geom_bar(position="dodge",stat="identity",color=blue,show.legend=F,size=1) +
+      geom_bar(position=position_dodge(spacing),stat="identity",color=blue,show.legend=F,size=1) +
       geom_point(data=c.key.data,aes(group=disagg.value,fill=disagg.value),size=12,color=blue,stroke=1.5,shape=21,show.legend=legend) +
       fill +
       guides(fill=guide_legend(title=element_blank(),byrow=TRUE)) +
@@ -660,18 +681,18 @@ for(this.country in countries){
         ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_blank()
-      ) + geom_text(size=9,aes(group=disagg.value,label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,show.legend=F,color=blue) 
+      ) + geom_text(size=9,aes(group=disagg.value,label=safeFormat(value)),position=position_dodge(spacing),vjust=-0.3,show.legend=F,color=blue) 
     return(c)
   }
   # Charts 8-16
-  c8 = grouped_line(countrydat, "stunting_percent","gender",c("Male","Female","Both"),percent=T,color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
-  c9 = grouped_bar(countrydat, "wasting_percent","gender",c("Male","Female","Both"),percent=T,fill=yellowOrangeRedFill,legend=T)
+  c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Male","Female","Both"),percent=T,fill=yellowOrangeRedFill,legend=T)
+  c9 = grouped_line(countrydat, "stunting_percent","gender",c("Male","Female","Both"),percent=T,color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
   c10 = grouped_line(countrydat, "overweight_percent","gender",c("Male","Female","Both"),percent=T,color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
-  c11 = grouped_line(countrydat, "stunting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,color=quintileColor,fill=quintileFill)
-  c12 = grouped_bar(countrydat, "wasting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,fill=quintileFill,legend=T)
+  c11 = grouped_bar(countrydat, "wasting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,fill=quintileFill,legend=T)
+  c12 = grouped_line(countrydat, "stunting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,color=quintileColor,fill=quintileFill)
   c13 = grouped_line(countrydat, "overweight_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,color=quintileColor,fill=quintileFill)
-  c14 = grouped_line(countrydat, "stunting_percent","location",c("Urban","Rural"),percent=T)
-  c15 = grouped_bar(countrydat, "wasting_percent","location",c("Urban","Rural"),percent=T,legend=T)
+  c14 = grouped_bar(countrydat, "wasting_percent","location",c("Urban","Rural"),percent=T,legend=T)
+  c15 = grouped_line(countrydat, "stunting_percent","location",c("Urban","Rural"),percent=T)
   c16 = grouped_line(countrydat, "overweight_percent","location",c("Urban","Rural"),percent=T)
   
   # Chart 17
