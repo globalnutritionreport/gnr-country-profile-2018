@@ -725,8 +725,9 @@ for(this.country in countries){
   
   label.vals = combinations
   label.vals["D"] = free
-  
+
   label.text = percent(label.vals)
+  label.text[which(label.vals<=0.02)] = ""
   
   c17 = tryCatch({euler(combinations,shape="ellipse")},error=function(e){no.data})
   #Have both c1a and c1b
