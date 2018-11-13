@@ -116,142 +116,142 @@ F,Kenya,2018,coexistence,all,Stunting and overweight,0.05
 F,Kenya,2018,coexistence,all,Wasting alone,0.1
 F,Kenya,2018,coexistence,all,Stunting alone,0.4
 F,Kenya,2018,coexistence,all,Overweight alone,0.2
-G,Kenya,2000,adolescent_underweight,gender,Male,0.0366104215
-G,Kenya,2002,adolescent_underweight,gender,Male,0.0214378219
-G,Kenya,2004,adolescent_underweight,gender,Male,0.4587756213
-G,Kenya,2006,adolescent_underweight,gender,Male,0.2593473297
-G,Kenya,2008,adolescent_underweight,gender,Male,0.5465917997
-G,Kenya,2010,adolescent_underweight,gender,Male,0.155553908
-G,Kenya,2012,adolescent_underweight,gender,Male,0.7432608546
-G,Kenya,2016,adolescent_underweight,gender,Male,0.2440222092
-G,Kenya,2000,adolescent_underweight,gender,Female,0.3258503239
-G,Kenya,2002,adolescent_underweight,gender,Female,0.4903878077
-G,Kenya,2004,adolescent_underweight,gender,Female,0.821374005
-G,Kenya,2006,adolescent_underweight,gender,Female,0.4421845256
-G,Kenya,2008,adolescent_underweight,gender,Female,0.4589963571
-G,Kenya,2010,adolescent_underweight,gender,Female,0.1730706792
-G,Kenya,2012,adolescent_underweight,gender,Female,0.7757936865
-G,Kenya,2016,adolescent_underweight,gender,Female,0.7413864492
-G,Kenya,2000,adolescent_overweight,gender,Male,0.8913734171
-G,Kenya,2002,adolescent_overweight,gender,Male,0.4092892489
-G,Kenya,2004,adolescent_overweight,gender,Male,0.4498263372
-G,Kenya,2006,adolescent_overweight,gender,Male,0.3843482545
-G,Kenya,2008,adolescent_overweight,gender,Male,0.7890485459
-G,Kenya,2010,adolescent_overweight,gender,Male,0.6513817722
-G,Kenya,2012,adolescent_overweight,gender,Male,0.4497446822
-G,Kenya,2016,adolescent_overweight,gender,Male,0.2558856322
-G,Kenya,2000,adolescent_overweight,gender,Female,0.2053756427
-G,Kenya,2002,adolescent_overweight,gender,Female,0.3657043973
-G,Kenya,2004,adolescent_overweight,gender,Female,0.0916564441
-G,Kenya,2006,adolescent_overweight,gender,Female,0.3271635048
-G,Kenya,2008,adolescent_overweight,gender,Female,0.0553673413
-G,Kenya,2010,adolescent_overweight,gender,Female,0.8817198601
-G,Kenya,2012,adolescent_overweight,gender,Female,0.5199128652
-G,Kenya,2016,adolescent_overweight,gender,Female,0.7900841477
-G,Kenya,2000,adolescent_obesity,gender,Male,0.3313634266
-G,Kenya,2002,adolescent_obesity,gender,Male,0.0456677106
-G,Kenya,2004,adolescent_obesity,gender,Male,0.0591127768
-G,Kenya,2006,adolescent_obesity,gender,Male,0.8613354621
-G,Kenya,2008,adolescent_obesity,gender,Male,0.6876406922
-G,Kenya,2010,adolescent_obesity,gender,Male,0.8438778689
-G,Kenya,2012,adolescent_obesity,gender,Male,0.714990901
-G,Kenya,2016,adolescent_obesity,gender,Male,0.8437009168
-G,Kenya,2000,adolescent_obesity,gender,Female,0.8174900771
-G,Kenya,2002,adolescent_obesity,gender,Female,0.8365939996
-G,Kenya,2004,adolescent_obesity,gender,Female,0.6059569474
-G,Kenya,2006,adolescent_obesity,gender,Female,0.9812841789
-G,Kenya,2008,adolescent_obesity,gender,Female,0.4961454504
-G,Kenya,2010,adolescent_obesity,gender,Female,0.7527255566
-G,Kenya,2012,adolescent_obesity,gender,Female,0.9685060672
-G,Kenya,2016,adolescent_obesity,gender,Female,0.1334288762
-H,Kenya,2000,adult_overweight,gender,Male,0.8882681073
-H,Kenya,2002,adult_overweight,gender,Male,0.8595377071
-H,Kenya,2004,adult_overweight,gender,Male,0.5723325655
-H,Kenya,2006,adult_overweight,gender,Male,0.1729583864
-H,Kenya,2008,adult_overweight,gender,Male,0.1416973281
-H,Kenya,2010,adult_overweight,gender,Male,0.4508214239
-H,Kenya,2012,adult_overweight,gender,Male,0.8310173147
-H,Kenya,2016,adult_overweight,gender,Male,0.9642369385
-H,Kenya,2000,adult_overweight,gender,Female,0.9634615433
-H,Kenya,2002,adult_overweight,gender,Female,0.0764246863
-H,Kenya,2004,adult_overweight,gender,Female,0.6866121793
-H,Kenya,2006,adult_overweight,gender,Female,0.7798166379
-H,Kenya,2008,adult_overweight,gender,Female,0.9929118693
-H,Kenya,2010,adult_overweight,gender,Female,0.209639443
-H,Kenya,2012,adult_overweight,gender,Female,0.1597604703
-H,Kenya,2016,adult_overweight,gender,Female,0.1280603783
-H,Kenya,2000,adult_obesity,gender,Male,0.6972575685
-H,Kenya,2002,adult_obesity,gender,Male,0.6367438443
-H,Kenya,2004,adult_obesity,gender,Male,0.7888978125
-H,Kenya,2006,adult_obesity,gender,Male,0.1787997694
-H,Kenya,2008,adult_obesity,gender,Male,0.4803329418
-H,Kenya,2010,adult_obesity,gender,Male,0.4449901476
-H,Kenya,2012,adult_obesity,gender,Male,0.8123436795
-H,Kenya,2016,adult_obesity,gender,Male,0.087991817
-H,Kenya,2000,adult_obesity,gender,Female,0.1685772708
-H,Kenya,2002,adult_obesity,gender,Female,0.970386495
-H,Kenya,2004,adult_obesity,gender,Female,0.5481745566
-H,Kenya,2006,adult_obesity,gender,Female,0.6648796178
-H,Kenya,2008,adult_obesity,gender,Female,0.4035621118
-H,Kenya,2010,adult_obesity,gender,Female,0.1127825335
-H,Kenya,2012,adult_obesity,gender,Female,0.8179727831
-H,Kenya,2016,adult_obesity,gender,Female,0.5552021111
-H,Kenya,2000,adult_diabetes,gender,Male,0.0686305702
-H,Kenya,2002,adult_diabetes,gender,Male,0.5717800394
-H,Kenya,2004,adult_diabetes,gender,Male,0.4642452305
-H,Kenya,2006,adult_diabetes,gender,Male,0.6762909217
-H,Kenya,2008,adult_diabetes,gender,Male,0.8928103718
-H,Kenya,2010,adult_diabetes,gender,Male,0.7393411711
-H,Kenya,2012,adult_diabetes,gender,Male,0.4541150388
-H,Kenya,2016,adult_diabetes,gender,Male,0.0927485815
-H,Kenya,2000,adult_diabetes,gender,Female,0.9886829599
-H,Kenya,2002,adult_diabetes,gender,Female,0.4146211684
-H,Kenya,2004,adult_diabetes,gender,Female,0.3498632046
-H,Kenya,2006,adult_diabetes,gender,Female,0.5266134745
-H,Kenya,2008,adult_diabetes,gender,Female,0.2154380566
-H,Kenya,2010,adult_diabetes,gender,Female,0.8589309331
-H,Kenya,2012,adult_diabetes,gender,Female,0.6900322512
-H,Kenya,2016,adult_diabetes,gender,Female,0.7309203247
-I,Kenya,2000,adult_blood_pressure,gender,Male,0.9942586582
-I,Kenya,2002,adult_blood_pressure,gender,Male,0.2946963811
-I,Kenya,2004,adult_blood_pressure,gender,Male,0.4546939416
-I,Kenya,2006,adult_blood_pressure,gender,Male,0.7006152769
-I,Kenya,2008,adult_blood_pressure,gender,Male,0.9408394461
-I,Kenya,2010,adult_blood_pressure,gender,Male,0.3995605834
-I,Kenya,2012,adult_blood_pressure,gender,Male,0.616519062
-I,Kenya,2016,adult_blood_pressure,gender,Male,0.5335523035
-I,Kenya,2000,adult_blood_pressure,gender,Female,0.0144211794
-I,Kenya,2002,adult_blood_pressure,gender,Female,0.1755503555
-I,Kenya,2004,adult_blood_pressure,gender,Female,0.8051933501
-I,Kenya,2006,adult_blood_pressure,gender,Female,0.8457952616
-I,Kenya,2008,adult_blood_pressure,gender,Female,0.3574918898
-I,Kenya,2010,adult_blood_pressure,gender,Female,0.8682277757
-I,Kenya,2012,adult_blood_pressure,gender,Female,0.9017540865
-I,Kenya,2016,adult_blood_pressure,gender,Female,0.5330567865
-I,Kenya,2000,adult_sodium,all,,0.7956433191
-I,Kenya,2002,adult_sodium,all,,0.7372120518
-I,Kenya,2004,adult_sodium,all,,0.5050346652
-I,Kenya,2006,adult_sodium,all,,0.4917248413
-I,Kenya,2008,adult_sodium,all,,0.9169406951
-I,Kenya,2010,adult_sodium,all,,0.6345098262
-I,Kenya,2012,adult_sodium,all,,0.7354935644
-I,Kenya,2016,adult_sodium,all,,0.3010529063
-I,Kenya,2000,adult_anaemia,gender,Male,0.4974953123
-I,Kenya,2002,adult_anaemia,gender,Male,0.763713975
-I,Kenya,2004,adult_anaemia,gender,Male,0.1181625972
-I,Kenya,2006,adult_anaemia,gender,Male,0.0095329485
-I,Kenya,2008,adult_anaemia,gender,Male,0.9996375664
-I,Kenya,2010,adult_anaemia,gender,Male,0.2005700717
-I,Kenya,2012,adult_anaemia,gender,Male,0.5919264741
-I,Kenya,2016,adult_anaemia,gender,Male,0.5499426505
-I,Kenya,2000,adult_anaemia,gender,Female,0.1917317478
-I,Kenya,2002,adult_anaemia,gender,Female,0.4124415846
-I,Kenya,2004,adult_anaemia,gender,Female,0.5640445968
-I,Kenya,2006,adult_anaemia,gender,Female,0.1606136877
-I,Kenya,2008,adult_anaemia,gender,Female,0.3890090119
-I,Kenya,2010,adult_anaemia,gender,Female,0.1359862412
-I,Kenya,2012,adult_anaemia,gender,Female,0.2976032088
-I,Kenya,2016,adult_anaemia,gender,Female,0.9954817648
+G,Kenya,2000,adolescent_underweight,gender,Male,0.0574438624
+G,Kenya,2002,adolescent_underweight,gender,Male,0.9259307797
+G,Kenya,2004,adolescent_underweight,gender,Male,0.2206144309
+G,Kenya,2006,adolescent_underweight,gender,Male,0.7546206634
+G,Kenya,2008,adolescent_underweight,gender,Male,0.0382225114
+G,Kenya,2010,adolescent_underweight,gender,Male,0.1279051977
+G,Kenya,2012,adolescent_underweight,gender,Male,0.5727773547
+G,Kenya,2016,adolescent_underweight,gender,Male,0.5616097993
+G,Kenya,2000,adolescent_underweight,gender,Female,0.1669181076
+G,Kenya,2002,adolescent_underweight,gender,Female,0.6110918242
+G,Kenya,2004,adolescent_underweight,gender,Female,0.527909582
+G,Kenya,2006,adolescent_underweight,gender,Female,0.5269708602
+G,Kenya,2008,adolescent_underweight,gender,Female,0.2374335786
+G,Kenya,2010,adolescent_underweight,gender,Female,0.903088254
+G,Kenya,2012,adolescent_underweight,gender,Female,0.4623683969
+G,Kenya,2016,adolescent_underweight,gender,Female,0.6711718376
+G,Kenya,2000,adolescent_overweight,gender,Male,0.9465778639
+G,Kenya,2002,adolescent_overweight,gender,Male,0.6979319136
+G,Kenya,2004,adolescent_overweight,gender,Male,0.0951320974
+G,Kenya,2006,adolescent_overweight,gender,Male,0.0556729601
+G,Kenya,2008,adolescent_overweight,gender,Male,0.7520676481
+G,Kenya,2010,adolescent_overweight,gender,Male,0.8080216598
+G,Kenya,2012,adolescent_overweight,gender,Male,0.259188623
+G,Kenya,2016,adolescent_overweight,gender,Male,0.2662981612
+G,Kenya,2000,adolescent_overweight,gender,Female,0.8964589394
+G,Kenya,2002,adolescent_overweight,gender,Female,0.964838004
+G,Kenya,2004,adolescent_overweight,gender,Female,0.1540580936
+G,Kenya,2006,adolescent_overweight,gender,Female,0.0576353408
+G,Kenya,2008,adolescent_overweight,gender,Female,0.9598906779
+G,Kenya,2010,adolescent_overweight,gender,Female,0.4494544481
+G,Kenya,2012,adolescent_overweight,gender,Female,0.7078560218
+G,Kenya,2016,adolescent_overweight,gender,Female,0.9928180328
+G,Kenya,2000,adolescent_obesity,gender,Male,0.3258950117
+G,Kenya,2002,adolescent_obesity,gender,Male,0.5194002881
+G,Kenya,2004,adolescent_obesity,gender,Male,0.3211084004
+G,Kenya,2006,adolescent_obesity,gender,Male,0.5838888542
+G,Kenya,2008,adolescent_obesity,gender,Male,0.3836777134
+G,Kenya,2010,adolescent_obesity,gender,Male,0.6456523834
+G,Kenya,2012,adolescent_obesity,gender,Male,0.0440457687
+G,Kenya,2016,adolescent_obesity,gender,Male,0.5005509854
+G,Kenya,2000,adolescent_obesity,gender,Female,0.7734267052
+G,Kenya,2002,adolescent_obesity,gender,Female,0.1283469262
+G,Kenya,2004,adolescent_obesity,gender,Female,0.5764071232
+G,Kenya,2006,adolescent_obesity,gender,Female,0.0384641969
+G,Kenya,2008,adolescent_obesity,gender,Female,0.1720549415
+G,Kenya,2010,adolescent_obesity,gender,Female,0.8527871357
+G,Kenya,2012,adolescent_obesity,gender,Female,0.9733375248
+G,Kenya,2016,adolescent_obesity,gender,Female,0.2390390909
+H,Kenya,2000,adult_overweight,gender,Male,0.2283637702
+H,Kenya,2002,adult_overweight,gender,Male,0.2189572799
+H,Kenya,2004,adult_overweight,gender,Male,0.9347987131
+H,Kenya,2006,adult_overweight,gender,Male,0.7753637816
+H,Kenya,2008,adult_overweight,gender,Male,0.1097408172
+H,Kenya,2010,adult_overweight,gender,Male,0.6534155605
+H,Kenya,2012,adult_overweight,gender,Male,0.4246341593
+H,Kenya,2016,adult_overweight,gender,Male,0.9072863138
+H,Kenya,2000,adult_overweight,gender,Female,0.3267023591
+H,Kenya,2002,adult_overweight,gender,Female,0.8231246228
+H,Kenya,2004,adult_overweight,gender,Female,0.0370054269
+H,Kenya,2006,adult_overweight,gender,Female,0.0964397644
+H,Kenya,2008,adult_overweight,gender,Female,0.3274412315
+H,Kenya,2010,adult_overweight,gender,Female,0.1532504945
+H,Kenya,2012,adult_overweight,gender,Female,0.6382114352
+H,Kenya,2016,adult_overweight,gender,Female,0.3030814496
+H,Kenya,2000,adult_obesity,gender,Male,0.9545997279
+H,Kenya,2002,adult_obesity,gender,Male,0.7912311315
+H,Kenya,2004,adult_obesity,gender,Male,0.7124980786
+H,Kenya,2006,adult_obesity,gender,Male,0.7599958034
+H,Kenya,2008,adult_obesity,gender,Male,0.0326939924
+H,Kenya,2010,adult_obesity,gender,Male,0.4359733788
+H,Kenya,2012,adult_obesity,gender,Male,0.8587139184
+H,Kenya,2016,adult_obesity,gender,Male,0.9124002783
+H,Kenya,2000,adult_obesity,gender,Female,0.0800550362
+H,Kenya,2002,adult_obesity,gender,Female,0.4739538106
+H,Kenya,2004,adult_obesity,gender,Female,0.7327703224
+H,Kenya,2006,adult_obesity,gender,Female,0.1903504911
+H,Kenya,2008,adult_obesity,gender,Female,0.985011017
+H,Kenya,2010,adult_obesity,gender,Female,0.1704266643
+H,Kenya,2012,adult_obesity,gender,Female,0.8217251692
+H,Kenya,2016,adult_obesity,gender,Female,0.6785510883
+H,Kenya,2000,adult_diabetes,gender,Male,0.4341967055
+H,Kenya,2002,adult_diabetes,gender,Male,0.5859810268
+H,Kenya,2004,adult_diabetes,gender,Male,0.2966928133
+H,Kenya,2006,adult_diabetes,gender,Male,0.639490242
+H,Kenya,2008,adult_diabetes,gender,Male,0.950606108
+H,Kenya,2010,adult_diabetes,gender,Male,0.7563081223
+H,Kenya,2012,adult_diabetes,gender,Male,0.1111087942
+H,Kenya,2016,adult_diabetes,gender,Male,0.9223400722
+H,Kenya,2000,adult_diabetes,gender,Female,0.4698068283
+H,Kenya,2002,adult_diabetes,gender,Female,0.3996163881
+H,Kenya,2004,adult_diabetes,gender,Female,0.5128703526
+H,Kenya,2006,adult_diabetes,gender,Female,0.9007777541
+H,Kenya,2008,adult_diabetes,gender,Female,0.8246327856
+H,Kenya,2010,adult_diabetes,gender,Female,0.7859170854
+H,Kenya,2012,adult_diabetes,gender,Female,0.4323196781
+H,Kenya,2016,adult_diabetes,gender,Female,0.1927208822
+I,Kenya,2000,adult_blood_pressure,gender,Male,0.3557685494
+I,Kenya,2002,adult_blood_pressure,gender,Male,0.447663344
+I,Kenya,2004,adult_blood_pressure,gender,Male,0.7442880287
+I,Kenya,2006,adult_blood_pressure,gender,Male,0.0773092817
+I,Kenya,2008,adult_blood_pressure,gender,Male,0.723333817
+I,Kenya,2010,adult_blood_pressure,gender,Male,0.1773807956
+I,Kenya,2012,adult_blood_pressure,gender,Male,0.7622390546
+I,Kenya,2016,adult_blood_pressure,gender,Male,0.4080658439
+I,Kenya,2000,adult_blood_pressure,gender,Female,0.0978535849
+I,Kenya,2002,adult_blood_pressure,gender,Female,0.6143530035
+I,Kenya,2004,adult_blood_pressure,gender,Female,0.2476607289
+I,Kenya,2006,adult_blood_pressure,gender,Female,0.5292251595
+I,Kenya,2008,adult_blood_pressure,gender,Female,0.4607436707
+I,Kenya,2010,adult_blood_pressure,gender,Female,0.1661076437
+I,Kenya,2012,adult_blood_pressure,gender,Female,0.5257318158
+I,Kenya,2016,adult_blood_pressure,gender,Female,0.4018316657
+I,Kenya,2000,adult_sodium,all,,0.3352655523
+I,Kenya,2002,adult_sodium,all,,0.4309812452
+I,Kenya,2004,adult_sodium,all,,0.803754136
+I,Kenya,2006,adult_sodium,all,,0.5883987507
+I,Kenya,2008,adult_sodium,all,,0.2054353002
+I,Kenya,2010,adult_sodium,all,,0.0032440951
+I,Kenya,2012,adult_sodium,all,,0.8634238525
+I,Kenya,2016,adult_sodium,all,,0.0617720826
+I,Kenya,2000,adult_anaemia,gender,Male,0.7302444822
+I,Kenya,2002,adult_anaemia,gender,Male,0.2033842052
+I,Kenya,2004,adult_anaemia,gender,Male,0.4186456856
+I,Kenya,2006,adult_anaemia,gender,Male,0.472067031
+I,Kenya,2008,adult_anaemia,gender,Male,0.7237260509
+I,Kenya,2010,adult_anaemia,gender,Male,0.8282603387
+I,Kenya,2012,adult_anaemia,gender,Male,0.6266331655
+I,Kenya,2016,adult_anaemia,gender,Male,0.1817463559
+I,Kenya,2000,adult_anaemia,gender,Female,0.3216287755
+I,Kenya,2002,adult_anaemia,gender,Female,0.9682313346
+I,Kenya,2004,adult_anaemia,gender,Female,0.3294667228
+I,Kenya,2006,adult_anaemia,gender,Female,0.0057240115
+I,Kenya,2008,adult_anaemia,gender,Female,0.752316703
+I,Kenya,2010,adult_anaemia,gender,Female,0.5713853226
+I,Kenya,2012,adult_anaemia,gender,Female,0.3371934334
+I,Kenya,2016,adult_anaemia,gender,Female,0.5073033454
 J,Kenya,2018,early_initiation,location,Urban,10
 J,Kenya,2018,exclusive_breastfeeding,location,Urban,20
 J,Kenya,2018,solid_foods,location,Urban,30
@@ -330,94 +330,116 @@ L,Kenya,2014,iron_and_folic,gender,Female,
 L,Kenya,2014,iodised_salt,all,,0.995
 L,Kenya,2014,iodised_salt,gender,Male,
 L,Kenya,2014,iodised_salt,gender,Female,
-M,Kenya,2016,calcium,income,poorest,
-M,Kenya,2016,eggs,income,poorest,
-M,Kenya,2016,fish ,income,poorest,
-M,Kenya,2016,fruit ,income,poorest,
-M,Kenya,2016,legumes,income,poorest,
-M,Kenya,2016,milk,income,poorest,
-M,Kenya,2016,nuts,income,poorest,
-M,Kenya,2016,omega 3,income,poorest,
-M,Kenya,2016,poultry,income,poorest,
-M,Kenya,2016,processed meat,income,poorest,
-M,Kenya,2016,read meat,income,poorest,
-M,Kenya,2016,refined grains ,income,poorest,
-M,Kenya,2016,sodium ,income,poorest,
-M,Kenya,2016,SSD,income,poorest,
-M,Kenya,2016,starchy veg,income,poorest,
-M,Kenya,2016,total daity ,income,poorest,
-M,Kenya,2016,total sugar ,income,poorest,
-M,Kenya,2016,veg,income,poorest,
-M,Kenya,2016,whole grains,income,poorest,
-M,Kenya,2016,polyunsaturated fats,income,poorest,
-M,Kenya,2016,sat fat,income,poorest,
-M,Kenya,2016,transfat,income,poorest,
-M,Kenya,2016,calcium,income,lower-middle,
-M,Kenya,2016,eggs,income,lower-middle,
-M,Kenya,2016,fish ,income,lower-middle,
-M,Kenya,2016,fruit ,income,lower-middle,
-M,Kenya,2016,legumes,income,lower-middle,
-M,Kenya,2016,milk,income,lower-middle,
-M,Kenya,2016,nuts,income,lower-middle,
-M,Kenya,2016,omega 3,income,lower-middle,
-M,Kenya,2016,poultry,income,lower-middle,
-M,Kenya,2016,processed meat,income,lower-middle,
-M,Kenya,2016,read meat,income,lower-middle,
-M,Kenya,2016,refined grains ,income,lower-middle,
-M,Kenya,2016,sodium ,income,lower-middle,
-M,Kenya,2016,SSD,income,lower-middle,
-M,Kenya,2016,starchy veg,income,lower-middle,
-M,Kenya,2016,total daity ,income,lower-middle,
-M,Kenya,2016,total sugar ,income,lower-middle,
-M,Kenya,2016,veg,income,lower-middle,
-M,Kenya,2016,whole grains,income,lower-middle,
-M,Kenya,2016,polyunsaturated fats,income,lower-middle,
-M,Kenya,2016,sat fat,income,lower-middle,
-M,Kenya,2016,transfat,income,lower-middle,
-M,Kenya,2016,calcium,income,upper_middle,
-M,Kenya,2016,eggs,income,upper_middle,
-M,Kenya,2016,fish ,income,upper_middle,
-M,Kenya,2016,fruit ,income,upper_middle,
-M,Kenya,2016,legumes,income,upper_middle,
-M,Kenya,2016,milk,income,upper_middle,
-M,Kenya,2016,nuts,income,upper_middle,
-M,Kenya,2016,omega 3,income,upper_middle,
-M,Kenya,2016,poultry,income,upper_middle,
-M,Kenya,2016,processed meat,income,upper_middle,
-M,Kenya,2016,read meat,income,upper_middle,
-M,Kenya,2016,refined grains ,income,upper_middle,
-M,Kenya,2016,sodium ,income,upper_middle,
-M,Kenya,2016,SSD,income,upper_middle,
-M,Kenya,2016,starchy veg,income,upper_middle,
-M,Kenya,2016,total daity ,income,upper_middle,
-M,Kenya,2016,total sugar ,income,upper_middle,
-M,Kenya,2016,veg,income,upper_middle,
-M,Kenya,2016,whole grains,income,upper_middle,
-M,Kenya,2016,polyunsaturated fats,income,upper_middle,
-M,Kenya,2016,sat fat,income,upper_middle,
-M,Kenya,2016,transfat,income,upper_middle,
-M,Kenya,2016,calcium,income,upper,
-M,Kenya,2016,eggs,income,upper,
-M,Kenya,2016,fish ,income,upper,
-M,Kenya,2016,fruit ,income,upper,
-M,Kenya,2016,legumes,income,upper,
-M,Kenya,2016,milk,income,upper,
-M,Kenya,2016,nuts,income,upper,
-M,Kenya,2016,omega 3,income,upper,
-M,Kenya,2016,poultry,income,upper,
-M,Kenya,2016,processed meat,income,upper,
-M,Kenya,2016,read meat,income,upper,
-M,Kenya,2016,refined grains ,income,upper,
-M,Kenya,2016,sodium ,income,upper,
-M,Kenya,2016,SSD,income,upper,
-M,Kenya,2016,starchy veg,income,upper,
-M,Kenya,2016,total daity ,income,upper,
-M,Kenya,2016,total sugar ,income,upper,
-M,Kenya,2016,veg,income,upper,
-M,Kenya,2016,whole grains,income,upper,
-M,Kenya,2016,polyunsaturated fats,income,upper,
-M,Kenya,2016,sat fat,income,upper,
-M,Kenya,2016,transfat,income,upper,
+M,Kenya,2016,calcium,income,poorest,11.0874695638
+M,Kenya,2016,eggs,income,poorest,53.5505857607
+M,Kenya,2016,fish ,income,poorest,1.4336034229
+M,Kenya,2016,fruit ,income,poorest,97.6933414086
+M,Kenya,2016,legumes,income,poorest,46.0520869098
+M,Kenya,2016,milk,income,poorest,71.4161818954
+M,Kenya,2016,nuts,income,poorest,20.016523751
+M,Kenya,2016,omega 3,income,poorest,99.0213341825
+M,Kenya,2016,poultry,income,poorest,74.589058516
+M,Kenya,2016,processed meat,income,poorest,19.7181000135
+M,Kenya,2016,read meat,income,poorest,44.2704128875
+M,Kenya,2016,refined grains ,income,poorest,53.9457820938
+M,Kenya,2016,sodium ,income,poorest,96.8658546208
+M,Kenya,2016,SSD,income,poorest,78.6255904834
+M,Kenya,2016,starchy veg,income,poorest,34.4963073775
+M,Kenya,2016,total daity ,income,poorest,89.0507959727
+M,Kenya,2016,total sugar ,income,poorest,29.9393365012
+M,Kenya,2016,veg,income,poorest,82.4447216664
+M,Kenya,2016,whole grains,income,poorest,91.171705733
+M,Kenya,2016,polyunsaturated fats,income,poorest,55.2367587577
+M,Kenya,2016,sat fat,income,poorest,32.0408119293
+M,Kenya,2016,transfat,income,poorest,33.7558283457
+M,Kenya,2016,calcium,income,lower-middle,25.4748072607
+M,Kenya,2016,eggs,income,lower-middle,58.289609604
+M,Kenya,2016,fish ,income,lower-middle,54.4765264547
+M,Kenya,2016,fruit ,income,lower-middle,55.3018014665
+M,Kenya,2016,legumes,income,lower-middle,63.2250973486
+M,Kenya,2016,milk,income,lower-middle,76.6693170579
+M,Kenya,2016,nuts,income,lower-middle,10.599490622
+M,Kenya,2016,omega 3,income,lower-middle,76.4949233151
+M,Kenya,2016,poultry,income,lower-middle,56.9469000842
+M,Kenya,2016,processed meat,income,lower-middle,46.2368435846
+M,Kenya,2016,read meat,income,lower-middle,2.2015199664
+M,Kenya,2016,refined grains ,income,lower-middle,7.662607371
+M,Kenya,2016,sodium ,income,lower-middle,8.9968729099
+M,Kenya,2016,SSD,income,lower-middle,70.2828591405
+M,Kenya,2016,starchy veg,income,lower-middle,94.2500603444
+M,Kenya,2016,total daity ,income,lower-middle,10.4540420056
+M,Kenya,2016,total sugar ,income,lower-middle,27.7376863543
+M,Kenya,2016,veg,income,lower-middle,76.3714933849
+M,Kenya,2016,whole grains,income,lower-middle,36.2976045319
+M,Kenya,2016,polyunsaturated fats,income,lower-middle,24.7978135728
+M,Kenya,2016,sat fat,income,lower-middle,15.8901043943
+M,Kenya,2016,transfat,income,lower-middle,90.9635348486
+M,Kenya,2016,calcium,income,upper-middle,88.5371370969
+M,Kenya,2016,eggs,income,upper-middle,50.1076463714
+M,Kenya,2016,fish ,income,upper-middle,65.1397457643
+M,Kenya,2016,fruit ,income,upper-middle,38.468872983
+M,Kenya,2016,legumes,income,upper-middle,6.0816502535
+M,Kenya,2016,milk,income,upper-middle,77.8225087344
+M,Kenya,2016,nuts,income,upper-middle,1.2590904684
+M,Kenya,2016,omega 3,income,upper-middle,91.7375252099
+M,Kenya,2016,poultry,income,upper-middle,60.8056638806
+M,Kenya,2016,processed meat,income,upper-middle,13.0478844467
+M,Kenya,2016,read meat,income,upper-middle,37.3157100597
+M,Kenya,2016,refined grains ,income,upper-middle,70.1343360729
+M,Kenya,2016,sodium ,income,upper-middle,96.8577998445
+M,Kenya,2016,SSD,income,upper-middle,14.1109071295
+M,Kenya,2016,starchy veg,income,upper-middle,5.8289368149
+M,Kenya,2016,total daity ,income,upper-middle,60.0408384329
+M,Kenya,2016,total sugar ,income,upper-middle,17.303432105
+M,Kenya,2016,veg,income,upper-middle,82.4129598994
+M,Kenya,2016,whole grains,income,upper-middle,47.1290918766
+M,Kenya,2016,polyunsaturated fats,income,upper-middle,94.9966042486
+M,Kenya,2016,sat fat,income,upper-middle,36.9543012855
+M,Kenya,2016,transfat,income,upper-middle,73.6756877137
+M,Kenya,2016,calcium,income,upper,22.1519385143
+M,Kenya,2016,eggs,income,upper,55.2585629589
+M,Kenya,2016,fish ,income,upper,26.2836081894
+M,Kenya,2016,fruit ,income,upper,12.3040062943
+M,Kenya,2016,legumes,income,upper,61.4967710461
+M,Kenya,2016,milk,income,upper,94.2277255689
+M,Kenya,2016,nuts,income,upper,20.0059026475
+M,Kenya,2016,omega 3,income,upper,64.3884231178
+M,Kenya,2016,poultry,income,upper,82.3341109881
+M,Kenya,2016,processed meat,income,upper,6.3056545481
+M,Kenya,2016,read meat,income,upper,86.0329650594
+M,Kenya,2016,refined grains ,income,upper,50.3247945126
+M,Kenya,2016,sodium ,income,upper,44.3069143298
+M,Kenya,2016,SSD,income,upper,73.4653964523
+M,Kenya,2016,starchy veg,income,upper,68.0503284896
+M,Kenya,2016,total daity ,income,upper,42.2637943315
+M,Kenya,2016,total sugar ,income,upper,7.7577576246
+M,Kenya,2016,veg,income,upper,20.7488024954
+M,Kenya,2016,whole grains,income,upper,18.6393682797
+M,Kenya,2016,polyunsaturated fats,income,upper,97.9988226185
+M,Kenya,2016,sat fat,income,upper,15.3733502509
+M,Kenya,2016,transfat,income,upper,98.0106646212
+M,Kenya,2016,calcium,recommendation,,57.9705938912
+M,Kenya,2016,eggs,recommendation,,16.3072287368
+M,Kenya,2016,fish ,recommendation,,12.8000833434
+M,Kenya,2016,fruit ,recommendation,,22.2693235477
+M,Kenya,2016,legumes,recommendation,,39.1160563501
+M,Kenya,2016,milk,recommendation,,9.4643004292
+M,Kenya,2016,nuts,recommendation,,8.3868265102
+M,Kenya,2016,omega 3,recommendation,,74.2410907155
+M,Kenya,2016,poultry,recommendation,,64.4561331613
+M,Kenya,2016,processed meat,recommendation,,8.1062623288
+M,Kenya,2016,read meat,recommendation,,95.4715563074
+M,Kenya,2016,refined grains ,recommendation,,90.1156782753
+M,Kenya,2016,sodium ,recommendation,,40.1461329517
+M,Kenya,2016,SSD,recommendation,,2.8719707917
+M,Kenya,2016,starchy veg,recommendation,,61.5061767921
+M,Kenya,2016,total daity ,recommendation,,50.5873136841
+M,Kenya,2016,total sugar ,recommendation,,49.552703518
+M,Kenya,2016,veg,recommendation,,54.0744330469
+M,Kenya,2016,whole grains,recommendation,,6.0313537714
+M,Kenya,2016,polyunsaturated fats,recommendation,,12.6166903734
+M,Kenya,2016,sat fat,recommendation,,65.7708091238
+M,Kenya,2016,transfat,recommendation,,19.1005417789
 N,Kenya,2000,whole_grains,illness,colon_rectum,
 N,Kenya,2000,whole_grains,illness,diabetes_mellitus,
 N,Kenya,2000,whole_grains,illness,ischemic_stroke,

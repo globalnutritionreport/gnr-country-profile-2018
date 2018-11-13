@@ -904,6 +904,87 @@ for(this.country in countries){
   c25 = grouped_line(countrydat, "adult_blood_pressure","gender",c("Male","Female"),percent=T,legend=T)
   c26 = grouped_line(countrydat, "adult_anaemia","gender",c("Male","Female"),percent=T)
   c27 = single_bar(countrydat, "adult_sodium",c("All"),percent=T,fill=yellowOrangeRedFill,legend=T)
+  
+  # Chart 28, assuming it's already out of 1
+  firstup <- function(x) {
+    substr(x, 1, 1) <- toupper(substr(x, 1, 1))
+    return(x)
+  }
+  c28.data = subset(countrydat,component == "M")
+  c28.data$value = as.numeric(c28.data$value)
+  recs = subset(c28.data,disaggregation=="recommendation")
+  recs = recs[c("indicator","value")]
+  setnames(recs,"value","recommended")
+  c28.data = subset(c28.data, disaggregation=="income")
+  c28.data = merge(c28.data,recs)
+  c28.data$percent = c28.data$value/c28.data$recommended
+  c28.data$disagg.value = sapply(c28.data$disagg.value,firstup)
+  c28.data$indicator = sapply(c28.data$indicator,firstup)
+  # Outliers
+  setnames(c28.data,"indicator","food")
+  setnames(c28.data,"disagg.value","class")
+  c28.data = c28.data[order(c28.data$food, c28.data$percent),]
+  c28.data$value_if_outlier = c(2.1,2.2,2.3,2.4)
+  c28.data$outlier = 0
+  c28.data$outlier[which(c28.data$percent>2)] = 1
+  c28.data$percent[which(c28.data$percent>2)] = c28.data$value_if_outlier[which(c28.data$percent>2)]
+  c28.data$column = c(rep(1,44),rep(2,44))
+  bar.dat = unique(c28.data[c("food","recommended","column")])
+  bar.dat$class = "Poorest"
+  c28.max = min(max(c28.data$percent,na.rm=T),2)
+  
+  i = 1
+  c28.data.sub = subset(c28.data,column==i)
+  bar.dat.sub = subset(bar.dat,column==i)
+  c28a = ggplot(c28.data.sub,aes(x=food,colour=class)) +
+    geom_bar(data=bar.dat.sub,aes(y=c28.max),fill="white",color=blue,stat="identity",width=0.4) +
+    geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
+    geom_point(data=subset(c28.data.sub,outlier==1),aes(y=percent),size=10,show.legend=F) +
+    geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2) +
+    geom_text(aes(y=1,label=paste(round(recommended),"g")),color=blue,vjust=-1.3,size=10) +
+    geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round(value)),color=blue,size=8) +
+    quintileColor + 
+    coord_flip() +
+    theme_classic() +
+    theme(
+      axis.title=element_blank(),
+      axis.line=element_blank(),
+      axis.ticks=element_blank(),
+      axis.text.x = element_blank(),
+      axis.text.y = element_text(size=22,color=blue),
+      legend.title=element_blank(),
+      legend.position="left",
+      legend.text = element_text(size=22,color=blue),
+      legend.background = element_rect(fill = "transparent", colour = "transparent"),
+      legend.key = element_rect(fill = "transparent", colour = "transparent"),
+      legend.key.size = unit(2.5,"lines")
+    )
+  
+  i = 2
+  c28.data.sub = subset(c28.data,column==i)
+  bar.dat.sub = subset(bar.dat,column==i)
+  c28b = ggplot(c28.data.sub,aes(x=food,colour=class)) +
+    geom_bar(data=bar.dat.sub,aes(y=c28.max),fill="white",color=blue,stat="identity",width=0.4) +
+    geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
+    geom_point(data=subset(c28.data.sub,outlier==1),aes(y=percent),size=10,show.legend=F) +
+    geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2,show.legend=F) +
+    geom_text(aes(y=1,label=paste(round(recommended),"g")),color=blue,vjust=-1.3,size=10) +
+    geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round(value)),color=blue,size=8) +
+    quintileColor + 
+    coord_flip() +
+    theme_classic() +
+    theme(
+      axis.title=element_blank(),
+      axis.line=element_blank(),
+      axis.ticks=element_blank(),
+      axis.text.x = element_blank(),
+      axis.text.y = element_text(size=22,color=blue),
+      legend.title=element_blank(),
+      legend.text = element_text(size=22,color=blue),
+      legend.background = element_rect(fill = "transparent", colour = "transparent"),
+      legend.key = element_rect(fill = "transparent", colour = "transparent"),
+      legend.key.size = unit(2.5,"lines")
+    )
   #Have both c1a and c1b
   if(!c1a.missing && !c1b.missing){
     Cairo(file="c1a.png",width=400,height=600,units="px",bg="white")
@@ -1244,6 +1325,12 @@ for(this.country in countries){
   dev.off()
   Cairo(file="c27.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c27)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c28a.png",width=1350,height=960,units="px",bg="white")
+  tryCatch({print(c28a)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c28b.png",width=1050,height=960,units="px",bg="white")
+  tryCatch({print(c28b)},error=function(e){message(e);print(no.data)})
   dev.off()
 }
 ####End loop####
