@@ -186,7 +186,7 @@
 
 <image top="0" left="0" width="892" height="84" src="{{template_folder}}/banner_p2.png"/>
 
-<text top="-10" left="39" width="362" height="72" font="2" shrink="True">{{country_data.country}}</text>
+<text top="-10" left="39" width="362" height="72" font="2" shrink="True"><b>{{country_data.country}}</b></text>
 
 <!-- Row -->
 {% set top = 95 %}
@@ -265,7 +265,7 @@
 
 <image top="0" left="0" width="892" height="84" src="{{template_folder}}/banner_p2.png"/>
 
-<text top="-10" left="39" width="362" height="72" font="2" shrink="True">{{country_data.country}}</text>
+<text top="-10" left="39" width="362" height="72" font="2" shrink="True"><b>{{country_data.country}}</b></text>
 
 <!-- Row -->
 {% set top = 95 %}
@@ -274,6 +274,8 @@
 <!-- Chart 18 -->
 {% set top = top + 20 %}
 <image top="{{top+20}}" left="{{left}}" width="800" height="210" src="charts/{{country_data.country}}/c18.png"/>
+<image top="{{top+20}}" left="{{left}}" width="450" height="210" src="charts/{{country_data.country}}/c18a.png"/>
+<image top="{{top+20}}" left="{{left+450}}" width="350" height="210" src="charts/{{country_data.country}}/c18b.png"/>
 <line x1="{{left}}" x2="{{left}}" y1="{{top+265}}" y2="{{top+271}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top+260}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></text>
 
@@ -329,11 +331,11 @@
 <image top="{{top + 39}}" left="{{left}}" width="240" height="190" src="charts/{{country_data.country}}/c25.png"/>
 
 <line x1="{{left+256}}" x2="{{left+256}}" y1="{{top+21}}" y2="{{top+256}}" on="1" off="0" color="{{grey}}"></line>
-<text top="{{top+11}}" left="{{left+276}}" width="151" height="18" font="6"><b>Adult by gender: Sodium intake</b></text>
+<text top="{{top+11}}" left="{{left+276}}" width="151" height="18" font="6"><b>Adult by gender: Anaemia in WRA</b></text>
 <image top="{{top + 39}}" left="{{left+276}}" width="240" height="190" src="charts/{{country_data.country}}/c26.png"/>
 
 <line x1="{{left+536}}" x2="{{left+536}}" y1="{{top+21}}" y2="{{top+256}}" on="1" off="0" color="{{grey}}"></line>
-<text top="{{top+11}}" left="{{left+556}}" width="151" height="18" font="6"><b>Adult by gender: Anaemia in WRA</b></text>
+<text top="{{top+11}}" left="{{left+556}}" width="151" height="18" font="6"><b>Adult: Sodium intake</b></text>
 <image top="{{top + 39}}" left="{{left+556}}" width="240" height="190" src="charts/{{country_data.country}}/c27.png"/>
 
 {% set top = top + 245 %}
@@ -349,7 +351,7 @@
 
 <image top="0" left="0" width="892" height="84" src="{{template_folder}}/banner_p2.png"/>
 
-<text top="-10" left="39" width="362" height="72" font="2" shrink="True">{{country_data.country}}</text>
+<text top="-10" left="39" width="362" height="72" font="2" shrink="True"><b>{{country_data.country}}</b></text>
 
 <!-- Row -->
 {% set top = 95 %}

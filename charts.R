@@ -105,6 +105,7 @@ firstAndLast <- function(vec,year_vec){
   label_df$include = NA
   label_df$include[label_df$year_vec==min.year] = 1
   label_df$include[label_df$year_vec==max.year] = 1
+  if(is.factor(label_df$vec)){label_df$vec = unfactor(label_df$vec)}
   label_df$vec[which(is.na(label_df$include))] = ""
   return(label_df$vec)
 }
@@ -624,7 +625,7 @@ for(this.country in countries){
       geom_point(data=c.key.data,aes(group=disagg.value,fill=disagg.value),size=12,color=blue,stroke=1.5,shape=21,show.legend=legend) +
       fill +
       color +
-      guides(fill=guide_legend(title=element_blank(),byrow=TRUE)) +
+      guides(fill=guide_legend(title=element_blank(),byrow=TRUE),color=F) +
       simple_style  +
       scale_y_continuous(expand = c(0,0),limits=c(0,max(c.max*1.1,1))) +
       # expand_limits(y=c1a.max*1.1) +
@@ -655,6 +656,45 @@ for(this.country in countries){
     cdata = subset(cdata, !is.na(value))
     cdata <- cdata[order(cdata$year),]
     cdata$year = as.factor(cdata$year)
+    cdata$disagg.value = factor(cdata$disagg.value,levels=disagg.values)
+    c.max <- max(cdata$value,na.rm=TRUE)
+    c.key.data = data.frame(year=as.numeric(rep(NA,length(disagg.values))),disagg.value=disagg.values,value=as.numeric(rep(NA,length(disagg.values))))
+    c.key.data$disagg.value = factor(c.key.data$disagg.value,levels=disagg.values)
+    c = ggplot(cdata,aes(year,value,group=disagg.value,fill=disagg.value)) +
+      geom_bar(position=position_dodge(spacing),stat="identity",color=blue,show.legend=F,size=1) +
+      geom_point(data=c.key.data,aes(group=disagg.value,fill=disagg.value),size=12,color=blue,stroke=1.5,shape=21,show.legend=legend) +
+      fill +
+      guides(fill=guide_legend(title=element_blank(),byrow=TRUE)) +
+      simple_style  +
+      scale_y_continuous(expand = c(0,0),limits=c(0,max(c.max*1.1,1))) +
+      # expand_limits(y=c1a.max*1.1) +
+      theme(
+        legend.position="top"
+        ,legend.text = element_text(size=35,color=blue)
+        ,legend.justification=c(0,0)
+        ,legend.direction="vertical"
+        ,axis.title.x=element_blank()
+        ,axis.title.y=element_blank()
+        ,axis.ticks=element_blank()
+        ,axis.line.y = element_blank()
+        ,axis.line.x = element_line(color=blue, size = 1.1)
+        ,axis.text.y = element_blank()
+        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+        ,legend.background = element_rect(fill = "transparent", colour = "transparent")
+        ,legend.key = element_blank()
+      ) + geom_text(size=9,aes(group=disagg.value,label=safeFormat(value)),position=position_dodge(spacing),vjust=-0.3,show.legend=F,color=blue) 
+    return(c)
+  }
+  single_bar = function(countrydat, ind, disagg.values, fill=orangeYellowFill, percent=F, legend=F, spacing=1){
+    cdata = subset(countrydat, (indicator==ind))
+    cdata$value = as.numeric(cdata$value)
+    if(percent){
+      cdata$value = cdata$value*100
+    }
+    cdata = subset(cdata, !is.na(value))
+    cdata <- cdata[order(cdata$year),]
+    cdata$year = as.factor(cdata$year)
+    cdata$disagg.value = disagg.values
     cdata$disagg.value = factor(cdata$disagg.value,levels=disagg.values)
     c.max <- max(cdata$value,na.rm=TRUE)
     c.key.data = data.frame(year=as.numeric(rep(NA,length(disagg.values))),disagg.value=disagg.values,value=as.numeric(rep(NA,length(disagg.values))))
@@ -730,6 +770,140 @@ for(this.country in countries){
   label.text[which(label.vals<=0.02)] = ""
   
   c17 = tryCatch({euler(combinations,shape="ellipse")},error=function(e){no.data})
+  
+  # Chart 18
+  indicators = c(
+    "continued_breastfeeding_2yr",
+    "continued_breastfeeding_1yr",
+    "minimum_accept_diet",
+    "minimum_diet_diversity",
+    "minimum_meal",
+    "solid_foods",
+    "exclusive_breastfeeding",
+    "early_initiation"
+  )
+  c18names = c(
+    "Continued breastfeeding at 2 years",
+    "Continued breastfeeding at 1 year",
+    "Minimum acceptable diet",
+    "Minimum dietary diversity",
+    "Minimum meal frequency",
+    "Introduction to solids, semi-solid foods",
+    "Exclusive breastfeeding",
+    "Early initiation"
+  )
+  c18data = subset(countrydat,indicator %in% indicators)
+  c18data$value = as.numeric(c18data$value)
+  c18data = subset(c18data, !is.na(value))
+  c18.max <- max(c18data$value,na.rm=TRUE)
+  c18.min = 0
+  for(j in 1:length(indicators)){
+    ind = indicators[j]
+    indname = c18names[j]
+    c18data$indicator[which(c18data$indicator==ind)] = indname
+  }
+  c18data$indicator <- factor(c18data$indicator,levels=rev(c18names))
+  c18a.data = subset(c18data,disaggregation=="income")
+  c18a.data$disagg.value = factor(c18a.data$disagg.value,levels=c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"))
+  c18b.data = subset(c18data,disaggregation=="location")
+  if(nrow(c18a.data)==0){
+    c18a <- no.data
+    c18a.missing = T
+    if(nrow(c18b.data)>0){
+      c18b.missing = F
+      c18b = ggplot(c18b.data,aes(x=value,y=indicator)) +
+        geom_rect(aes(group=year,xmin=c18.min,xmax=c18.max,ymin=indicator,ymax=indicator),color=grey) +
+        geom_point(size=7,aes(group=disagg.value,colour=disagg.value),shape=21,fill="transparent",stroke=2) +
+        scale_x_continuous(breaks = scales::pretty_breaks(n = 5)) +
+        quintileColor +
+        guides(colour=guide_legend(title=element_blank(),reverse=TRUE,nrow=2,byrow=T)) +
+        simple_style  +
+        theme(
+          legend.position="top"
+          ,legend.text = element_text(size=22,color=blue)
+          ,legend.justification=c(0,0)
+          ,legend.direction="horizontal"
+          ,axis.title.y=element_blank()
+          ,axis.title.x=element_blank()
+          ,axis.ticks=element_blank()
+          ,axis.line.y = element_blank()
+          ,axis.line.x = element_line(color=blue, size = 1)
+          ,axis.text.y = element_text(size=21,color=blue)
+          ,axis.text.x = element_text(size=25,color=blue)
+          ,legend.background = element_rect(fill = "transparent", colour = "transparent")
+          ,legend.key = element_rect(fill = "transparent", colour = "transparent")
+          ,legend.key.size = unit(2.5,"lines")
+          ,title = element_text(size=30,color=blue)
+        ) + labs(title="Urban/rural (%)")
+    }else{
+      c18b.missing = T
+    }
+  }else{
+    c18a.missing = F
+    c18a = ggplot(c18a.data,aes(x=value,y=indicator)) +
+      geom_rect(aes(group=year,xmin=c18.min,xmax=c18.max,ymin=indicator,ymax=indicator),color=grey) +
+      geom_point(size=7,aes(group=disagg.value,colour=disagg.value),shape=21,fill="transparent",stroke=2) +
+      scale_x_continuous(breaks = scales::pretty_breaks(n = 5)) +
+      quintileColor +
+      guides(colour=guide_legend(title=element_blank(),reverse=TRUE,nrow=2,byrow=T)) +
+      simple_style  +
+      theme(
+        legend.position="top"
+        ,legend.text = element_text(size=22,color=blue)
+        ,legend.justification=c(0,0)
+        ,legend.direction="horizontal"
+        ,axis.title.y=element_blank()
+        ,axis.title.x=element_blank()
+        ,axis.ticks=element_blank()
+        ,axis.line.y = element_blank()
+        ,axis.line.x = element_line(color=blue, size = 1)
+        ,axis.text.y = element_text(size=21,color=blue)
+        ,axis.text.x = element_text(size=25,color=blue)
+        ,legend.background = element_rect(fill = "transparent", colour = "transparent")
+        ,legend.key = element_rect(fill = "transparent", colour = "transparent")
+        ,legend.key.size = unit(2.5,"lines")
+        ,title = element_text(size=30,color=blue)
+      ) + labs(title="Wealth quintiles (%)")
+    if(nrow(c18b.data)>0){
+      c18b.missing = F
+      c18b = ggplot(c18b.data,aes(x=value,y=indicator)) +
+        geom_rect(aes(group=year,xmin=c18.min,xmax=c18.max,ymin=indicator,ymax=indicator),color=grey) +
+        geom_point(size=7,aes(group=disagg.value,colour=disagg.value),shape=21,fill="transparent",stroke=2) +
+        scale_x_continuous(breaks = scales::pretty_breaks(n = 5)) +
+        quintileColor +
+        guides(colour=guide_legend(title=element_blank(),reverse=TRUE,nrow=2,byrow=T)) +
+        simple_style  +
+        theme(
+          legend.position="top"
+          ,legend.text = element_text(size=22,color=blue)
+          ,legend.justification=c(0,0)
+          ,legend.direction="horizontal"
+          ,axis.title.y=element_blank()
+          ,axis.title.x=element_blank()
+          ,axis.ticks=element_blank()
+          ,axis.line.y = element_blank()
+          ,axis.line.x = element_line(color=blue, size = 1)
+          ,axis.text.y = element_blank()
+          ,axis.text.x = element_text(size=25,color=blue)
+          ,legend.background = element_rect(fill = "transparent", colour = "transparent")
+          ,legend.key = element_rect(fill = "transparent", colour = "transparent")
+          ,legend.key.size = unit(2.5,"lines")
+          ,title = element_text(size=30,color=blue)
+        ) + labs(title="Urban/rural (%)")
+    }else{
+      c18b.missing = T
+    }
+  }
+  # Charts 19-27
+  c19 = grouped_line(countrydat, "adolescent_underweight","gender",c("Male","Female"),percent=T,legend=T)
+  c20 = grouped_line(countrydat, "adolescent_overweight","gender",c("Male","Female"),percent=T)
+  c21 = grouped_line(countrydat, "adolescent_obesity","gender",c("Male","Female"),percent=T)
+  c22 = grouped_line(countrydat, "adult_diabetes","gender",c("Male","Female"),percent=T,legend=T)
+  c23 = grouped_line(countrydat, "adult_overweight","gender",c("Male","Female"),percent=T)
+  c24 = grouped_line(countrydat, "adult_obesity","gender",c("Male","Female"),percent=T)
+  c25 = grouped_line(countrydat, "adult_blood_pressure","gender",c("Male","Female"),percent=T,legend=T)
+  c26 = grouped_line(countrydat, "adult_anaemia","gender",c("Male","Female"),percent=T)
+  c27 = single_bar(countrydat, "adult_sodium",c("All"),percent=T,fill=yellowOrangeRedFill,legend=T)
   #Have both c1a and c1b
   if(!c1a.missing && !c1b.missing){
     Cairo(file="c1a.png",width=400,height=600,units="px",bg="white")
@@ -995,6 +1169,81 @@ for(this.country in countries){
        ,quantities = list(labels=label.text,fontsize=15)
        ,fills=list(fill=c(yellow,orange,light.blue,grey),alpha=1)
   ))
+  dev.off()
+  #Have both c18a and c18b
+  if(!c18a.missing && !c18b.missing){
+    Cairo(file="c18a.png",width=1350,height=600,units="px",bg="white")
+    tryCatch({print(c18a)},error=function(e){message(e);print(no.data)})
+    dev.off()
+    Cairo(file="c18b.png",width=1050,height=600,units="px",bg="white")
+    tryCatch({print(c18b)},error=function(e){message(e);print(no.data)})
+    dev.off()
+    Cairo(file="c18.png",width=2400,height=600,units="px",bg="transparent")
+    print(cblank)
+    dev.off()
+  }
+  #Have only c18a
+  if(!c18a.missing && c18b.missing){
+    Cairo(file="c18a.png",width=1350,height=600,units="px",bg="transparent")
+    print(cblank)
+    dev.off()
+    Cairo(file="c18b.png",width=1050,height=600,units="px",bg="transparent")
+    print(cblank)
+    dev.off()
+    Cairo(file="c18.png",width=2400,height=600,units="px",bg="white")
+    tryCatch({print(c18a)},error=function(e){message(e);print(no.data)})
+    dev.off()
+  }
+  #Have only c18b
+  if(c18a.missing && !c18b.missing){
+    Cairo(file="c18a.png",width=1350,height=600,units="px",bg="transparent")
+    print(cblank)
+    dev.off()
+    Cairo(file="c18b.png",width=1050,height=600,units="px",bg="transparent")
+    print(cblank)
+    dev.off()
+    Cairo(file="c18.png",width=2400,height=600,units="px",bg="white")
+    tryCatch({print(c18b)},error=function(e){message(e);print(no.data)})
+    dev.off()
+  }
+  #Have neither c18a or c18b
+  if(c18a.missing && c18b.missing){
+    Cairo(file="c18a.png",width=1350,height=600,units="px",bg="transparent")
+    print(cblank)
+    dev.off()
+    Cairo(file="c18b.png",width=1050,height=600,units="px",bg="transparent")
+    print(cblank)
+    dev.off()
+    Cairo(file="c18.png",width=2400,height=600,units="px",bg="transparent")
+    print(no.data)
+    dev.off()
+  }
+  Cairo(file="c19.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c19)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c20.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c20)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c21.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c21)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c22.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c22)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c23.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c23)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c24.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c24)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c25.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c25)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c26.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c26)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c27.png",width=800,height=700,units="px",bg="white")
+  tryCatch({print(c27)},error=function(e){message(e);print(no.data)})
   dev.off()
 }
 ####End loop####
