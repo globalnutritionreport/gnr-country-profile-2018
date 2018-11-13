@@ -330,116 +330,116 @@ L,Kenya,2014,iron_and_folic,gender,Female,
 L,Kenya,2014,iodised_salt,all,,0.995
 L,Kenya,2014,iodised_salt,gender,Male,
 L,Kenya,2014,iodised_salt,gender,Female,
-M,Kenya,2016,calcium,income,poorest,11.0874695638
-M,Kenya,2016,eggs,income,poorest,53.5505857607
-M,Kenya,2016,fish ,income,poorest,1.4336034229
-M,Kenya,2016,fruit ,income,poorest,97.6933414086
-M,Kenya,2016,legumes,income,poorest,46.0520869098
-M,Kenya,2016,milk,income,poorest,71.4161818954
-M,Kenya,2016,nuts,income,poorest,20.016523751
-M,Kenya,2016,omega 3,income,poorest,99.0213341825
-M,Kenya,2016,poultry,income,poorest,74.589058516
-M,Kenya,2016,processed meat,income,poorest,19.7181000135
-M,Kenya,2016,read meat,income,poorest,44.2704128875
-M,Kenya,2016,refined grains ,income,poorest,53.9457820938
-M,Kenya,2016,sodium ,income,poorest,96.8658546208
-M,Kenya,2016,SSD,income,poorest,78.6255904834
-M,Kenya,2016,starchy veg,income,poorest,34.4963073775
-M,Kenya,2016,total daity ,income,poorest,89.0507959727
-M,Kenya,2016,total sugar ,income,poorest,29.9393365012
-M,Kenya,2016,veg,income,poorest,82.4447216664
-M,Kenya,2016,whole grains,income,poorest,91.171705733
-M,Kenya,2016,polyunsaturated fats,income,poorest,55.2367587577
-M,Kenya,2016,sat fat,income,poorest,32.0408119293
-M,Kenya,2016,transfat,income,poorest,33.7558283457
-M,Kenya,2016,calcium,income,lower-middle,25.4748072607
-M,Kenya,2016,eggs,income,lower-middle,58.289609604
-M,Kenya,2016,fish ,income,lower-middle,54.4765264547
-M,Kenya,2016,fruit ,income,lower-middle,55.3018014665
-M,Kenya,2016,legumes,income,lower-middle,63.2250973486
-M,Kenya,2016,milk,income,lower-middle,76.6693170579
-M,Kenya,2016,nuts,income,lower-middle,10.599490622
-M,Kenya,2016,omega 3,income,lower-middle,76.4949233151
-M,Kenya,2016,poultry,income,lower-middle,56.9469000842
-M,Kenya,2016,processed meat,income,lower-middle,46.2368435846
-M,Kenya,2016,read meat,income,lower-middle,2.2015199664
-M,Kenya,2016,refined grains ,income,lower-middle,7.662607371
-M,Kenya,2016,sodium ,income,lower-middle,8.9968729099
-M,Kenya,2016,SSD,income,lower-middle,70.2828591405
-M,Kenya,2016,starchy veg,income,lower-middle,94.2500603444
-M,Kenya,2016,total daity ,income,lower-middle,10.4540420056
-M,Kenya,2016,total sugar ,income,lower-middle,27.7376863543
-M,Kenya,2016,veg,income,lower-middle,76.3714933849
-M,Kenya,2016,whole grains,income,lower-middle,36.2976045319
-M,Kenya,2016,polyunsaturated fats,income,lower-middle,24.7978135728
-M,Kenya,2016,sat fat,income,lower-middle,15.8901043943
-M,Kenya,2016,transfat,income,lower-middle,90.9635348486
-M,Kenya,2016,calcium,income,upper-middle,88.5371370969
-M,Kenya,2016,eggs,income,upper-middle,50.1076463714
-M,Kenya,2016,fish ,income,upper-middle,65.1397457643
-M,Kenya,2016,fruit ,income,upper-middle,38.468872983
-M,Kenya,2016,legumes,income,upper-middle,6.0816502535
-M,Kenya,2016,milk,income,upper-middle,77.8225087344
-M,Kenya,2016,nuts,income,upper-middle,1.2590904684
-M,Kenya,2016,omega 3,income,upper-middle,91.7375252099
-M,Kenya,2016,poultry,income,upper-middle,60.8056638806
-M,Kenya,2016,processed meat,income,upper-middle,13.0478844467
-M,Kenya,2016,read meat,income,upper-middle,37.3157100597
-M,Kenya,2016,refined grains ,income,upper-middle,70.1343360729
-M,Kenya,2016,sodium ,income,upper-middle,96.8577998445
-M,Kenya,2016,SSD,income,upper-middle,14.1109071295
-M,Kenya,2016,starchy veg,income,upper-middle,5.8289368149
-M,Kenya,2016,total daity ,income,upper-middle,60.0408384329
-M,Kenya,2016,total sugar ,income,upper-middle,17.303432105
-M,Kenya,2016,veg,income,upper-middle,82.4129598994
-M,Kenya,2016,whole grains,income,upper-middle,47.1290918766
-M,Kenya,2016,polyunsaturated fats,income,upper-middle,94.9966042486
-M,Kenya,2016,sat fat,income,upper-middle,36.9543012855
-M,Kenya,2016,transfat,income,upper-middle,73.6756877137
-M,Kenya,2016,calcium,income,upper,22.1519385143
-M,Kenya,2016,eggs,income,upper,55.2585629589
-M,Kenya,2016,fish ,income,upper,26.2836081894
-M,Kenya,2016,fruit ,income,upper,12.3040062943
-M,Kenya,2016,legumes,income,upper,61.4967710461
-M,Kenya,2016,milk,income,upper,94.2277255689
-M,Kenya,2016,nuts,income,upper,20.0059026475
-M,Kenya,2016,omega 3,income,upper,64.3884231178
-M,Kenya,2016,poultry,income,upper,82.3341109881
-M,Kenya,2016,processed meat,income,upper,6.3056545481
-M,Kenya,2016,read meat,income,upper,86.0329650594
-M,Kenya,2016,refined grains ,income,upper,50.3247945126
-M,Kenya,2016,sodium ,income,upper,44.3069143298
-M,Kenya,2016,SSD,income,upper,73.4653964523
-M,Kenya,2016,starchy veg,income,upper,68.0503284896
-M,Kenya,2016,total daity ,income,upper,42.2637943315
-M,Kenya,2016,total sugar ,income,upper,7.7577576246
-M,Kenya,2016,veg,income,upper,20.7488024954
-M,Kenya,2016,whole grains,income,upper,18.6393682797
-M,Kenya,2016,polyunsaturated fats,income,upper,97.9988226185
-M,Kenya,2016,sat fat,income,upper,15.3733502509
-M,Kenya,2016,transfat,income,upper,98.0106646212
-M,Kenya,2016,calcium,recommendation,,57.9705938912
-M,Kenya,2016,eggs,recommendation,,16.3072287368
-M,Kenya,2016,fish ,recommendation,,12.8000833434
-M,Kenya,2016,fruit ,recommendation,,22.2693235477
-M,Kenya,2016,legumes,recommendation,,39.1160563501
-M,Kenya,2016,milk,recommendation,,9.4643004292
-M,Kenya,2016,nuts,recommendation,,8.3868265102
-M,Kenya,2016,omega 3,recommendation,,74.2410907155
-M,Kenya,2016,poultry,recommendation,,64.4561331613
-M,Kenya,2016,processed meat,recommendation,,8.1062623288
-M,Kenya,2016,read meat,recommendation,,95.4715563074
-M,Kenya,2016,refined grains ,recommendation,,90.1156782753
-M,Kenya,2016,sodium ,recommendation,,40.1461329517
-M,Kenya,2016,SSD,recommendation,,2.8719707917
-M,Kenya,2016,starchy veg,recommendation,,61.5061767921
-M,Kenya,2016,total daity ,recommendation,,50.5873136841
-M,Kenya,2016,total sugar ,recommendation,,49.552703518
-M,Kenya,2016,veg,recommendation,,54.0744330469
-M,Kenya,2016,whole grains,recommendation,,6.0313537714
-M,Kenya,2016,polyunsaturated fats,recommendation,,12.6166903734
-M,Kenya,2016,sat fat,recommendation,,65.7708091238
-M,Kenya,2016,transfat,recommendation,,19.1005417789
+M,Kenya,2016,calcium,income,poorest,24.1156757906
+M,Kenya,2016,eggs,income,poorest,35.9572810959
+M,Kenya,2016,fish ,income,poorest,86.2289364519
+M,Kenya,2016,fruit ,income,poorest,75.0342705807
+M,Kenya,2016,legumes,income,poorest,95.1058228374
+M,Kenya,2016,milk,income,poorest,96.6705824975
+M,Kenya,2016,nuts,income,poorest,37.0264414178
+M,Kenya,2016,omega 3,income,poorest,94.5397129195
+M,Kenya,2016,poultry,income,poorest,17.6735885765
+M,Kenya,2016,processed meat,income,poorest,98.1808821784
+M,Kenya,2016,read meat,income,poorest,37.4612540764
+M,Kenya,2016,refined grains ,income,poorest,21.689718704
+M,Kenya,2016,sodium ,income,poorest,19.1085597361
+M,Kenya,2016,SSD,income,poorest,17.3189471128
+M,Kenya,2016,starchy veg,income,poorest,89.8682258939
+M,Kenya,2016,total daity ,income,poorest,58.838393289
+M,Kenya,2016,total sugar ,income,poorest,60.9358923636
+M,Kenya,2016,veg,income,poorest,13.2547216895
+M,Kenya,2016,whole grains,income,poorest,54.4430951328
+M,Kenya,2016,polyunsaturated fats,income,poorest,2.4702783497
+M,Kenya,2016,sat fat,income,poorest,33.1175511844
+M,Kenya,2016,transfat,income,poorest,77.3883947208
+M,Kenya,2016,calcium,income,lower-middle,21.948832336
+M,Kenya,2016,eggs,income,lower-middle,56.8966781389
+M,Kenya,2016,fish ,income,lower-middle,35.3179792473
+M,Kenya,2016,fruit ,income,lower-middle,49.3340135351
+M,Kenya,2016,legumes,income,lower-middle,11.3079685745
+M,Kenya,2016,milk,income,lower-middle,61.6189099655
+M,Kenya,2016,nuts,income,lower-middle,49.6899950246
+M,Kenya,2016,omega 3,income,lower-middle,4.1401888727
+M,Kenya,2016,poultry,income,lower-middle,46.7799264858
+M,Kenya,2016,processed meat,income,lower-middle,68.9227983285
+M,Kenya,2016,read meat,income,lower-middle,34.7029544897
+M,Kenya,2016,refined grains ,income,lower-middle,83.2010403085
+M,Kenya,2016,sodium ,income,lower-middle,72.9577299902
+M,Kenya,2016,SSD,income,lower-middle,6.9760990199
+M,Kenya,2016,starchy veg,income,lower-middle,22.81314285
+M,Kenya,2016,total daity ,income,lower-middle,66.2230316594
+M,Kenya,2016,total sugar ,income,lower-middle,50.7497951632
+M,Kenya,2016,veg,income,lower-middle,38.2637072363
+M,Kenya,2016,whole grains,income,lower-middle,16.8857051926
+M,Kenya,2016,polyunsaturated fats,income,lower-middle,55.8621122047
+M,Kenya,2016,sat fat,income,lower-middle,88.1851787807
+M,Kenya,2016,transfat,income,lower-middle,62.4060525152
+M,Kenya,2016,calcium,income,upper-middle,29.2138974194
+M,Kenya,2016,eggs,income,upper-middle,76.4463822041
+M,Kenya,2016,fish ,income,upper-middle,70.0329077138
+M,Kenya,2016,fruit ,income,upper-middle,7.2599254509
+M,Kenya,2016,legumes,income,upper-middle,4.4394432311
+M,Kenya,2016,milk,income,upper-middle,76.8001307772
+M,Kenya,2016,nuts,income,upper-middle,78.3391424495
+M,Kenya,2016,omega 3,income,upper-middle,22.2373272351
+M,Kenya,2016,poultry,income,upper-middle,40.1838582945
+M,Kenya,2016,processed meat,income,upper-middle,35.3153525406
+M,Kenya,2016,read meat,income,upper-middle,59.7181121318
+M,Kenya,2016,refined grains ,income,upper-middle,51.0985878882
+M,Kenya,2016,sodium ,income,upper-middle,40.4976395251
+M,Kenya,2016,SSD,income,upper-middle,62.3890673275
+M,Kenya,2016,starchy veg,income,upper-middle,92.720616199
+M,Kenya,2016,total daity ,income,upper-middle,63.0282465463
+M,Kenya,2016,total sugar ,income,upper-middle,11.4078510649
+M,Kenya,2016,veg,income,upper-middle,88.3187483074
+M,Kenya,2016,whole grains,income,upper-middle,86.5594424816
+M,Kenya,2016,polyunsaturated fats,income,upper-middle,45.8356122783
+M,Kenya,2016,sat fat,income,upper-middle,27.9841522111
+M,Kenya,2016,transfat,income,upper-middle,24.2184401281
+M,Kenya,2016,calcium,income,upper,14.5992704971
+M,Kenya,2016,eggs,income,upper,52.3509489163
+M,Kenya,2016,fish ,income,upper,85.4123604439
+M,Kenya,2016,fruit ,income,upper,95.3951534576
+M,Kenya,2016,legumes,income,upper,30.5553760617
+M,Kenya,2016,milk,income,upper,54.0228783486
+M,Kenya,2016,nuts,income,upper,25.2355436687
+M,Kenya,2016,omega 3,income,upper,57.8315972172
+M,Kenya,2016,poultry,income,upper,90.9885837405
+M,Kenya,2016,processed meat,income,upper,79.6664293447
+M,Kenya,2016,read meat,income,upper,77.5315994441
+M,Kenya,2016,refined grains ,income,upper,21.5920328645
+M,Kenya,2016,sodium ,income,upper,37.7057903545
+M,Kenya,2016,SSD,income,upper,81.1073260141
+M,Kenya,2016,starchy veg,income,upper,77.6676097432
+M,Kenya,2016,total daity ,income,upper,23.0350878321
+M,Kenya,2016,total sugar ,income,upper,31.0209065986
+M,Kenya,2016,veg,income,upper,59.7392484616
+M,Kenya,2016,whole grains,income,upper,23.476180986
+M,Kenya,2016,polyunsaturated fats,income,upper,29.8515286277
+M,Kenya,2016,sat fat,income,upper,30.6583579822
+M,Kenya,2016,transfat,income,upper,79.5519386933
+M,Kenya,2016,calcium,recommendation,,1.2489910843
+M,Kenya,2016,eggs,recommendation,,59.113006724
+M,Kenya,2016,fish ,recommendation,,63.3444642191
+M,Kenya,2016,fruit ,recommendation,,32.0901657818
+M,Kenya,2016,legumes,recommendation,,55.1298698302
+M,Kenya,2016,milk,recommendation,,31.8284670731
+M,Kenya,2016,nuts,recommendation,,53.7363445331
+M,Kenya,2016,omega 3,recommendation,,2.0393986052
+M,Kenya,2016,poultry,recommendation,,32.0155951118
+M,Kenya,2016,processed meat,recommendation,,68.3779682153
+M,Kenya,2016,read meat,recommendation,,25.3899956718
+M,Kenya,2016,refined grains ,recommendation,,7.6715020728
+M,Kenya,2016,sodium ,recommendation,,66.5882823917
+M,Kenya,2016,SSD,recommendation,,24.6102534092
+M,Kenya,2016,starchy veg,recommendation,,61.0376272093
+M,Kenya,2016,total daity ,recommendation,,58.9230232911
+M,Kenya,2016,total sugar ,recommendation,,84.0061233179
+M,Kenya,2016,veg,recommendation,,82.083639042
+M,Kenya,2016,whole grains,recommendation,,75.9586074357
+M,Kenya,2016,polyunsaturated fats,recommendation,,35.0412393348
+M,Kenya,2016,sat fat,recommendation,,38.0071761621
+M,Kenya,2016,transfat,recommendation,,54.5751969028
 N,Kenya,2000,whole_grains,illness,colon_rectum,
 N,Kenya,2000,whole_grains,illness,diabetes_mellitus,
 N,Kenya,2000,whole_grains,illness,ischemic_stroke,
@@ -532,20 +532,20 @@ N,Kenya,2000,processed_meat,illness,ischemic_heart,
 N,Kenya,2000,processed_meat,illness,others,
 O,Kenya,2010,ODA_nutspecific_perceent,all,,0.15
 O,Kenya,2011,salt_leg,all,,Yes
-P,Kenya,2009,ODA_received ,all,,0.1
-P,Kenya,2010,ODA_received ,all,,1.1
-P,Kenya,2011,ODA_received ,all,,2.1
-P,Kenya,2012,ODA_received ,all,,3.1
-P,Kenya,2013,ODA_received ,all,,4.1
-P,Kenya,2014,ODA_received ,all,,5.1
-P,Kenya,2015,ODA_received ,all,,6.1
-P,Kenya,2009,ODA_specific,all,,0.1
-P,Kenya,2010,ODA_specific,all,,1.1
-P,Kenya,2011,ODA_specific,all,,2.1
-P,Kenya,2012,ODA_specific,all,,3.1
-P,Kenya,2013,ODA_specific,all,,4.1
-P,Kenya,2014,ODA_specific,all,,5.1
-P,Kenya,2015,ODA_specific,all,,6.1
+P,Kenya,2009,ODA_received,all,,0.8139739006
+P,Kenya,2010,ODA_received,all,,0.9158432229
+P,Kenya,2011,ODA_received,all,,0.4828533694
+P,Kenya,2012,ODA_received,all,,0.5650103978
+P,Kenya,2013,ODA_received,all,,0.1915324565
+P,Kenya,2014,ODA_received,all,,0.4362256519
+P,Kenya,2015,ODA_received,all,,0.2662040725
+P,Kenya,2009,ODA_specific,all,,1.4372214366
+P,Kenya,2010,ODA_specific,all,,2.0147171323
+P,Kenya,2011,ODA_specific,all,,0.3254479973
+P,Kenya,2012,ODA_specific,all,,1.1832209421
+P,Kenya,2013,ODA_specific,all,,0.375888218
+P,Kenya,2014,ODA_specific,all,,0.5567615332
+P,Kenya,2015,ODA_specific,all,,0.4282486792
 P,Kenya,2015,sugar_tax,all,,Yes
 P,Kenya,2016,multi_sec,all,,Yes
 Q,Kenya,2012,specific_nutrition_plan,all,,Yes

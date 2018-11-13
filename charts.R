@@ -985,6 +985,55 @@ for(this.country in countries){
       legend.key = element_rect(fill = "transparent", colour = "transparent"),
       legend.key.size = unit(2.5,"lines")
     )
+  # Chart 29
+  indicators = c("ODA_received","ODA_specific")
+  c29names = c("% of total ODA","ODA received (US$ billions)")
+  c29data = subset(countrydat,indicator %in% indicators)
+  c29data$value = as.numeric(c29data$value)
+  c29data = subset(c29data, !is.na(value))
+  c29data = c29data[c("year","indicator","value")]
+  c29.oda.max <- max(subset(c29data,indicator==indicators[2])$value,na.rm=TRUE)
+  c29.perc.max <- max(subset(c29data,indicator==indicators[1])$value,na.rm=TRUE)
+  c29.ratio = c29.oda.max/c29.perc.max
+  for(j in 1:length(indicators)){
+    ind = indicators[j]
+    indname = c29names[j]
+    c29data$indicator[which(c29data$indicator==ind)] = indname
+  }
+  
+  c29.key.data.2 = data.frame(year=as.numeric(rep(NA,1)),indicator=c29names[2],value=as.numeric(rep(NA,1)))
+  c29.key.data.1 = data.frame(year=as.numeric(rep(NA,1)),indicator=c29names[1],value=as.numeric(rep(NA,1)))
+  c29 = ggplot(subset(c29data,indicator==c29names[2]),aes(x=year,y=value)) +
+    geom_area(alpha=1,show.legend=F,color=blue,fill=yellow) +
+    geom_point(data=c29.key.data.2,aes(group=indicator,fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
+    geom_line(data=subset(c29data,indicator==c29names[1]),aes(y=value*c29.ratio,color=indicator),size=2) +
+    yellowFill +
+    orangeColor +
+    guides(fill=guide_legend(title=element_blank(),byrow=TRUE),color=guide_legend(title=element_blank(),byrow=TRUE)) +
+    simple_style  +
+    scale_y_continuous(
+      expand = c(0,0),
+      limits=c(0,max(c29.oda.max*1.1,1)),
+      sec.axis = sec_axis(~./c29.ratio, name="% of total ODA",labels=percent)
+      ) +
+    theme(
+      legend.position="top"
+      ,legend.box = "vertical"
+      ,legend.text = element_text(size=35,color=blue)
+      ,legend.justification=c(0,0)
+      ,legend.box.just = "left"
+      ,legend.direction="vertical"
+      ,axis.title.x=element_blank()
+      ,axis.title.y=element_text(size=20,color=blue)
+      ,axis.ticks=element_blank()
+      ,axis.line.y = element_blank()
+      ,axis.line.x = element_line(color=blue, size = 1.1)
+      ,axis.text.y = element_text(size=25,color=dark.grey)
+      ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+      ,panel.grid.major.y = element_line(color=dark.grey)
+      ,legend.background = element_rect(fill = "transparent", colour = "transparent")
+      ,legend.key.width = unit(1,"cm")
+    ) + labs(y = "ODA received (US$ billions)")
   #Have both c1a and c1b
   if(!c1a.missing && !c1b.missing){
     Cairo(file="c1a.png",width=400,height=600,units="px",bg="white")
@@ -1331,6 +1380,9 @@ for(this.country in countries){
   dev.off()
   Cairo(file="c28b.png",width=1050,height=960,units="px",bg="white")
   tryCatch({print(c28b)},error=function(e){message(e);print(no.data)})
+  dev.off()
+  Cairo(file="c29.png",width=1000,height=500,units="px",bg="white")
+  tryCatch({print(c29)},error=function(e){message(e);print(no.data)})
   dev.off()
 }
 ####End loop####
