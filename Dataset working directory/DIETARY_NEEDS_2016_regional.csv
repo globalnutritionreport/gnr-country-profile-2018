@@ -1,0 +1,481 @@
+,age_group_name,region_name,modelable_entity_name,modelable_entity_id,mean,population,sex_id,year_id
+0,all ages 25+,Africa,Diet low in calcium (g/day),2427,0.3274831821833578,234832065.11308232,1,2016
+1,all ages 25+,Africa,Diet low in calcium (g/day),2427,0.2890243997092651,247109393.93854958,2,2016
+0,all ages 25+,Africa,Diet low in calcium (g/day),2427,0.3077639273852985,481941459.0516319,3,2016
+10,all ages 25+,Africa,Diet low in fiber (g/day),2428,18.375727945671375,234832065.11308232,1,2016
+11,all ages 25+,Africa,Diet low in fiber (g/day),2428,15.473649008801377,247109393.93854958,2,2016
+5,all ages 25+,Africa,Diet low in fiber (g/day),2428,16.887723637714654,481941459.0516319,3,2016
+20,all ages 25+,Africa,Diet low in seafood omega-3 fatty acids (g/day),2429,0.028820679447778084,234832065.11308232,1,2016
+21,all ages 25+,Africa,Diet low in seafood omega-3 fatty acids (g/day),2429,0.024200848835059813,247109393.93854958,2,2016
+10,all ages 25+,Africa,Diet low in seafood omega-3 fatty acids (g/day),2429,0.026451919671323022,481941459.0516319,3,2016
+30,all ages 25+,Africa,Diet low in fruits (g/day),2430,80.5974626437544,234832065.11308232,1,2016
+31,all ages 25+,Africa,Diet low in fruits (g/day),2430,90.5403656164734,247109393.93854958,2,2016
+15,all ages 25+,Africa,Diet low in fruits (g/day),2430,85.69556051732863,481941459.0516319,3,2016
+40,all ages 25+,Africa,Diet low in whole grains (g/day),2431,28.684969578574247,234832065.11308232,1,2016
+41,all ages 25+,Africa,Diet low in whole grains (g/day),2431,31.528455814776272,247109393.93854958,2,2016
+20,all ages 25+,Africa,Diet low in whole grains (g/day),2431,30.14293121956519,481941459.0516319,3,2016
+50,all ages 25+,Africa,Diet low in legumes (g/day),2432,70.70837065828788,234832065.11308232,1,2016
+51,all ages 25+,Africa,Diet low in legumes (g/day),2432,59.85718027623191,247109393.93854958,2,2016
+25,all ages 25+,Africa,Diet low in legumes (g/day),2432,65.14455989152336,481941459.0516319,3,2016
+60,all ages 25+,Africa,Diet low in milk (g/day),2433,27.95400097270623,234832065.11308232,1,2016
+61,all ages 25+,Africa,Diet low in milk (g/day),2433,26.536552985902187,247109393.93854958,2,2016
+30,all ages 25+,Africa,Diet low in milk (g/day),2433,27.227222426515542,481941459.0516319,3,2016
+70,all ages 25+,Africa,Diet low in nuts and seeds (g/day),2434,2.3459635952663405,234832065.11308232,1,2016
+71,all ages 25+,Africa,Diet low in nuts and seeds (g/day),2434,2.282822625323446,247109393.93854958,2,2016
+35,all ages 25+,Africa,Diet low in nuts and seeds (g/day),2434,2.313588860695913,481941459.0516319,3,2016
+80,all ages 25+,Africa,Diet high in processed meat (g/day),2435,0.9862792673475784,234832065.11308232,1,2016
+81,all ages 25+,Africa,Diet high in processed meat (g/day),2435,0.7408272619528619,247109393.93854958,2,2016
+40,all ages 25+,Africa,Diet high in processed meat (g/day),2435,0.8604268527961422,481941459.0516319,3,2016
+90,all ages 25+,Africa,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.03255815044713372,234832065.11308232,1,2016
+91,all ages 25+,Africa,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.03156908548905386,247109393.93854958,2,2016
+45,all ages 25+,Africa,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.03205101988642637,481941459.0516319,3,2016
+100,all ages 25+,Africa,Diet high in red meat (g/day),2437,12.56991047520043,234832065.11308232,1,2016
+101,all ages 25+,Africa,Diet high in red meat (g/day),2437,8.067737811227499,247109393.93854958,2,2016
+50,all ages 25+,Africa,Diet high in red meat (g/day),2437,10.261478325390577,481941459.0516319,3,2016
+110,all ages 25+,Africa,Diet high in sodium (g/day),2438,2.9787297645880004,234832065.11308232,1,2016
+111,all ages 25+,Africa,Diet high in sodium (g/day),2438,3.165544176392071,247109393.93854958,2,2016
+55,all ages 25+,Africa,Diet high in sodium (g/day),2438,3.074516493894774,481941459.0516319,3,2016
+120,all ages 25+,Africa,Diet high in saturated fatty acids (% energy/day),2439,0.06245040900276901,234832065.11308232,1,2016
+121,all ages 25+,Africa,Diet high in saturated fatty acids (% energy/day),2439,0.06298338329208808,247109393.93854958,2,2016
+60,all ages 25+,Africa,Diet high in saturated fatty acids (% energy/day),2439,0.06272368483564221,481941459.0516319,3,2016
+130,all ages 25+,Africa,Diet high in sugar-sweetened beverages (g/day),2440,115.5535724229448,234832065.11308232,1,2016
+131,all ages 25+,Africa,Diet high in sugar-sweetened beverages (g/day),2440,83.48839036997019,247109393.93854958,2,2016
+65,all ages 25+,Africa,Diet high in sugar-sweetened beverages (g/day),2440,99.11255545953196,481941459.0516319,3,2016
+140,all ages 25+,Africa,Diet high in trans fatty acids (% energy/day),2441,0.0035558144572303027,234832065.11308232,1,2016
+141,all ages 25+,Africa,Diet high in trans fatty acids (% energy/day),2441,0.004135082058952981,247109393.93854958,2,2016
+70,all ages 25+,Africa,Diet high in trans fatty acids (% energy/day),2441,0.0038528266011359238,481941459.0516319,3,2016
+150,all ages 25+,Africa,Diet low in vegetables (g/day),2442,133.4610052269105,234832065.11308232,1,2016
+151,all ages 25+,Africa,Diet low in vegetables (g/day),2442,121.28546620899591,247109393.93854958,2,2016
+75,all ages 25+,Africa,Diet low in vegetables (g/day),2442,127.21815142986932,481941459.0516319,3,2016
+2,all ages 25+,Asia,Diet low in calcium (g/day),2427,0.39677663992436923,1342993619.878502,1,2016
+3,all ages 25+,Asia,Diet low in calcium (g/day),2427,0.3552942189009866,1334502372.3206215,2,2016
+1,all ages 25+,Asia,Diet low in calcium (g/day),2427,0.37610120682322046,2677495992.1991234,3,2016
+12,all ages 25+,Asia,Diet low in fiber (g/day),2428,11.507985093981095,1342993619.878502,1,2016
+13,all ages 25+,Asia,Diet low in fiber (g/day),2428,9.791942437848068,1334502372.3206215,2,2016
+6,all ages 25+,Asia,Diet low in fiber (g/day),2428,10.652684842445707,2677495992.1991234,3,2016
+22,all ages 25+,Asia,Diet low in seafood omega-3 fatty acids (g/day),2429,0.11741067874512118,1342993619.878502,1,2016
+23,all ages 25+,Asia,Diet low in seafood omega-3 fatty acids (g/day),2429,0.10390033693505057,1334502372.3206215,2,2016
+11,all ages 25+,Asia,Diet low in seafood omega-3 fatty acids (g/day),2429,0.11067693077726955,2677495992.1991234,3,2016
+32,all ages 25+,Asia,Diet low in fruits (g/day),2430,93.13834900603071,1342993619.878502,1,2016
+33,all ages 25+,Asia,Diet low in fruits (g/day),2430,106.17911935382828,1334502372.3206215,2,2016
+16,all ages 25+,Asia,Diet low in fruits (g/day),2430,99.63805582789999,2677495992.1991234,3,2016
+42,all ages 25+,Asia,Diet low in whole grains (g/day),2431,65.7067444597658,1342993619.878502,1,2016
+43,all ages 25+,Asia,Diet low in whole grains (g/day),2431,56.84117579816132,1334502372.3206215,2,2016
+21,all ages 25+,Asia,Diet low in whole grains (g/day),2431,61.28801799094849,2677495992.1991234,3,2016
+52,all ages 25+,Asia,Diet low in legumes (g/day),2432,54.12666232390291,1342993619.878502,1,2016
+53,all ages 25+,Asia,Diet low in legumes (g/day),2432,42.82685209865712,1334502372.3206215,2,2016
+26,all ages 25+,Asia,Diet low in legumes (g/day),2432,48.494674975911444,2677495992.1991234,3,2016
+62,all ages 25+,Asia,Diet low in milk (g/day),2433,36.88161345494001,1342993619.878502,1,2016
+63,all ages 25+,Asia,Diet low in milk (g/day),2433,35.22742241854952,1334502372.3206215,2,2016
+31,all ages 25+,Asia,Diet low in milk (g/day),2433,36.05714093704783,2677495992.1991234,3,2016
+72,all ages 25+,Asia,Diet low in nuts and seeds (g/day),2434,2.211431817888918,1342993619.878502,1,2016
+73,all ages 25+,Asia,Diet low in nuts and seeds (g/day),2434,2.137212134459326,1334502372.3206215,2,2016
+36,all ages 25+,Asia,Diet low in nuts and seeds (g/day),2434,2.174439664063759,2677495992.1991234,3,2016
+82,all ages 25+,Asia,Diet high in processed meat (g/day),2435,1.7354434790271092,1342993619.878502,1,2016
+83,all ages 25+,Asia,Diet high in processed meat (g/day),2435,1.3378495304242373,1334502372.3206215,2,2016
+41,all ages 25+,Asia,Diet high in processed meat (g/day),2435,1.5372769573304461,2677495992.1991234,3,2016
+92,all ages 25+,Asia,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.046255747024512836,1342993619.878502,1,2016
+93,all ages 25+,Asia,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.0451739996793336,1334502372.3206215,2,2016
+46,all ages 25+,Asia,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.045716588645714464,2677495992.1991234,3,2016
+102,all ages 25+,Asia,Diet high in red meat (g/day),2437,26.97492845477384,1342993619.878502,1,2016
+103,all ages 25+,Asia,Diet high in red meat (g/day),2437,17.697340861945406,1334502372.3206215,2,2016
+51,all ages 25+,Asia,Diet high in red meat (g/day),2437,22.350845846204564,2677495992.1991234,3,2016
+112,all ages 25+,Asia,Diet high in sodium (g/day),2438,5.244306288770394,1342993619.878502,1,2016
+113,all ages 25+,Asia,Diet high in sodium (g/day),2438,5.175498829429159,1334502372.3206215,2,2016
+56,all ages 25+,Asia,Diet high in sodium (g/day),2438,5.210011664990653,2677495992.1991234,3,2016
+122,all ages 25+,Asia,Diet high in saturated fatty acids (% energy/day),2439,0.07012714065592353,1342993619.878502,1,2016
+123,all ages 25+,Asia,Diet high in saturated fatty acids (% energy/day),2439,0.07017222814190756,1334502372.3206215,2,2016
+61,all ages 25+,Asia,Diet high in saturated fatty acids (% energy/day),2439,0.07014961290506339,2677495992.1991234,3,2016
+132,all ages 25+,Asia,Diet high in sugar-sweetened beverages (g/day),2440,101.90239238503777,1342993619.878502,1,2016
+133,all ages 25+,Asia,Diet high in sugar-sweetened beverages (g/day),2440,72.18604741800029,1334502372.3206215,2,2016
+66,all ages 25+,Asia,Diet high in sugar-sweetened beverages (g/day),2440,87.09134020391457,2677495992.1991234,3,2016
+142,all ages 25+,Asia,Diet high in trans fatty acids (% energy/day),2441,0.0041696534353710835,1342993619.878502,1,2016
+143,all ages 25+,Asia,Diet high in trans fatty acids (% energy/day),2441,0.005042844752997041,1334502372.3206215,2,2016
+71,all ages 25+,Asia,Diet high in trans fatty acids (% energy/day),2441,0.00460486450132847,2677495992.1991234,3,2016
+152,all ages 25+,Asia,Diet low in vegetables (g/day),2442,231.73328796359942,1342993619.878502,1,2016
+153,all ages 25+,Asia,Diet low in vegetables (g/day),2442,217.78393266405322,1334502372.3206215,2,2016
+76,all ages 25+,Asia,Diet low in vegetables (g/day),2442,224.7807293813182,2677495992.1991234,3,2016
+4,all ages 25+,Americas,Diet low in calcium (g/day),2427,0.6938369482075089,291824170.7451213,1,2016
+5,all ages 25+,Americas,Diet low in calcium (g/day),2427,0.6187078234182728,315516867.7856131,2,2016
+2,all ages 25+,Americas,Diet low in calcium (g/day),2427,0.6548069722481704,607341038.5307344,3,2016
+14,all ages 25+,Americas,Diet low in fiber (g/day),2428,14.743621199678591,291824170.7451213,1,2016
+15,all ages 25+,Americas,Diet low in fiber (g/day),2428,12.91624411240845,315516867.7856131,2,2016
+7,all ages 25+,Americas,Diet low in fiber (g/day),2428,13.79428917984095,607341038.5307344,3,2016
+24,all ages 25+,Americas,Diet low in seafood omega-3 fatty acids (g/day),2429,0.11164817976957571,291824170.7451213,1,2016
+25,all ages 25+,Americas,Diet low in seafood omega-3 fatty acids (g/day),2429,0.09469530184091421,315516867.7856131,2,2016
+12,all ages 25+,Americas,Diet low in seafood omega-3 fatty acids (g/day),2429,0.10284107041147418,607341038.5307344,3,2016
+34,all ages 25+,Americas,Diet low in fruits (g/day),2430,126.94631647713068,291824170.7451213,1,2016
+35,all ages 25+,Americas,Diet low in fruits (g/day),2430,142.87449375592703,315516867.7856131,2,2016
+17,all ages 25+,Americas,Diet low in fruits (g/day),2430,135.22108845153508,607341038.5307344,3,2016
+44,all ages 25+,Americas,Diet low in whole grains (g/day),2431,87.07365220260124,291824170.7451213,1,2016
+45,all ages 25+,Americas,Diet low in whole grains (g/day),2431,78.0553241995828,315516867.7856131,2,2016
+22,all ages 25+,Americas,Diet low in whole grains (g/day),2431,82.38858331435475,607341038.5307344,3,2016
+54,all ages 25+,Americas,Diet low in legumes (g/day),2432,45.40000882601792,291824170.7451213,1,2016
+55,all ages 25+,Americas,Diet low in legumes (g/day),2432,36.496986221495824,315516867.7856131,2,2016
+27,all ages 25+,Americas,Diet low in legumes (g/day),2432,40.77484169949059,607341038.5307344,3,2016
+64,all ages 25+,Americas,Diet low in milk (g/day),2433,122.09329858289671,291824170.7451213,1,2016
+65,all ages 25+,Americas,Diet low in milk (g/day),2433,118.29787155408087,315516867.7856131,2,2016
+32,all ages 25+,Americas,Diet low in milk (g/day),2433,120.12155425463949,607341038.5307344,3,2016
+74,all ages 25+,Americas,Diet low in nuts and seeds (g/day),2434,5.002954623305987,291824170.7451213,1,2016
+75,all ages 25+,Americas,Diet low in nuts and seeds (g/day),2434,4.366716053564142,315516867.7856131,2,2016
+37,all ages 25+,Americas,Diet low in nuts and seeds (g/day),2434,4.67242533588128,607341038.5307344,3,2016
+84,all ages 25+,Americas,Diet high in processed meat (g/day),2435,10.624611459717752,291824170.7451213,1,2016
+85,all ages 25+,Americas,Diet high in processed meat (g/day),2435,7.735434096952996,315516867.7856131,2,2016
+42,all ages 25+,Americas,Diet high in processed meat (g/day),2435,9.1236686053012,607341038.5307344,3,2016
+94,all ages 25+,Americas,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.08183609190407588,291824170.7451213,1,2016
+95,all ages 25+,Americas,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.08103546251304321,315516867.7856131,2,2016
+47,all ages 25+,Americas,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.08142016071930555,607341038.5307344,3,2016
+104,all ages 25+,Americas,Diet high in red meat (g/day),2437,54.5232329620507,291824170.7451213,1,2016
+105,all ages 25+,Americas,Diet high in red meat (g/day),2437,34.18348927273178,315516867.7856131,2,2016
+52,all ages 25+,Americas,Diet high in red meat (g/day),2437,43.956629005991275,607341038.5307344,3,2016
+114,all ages 25+,Americas,Diet high in sodium (g/day),2438,4.433922613016655,291824170.7451213,1,2016
+115,all ages 25+,Americas,Diet high in sodium (g/day),2438,3.9622573972093584,315516867.7856131,2,2016
+57,all ages 25+,Americas,Diet high in sodium (g/day),2438,4.188890049607205,607341038.5307344,3,2016
+124,all ages 25+,Americas,Diet high in saturated fatty acids (% energy/day),2439,0.08595920562715877,291824170.7451213,1,2016
+125,all ages 25+,Americas,Diet high in saturated fatty acids (% energy/day),2439,0.08668041381435376,315516867.7856131,2,2016
+62,all ages 25+,Americas,Diet high in saturated fatty acids (% energy/day),2439,0.08633387707830194,607341038.5307344,3,2016
+134,all ages 25+,Americas,Diet high in sugar-sweetened beverages (g/day),2440,169.778093705228,291824170.7451213,1,2016
+135,all ages 25+,Americas,Diet high in sugar-sweetened beverages (g/day),2440,118.08441361901451,315516867.7856131,2,2016
+67,all ages 25+,Americas,Diet high in sugar-sweetened beverages (g/day),2440,142.92295468058555,607341038.5307344,3,2016
+144,all ages 25+,Americas,Diet high in trans fatty acids (% energy/day),2441,0.007756920973011838,291824170.7451213,1,2016
+145,all ages 25+,Americas,Diet high in trans fatty acids (% energy/day),2441,0.009412520286864547,315516867.7856131,2,2016
+72,all ages 25+,Americas,Diet high in trans fatty acids (% energy/day),2441,0.00861701353497426,607341038.5307344,3,2016
+154,all ages 25+,Americas,Diet low in vegetables (g/day),2442,140.06448232833046,291824170.7451213,1,2016
+155,all ages 25+,Americas,Diet low in vegetables (g/day),2442,132.27045625785624,315516867.7856131,2,2016
+77,all ages 25+,Americas,Diet low in vegetables (g/day),2442,136.01544474123682,607341038.5307344,3,2016
+6,all ages 25+,Europe,Diet low in calcium (g/day),2427,0.8025591473072599,254170871.16301832,1,2016
+7,all ages 25+,Europe,Diet low in calcium (g/day),2427,0.7127743896681616,285366808.93597025,2,2016
+3,all ages 25+,Europe,Diet low in calcium (g/day),2427,0.7550711020351333,539537680.0989885,3,2016
+16,all ages 25+,Europe,Diet low in fiber (g/day),2428,12.604050143404288,254170871.16301832,1,2016
+17,all ages 25+,Europe,Diet low in fiber (g/day),2428,10.719671742195727,285366808.93597025,2,2016
+8,all ages 25+,Europe,Diet low in fiber (g/day),2428,11.607383791793602,539537680.0989885,3,2016
+26,all ages 25+,Europe,Diet low in seafood omega-3 fatty acids (g/day),2429,0.08013045396262775,254170871.16301832,1,2016
+27,all ages 25+,Europe,Diet low in seafood omega-3 fatty acids (g/day),2429,0.06830443644415196,285366808.93597025,2,2016
+13,all ages 25+,Europe,Diet low in seafood omega-3 fatty acids (g/day),2429,0.07387555647141053,539537680.0989885,3,2016
+36,all ages 25+,Europe,Diet low in fruits (g/day),2430,96.21584279726588,254170871.16301832,1,2016
+37,all ages 25+,Europe,Diet low in fruits (g/day),2430,109.31970023995467,285366808.93597025,2,2016
+18,all ages 25+,Europe,Diet low in fruits (g/day),2430,103.14660244779834,539537680.0989885,3,2016
+46,all ages 25+,Europe,Diet low in whole grains (g/day),2431,27.96555786356955,254170871.16301832,1,2016
+47,all ages 25+,Europe,Diet low in whole grains (g/day),2431,23.57234714263671,285366808.93597025,2,2016
+23,all ages 25+,Europe,Diet low in whole grains (g/day),2431,25.64194531405144,539537680.0989885,3,2016
+56,all ages 25+,Europe,Diet low in legumes (g/day),2432,15.917492796516482,254170871.16301832,1,2016
+57,all ages 25+,Europe,Diet low in legumes (g/day),2432,12.780569301833939,285366808.93597025,2,2016
+28,all ages 25+,Europe,Diet low in legumes (g/day),2432,14.258342971448485,539537680.0989885,3,2016
+66,all ages 25+,Europe,Diet low in milk (g/day),2433,136.08892326261963,254170871.16301832,1,2016
+67,all ages 25+,Europe,Diet low in milk (g/day),2433,130.78849228564403,285366808.93597025,2,2016
+33,all ages 25+,Europe,Diet low in milk (g/day),2433,133.28547295752253,539537680.0989885,3,2016
+76,all ages 25+,Europe,Diet low in nuts and seeds (g/day),2434,3.095684919016433,254170871.16301832,1,2016
+77,all ages 25+,Europe,Diet low in nuts and seeds (g/day),2434,2.9484291533026776,285366808.93597025,2,2016
+38,all ages 25+,Europe,Diet low in nuts and seeds (g/day),2434,3.0177998898346945,539537680.0989885,3,2016
+86,all ages 25+,Europe,Diet high in processed meat (g/day),2435,8.379516909170293,254170871.16301832,1,2016
+87,all ages 25+,Europe,Diet high in processed meat (g/day),2435,6.148847027484789,285366808.93597025,2,2016
+43,all ages 25+,Europe,Diet high in processed meat (g/day),2435,7.1996935726252325,539537680.0989885,3,2016
+96,all ages 25+,Europe,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.04875075848264588,254170871.16301832,1,2016
+97,all ages 25+,Europe,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.04687019764582615,285366808.93597025,2,2016
+48,all ages 25+,Europe,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.04775611127855303,539537680.0989885,3,2016
+106,all ages 25+,Europe,Diet high in red meat (g/day),2437,51.86839052917693,254170871.16301832,1,2016
+107,all ages 25+,Europe,Diet high in red meat (g/day),2437,31.60536880729204,285366808.93597025,2,2016
+53,all ages 25+,Europe,Diet high in red meat (g/day),2437,41.15107816813173,539537680.0989885,3,2016
+116,all ages 25+,Europe,Diet high in sodium (g/day),2438,4.2954564328273435,254170871.16301832,1,2016
+117,all ages 25+,Europe,Diet high in sodium (g/day),2438,3.6163416495069547,285366808.93597025,2,2016
+58,all ages 25+,Europe,Diet high in sodium (g/day),2438,3.936265915157055,539537680.0989885,3,2016
+126,all ages 25+,Europe,Diet high in saturated fatty acids (% energy/day),2439,0.0861266404782329,254170871.16301832,1,2016
+127,all ages 25+,Europe,Diet high in saturated fatty acids (% energy/day),2439,0.08587639171313276,285366808.93597025,2,2016
+63,all ages 25+,Europe,Diet high in saturated fatty acids (% energy/day),2439,0.08599428143423864,539537680.0989885,3,2016
+136,all ages 25+,Europe,Diet high in sugar-sweetened beverages (g/day),2440,109.71290048575793,254170871.16301832,1,2016
+137,all ages 25+,Europe,Diet high in sugar-sweetened beverages (g/day),2440,73.56491342873736,285366808.93597025,2,2016
+68,all ages 25+,Europe,Diet high in sugar-sweetened beverages (g/day),2440,90.59387303613079,539537680.0989885,3,2016
+146,all ages 25+,Europe,Diet high in trans fatty acids (% energy/day),2441,0.003451130462207577,254170871.16301832,1,2016
+147,all ages 25+,Europe,Diet high in trans fatty acids (% energy/day),2441,0.0041678692690143414,285366808.93597025,2,2016
+73,all ages 25+,Europe,Diet high in trans fatty acids (% energy/day),2441,0.003830220697576302,539537680.0989885,3,2016
+156,all ages 25+,Europe,Diet low in vegetables (g/day),2442,186.35658132524338,254170871.16301832,1,2016
+157,all ages 25+,Europe,Diet low in vegetables (g/day),2442,176.7724064156049,285366808.93597025,2,2016
+78,all ages 25+,Europe,Diet low in vegetables (g/day),2442,181.28741653633386,539537680.0989885,3,2016
+8,all ages 25+,Oceania,Diet low in calcium (g/day),2427,0.6410635963259221,11828877.431325026,1,2016
+9,all ages 25+,Oceania,Diet low in calcium (g/day),2427,0.5774474074691118,12339492.302809993,2,2016
+4,all ages 25+,Oceania,Diet low in calcium (g/day),2427,0.608583479488583,24168369.734135017,3,2016
+18,all ages 25+,Oceania,Diet low in fiber (g/day),2428,12.692530747525748,11828877.431325026,1,2016
+19,all ages 25+,Oceania,Diet low in fiber (g/day),2428,10.396644405085073,12339492.302809993,2,2016
+9,all ages 25+,Oceania,Diet low in fiber (g/day),2428,11.520334519053609,24168369.734135017,3,2016
+28,all ages 25+,Oceania,Diet low in seafood omega-3 fatty acids (g/day),2429,0.10126249204217169,11828877.431325026,1,2016
+29,all ages 25+,Oceania,Diet low in seafood omega-3 fatty acids (g/day),2429,0.0871931391063316,12339492.302809993,2,2016
+14,all ages 25+,Oceania,Diet low in seafood omega-3 fatty acids (g/day),2429,0.09407919113412104,24168369.734135017,3,2016
+38,all ages 25+,Oceania,Diet low in fruits (g/day),2430,90.94286968514646,11828877.431325026,1,2016
+39,all ages 25+,Oceania,Diet low in fruits (g/day),2430,104.37023888133618,12339492.302809993,2,2016
+19,all ages 25+,Oceania,Diet low in fruits (g/day),2430,97.79839699898747,24168369.734135017,3,2016
+48,all ages 25+,Oceania,Diet low in whole grains (g/day),2431,23.500560805396457,11828877.431325026,1,2016
+49,all ages 25+,Oceania,Diet low in whole grains (g/day),2431,24.104240617752424,12339492.302809993,2,2016
+24,all ages 25+,Oceania,Diet low in whole grains (g/day),2431,23.80877780471716,24168369.734135017,3,2016
+58,all ages 25+,Oceania,Diet low in legumes (g/day),2432,20.093804649664936,11828877.431325026,1,2016
+59,all ages 25+,Oceania,Diet low in legumes (g/day),2432,16.49343855384919,12339492.302809993,2,2016
+29,all ages 25+,Oceania,Diet low in legumes (g/day),2432,18.255588410202627,24168369.734135017,3,2016
+68,all ages 25+,Oceania,Diet low in milk (g/day),2433,173.15119829020142,11828877.431325026,1,2016
+69,all ages 25+,Oceania,Diet low in milk (g/day),2433,172.99057413346176,12339492.302809993,2,2016
+34,all ages 25+,Oceania,Diet low in milk (g/day),2433,173.06918942623844,24168369.734135017,3,2016
+78,all ages 25+,Oceania,Diet low in nuts and seeds (g/day),2434,4.791787050831024,11828877.431325026,1,2016
+79,all ages 25+,Oceania,Diet low in nuts and seeds (g/day),2434,4.650872079650061,12339492.302809993,2,2016
+39,all ages 25+,Oceania,Diet low in nuts and seeds (g/day),2434,4.719840981593997,24168369.734135017,3,2016
+88,all ages 25+,Oceania,Diet high in processed meat (g/day),2435,5.077827300243176,11828877.431325026,1,2016
+89,all ages 25+,Oceania,Diet high in processed meat (g/day),2435,3.9200949865211565,12339492.302809993,2,2016
+44,all ages 25+,Oceania,Diet high in processed meat (g/day),2435,4.486731205180125,24168369.734135017,3,2016
+98,all ages 25+,Oceania,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.03211439788171302,11828877.431325026,1,2016
+99,all ages 25+,Oceania,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.03130442234849321,12339492.302809993,2,2016
+49,all ages 25+,Oceania,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.03170085377561165,24168369.734135017,3,2016
+108,all ages 25+,Oceania,Diet high in red meat (g/day),2437,69.60217197632744,11828877.431325026,1,2016
+109,all ages 25+,Oceania,Diet high in red meat (g/day),2437,44.121835932261156,12339492.302809993,2,2016
+54,all ages 25+,Oceania,Diet high in red meat (g/day),2437,56.59283729850289,24168369.734135017,3,2016
+118,all ages 25+,Oceania,Diet high in sodium (g/day),2438,2.9821675719155167,11828877.431325026,1,2016
+119,all ages 25+,Oceania,Diet high in sodium (g/day),2438,2.927172247539729,12339492.302809993,2,2016
+59,all ages 25+,Oceania,Diet high in sodium (g/day),2438,2.9540889555549312,24168369.734135017,3,2016
+128,all ages 25+,Oceania,Diet high in saturated fatty acids (% energy/day),2439,0.12242920068539566,11828877.431325026,1,2016
+129,all ages 25+,Oceania,Diet high in saturated fatty acids (% energy/day),2439,0.1225461229661279,12339492.302809993,2,2016
+64,all ages 25+,Oceania,Diet high in saturated fatty acids (% energy/day),2439,0.12248889695779606,24168369.734135017,3,2016
+138,all ages 25+,Oceania,Diet high in sugar-sweetened beverages (g/day),2440,79.12373212358915,11828877.431325026,1,2016
+139,all ages 25+,Oceania,Diet high in sugar-sweetened beverages (g/day),2440,53.95501479093705,12339492.302809993,2,2016
+69,all ages 25+,Oceania,Diet high in sugar-sweetened beverages (g/day),2440,66.2734986484194,24168369.734135017,3,2016
+148,all ages 25+,Oceania,Diet high in trans fatty acids (% energy/day),2441,0.004780265162245517,11828877.431325026,1,2016
+149,all ages 25+,Oceania,Diet high in trans fatty acids (% energy/day),2441,0.005864970774191591,12339492.302809993,2,2016
+74,all ages 25+,Oceania,Diet high in trans fatty acids (% energy/day),2441,0.005334076474165287,24168369.734135017,3,2016
+158,all ages 25+,Oceania,Diet low in vegetables (g/day),2442,129.91896341551168,11828877.431325026,1,2016
+159,all ages 25+,Oceania,Diet low in vegetables (g/day),2442,122.97096491572849,12339492.302809993,2,2016
+79,all ages 25+,Oceania,Diet low in vegetables (g/day),2442,126.37156758570859,24168369.734135017,3,2016
+0,age-standardized 25+,Africa,Diet low in calcium (g/day),2427,0.3302999588369093,234832065.11308232,1,2016
+1,age-standardized 25+,Africa,Diet low in calcium (g/day),2427,0.2908600596459818,247109393.93854958,2,2016
+0,age-standardized 25+,Africa,Diet low in calcium (g/day),2427,0.3100776488384174,481941459.0516319,3,2016
+10,age-standardized 25+,Africa,Diet low in fiber (g/day),2428,18.73754252910272,234832065.11308232,1,2016
+11,age-standardized 25+,Africa,Diet low in fiber (g/day),2428,15.762170244808225,247109393.93854958,2,2016
+5,age-standardized 25+,Africa,Diet low in fiber (g/day),2428,17.211957983294216,481941459.0516319,3,2016
+20,age-standardized 25+,Africa,Diet low in seafood omega-3 fatty acids (g/day),2429,0.02959635059376221,234832065.11308232,1,2016
+21,age-standardized 25+,Africa,Diet low in seafood omega-3 fatty acids (g/day),2429,0.02512450632755251,247109393.93854958,2,2016
+10,age-standardized 25+,Africa,Diet low in seafood omega-3 fatty acids (g/day),2429,0.027303468946714964,481941459.0516319,3,2016
+30,age-standardized 25+,Africa,Diet low in fruits (g/day),2430,84.09753400167996,234832065.11308232,1,2016
+31,age-standardized 25+,Africa,Diet low in fruits (g/day),2430,94.47190689063224,247109393.93854958,2,2016
+15,age-standardized 25+,Africa,Diet low in fruits (g/day),2430,89.4168626233059,481941459.0516319,3,2016
+40,age-standardized 25+,Africa,Diet low in whole grains (g/day),2431,29.63442189856851,234832065.11308232,1,2016
+41,age-standardized 25+,Africa,Diet low in whole grains (g/day),2431,32.491041309361606,247109393.93854958,2,2016
+20,age-standardized 25+,Africa,Diet low in whole grains (g/day),2431,31.099117408897186,481941459.0516319,3,2016
+50,age-standardized 25+,Africa,Diet low in legumes (g/day),2432,70.31578482920692,234832065.11308232,1,2016
+51,age-standardized 25+,Africa,Diet low in legumes (g/day),2432,59.31447785502933,247109393.93854958,2,2016
+25,age-standardized 25+,Africa,Diet low in legumes (g/day),2432,64.67500367651154,481941459.0516319,3,2016
+60,age-standardized 25+,Africa,Diet low in milk (g/day),2433,28.761886529156175,234832065.11308232,1,2016
+61,age-standardized 25+,Africa,Diet low in milk (g/day),2433,27.288219319325727,247109393.93854958,2,2016
+30,age-standardized 25+,Africa,Diet low in milk (g/day),2433,28.006282286672228,481941459.0516319,3,2016
+70,age-standardized 25+,Africa,Diet low in nuts and seeds (g/day),2434,2.402401602786175,234832065.11308232,1,2016
+71,age-standardized 25+,Africa,Diet low in nuts and seeds (g/day),2434,2.311149472528304,247109393.93854958,2,2016
+35,age-standardized 25+,Africa,Diet low in nuts and seeds (g/day),2434,2.3556132259405786,481941459.0516319,3,2016
+80,age-standardized 25+,Africa,Diet high in processed meat (g/day),2435,0.9771869595371946,234832065.11308232,1,2016
+81,age-standardized 25+,Africa,Diet high in processed meat (g/day),2435,0.7356193442636992,247109393.93854958,2,2016
+40,age-standardized 25+,Africa,Diet high in processed meat (g/day),2435,0.8533262169422751,481941459.0516319,3,2016
+90,age-standardized 25+,Africa,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.033097680212213404,234832065.11308232,1,2016
+91,age-standardized 25+,Africa,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.032315237371463586,247109393.93854958,2,2016
+45,age-standardized 25+,Africa,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.032696492531556674,481941459.0516319,3,2016
+100,age-standardized 25+,Africa,Diet high in red meat (g/day),2437,12.413344447748651,234832065.11308232,1,2016
+101,age-standardized 25+,Africa,Diet high in red meat (g/day),2437,8.046963759985575,247109393.93854958,2,2016
+50,age-standardized 25+,Africa,Diet high in red meat (g/day),2437,10.174537918048271,481941459.0516319,3,2016
+110,age-standardized 25+,Africa,Diet high in sodium (g/day),2438,3.006249475521353,234832065.11308232,1,2016
+111,age-standardized 25+,Africa,Diet high in sodium (g/day),2438,3.1926538937106943,247109393.93854958,2,2016
+55,age-standardized 25+,Africa,Diet high in sodium (g/day),2438,3.1018259857823245,481941459.0516319,3,2016
+120,age-standardized 25+,Africa,Diet high in saturated fatty acids (% energy/day),2439,0.062236485446767804,234832065.11308232,1,2016
+121,age-standardized 25+,Africa,Diet high in saturated fatty acids (% energy/day),2439,0.06271121815588548,247109393.93854958,2,2016
+60,age-standardized 25+,Africa,Diet high in saturated fatty acids (% energy/day),2439,0.06247989864525818,481941459.0516319,3,2016
+130,age-standardized 25+,Africa,Diet high in sugar-sweetened beverages (g/day),2440,103.00975330026694,234832065.11308232,1,2016
+131,age-standardized 25+,Africa,Diet high in sugar-sweetened beverages (g/day),2440,74.46022181565378,247109393.93854958,2,2016
+65,age-standardized 25+,Africa,Diet high in sugar-sweetened beverages (g/day),2440,88.37134174655895,481941459.0516319,3,2016
+140,age-standardized 25+,Africa,Diet high in trans fatty acids (% energy/day),2441,0.003613916540065336,234832065.11308232,1,2016
+141,age-standardized 25+,Africa,Diet high in trans fatty acids (% energy/day),2441,0.00418447291615256,247109393.93854958,2,2016
+70,age-standardized 25+,Africa,Diet high in trans fatty acids (% energy/day),2441,0.00390646211309018,481941459.0516319,3,2016
+150,age-standardized 25+,Africa,Diet low in vegetables (g/day),2442,136.4272791409728,234832065.11308232,1,2016
+151,age-standardized 25+,Africa,Diet low in vegetables (g/day),2442,123.53910074764302,247109393.93854958,2,2016
+75,age-standardized 25+,Africa,Diet low in vegetables (g/day),2442,129.81902850817875,481941459.0516319,3,2016
+2,age-standardized 25+,Asia,Diet low in calcium (g/day),2427,0.39747918969099466,1342993619.878502,1,2016
+3,age-standardized 25+,Asia,Diet low in calcium (g/day),2427,0.35576789888567223,1334502372.3206215,2,2016
+1,age-standardized 25+,Asia,Diet low in calcium (g/day),2427,0.3766896846107127,2677495992.1991234,3,2016
+12,age-standardized 25+,Asia,Diet low in fiber (g/day),2428,11.578065337012852,1342993619.878502,1,2016
+13,age-standardized 25+,Asia,Diet low in fiber (g/day),2428,9.835870762094741,1334502372.3206215,2,2016
+6,age-standardized 25+,Asia,Diet low in fiber (g/day),2428,10.709730594385372,2677495992.1991234,3,2016
+22,age-standardized 25+,Asia,Diet low in seafood omega-3 fatty acids (g/day),2429,0.12671610373208048,1342993619.878502,1,2016
+23,age-standardized 25+,Asia,Diet low in seafood omega-3 fatty acids (g/day),2429,0.10933517827522844,1334502372.3206215,2,2016
+11,age-standardized 25+,Asia,Diet low in seafood omega-3 fatty acids (g/day),2429,0.11805320140734306,2677495992.1991234,3,2016
+32,age-standardized 25+,Asia,Diet low in fruits (g/day),2430,94.36730272091093,1342993619.878502,1,2016
+33,age-standardized 25+,Asia,Diet low in fruits (g/day),2430,107.03960586416298,1334502372.3206215,2,2016
+16,age-standardized 25+,Asia,Diet low in fruits (g/day),2430,100.683360207722,2677495992.1991234,3,2016
+42,age-standardized 25+,Asia,Diet low in whole grains (g/day),2431,65.41396049446917,1342993619.878502,1,2016
+43,age-standardized 25+,Asia,Diet low in whole grains (g/day),2431,56.73230101909868,1334502372.3206215,2,2016
+21,age-standardized 25+,Asia,Diet low in whole grains (g/day),2431,61.08689699957819,2677495992.1991234,3,2016
+52,age-standardized 25+,Asia,Diet low in legumes (g/day),2432,53.72993948545327,1342993619.878502,1,2016
+53,age-standardized 25+,Asia,Diet low in legumes (g/day),2432,42.70604622309519,1334502372.3206215,2,2016
+26,age-standardized 25+,Asia,Diet low in legumes (g/day),2432,48.23547310578815,2677495992.1991234,3,2016
+62,age-standardized 25+,Asia,Diet low in milk (g/day),2433,36.905099416631906,1342993619.878502,1,2016
+63,age-standardized 25+,Asia,Diet low in milk (g/day),2433,35.27630857896416,1334502372.3206215,2,2016
+31,age-standardized 25+,Asia,Diet low in milk (g/day),2433,36.093286721780245,2677495992.1991234,3,2016
+72,age-standardized 25+,Asia,Diet low in nuts and seeds (g/day),2434,2.2177687886341437,1342993619.878502,1,2016
+73,age-standardized 25+,Asia,Diet low in nuts and seeds (g/day),2434,2.143716933650225,1334502372.3206215,2,2016
+36,age-standardized 25+,Asia,Diet low in nuts and seeds (g/day),2434,2.1808602829113712,2677495992.1991234,3,2016
+82,age-standardized 25+,Asia,Diet high in processed meat (g/day),2435,1.756511106525675,1342993619.878502,1,2016
+83,age-standardized 25+,Asia,Diet high in processed meat (g/day),2435,1.3511212438058968,1334502372.3206215,2,2016
+41,age-standardized 25+,Asia,Diet high in processed meat (g/day),2435,1.5544589895139376,2677495992.1991234,3,2016
+92,age-standardized 25+,Asia,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.04661543057720254,1342993619.878502,1,2016
+93,age-standardized 25+,Asia,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.04538359339001476,1334502372.3206215,2,2016
+46,age-standardized 25+,Asia,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.046001465270287305,2677495992.1991234,3,2016
+102,age-standardized 25+,Asia,Diet high in red meat (g/day),2437,27.011646675533083,1342993619.878502,1,2016
+103,age-standardized 25+,Asia,Diet high in red meat (g/day),2437,17.694975942627863,1334502372.3206215,2,2016
+51,age-standardized 25+,Asia,Diet high in red meat (g/day),2437,22.36808446986929,2677495992.1991234,3,2016
+112,age-standardized 25+,Asia,Diet high in sodium (g/day),2438,5.243021048306061,1342993619.878502,1,2016
+113,age-standardized 25+,Asia,Diet high in sodium (g/day),2438,5.175202858980283,1334502372.3206215,2,2016
+56,age-standardized 25+,Asia,Diet high in sodium (g/day),2438,5.20921949087874,2677495992.1991234,3,2016
+122,age-standardized 25+,Asia,Diet high in saturated fatty acids (% energy/day),2439,0.07011105869963288,1342993619.878502,1,2016
+123,age-standardized 25+,Asia,Diet high in saturated fatty acids (% energy/day),2439,0.07016409999963152,1334502372.3206215,2,2016
+61,age-standardized 25+,Asia,Diet high in saturated fatty acids (% energy/day),2439,0.0701374952436596,2677495992.1991234,3,2016
+132,age-standardized 25+,Asia,Diet high in sugar-sweetened beverages (g/day),2440,97.94458963475196,1342993619.878502,1,2016
+133,age-standardized 25+,Asia,Diet high in sugar-sweetened beverages (g/day),2440,70.41493670195295,1334502372.3206215,2,2016
+66,age-standardized 25+,Asia,Diet high in sugar-sweetened beverages (g/day),2440,84.22341609984441,2677495992.1991234,3,2016
+142,age-standardized 25+,Asia,Diet high in trans fatty acids (% energy/day),2441,0.004165058729557063,1342993619.878502,1,2016
+143,age-standardized 25+,Asia,Diet high in trans fatty acids (% energy/day),2441,0.005037326927568497,1334502372.3206215,2,2016
+71,age-standardized 25+,Asia,Diet high in trans fatty acids (% energy/day),2441,0.004599809699469821,2677495992.1991234,3,2016
+152,age-standardized 25+,Asia,Diet low in vegetables (g/day),2442,232.51223390982858,1342993619.878502,1,2016
+153,age-standardized 25+,Asia,Diet low in vegetables (g/day),2442,218.33309710438948,1334502372.3206215,2,2016
+76,age-standardized 25+,Asia,Diet low in vegetables (g/day),2442,225.44514893213056,2677495992.1991234,3,2016
+4,age-standardized 25+,Americas,Diet low in calcium (g/day),2427,0.6933728510542071,291824170.7451213,1,2016
+5,age-standardized 25+,Americas,Diet low in calcium (g/day),2427,0.6172861901627452,315516867.7856131,2,2016
+2,age-standardized 25+,Americas,Diet low in calcium (g/day),2427,0.65384543004736,607341038.5307344,3,2016
+14,age-standardized 25+,Americas,Diet low in fiber (g/day),2428,14.735955937537282,291824170.7451213,1,2016
+15,age-standardized 25+,Americas,Diet low in fiber (g/day),2428,12.894524414621376,315516867.7856131,2,2016
+7,age-standardized 25+,Americas,Diet low in fiber (g/day),2428,13.779322564370755,607341038.5307344,3,2016
+24,age-standardized 25+,Americas,Diet low in seafood omega-3 fatty acids (g/day),2429,0.11146164659292936,291824170.7451213,1,2016
+25,age-standardized 25+,Americas,Diet low in seafood omega-3 fatty acids (g/day),2429,0.09429251612544245,315516867.7856131,2,2016
+12,age-standardized 25+,Americas,Diet low in seafood omega-3 fatty acids (g/day),2429,0.10254219290211825,607341038.5307344,3,2016
+34,age-standardized 25+,Americas,Diet low in fruits (g/day),2430,126.86849086852396,291824170.7451213,1,2016
+35,age-standardized 25+,Americas,Diet low in fruits (g/day),2430,142.17916083750842,315516867.7856131,2,2016
+17,age-standardized 25+,Americas,Diet low in fruits (g/day),2430,134.82246454367643,607341038.5307344,3,2016
+44,age-standardized 25+,Americas,Diet low in whole grains (g/day),2431,87.02932842647027,291824170.7451213,1,2016
+45,age-standardized 25+,Americas,Diet low in whole grains (g/day),2431,78.50253650627315,315516867.7856131,2,2016
+22,age-standardized 25+,Americas,Diet low in whole grains (g/day),2431,82.59961512168735,607341038.5307344,3,2016
+54,age-standardized 25+,Americas,Diet low in legumes (g/day),2432,45.33826327527597,291824170.7451213,1,2016
+55,age-standardized 25+,Americas,Diet low in legumes (g/day),2432,36.694535344736,315516867.7856131,2,2016
+27,age-standardized 25+,Americas,Diet low in legumes (g/day),2432,40.8478010973328,607341038.5307344,3,2016
+64,age-standardized 25+,Americas,Diet low in milk (g/day),2433,122.11622442774154,291824170.7451213,1,2016
+65,age-standardized 25+,Americas,Diet low in milk (g/day),2433,117.64907141192501,315516867.7856131,2,2016
+32,age-standardized 25+,Americas,Diet low in milk (g/day),2433,119.79551491191627,607341038.5307344,3,2016
+74,age-standardized 25+,Americas,Diet low in nuts and seeds (g/day),2434,5.0033579886452975,291824170.7451213,1,2016
+75,age-standardized 25+,Americas,Diet low in nuts and seeds (g/day),2434,4.3126313884783185,315516867.7856131,2,2016
+37,age-standardized 25+,Americas,Diet low in nuts and seeds (g/day),2434,4.64452188247978,607341038.5307344,3,2016
+84,age-standardized 25+,Americas,Diet high in processed meat (g/day),2435,10.614834435215,291824170.7451213,1,2016
+85,age-standardized 25+,Americas,Diet high in processed meat (g/day),2435,7.7084647421832475,315516867.7856131,2,2016
+42,age-standardized 25+,Americas,Diet high in processed meat (g/day),2435,9.104960074689622,607341038.5307344,3,2016
+94,age-standardized 25+,Americas,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.08181855695634864,291824170.7451213,1,2016
+95,age-standardized 25+,Americas,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.08096633068825167,315516867.7856131,2,2016
+47,age-standardized 25+,Americas,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.0813758209222333,607341038.5307344,3,2016
+104,age-standardized 25+,Americas,Diet high in red meat (g/day),2437,54.447142746043475,291824170.7451213,1,2016
+105,age-standardized 25+,Americas,Diet high in red meat (g/day),2437,34.2482297921861,315516867.7856131,2,2016
+52,age-standardized 25+,Americas,Diet high in red meat (g/day),2437,43.953701098673534,607341038.5307344,3,2016
+114,age-standardized 25+,Americas,Diet high in sodium (g/day),2438,4.432364960705673,291824170.7451213,1,2016
+115,age-standardized 25+,Americas,Diet high in sodium (g/day),2438,3.957081489015961,315516867.7856131,2,2016
+57,age-standardized 25+,Americas,Diet high in sodium (g/day),2438,4.185452694311507,607341038.5307344,3,2016
+124,age-standardized 25+,Americas,Diet high in saturated fatty acids (% energy/day),2439,0.08595146469041548,291824170.7451213,1,2016
+125,age-standardized 25+,Americas,Diet high in saturated fatty acids (% energy/day),2439,0.08660279502428625,315516867.7856131,2,2016
+62,age-standardized 25+,Americas,Diet high in saturated fatty acids (% energy/day),2439,0.08628983422877866,607341038.5307344,3,2016
+134,age-standardized 25+,Americas,Diet high in sugar-sweetened beverages (g/day),2440,169.47022993295712,291824170.7451213,1,2016
+135,age-standardized 25+,Americas,Diet high in sugar-sweetened beverages (g/day),2440,120.48751136911622,315516867.7856131,2,2016
+67,age-standardized 25+,Americas,Diet high in sugar-sweetened beverages (g/day),2440,144.02344969515966,607341038.5307344,3,2016
+144,age-standardized 25+,Americas,Diet high in trans fatty acids (% energy/day),2441,0.007762456621676501,291824170.7451213,1,2016
+145,age-standardized 25+,Americas,Diet high in trans fatty acids (% energy/day),2441,0.009377896232250212,315516867.7856131,2,2016
+72,age-standardized 25+,Americas,Diet high in trans fatty acids (% energy/day),2441,0.008601686006303759,607341038.5307344,3,2016
+154,age-standardized 25+,Americas,Diet low in vegetables (g/day),2442,139.81062989144485,291824170.7451213,1,2016
+155,age-standardized 25+,Americas,Diet low in vegetables (g/day),2442,131.86029504473285,315516867.7856131,2,2016
+77,age-standardized 25+,Americas,Diet low in vegetables (g/day),2442,135.68038907197084,607341038.5307344,3,2016
+6,age-standardized 25+,Europe,Diet low in calcium (g/day),2427,0.8012988315548736,254170871.16301832,1,2016
+7,age-standardized 25+,Europe,Diet low in calcium (g/day),2427,0.7133324820854726,285366808.93597025,2,2016
+3,age-standardized 25+,Europe,Diet low in calcium (g/day),2427,0.7547725603272112,539537680.0989885,3,2016
+16,age-standardized 25+,Europe,Diet low in fiber (g/day),2428,12.512619161100227,254170871.16301832,1,2016
+17,age-standardized 25+,Europe,Diet low in fiber (g/day),2428,10.59246506820716,285366808.93597025,2,2016
+8,age-standardized 25+,Europe,Diet low in fiber (g/day),2428,11.497030692740232,539537680.0989885,3,2016
+26,age-standardized 25+,Europe,Diet low in seafood omega-3 fatty acids (g/day),2429,0.07958533129719585,254170871.16301832,1,2016
+27,age-standardized 25+,Europe,Diet low in seafood omega-3 fatty acids (g/day),2429,0.06773728164286598,285366808.93597025,2,2016
+13,age-standardized 25+,Europe,Diet low in seafood omega-3 fatty acids (g/day),2429,0.07331878079167652,539537680.0989885,3,2016
+36,age-standardized 25+,Europe,Diet low in fruits (g/day),2430,94.43829794546585,254170871.16301832,1,2016
+37,age-standardized 25+,Europe,Diet low in fruits (g/day),2430,106.28201368339393,285366808.93597025,2,2016
+18,age-standardized 25+,Europe,Diet low in fruits (g/day),2430,100.7025561997868,539537680.0989885,3,2016
+46,age-standardized 25+,Europe,Diet low in whole grains (g/day),2431,27.645596104062545,254170871.16301832,1,2016
+47,age-standardized 25+,Europe,Diet low in whole grains (g/day),2431,23.200947914230767,285366808.93597025,2,2016
+23,age-standardized 25+,Europe,Diet low in whole grains (g/day),2431,25.294777769108393,539537680.0989885,3,2016
+56,age-standardized 25+,Europe,Diet low in legumes (g/day),2432,15.906961823656722,254170871.16301832,1,2016
+57,age-standardized 25+,Europe,Diet low in legumes (g/day),2432,12.837720599172458,285366808.93597025,2,2016
+28,age-standardized 25+,Europe,Diet low in legumes (g/day),2432,14.283609819909532,539537680.0989885,3,2016
+66,age-standardized 25+,Europe,Diet low in milk (g/day),2433,135.54507265384365,254170871.16301832,1,2016
+67,age-standardized 25+,Europe,Diet low in milk (g/day),2433,130.2574374189809,285366808.93597025,2,2016
+33,age-standardized 25+,Europe,Diet low in milk (g/day),2433,132.74839014315535,539537680.0989885,3,2016
+76,age-standardized 25+,Europe,Diet low in nuts and seeds (g/day),2434,3.061309120464582,254170871.16301832,1,2016
+77,age-standardized 25+,Europe,Diet low in nuts and seeds (g/day),2434,2.910488804502102,285366808.93597025,2,2016
+38,age-standardized 25+,Europe,Diet low in nuts and seeds (g/day),2434,2.981538765443166,539537680.0989885,3,2016
+86,age-standardized 25+,Europe,Diet high in processed meat (g/day),2435,8.414759372976343,254170871.16301832,1,2016
+87,age-standardized 25+,Europe,Diet high in processed meat (g/day),2435,6.226035710512612,285366808.93597025,2,2016
+43,age-standardized 25+,Europe,Diet high in processed meat (g/day),2435,7.25712180615185,539537680.0989885,3,2016
+96,age-standardized 25+,Europe,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.04843389429331606,254170871.16301832,1,2016
+97,age-standardized 25+,Europe,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.04645512930412947,285366808.93597025,2,2016
+48,age-standardized 25+,Europe,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.04738730594290688,539537680.0989885,3,2016
+106,age-standardized 25+,Europe,Diet high in red meat (g/day),2437,52.26674898302589,254170871.16301832,1,2016
+107,age-standardized 25+,Europe,Diet high in red meat (g/day),2437,32.155111097787106,285366808.93597025,2,2016
+53,age-standardized 25+,Europe,Diet high in red meat (g/day),2437,41.629505028658535,539537680.0989885,3,2016
+116,age-standardized 25+,Europe,Diet high in sodium (g/day),2438,4.289494521063824,254170871.16301832,1,2016
+117,age-standardized 25+,Europe,Diet high in sodium (g/day),2438,3.600500010047625,285366808.93597025,2,2016
+58,age-standardized 25+,Europe,Diet high in sodium (g/day),2438,3.925078517816342,539537680.0989885,3,2016
+126,age-standardized 25+,Europe,Diet high in saturated fatty acids (% energy/day),2439,0.08596707665939719,254170871.16301832,1,2016
+127,age-standardized 25+,Europe,Diet high in saturated fatty acids (% energy/day),2439,0.08575617396965567,285366808.93597025,2,2016
+63,age-standardized 25+,Europe,Diet high in saturated fatty acids (% energy/day),2439,0.08585552814334821,539537680.0989885,3,2016
+136,age-standardized 25+,Europe,Diet high in sugar-sweetened beverages (g/day),2440,116.36951456762834,254170871.16301832,1,2016
+137,age-standardized 25+,Europe,Diet high in sugar-sweetened beverages (g/day),2440,81.69648258754192,285366808.93597025,2,2016
+68,age-standardized 25+,Europe,Diet high in sugar-sweetened beverages (g/day),2440,98.0306054288324,539537680.0989885,3,2016
+146,age-standardized 25+,Europe,Diet high in trans fatty acids (% energy/day),2441,0.003436089214608454,254170871.16301832,1,2016
+147,age-standardized 25+,Europe,Diet high in trans fatty acids (% energy/day),2441,0.004130163021214364,285366808.93597025,2,2016
+73,age-standardized 25+,Europe,Diet high in trans fatty acids (% energy/day),2441,0.0038031917074701784,539537680.0989885,3,2016
+156,age-standardized 25+,Europe,Diet low in vegetables (g/day),2442,186.25523298629233,254170871.16301832,1,2016
+157,age-standardized 25+,Europe,Diet low in vegetables (g/day),2442,177.04172623732566,285366808.93597025,2,2016
+78,age-standardized 25+,Europe,Diet low in vegetables (g/day),2442,181.3821182492822,539537680.0989885,3,2016
+8,age-standardized 25+,Oceania,Diet low in calcium (g/day),2427,0.6386794712471565,11828877.431325026,1,2016
+9,age-standardized 25+,Oceania,Diet low in calcium (g/day),2427,0.5742584291892584,12339492.302809993,2,2016
+4,age-standardized 25+,Oceania,Diet low in calcium (g/day),2427,0.605788425580568,24168369.734135017,3,2016
+18,age-standardized 25+,Oceania,Diet low in fiber (g/day),2428,12.68949800284199,11828877.431325026,1,2016
+19,age-standardized 25+,Oceania,Diet low in fiber (g/day),2428,10.42675778305817,12339492.302809993,2,2016
+9,age-standardized 25+,Oceania,Diet low in fiber (g/day),2428,11.534224981433113,24168369.734135017,3,2016
+28,age-standardized 25+,Oceania,Diet low in seafood omega-3 fatty acids (g/day),2429,0.10051303560493578,11828877.431325026,1,2016
+29,age-standardized 25+,Oceania,Diet low in seafood omega-3 fatty acids (g/day),2429,0.08627511598105018,12339492.302809993,2,2016
+14,age-standardized 25+,Oceania,Diet low in seafood omega-3 fatty acids (g/day),2429,0.09324367066474193,24168369.734135017,3,2016
+38,age-standardized 25+,Oceania,Diet low in fruits (g/day),2430,90.31990285071527,11828877.431325026,1,2016
+39,age-standardized 25+,Oceania,Diet low in fruits (g/day),2430,103.40053568424688,12339492.302809993,2,2016
+19,age-standardized 25+,Oceania,Diet low in fruits (g/day),2430,96.99839916390582,24168369.734135017,3,2016
+48,age-standardized 25+,Oceania,Diet low in whole grains (g/day),2431,23.26223769150083,11828877.431325026,1,2016
+49,age-standardized 25+,Oceania,Diet low in whole grains (g/day),2431,23.700802597861838,12339492.302809993,2,2016
+24,age-standardized 25+,Oceania,Diet low in whole grains (g/day),2431,23.486153013297688,24168369.734135017,3,2016
+58,age-standardized 25+,Oceania,Diet low in legumes (g/day),2432,20.092894657497318,11828877.431325026,1,2016
+59,age-standardized 25+,Oceania,Diet low in legumes (g/day),2432,16.539586794885867,12339492.302809993,2,2016
+29,age-standardized 25+,Oceania,Diet low in legumes (g/day),2432,18.278704643750515,24168369.734135017,3,2016
+68,age-standardized 25+,Oceania,Diet low in milk (g/day),2433,172.21178866216087,11828877.431325026,1,2016
+69,age-standardized 25+,Oceania,Diet low in milk (g/day),2433,171.26051104089436,12339492.302809993,2,2016
+34,age-standardized 25+,Oceania,Diet low in milk (g/day),2433,171.72610083900273,24168369.734135017,3,2016
+78,age-standardized 25+,Oceania,Diet low in nuts and seeds (g/day),2434,4.754094830575794,11828877.431325026,1,2016
+79,age-standardized 25+,Oceania,Diet low in nuts and seeds (g/day),2434,4.593691994512002,12339492.302809993,2,2016
+39,age-standardized 25+,Oceania,Diet low in nuts and seeds (g/day),2434,4.672198964916203,24168369.734135017,3,2016
+88,age-standardized 25+,Oceania,Diet high in processed meat (g/day),2435,5.061752064115294,11828877.431325026,1,2016
+89,age-standardized 25+,Oceania,Diet high in processed meat (g/day),2435,3.9020178874526255,12339492.302809993,2,2016
+44,age-standardized 25+,Oceania,Diet high in processed meat (g/day),2435,4.469633890500021,24168369.734135017,3,2016
+98,age-standardized 25+,Oceania,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.0320290434831185,11828877.431325026,1,2016
+99,age-standardized 25+,Oceania,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.031161823379479855,12339492.302809993,2,2016
+49,age-standardized 25+,Oceania,Diet low in polyunsaturated fatty acids (% energy/day),2436,0.031586272377271955,24168369.734135017,3,2016
+108,age-standardized 25+,Oceania,Diet high in red meat (g/day),2437,69.52206044916498,11828877.431325026,1,2016
+109,age-standardized 25+,Oceania,Diet high in red meat (g/day),2437,44.047102853277586,12339492.302809993,2,2016
+54,age-standardized 25+,Oceania,Diet high in red meat (g/day),2437,56.51547181174923,24168369.734135017,3,2016
+118,age-standardized 25+,Oceania,Diet high in sodium (g/day),2438,2.96867226686176,11828877.431325026,1,2016
+119,age-standardized 25+,Oceania,Diet high in sodium (g/day),2438,2.902191629003971,12339492.302809993,2,2016
+59,age-standardized 25+,Oceania,Diet high in sodium (g/day),2438,2.934729666340656,24168369.734135017,3,2016
+128,age-standardized 25+,Oceania,Diet high in saturated fatty acids (% energy/day),2439,0.12256038160526662,11828877.431325026,1,2016
+129,age-standardized 25+,Oceania,Diet high in saturated fatty acids (% energy/day),2439,0.12277393177824915,12339492.302809993,2,2016
+64,age-standardized 25+,Oceania,Diet high in saturated fatty acids (% energy/day),2439,0.12266941257197102,24168369.734135017,3,2016
+138,age-standardized 25+,Oceania,Diet high in sugar-sweetened beverages (g/day),2440,80.78861989173687,11828877.431325026,1,2016
+139,age-standardized 25+,Oceania,Diet high in sugar-sweetened beverages (g/day),2440,55.6869348991349,12339492.302809993,2,2016
+69,age-standardized 25+,Oceania,Diet high in sugar-sweetened beverages (g/day),2440,67.9726106962015,24168369.734135017,3,2016
+148,age-standardized 25+,Oceania,Diet high in trans fatty acids (% energy/day),2441,0.004763084163501053,11828877.431325026,1,2016
+149,age-standardized 25+,Oceania,Diet high in trans fatty acids (% energy/day),2441,0.0058220204359566395,12339492.302809993,2,2016
+74,age-standardized 25+,Oceania,Diet high in trans fatty acids (% energy/day),2441,0.005303738586073742,24168369.734135017,3,2016
+158,age-standardized 25+,Oceania,Diet low in vegetables (g/day),2442,129.3906527877657,11828877.431325026,1,2016
+159,age-standardized 25+,Oceania,Diet low in vegetables (g/day),2442,122.33036237177728,12339492.302809993,2,2016
+79,age-standardized 25+,Oceania,Diet low in vegetables (g/day),2442,125.78592478161292,24168369.734135017,3,2016
