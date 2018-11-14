@@ -100,6 +100,7 @@ dataDictionary["Kenya"]["table6"] = [
     [Paragraph("Mandatory legislation for salt iodisation", style=dark_greyParaBold), "Yes"],
     [Paragraph(u"Sugar\u2013sweeted beverage tax", style=dark_greyParaBold), "Yes"],
     [Paragraph("Multisectoral comprehensive nutrition plan", style=dark_greyParaBold), "Yes"],
+    [Paragraph("Food-based dietary guidelines", style=dark_greyParaBold), "Yes"],
 ]
 
 dataDictionary["Kenya"]["table7"] = [
@@ -111,8 +112,6 @@ dataDictionary["Kenya"]["table7"] = [
         Paragraph("Exclusive breastfeeding", style=dark_greyParaBoldCenter),
         Paragraph("Wasting", style=dark_greyParaBoldCenter),
         Paragraph("Salt intake", style=dark_greyParaBoldCenter),
-        Paragraph("Blood pressure", style=dark_greyParaBoldCenter),
-        Paragraph("Diabetes", style=dark_greyParaBoldCenter),
         Paragraph("Overweight adults and adolescents", style=dark_greyParaBoldCenter),
     ],
     ["Yes", "Yes", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes"]
@@ -233,6 +232,7 @@ for country in dataDictionary.keys():
     dataDictionary[country]["table6"][0][1] = safeFormat(indicator(ctryDat, "salt_leg"))
     dataDictionary[country]["table6"][1][1] = safeFormat(indicator(ctryDat, "sugar_tax"))
     dataDictionary[country]["table6"][2][1] = safeFormat(indicator(ctryDat, "multi_sec"))
+    dataDictionary[country]["table6"][3][1] = safeFormat(indicator(ctryDat, "multi_sec")) # TODO: Change this
 
     dataDictionary[country]["table7"][1] = [
         safeFormat(indicator(ctryDat, "stunting_plan")),
@@ -242,8 +242,6 @@ for country in dataDictionary.keys():
         safeFormat(indicator(ctryDat, "EBF_plan")),
         safeFormat(indicator(ctryDat, "wasting_plan")),
         safeFormat(indicator(ctryDat, "sodium_plan")),
-        safeFormat(indicator(ctryDat, "blood_pressure_plan")),
-        safeFormat(indicator(ctryDat, "diabetes_plan")),
         safeFormat(indicator(ctryDat, "overweight_adults_adoles_plan")),
     ]
 
@@ -311,7 +309,8 @@ tableStyles["table5"] = generic_style + [
 ]
 tableStyles["table6"] = generic_style + [
     ('LINEABOVE', (0, 1), (-1, 1), 1, grey),
-    ('LINEABOVE', (0, 2), (-1, 2), 1, grey)
+    ('LINEABOVE', (0, 2), (-1, 2), 1, grey),
+    ('LINEABOVE', (0, 3), (-1, 3), 1, grey)
 ]
 tableStyles["table7"] = generic_style + [
     ('TEXTCOLOR', (0, 0), (-1, -1), dark_grey),
@@ -325,8 +324,6 @@ tableStyles["table7"] = generic_style + [
     ('LINEAFTER', (4, 0), (4, -1), 1, dark_grey),
     ('LINEAFTER', (5, 0), (5, -1), 1, dark_grey),
     ('LINEAFTER', (6, 0), (6, -1), 1, dark_grey),
-    ('LINEAFTER', (7, 0), (7, -1), 1, dark_grey),
-    ('LINEAFTER', (8, 0), (8, -1), 1, dark_grey),
 ]
 tableStyles["table8"] = generic_style + [
     ('FONTNAME', (0, 0), (-1, 0), "Averta-Bold"),

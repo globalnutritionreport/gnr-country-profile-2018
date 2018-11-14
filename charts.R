@@ -1,11 +1,17 @@
 ####Setup#####
-list.of.packages <- c("ggplot2","reshape2","data.table","scales","varhandle","Cairo","plyr","eulerr")
+list.of.packages <- c("ggplot2","reshape2","data.table","scales","varhandle","Cairo","plyr","eulerr","extrafont")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, require, character.only=T)
 
 wd <- "~/git/gnr-country-profile-2018"
 setwd(wd)
+
+font_import("fonts",prompt=F)
+CairoFonts(
+  regular="Averta Regular",
+  bold="Averta Bold"
+)
 
 set.seed(12345)
 
@@ -22,7 +28,7 @@ setwd(wd)
 # )
 blank <- data.frame(x=0,y=0,text="No data")
 no.data <- ggplot(blank,aes(x,y,label=text)) +
-  geom_text(size=20,color="grey") +
+  geom_text(size=20,color="grey",family="Averta Regular") +
   theme(
     axis.line = element_blank()
     ,axis.text = element_blank()
@@ -53,7 +59,9 @@ simple_style = theme_bw() +
     ,panel.background = element_blank()
     ,plot.background = element_blank()
     ,panel.grid.minor = element_blank()
-    ,axis.line = element_line(colour = "black"))
+    ,axis.line = element_line(colour = "black")
+    ,text = element_text(family="Averta Regular")
+    )
 
 yellow <- "#FCC97A" #light orange
 orange <- "#F39000" #orange
@@ -81,6 +89,7 @@ quintileFillValues <- c(red, orange, yellow, lighter.blue, light.blue)
 yellowOrangeFill <- scale_fill_manual(values=c(yellow,orange))
 orangeYellowFill <- scale_fill_manual(values=c(orange,yellow))
 yellowOrangeRedFill <- scale_fill_manual(values=c(yellow,orange,red))
+orangeLightBlueFill <- scale_fill_manual(values=c(orange,light.blue))
 orangeFill <- scale_fill_manual(values=c(orange))
 yellowFill <- scale_fill_manual(values=c(yellow))
 blueFill <- scale_fill_manual(values=c(blue))
@@ -92,6 +101,7 @@ quintileFill <-  scale_fill_manual(values=quintileFillValues)
 yellowOrangeColor <- scale_color_manual(values=c(yellow,orange))
 orangeYellowColor <- scale_color_manual(values=c(orange,yellow))
 yellowOrangeRedColor <- scale_color_manual(values=c(yellow,orange,red))
+orangeLightBlueColor <- scale_color_manual(values=c(orange,light.blue))
 orangeColor <- scale_color_manual(values=c(orange))
 blueColor <- scale_color_manual(values=c(blue))
 quintileColor <-  scale_color_manual(values=quintileFillValues)
@@ -153,6 +163,7 @@ for(this.country in countries){
   # dir.create(paste(wd,this.country,sep="/"))
   setwd(paste(wd,this.country,sep="/"))
   countrydat <- subset(dat,country==this.country)
+  recipient = T
   #Chart 1 part a and b
   indicators = c("190_percent","310_percent","GDP_capita_PPP")
   c1data = subset(countrydat,indicator %in% indicators)
@@ -168,7 +179,7 @@ for(this.country in countries){
     c1a.melt$year = as.factor(c1a.melt$year)
     c1a.max <- max(c1a.melt$value,na.rm=TRUE)
     c1b.melt <- subset(c1data,indicator == "GDP_capita_PPP")
-    c1b.melt$variable = "PPP($) GDP per capita"
+    c1b.melt$variable = "GDP per capita"
     c1b.melt <- subset(c1b.melt,!is.na(value))
     c1b.melt <- c1b.melt[order(c1b.melt$year),]
     c1b.melt$year = as.factor(c1b.melt$year)
@@ -184,7 +195,7 @@ for(this.country in countries){
       # expand_limits(y=c1a.max*1.1) +
       theme(
         legend.position="top"
-        ,legend.text = element_text(size=35,color=blue)
+        ,legend.text = element_text(size=35,color=blue,family="Averta Regular")
         ,legend.justification=c(0,0)
         ,legend.direction="vertical"
         ,axis.title.x=element_blank()
@@ -193,12 +204,12 @@ for(this.country in countries){
         ,axis.line.y = element_blank()
         ,axis.line.x = element_line(color=blue, size = 1.1)
         ,axis.text.y = element_blank()
-        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_blank()
-      ) + geom_text(size=9,aes(label=safeFormat(value,suffix="%")),position=position_dodge(1),vjust=-0.3,color=blue)
+      ) + geom_text(size=9,aes(label=safeFormat(value,suffix="%")),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
     if(nrow(c1a.melt)==0){c1a.missing<-TRUE}else{c1a.missing<-FALSE}
-    c1b.key.data = data.frame(year=as.numeric(c(NA)),variable=c("PPP($) GDP per capita"),value=as.numeric(c(NA)))
+    c1b.key.data = data.frame(year=as.numeric(c(NA)),variable=c("GDP per capita"),value=as.numeric(c(NA)))
     c1b = ggplot(c1b.melt,aes(year,value,fill=variable)) +
       geom_bar(position="dodge",stat="identity",color=blue,show.legend=F,size=1) +
       geom_point(data=c1b.key.data,aes(fill=variable),size=12,color=blue,stroke=1.5,shape=21) +
@@ -209,7 +220,7 @@ for(this.country in countries){
       expand_limits(y=c1b.max*1.1) +
       theme(
         legend.position="top"
-        ,legend.text = element_text(size=35,color=blue)
+        ,legend.text = element_text(size=35,color=blue,family="Averta Regular")
         ,legend.justification=c(0,0)
         ,legend.direction="vertical"
         ,axis.title.x=element_blank()
@@ -218,11 +229,11 @@ for(this.country in countries){
         ,axis.line.y = element_blank()
         ,axis.line.x = element_line(color=blue, size = 1.1)
         ,axis.text.y = element_blank()
-        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_blank()
         ,legend.key.size = unit(2.2,"lines")
-      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
+      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
     if(nrow(c1b.melt)==0){c1b.missing<-TRUE}else{c1b.missing<-FALSE}
   }else{
     c1a.missing <- TRUE
@@ -246,7 +257,7 @@ for(this.country in countries){
     expand_limits(y=c2.max*1.1) +
     theme(
       legend.position="top"
-      ,legend.text = element_text(size=40,color=blue)
+      ,legend.text = element_text(size=40,color=blue,family="Averta Regular")
       ,legend.justification=c(0,0)
       ,legend.direction="vertical"
       ,axis.title.x=element_blank()
@@ -255,11 +266,11 @@ for(this.country in countries){
       ,axis.line.y = element_blank()
       ,axis.line.x = element_line(color=blue, size = 1.1)
       ,axis.text.y = element_blank()
-      ,axis.text.x = element_text(size=40,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+      ,axis.text.x = element_text(size=40,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.5,"lines")
-    ) + geom_text(size=13,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
+    ) + geom_text(size=13,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
   #Chart 3 part a and b
   indicators = c("undernourishment_prev","fruit_veg_availability","total_calories_non_staple")
   c3data = subset(countrydat,indicator %in% indicators)
@@ -300,7 +311,7 @@ for(this.country in countries){
         expand_limits(y=c3a.max*1.1) +
         theme(
           legend.position="top"
-          ,legend.text = element_text(size=22,color=blue)
+          ,legend.text = element_text(size=22,color=blue,family="Averta Regular")
           ,legend.justification=c(0.08,0)
           ,legend.direction="vertical"
           ,axis.title.x=element_blank()
@@ -309,10 +320,10 @@ for(this.country in countries){
           ,axis.line.y = element_blank()
           ,axis.line.x = element_line(color=blue, size = 1.1)
           ,axis.text.y = element_blank()
-          ,axis.text.x = element_text(size=25,color=blue, angle=90, margin=margin(t=20,r=0,b=0,l=0), vjust=0.5)
+          ,axis.text.x = element_text(size=25,color=blue, angle=90, margin=margin(t=20,r=0,b=0,l=0), vjust=0.5,family="Averta Regular")
           ,legend.background = element_rect(fill = "transparent", colour = "transparent")
           ,legend.key = element_rect(fill = "transparent", colour = "transparent")
-        ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
+        ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
       c3a.missing <- FALSE
     }else{
       c3a <- no.data
@@ -340,7 +351,7 @@ for(this.country in countries){
       expand_limits(y=c3b.max*1.1) +
       theme(
         legend.position="top"
-        ,legend.text = element_text(size=22,color=blue)
+        ,legend.text = element_text(size=22,color=blue,family="Averta Regular")
         ,legend.justification=c(0.08,0)
         ,legend.direction="vertical"
         ,axis.title.x=element_blank()
@@ -349,10 +360,10 @@ for(this.country in countries){
         ,axis.line.y = element_blank()
         ,axis.line.x = element_line(color=blue, size = 1.1)
         ,axis.text.y = element_blank()
-        ,axis.text.x = element_text(size=25,color=blue, angle=90, margin=margin(t=20,r=0,b=0,l=0), vjust=0.5)
+        ,axis.text.x = element_text(size=25,color=blue, angle=90, margin=margin(t=20,r=0,b=0,l=0), vjust=0.5,family="Averta Regular")
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_rect(fill = "transparent", colour = "transparent")
-      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
+      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
       c3b.missing <- FALSE
     }else{
       c3b <- no.data
@@ -374,7 +385,7 @@ for(this.country in countries){
       expand_limits(y=c3c.max*1.1) +
       theme(
         legend.position="top"
-        ,legend.text = element_text(size=22,color=blue)
+        ,legend.text = element_text(size=22,color=blue,family="Averta Regular")
         ,legend.justification=c(0.08,0)
         ,legend.direction="vertical"
         ,axis.title.x=element_blank()
@@ -383,10 +394,10 @@ for(this.country in countries){
         ,axis.line.y = element_blank()
         ,axis.line.x = element_line(color=blue, size = 1.1)
         ,axis.text.y = element_blank()
-        ,axis.text.x = element_text(size=25,color=blue, angle=90, margin=margin(t=20,r=0,b=0,l=0), vjust=0.5)
+        ,axis.text.x = element_text(size=25,color=blue, angle=90, margin=margin(t=20,r=0,b=0,l=0), vjust=0.5,family="Averta Regular")
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_rect(fill = "transparent", colour = "transparent")
-      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
+      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
       c3c.missing <- FALSE
     }else{
       c3c <- no.data
@@ -417,7 +428,7 @@ for(this.country in countries){
     expand_limits(y=c4.max*1.1) +
     theme(
       legend.position="top"
-      ,legend.text = element_text(size=40,color=blue)
+      ,legend.text = element_text(size=40,color=blue,family="Averta Regular")
       ,legend.justification=c(0,0)
       ,legend.direction="vertical"
       ,axis.title.x=element_blank()
@@ -426,11 +437,11 @@ for(this.country in countries){
       ,axis.line.y = element_blank()
       ,axis.line.x = element_line(color=blue, size = 1.1)
       ,axis.text.y = element_blank()
-      ,axis.text.x = element_text(size=40,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+      ,axis.text.x = element_text(size=40,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.5,"lines")
-    ) + geom_text(size=13,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue)
+    ) + geom_text(size=13,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
   #Chart 5
   indicators = c("basic_water","limited_water","safely_managed_water","surface_water","unimproved_water")
   c5names = c("Basic","Limited","Safely managed","Surface water","Unimproved")
@@ -471,7 +482,7 @@ for(this.country in countries){
     scale_y_continuous(expand = c(0,0)) +
     theme(
       legend.position="top"
-      ,legend.text = element_text(size=30,color=blue)
+      ,legend.text = element_text(size=30,color=blue,family="Averta Regular")
       ,legend.justification=c(0,0)
       ,legend.direction="horizontal"
       ,axis.title.x=element_blank()
@@ -480,11 +491,11 @@ for(this.country in countries){
       ,axis.line.y = element_blank()
       ,axis.line.x = element_line(color=blue, size = 1.1)
       ,axis.text.y = element_blank()
-      ,axis.text.x = element_text(size=35,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+      ,axis.text.x = element_text(size=35,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.2,"lines")
-    ) + geom_text(data=subset(c5data,value>3),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE) +
+    ) + geom_text(data=subset(c5data,value>3),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
     scale_color_manual(breaks=c5names,values=c(white,white,white,blue,blue),drop=FALSE)
   #Chart 6
   indicators = c("basic_sanitation","limited_sanitation","open_defecation","safely_managed_sanitation","unimproved_sanitation")
@@ -526,7 +537,7 @@ for(this.country in countries){
     scale_y_continuous(expand = c(0,0)) +
     theme(
       legend.position="top"
-      ,legend.text = element_text(size=30,color=blue)
+      ,legend.text = element_text(size=30,color=blue,family="Averta Regular")
       ,legend.justification=c(0,0)
       ,legend.direction="horizontal"
       ,axis.title.x=element_blank()
@@ -535,11 +546,11 @@ for(this.country in countries){
       ,axis.line.y = element_blank()
       ,axis.line.x = element_line(color=blue, size = 1.1)
       ,axis.text.y = element_blank()
-      ,axis.text.x = element_text(size=35,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+      ,axis.text.x = element_text(size=35,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.2,"lines")
-    ) + geom_text(data=subset(c6data,value>3),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE) +
+    ) + geom_text(data=subset(c6data,value>3),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
     scale_color_manual(breaks=c6names,values=c(white,white,white,blue,blue),drop=FALSE)
   #Chart 7
   indicators = c("agriculture_expenditure","education_spending","health_spending","social_protection_spending")
@@ -589,7 +600,7 @@ for(this.country in countries){
     scale_y_continuous(expand = c(0,0)) +
     theme(
       legend.position="top"
-      ,legend.text = element_text(size=30,color=blue)
+      ,legend.text = element_text(size=30,color=blue,family="Averta Regular")
       ,legend.justification=c(0,0)
       ,legend.direction="horizontal"
       ,axis.title.x=element_blank()
@@ -598,11 +609,11 @@ for(this.country in countries){
       ,axis.line.y = element_blank()
       ,axis.line.x = element_line(color=blue, size = 1.1)
       ,axis.text.y = element_blank()
-      ,axis.text.x = element_text(size=35,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+      ,axis.text.x = element_text(size=35,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.2,"lines")
-    ) + geom_text(data=subset(c7data,value>0),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE) +
+    ) + geom_text(data=subset(c7data,value>0),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
     scale_color_manual(breaks=c7names,values=c(white,white,white,blue),drop=FALSE)
   }else{
     c7 <- no.data
@@ -631,7 +642,7 @@ for(this.country in countries){
       # expand_limits(y=c1a.max*1.1) +
       theme(
         legend.position="top"
-        ,legend.text = element_text(size=35,color=blue)
+        ,legend.text = element_text(size=35,color=blue,family="Averta Regular")
         ,legend.justification=c(0,0)
         ,legend.direction="vertical"
         ,axis.title.x=element_blank()
@@ -639,15 +650,15 @@ for(this.country in countries){
         ,axis.ticks=element_blank()
         ,axis.line.y = element_blank()
         ,axis.line.x = element_line(color=blue, size = 1.1)
-        ,axis.text.y = element_text(size=25,color=dark.grey)
-        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+        ,axis.text.y = element_text(size=25,color=dark.grey,family="Averta Regular")
+        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
         ,panel.grid.major.y = element_line(color=dark.grey)
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_blank()
-      ) + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value),unfactor(year))),position=position_dodge(0.5),vjust=-0.3,show.legend=F) 
+      ) + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value),unfactor(year))),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
     return(c)
   }
-  grouped_bar = function(countrydat, ind, disagg, disagg.values, fill=orangeYellowFill, percent=F, legend=F, spacing=1){
+  grouped_bar = function(countrydat, ind, disagg, disagg.values, fill=orangeYellowFill, percent=F, legend=F, spacing=1,byrow=F,nrow=2){
     cdata = subset(countrydat, (indicator==ind & disaggregation==disagg))
     cdata$value = as.numeric(cdata$value)
     if(percent){
@@ -664,13 +675,13 @@ for(this.country in countries){
       geom_bar(position=position_dodge(spacing),stat="identity",color=blue,show.legend=F,size=1) +
       geom_point(data=c.key.data,aes(group=disagg.value,fill=disagg.value),size=12,color=blue,stroke=1.5,shape=21,show.legend=legend) +
       fill +
-      guides(fill=guide_legend(title=element_blank(),byrow=TRUE)) +
+      guides(fill=guide_legend(title=element_blank(),bycol=byrow,nrow=nrow)) +
       simple_style  +
       scale_y_continuous(expand = c(0,0),limits=c(0,max(c.max*1.1,1))) +
       # expand_limits(y=c1a.max*1.1) +
       theme(
         legend.position="top"
-        ,legend.text = element_text(size=35,color=blue)
+        ,legend.text = element_text(size=35,color=blue,family="Averta Regular")
         ,legend.justification=c(0,0)
         ,legend.direction="vertical"
         ,axis.title.x=element_blank()
@@ -679,10 +690,10 @@ for(this.country in countries){
         ,axis.line.y = element_blank()
         ,axis.line.x = element_line(color=blue, size = 1.1)
         ,axis.text.y = element_blank()
-        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_blank()
-      ) + geom_text(size=9,aes(group=disagg.value,label=safeFormat(value)),position=position_dodge(spacing),vjust=-0.3,show.legend=F,color=blue) 
+      ) + geom_text(size=9,aes(group=disagg.value,label=safeFormat(value)),position=position_dodge(spacing),vjust=-0.3,show.legend=F,color=blue,family="Averta Regular") 
     return(c)
   }
   single_bar = function(countrydat, ind, disagg.values, fill=orangeYellowFill, percent=F, legend=F, spacing=1){
@@ -709,7 +720,7 @@ for(this.country in countries){
       # expand_limits(y=c1a.max*1.1) +
       theme(
         legend.position="top"
-        ,legend.text = element_text(size=35,color=blue)
+        ,legend.text = element_text(size=35,color=blue,family="Averta Regular")
         ,legend.justification=c(0,0)
         ,legend.direction="vertical"
         ,axis.title.x=element_blank()
@@ -718,17 +729,17 @@ for(this.country in countries){
         ,axis.line.y = element_blank()
         ,axis.line.x = element_line(color=blue, size = 1.1)
         ,axis.text.y = element_blank()
-        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_blank()
-      ) + geom_text(size=9,aes(group=disagg.value,label=safeFormat(value)),position=position_dodge(spacing),vjust=-0.3,show.legend=F,color=blue) 
+      ) + geom_text(size=9,aes(group=disagg.value,label=safeFormat(value)),position=position_dodge(spacing),vjust=-0.3,show.legend=F,color=blue,family="Averta Regular") 
     return(c)
   }
   # Charts 8-16
-  c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Male","Female","Both"),percent=T,fill=yellowOrangeRedFill,legend=T)
+  c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Male","Female","Both"),percent=T,fill=yellowOrangeRedFill,legend=T,byrow=T,nrow=3)
   c9 = grouped_line(countrydat, "stunting_percent","gender",c("Male","Female","Both"),percent=T,color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
   c10 = grouped_line(countrydat, "overweight_percent","gender",c("Male","Female","Both"),percent=T,color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
-  c11 = grouped_bar(countrydat, "wasting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,fill=quintileFill,legend=T)
+  c11 = grouped_bar(countrydat, "wasting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,fill=quintileFill,legend=T,byrow=T,nrow=3)
   c12 = grouped_line(countrydat, "stunting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,color=quintileColor,fill=quintileFill)
   c13 = grouped_line(countrydat, "overweight_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,color=quintileColor,fill=quintileFill)
   c14 = grouped_bar(countrydat, "wasting_percent","location",c("Urban","Rural"),percent=T,legend=T)
@@ -820,7 +831,7 @@ for(this.country in countries){
         simple_style  +
         theme(
           legend.position="top"
-          ,legend.text = element_text(size=22,color=blue)
+          ,legend.text = element_text(size=22,color=blue,family="Averta Regular")
           ,legend.justification=c(0,0)
           ,legend.direction="horizontal"
           ,axis.title.y=element_blank()
@@ -828,12 +839,12 @@ for(this.country in countries){
           ,axis.ticks=element_blank()
           ,axis.line.y = element_blank()
           ,axis.line.x = element_line(color=blue, size = 1)
-          ,axis.text.y = element_text(size=21,color=blue)
-          ,axis.text.x = element_text(size=25,color=blue)
+          ,axis.text.y = element_text(size=21,color=blue,family="Averta Regular")
+          ,axis.text.x = element_text(size=25,color=blue,family="Averta Regular")
           ,legend.background = element_rect(fill = "transparent", colour = "transparent")
           ,legend.key = element_rect(fill = "transparent", colour = "transparent")
           ,legend.key.size = unit(2.5,"lines")
-          ,title = element_text(size=30,color=blue)
+          ,title = element_text(size=30,color=blue,family="Averta Regular")
         ) + labs(title="Urban/rural (%)")
     }else{
       c18b.missing = T
@@ -849,7 +860,7 @@ for(this.country in countries){
       simple_style  +
       theme(
         legend.position="top"
-        ,legend.text = element_text(size=22,color=blue)
+        ,legend.text = element_text(size=22,color=blue,family="Averta Regular")
         ,legend.justification=c(0,0)
         ,legend.direction="horizontal"
         ,axis.title.y=element_blank()
@@ -857,12 +868,12 @@ for(this.country in countries){
         ,axis.ticks=element_blank()
         ,axis.line.y = element_blank()
         ,axis.line.x = element_line(color=blue, size = 1)
-        ,axis.text.y = element_text(size=21,color=blue)
-        ,axis.text.x = element_text(size=25,color=blue)
+        ,axis.text.y = element_text(size=21,color=blue,family="Averta Regular")
+        ,axis.text.x = element_text(size=25,color=blue,family="Averta Regular")
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key.size = unit(2.5,"lines")
-        ,title = element_text(size=30,color=blue)
+        ,title = element_text(size=30,color=blue,family="Averta Regular")
       ) + labs(title="Wealth quintiles (%)")
     if(nrow(c18b.data)>0){
       c18b.missing = F
@@ -875,7 +886,7 @@ for(this.country in countries){
         simple_style  +
         theme(
           legend.position="top"
-          ,legend.text = element_text(size=22,color=blue)
+          ,legend.text = element_text(size=22,color=blue,family="Averta Regular")
           ,legend.justification=c(0,0)
           ,legend.direction="horizontal"
           ,axis.title.y=element_blank()
@@ -884,26 +895,26 @@ for(this.country in countries){
           ,axis.line.y = element_blank()
           ,axis.line.x = element_line(color=blue, size = 1)
           ,axis.text.y = element_blank()
-          ,axis.text.x = element_text(size=25,color=blue)
+          ,axis.text.x = element_text(size=25,color=blue,family="Averta Regular")
           ,legend.background = element_rect(fill = "transparent", colour = "transparent")
           ,legend.key = element_rect(fill = "transparent", colour = "transparent")
           ,legend.key.size = unit(2.5,"lines")
-          ,title = element_text(size=30,color=blue)
+          ,title = element_text(size=30,color=blue,family="Averta Regular")
         ) + labs(title="Urban/rural (%)")
     }else{
       c18b.missing = T
     }
   }
   # Charts 19-27
-  c19 = grouped_line(countrydat, "adolescent_underweight","gender",c("Male","Female"),percent=T,legend=T)
-  c20 = grouped_line(countrydat, "adolescent_overweight","gender",c("Male","Female"),percent=T)
-  c21 = grouped_line(countrydat, "adolescent_obesity","gender",c("Male","Female"),percent=T)
-  c22 = grouped_line(countrydat, "adult_diabetes","gender",c("Male","Female"),percent=T,legend=T)
-  c23 = grouped_line(countrydat, "adult_overweight","gender",c("Male","Female"),percent=T)
-  c24 = grouped_line(countrydat, "adult_obesity","gender",c("Male","Female"),percent=T)
-  c25 = grouped_line(countrydat, "adult_blood_pressure","gender",c("Male","Female"),percent=T,legend=T)
-  c26 = grouped_line(countrydat, "adult_anaemia","gender",c("Male","Female"),percent=T)
-  c27 = single_bar(countrydat, "adult_sodium",c("All"),percent=T,fill=yellowOrangeRedFill,legend=T)
+  c19 = grouped_line(countrydat, "adolescent_underweight","gender",c("Male","Female"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
+  c20 = grouped_line(countrydat, "adolescent_overweight","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
+  c21 = grouped_line(countrydat, "adolescent_obesity","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
+  c22 = grouped_line(countrydat, "adult_diabetes","gender",c("Male","Female"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
+  c23 = grouped_line(countrydat, "adult_overweight","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
+  c24 = grouped_line(countrydat, "adult_obesity","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
+  c25 = grouped_line(countrydat, "adult_blood_pressure","gender",c("Male","Female"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
+  c26 = grouped_line(countrydat, "adult_anaemia","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
+  c27 = single_bar(countrydat, "adult_sodium",c("All (grams)"),percent=T,fill=yellowOrangeRedFill,legend=T)
   
   # Chart 28, assuming it's already out of 1
   firstup <- function(x) {
@@ -921,15 +932,30 @@ for(this.country in countries){
   c28.data$disagg.value = sapply(c28.data$disagg.value,firstup)
   c28.data$indicator = sapply(c28.data$indicator,firstup)
   # Outliers
+  calc_outlier = function(sd){
+    results = c()
+    outlier_val = 2.1
+    for(i in 1:nrow(sd)){
+      row = sd[i,]
+      if(row$outlier==1){
+        results = c(results,outlier_val)
+        outlier_val = outlier_val + 0.1
+      }else{
+        results = c(results,row$percent)
+      }
+    }
+    return(results)
+  }
   setnames(c28.data,"indicator","food")
   setnames(c28.data,"disagg.value","class")
   c28.data = c28.data[order(c28.data$food, c28.data$percent),]
-  c28.data$value_if_outlier = c(2.1,2.2,2.3,2.4)
   c28.data$outlier = 0
   c28.data$outlier[which(c28.data$percent>2)] = 1
-  c28.data$percent[which(c28.data$percent>2)] = c28.data$value_if_outlier[which(c28.data$percent>2)]
+  c28.data$percent[which(c28.data$percent>2)] = 2.1
+  c28.data = data.table(c28.data)
+  c28.data[,percent:=calc_outlier(.SD),by=.(food)]
   c28.data$column = c(rep(1,44),rep(2,44))
-  bar.dat = unique(c28.data[c("food","recommended","column")])
+  bar.dat = unique(c28.data[,c("food","recommended","column"),with=F])
   bar.dat$class = "Poorest"
   c28.max = min(max(c28.data$percent,na.rm=T),2)
   
@@ -941,8 +967,8 @@ for(this.country in countries){
     geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
     geom_point(data=subset(c28.data.sub,outlier==1),aes(y=percent),size=10,show.legend=F) +
     geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2) +
-    geom_text(aes(y=1,label=paste(round(recommended),"g")),color=blue,vjust=-1.3,size=10) +
-    geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round(value)),color=blue,size=8) +
+    geom_text(aes(y=1,label=paste(round(recommended),"g")),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
+    geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round(value)),color=blue,size=8,family="Averta Regular") +
     quintileColor + 
     coord_flip() +
     theme_classic() +
@@ -951,10 +977,10 @@ for(this.country in countries){
       axis.line=element_blank(),
       axis.ticks=element_blank(),
       axis.text.x = element_blank(),
-      axis.text.y = element_text(size=22,color=blue),
+      axis.text.y = element_text(size=22,color=blue,family="Averta Regular"),
       legend.title=element_blank(),
       legend.position="left",
-      legend.text = element_text(size=22,color=blue),
+      legend.text = element_text(size=22,color=blue,family="Averta Regular"),
       legend.background = element_rect(fill = "transparent", colour = "transparent"),
       legend.key = element_rect(fill = "transparent", colour = "transparent"),
       legend.key.size = unit(2.5,"lines")
@@ -968,8 +994,8 @@ for(this.country in countries){
     geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
     geom_point(data=subset(c28.data.sub,outlier==1),aes(y=percent),size=10,show.legend=F) +
     geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2,show.legend=F) +
-    geom_text(aes(y=1,label=paste(round(recommended),"g")),color=blue,vjust=-1.3,size=10) +
-    geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round(value)),color=blue,size=8) +
+    geom_text(aes(y=1,label=paste(round(recommended),"g")),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
+    geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round(value)),color=blue,size=8,family="Averta Regular") +
     quintileColor + 
     coord_flip() +
     theme_classic() +
@@ -978,16 +1004,21 @@ for(this.country in countries){
       axis.line=element_blank(),
       axis.ticks=element_blank(),
       axis.text.x = element_blank(),
-      axis.text.y = element_text(size=22,color=blue),
+      axis.text.y = element_text(size=22,color=blue,family="Averta Regular"),
       legend.title=element_blank(),
-      legend.text = element_text(size=22,color=blue),
+      legend.text = element_text(size=22,color=blue,family="Averta Regular"),
       legend.background = element_rect(fill = "transparent", colour = "transparent"),
       legend.key = element_rect(fill = "transparent", colour = "transparent"),
       legend.key.size = unit(2.5,"lines")
     )
   # Chart 29
   indicators = c("ODA_received","ODA_specific")
-  c29names = c("% of total ODA","ODA received (US$ billions)")
+  if(recipient){
+    c29names = c("% of total ODA","ODA received (US$ billions)")
+  }else{
+    c29names = c("% of total ODA","ODA disbursed (US$ billions)")
+  }
+  
   c29data = subset(countrydat,indicator %in% indicators)
   c29data$value = as.numeric(c29data$value)
   c29data = subset(c29data, !is.na(value))
@@ -1019,369 +1050,369 @@ for(this.country in countries){
     theme(
       legend.position="top"
       ,legend.box = "vertical"
-      ,legend.text = element_text(size=35,color=blue)
+      ,legend.text = element_text(size=35,color=blue,family="Averta Regular")
       ,legend.justification=c(0,0)
       ,legend.box.just = "left"
       ,legend.direction="vertical"
       ,axis.title.x=element_blank()
-      ,axis.title.y=element_text(size=20,color=blue)
+      ,axis.title.y=element_text(size=20,color=blue,family="Averta Regular")
       ,axis.ticks=element_blank()
       ,axis.line.y = element_blank()
       ,axis.line.x = element_line(color=blue, size = 1.1)
-      ,axis.text.y = element_text(size=25,color=dark.grey)
-      ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0))
+      ,axis.text.y = element_text(size=25,color=dark.grey,family="Averta Regular")
+      ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
       ,panel.grid.major.y = element_line(color=dark.grey)
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.width = unit(1,"cm")
     ) + labs(y = "ODA received (US$ billions)")
   #Have both c1a and c1b
   if(!c1a.missing && !c1b.missing){
-    Cairo(file="c1a.png",width=400,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c1a.png",width=400,height=600,units="px",bg="white")
     tryCatch({print(c1a)},error=function(e){message(e);print(no.data)})
     dev.off()
-    Cairo(file="c1b.png",width=400,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c1b.png",width=400,height=600,units="px",bg="white")
     tryCatch({print(c1b)},error=function(e){message(e);print(no.data)})
     dev.off()
-    Cairo(file="c1.png",width=800,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c1.png",width=800,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
   }
   #Have only c1a
   if(!c1a.missing && c1b.missing){
-    Cairo(file="c1a.png",width=400,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c1a.png",width=400,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c1b.png",width=400,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c1b.png",width=400,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c1.png",width=800,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c1.png",width=800,height=600,units="px",bg="white")
     tryCatch({print(c1a)},error=function(e){message(e);print(no.data)})
     dev.off()
   }
   #Have only c1b
   if(c1a.missing && !c1b.missing){
-    Cairo(file="c1a.png",width=400,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c1a.png",width=400,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c1b.png",width=400,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c1b.png",width=400,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c1.png",width=800,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c1.png",width=800,height=600,units="px",bg="white")
     tryCatch({print(c1b)},error=function(e){message(e);print(no.data)})
     dev.off()
   }
   #Have neither c1a or c1b
   if(c1a.missing && c1b.missing){
-    Cairo(file="c1a.png",width=400,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c1a.png",width=400,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c1b.png",width=400,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c1b.png",width=400,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c1.png",width=800,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c1.png",width=800,height=600,units="px",bg="transparent")
     print(no.data)
     dev.off()
   }
-  Cairo(file="c2.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c2.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c2)},error=function(e){message(e);print(no.data)})
   dev.off()
   #Have c3a, c3b, and c3c
   if(!c3a.missing && !c3b.missing && !c3c.missing){
-    Cairo(file="c3a.png",width=300,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c3a.png",width=300,height=600,units="px",bg="white")
     tryCatch({print(c3a)},error=function(e){message(e);print(no.data)})
     dev.off()
-    Cairo(file="c3b.png",width=300,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c3b.png",width=300,height=600,units="px",bg="white")
     tryCatch({print(c3b)},error=function(e){message(e);print(no.data)})
     dev.off()
-    Cairo(file="c3c.png",width=300,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c3c.png",width=300,height=600,units="px",bg="white")
     tryCatch({print(c3c)},error=function(e){message(e);print(no.data)})
     dev.off()
-    Cairo(file="c3d.png",width=450,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3d.png",width=450,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3e.png",width=450,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3e.png",width=450,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3.png",width=900,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3.png",width=900,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
   }
   #Have c3a and c3b only
   if(!c3a.missing && !c3b.missing && c3c.missing){
-    Cairo(file="c3a.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3a.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3b.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3b.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3c.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3c.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3d.png",width=450,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c3d.png",width=450,height=600,units="px",bg="white")
     tryCatch({print(c3a)},error=function(e){message(e);print(no.data)})
     dev.off()
-    Cairo(file="c3e.png",width=450,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c3e.png",width=450,height=600,units="px",bg="white")
     tryCatch({print(c3b)},error=function(e){message(e);print(no.data)})
     dev.off()
-    Cairo(file="c3.png",width=900,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3.png",width=900,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
   }
   #Have c3a and c3c only
   if(!c3a.missing && c3b.missing && !c3c.missing){
-    Cairo(file="c3a.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3a.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3b.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3b.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3c.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3c.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3d.png",width=450,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c3d.png",width=450,height=600,units="px",bg="white")
     tryCatch({print(c3a)},error=function(e){message(e);print(no.data)})
     dev.off()
-    Cairo(file="c3e.png",width=450,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c3e.png",width=450,height=600,units="px",bg="white")
     tryCatch({print(c3c)},error=function(e){message(e);print(no.data)})
     dev.off()
-    Cairo(file="c3.png",width=900,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3.png",width=900,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
   }
   #Have c3b and c3c only
   if(c3a.missing && !c3b.missing && !c3c.missing){
-    Cairo(file="c3a.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3a.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3b.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3b.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3c.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3c.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3d.png",width=450,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c3d.png",width=450,height=600,units="px",bg="white")
     tryCatch({print(c3b)},error=function(e){message(e);print(no.data)})
     dev.off()
-    Cairo(file="c3e.png",width=450,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c3e.png",width=450,height=600,units="px",bg="white")
     tryCatch({print(c3c)},error=function(e){message(e);print(no.data)})
     dev.off()
-    Cairo(file="c3.png",width=900,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3.png",width=900,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
   }
   #have c3a only
   if(!c3a.missing && c3b.missing && c3c.missing){
-    Cairo(file="c3a.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3a.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3b.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3b.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3c.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3c.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3d.png",width=450,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3d.png",width=450,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3e.png",width=450,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3e.png",width=450,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3.png",width=900,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c3.png",width=900,height=600,units="px",bg="white")
     tryCatch({print(c3a)},error=function(e){message(e);print(no.data)})
     dev.off()
   }
   #Have c3b only
   if(c3a.missing && !c3b.missing && c3c.missing){
-    Cairo(file="c3a.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3a.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3b.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3b.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3c.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3c.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3d.png",width=450,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3d.png",width=450,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3e.png",width=450,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3e.png",width=450,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3.png",width=900,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c3.png",width=900,height=600,units="px",bg="white")
     tryCatch({print(c3b)},error=function(e){message(e);print(no.data)})
     dev.off()
   }
   #have c3c only
   if(c3a.missing && c3b.missing && !c3c.missing){
-    Cairo(file="c3a.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3a.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3b.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3b.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3c.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3c.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3d.png",width=450,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3d.png",width=450,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3e.png",width=450,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3e.png",width=450,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3.png",width=900,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c3.png",width=900,height=600,units="px",bg="white")
     tryCatch({print(c3c)},error=function(e){message(e);print(no.data)})
     dev.off()
   }
   #Have none of c3s
   if(c3a.missing && c3b.missing && c3c.missing){
-    Cairo(file="c3a.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3a.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3b.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3b.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3c.png",width=300,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3c.png",width=300,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3d.png",width=450,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3d.png",width=450,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3e.png",width=450,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3e.png",width=450,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c3.png",width=900,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c3.png",width=900,height=600,units="px",bg="transparent")
     print(no.data)
     dev.off()
   }
-  Cairo(file="c4.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c4.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c4)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c5.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c5.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c5)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c6.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c6.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c6)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c7.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c7.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c7)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c8.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c8.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c8)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c9.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c9.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c9)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c10.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c10.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c10)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c11.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c11.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c11)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c12.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c12.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c12)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c13.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c13.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c13)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c14.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c14.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c14)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c15.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c15.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c15)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c16.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c16.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c16)},error=function(e){message(e);print(no.data)})
   dev.off()
-  png(filename="c17.png",width=750,height=600,units="px",bg="white",type="cairo")
+  png(filename="c17.png",width=750,height=600,units="px",bg="white",type="cairo",family="Averta Regular")
   print(plot(c17,
-       legend = list(labels=c("Wasted","Stunting","Overweight","Free from"),font="arial",fontsize=25,fontcolor=blue)
-       ,edges = list(col=blue,size=2)
-       ,quantities = list(labels=label.text,fontsize=20,col=blue)
+       legend = list(labels=c("Wasted","Stunting","Overweight","Free from"),font="arial",vgap=2,fontsize=25,fontcolor=blue,fontfamily="Averta Regular")
+       ,edges = list(col=blue,lwd=3)
+       ,quantities = list(labels=label.text,fontsize=20,col=blue,family="Averta Regular")
        ,fills=list(fill=c(yellow,orange,light.blue,grey),alpha=1)
   ))
   dev.off()
   #Have both c18a and c18b
   if(!c18a.missing && !c18b.missing){
-    Cairo(file="c18a.png",width=1350,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c18a.png",width=1350,height=600,units="px",bg="white")
     tryCatch({print(c18a)},error=function(e){message(e);print(no.data)})
     dev.off()
-    Cairo(file="c18b.png",width=1050,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c18b.png",width=1050,height=600,units="px",bg="white")
     tryCatch({print(c18b)},error=function(e){message(e);print(no.data)})
     dev.off()
-    Cairo(file="c18.png",width=2400,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c18.png",width=2400,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
   }
   #Have only c18a
   if(!c18a.missing && c18b.missing){
-    Cairo(file="c18a.png",width=1350,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c18a.png",width=1350,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c18b.png",width=1050,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c18b.png",width=1050,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c18.png",width=2400,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c18.png",width=2400,height=600,units="px",bg="white")
     tryCatch({print(c18a)},error=function(e){message(e);print(no.data)})
     dev.off()
   }
   #Have only c18b
   if(c18a.missing && !c18b.missing){
-    Cairo(file="c18a.png",width=1350,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c18a.png",width=1350,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c18b.png",width=1050,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c18b.png",width=1050,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c18.png",width=2400,height=600,units="px",bg="white")
+    Cairo(family="Averta Regular",file="c18.png",width=2400,height=600,units="px",bg="white")
     tryCatch({print(c18b)},error=function(e){message(e);print(no.data)})
     dev.off()
   }
   #Have neither c18a or c18b
   if(c18a.missing && c18b.missing){
-    Cairo(file="c18a.png",width=1350,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c18a.png",width=1350,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c18b.png",width=1050,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c18b.png",width=1050,height=600,units="px",bg="transparent")
     print(cblank)
     dev.off()
-    Cairo(file="c18.png",width=2400,height=600,units="px",bg="transparent")
+    Cairo(family="Averta Regular",file="c18.png",width=2400,height=600,units="px",bg="transparent")
     print(no.data)
     dev.off()
   }
-  Cairo(file="c19.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c19.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c19)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c20.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c20.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c20)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c21.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c21.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c21)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c22.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c22.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c22)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c23.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c23.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c23)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c24.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c24.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c24)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c25.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c25.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c25)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c26.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c26.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c26)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c27.png",width=800,height=700,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c27.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c27)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c28a.png",width=1350,height=960,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c28a.png",width=1350,height=960,units="px",bg="white")
   tryCatch({print(c28a)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c28b.png",width=1050,height=960,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c28b.png",width=1050,height=960,units="px",bg="white")
   tryCatch({print(c28b)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(file="c29.png",width=1000,height=500,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c29.png",width=1000,height=500,units="px",bg="white")
   tryCatch({print(c29)},error=function(e){message(e);print(no.data)})
   dev.off()
 }
