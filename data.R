@@ -1,5 +1,5 @@
 ####Setup#####
-list.of.packages <- c("reshape2","data.table","openxlsx")
+list.of.packages <- c("reshape2","data.table","openxlsx","plyr","gdata")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, require, character.only=T)
@@ -76,8 +76,8 @@ adult_anemia_fem = melt(adult_anemia_fem,id.vars=c("Country.Name","Country.Code"
 names(adult_anemia_fem) = c("country","iso3","year","value")
 adult_anemia_fem$year = substr(adult_anemia_fem$year,2,5)
 adult_anemia_fem$indicator = "adult_anemia"
-adult_anemia_fem$disaggregation = "gender"
-adult_anemia_fem$disagg.value = "Female"
+adult_anemia_fem$disaggregation = "pregnancy"
+adult_anemia_fem$disagg.value = "All women"
 adult_anemia_fem$component = "I"
 master_dat_list[[master_dat_index]] = adult_anemia_fem
 master_dat_index = master_dat_index + 1
@@ -162,8 +162,8 @@ recs = c(
   2.5
 )
 unit.dat = data.frame(modelable_entity_name=indicators,indicator=ind.names,unit=ind.units,rec=recs)
-#TODO: Check this is the filter we want
-dat = subset(dat,age_group_id==22)
+diet_mapping = read.csv("dietary_mapping.csv",na.strings="")
+dat = subset(dat,age_group_id==27)
 dat = subset(dat,sex_id==3)
 dietary_needs = dat[c("location_name","year_id","mean","modelable_entity_name")]
 dietary_needs = merge(dietary_needs,unit.dat,by="modelable_entity_name")
@@ -172,13 +172,15 @@ names(dietary_needs) = c("country","year","value","indicator","unit","rec")
 dietary_needs$disaggregation = "location"
 dietary_needs$disagg.value = "National"
 dietary_needs$component = "M"
+dietary_needs = merge(dietary_needs,diet_mapping,by="country")
 master_dat_list[[master_dat_index]] = dietary_needs
 master_dat_index = master_dat_index + 1
 
 dat = read.csv("DIETARY_NEEDS_2016_regional.csv",na.strings="",as.is=T)
 #TODO: Check this is the filter we want
-dat = subset(dat,age_group_name=="all ages 25+")
+dat = subset(dat,age_group_name=="age-standardized 25+")
 dat = subset(dat,sex_id==3)
+dat.global = data.table(dat)[,.(value=weighted.mean(mean,population)),by=.(year_id,modelable_entity_name)]
 dietary_needs_reg = dat[c("region_name","year_id","mean","modelable_entity_name")]
 dietary_needs_reg = merge(dietary_needs_reg,unit.dat,by="modelable_entity_name")
 dietary_needs_reg$modelable_entity_name = NULL
@@ -186,11 +188,50 @@ names(dietary_needs_reg) = c("region","year","value","indicator","unit","rec")
 dietary_needs_reg$disaggregation = "location"
 dietary_needs_reg$disagg.value = "Regional"
 dietary_needs_reg$component = "M"
-diet_mapping = read.csv("dietary_mapping.csv",na.strings="")
 dietary_needs_reg = join(diet_mapping,dietary_needs_reg,by="region")
-dietary_needs_reg$region = NULL
 master_dat_list[[master_dat_index]] = dietary_needs_reg
 master_dat_index = master_dat_index + 1
 
+dietary_needs_global = merge(dat.global,unit.dat,by="modelable_entity_name")
+dietary_needs_global$modelable_entity_name = NULL
+names(dietary_needs_global) = c("year","value","indicator","unit","rec")
+dietary_needs_global$global = "global"
+dietary_needs_global$disaggregation = "location"
+dietary_needs_global$disagg.value = "Global"
+dietary_needs_global$component = "M"
+diet_mapping$global = "global"
+dietary_needs_global = join(diet_mapping,dietary_needs_global,by="global")
+dietary_needs_global$global = NULL
+master_dat_list[[master_dat_index]] = dietary_needs_global
+master_dat_index = master_dat_index + 1
+
+
+dat = read.xls("ADULT STATUS - Anaemia pregnant.xls",sheet=1,na.strings="",skip=2)
+adult_anemia_preg = dat[c("Country.Name","Country.Code",paste0("X",1960:2017))]
+adult_anemia_preg = melt(adult_anemia_preg,id.vars=c("Country.Name","Country.Code"))
+names(adult_anemia_preg) = c("country","iso3","year","value")
+adult_anemia_preg$year = substr(adult_anemia_preg$year,2,5)
+adult_anemia_preg$indicator = "adult_anemia"
+adult_anemia_preg$disaggregation = "pregnancy"
+adult_anemia_preg$disagg.value = "Pregnant women"
+adult_anemia_preg$component = "I"
+master_dat_list[[master_dat_index]] = adult_anemia_preg
+master_dat_index = master_dat_index + 1
+
+dat = read.xls("ADULT STATUS - Anamia non-pregnant.xls",sheet=1,na.strings="",skip=2)
+adult_anemia_nonpreg = dat[c("Country.Name","Country.Code",paste0("X",1960:2017))]
+adult_anemia_nonpreg = melt(adult_anemia_nonpreg,id.vars=c("Country.Name","Country.Code"))
+names(adult_anemia_nonpreg) = c("country","iso3","year","value")
+adult_anemia_nonpreg$year = substr(adult_anemia_nonpreg$year,2,5)
+adult_anemia_nonpreg$indicator = "adult_anemia"
+adult_anemia_nonpreg$disaggregation = "pregnancy"
+adult_anemia_nonpreg$disagg.value = "Non-pregnant women"
+adult_anemia_nonpreg$component = "I"
+master_dat_list[[master_dat_index]] = adult_anemia_nonpreg
+master_dat_index = master_dat_index + 1
+
+
 master_dat = rbindlist(master_dat_list,fill=T)
+
+write.csv(master_dat,"../data.csv",na="",row.names=F)
 

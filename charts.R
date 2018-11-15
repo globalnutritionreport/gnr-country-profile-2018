@@ -170,10 +170,10 @@ for(this.country in countries){
   c1data$value = as.numeric(c1data$value)
   c1data <- subset(c1data,!is.na(year))
   if(nrow(c1data)!=0){
-    c1a.melt <- subset(c1data, indicator %in% c("190_percent","310_percent"))
+    c1a.melt <- subset(c1data, indicator %in% c("190_percent","320_percent"))
     c1a.melt$variable = NA
     c1a.melt$variable[which(c1a.melt$indicator=="190_percent")] = "$1.90/day"
-    c1a.melt$variable[which(c1a.melt$indicator=="310_percent")] = "$3.10/day"
+    c1a.melt$variable[which(c1a.melt$indicator=="320_percent")] = "$3.20/day"
     c1a.melt <- subset(c1a.melt,!is.na(value))
     c1a.melt <- c1a.melt[order(c1a.melt$year),]
     c1a.melt$year = as.factor(c1a.melt$year)
@@ -184,7 +184,7 @@ for(this.country in countries){
     c1b.melt <- c1b.melt[order(c1b.melt$year),]
     c1b.melt$year = as.factor(c1b.melt$year)
     c1b.max <- max(c1b.melt$value,na.rm=TRUE)
-    c1a.key.data = data.frame(year=as.numeric(c(NA,NA)),variable=c("$1.90/day","$3.10/day"),value=as.numeric(c(NA,NA)))
+    c1a.key.data = data.frame(year=as.numeric(c(NA,NA)),variable=c("$1.90/day","$3.20/day"),value=as.numeric(c(NA,NA)))
     c1a = ggplot(c1a.melt,aes(year,value,fill=variable)) +
       geom_bar(position="dodge",stat="identity",color=blue,show.legend=F,size=1) +
       geom_point(data=c1a.key.data,aes(fill=variable),size=12,color=blue,stroke=1.5,shape=21) +
@@ -618,7 +618,7 @@ for(this.country in countries){
   }else{
     c7 <- no.data
   }
-  grouped_line = function(countrydat, ind, disagg, disagg.values, fill=orangeYellowFill, color=orangeYellowColor, percent=F, legend=F){
+  grouped_line = function(countrydat, ind, disagg, disagg.values, fill=orangeYellowFill, color=orangeYellowColor, percent=F, legend=F, factor.years=T){
     cdata = subset(countrydat, (indicator==ind & disaggregation==disagg))
     cdata$value = as.numeric(cdata$value)
     if(percent){
@@ -626,7 +626,11 @@ for(this.country in countries){
     }
     cdata = subset(cdata, !is.na(value))
     cdata <- cdata[order(cdata$year),]
-    cdata$year = as.factor(cdata$year)
+    if(factor.years){
+      cdata$year = as.factor(cdata$year)
+    }else{
+      cdata$year = as.numeric(cdata$year)
+    }
     cdata$disagg.value = factor(cdata$disagg.value,levels=disagg.values)
     c.max <- max(cdata$value,na.rm=TRUE)
     c.key.data = data.frame(year=as.numeric(rep(NA,length(disagg.values))),disagg.value=disagg.values,value=as.numeric(rep(NA,length(disagg.values))))
@@ -655,7 +659,12 @@ for(this.country in countries){
         ,panel.grid.major.y = element_line(color=dark.grey)
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_blank()
-      ) + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value),unfactor(year))),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
+      )
+    if(factor.years){
+      c = c + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value),unfactor(year))),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
+    }else{
+      c = c + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value),year)),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
+    }
     return(c)
   }
   grouped_bar = function(countrydat, ind, disagg, disagg.values, fill=orangeYellowFill, percent=F, legend=F, spacing=1,byrow=F,nrow=2){
@@ -736,9 +745,9 @@ for(this.country in countries){
     return(c)
   }
   # Charts 8-16
-  c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Male","Female","Both"),percent=T,fill=yellowOrangeRedFill,legend=T,byrow=T,nrow=3)
-  c9 = grouped_line(countrydat, "stunting_percent","gender",c("Male","Female","Both"),percent=T,color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
-  c10 = grouped_line(countrydat, "overweight_percent","gender",c("Male","Female","Both"),percent=T,color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
+  c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Boys","Girls","Both"),percent=T,fill=yellowOrangeRedFill,legend=T,byrow=T,nrow=3)
+  c9 = grouped_line(countrydat, "stunting_percent","gender",c("Boys","Girls","Both"),percent=T,color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
+  c10 = grouped_line(countrydat, "overweight_percent","gender",c("Boys","Girls","Both"),percent=T,color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
   c11 = grouped_bar(countrydat, "wasting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,fill=quintileFill,legend=T,byrow=T,nrow=3)
   c12 = grouped_line(countrydat, "stunting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,color=quintileColor,fill=quintileFill)
   c13 = grouped_line(countrydat, "overweight_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,color=quintileColor,fill=quintileFill)
@@ -906,31 +915,22 @@ for(this.country in countries){
     }
   }
   # Charts 19-27
-  c19 = grouped_line(countrydat, "adolescent_underweight","gender",c("Male","Female"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
-  c20 = grouped_line(countrydat, "adolescent_overweight","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
-  c21 = grouped_line(countrydat, "adolescent_obesity","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
+  c19 = grouped_line(countrydat, "adolescent_underweight","gender",c("Boys","Girls"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
+  c20 = grouped_line(countrydat, "adolescent_overweight","gender",c("Boys","Girls"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
+  c21 = grouped_line(countrydat, "adolescent_obesity","gender",c("Boys","Girls"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
   c22 = grouped_line(countrydat, "adult_diabetes","gender",c("Male","Female"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
   c23 = grouped_line(countrydat, "adult_overweight","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
   c24 = grouped_line(countrydat, "adult_obesity","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
   c25 = grouped_line(countrydat, "adult_blood_pressure","gender",c("Male","Female"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
-  c26 = grouped_line(countrydat, "adult_anaemia","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
+  c26 = grouped_line(countrydat, "adult_anemia","pregnancy",c("All women","Pregnant women","Non-pregnant women"),percent=T,color=quintileColor,fill=quintileFill,legend=T,factor.years=F)
   c27 = single_bar(countrydat, "adult_sodium",c("All (grams)"),percent=T,fill=yellowOrangeRedFill,legend=T)
   
-  # Chart 28, assuming it's already out of 1
-  firstup <- function(x) {
-    substr(x, 1, 1) <- toupper(substr(x, 1, 1))
-    return(x)
-  }
+  # Chart 28
   c28.data = subset(countrydat,component == "M")
+  this.region = c28.data$region[1]
   c28.data$value = as.numeric(c28.data$value)
-  recs = subset(c28.data,disaggregation=="recommendation")
-  recs = recs[c("indicator","value")]
-  setnames(recs,"value","recommended")
-  c28.data = subset(c28.data, disaggregation=="income")
-  c28.data = merge(c28.data,recs)
+  setnames(c28.data,"rec","recommended")
   c28.data$percent = c28.data$value/c28.data$recommended
-  c28.data$disagg.value = sapply(c28.data$disagg.value,firstup)
-  c28.data$indicator = sapply(c28.data$indicator,firstup)
   # Outliers
   calc_outlier = function(sd){
     results = c()
@@ -954,21 +954,37 @@ for(this.country in countries){
   c28.data$percent[which(c28.data$percent>2)] = 2.1
   c28.data = data.table(c28.data)
   c28.data[,percent:=calc_outlier(.SD),by=.(food)]
-  c28.data$column = c(rep(1,44),rep(2,44))
+  nat.order = subset(c28.data,class=="National")
+  nat.order = nat.order[order(nat.order$food),]
+  c28.data$food = factor(c28.data$food,levels=rev(nat.order$food))
+  c28.data = c28.data[order(-c28.data$food),]
+  c28.data$column = c(rep(1,21),rep(2,24))
   bar.dat = unique(c28.data[,c("food","recommended","column"),with=F])
-  bar.dat$class = "Poorest"
+  bar.dat$class = this.country
   c28.max = min(max(c28.data$percent,na.rm=T),2)
+  
+  c28.data$class[which(c28.data$class=="National")] = this.country
+  c28.data$class[which(c28.data$class=="Regional")] = this.region
+  
+  c28.data$class = factor(c28.data$class,levels=c(this.country,this.region,"Global"))
   
   i = 1
   c28.data.sub = subset(c28.data,column==i)
+  trmel = data.frame(food="",recommended=0,example=T,class=this.country)
+  c28.data.sub = rbindlist(list(c28.data.sub,trmel),fill=T)
   bar.dat.sub = subset(bar.dat,column==i)
-  c28a = ggplot(c28.data.sub,aes(x=food,colour=class)) +
+  bar.dat.sub = rbindlist(list(bar.dat.sub,trmel),fill=T)
+  c28a =
+    ggplot(c28.data.sub,aes(x=food,colour=class)) +
     geom_bar(data=bar.dat.sub,aes(y=c28.max),fill="white",color=blue,stat="identity",width=0.4) +
     geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
     geom_point(data=subset(c28.data.sub,outlier==1),aes(y=percent),size=10,show.legend=F) +
     geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2) +
-    geom_text(aes(y=1,label=paste(round(recommended),"g")),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
+    geom_text(data=subset(c28.data.sub,is.na(example)),aes(y=1,label=paste(round(recommended),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
+    geom_text(data=subset(c28.data.sub,example==T),aes(y=1,label="Midpoint of TRMEL"),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
     geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round(value)),color=blue,size=8,family="Averta Regular") +
+    annotate("text", x=8, y=0.3, label="0%/0g of TRMEL",size=9,color=blue,family="Averta Regular") +
+      annotate("text", x=8, y=1.7, label="200% of TRMEL",size=9,color=blue,family="Averta Regular") +
     quintileColor + 
     coord_flip() +
     theme_classic() +
@@ -994,7 +1010,7 @@ for(this.country in countries){
     geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
     geom_point(data=subset(c28.data.sub,outlier==1),aes(y=percent),size=10,show.legend=F) +
     geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2,show.legend=F) +
-    geom_text(aes(y=1,label=paste(round(recommended),"g")),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
+    geom_text(aes(y=1,label=paste(round(recommended),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
     geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round(value)),color=blue,size=8,family="Averta Regular") +
     quintileColor + 
     coord_flip() +
