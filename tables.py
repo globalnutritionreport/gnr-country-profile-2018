@@ -81,8 +81,8 @@ dataDictionary["Kenya"]["table2"] = [
 dataDictionary["Kenya"]["table3"] = [
     ["Population (000)", format(12428, ",d"), 2015],
     ["Under-5 population (000)", format(1935, ",d"), 2015],
-    ["Urban (%)", format(20, ",d"), 2015],
-    [">65 years (%)", format(5, ",d"), 2015],
+    ["Rural (%)", format(20, ",d"), 2015],
+    [">65 years (000)", format(5, ",d"), 2015],
 ]
 
 dataDictionary["Kenya"]["table4"] = [
@@ -132,7 +132,10 @@ dataDictionary["Kenya"]["table8"] = [
     ["Household consumption of adequately iodised salt", "99.5", "", "", "2014"],
 ]
 
-# dataDictionary["Kenya"] = copy.deepcopy(dataDictionary["Kenya"])
+dat = pd.read_csv("data.csv")
+country_names = dat.country.unique()
+for country_name in country_names:
+    dataDictionary[country_name] = copy.deepcopy(dataDictionary["Kenya"])
 
 
 def replaceDash(x):
@@ -179,7 +182,6 @@ def indicator_disagg(ctryDat, indicator, disagg, disagg_value=None):
 def year(ctryDat, indicator):
     return ctryDat.loc[(ctryDat["indicator"] == indicator)].iloc[0]["year"]
 
-dat = pd.read_csv("data.csv")
 for country in dataDictionary.keys():
     ctryDat = dat.loc[(dat.country == country)]
     dataDictionary[country]["country"] = country
@@ -203,15 +205,15 @@ for country in dataDictionary.keys():
     dataDictionary[country]["table2"][1] = [
         safeFormat(indicator(ctryDat, "gini")),
         safeFormat(indicator(ctryDat, "gini_rank")),
-        safeFormat(indicator(ctryDat, "gini_year"))
+        safeFormat(year(ctryDat, "gini"))
     ]
 
     dataDictionary[country]["table3"][0][1] = safeFormat(indicator(ctryDat, "population"), True)
     dataDictionary[country]["table3"][0][2] = safeFormat(year(ctryDat, "population"))
     dataDictionary[country]["table3"][1][1] = safeFormat(indicator(ctryDat, "u5_pop"), True)
     dataDictionary[country]["table3"][1][2] = safeFormat(year(ctryDat, "u5_pop"))
-    dataDictionary[country]["table3"][2][1] = safeFormat(indicator(ctryDat, "urban_percent"))
-    dataDictionary[country]["table3"][2][2] = safeFormat(year(ctryDat, "urban_percent"))
+    dataDictionary[country]["table3"][2][1] = safeFormat(indicator(ctryDat, "rural_percent"))
+    dataDictionary[country]["table3"][2][2] = safeFormat(year(ctryDat, "rural_percent"))
     dataDictionary[country]["table3"][3][1] = safeFormat(indicator(ctryDat, "65_years"), True)
     dataDictionary[country]["table3"][3][2] = safeFormat(year(ctryDat, "65_years"))
 
@@ -246,28 +248,22 @@ for country in dataDictionary.keys():
     ]
 
     dataDictionary[country]["table8"][1][1] = safeFormat(indicator_disagg(ctryDat, "diarrhea_zinc", "all"), percent=True)
-    dataDictionary[country]["table8"][1][2] = safeFormat(indicator_disagg(ctryDat, "diarrhea_zinc", "gender", "Male"), percent=True)
-    dataDictionary[country]["table8"][1][3] = safeFormat(indicator_disagg(ctryDat, "diarrhea_zinc", "gender", "Female"), percent=True)
     dataDictionary[country]["table8"][1][4] = safeFormat(year(ctryDat, "diarrhea_zinc"))
 
-    dataDictionary[country]["table8"][2][1] = safeFormat(indicator_disagg(ctryDat, "vit_a", "all"), percent=True)
-    dataDictionary[country]["table8"][2][2] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Male"), percent=True)
-    dataDictionary[country]["table8"][2][3] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Female"), percent=True)
+    dataDictionary[country]["table8"][2][1] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Both"), percent=True)
+    dataDictionary[country]["table8"][2][2] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Boys"), percent=True)
+    dataDictionary[country]["table8"][2][3] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Girls"), percent=True)
     dataDictionary[country]["table8"][2][4] = safeFormat(year(ctryDat, "vit_a"))
 
-    dataDictionary[country]["table8"][3][1] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "all"), percent=True)
-    dataDictionary[country]["table8"][3][2] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Male"), percent=True)
-    dataDictionary[country]["table8"][3][3] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Female"), percent=True)
+    dataDictionary[country]["table8"][3][1] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Both"), percent=True)
+    dataDictionary[country]["table8"][3][2] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Boys"), percent=True)
+    dataDictionary[country]["table8"][3][3] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Girls"), percent=True)
     dataDictionary[country]["table8"][3][4] = safeFormat(year(ctryDat, "iron_supp"))
 
     dataDictionary[country]["table8"][4][1] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "all"), percent=True)
-    dataDictionary[country]["table8"][4][2] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "gender", "Male"), percent=True)
-    dataDictionary[country]["table8"][4][3] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "gender", "Female"), percent=True)
     dataDictionary[country]["table8"][4][4] = safeFormat(year(ctryDat, "iron_and_folic"))
 
     dataDictionary[country]["table8"][5][1] = safeFormat(indicator_disagg(ctryDat, "iodised_salt", "all"), percent=True)
-    dataDictionary[country]["table8"][5][2] = safeFormat(indicator_disagg(ctryDat, "iodised_salt", "gender", "Male"), percent=True)
-    dataDictionary[country]["table8"][5][3] = safeFormat(indicator_disagg(ctryDat, "iodised_salt", "gender", "Female"), percent=True)
     dataDictionary[country]["table8"][5][4] = safeFormat(year(ctryDat, "iodised_salt"))
 
 generic_style = [

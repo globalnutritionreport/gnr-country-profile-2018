@@ -163,7 +163,7 @@ for(this.country in countries){
   # dir.create(paste(wd,this.country,sep="/"))
   setwd(paste(wd,this.country,sep="/"))
   countrydat <- subset(dat,country==this.country)
-  recipient = T
+  recipient = subset(countrydat,indicator=="ODA_specific")[1,"recip"]
   #Chart 1 part a and b
   indicators = c("190_percent","310_percent","GDP_capita_PPP")
   c1data = subset(countrydat,indicator %in% indicators)
@@ -756,14 +756,14 @@ for(this.country in countries){
   c16 = grouped_line(countrydat, "overweight_percent","location",c("Urban","Rural"),percent=T)
   
   # Chart 17
-  wasting = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Wasting alone")$value)
-  stunting = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Stunting alone")$value)
-  overweight = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Overweight alone")$value)
-  wasting_and_stunting = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Wasting and stunting")$value)
-  stunting_and_overweight = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Stunting and overweight")$value)
+  wasting = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Wasting alone")$value)/100
+  stunting = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Stunting alone")$value)/100
+  overweight = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Overweight alone")$value)/100
+  wasting_and_stunting = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Wasting and stunting")$value)/100
+  stunting_and_overweight = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Stunting and overweight")$value)/100
   all = 1
   
-  free = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Not wasting, stunting, or overweight")$value)
+  free = all-((wasting+stunting+overweight)-wasting_and_stunting-stunting_and_overweight)
 
   combinations = c(
     A=0
@@ -772,10 +772,10 @@ for(this.country in countries){
     ,D=all
     ,"A&B"=0
     ,"A&C"=0
-    ,"A&D"=wasting
+    ,"A&D"=wasting+wasting_and_stunting
     ,"B&C"=0
-    ,"B&D"=stunting
-    ,"C&D"=overweight
+    ,"B&D"=stunting+wasting_and_stunting+stunting_and_overweight
+    ,"C&D"=overweight+stunting_and_overweight
     ,"A&B&C"=0
     ,"A&B&D"=wasting_and_stunting
     ,"A&C&D"=0
@@ -784,6 +784,9 @@ for(this.country in countries){
   )
   
   label.vals = combinations
+  label.vals["A&D"] = wasting
+  label.vals["B&D"] = stunting
+  label.vals["C&D"] = overweight
   label.vals["D"] = free
 
   label.text = percent(label.vals)
