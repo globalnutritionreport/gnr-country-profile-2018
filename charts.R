@@ -120,7 +120,7 @@ firstAndLast <- function(vec,year_vec){
   return(label_df$vec)
 }
 
-safeFormat <- function(vec, prefix="", suffix=""){
+safeFormat <- function(vec, precision=0, prefix="", suffix=""){
   results <- c()
   for(x in vec){
     #Missing
@@ -143,7 +143,7 @@ safeFormat <- function(vec, prefix="", suffix=""){
       result <- round(x,digits=1)
       #Middle positive
     }else if(x<1000){
-      result <- round(x,digits=0)
+      result <- round(x,digits=precision)
       #Large positive
     }else{
       result <- format(round(x, digits = 0),format="d",big.mark=",")
@@ -158,7 +158,7 @@ safeFormat <- function(vec, prefix="", suffix=""){
 
 ####End setup####
 ####Loop####
-# countries = c("Kenya","United Kingdom of Great Britain and Northern Ireland")
+countries = c("Kenya","United Kingdom of Great Britain and Northern Ireland")
 for(this.country in countries){
   message(this.country)
   dir.create(paste(wd,this.country,sep="/"))
@@ -280,7 +280,7 @@ for(this.country in countries){
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.5,"lines")
-    ) + geom_text(size=13,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
+    ) + geom_text(size=13,aes(label=safeFormat(value,precision=1)),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
   #Chart 3 part a and b
   indicators = c("undernourishment_prev","fruit_veg_availability","total_calories_non_staple")
   c3data = subset(countrydat,indicator %in% indicators)

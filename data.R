@@ -947,9 +947,9 @@ overview$count = 1
 overview$count[which(grepl("and",overview$burden_text))] = overview$count[which(grepl("and",overview$burden_text))] + 1
 overview$count[which(grepl(",",overview$burden_text))] = overview$count[which(grepl(",",overview$burden_text))] + 1
 country_classes = c(
-  "a country experiencing a single burden",
-  "a country experiencing a double burden",
-  "a country experiencing a triple burden"
+  "a country experiencing one form of malnutrition",
+  "a country experiencing two forms of malnutrition",
+  "a country experiencing three forms of malnutrition"
 )
 overview$country_class = country_classes[overview$count]
 overview$count = NULL

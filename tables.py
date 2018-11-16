@@ -129,7 +129,7 @@ dataDictionary["Kenya"]["table8"] = [
     [u"Children 6\u201359 months who received vitamin A supplements in last 6 months", "71.7", "71.6", "71.9", "2014"],
     [u"Children 6\u201359 months given iron supplements in past 7 days", "2.7", "2.6", "2.7", "2014"],
     [Paragraph("Women with a birth in last five years who received iron and folic acid during their most recent pregnancy", style=dark_greyParaStyle), "69.4", "", "", "2014"],
-    ["Household consumption of adequately iodised salt", "99.5", "", "", "2014"],
+    ["Household consumption of iodised salt", "99.5", "", "", "2014"],
 ]
 
 dat = pd.read_csv("data.csv")

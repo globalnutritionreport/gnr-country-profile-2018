@@ -3,6 +3,7 @@ import time
 import json
 import pdb
 from selenium.webdriver.remote.command import Command
+from selenium.webdriver.support.ui import Select
 from optparse import OptionParser
 import os
 import pandas as pd
@@ -21,6 +22,15 @@ class InputError(Error):
     def __init__(self, msg):
         self.msg = msg
 
+
+def set_element_value(driver, element, value):
+    """Set the value of an element.
+    Args:
+        admin_browser (browser): The splinter browser instance.
+        element (ElementAPI): The splinter element to be waited on.
+    """
+    wait_for_clickability(element)
+    driver.execute_script("arguments[0].setAttribute('value', arguments[1]);", element, value)
 
 def wait_for_clickability(element, wait_time=1):
     """Wait until an element is enabled before clicking.
@@ -114,8 +124,20 @@ if not options.password:
     raise InputError("A valid password was not supplied.")
 
 all_dat = pd.read_csv("data.csv")
-pdb.set_trace()
-countries = all_dat.filter(['country','region','subregion']).drop_duplicates()
+countries = all_dat.filter(['country', 'region', 'subregion']).drop_duplicates()
+
+nested_countries = {}
+for index, row in countries.iterrows():
+    region = row['region']
+    subregion = row['subregion']
+    country = row['country']
+    if region in nested_countries.keys():
+        if subregion not in nested_countries[region].keys():
+            nested_countries[region][subregion] = list()
+    else:
+        nested_countries[region] = dict()
+        nested_countries[region][subregion] = list()
+    nested_countries[region][subregion].append(country)
 
 browser = webdriver.Chrome("/home/alex/chromedriver")
 browser.maximize_window()
@@ -133,28 +155,196 @@ passInput["input_str"] = options.password
 queries.append(passInput)
 input_text(browser, queries)
 
-browser.find_element_by_xpath('//*[@type="submit"]').click() # Click the submit button
+submit_button = browser.find_element_by_xpath('//*[@type="submit"]')
+scroll_and_click(browser, submit_button)
 
-browser.find_element_by_xpath("//*[text()='Profiles']").click()
+region_count = -1
+subregion_count = -1
 
-# Actually need to do Regions and Subregions first, but just testing for now
+for region_name in nested_countries:
+    img_path = "/home/alex/git/gnr-country-profile-2018/thumbs/Kenya.jpg"
+    pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/Kenya.pdf"
 
-browser.find_element_by_xpath("//*[text()='Countries']").click()
+    browser.get("https://dev.globalnutritionreport.org/admin") # Load page
 
-browser.find_element_by_xpath('//*[@title="Add a new Nutrition profile country"]').click()
+    profile_button = browser.find_element_by_xpath("//*[text()='Profiles']")
+    scroll_and_click(browser, profile_button)
 
-radio = browser.find_element_by_xpath("//*[@id='id_parent_page_0']")
-scroll_and_click(browser, radio)
+    region_button = browser.find_element_by_xpath("//*[text()='Regions']")
+    scroll_and_click(browser, region_button)
 
-browser.find_element_by_xpath("//*[@value='Continue']").click() # Click the submit button
+    add_region_button = browser.find_element_by_xpath('//*[@title="Add a new Nutrition profile region"]')
+    scroll_and_click(browser, add_region_button)
 
-queries = [
-    {"input_id": "id_title", "input_str": "Kenya"},
-    {"input_id": "id_description", "input_str": "Kenya description"},
-    {"input_id": "id_profile_title", "input_str": "Kenya profile title"},
-    {"input_id": "id_profile_description", "input_str": "Kenya profile description"},
-]
+    # All text fields
+    queries = [
+        {"input_id": "id_title", "input_str": region_name},
+        {"input_id": "id_description", "input_str": region_name+" regional profile"},
+        {"input_id": "id_profile_title", "input_str": region_name},
+        {"input_id": "id_profile_description", "input_str": region_name+" regional profile"},
+    ]
+    input_text(browser, queries)
 
-input_text(browser, queries)
-pdb.set_trace()
-browser.find_element_by_xpath("//*[text()='Choose an image']").click()
+    # First image field
+    add_image = browser.find_elements_by_xpath("//*[text()='Choose an image']")[0]
+    scroll_and_click(browser, add_image)
+
+    upload_button = browser.find_element_by_xpath("//*[text()='Upload']")
+    scroll_and_click(browser, upload_button)
+
+    image_title_field = browser.find_elements_by_xpath("//*[@id='id_title']")[1]
+    set_element_value(browser, image_title_field, region_name+" thumbnail")
+
+    image_file_field = browser.find_elements_by_xpath("//*[@id='id_file']")[0]
+    image_file_field.send_keys(img_path)
+
+    image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
+    image_collection_field.select_by_value('4')
+
+    upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
+    scroll_and_click(browser, upload_button)
+
+    # Document field
+    add_document = browser.find_elements_by_xpath("//*[text()='Choose a document']")[0]
+    scroll_and_click(browser, add_document)
+
+    upload_button = browser.find_element_by_xpath("//*[text()='Upload']")
+    scroll_and_click(browser, upload_button)
+
+    document_title_field = browser.find_elements_by_xpath("//*[@id='id_title']")[1]
+    set_element_value(browser, document_title_field, region_name+" regional profile")
+
+    document_file_field = browser.find_elements_by_xpath("//*[@id='id_file']")[0]
+    document_file_field.send_keys(pdf_path)
+
+    document_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
+    document_collection_field.select_by_value('4')
+
+    upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
+    scroll_and_click(browser, upload_button)
+
+    # second image field
+    add_image = browser.find_elements_by_xpath("//*[text()='Choose an image']")[1]
+    scroll_and_click(browser, add_image)
+
+    upload_button = browser.find_elements_by_xpath("//*[text()='Upload']")[0]
+    scroll_and_click(browser, upload_button)
+
+    image_title_field = browser.find_elements_by_xpath("//*[@id='id_title']")[1]
+    set_element_value(browser, image_title_field, region_name+" thumbnail")
+
+    image_file_field = browser.find_elements_by_xpath("//*[@id='id_file']")[0]
+    image_file_field.send_keys(img_path)
+
+    image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
+    image_collection_field.select_by_value('4')
+
+    upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
+    scroll_and_click(browser, upload_button)
+    time.sleep(1)
+
+    # publish
+    up_arrow = browser.find_elements_by_xpath("//*[@class='dropdown-toggle icon icon-arrow-up']")[0]
+    scroll_and_click(browser, up_arrow)
+
+    pub_button = browser.find_element_by_xpath("//*[@name='action-publish']")
+    scroll_and_click(browser, pub_button)
+
+    region_count += 1
+    for subregion_name in nested_countries[region_name]:
+        img_path = "/home/alex/git/gnr-country-profile-2018/thumbs/Kenya.jpg"
+        pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/Kenya.pdf"
+
+        browser.get("https://dev.globalnutritionreport.org/admin") # Load page
+
+        profile_button = browser.find_element_by_xpath("//*[text()='Profiles']")
+        scroll_and_click(browser, profile_button)
+
+        region_button = browser.find_element_by_xpath("//*[text()='Sub-regions']")
+        scroll_and_click(browser, region_button)
+
+        add_region_button = browser.find_element_by_xpath('//*[@title="Add a new Nutrition profile sub region"]')
+        scroll_and_click(browser, add_region_button)
+
+        if region_count>=1:
+            radio = browser.find_element_by_xpath("//*[@id='id_parent_page_{}']".format(region_count))
+            scroll_and_click(browser, radio)
+
+            continue_button = browser.find_element_by_xpath("//*[@value='Continue']")
+            scroll_and_click(browser, continue_button)
+
+        # All text fields
+        queries = [
+            {"input_id": "id_title", "input_str": subregion_name},
+            {"input_id": "id_description", "input_str": subregion_name+" subregional profile"},
+            {"input_id": "id_profile_title", "input_str": subregion_name},
+            {"input_id": "id_profile_description", "input_str": subregion_name+" subregional profile"},
+        ]
+        input_text(browser, queries)
+
+        # First image field
+        add_image = browser.find_elements_by_xpath("//*[text()='Choose an image']")[0]
+        scroll_and_click(browser, add_image)
+
+        upload_button = browser.find_element_by_xpath("//*[text()='Upload']")
+        scroll_and_click(browser, upload_button)
+
+        image_title_field = browser.find_elements_by_xpath("//*[@id='id_title']")[1]
+        set_element_value(browser, image_title_field, subregion_name+" thumbnail")
+
+        image_file_field = browser.find_elements_by_xpath("//*[@id='id_file']")[0]
+        image_file_field.send_keys(img_path)
+
+        image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
+        image_collection_field.select_by_value('4')
+
+        upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
+        scroll_and_click(browser, upload_button)
+
+        # Document field
+        add_document = browser.find_elements_by_xpath("//*[text()='Choose a document']")[0]
+        scroll_and_click(browser, add_document)
+
+        upload_button = browser.find_element_by_xpath("//*[text()='Upload']")
+        scroll_and_click(browser, upload_button)
+
+        document_title_field = browser.find_elements_by_xpath("//*[@id='id_title']")[1]
+        set_element_value(browser, document_title_field, subregion_name+" subregional profile")
+
+        document_file_field = browser.find_elements_by_xpath("//*[@id='id_file']")[0]
+        document_file_field.send_keys(pdf_path)
+
+        document_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
+        document_collection_field.select_by_value('4')
+
+        upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
+        scroll_and_click(browser, upload_button)
+
+        # second image field
+        add_image = browser.find_elements_by_xpath("//*[text()='Choose an image']")[1]
+        scroll_and_click(browser, add_image)
+
+        upload_button = browser.find_elements_by_xpath("//*[text()='Upload']")[0]
+        scroll_and_click(browser, upload_button)
+
+        image_title_field = browser.find_elements_by_xpath("//*[@id='id_title']")[1]
+        set_element_value(browser, image_title_field, subregion_name+" thumbnail")
+
+        image_file_field = browser.find_elements_by_xpath("//*[@id='id_file']")[0]
+        image_file_field.send_keys(img_path)
+
+        image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
+        image_collection_field.select_by_value('4')
+
+        upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
+        scroll_and_click(browser, upload_button)
+        time.sleep(1)
+
+        # publish
+        up_arrow = browser.find_elements_by_xpath("//*[@class='dropdown-toggle icon icon-arrow-up']")[0]
+        scroll_and_click(browser, up_arrow)
+
+        pub_button = browser.find_element_by_xpath("//*[@name='action-publish']")
+        scroll_and_click(browser, pub_button)
+
+        subregion_count += 1
