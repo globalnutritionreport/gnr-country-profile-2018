@@ -1181,7 +1181,7 @@ dat = read.xlsx(
 )
 early_childbearing_prev = dat
 names(early_childbearing_prev) = c("iso3","country","survey","value")
-early_childbearing_prev$indicator = "early_childbearing_rev"
+early_childbearing_prev$indicator = "early_childbearing_prev"
 early_childbearing_prev$year = substr(early_childbearing_prev$survey,nchar(early_childbearing_prev$survey)-3,nchar(early_childbearing_prev$survey))
 early_childbearing_prev$survey = NULL
 early_childbearing_prev$disaggregation = "all"
@@ -1252,21 +1252,6 @@ sanitation$component = "V"
 master_dat_list[[master_dat_index]] = sanitation
 master_dat_index = master_dat_index + 1
 
-# dat = read.xlsx(
-#   "UNDERLYING_Food stuffs.xlsx",
-#   sheet=2
-# )
-# write.csv(dat,"UNDERLYING_Food stuffs.csv",na="",row.names=F)
-dat = read.csv("UNDERLYING_Food stuffs.csv",na.strings="",as.is=T)
-dat = subset(dat,Item %in% c("Fruits - Excluding Wine","Vegetables"))
-dat = subset(dat,Unit=="g/capita/day")
-dat = subset(dat,Element=="Food supply quantity (g/capita/day)")
-fruit_veg = dat[c("Area",paste0("Y",1961:2013))]
-fruit_veg = melt(fruit_veg,id.vars="Area",variable.name="year")
-fruit_veg$year = substr(fruit_veg$year,2,5)
-names(fruit_veg)[1] = "country"
-fruit_veg = data.table(fruit_veg)[,.(value=sum(value,na.rm=T)),by=.(country,year)]
-
 dat = read.xlsx(
   "UNDERLYING_Female enrollment rate, secondary (%), net.xlsx",
   rows=c(4:285),
@@ -1282,6 +1267,105 @@ female_secondary_enroll_net$indicator = "female_secondary_enroll_net"
 female_secondary_enroll_net$disaggregation = "all"
 female_secondary_enroll_net$component = "U"
 master_dat_list[[master_dat_index]] = female_secondary_enroll_net
+master_dat_index = master_dat_index + 1
+
+# dat = read.xlsx(
+#   "UNDERLYING_Food stuffs.xlsx",
+#   sheet=2
+# )
+# write.csv(dat,"UNDERLYING_Food stuffs.csv",na="",row.names=F)
+dat = read.csv("UNDERLYING_Food stuffs.csv",na.strings="",as.is=T)
+dat = subset(dat,Item %in% c("Fruits - Excluding Wine","Vegetables"))
+dat = subset(dat,Unit=="g/capita/day")
+dat = subset(dat,Element=="Food supply quantity (g/capita/day)")
+fruit_veg = dat[c("Area",paste0("Y",1961:2013))]
+fruit_veg = melt(fruit_veg,id.vars="Area",variable.name="year")
+fruit_veg$year = substr(fruit_veg$year,2,5)
+names(fruit_veg)[1] = "country"
+fruit_veg = data.table(fruit_veg)[,.(value=sum(value)),by=.(country,year)]
+fruit_veg$indicator = "fruit_veg_availability"
+fruit_veg$disaggregation = "all"
+fruit_veg$component = "S"
+master_dat_list[[master_dat_index]] = fruit_veg
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "UNDERLYING_GII.xlsx",
+  rows=c(2:162),
+  cols=c(2,15:17)
+)
+gender_inequality = dat
+names(gender_inequality) = c("country","year","gender_inequality_score","gender_inequality_rank")
+gender_inequality = melt(gender_inequality,id.vars=c("country","year"),variable.name="indicator")
+gender_inequality$disaggregation = "all"
+gender_inequality$component = "U"
+master_dat_list[[master_dat_index]] = gender_inequality
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "UNDERLYING_Non-staples.xlsx"
+  ,rows=c(3:205)
+  ,cols=c(1,2,5:9)
+)
+non_staples = dat
+names(non_staples) = c(
+  "iso3",
+  "country",
+  "2000",
+  "2003",
+  "2006",
+  "2009",
+  "2012"
+)
+non_staples = melt(non_staples,id.vars=c("iso3","country"),variable.name="year")
+non_staples$indicator = "total_calories_non_staple"
+non_staples$disaggregation = "all"
+non_staples$component = "S"
+master_dat_list[[master_dat_index]] = non_staples
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "UNDERLYING_Nurses and Midwives.xlsx",
+  rows=c(4:268),
+  cols=c(1,2,33,34)
+  )
+nurses_and_midwives = dat
+names(nurses_and_midwives) = c("country","iso3","year","value")
+nurses_and_midwives = subset(nurses_and_midwives,value!="No data")
+nurses_and_midwives$indicator = "nurses_and_midwives"
+nurses_and_midwives$disaggregation = "all"
+nurses_and_midwives$component = "U"
+master_dat_list[[master_dat_index]] = nurses_and_midwives
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "UNDERLYING_Physicians per 1000 people.xlsx",
+  rows = c(4:268)
+  ,cols = c(1,2,63,64)
+)
+physicians = dat
+names(physicians) = c("country","iso3","year","value")
+physicians = subset(physicians,value!="No data")
+physicians$indicator = "physicians"
+physicians$disaggregation = "all"
+physicians$component = "U"
+master_dat_list[[master_dat_index]] = physicians
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "UNDERLYING_Undernourishment.xlsx"
+  ,rows=c(4:252)
+  ,cols=c(1,2,21,25,29,33,37)
+)
+undernourishment_prev = dat
+names(undernourishment_prev) = c(
+  "iso3","country","2000","2004","2008","2012","2016"
+)
+undernourishment_prev = melt(undernourishment_prev,id.vars=c("iso3","country"),variable.name="year")
+undernourishment_prev$indicator = "undernourishment_prev"
+undernourishment_prev$disaggregation = "all"
+undernourishment_prev$component = "S"
+master_dat_list[[master_dat_index]] = undernourishment_prev
 master_dat_index = master_dat_index + 1
 
 for(i in 1:length(master_dat_list)){
