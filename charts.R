@@ -160,7 +160,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 
 ####End setup####
 ####Loop####
-# countries = c("Kenya","Zimbabwe","United Kingdom of Great Britain and Northern Ireland")
+countries = c("Saint Kitts and Nevis")
 for(this.country in countries){
   message(this.country)
   dir.create(paste(wd,this.country,sep="/"))
@@ -951,7 +951,7 @@ for(this.country in countries){
   c27data = subset(countrydat, (indicator==ind))
   c27data$value = as.numeric(c27data$value)
   c27data = subset(c27data, !is.na(value))
-  if(nrow(c27data>0)){
+  if(nrow(c27data)>0){
     c27data$disagg.value = this.country
     c27.global = data.frame(year=max(c27data$year),disagg.value="Global",value=5.6)
     disagg.values = c(this.country,"Global")
