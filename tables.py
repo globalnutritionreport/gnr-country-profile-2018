@@ -98,9 +98,9 @@ dataDictionary["Kenya"]["table5"] = [
 
 dataDictionary["Kenya"]["table6"] = [
     [Paragraph("Mandatory legislation for salt iodisation", style=dark_greyParaBold), "Yes"],
-    [Paragraph(u"Sugar\u2013sweeted beverage tax", style=dark_greyParaBold), "Yes"],
-    [Paragraph("Multisectoral comprehensive nutrition plan", style=dark_greyParaBold), "Yes"],
+    [Paragraph("Sugar-sweeted beverage tax", style=dark_greyParaBold), "Yes"],
     [Paragraph("Food-based dietary guidelines", style=dark_greyParaBold), "Yes"],
+    [Paragraph("Multisectoral comprehensive nutrition plan", style=dark_greyParaBold), "Yes"],
 ]
 
 dataDictionary["Kenya"]["table7"] = [
@@ -125,11 +125,11 @@ dataDictionary["Kenya"]["table8"] = [
         Paragraph("<b>Female</b>", style=dark_greyParaBold),
         Paragraph("<b>Year</b>", style=dark_greyParaBold)
      ],
-    [u"Children 0\u201359 months with dirrhea who received zinc treatment", "8.1", "", "", "2014"],
+    [u"Children 0\u201359 months with diarrhea who received zinc treatment", "8.1", "NA", "NA", "2014"],
     [u"Children 6\u201359 months who received vitamin A supplements in last 6 months", "71.7", "71.6", "71.9", "2014"],
     [u"Children 6\u201359 months given iron supplements in past 7 days", "2.7", "2.6", "2.7", "2014"],
-    [Paragraph("Women with a birth in last five years who received iron and folic acid during their most recent pregnancy", style=dark_greyParaStyle), "69.4", "", "", "2014"],
-    ["Household consumption of iodised salt", "99.5", "", "", "2014"],
+    [Paragraph("Women with a birth in last five years who received iron and folic acid during their most recent pregnancy", style=dark_greyParaStyle), "69.4", "", "NA", "2014"],
+    ["Household consumption of any iodised salt", "99.5", "NA", "NA", "2014"],
 ]
 
 dat = pd.read_csv("data.csv")
@@ -248,8 +248,8 @@ for country in dataDictionary.keys():
 
     dataDictionary[country]["table6"][0][1] = safeFormat(indicator(ctryDat, "salt_leg"))
     dataDictionary[country]["table6"][1][1] = safeFormat(indicator(ctryDat, "sugar_tax"))
-    dataDictionary[country]["table6"][2][1] = safeFormat(indicator(ctryDat, "multi_sec"))
-    dataDictionary[country]["table6"][3][1] = safeFormat(indicator(ctryDat, "fbdg"))
+    dataDictionary[country]["table6"][2][1] = safeFormat(indicator(ctryDat, "fbdg"))
+    dataDictionary[country]["table6"][3][1] = safeFormat(indicator(ctryDat, "multi_sec"))
 
     dataDictionary[country]["table7"][1] = [
         safeFormat(indicator(ctryDat, "stunting_plan")),
@@ -276,6 +276,7 @@ for country in dataDictionary.keys():
     dataDictionary[country]["table8"][3][4] = safeFormat(year(ctryDat, "iron_supp"))
 
     dataDictionary[country]["table8"][4][1] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "all"))
+    dataDictionary[country]["table8"][4][3] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "all"))
     dataDictionary[country]["table8"][4][4] = safeFormat(year(ctryDat, "iron_and_folic"))
 
     dataDictionary[country]["table8"][5][1] = safeFormat(indicator_disagg(ctryDat, "iodised_salt", "all"))

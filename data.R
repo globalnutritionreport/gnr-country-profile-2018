@@ -612,48 +612,42 @@ master_dat_index = master_dat_index + 1
 # master_dat_list[[master_dat_index]] = u5mr
 # master_dat_index = master_dat_index + 1
 
-dat = read.xlsx("FINANCIAL - ODA.xlsx",sheet=1,rows=c(190:369),na.strings=c("NA"))
+dat = read.xlsx("FINANCIAL - ODA.xlsx",sheet=1,rows=c(11:369),cols=c(1:12),na.strings=c("NA"))
 names(dat)= c(
-  "X1","country","iso3",
-  as.character(c(2008:2016)),
-  paste0("received_ODA_basic_nut_",c(2012:2016)),
-  paste0("received_ODA_basic_nut_percapita_",c(2012:2016)),
-  paste0("received_ODA_basic_nut_percentage_of_tot_",c(2012:2016)),
-  paste0("pop_",c(2012:2016))
+  "sector","country","iso3",
+  as.character(c(2008:2016))
 )
-dat$X1 = NULL
-oda_recip = melt(dat,id.vars=c("country","iso3"))
-oda_recip$value[which(oda_recip$value=="No reported allocations")] = 0
-oda_recip$variable = unfactor(oda_recip$variable)
-oda_recip$year = substr(oda_recip$variable,nchar(oda_recip$variable)-3,nchar(oda_recip$variable))
-oda_recip$indicator = substr(oda_recip$variable,1,nchar(oda_recip$variable)-5)
-oda_recip$indicator[which(oda_recip$indicator=="")] = "ODA_specific"
-oda_recip$variable = NULL
-oda_recip = subset(oda_recip,indicator %in% c("ODA_specific","received_ODA_basic_nut_percentage_of_tot"))
-oda_recip$indicator[which(oda_recip$indicator=="received_ODA_basic_nut_percentage_of_tot")] = "ODA_received"
+dat$sector[c(1:179)] = "total"
+dat$sector[c(180:358)] = "ODA_specific"
+oda_recip = melt(dat,id.vars=c("country","iso3","sector"),variable.name="year")
+oda_recip = dcast(oda_recip,country+iso3+year~sector)
+oda_recip$ODA_specific[which(is.na(oda_recip$ODA_specific))] = 0
+oda_recip$ODA_received = as.numeric(oda_recip$ODA_specific)/as.numeric(oda_recip$total)
+oda_recip$ODA_received[which(is.na(oda_recip$ODA_received))] = 0
+oda_recip$ODA_specific[which(is.na(oda_recip$ODA_specific))] = 0
+oda_recip$total = NULL
+oda_recip = melt(oda_recip,id.vars=c("country","iso3","year"),variable.name="indicator")
 oda_recip$component = "P"
 oda_recip$disaggregation = "all"
 oda_recip$recip = T
 master_dat_list[[master_dat_index]] = oda_recip
 master_dat_index = master_dat_index + 1
 
-dat = read.xlsx("FINANCIAL - ODA.xlsx",sheet=2,rows=c(60:109),na.strings=c("NA"))
+dat = read.xlsx("FINANCIAL - ODA.xlsx",sheet=2,rows=c(11:109),cols=c(1:12),na.strings=c("NA"))
 names(dat)= c(
-  "X1","country","iso3",
-  as.character(c(2008:2016)),
-  paste0("disb_ODA_basic_nut_",c(2012:2016)),
-  paste0("disb_ODA_basic_nut_percentage_of_tot_",c(2012:2016))
+  "sector","country","iso3",
+  as.character(c(2008:2016))
 )
-dat$X1 = NULL
-oda_donor = melt(dat,id.vars=c("country","iso3"))
-oda_donor$value[which(oda_donor$value=="No reported disbursements")] = 0
-oda_donor$variable = unfactor(oda_donor$variable)
-oda_donor$year = substr(oda_donor$variable,nchar(oda_donor$variable)-3,nchar(oda_donor$variable))
-oda_donor$indicator = substr(oda_donor$variable,1,nchar(oda_donor$variable)-5)
-oda_donor$indicator[which(oda_donor$indicator=="")] = "ODA_specific"
-oda_donor$variable = NULL
-oda_donor = subset(oda_donor,indicator %in% c("ODA_specific","disb_ODA_basic_nut_percentage_of_tot"))
-oda_donor$indicator[which(oda_donor$indicator=="disb_ODA_basic_nut_percentage_of_tot")] = "ODA_received"
+dat$sector[c(1:49)] = "total"
+dat$sector[c(50:98)] = "ODA_specific"
+oda_donor = melt(dat,id.vars=c("country","iso3","sector"),variable.name="year")
+oda_donor = dcast(oda_donor,country+iso3+year~sector)
+oda_donor$ODA_specific[which(is.na(oda_donor$ODA_specific))] = 0
+oda_donor$ODA_received = as.numeric(oda_donor$ODA_specific)/as.numeric(oda_donor$total)
+oda_donor$ODA_received[which(is.na(oda_donor$ODA_received))] = 0
+oda_donor$ODA_specific[which(is.na(oda_donor$ODA_specific))] = 0
+oda_donor$total = NULL
+oda_donor = melt(oda_donor,id.vars=c("country","iso3","year"),variable.name="indicator")
 oda_donor$component = "P"
 oda_donor$disaggregation = "all"
 oda_donor$recip = F
@@ -1242,6 +1236,13 @@ names(drinking_water) = c(
   "surface_water",
   "safely_managed_water"
 )
+drinking_water$sum = rowSums(drinking_water[,c("basic_water",
+                                               "limited_water",
+                                               "unimproved_water",
+                                               "surface_water",
+                                               "safely_managed_water")],na.rm=T)
+drinking_water$basic_water[which(drinking_water$sum>100)] = drinking_water$basic_water[which(drinking_water$sum>100)] - drinking_water$safely_managed_water[which(drinking_water$sum>100)]
+drinking_water$sum = NULL
 drinking_water = melt(drinking_water,id.vars=c("iso3","country","year"),variable.name="indicator")
 drinking_water$disaggregation = "all"
 drinking_water$component = "V"
@@ -1266,6 +1267,13 @@ names(sanitation) = c(
   "open_defecation",
   "safely_managed_sanitation"
 )
+sanitation$sum = rowSums(sanitation[,c("basic_sanitation",
+                                               "limited_sanitation",
+                                               "unimproved_sanitation",
+                                               "open_defecation",
+                                               "safely_managed_sanitation")],na.rm=T)
+sanitation$basic_sanitation[which(sanitation$sum>100)] = sanitation$basic_sanitation[which(sanitation$sum>100)] - sanitation$safely_managed_sanitation[which(sanitation$sum>100)]
+sanitation$sum = NULL
 sanitation = melt(sanitation,id.vars=c("iso3","country","year"),variable.name="indicator")
 sanitation$disaggregation = "all"
 sanitation$component = "V"

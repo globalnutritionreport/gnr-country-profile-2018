@@ -148,7 +148,7 @@
 
 <!-- Chart 4 (prev 10) -->
 <text top="{{top}}" left="{{left+625}}" width="113" height="15" font="6"><b>Female secondary education</b></text>
-<text top="{{top+15}}" left="{{left+625}}" width="156" height="15" font="6"><b>enrolment (% population)</b></text>
+<text top="{{top+15}}" left="{{left+625}}" width="156" height="15" font="6"><b>enrolment (net, % population)</b></text>
 <image top="{{top+34}}" left="{{left+625}}" width="200" height="180" src="charts/{{country_data.country}}/c4.png"/>
 <line x1="{{left+625}}" x2="{{left+625}}" y1="{{top+231}}" y2="{{top+238}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top+226}}" left="{{left+629}}" width="156" height="10" font="9"><b>Source</b>: UNESCO Institute for Statistics 2017.</text>
@@ -194,15 +194,15 @@
 
 <!-- Charts 8, 9, and 10 -->
 {% set top = top + 30 %}
-<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Under-5 by gender: wasting</b></text>
+<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Under-5 by gender: wasting (%)</b></text>
 <image top="{{top + 28}}" left="{{left}}" width="240" height="200" src="charts/{{country_data.country}}/c8.png"/>
 
 <line x1="{{left+256}}" x2="{{left+256}}" y1="{{top+10}}" y2="{{top+256}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+276}}" width="151" height="18" font="6"><b>Under-5 by gender: stunting</b></text>
+<text top="{{top}}" left="{{left+276}}" width="151" height="18" font="6"><b>Under-5 by gender: stunting (%)</b></text>
 <image top="{{top + 28}}" left="{{left+276}}" width="240" height="200" src="charts/{{country_data.country}}/c9.png"/>
 
 <line x1="{{left+536}}" x2="{{left+536}}" y1="{{top+10}}" y2="{{top+256}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+556}}" width="151" height="18" font="6"><b>Under-5 by gender: overweight</b></text>
+<text top="{{top}}" left="{{left+556}}" width="151" height="18" font="6"><b>Under-5 by gender: overweight (%)</b></text>
 <image top="{{top + 28}}" left="{{left+556}}" width="240" height="200" src="charts/{{country_data.country}}/c10.png"/>
 
 {% set top = top + 245 %}
@@ -213,15 +213,15 @@
 
 <!-- Charts 11, 12, and 13 -->
 {% set top = top + 26 %}
-<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Under-5 by household income: wasting</b></text>
+<text top="{{top}}" left="{{left-10}}" width="151" height="18" font="6"><b>Under-5 by household income: wasting (%)</b></text>
 <image top="{{top + 28}}" left="{{left}}" width="240" height="200" src="charts/{{country_data.country}}/c11.png"/>
 
 <line x1="{{left+256}}" x2="{{left+256}}" y1="{{top+10}}" y2="{{top+256}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+276}}" width="151" height="18" font="6"><b>Under-5 by household income: stunting</b></text>
+<text top="{{top}}" left="{{left+266}}" width="151" height="18" font="6"><b>Under-5 by household income: stunting (%)</b></text>
 <image top="{{top + 28}}" left="{{left+276}}" width="240" height="200" src="charts/{{country_data.country}}/c12.png"/>
 
 <line x1="{{left+536}}" x2="{{left+536}}" y1="{{top+10}}" y2="{{top+256}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+556}}" width="151" height="18" font="6"><b>Under-5 by household income: overweight</b></text>
+<text top="{{top}}" left="{{left+546}}" width="151" height="18" font="6"><b>Under-5 by household income: overweight (%)</b></text>
 <image top="{{top + 28}}" left="{{left+556}}" width="240" height="200" src="charts/{{country_data.country}}/c13.png"/>
 
 {% set top = top + 245 %}
@@ -232,15 +232,15 @@
 
 <!-- Charts 14, 15, and 16 -->
 {% set top = top + 26 %}
-<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Under-5 by household location: wasting</b></text>
+<text top="{{top}}" left="{{left-15}}" width="151" height="18" font="6"><b>Under-5 by household location: wasting (%)</b></text>
 <image top="{{top + 28}}" left="{{left}}" width="240" height="200" src="charts/{{country_data.country}}/c14.png"/>
 
 <line x1="{{left+256}}" x2="{{left+256}}" y1="{{top+10}}" y2="{{top+256}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+276}}" width="151" height="18" font="6"><b>Under-5 by household location: stunting</b></text>
+<text top="{{top}}" left="{{left+261}}" width="151" height="18" font="6"><b>Under-5 by household location: stunting (%)</b></text>
 <image top="{{top + 28}}" left="{{left+276}}" width="240" height="200" src="charts/{{country_data.country}}/c15.png"/>
 
 <line x1="{{left+536}}" x2="{{left+536}}" y1="{{top+10}}" y2="{{top+256}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+556}}" width="151" height="18" font="6"><b>Under-5 by household location: overweight</b></text>
+<text top="{{top}}" left="{{left+546}}" width="151" height="18" font="6"><b>Under-5 by household location: overweight (%)</b></text>
 <image top="{{top + 28}}" left="{{left+556}}" width="240" height="200" src="charts/{{country_data.country}}/c16.png"/>
 
 {% set top = top + 245 %}
@@ -251,7 +251,7 @@
 <!-- Chart 17 -->
 {% set top = top + 26 %}
 <text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Under-5 coexistence of wasting, stunting and overweight</b></text>
-<image top="{{top+25}}" left="{{left+250}}" width="313" height="250" src="charts/{{country_data.country}}/c17.png"/>
+<image top="{{top+25}}" left="{{left+280}}" width="458" height="250" src="charts/{{country_data.country}}/c17.png"/>
 
 <line x1="{{left}}" x2="{{left}}" y1="{{top+285}}" y2="{{top+291}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top+280}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: FAOSTAT 2015;<super>1</super> FAOSTAT 2014.<super>2</super></text>
@@ -269,7 +269,7 @@
 
 <!-- Row -->
 {% set top = 95 %}
-<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Child-feeding practices</b></text>
+<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Child feeding practices</b></text>
 
 <!-- Chart 18 -->
 {% set top = top + 20 %}
@@ -283,18 +283,18 @@
 
 <!-- Row -->
 {% set top = top + 300 %}
-<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Adolescent nutrition status</b></text>
+<text top="{{top}}" left="0" width="241" height="18" font="3"><b>documentscent nutrition status</b></text>
 <!-- Charts 19, 20, and 21 -->
 {% set top = top + 21 %}
-<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Adolescent by gender: underweight</b></text>
+<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Adolescent by gender: underweight (%)</b></text>
 <image top="{{top + 28}}" left="{{left}}" width="240" height="190" src="charts/{{country_data.country}}/c19.png"/>
 
 <line x1="{{left+256}}" x2="{{left+256}}" y1="{{top+10}}" y2="{{top+236}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+276}}" width="151" height="18" font="6"><b>Adolescent by gender: overweight</b></text>
+<text top="{{top}}" left="{{left+276}}" width="151" height="18" font="6"><b>Adolescent by gender: overweight (%)</b></text>
 <image top="{{top + 28}}" left="{{left+276}}" width="240" height="190" src="charts/{{country_data.country}}/c20.png"/>
 
 <line x1="{{left+536}}" x2="{{left+536}}" y1="{{top+10}}" y2="{{top+236}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+556}}" width="151" height="18" font="6"><b>Adolescent by gender: obesity</b></text>
+<text top="{{top}}" left="{{left+556}}" width="151" height="18" font="6"><b>Adolescent by gender: obesity (%)</b></text>
 <image top="{{top + 28}}" left="{{left+556}}" width="240" height="190" src="charts/{{country_data.country}}/c21.png"/>
 
 {% set top = top + 225 %}
@@ -308,15 +308,15 @@
 <text top="{{top}}" left="0" width="241" height="18" font="3"><b>Adult nutrition status</b></text>
 <!-- Charts 22, 23, and 24 -->
 {% set top = top + 21 %}
-<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Adult by gender: diabetes</b></text>
+<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Adult by gender: diabetes (%)</b></text>
 <image top="{{top + 28}}" left="{{left}}" width="240" height="190" src="charts/{{country_data.country}}/c22.png"/>
 
 <line x1="{{left+256}}" x2="{{left+256}}" y1="{{top+10}}" y2="{{top+246}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+276}}" width="151" height="18" font="6"><b>Adult by gender: overweight</b></text>
+<text top="{{top}}" left="{{left+276}}" width="151" height="18" font="6"><b>Adult by gender: overweight (%)</b></text>
 <image top="{{top + 28}}" left="{{left+276}}" width="240" height="190" src="charts/{{country_data.country}}/c23.png"/>
 
 <line x1="{{left+536}}" x2="{{left+536}}" y1="{{top+10}}" y2="{{top+246}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+556}}" width="151" height="18" font="6"><b>Adult by gender: obesity</b></text>
+<text top="{{top}}" left="{{left+556}}" width="151" height="18" font="6"><b>Adult by gender: obesity (%)</b></text>
 <image top="{{top + 28}}" left="{{left+556}}" width="240" height="190" src="charts/{{country_data.country}}/c24.png"/>
 
 {% set top = top + 235 %}
@@ -327,15 +327,15 @@
 
 <!-- Charts 25, 26, and 27 -->
 {% set top = top + 15 %}
-<text top="{{top+11}}" left="{{left}}" width="151" height="18" font="6"><b>Adult by gender: raised blood pressure</b></text>
+<text top="{{top+11}}" left="{{left}}" width="151" height="18" font="6"><b>Adult by gender: raised blood pressure (%)</b></text>
 <image top="{{top + 39}}" left="{{left}}" width="240" height="190" src="charts/{{country_data.country}}/c25.png"/>
 
 <line x1="{{left+256}}" x2="{{left+256}}" y1="{{top+21}}" y2="{{top+256}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top+11}}" left="{{left+276}}" width="151" height="18" font="6"><b>Adult by gender: anaemia in WRA</b></text>
+<text top="{{top+11}}" left="{{left+276}}" width="151" height="18" font="6"><b>Adult by gender: anaemia in WRA (%)</b></text>
 <image top="{{top + 39}}" left="{{left+276}}" width="240" height="190" src="charts/{{country_data.country}}/c26.png"/>
 
 <line x1="{{left+536}}" x2="{{left+536}}" y1="{{top+21}}" y2="{{top+256}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top+11}}" left="{{left+556}}" width="151" height="18" font="6"><b>Adult: sodium intake</b></text>
+<text top="{{top+11}}" left="{{left+556}}" width="151" height="18" font="6"><b>Adult: sodium intake (grams per day)</b></text>
 <image top="{{top + 39}}" left="{{left+556}}" width="240" height="190" src="charts/{{country_data.country}}/c27.png"/>
 
 {% set top = top + 245 %}
@@ -368,7 +368,7 @@
 
 <!-- Row -->
 {% set top = top + 400 %}
-<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Financial resources and policy, legislation, and institutional arrangements</b></text>
+<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Financial resources and policy, legislation and institutional arrangements</b></text>
 
 <!-- Chart 29 -->
 {% set top = top + 20 %}
