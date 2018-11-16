@@ -5,6 +5,7 @@ import pdb
 from selenium.webdriver.remote.command import Command
 from optparse import OptionParser
 import os
+import pandas as pd
 
 class Error(Exception):
     """Base class for exceptions in this module."""
@@ -112,11 +113,15 @@ if not options.user:
 if not options.password:
     raise InputError("A valid password was not supplied.")
 
+all_dat = pd.read_csv("data.csv")
+pdb.set_trace()
+countries = all_dat.filter(['country','region','subregion']).drop_duplicates()
+
 browser = webdriver.Chrome("/home/alex/chromedriver")
 browser.maximize_window()
 browser.implicitly_wait(30) # Configure the WebDriver to wait up to 30 seconds for each page to load
 
-browser.get("https://gnr.fffdev.co/admin/") # Load page
+browser.get("https://dev.globalnutritionreport.org/admin") # Load page
 queries = []
 userInput = {}
 userInput["input_id"] = "id_username"
