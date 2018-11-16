@@ -1,29 +1,476 @@
 iso3,country
+ABW,Aruba
 AFG,AFGHANISTAN
 AFG,Afghanistan
-,AFRICA
-,Africa
-,Africa (Northern)
-,Africa (Sub-Saharan)
-ALB,ALBANIA
-ALB,Albania
-DZA,ALGERIA
-DZA,Algeria
-ASM,American Samoa
-,Americas
-AND,Andorra
 AGO,ANGOLA
 AGO,Angola
 AIA,Anguilla
-ATG,Antigua and Barbuda
-,Arab States
+ALB,ALBANIA
+ALB,Albania
+AND,Andorra
 ,Arab World
-ARB,Arab World
+ARE,United Arab Emirates
 ARG,ARGENTINA
 ARG,Argentina
 ARM,ARMENIA
 ARM,Armenia
-ABW,Aruba
+ASM,American Samoa
+ATG,Antigua and Barbuda
+AUS,AUSTRALIA
+AUS,Australia
+AUT,Austria
+AZE,AZERBAIJAN
+AZE,Azerbaijan
+BDI,BURUNDI
+BDI,Burundi
+BEL,Belgium
+BEL,Belgium-Luxembourg
+BEN,BENIN
+BEN,Benin
+BES,"Bonaire, Sint Eustatius and Saba"
+BFA,BURKINA FASO
+BFA,Burkina Faso
+BGD,BANGLADESH
+BGD,Bangladesh
+BGR,BULGARIA
+BGR,Bulgaria
+BHR,BAHRAIN
+BHR,Bahrain
+BHS,Bahamas
+BHS,"Bahamas, The"
+BHS,The Bahamas
+BIH,BOSNIA AND HERZEGOVINA
+BIH,Bosnia and Herzegovina
+BLR,BELARUS
+BLR,Belarus
+BLZ,BELIZE
+BLZ,Belize
+BMU,Bermuda
+BOL,Bolivia
+BOL,BOLIVIA (PLURINATIONAL STATE OF)
+BOL,Bolivia (Plurinational State of)
+BRA,BRAZIL
+BRA,Brazil
+BRB,BARBADOS
+BRB,Barbados
+BRN,Brunei
+BRN,BRUNEI DARUSSALAM
+BRN,Brunei Darussalam
+BTN,BHUTAN
+BTN,Bhutan
+BWA,BOTSWANA
+BWA,Botswana
+CAF,Central African Republic
+CAF,CENTRAL AFRICAN REPUBLIC (THE)
+CAN,CANADA
+CAN,Canada
+CHE,Switzerland
+CHL,CHILE
+CHL,Chile
+CHN,CHINA
+CHN,China
+CHN,"China, mainland"
+CIV,COTE D IVOIRE
+CIV,Cote d'Ivoire
+CIV,Côte d'Ivoire
+CIV,Côte d’Ivoire
+CMR,CAMEROON
+CMR,Cameroon
+COD,Congo (Democratic Republic of the)
+COD,Congo Democratic Republic
+COD,"Congo, Dem. Rep."
+COD,"Congo, Democratic Republic of"
+COD,DEMOCRATIC REP. OF THE CONGO (THE)
+COD,Democratic Republic of the Congo
+COD,DR Congo
+COG,Congo
+COG,CONGO (THE)
+COG,"Congo, Rep."
+COK,Cook Islands
+COL,COLOMBIA
+COL,Colombia
+COM,Comoros
+COM,COMOROS (THE)
+CPV,CABO VERDE
+CPV,Cabo Verde
+CPV,Cape Verde
+CRI,COSTA RICA
+CRI,Costa Rica
+CUB,CUBA
+CUB,Cuba
+CUW,Curacao
+CUW,Curaçao
+CYM,Cayman Islands
+CYP,Cyprus
+CZE,Czech Republic
+CZE,CZECH REPUBLIC (THE)
+CZE,Czechia
+CZE,Czechoslovakia
+DEU,GERMANY
+DEU,Germany
+DJI,DJIBOUTI
+DJI,Djibouti
+DMA,Dominica
+DNK,Denmark
+DOM,Dominican Republic
+DOM,DOMINICAN REPUBLIC (THE)
+DZA,ALGERIA
+DZA,Algeria
+ECU,ECUADOR
+ECU,Ecuador
+EGY,EGYPT
+EGY,Egypt
+EGY,"Egypt, Arab Rep."
+ERI,ERITREA
+ERI,Eritrea
+ESP,Spain
+EST,Estonia
+ETH,ETHIOPIA
+ETH,Ethiopia
+ETH,Ethiopia PDR
+FIN,Finland
+FJI,FIJI
+FJI,Fiji
+FRA,France
+FSM,Federated States of Micronesia
+FSM,Micronesia
+FSM,Micronesia (Fed. States of)
+FSM,Micronesia (Federated States of)
+FSM,"Micronesia, Fed. Sts."
+GAB,GABON
+GAB,Gabon
+GBR,United Kingdom
+GBR,United Kingdom of Great Britain and Northern Ireland
+GEO,GEORGIA
+GEO,Georgia
+GHA,GHANA
+GHA,Ghana
+GIB,Gibraltar
+GIN,GUINEA
+GIN,Guinea
+GLP,Guadeloupe
+GMB,Gambia
+GMB,GAMBIA (THE)
+GMB,"Gambia, The"
+GMB,The Gambia
+GNB,Guinea Bissau
+GNB,GUINEA-BISSAU
+GNB,Guinea-Bissau
+GNQ,EQUATORIAL GUINEA
+GNQ,Equatorial Guinea
+GRC,Greece
+GRD,Grenada
+GRL,Greenland
+GTM,GUATEMALA
+GTM,Guatemala
+GUF,French Guiana
+GUM,Guam
+GUY,GUYANA
+GUY,Guyana
+HKG,China (Hong Kong SAR)
+HKG,"China, Hong Kong SAR"
+HKG,"China, Hong Kong Special Administrative Region"
+HKG,"Hong Kong SAR, China"
+HND,HONDURAS
+HND,Honduras
+HRV,Croatia
+HTI,HAITI
+HTI,Haiti
+HUN,Hungary
+IDN,INDONESIA
+IDN,Indonesia
+IMN,Isle of Man
+IND,INDIA
+IND,India
+IRL,Ireland
+IRN,Iran
+IRN,IRAN (ISLAMIC REPUBLIC OF)
+IRN,Iran (Islamic Republic of)
+IRN,"Iran, Islamic Rep."
+IRQ,IRAQ
+IRQ,Iraq
+ISL,Iceland
+ISR,Israel
+ITA,Italy
+JAM,JAMAICA
+JAM,Jamaica
+JOR,JORDAN
+JOR,Jordan
+JPN,JAPAN
+JPN,Japan
+KAZ,KAZAKHSTAN
+KAZ,Kazakhstan
+KEN,KENYA
+KEN,Kenya
+KGZ,Kyrgyz Republic
+KGZ,KYRGYZSTAN
+KGZ,Kyrgyzstan
+KHM,CAMBODIA
+KHM,Cambodia
+KIR,KIRIBATI
+KIR,Kiribati
+KNA,Saint Kitts and Nevis
+KNA,St. Kitts and Nevis
+KOR,Korea (Republic of)
+KOR,"Korea, Rep."
+KOR,Republic of Korea
+KOR,REPUBLIC OF KOREA (THE)
+KWT,KUWAIT
+KWT,Kuwait
+LAO,Lao PDR
+LAO,LAO PEOPLE S DEMOCRATIC REP. (THE)
+LAO,Lao People's Democratic Republic
+LAO,Laos
+LBN,LEBANON
+LBN,Lebanon
+LBR,LIBERIA
+LBR,Liberia
+LBY,LIBYA
+LBY,Libya
+LCA,SAINT LUCIA
+LCA,Saint Lucia
+LCA,St. Lucia
+LIE,Liechtenstein
+LKA,SRI LANKA
+LKA,Sri Lanka
+LSO,LESOTHO
+LSO,Lesotho
+LTU,Lithuania
+LUX,Luxembourg
+LVA,Latvia
+MAC,"China, Macao SAR"
+MAC,"China, Macao Special Administrative Region"
+MAC,"Macao SAR, China"
+MAC,"Macau, China"
+MAF,Saint Martin (French Part)
+MAF,St. Martin (French part)
+MAR,MOROCCO
+MAR,Morocco
+MCO,Monaco
+MDA,Moldova
+MDA,Moldova (Republic of)
+MDA,Republic of Moldova
+MDA,REPUBLIC OF MOLDOVA (THE)
+MDG,MADAGASCAR
+MDG,Madagascar
+MDV,MALDIVES
+MDV,Maldives
+MEX,MEXICO
+MEX,Mexico
+MHL,Marshall Islands
+MKD,Macedonia
+MKD,Macedonia (TFYR)
+MKD,"Macedonia, FYR"
+MKD,TFYR Macedonia
+MKD,THE FORMER YUGOSLAV REPUBLIC OF MACEDONIA
+MKD,The former Yugoslav Republic of Macedonia
+MLI,MALI
+MLI,Mali
+MLT,Malta
+MMR,MYANMAR
+MMR,Myanmar
+MNE,MONTENEGRO
+MNE,Montenegro
+MNG,MONGOLIA
+MNG,Mongolia
+MOZ,MOZAMBIQUE
+MOZ,Mozambique
+MRT,MAURITANIA
+MRT,Mauritania
+MSR,Montserrat
+MTQ,Martinique
+MUS,MAURITIUS
+MUS,Mauritius
+MWI,MALAWI
+MWI,Malawi
+MYS,MALAYSIA
+MYS,Malaysia
+MYT,Mayotte
+NAM,NAMIBIA
+NAM,Namibia
+NCL,New Caledonia
+NER,Niger
+NER,NIGER (THE)
+NGA,NIGERIA
+NGA,Nigeria
+NIC,NICARAGUA
+NIC,Nicaragua
+NIU,Niue
+NLD,Netherlands
+NMP,Northern Mariana Islands
+NOR,Norway
+NPL,NEPAL
+NPL,Nepal
+NRU,NAURU
+NRU,Nauru
+NZL,New Zealand
+OMN,OMAN
+OMN,Oman
+PAK,PAKISTAN
+PAK,Pakistan
+PAN,PANAMA
+PAN,Panama
+PER,PERU
+PER,Peru
+PHL,Philippines
+PHL,PHILIPPINES (THE)
+PLW,Palau
+PNG,PAPUA NEW GUINEA
+PNG,Papua New Guinea
+POL,Poland
+PRI,Puerto Rico
+PRK,Dem. People's Republic of Korea
+PRK,DEMOCRATIC PEOPLE S REP. OF KOREA (THE)
+PRK,Democratic People's Republic of Korea
+PRK,"Korea, Dem. People’s Rep."
+PRK,North Korea
+PRT,Portugal
+PRY,PARAGUAY
+PRY,Paraguay
+PSE,Occupied Palestinian Territory
+PSE,Palestine
+PSE,State of Palestine
+PSE,WEST BANK AND GAZA
+PSE,West Bank and Gaza
+PSE,West Bank and Gaza
+PYF,French Polynesia
+QAT,QATAR
+QAT,Qatar
+REU,Réunion
+ROU,ROMANIA
+ROU,Romania
+RUS,Russia
+RUS,Russian Federation
+RUS,USSR
+RWA,RWANDA
+RWA,Rwanda
+SAU,SAUDI ARABIA
+SAU,Saudi Arabia
+SDN,Sudan
+SDN,Sudan (former)
+SDN,SUDAN (THE)
+SEN,SENEGAL
+SEN,Senegal
+SGP,SINGAPORE
+SGP,Singapore
+SHN,Saint Helena
+SLB,SOLOMON ISLANDS
+SLB,Solomon Islands
+SLE,SIERRA LEONE
+SLE,Sierra Leone
+SLV,EL SALVADOR
+SLV,El Salvador
+SMR,San Marino
+SOM,SOMALIA
+SOM,Somalia
+SPM,Saint Pierre and Miquelon
+SRB,SERBIA
+SRB,Serbia
+SRB,Serbia and Montenegro
+SSD,SOUTH SUDAN
+SSD,South Sudan
+STP,SAO TOME AND PRINCIPE
+STP,Sao Tome and Principe
+SUR,SURINAME
+SUR,Suriname
+SVK,Slovak Republic
+SVK,Slovakia
+SVN,Slovenia
+SWE,Sweden
+SWZ,Eswatini
+SWZ,Eswatini (Kingdom of)
+SWZ,SWAZILAND
+SWZ,Swaziland
+SXM,Sint Maarten (Dutch part)
+SYC,SEYCHELLES
+SYC,Seychelles
+SYR,Syria
+SYR,Syrian Arab Republic
+SYR,SYRIAN ARAB REPUBLIC (THE)
+TCA,Turks and Caicos Islands
+TCD,CHAD
+TCD,Chad
+TGO,TOGO
+TGO,Togo
+THA,THAILAND
+THA,Thailand
+TJK,TAJIKISTAN
+TJK,Tajikistan
+TKL,Tokelau
+TKM,TURKMENISTAN
+TKM,Turkmenistan
+TLS,TIMOR-LESTE
+TLS,Timor-Leste
+TON,TONGA
+TON,Tonga
+TTO,TRINIDAD AND TOBAGO
+TTO,Trinidad and Tobago
+TUN,TUNISIA
+TUN,Tunisia
+TUR,TURKEY
+TUR,Turkey
+TUV,TUVALU
+TUV,Tuvalu
+TWN,"China, Taiwan Province of"
+TWN,"China, Taiwan Province of"
+TWN,"China, Taiwan Province of China"
+TWN,China: Province of Taiwan only
+TWN,Chinese Taipei
+TWN,ChineseTaipei
+TWN,Taiwan
+TWN,Taiwan
+TZA,Tanzania
+TZA,Tanzania (United Republic of)
+TZA,United Republic of Tanzania
+TZA,UNITED REPUBLIC OF TANZANIA (THE)
+UGA,UGANDA
+UGA,Uganda
+UKR,UKRAINE
+UKR,Ukraine
+URY,URUGUAY
+URY,Uruguay
+USA,United States
+USA,United States of America
+USA,UNITED STATES OF AMERICA (THE)
+UZB,UZBEKISTAN
+UZB,Uzbekistan
+VCT,Saint Vincent and the Grenadines
+VCT,St. Vincent and the Grenadines
+VEN,Venezuela
+VEN,VENEZUELA (BOLIVARIAN REPUBLIC OF)
+VEN,Venezuela (Bolivarian Republic of)
+VEN,"Venezuela, RB"
+VGB,British Virgin Islands
+VIR,United States Virgin Islands
+VIR,Virgin Islands (U.S.)
+VNM,VIET NAM
+VNM,Viet Nam
+VNM,Vietnam
+VUT,VANUATU
+VUT,Vanuatu
+WLF,Wallis and Futuna Islands
+WSM,SAMOA
+WSM,Samoa
+XKX,Kosovo
+XKX,Kosovo
+XKX,Kosovo
+XKX,"Kosovo, Republic of"
+YEM,YEMEN
+YEM,Yemen
+YEM,"Yemen, Rep."
+ZAF,SOUTH AFRICA
+ZAF,South Africa
+ZMB,ZAMBIA
+ZMB,Zambia
+ZWE,ZIMBABWE
+ZWE,Zimbabwe
+,AFRICA
+,Africa
+,Africa (Northern)
+,Africa (Sub-Saharan)
+,Americas
+,Arab States
+,Arab World
 ,ASIA
 ,Asia
 ,Asia (Central and Southern)
@@ -33,68 +480,12 @@ ABW,Aruba
 ,Asia (South-eastern)
 ,Asia (Southern)
 ,Asia (Western)
-AUS,AUSTRALIA
-AUS,Australia
 ,Australia & New Zealand
 ,Australia/New Zealand
-AUT,Austria
-AZE,AZERBAIJAN
-AZE,Azerbaijan
-BHS,Bahamas
-BHS,"Bahamas, The"
-BHR,BAHRAIN
-BHR,Bahrain
-BGD,BANGLADESH
-BGD,Bangladesh
-BRB,BARBADOS
-BRB,Barbados
-BLR,BELARUS
-BLR,Belarus
-BEL,Belgium
-BEL,Belgium-Luxembourg
-BLZ,BELIZE
-BLZ,Belize
-BEN,BENIN
-BEN,Benin
-BMU,Bermuda
-BTN,BHUTAN
-BTN,Bhutan
-BOL,Bolivia
-BOL,BOLIVIA (PLURINATIONAL STATE OF)
-BOL,Bolivia (Plurinational State of)
-BES,"Bonaire, Sint Eustatius and Saba"
-BIH,BOSNIA AND HERZEGOVINA
-BIH,Bosnia and Herzegovina
-BWA,BOTSWANA
-BWA,Botswana
-BRA,BRAZIL
-BRA,Brazil
-VGB,British Virgin Islands
-BRN,Brunei
-BRN,BRUNEI DARUSSALAM
-BRN,Brunei Darussalam
-BGR,BULGARIA
-BGR,Bulgaria
-BFA,BURKINA FASO
-BFA,Burkina Faso
-BDI,BURUNDI
-BDI,Burundi
-CPV,CABO VERDE
-CPV,Cabo Verde
-KHM,CAMBODIA
-KHM,Cambodia
-CMR,CAMEROON
-CMR,Cameroon
-CAN,CANADA
-CAN,Canada
-CPV,Cape Verde
 ,Caribbean
 ,Caribbean Netherlands
 ,Caribbean small states
 ,Caribbean small states
-CYM,Cayman Islands
-CAF,Central African Republic
-CAF,CENTRAL AFRICAN REPUBLIC (THE)
 ,Central America
 ,Central and Eastern Europe
 ,Central Asia
@@ -102,66 +493,8 @@ CAF,CENTRAL AFRICAN REPUBLIC (THE)
 ,Central Asia and Southern Asia
 ,Central Europe and the Baltics
 ,Central Europe and the Baltics
-TCD,CHAD
-TCD,Chad
 ,Channel Islands
 ,Channel Islands
-CHL,CHILE
-CHL,Chile
-CHN,CHINA
-CHN,China
-HKG,China (Hong Kong SAR)
-HKG,"China, Hong Kong SAR"
-HKG,"China, Hong Kong Special Administrative Region"
-MAC,"China, Macao SAR"
-MAC,"China, Macao Special Administrative Region"
-CHN,"China, mainland"
-TWN,"China, Taiwan Province of"
-TWN,"China, Taiwan Province of"
-TWN,"China, Taiwan Province of China"
-TWN,China: Province of Taiwan only
-TWN,Chinese Taipei
-TWN,ChineseTaipei
-COL,COLOMBIA
-COL,Colombia
-COM,Comoros
-COM,COMOROS (THE)
-COG,Congo
-COD,Congo (Democratic Republic of the)
-COG,CONGO (THE)
-COD,Congo Democratic Republic
-COD,"Congo, Dem. Rep."
-COD,"Congo, Democratic Republic of"
-COG,"Congo, Rep."
-COK,Cook Islands
-CRI,COSTA RICA
-CRI,Costa Rica
-CIV,COTE D IVOIRE
-CIV,Cote d'Ivoire
-CIV,Côte d'Ivoire
-CIV,Côte d’Ivoire
-HRV,Croatia
-CUB,CUBA
-CUB,Cuba
-CUW,Curacao
-CUW,Curaçao
-CYP,Cyprus
-CZE,Czech Republic
-CZE,CZECH REPUBLIC (THE)
-CZE,Czechia
-CZE,Czechoslovakia
-PRK,Dem. People's Republic of Korea
-PRK,DEMOCRATIC PEOPLE S REP. OF KOREA (THE)
-PRK,Democratic People's Republic of Korea
-COD,DEMOCRATIC REP. OF THE CONGO (THE)
-COD,Democratic Republic of the Congo
-DNK,Denmark
-DJI,DJIBOUTI
-DJI,Djibouti
-DMA,Dominica
-DOM,Dominican Republic
-DOM,DOMINICAN REPUBLIC (THE)
-COD,DR Congo
 ,Early-demographic dividend
 ,Early-demographic dividend
 ,East and South East Asia
@@ -177,23 +510,6 @@ COD,DR Congo
 ,Eastern Asia
 ,Eastern Asia and South-eastern Asia
 ,Eastern Europe
-ECU,ECUADOR
-ECU,Ecuador
-EGY,EGYPT
-EGY,Egypt
-EGY,"Egypt, Arab Rep."
-SLV,EL SALVADOR
-SLV,El Salvador
-GNQ,EQUATORIAL GUINEA
-GNQ,Equatorial Guinea
-ERI,ERITREA
-ERI,Eritrea
-EST,Estonia
-SWZ,Eswatini
-SWZ,Eswatini (Kingdom of)
-ETH,ETHIOPIA
-ETH,Ethiopia
-ETH,Ethiopia PDR
 ,Euro area
 ,Euro area
 ,EUROPE
@@ -209,43 +525,8 @@ ETH,Ethiopia PDR
 ,Faeroe Islands
 ,Falkland Islands (Malvinas)
 ,Faroe Islands
-FSM,Federated States of Micronesia
-FJI,FIJI
-FJI,Fiji
-FIN,Finland
 ,Fragile and conflict affected situations
 ,Fragile and conflict affected situations
-FRA,France
-GUF,French Guiana
-PYF,French Polynesia
-GAB,GABON
-GAB,Gabon
-GMB,Gambia
-GMB,GAMBIA (THE)
-GMB,"Gambia, The"
-GEO,GEORGIA
-GEO,Georgia
-DEU,GERMANY
-DEU,Germany
-GHA,GHANA
-GHA,Ghana
-GIB,Gibraltar
-GRC,Greece
-GRL,Greenland
-GRD,Grenada
-GLP,Guadeloupe
-GUM,Guam
-GTM,GUATEMALA
-GTM,Guatemala
-GIN,GUINEA
-GIN,Guinea
-GNB,Guinea Bissau
-GNB,GUINEA-BISSAU
-GNB,Guinea-Bissau
-GUY,GUYANA
-GUY,Guyana
-HTI,HAITI
-HTI,Haiti
 ,Heavily indebted poor countries (HIPC)
 ,Heavily indebted poor countries (HIPC)
 ,High income
@@ -255,13 +536,8 @@ HTI,Haiti
 ,High-income countries
 ,High-income Western countries
 ,Holy See
-HND,HONDURAS
-HND,Honduras
-HKG,"Hong Kong SAR, China"
-HUN,Hungary
 ,IBRD only
 ,IBRD only
-ISL,Iceland
 ,IDA & IBRD total
 ,IDA & IBRD total
 ,IDA blend
@@ -270,50 +546,8 @@ ISL,Iceland
 ,IDA only
 ,IDA total
 ,IDA total
-IND,INDIA
-IND,India
-IDN,INDONESIA
-IDN,Indonesia
-IRN,Iran
-IRN,IRAN (ISLAMIC REPUBLIC OF)
-IRN,Iran (Islamic Republic of)
-IRN,"Iran, Islamic Rep."
-IRQ,IRAQ
-IRQ,Iraq
-IRL,Ireland
-IMN,Isle of Man
-ISR,Israel
-ITA,Italy
-JAM,JAMAICA
-JAM,Jamaica
-JPN,JAPAN
-JPN,Japan
-JOR,JORDAN
-JOR,Jordan
-KAZ,KAZAKHSTAN
-KAZ,Kazakhstan
-KEN,KENYA
-KEN,Kenya
-KIR,KIRIBATI
-KIR,Kiribati
-KOR,Korea (Republic of)
-PRK,"Korea, Dem. People’s Rep."
-KOR,"Korea, Rep."
-XKX,Kosovo
-XKX,Kosovo
-XKX,Kosovo
-XKX,"Kosovo, Republic of"
-KWT,KUWAIT
-KWT,Kuwait
-KGZ,Kyrgyz Republic
-KGZ,KYRGYZSTAN
-KGZ,Kyrgyzstan
 ,Land Locked Developing Countries
 ,Landlocked Developing Countries
-LAO,Lao PDR
-LAO,LAO PEOPLE S DEMOCRATIC REP. (THE)
-LAO,Lao People's Democratic Republic
-LAO,Laos
 ,Late-demographic dividend
 ,Late-demographic dividend
 ,Latin America & Caribbean
@@ -325,24 +559,13 @@ LAO,Laos
 ,Latin America and Caribbean
 ,LATIN AMERICA AND THE CARIBBEAN
 ,Latin America and the Caribbean
-LVA,Latvia
 ,Least Developed Countries
 ,Least developed countries
 ,Least developed countries: UN classification
 ,Least developed countries: UN classification
-LBN,LEBANON
-LBN,Lebanon
-LSO,LESOTHO
-LSO,Lesotho
 ,Less developed regions
 ,"Less developed regions, excluding China"
 ,"Less developed regions, excluding least developed countries"
-LBR,LIBERIA
-LBR,Liberia
-LBY,LIBYA
-LBY,Libya
-LIE,Liechtenstein
-LTU,Lithuania
 ,Low & middle income
 ,Low & middle income
 ,Low income
@@ -356,37 +579,7 @@ LTU,Lithuania
 ,Lower middle income countries
 ,Lower-middle-income countries
 ,Lower-middle-income economies
-LUX,Luxembourg
-MAC,"Macao SAR, China"
-MAC,"Macau, China"
-MKD,Macedonia
-MKD,Macedonia (TFYR)
-MKD,"Macedonia, FYR"
-MDG,MADAGASCAR
-MDG,Madagascar
-MWI,MALAWI
-MWI,Malawi
-MYS,MALAYSIA
-MYS,Malaysia
-MDV,MALDIVES
-MDV,Maldives
-MLI,MALI
-MLI,Mali
-MLT,Malta
-MHL,Marshall Islands
-MTQ,Martinique
-MRT,MAURITANIA
-MRT,Mauritania
-MUS,MAURITIUS
-MUS,Mauritius
-MYT,Mayotte
 ,Melanesia
-MEX,MEXICO
-MEX,Mexico
-FSM,Micronesia
-FSM,Micronesia (Fed. States of)
-FSM,Micronesia (Federated States of)
-FSM,"Micronesia, Fed. Sts."
 ,Middle Africa
 ,Middle East & North Africa
 ,Middle East & North Africa
@@ -398,55 +591,21 @@ FSM,"Micronesia, Fed. Sts."
 ,Middle income
 ,Middle income countries
 ,Middle-income countries
-MDA,Moldova
-MDA,Moldova (Republic of)
-MCO,Monaco
-MNG,MONGOLIA
-MNG,Mongolia
-MNE,MONTENEGRO
-MNE,Montenegro
-MSR,Montserrat
 ,More developed regions
-MAR,MOROCCO
-MAR,Morocco
-MOZ,MOZAMBIQUE
-MOZ,Mozambique
-MMR,MYANMAR
-MMR,Myanmar
-NAM,NAMIBIA
-NAM,Namibia
-NRU,NAURU
-NRU,Nauru
-NPL,NEPAL
-NPL,Nepal
 ,Net Food Importing Developing Countries
-NLD,Netherlands
 ,Netherlands Antilles
 ,Netherlands Antilles (former)
-NCL,New Caledonia
-NZL,New Zealand
-NIC,NICARAGUA
-NIC,Nicaragua
-NER,Niger
-NER,NIGER (THE)
-NGA,NIGERIA
-NGA,Nigeria
-NIU,Niue
 ,North Africa (exc Sudan)
 ,North America
 ,North America
 ,North America and Western Europe
-PRK,North Korea
 ,Northern Africa
 ,NORTHERN AMERICA
 ,Northern America
 ,Northern America and Europe
 ,Northern Europe
-NMP,Northern Mariana Islands
-NOR,Norway
 ,Not classified
 ,Not classified
-PSE,Occupied Palestinian Territory
 ,OCEANIA
 ,Oceania
 ,Oceania (Australia/New Zealand)
@@ -454,85 +613,18 @@ PSE,Occupied Palestinian Territory
 ,Oceania excluding Australia and New Zealand
 ,OECD members
 ,OECD members
-OMN,OMAN
-OMN,Oman
 ,Other small states
 ,Other small states
 ,Pacific island small states
 ,Pacific island small states
-PAK,PAKISTAN
-PAK,Pakistan
-PLW,Palau
-PSE,Palestine
-PAN,PANAMA
-PAN,Panama
-PNG,PAPUA NEW GUINEA
-PNG,Papua New Guinea
-PRY,PARAGUAY
-PRY,Paraguay
-PER,PERU
-PER,Peru
-PHL,Philippines
-PHL,PHILIPPINES (THE)
-POL,Poland
 ,Polynesia
-PRT,Portugal
 ,Post-demographic dividend
 ,Post-demographic dividend
 ,Pre-demographic dividend
 ,Pre-demographic dividend
-PRI,Puerto Rico
-QAT,QATAR
-QAT,Qatar
-KOR,Republic of Korea
-KOR,REPUBLIC OF KOREA (THE)
-MDA,Republic of Moldova
-MDA,REPUBLIC OF MOLDOVA (THE)
-REU,Réunion
-ROU,ROMANIA
-ROU,Romania
-RUS,Russia
-RUS,Russian Federation
-RWA,RWANDA
-RWA,Rwanda
-SHN,Saint Helena
-KNA,Saint Kitts and Nevis
-LCA,SAINT LUCIA
-LCA,Saint Lucia
-MAF,Saint Martin (French Part)
-SPM,Saint Pierre and Miquelon
-VCT,Saint Vincent and the Grenadines
-WSM,SAMOA
-WSM,Samoa
-SMR,San Marino
-STP,SAO TOME AND PRINCIPE
-STP,Sao Tome and Principe
-SAU,SAUDI ARABIA
-SAU,Saudi Arabia
-SEN,SENEGAL
-SEN,Senegal
-SRB,SERBIA
-SRB,Serbia
-SRB,Serbia and Montenegro
-SYC,SEYCHELLES
-SYC,Seychelles
-SLE,SIERRA LEONE
-SLE,Sierra Leone
-SGP,SINGAPORE
-SGP,Singapore
-SXM,Sint Maarten (Dutch part)
-SVK,Slovak Republic
-SVK,Slovakia
-SVN,Slovenia
 ,Small Island Developing States
 ,Small states
 ,Small states
-SLB,SOLOMON ISLANDS
-SLB,Solomon Islands
-SOM,SOMALIA
-SOM,Somalia
-ZAF,SOUTH AFRICA
-ZAF,South Africa
 ,South America
 ,South and West Asia
 ,South Asia
@@ -541,21 +633,11 @@ ZAF,South Africa
 ,South Asia (IDA & IBRD)
 ,South Asia (IDA & IBRD)
 ,South Korea
-SSD,SOUTH SUDAN
-SSD,South Sudan
 ,South-Central Asia
 ,South-Eastern Asia
 ,Southern Africa
 ,Southern Asia
 ,Southern Europe
-ESP,Spain
-LKA,SRI LANKA
-LKA,Sri Lanka
-KNA,St. Kitts and Nevis
-LCA,St. Lucia
-MAF,St. Martin (French part)
-VCT,St. Vincent and the Grenadines
-PSE,State of Palestine
 ,States Ex-Yugoslavia unspecified
 ,Sub-Saharan Africa
 ,Sub-Saharan Africa
@@ -564,85 +646,10 @@ PSE,State of Palestine
 ,Sub-Saharan Africa (IDA & IBRD countries)
 ,Sub-Saharan Africa (IDA & IBRD countries)
 ,Sub-Saharan Africa (including Sudan)
-SDN,Sudan
-SDN,Sudan (former)
-SDN,SUDAN (THE)
-SUR,SURINAME
-SUR,Suriname
-SWZ,SWAZILAND
-SWZ,Swaziland
-SWE,Sweden
-CHE,Switzerland
-SYR,Syria
-SYR,Syrian Arab Republic
-SYR,SYRIAN ARAB REPUBLIC (THE)
-TWN,Taiwan
-TWN,Taiwan
-TJK,TAJIKISTAN
-TJK,Tajikistan
-TZA,Tanzania
-TZA,Tanzania (United Republic of)
-MKD,TFYR Macedonia
-THA,THAILAND
-THA,Thailand
-BHS,The Bahamas
-MKD,THE FORMER YUGOSLAV REPUBLIC OF MACEDONIA
-MKD,The former Yugoslav Republic of Macedonia
-GMB,The Gambia
-TLS,TIMOR-LESTE
-TLS,Timor-Leste
-TGO,TOGO
-TGO,Togo
-TKL,Tokelau
-TON,TONGA
-TON,Tonga
-TTO,TRINIDAD AND TOBAGO
-TTO,Trinidad and Tobago
-TUN,TUNISIA
-TUN,Tunisia
-TUR,TURKEY
-TUR,Turkey
-TKM,TURKMENISTAN
-TKM,Turkmenistan
-TCA,Turks and Caicos Islands
-TUV,TUVALU
-TUV,Tuvalu
-UGA,UGANDA
-UGA,Uganda
-UKR,UKRAINE
-UKR,Ukraine
-ARE,United Arab Emirates
-GBR,United Kingdom
-GBR,United Kingdom of Great Britain and Northern Ireland
-TZA,United Republic of Tanzania
-TZA,UNITED REPUBLIC OF TANZANIA (THE)
-USA,United States
-USA,United States of America
-USA,UNITED STATES OF AMERICA (THE)
-VIR,United States Virgin Islands
 ,Upper middle income
 ,Upper middle income
 ,Upper middle income countries
 ,Upper-middle-income countries
-URY,URUGUAY
-URY,Uruguay
-RUS,USSR
-UZB,UZBEKISTAN
-UZB,Uzbekistan
-VUT,VANUATU
-VUT,Vanuatu
-VEN,Venezuela
-VEN,VENEZUELA (BOLIVARIAN REPUBLIC OF)
-VEN,Venezuela (Bolivarian Republic of)
-VEN,"Venezuela, RB"
-VNM,VIET NAM
-VNM,Viet Nam
-VNM,Vietnam
-VIR,Virgin Islands (U.S.)
-WLF,Wallis and Futuna Islands
-PSE,WEST BANK AND GAZA
-PSE,West Bank and Gaza
-PSE,West Bank and Gaza
 ,Western Africa
 ,Western Asia
 ,Western Asia and Northern Africa
@@ -651,13 +658,6 @@ PSE,West Bank and Gaza
 ,WORLD
 ,World
 ,World
-YEM,YEMEN
-YEM,Yemen
-YEM,"Yemen, Rep."
 ,Yugoslav SFR
-ZMB,ZAMBIA
-ZMB,Zambia
-ZWE,ZIMBABWE
-ZWE,Zimbabwe
 ,
 f,

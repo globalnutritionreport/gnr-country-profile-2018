@@ -299,6 +299,8 @@ names(adult_diabetes) = c("country","year","disagg.value","value")
 adult_diabetes$indicator = "adult_diabetes"
 adult_diabetes$disaggregation = "gender"
 adult_diabetes$component = "H"
+adult_diabetes$disagg.value[which(adult_diabetes$disagg.value=="Men")] = "Male"
+adult_diabetes$disagg.value[which(adult_diabetes$disagg.value=="Women")] = "Female"
 master_dat_list[[master_dat_index]] = adult_diabetes
 master_dat_index = master_dat_index + 1
 
@@ -308,6 +310,8 @@ names(adult_blood_pressure) = c("country","year","disagg.value","value")
 adult_blood_pressure$indicator = "adult_blood_pressure"
 adult_blood_pressure$disaggregation = "gender"
 adult_blood_pressure$component = "H"
+adult_blood_pressure$disagg.value[which(adult_blood_pressure$disagg.value=="Men")] = "Male"
+adult_blood_pressure$disagg.value[which(adult_blood_pressure$disagg.value=="Women")] = "Female"
 master_dat_list[[master_dat_index]] = adult_blood_pressure
 master_dat_index = master_dat_index + 1
 
@@ -714,7 +718,7 @@ dat = read.xlsx(
   "INTERVENTION _ POSSIBLE DISAGG - Copy of Micronutritent Coverage Tables GNR_GNR_30 may.xlsx"
   ,sheet=8
   ,rows=c(4:66)
-  ,cols=c(2,3,4)
+  ,cols=c(2,3,5)
   ,na.strings="N/A"
 )
 iron_and_folic = dat
@@ -1407,6 +1411,10 @@ names(isos) = c("iso3","key.country")
 master_dat = merge(master_dat,isos,by="iso3")
 master_dat$country = master_dat$key.country
 master_dat$key.country = NULL
+
+regions = region_key[c("ISO-alpha3.Code","GNR1")]
+names(regions) = c("iso3","region")
+master_dat = merge(master_dat,regions,all.x=T)
 
 backup = read.csv("../data.backup.csv",na.strings="",as.is=T)
 diff = setdiff(backup$indicator,master_dat$indicator)

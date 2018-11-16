@@ -142,7 +142,7 @@ def replaceDash(x):
     x = str(x)
     y = re.sub(r"((?:^|[^{])\d+)-(\d+[^}])", u"\\1\u2013\\2", x)
     return y
-missingVals = [" ", ".", "", "Insufficient data to make assessment"]
+missingVals = [" ", ".", "", "No data","na","NA"]
 
 
 def safeFormat(x, commas=False, precision=0, percent=False):
@@ -157,7 +157,10 @@ def safeFormat(x, commas=False, precision=0, percent=False):
             except ValueError:
                 return replaceDash(x)
         if not isinstance(x, numbers.Number):
-            return replaceDash(x)
+            try:
+                x = float(x)
+            except ValueError:
+                return replaceDash(x)
         if precision == 0:
             x = int(round(x, precision))
         else:
@@ -169,18 +172,30 @@ def safeFormat(x, commas=False, precision=0, percent=False):
 
 
 def indicator(ctryDat, indicator):
-    return ctryDat.loc[(ctryDat["indicator"] == indicator)].iloc[0]["value"]
+    try:
+        return ctryDat.loc[(ctryDat["indicator"] == indicator)].iloc[0]["value"]
+    except IndexError:
+        return "NA"
 
 
 def indicator_disagg(ctryDat, indicator, disagg, disagg_value=None):
     if disagg_value:
-        return ctryDat.loc[(ctryDat["indicator"] == indicator) & (ctryDat["disaggregation"] == disagg) & (ctryDat["disagg.value"] == disagg_value)].iloc[0]["value"]
+        try:
+            return ctryDat.loc[(ctryDat["indicator"] == indicator) & (ctryDat["disaggregation"] == disagg) & (ctryDat["disagg.value"] == disagg_value)].iloc[0]["value"]
+        except IndexError:
+            return "NA"
     else:
-        return ctryDat.loc[(ctryDat["indicator"] == indicator) & (ctryDat["disaggregation"] == disagg)].iloc[0]["value"]
+        try:
+            return ctryDat.loc[(ctryDat["indicator"] == indicator) & (ctryDat["disaggregation"] == disagg)].iloc[0]["value"]
+        except IndexError:
+            return "NA"
 
 
 def year(ctryDat, indicator):
-    return ctryDat.loc[(ctryDat["indicator"] == indicator)].iloc[0]["year"]
+    try:
+        return ctryDat.loc[(ctryDat["indicator"] == indicator)].iloc[0]["year"]
+    except IndexError:
+        return "NA"
 
 for country in dataDictionary.keys():
     ctryDat = dat.loc[(dat.country == country)]
@@ -247,23 +262,23 @@ for country in dataDictionary.keys():
         safeFormat(indicator(ctryDat, "overweight_adults_adoles_plan")),
     ]
 
-    dataDictionary[country]["table8"][1][1] = safeFormat(indicator_disagg(ctryDat, "diarrhea_zinc", "all"), percent=True)
+    dataDictionary[country]["table8"][1][1] = safeFormat(indicator_disagg(ctryDat, "diarrhea_zinc", "all"))
     dataDictionary[country]["table8"][1][4] = safeFormat(year(ctryDat, "diarrhea_zinc"))
 
-    dataDictionary[country]["table8"][2][1] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Both"), percent=True)
-    dataDictionary[country]["table8"][2][2] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Boys"), percent=True)
-    dataDictionary[country]["table8"][2][3] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Girls"), percent=True)
+    dataDictionary[country]["table8"][2][1] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Both"))
+    dataDictionary[country]["table8"][2][2] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Boys"))
+    dataDictionary[country]["table8"][2][3] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Girls"))
     dataDictionary[country]["table8"][2][4] = safeFormat(year(ctryDat, "vit_a"))
 
-    dataDictionary[country]["table8"][3][1] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Both"), percent=True)
-    dataDictionary[country]["table8"][3][2] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Boys"), percent=True)
-    dataDictionary[country]["table8"][3][3] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Girls"), percent=True)
+    dataDictionary[country]["table8"][3][1] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Both"))
+    dataDictionary[country]["table8"][3][2] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Boys"))
+    dataDictionary[country]["table8"][3][3] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Girls"))
     dataDictionary[country]["table8"][3][4] = safeFormat(year(ctryDat, "iron_supp"))
 
-    dataDictionary[country]["table8"][4][1] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "all"), percent=True)
+    dataDictionary[country]["table8"][4][1] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "all"))
     dataDictionary[country]["table8"][4][4] = safeFormat(year(ctryDat, "iron_and_folic"))
 
-    dataDictionary[country]["table8"][5][1] = safeFormat(indicator_disagg(ctryDat, "iodised_salt", "all"), percent=True)
+    dataDictionary[country]["table8"][5][1] = safeFormat(indicator_disagg(ctryDat, "iodised_salt", "all"))
     dataDictionary[country]["table8"][5][4] = safeFormat(year(ctryDat, "iodised_salt"))
 
 generic_style = [

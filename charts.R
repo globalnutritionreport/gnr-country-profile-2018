@@ -7,7 +7,7 @@ lapply(list.of.packages, require, character.only=T)
 wd <- "~/git/gnr-country-profile-2018"
 setwd(wd)
 
-font_import("fonts",prompt=F)
+# font_import("fonts",prompt=F)
 CairoFonts(
   regular="Averta Regular",
   bold="Averta Bold"
@@ -22,10 +22,10 @@ countries <- unique(dat$country)
 wd <- "~/git/gnr-country-profile-2018/charts"
 setwd(wd)
 
-# unlink(
-#   dir(wd, full.names = TRUE)
-#   , recursive = TRUE
-# )
+unlink(
+  dir(wd, full.names = TRUE)
+  , recursive = TRUE
+)
 blank <- data.frame(x=0,y=0,text="No data")
 no.data <- ggplot(blank,aes(x,y,label=text)) +
   geom_text(size=20,color="grey",family="Averta Regular") +
@@ -160,80 +160,87 @@ safeFormat <- function(vec, prefix="", suffix=""){
 ####Loop####
 for(this.country in countries){
   message(this.country)
-  # dir.create(paste(wd,this.country,sep="/"))
+  dir.create(paste(wd,this.country,sep="/"))
   setwd(paste(wd,this.country,sep="/"))
   countrydat <- subset(dat,country==this.country)
   recipient = subset(countrydat,indicator=="ODA_specific")[1,"recip"]
   #Chart 1 part a and b
-  indicators = c("190_percent","310_percent","GDP_capita_PPP")
+  indicators = c("190_percent","320_percent","GDP_capita_PPP")
   c1data = subset(countrydat,indicator %in% indicators)
   c1data$value = as.numeric(c1data$value)
-  c1data <- subset(c1data,!is.na(year))
+  c1data <- subset(c1data,!is.na(value))
   if(nrow(c1data)!=0){
     c1a.melt <- subset(c1data, indicator %in% c("190_percent","320_percent"))
-    c1a.melt$variable = NA
-    c1a.melt$variable[which(c1a.melt$indicator=="190_percent")] = "$1.90/day"
-    c1a.melt$variable[which(c1a.melt$indicator=="320_percent")] = "$3.20/day"
-    c1a.melt <- subset(c1a.melt,!is.na(value))
-    c1a.melt <- c1a.melt[order(c1a.melt$year),]
-    c1a.melt$year = as.factor(c1a.melt$year)
-    c1a.max <- max(c1a.melt$value,na.rm=TRUE)
-    c1b.melt <- subset(c1data,indicator == "GDP_capita_PPP")
-    c1b.melt$variable = "GDP per capita"
-    c1b.melt <- subset(c1b.melt,!is.na(value))
-    c1b.melt <- c1b.melt[order(c1b.melt$year),]
-    c1b.melt$year = as.factor(c1b.melt$year)
-    c1b.max <- max(c1b.melt$value,na.rm=TRUE)
-    c1a.key.data = data.frame(year=as.numeric(c(NA,NA)),variable=c("$1.90/day","$3.20/day"),value=as.numeric(c(NA,NA)))
-    c1a = ggplot(c1a.melt,aes(year,value,fill=variable)) +
-      geom_bar(position="dodge",stat="identity",color=blue,show.legend=F,size=1) +
-      geom_point(data=c1a.key.data,aes(fill=variable),size=12,color=blue,stroke=1.5,shape=21) +
-      orangeYellowFill +
-      guides(fill=guide_legend(title=element_blank(),byrow=TRUE)) +
-      simple_style  +
-      scale_y_continuous(expand = c(0,0),limits=c(0,max(c1a.max*1.1,1))) +
-      # expand_limits(y=c1a.max*1.1) +
-      theme(
-        legend.position="top"
-        ,legend.text = element_text(size=35,color=blue,family="Averta Regular")
-        ,legend.justification=c(0,0)
-        ,legend.direction="vertical"
-        ,axis.title.x=element_blank()
-        ,axis.title.y=element_blank()
-        ,axis.ticks=element_blank()
-        ,axis.line.y = element_blank()
-        ,axis.line.x = element_line(color=blue, size = 1.1)
-        ,axis.text.y = element_blank()
-        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
-        ,legend.background = element_rect(fill = "transparent", colour = "transparent")
-        ,legend.key = element_blank()
-      ) + geom_text(size=9,aes(label=safeFormat(value,suffix="%")),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
+    if(nrow(c1a.melt)>0){
+      c1a.melt$variable = NA
+      c1a.melt$variable[which(c1a.melt$indicator=="190_percent")] = "$1.90/day"
+      c1a.melt$variable[which(c1a.melt$indicator=="320_percent")] = "$3.20/day"
+      c1a.melt <- subset(c1a.melt,!is.na(value))
+      c1a.melt <- c1a.melt[order(c1a.melt$year),]
+      c1a.melt$year = as.factor(c1a.melt$year)
+      c1a.max <- max(c1a.melt$value,na.rm=TRUE)
+      c1a.key.data = data.frame(year=as.numeric(c(NA,NA)),variable=c("$1.90/day","$3.20/day"),value=as.numeric(c(NA,NA)))
+      c1a = ggplot(c1a.melt,aes(year,value,fill=variable)) +
+        geom_bar(position="dodge",stat="identity",color=blue,show.legend=F,size=1) +
+        geom_point(data=c1a.key.data,aes(fill=variable),size=12,color=blue,stroke=1.5,shape=21) +
+        orangeYellowFill +
+        guides(fill=guide_legend(title=element_blank(),byrow=TRUE)) +
+        simple_style  +
+        scale_y_continuous(expand = c(0,0),limits=c(0,max(c1a.max*1.1,1))) +
+        # expand_limits(y=c1a.max*1.1) +
+        theme(
+          legend.position="top"
+          ,legend.text = element_text(size=35,color=blue,family="Averta Regular")
+          ,legend.justification=c(0,0)
+          ,legend.direction="vertical"
+          ,axis.title.x=element_blank()
+          ,axis.title.y=element_blank()
+          ,axis.ticks=element_blank()
+          ,axis.line.y = element_blank()
+          ,axis.line.x = element_line(color=blue, size = 1.1)
+          ,axis.text.y = element_blank()
+          ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
+          ,legend.background = element_rect(fill = "transparent", colour = "transparent")
+          ,legend.key = element_blank()
+        ) + geom_text(size=9,aes(label=safeFormat(value,suffix="%")),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
+    }
     if(nrow(c1a.melt)==0){c1a.missing<-TRUE}else{c1a.missing<-FALSE}
-    c1b.key.data = data.frame(year=as.numeric(c(NA)),variable=c("GDP per capita"),value=as.numeric(c(NA)))
-    c1b = ggplot(c1b.melt,aes(year,value,fill=variable)) +
-      geom_bar(position="dodge",stat="identity",color=blue,show.legend=F,size=1) +
-      geom_point(data=c1b.key.data,aes(fill=variable),size=12,color=blue,stroke=1.5,shape=21) +
-      lightBlueFill +
-      guides(fill=guide_legend(title=element_blank(),byrow=TRUE)) +
-      simple_style  +
-      scale_y_continuous(expand = c(0,0)) +
-      expand_limits(y=c1b.max*1.1) +
-      theme(
-        legend.position="top"
-        ,legend.text = element_text(size=35,color=blue,family="Averta Regular")
-        ,legend.justification=c(0,0)
-        ,legend.direction="vertical"
-        ,axis.title.x=element_blank()
-        ,axis.title.y=element_blank()
-        ,axis.ticks=element_blank()
-        ,axis.line.y = element_blank()
-        ,axis.line.x = element_line(color=blue, size = 1.1)
-        ,axis.text.y = element_blank()
-        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
-        ,legend.background = element_rect(fill = "transparent", colour = "transparent")
-        ,legend.key = element_blank()
-        ,legend.key.size = unit(2.2,"lines")
-      ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
+    c1b.melt <- subset(c1data,indicator == "GDP_capita_PPP")
+    if(nrow(c1b.melt)>0){
+      c1b.melt$variable = "GDP per capita"
+      c1b.melt <- subset(c1b.melt,!is.na(value))
+      c1b.melt <- c1b.melt[order(c1b.melt$year),]
+      top4 = c1b.melt$year[c(max(nrow(c1b.melt)-3,1):nrow(c1b.melt))]
+      c1b.melt = subset(c1b.melt,year %in% top4)
+      c1b.melt$year = as.factor(c1b.melt$year)
+      c1b.max <- max(c1b.melt$value,na.rm=TRUE)
+      c1b.key.data = data.frame(year=as.numeric(c(NA)),variable=c("GDP per capita"),value=as.numeric(c(NA)))
+      c1b = ggplot(c1b.melt,aes(year,value,fill=variable)) +
+        geom_bar(position="dodge",stat="identity",color=blue,show.legend=F,size=1) +
+        geom_point(data=c1b.key.data,aes(fill=variable),size=12,color=blue,stroke=1.5,shape=21) +
+        lightBlueFill +
+        guides(fill=guide_legend(title=element_blank(),byrow=TRUE)) +
+        simple_style  +
+        scale_y_continuous(expand = c(0,0)) +
+        expand_limits(y=c1b.max*1.1) +
+        theme(
+          legend.position="top"
+          ,legend.text = element_text(size=35,color=blue,family="Averta Regular")
+          ,legend.justification=c(0,0)
+          ,legend.direction="vertical"
+          ,axis.title.x=element_blank()
+          ,axis.title.y=element_blank()
+          ,axis.ticks=element_blank()
+          ,axis.line.y = element_blank()
+          ,axis.line.x = element_line(color=blue, size = 1.1)
+          ,axis.text.y = element_blank()
+          ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
+          ,legend.background = element_rect(fill = "transparent", colour = "transparent")
+          ,legend.key = element_blank()
+          ,legend.key.size = unit(2.2,"lines")
+        ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
+    }
+    
     if(nrow(c1b.melt)==0){c1b.missing<-TRUE}else{c1b.missing<-FALSE}
   }else{
     c1a.missing <- TRUE
@@ -246,6 +253,8 @@ for(this.country in countries){
   c2data$value = as.numeric(c2data$value)
   c2data = subset(c2data, !is.na(value))
   c2data <- c2data[order(c2data$year),]
+  top4 = c2data$year[c((nrow(c2data)-3):nrow(c2data))]
+  c2data = subset(c2data,year %in% top4)
   c2data$year = as.factor(c2data$year)
   c2.max <- max(c2data$value,na.rm=TRUE)
   c2 <- ggplot(c2data,aes(year,value,fill="Deaths per 1,000 live births")) +
@@ -286,6 +295,8 @@ for(this.country in countries){
     c3b.data$variable = c3b.data$indicator
     c3b.data <- subset(c3b.data,!is.na(value))
     c3b.data <- c3b.data[order(c3b.data$year),]
+    c3b.years = c(2000,2004,2008,2012,2016)
+    c3b.data = subset(c3b.data,year %in% c3b.years)
     c3b.data$year <- factor(c3b.data$year)
     c3c.data <- subset(c3data,indicator==indicators[3])
     c3c.data$variable = c3c.data$indicator
@@ -461,42 +472,47 @@ for(this.country in countries){
   c5data <- ddply(c5data, .(year),
                        transform, pos = cumsum(value) - (0.5 * value)
                    ,valid = sum(!is.na(value),na.rm=TRUE))
-  c5data <- subset(c5data,valid>=1)
-  c5.key.data = data.frame(
-    indicator = c5names,
-    year = as.numeric(rep(NA,5)),
-    value = as.numeric(rep(NA,5)),
-    pos = as.numeric(rep(NA,5)),
-    valid = as.numeric(rep(NA,5))
-  )
-  c5 <- ggplot(c5data,aes(year,value,fill=indicator)) +
-    geom_bar(stat="identity",width=0.7,color=blue,size=1,show.legend=F) +
-    geom_point(data=c5.key.data,aes(fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
-    scale_fill_manual(
-      labels=c5names
-      ,values=quintileFillValues
-      ,drop = FALSE
-    ) +
-    guides(fill=guide_legend(title=element_blank(),nrow=2,byrow=TRUE)) +
-    simple_style  +
-    scale_y_continuous(expand = c(0,0)) +
-    theme(
-      legend.position="top"
-      ,legend.text = element_text(size=30,color=blue,family="Averta Regular")
-      ,legend.justification=c(0,0)
-      ,legend.direction="horizontal"
-      ,axis.title.x=element_blank()
-      ,axis.title.y=element_blank()
-      ,axis.ticks=element_blank()
-      ,axis.line.y = element_blank()
-      ,axis.line.x = element_line(color=blue, size = 1.1)
-      ,axis.text.y = element_blank()
-      ,axis.text.x = element_text(size=35,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
-      ,legend.background = element_rect(fill = "transparent", colour = "transparent")
-      ,legend.key = element_rect(fill = "transparent", colour = "transparent")
-      ,legend.key.size = unit(2.2,"lines")
-    ) + geom_text(data=subset(c5data,value>3),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
-    scale_color_manual(breaks=c5names,values=c(white,white,white,blue,blue),drop=FALSE)
+  if(nrow(c5data)>0){
+    c5data <- subset(c5data,valid>=1)
+    c5.key.data = data.frame(
+      indicator = c5names,
+      year = as.numeric(rep(NA,5)),
+      value = as.numeric(rep(NA,5)),
+      pos = as.numeric(rep(NA,5)),
+      valid = as.numeric(rep(NA,5))
+    )
+    c5 <- ggplot(c5data,aes(year,value,fill=indicator)) +
+      geom_bar(stat="identity",width=0.7,color=blue,size=1,show.legend=F) +
+      geom_point(data=c5.key.data,aes(fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
+      scale_fill_manual(
+        labels=c5names
+        ,values=quintileFillValues
+        ,drop = FALSE
+      ) +
+      guides(fill=guide_legend(title=element_blank(),nrow=2,byrow=TRUE)) +
+      simple_style  +
+      scale_y_continuous(expand = c(0,0)) +
+      theme(
+        legend.position="top"
+        ,legend.text = element_text(size=30,color=blue,family="Averta Regular")
+        ,legend.justification=c(0,0)
+        ,legend.direction="horizontal"
+        ,axis.title.x=element_blank()
+        ,axis.title.y=element_blank()
+        ,axis.ticks=element_blank()
+        ,axis.line.y = element_blank()
+        ,axis.line.x = element_line(color=blue, size = 1.1)
+        ,axis.text.y = element_blank()
+        ,axis.text.x = element_text(size=35,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
+        ,legend.background = element_rect(fill = "transparent", colour = "transparent")
+        ,legend.key = element_rect(fill = "transparent", colour = "transparent")
+        ,legend.key.size = unit(2.2,"lines")
+      ) + geom_text(data=subset(c5data,value>3),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
+      scale_color_manual(breaks=c5names,values=c(white,white,white,blue,blue),drop=FALSE)
+  }else{
+    c6 = no.data
+  }
+
   #Chart 6
   indicators = c("basic_sanitation","limited_sanitation","open_defecation","safely_managed_sanitation","unimproved_sanitation")
   c6names = c("Basic","Limited","Open defecation","Safely managed","Unimproved")
@@ -516,42 +532,47 @@ for(this.country in countries){
   c6data <- ddply(c6data, .(year),
                   transform, pos = cumsum(value) - (0.5 * value)
                   ,valid = sum(!is.na(value),na.rm=TRUE))
-  c6data <- subset(c6data,valid>=1)
-  c6.key.data = data.frame(
-    indicator = c6names,
-    year = as.numeric(rep(NA,5)),
-    value = as.numeric(rep(NA,5)),
-    pos = as.numeric(rep(NA,5)),
-    valid = as.numeric(rep(NA,5))
-  )
-  c6 <- ggplot(c6data,aes(year,value,fill=indicator)) +
-    geom_bar(stat="identity",width=0.7,color=blue,size=1,show.legend=F) +
-    geom_point(data=c6.key.data,aes(fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
-    scale_fill_manual(
-      labels=c6names
-      ,values=quintileFillValues
-      ,drop = FALSE
-    ) +
-    guides(fill=guide_legend(title=element_blank(),nrow=2,byrow=TRUE)) +
-    simple_style  +
-    scale_y_continuous(expand = c(0,0)) +
-    theme(
-      legend.position="top"
-      ,legend.text = element_text(size=30,color=blue,family="Averta Regular")
-      ,legend.justification=c(0,0)
-      ,legend.direction="horizontal"
-      ,axis.title.x=element_blank()
-      ,axis.title.y=element_blank()
-      ,axis.ticks=element_blank()
-      ,axis.line.y = element_blank()
-      ,axis.line.x = element_line(color=blue, size = 1.1)
-      ,axis.text.y = element_blank()
-      ,axis.text.x = element_text(size=35,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
-      ,legend.background = element_rect(fill = "transparent", colour = "transparent")
-      ,legend.key = element_rect(fill = "transparent", colour = "transparent")
-      ,legend.key.size = unit(2.2,"lines")
-    ) + geom_text(data=subset(c6data,value>3),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
-    scale_color_manual(breaks=c6names,values=c(white,white,white,blue,blue),drop=FALSE)
+  if(nrow(c6data)>0){
+    c6data <- subset(c6data,valid>=1)
+    c6.key.data = data.frame(
+      indicator = c6names,
+      year = as.numeric(rep(NA,5)),
+      value = as.numeric(rep(NA,5)),
+      pos = as.numeric(rep(NA,5)),
+      valid = as.numeric(rep(NA,5))
+    )
+    c6 <- ggplot(c6data,aes(year,value,fill=indicator)) +
+      geom_bar(stat="identity",width=0.7,color=blue,size=1,show.legend=F) +
+      geom_point(data=c6.key.data,aes(fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
+      scale_fill_manual(
+        labels=c6names
+        ,values=quintileFillValues
+        ,drop = FALSE
+      ) +
+      guides(fill=guide_legend(title=element_blank(),nrow=2,byrow=TRUE)) +
+      simple_style  +
+      scale_y_continuous(expand = c(0,0)) +
+      theme(
+        legend.position="top"
+        ,legend.text = element_text(size=30,color=blue,family="Averta Regular")
+        ,legend.justification=c(0,0)
+        ,legend.direction="horizontal"
+        ,axis.title.x=element_blank()
+        ,axis.title.y=element_blank()
+        ,axis.ticks=element_blank()
+        ,axis.line.y = element_blank()
+        ,axis.line.x = element_line(color=blue, size = 1.1)
+        ,axis.text.y = element_blank()
+        ,axis.text.x = element_text(size=35,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
+        ,legend.background = element_rect(fill = "transparent", colour = "transparent")
+        ,legend.key = element_rect(fill = "transparent", colour = "transparent")
+        ,legend.key.size = unit(2.2,"lines")
+      ) + geom_text(data=subset(c6data,value>3),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
+      scale_color_manual(breaks=c6names,values=c(white,white,white,blue,blue),drop=FALSE)
+  }else{
+    c6 = no.data
+  }
+ 
   #Chart 7
   indicators = c("agriculture_expenditure","education_spending","health_spending","social_protection_spending")
   c7names = c("Agriculture","Education","Health","Social protection")
@@ -571,16 +592,16 @@ for(this.country in countries){
   c7data <- ddply(c7data, .(year),
                   transform, pos = cumsum(value) - (0.5 * value)
                   ,valid = sum(!is.na(value),na.rm=TRUE))
-  c7data <- subset(c7data,valid>=1)
-  c7.key.data = data.frame(
-    indicator = c7names,
-    year = as.numeric(rep(NA,4)),
-    value = as.numeric(rep(NA,4)),
-    pos = as.numeric(rep(NA,4)),
-    valid = as.numeric(rep(NA,4))
-  )
+  
   if(nrow(c7data)>0){
-
+    c7data <- subset(c7data,valid>=1)
+    c7.key.data = data.frame(
+      indicator = c7names,
+      year = as.numeric(rep(NA,4)),
+      value = as.numeric(rep(NA,4)),
+      pos = as.numeric(rep(NA,4)),
+      valid = as.numeric(rep(NA,4))
+    )
   uniqueYears <- length(unique(c7data$year))
   if(uniqueYears>1){
     barWidth = 0.7
@@ -667,7 +688,7 @@ for(this.country in countries){
     }
     return(c)
   }
-  grouped_bar = function(countrydat, ind, disagg, disagg.values, fill=orangeYellowFill, percent=F, legend=F, spacing=1,byrow=F,nrow=2){
+  grouped_bar = function(countrydat, ind, disagg, disagg.values, fill=orangeYellowFill, percent=F, legend=F, spacing=1,byrow=F,nrow=2,subset.years=F){
     cdata = subset(countrydat, (indicator==ind & disaggregation==disagg))
     cdata$value = as.numeric(cdata$value)
     if(percent){
@@ -675,6 +696,9 @@ for(this.country in countries){
     }
     cdata = subset(cdata, !is.na(value))
     cdata <- cdata[order(cdata$year),]
+    if(subset.years){
+      cdata = subset(cdata,year %in% subset.years)
+    }
     cdata$year = as.factor(cdata$year)
     cdata$disagg.value = factor(cdata$disagg.value,levels=disagg.values)
     c.max <- max(cdata$value,na.rm=TRUE)
@@ -745,7 +769,7 @@ for(this.country in countries){
     return(c)
   }
   # Charts 8-16
-  c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Boys","Girls","Both"),percent=T,fill=yellowOrangeRedFill,legend=T,byrow=T,nrow=3)
+  c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Boys","Girls","Both"),percent=T,fill=yellowOrangeRedFill,legend=T,byrow=T,nrow=3,subset.years=c(1993,2000,2003,2009,2014))
   c9 = grouped_line(countrydat, "stunting_percent","gender",c("Boys","Girls","Both"),percent=T,color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
   c10 = grouped_line(countrydat, "overweight_percent","gender",c("Boys","Girls","Both"),percent=T,color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
   c11 = grouped_bar(countrydat, "wasting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,fill=quintileFill,legend=T,byrow=T,nrow=3)
@@ -784,11 +808,12 @@ for(this.country in countries){
   )
   
   label.vals = combinations
+  if(length(wasting)>0){
   label.vals["A&D"] = wasting
   label.vals["B&D"] = stunting
   label.vals["C&D"] = overweight
   label.vals["D"] = free
-
+  }
   label.text = percent(label.vals)
   label.text[which(label.vals<=0.02)] = ""
   
@@ -818,6 +843,8 @@ for(this.country in countries){
   c18data = subset(countrydat,indicator %in% indicators)
   c18data$value = as.numeric(c18data$value)
   c18data = subset(c18data, !is.na(value))
+  c18data = data.table(c18data)
+  c18data = c18data[,.SD[which.max(.SD$year)],by=.(indicator,disagg.value)]
   c18.max <- max(c18data$value,na.rm=TRUE)
   c18.min = 0
   for(j in 1:length(indicators)){
@@ -918,125 +945,136 @@ for(this.country in countries){
     }
   }
   # Charts 19-27
-  c19 = grouped_line(countrydat, "adolescent_underweight","gender",c("Boys","Girls"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
-  c20 = grouped_line(countrydat, "adolescent_overweight","gender",c("Boys","Girls"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
-  c21 = grouped_line(countrydat, "adolescent_obesity","gender",c("Boys","Girls"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
-  c22 = grouped_line(countrydat, "adult_diabetes","gender",c("Male","Female"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
-  c23 = grouped_line(countrydat, "adult_overweight","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
-  c24 = grouped_line(countrydat, "adult_obesity","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
-  c25 = grouped_line(countrydat, "adult_blood_pressure","gender",c("Male","Female"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill)
+  c19 = grouped_line(countrydat, "adolescent_underweight","gender",c("Boys","Girls"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
+  c20 = grouped_line(countrydat, "adolescent_overweight","gender",c("Boys","Girls"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
+  c21 = grouped_line(countrydat, "adolescent_obesity","gender",c("Boys","Girls"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
+  c22 = grouped_line(countrydat, "adult_diabetes","gender",c("Male","Female"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
+  c23 = grouped_line(countrydat, "adult_overweight","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
+  c24 = grouped_line(countrydat, "adult_obesity","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
+  c25 = grouped_line(countrydat, "adult_blood_pressure","gender",c("Male","Female"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
   c26 = grouped_line(countrydat, "adult_anemia","pregnancy",c("All women","Pregnant women","Non-pregnant women"),percent=T,color=quintileColor,fill=quintileFill,legend=T,factor.years=F)
-  c27 = single_bar(countrydat, "adult_sodium",c("All (grams)"),percent=T,fill=yellowOrangeRedFill,legend=T)
+  c27 = tryCatch({single_bar(countrydat, "adult_sodium",c("All (grams)"),percent=T,fill=yellowOrangeRedFill,legend=T)},error=function(e){message(e);no.data})
   
   # Chart 28
   c28.data = subset(countrydat,component == "M")
-  this.region = c28.data$region[1]
-  c28.data$value = as.numeric(c28.data$value)
-  setnames(c28.data,"rec","recommended")
-  c28.data$percent = c28.data$value/c28.data$recommended
-  # Outliers
-  calc_outlier = function(sd){
-    results = c()
-    outlier_val = 2.1
-    for(i in 1:nrow(sd)){
-      row = sd[i,]
-      if(row$outlier==1){
-        results = c(results,outlier_val)
-        outlier_val = outlier_val + 0.1
-      }else{
-        results = c(results,row$percent)
+  if(nrow(c28.data)>0){
+    this.region = c28.data$region[1]
+    c28.data$value = as.numeric(c28.data$value)
+    setnames(c28.data,"rec","recommended")
+    c28.data$percent = c28.data$value/c28.data$recommended
+    # Outliers
+    calc_outlier = function(sd){
+      results = c()
+      outlier_val = 2.1
+      for(i in 1:nrow(sd)){
+        row = sd[i,]
+        if(row$outlier==1){
+          results = c(results,outlier_val)
+          outlier_val = outlier_val + 0.1
+        }else{
+          results = c(results,row$percent)
+        }
       }
+      return(results)
     }
-    return(results)
-  }
-  setnames(c28.data,"indicator","food")
-  setnames(c28.data,"disagg.value","class")
-  c28.data = c28.data[order(c28.data$food, c28.data$percent),]
-  c28.data$outlier = 0
-  c28.data$outlier[which(c28.data$percent>2)] = 1
-  c28.data$percent[which(c28.data$percent>2)] = 2.1
-  c28.data = data.table(c28.data)
-  c28.data[,percent:=calc_outlier(.SD),by=.(food)]
-  nat.order = subset(c28.data,class=="National")
-  nat.order = nat.order[order(nat.order$food),]
-  c28.data$food = factor(c28.data$food,levels=rev(nat.order$food))
-  c28.data = c28.data[order(-c28.data$food),]
-  c28.data$column = c(rep(1,21),rep(2,24))
-  bar.dat = unique(c28.data[,c("food","recommended","column"),with=F])
-  bar.dat$class = this.country
-  c28.max = min(max(c28.data$percent,na.rm=T),2)
-  
-  c28.data$class[which(c28.data$class=="National")] = this.country
-  c28.data$class[which(c28.data$class=="Regional")] = this.region
-  
-  c28.data$class = factor(c28.data$class,levels=c(this.country,this.region,"Global"))
-  
-  i = 1
-  c28.data.sub = subset(c28.data,column==i)
-  trmel = data.frame(food="",recommended=0,example=T,class=this.country)
-  c28.data.sub = rbindlist(list(c28.data.sub,trmel),fill=T)
-  bar.dat.sub = subset(bar.dat,column==i)
-  bar.dat.sub = rbindlist(list(bar.dat.sub,trmel),fill=T)
-  c28a =
-    ggplot(c28.data.sub,aes(x=food,colour=class)) +
-    geom_bar(data=bar.dat.sub,aes(y=c28.max),fill="white",color=blue,stat="identity",width=0.4) +
-    geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
-    geom_point(data=subset(c28.data.sub,outlier==1),aes(y=percent),size=10,show.legend=F) +
-    geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2) +
-    geom_text(data=subset(c28.data.sub,is.na(example)),aes(y=1,label=paste(round(recommended),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
-    geom_text(data=subset(c28.data.sub,example==T),aes(y=1,label="Midpoint of TRMEL"),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
-    geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round(value)),color=blue,size=8,family="Averta Regular") +
-    annotate("text", x=8, y=0.3, label="0%/0g of TRMEL",size=9,color=blue,family="Averta Regular") +
+    setnames(c28.data,"indicator","food")
+    setnames(c28.data,"disagg.value","class")
+    c28.data = c28.data[order(c28.data$food, c28.data$percent),]
+    c28.data$outlier = 0
+    c28.data$outlier[which(c28.data$percent>2)] = 1
+    c28.data$percent[which(c28.data$percent>2)] = 2.1
+    c28.data = data.table(c28.data)
+    c28.data[,percent:=calc_outlier(.SD),by=.(food)]
+    nat.order = subset(c28.data,class=="National")
+    nat.order = nat.order[order(nat.order$food),]
+    c28.data$food = factor(c28.data$food,levels=rev(nat.order$food))
+    c28.data = c28.data[order(-c28.data$food),]
+    c28.data$column = c(rep(1,21),rep(2,24))
+    bar.dat = unique(c28.data[,c("food","recommended","column"),with=F])
+    bar.dat$class = this.country
+    c28.max = min(max(c28.data$percent,na.rm=T),2)
+    
+    c28.data$class[which(c28.data$class=="National")] = this.country
+    c28.data$class[which(c28.data$class=="Regional")] = this.region
+    
+    c28.data$class = factor(c28.data$class,levels=c(this.country,this.region,"Global"))
+    
+    i = 1
+    c28.data.sub = subset(c28.data,column==i)
+    trmel = data.frame(food="",recommended=0,example=T,class=this.country)
+    c28.data.sub = rbindlist(list(c28.data.sub,trmel),fill=T)
+    bar.dat.sub = subset(bar.dat,column==i)
+    bar.dat.sub = rbindlist(list(bar.dat.sub,trmel),fill=T)
+    c28a =
+      ggplot(c28.data.sub,aes(x=food,colour=class)) +
+      geom_bar(data=bar.dat.sub,aes(y=c28.max),fill="white",color=blue,stat="identity",width=0.4) +
+      geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
+      geom_point(data=subset(c28.data.sub,outlier==1),aes(y=percent),size=10,show.legend=F) +
+      geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2) +
+      geom_text(data=subset(c28.data.sub,is.na(example)),aes(y=1,label=paste(round(recommended),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
+      geom_text(data=subset(c28.data.sub,example==T),aes(y=1,label="Midpoint of TRMEL"),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
+      geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round(value)),color=blue,size=8,family="Averta Regular") +
+      annotate("text", x=8, y=0.3, label="0%/0g of TRMEL",size=9,color=blue,family="Averta Regular") +
       annotate("text", x=8, y=1.7, label="200% of TRMEL",size=9,color=blue,family="Averta Regular") +
-    quintileColor + 
-    coord_flip() +
-    theme_classic() +
-    theme(
-      axis.title=element_blank(),
-      axis.line=element_blank(),
-      axis.ticks=element_blank(),
-      axis.text.x = element_blank(),
-      axis.text.y = element_text(size=22,color=blue,family="Averta Regular"),
-      legend.title=element_blank(),
-      legend.position="left",
-      legend.text = element_text(size=22,color=blue,family="Averta Regular"),
-      legend.background = element_rect(fill = "transparent", colour = "transparent"),
-      legend.key = element_rect(fill = "transparent", colour = "transparent"),
-      legend.key.size = unit(2.5,"lines")
-    )
+      quintileColor + 
+      coord_flip() +
+      theme_classic() +
+      theme(
+        axis.title=element_blank(),
+        axis.line=element_blank(),
+        axis.ticks=element_blank(),
+        axis.text.x = element_blank(),
+        axis.text.y = element_text(size=22,color=blue,family="Averta Regular"),
+        legend.title=element_blank(),
+        legend.position="left",
+        legend.text = element_text(size=22,color=blue,family="Averta Regular"),
+        legend.background = element_rect(fill = "transparent", colour = "transparent"),
+        legend.key = element_rect(fill = "transparent", colour = "transparent"),
+        legend.key.size = unit(2.5,"lines")
+      )
+    
+    i = 2
+    c28.data.sub = subset(c28.data,column==i)
+    bar.dat.sub = subset(bar.dat,column==i)
+    c28b = ggplot(c28.data.sub,aes(x=food,colour=class)) +
+      geom_bar(data=bar.dat.sub,aes(y=c28.max),fill="white",color=blue,stat="identity",width=0.4) +
+      geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
+      geom_point(data=subset(c28.data.sub,outlier==1),aes(y=percent),size=10,show.legend=F) +
+      geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2,show.legend=F) +
+      geom_text(aes(y=1,label=paste(round(recommended),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
+      geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round(value)),color=blue,size=8,family="Averta Regular") +
+      quintileColor + 
+      coord_flip() +
+      theme_classic() +
+      theme(
+        axis.title=element_blank(),
+        axis.line=element_blank(),
+        axis.ticks=element_blank(),
+        axis.text.x = element_blank(),
+        axis.text.y = element_text(size=22,color=blue,family="Averta Regular"),
+        legend.title=element_blank(),
+        legend.text = element_text(size=22,color=blue,family="Averta Regular"),
+        legend.background = element_rect(fill = "transparent", colour = "transparent"),
+        legend.key = element_rect(fill = "transparent", colour = "transparent"),
+        legend.key.size = unit(2.5,"lines")
+      )
+  }else{
+    c28a = no.data
+    c28b = no.data
+  }
   
-  i = 2
-  c28.data.sub = subset(c28.data,column==i)
-  bar.dat.sub = subset(bar.dat,column==i)
-  c28b = ggplot(c28.data.sub,aes(x=food,colour=class)) +
-    geom_bar(data=bar.dat.sub,aes(y=c28.max),fill="white",color=blue,stat="identity",width=0.4) +
-    geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
-    geom_point(data=subset(c28.data.sub,outlier==1),aes(y=percent),size=10,show.legend=F) +
-    geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2,show.legend=F) +
-    geom_text(aes(y=1,label=paste(round(recommended),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
-    geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round(value)),color=blue,size=8,family="Averta Regular") +
-    quintileColor + 
-    coord_flip() +
-    theme_classic() +
-    theme(
-      axis.title=element_blank(),
-      axis.line=element_blank(),
-      axis.ticks=element_blank(),
-      axis.text.x = element_blank(),
-      axis.text.y = element_text(size=22,color=blue,family="Averta Regular"),
-      legend.title=element_blank(),
-      legend.text = element_text(size=22,color=blue,family="Averta Regular"),
-      legend.background = element_rect(fill = "transparent", colour = "transparent"),
-      legend.key = element_rect(fill = "transparent", colour = "transparent"),
-      legend.key.size = unit(2.5,"lines")
-    )
   # Chart 29
   indicators = c("ODA_received","ODA_specific")
-  if(recipient){
-    c29names = c("% of total ODA","ODA received (US$ billions)")
+  if(!is.na(recipient)){
+    if(recipient){
+      c29names = c("% of total ODA","ODA received (US$ billions)")
+    }else{
+      c29names = c("% of total ODA","ODA disbursed (US$ billions)")
+    }
   }else{
-    c29names = c("% of total ODA","ODA disbursed (US$ billions)")
+    c29names = c("% of total ODA","ODA received (US$ billions)")
   }
+  
   
   c29data = subset(countrydat,indicator %in% indicators)
   c29data$value = as.numeric(c29data$value)
@@ -1342,14 +1380,21 @@ for(this.country in countries){
   Cairo(family="Averta Regular",file="c16.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c16)},error=function(e){message(e);print(no.data)})
   dev.off()
-  png(filename="c17.png",width=750,height=600,units="px",bg="white",type="cairo",family="Averta Regular")
-  print(plot(c17,
-       legend = list(labels=c("Wasted","Stunting","Overweight","Free from"),font="arial",vgap=2,fontsize=25,fontcolor=blue,fontfamily="Averta Regular")
-       ,edges = list(col=blue,lwd=3)
-       ,quantities = list(labels=label.text,fontsize=20,col=blue,family="Averta Regular")
-       ,fills=list(fill=c(yellow,orange,light.blue,grey),alpha=1)
-  ))
-  dev.off()
+  if(length(free)>0){
+    png(filename="c17.png",width=750,height=600,units="px",bg="white",type="cairo",family="Averta Regular")
+    print(plot(c17,
+               legend = list(labels=c("Wasted","Stunting","Overweight","Free from"),font="arial",vgap=2,fontsize=25,fontcolor=blue,fontfamily="Averta Regular")
+               ,edges = list(col=blue,lwd=3)
+               ,quantities = list(labels=label.text,fontsize=20,col=blue,family="Averta Regular")
+               ,fills=list(fill=c(yellow,orange,light.blue,grey),alpha=1)
+    ))
+    dev.off()
+  }else{
+    Cairo(family="Averta Regular",file="c17.png",width=750,height=600,units="px",bg="white")
+    print(no.data)
+    dev.off()
+  }
+  
   #Have both c18a and c18b
   if(!c18a.missing && !c18b.missing){
     Cairo(family="Averta Regular",file="c18a.png",width=1350,height=600,units="px",bg="white")
