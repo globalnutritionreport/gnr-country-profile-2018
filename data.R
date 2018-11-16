@@ -1426,8 +1426,8 @@ master_dat = merge(master_dat,isos,by="iso3")
 master_dat$country = master_dat$key.country
 master_dat$key.country = NULL
 
-regions = region_key[c("ISO-alpha3.Code","GNR1")]
-names(regions) = c("iso3","region")
+regions = region_key[c("ISO-alpha3.Code","GNR1","GNR2")]
+names(regions) = c("iso3","region","subregion")
 master_dat = merge(master_dat,regions,all.x=T)
 
 master_dat$year = unfactor(master_dat$year)
