@@ -160,7 +160,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 
 ####End setup####
 ####Loop####
-countries = c("Kenya","Zimbabwe","United Kingdom of Great Britain and Northern Ireland")
+# countries = c("Kenya","Zimbabwe","United Kingdom of Great Britain and Northern Ireland")
 for(this.country in countries){
   message(this.country)
   dir.create(paste(wd,this.country,sep="/"))
@@ -318,7 +318,7 @@ for(this.country in countries){
         geom_bar(position="dodge",stat="identity",color=blue,show.legend=FALSE,size=1) +
         geom_point(data=c3a.key.data,aes(fill=variable),size=12,color=blue,stroke=1.5,shape=21) +
         scale_fill_manual(
-          labels=c(bquote(atop('Undernourishment' ^ 1,'(% population)')))
+          labels=c(bquote(atop('Undernourishment','(% population)')))
           ,breaks=c(indicators[1])
           ,values=c(yellow)
         ) +
@@ -358,7 +358,7 @@ for(this.country in countries){
       geom_bar(position="dodge",stat="identity",color=blue,width=barWidth,show.legend=FALSE,size=1) +
       geom_point(data=c3b.key.data,aes(fill=variable),size=12,color=blue,stroke=1.5,shape=21) +
       scale_fill_manual(
-        labels=c(bquote(atop('Availability of fruit and' ^ 1,'vegetables (grams)')))
+        labels=c(bquote(atop('Availability of fruit and','vegetables (grams)')))
         ,breaks=c(indicators[2])
         ,values=c(orange)
       ) +
@@ -392,7 +392,7 @@ for(this.country in countries){
       geom_bar(position="dodge",stat="identity",color=blue,show.legend=FALSE,size=1) +
       geom_point(data=c3c.key.data,aes(fill=variable),size=12,color=blue,stroke=1.5,shape=21) +
       scale_fill_manual(
-        labels=c(bquote(atop('% of total calories' ^ 2,'from non-staples')))
+        labels=c(bquote(atop('% of total calories','from non-staples')))
         ,breaks=c(indicators[3])
         ,values=c(lighter.blue)
       ) +
