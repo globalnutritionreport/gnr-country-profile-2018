@@ -7,6 +7,12 @@ lapply(list.of.packages, require, character.only=T)
 wd <- "~/git/gnr-country-profile-2018/Dataset working directory"
 setwd(wd)
 
+firstup <- function(x) {
+  x = tolower(x)
+  substr(x, 1, 1) <- toupper(substr(x, 1, 1))
+  return(x)
+}
+
 csvs = list.files(pattern="*.csv")
 xlsxs = list.files(pattern="*.xlsx")
 xlss = list.files(pattern="*.xls")
@@ -910,6 +916,373 @@ master_dat_list[[master_dat_index]] = solid_foods_income
 master_dat_index = master_dat_index + 1
 
 # OVERVIEW, POLICY, TRACKING, and UNDERLYING XLSX (Starting 32)
+dat = read.xlsx(
+  "OVERVIEW - childhood stunting, anaemia and overweight in adult women.xlsx"
+  ,sheet=2
+  ,rows=c(5:146)
+  ,cols=c(2:4)
+  )
+overview = dat
+names(overview) = c("country","iso3","burden_text")
+overview$burden_text = tolower(overview$burden_text)
+overview$count = 1
+overview$count[which(grepl("and",overview$burden_text))] = overview$count[which(grepl("and",overview$burden_text))] + 1
+overview$count[which(grepl(",",overview$burden_text))] = overview$count[which(grepl(",",overview$burden_text))] + 1
+country_classes = c(
+  "a country experiencing a single burden",
+  "a country experiencing a double burden",
+  "a country experiencing a triple burden"
+)
+overview$country_class = country_classes[overview$count]
+overview$count = NULL
+overview = melt(overview,id.vars=c("country","iso3"),variable.name="indicator")
+overview$component = "A"
+overview$disaggregation = "all"
+master_dat_list[[master_dat_index]] = overview
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx("POLICY - FBDG.xlsx")
+dat = subset(dat,!is.na(X1))
+fbdg = dat
+names(fbdg) = c("iso3","country","value")
+fbdg$indicator = "fbdg"
+fbdg$component = "A"
+fbdg$disaggregation = "all"
+master_dat_list[[master_dat_index]] = fbdg
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "POLICY - GINA.xlsx"
+  ,rows = c(2:196)
+  ,cols = c(2:11,14)
+  )
+plans = dat
+names(plans) = c(
+"country",
+"iso3",
+"multi_sec",
+"stunting_plan",
+"anaemia_plan",
+"LBW_plan",
+"child_overweight_plan",
+"EBF_plan",
+"wasting_plan",
+"sodium_plan",
+"overweight_adults_adoles_plan"
+)
+plans = melt(plans,id.vars=c("country","iso3"),variable.name="indicator")
+plans$value = sapply(plans$value,firstup)
+plans$component = "Q"
+plans$disaggregation = "all"
+master_dat_list[[master_dat_index]] = plans
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "POLICY - salt.xlsx"
+  ,rows=c(3:199)
+  ,cols=c(1:3)
+)
+salt_leg = dat
+names(salt_leg) = c("iso3","country","value")
+salt_leg_isos = salt_leg[c("iso3","country")]
+salt_leg$indicator = "salt_leg"
+salt_leg$component = "O"
+salt_leg$disaggregation = "all"
+salt_leg$value = sapply(salt_leg$value,firstup)
+master_dat_list[[master_dat_index]] = salt_leg
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "POLICY - SSB.xlsx"
+  ,rows=c(8:46)
+  ,cols=c(2:4)
+)
+sugar_tax = dat
+names(sugar_tax) = c("country","iso3","value")
+salt_leg_isos = subset(salt_leg_isos,!(iso3 %in% sugar_tax$iso3))
+sugar_tax = merge(sugar_tax,salt_leg_isos,all=T)
+sugar_tax$value[which(is.na(sugar_tax$value))] = "No"
+sugar_tax$indicator = "sugar_tax"
+sugar_tax$component = "O"
+sugar_tax$disaggregation = "all"
+sugar_tax$value = sapply(sugar_tax$value,firstup)
+master_dat_list[[master_dat_index]] = sugar_tax
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "TRACKING - EBF monitoring rules May 2018 update.xlsx",
+  sheet=2,
+  rows=c(3:136),
+  cols=c(1:5)
+)
+ebf_track = dat
+names(ebf_track) = c(
+  "country",
+  "No data",
+  "No progress or worsening",
+  "On course",
+  "Some progress"
+)
+ebf_track = melt(ebf_track,id.vars="country")
+ebf_track = subset(ebf_track,!is.na(value))
+ebf_track$value = NULL
+setnames(ebf_track,"variable","value")
+ebf_track$indicator = "ebf_track"
+ebf_track$disaggregation = "all"
+ebf_track$component = "A"
+master_dat_list[[master_dat_index]] = ebf_track
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "TRACKING - Lancet_2016_Diabetes_projection_2025_by_Country_Region_World.xlsx",
+  sheet=2,
+  rows = c(2:206),
+  cols = c(1,2,12)
+)
+adult_fem_diabetes_track = dat
+names(adult_fem_diabetes_track) = c("iso3","country","value")
+adult_fem_diabetes_track$indicator = "adult_fem_diabetes_track"
+adult_fem_diabetes_track$disaggregation = "all"
+adult_fem_diabetes_track$component = "A"
+adult_fem_diabetes_track$value[which(adult_fem_diabetes_track$value=="Off track")] = "No progress or worsening"
+adult_fem_diabetes_track$value[which(adult_fem_diabetes_track$value=="On track")] = "On course"
+master_dat_list[[master_dat_index]] = adult_fem_diabetes_track
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "TRACKING - Lancet_2016_Diabetes_projection_2025_by_Country_Region_World.xlsx",
+  sheet=3,
+  rows = c(2:206),
+  cols = c(1,2,12)
+)
+adult_mal_diabetes_track = dat
+names(adult_mal_diabetes_track) = c("iso3","country","value")
+adult_mal_diabetes_track$indicator = "adult_mal_diabetes_track"
+adult_mal_diabetes_track$disaggregation = "all"
+adult_mal_diabetes_track$component = "A"
+adult_mal_diabetes_track$value[which(adult_mal_diabetes_track$value=="Off track")] = "No progress or worsening"
+adult_mal_diabetes_track$value[which(adult_mal_diabetes_track$value=="On track")] = "On course"
+master_dat_list[[master_dat_index]] = adult_mal_diabetes_track
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "TRACKING - obesity.xlsx"
+  ,rows=c(2:196)
+  ,cols=c(1,2,4,6)
+  )
+obesity_tracks = dat
+names(obesity_tracks) = c("iso3","country","adult_fem_obesity_track","adult_mal_obesity_track")
+obesity_tracks = melt(obesity_tracks,id.vars=c("iso3","country"),variable.name="indicator")
+obesity_tracks$value[which(obesity_tracks$value=="Off track")] = "No progress or worsening"
+obesity_tracks$value[which(obesity_tracks$value=="On track")] = "On course"
+obesity_tracks$disaggregation = "all"
+obesity_tracks$component = "A"
+master_dat_list[[master_dat_index]] = obesity_tracks
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "TRACKING - Tracking Anaemia monitoring rules JME 2017 edition.xlsx",
+  sheet=2,
+  rows=c(3:192),
+  cols=c(1:3)
+)
+wra_anaemia_track = dat
+names(wra_anaemia_track) = c(
+  "country",
+  "No progress or worsening",
+  "Some progress"
+)
+wra_anaemia_track = melt(wra_anaemia_track,id.vars="country")
+wra_anaemia_track = subset(wra_anaemia_track,!is.na(value))
+wra_anaemia_track$value = NULL
+setnames(wra_anaemia_track,"variable","value")
+wra_anaemia_track$indicator = "wra_anaemia_track"
+wra_anaemia_track$disaggregation = "all"
+wra_anaemia_track$component = "A"
+master_dat_list[[master_dat_index]] = wra_anaemia_track
+master_dat_index = master_dat_index + 1
+
+
+dat = read.xlsx(
+  "TRACKING - Tracking Overweight monitoring rules JME 2018 edition.xlsx",
+  sheet=2,
+  rows=c(3:153),
+  cols=c(1:4)
+)
+under_5_overweight_track = dat
+names(under_5_overweight_track) = c(
+  "country",
+  "No progress or worsening",
+  "On course",
+  "No data"
+)
+under_5_overweight_track = melt(under_5_overweight_track,id.vars="country")
+under_5_overweight_track = subset(under_5_overweight_track,!is.na(value))
+under_5_overweight_track$value = NULL
+setnames(under_5_overweight_track,"variable","value")
+under_5_overweight_track$indicator = "under_5_overweight_track"
+under_5_overweight_track$disaggregation = "all"
+under_5_overweight_track$component = "A"
+master_dat_list[[master_dat_index]] = under_5_overweight_track
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "TRACKING - Tracking Stunting monitoring rules JME 2018 edition.xlsx",
+  sheet=2,
+  rows=c(3:153),
+  cols=c(1:5)
+)
+under_5_stunting_track = dat
+names(under_5_stunting_track) = c(
+  "iso3",
+  "No progress or worsening",
+  "On course",
+  "Some progress",
+  "No data"
+)
+under_5_stunting_track = melt(under_5_stunting_track,id.vars="iso3")
+under_5_stunting_track = subset(under_5_stunting_track,!is.na(value))
+under_5_stunting_track$value = NULL
+setnames(under_5_stunting_track,"variable","value")
+under_5_stunting_track$indicator = "under_5_stunting_track"
+under_5_stunting_track$disaggregation = "all"
+under_5_stunting_track$component = "A"
+master_dat_list[[master_dat_index]] = under_5_stunting_track
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "TRACKING - Tracking Wasting monitoring rules JME 2018 edition.xlsx",
+  sheet=2,
+  rows=c(3:153),
+  cols=c(1:5)
+)
+under_5_wasting_track = dat
+names(under_5_wasting_track) = c(
+  "country",
+  "No progress or worsening",
+  "On course",
+  "Some progress",
+  "No data"
+)
+under_5_wasting_track = melt(under_5_wasting_track,id.vars="country")
+under_5_wasting_track = subset(under_5_wasting_track,!is.na(value))
+under_5_wasting_track$value = NULL
+setnames(under_5_wasting_track,"variable","value")
+under_5_wasting_track$indicator = "under_5_wasting_track"
+under_5_wasting_track$disaggregation = "all"
+under_5_wasting_track$component = "A"
+master_dat_list[[master_dat_index]] = under_5_wasting_track
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "UNDERLYING_Births by age 18.xlsx"
+  ,rows=c(8:331)
+  ,cols=c(1:4)
+)
+early_childbearing_prev = dat
+names(early_childbearing_prev) = c("iso3","country","survey","value")
+early_childbearing_prev$indicator = "early_childbearing_rev"
+early_childbearing_prev$year = substr(early_childbearing_prev$survey,nchar(early_childbearing_prev$survey)-3,nchar(early_childbearing_prev$survey))
+early_childbearing_prev$survey = NULL
+early_childbearing_prev$disaggregation = "all"
+early_childbearing_prev$component = "U"
+early_childbearing_prev = data.table(early_childbearing_prev)
+early_childbearing_prev = early_childbearing_prev[,.SD[which.max(.SD$year)],by=.(country)]
+master_dat_list[[master_dat_index]] = early_childbearing_prev
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "UNDERLYING_Community health workers.xlsx",
+  rows=c(4:268),
+  na.strings=c("","No data")
+)
+community_health_workers = dat[c("Country.Name","Country.Code","latest.year","latest.value")]
+names(community_health_workers) = c("country","iso3","year","value")
+community_health_workers = subset(community_health_workers,year!="No data")
+community_health_workers$indicator = "community_health_workers"
+community_health_workers$disaggregation = "all"
+community_health_workers$component = "U"
+master_dat_list[[master_dat_index]] = community_health_workers
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "UNDERLYING_Drinking water.xlsx"
+  ,rows=c(7:471)
+  ,cols=c(1:7,20)
+  ,na.strings="-"
+)
+drinking_water = dat
+names(drinking_water) = c(
+  "iso3",
+  "country",
+  "year",
+  "basic_water",
+  "limited_water",
+  "unimproved_water",
+  "surface_water",
+  "safely_managed_water"
+)
+drinking_water = melt(drinking_water,id.vars=c("iso3","country","year"),variable.name="indicator")
+drinking_water$disaggregation = "all"
+drinking_water$component = "V"
+master_dat_list[[master_dat_index]] = drinking_water
+master_dat_index = master_dat_index + 1
+
+dat = read.xlsx(
+  "UNDERLYING_Drinking water.xlsx"
+  ,sheet=2
+  ,rows=c(8:472)
+  ,cols=c(1:7,23)
+  ,na.strings="-"
+)
+sanitation = dat
+names(sanitation) = c(
+  "iso3",
+  "country",
+  "year",
+  "basic_sanitation",
+  "limited_sanitation",
+  "unimproved_sanitation",
+  "open_defecation",
+  "safely_managed_sanitation"
+)
+sanitation = melt(sanitation,id.vars=c("iso3","country","year"),variable.name="indicator")
+sanitation$disaggregation = "all"
+sanitation$component = "V"
+master_dat_list[[master_dat_index]] = sanitation
+master_dat_index = master_dat_index + 1
+
+# dat = read.xlsx(
+#   "UNDERLYING_Food stuffs.xlsx",
+#   sheet=2
+# )
+# write.csv(dat,"UNDERLYING_Food stuffs.csv",na="",row.names=F)
+dat = read.csv("UNDERLYING_Food stuffs.csv",na.strings="",as.is=T)
+dat = subset(dat,Item %in% c("Fruits - Excluding Wine","Vegetables"))
+dat = subset(dat,Unit=="g/capita/day")
+dat = subset(dat,Element=="Food supply quantity (g/capita/day)")
+fruit_veg = dat[c("Area",paste0("Y",1961:2013))]
+fruit_veg = melt(fruit_veg,id.vars="Area",variable.name="year")
+fruit_veg$year = substr(fruit_veg$year,2,5)
+names(fruit_veg)[1] = "country"
+fruit_veg = data.table(fruit_veg)[,.(value=sum(value,na.rm=T)),by=.(country,year)]
+
+dat = read.xlsx(
+  "UNDERLYING_Female enrollment rate, secondary (%), net.xlsx",
+  rows=c(4:285),
+  na.strings=".."
+)
+female_secondary_enroll_net = dat
+names(female_secondary_enroll_net)[1] = "country"
+female_secondary_enroll_net = melt(female_secondary_enroll_net,id.vars="country",variable.name="year")
+female_secondary_enroll_net = subset(female_secondary_enroll_net,!is.na(value))
+female_secondary_enroll_net = data.table(female_secondary_enroll_net)
+female_secondary_enroll_net = female_secondary_enroll_net[,.SD[which.max(.SD$year)],by=.(country)]
+female_secondary_enroll_net$indicator = "female_secondary_enroll_net"
+female_secondary_enroll_net$disaggregation = "all"
+female_secondary_enroll_net$component = "U"
+master_dat_list[[master_dat_index]] = female_secondary_enroll_net
+master_dat_index = master_dat_index + 1
 
 for(i in 1:length(master_dat_list)){
   df = master_dat_list[[i]]
@@ -929,7 +1302,7 @@ depr = c("calcium","eggs","fish ","fruit ",
          "omega_3","poly_unsat_fat","nuts_seeds","fruit","fibre",                        
          "trans_fatty_acids","SSB","sodium","red meat","processed_meat","310_percent",
          "adult_anaemia","continued_breastfeeding","urban_percent","ODA_nutspecific_perceent"
-         ,"gini_year")
+         ,"gini_year","specific_nutrition_plan","blood_pressure_plan","diabetes_plan")
 diff[which(!(diff %in% depr))]
 write.csv(master_dat,"../data.csv",na="",row.names=F)
 

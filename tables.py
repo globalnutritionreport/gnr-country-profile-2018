@@ -234,7 +234,7 @@ for country in dataDictionary.keys():
     dataDictionary[country]["table6"][0][1] = safeFormat(indicator(ctryDat, "salt_leg"))
     dataDictionary[country]["table6"][1][1] = safeFormat(indicator(ctryDat, "sugar_tax"))
     dataDictionary[country]["table6"][2][1] = safeFormat(indicator(ctryDat, "multi_sec"))
-    dataDictionary[country]["table6"][3][1] = safeFormat(indicator(ctryDat, "multi_sec")) # TODO: Change this
+    dataDictionary[country]["table6"][3][1] = safeFormat(indicator(ctryDat, "fbdg"))
 
     dataDictionary[country]["table7"][1] = [
         safeFormat(indicator(ctryDat, "stunting_plan")),
