@@ -158,6 +158,7 @@ safeFormat <- function(vec, prefix="", suffix=""){
 
 ####End setup####
 ####Loop####
+# countries = c("Kenya","United Kingdom of Great Britain and Northern Ireland")
 for(this.country in countries){
   message(this.country)
   dir.create(paste(wd,this.country,sep="/"))
@@ -253,7 +254,7 @@ for(this.country in countries){
   c2data$value = as.numeric(c2data$value)
   c2data = subset(c2data, !is.na(value))
   c2data <- c2data[order(c2data$year),]
-  top4 = c2data$year[c((nrow(c2data)-3):nrow(c2data))]
+  top4 = c2data$year[c(max(nrow(c2data)-3,1):nrow(c2data))]
   c2data = subset(c2data,year %in% top4)
   c2data$year = as.factor(c2data$year)
   c2.max <- max(c2data$value,na.rm=TRUE)
@@ -295,7 +296,7 @@ for(this.country in countries){
     c3b.data$variable = c3b.data$indicator
     c3b.data <- subset(c3b.data,!is.na(value))
     c3b.data <- c3b.data[order(c3b.data$year),]
-    c3b.years = c(2000,2004,2008,2012,2016)
+    c3b.years = c(2000,2004,2008,2012,2013)
     c3b.data = subset(c3b.data,year %in% c3b.years)
     c3b.data$year <- factor(c3b.data$year)
     c3c.data <- subset(c3data,indicator==indicators[3])
@@ -428,6 +429,8 @@ for(this.country in countries){
   c4data$value = as.numeric(c4data$value)
   c4data = subset(c4data, !is.na(value))
   c4data <- c4data[order(c4data$year),]
+  top4 = c4data$year[c(max(nrow(c4data)-3,1):nrow(c4data))]
+  c4data = subset(c4data,year %in% top4)
   c4data$year = as.factor(c4data$year)
   c4.max <- max(c4data$value,na.rm=TRUE)
   c4 <- ggplot(c4data,aes(year,value,fill="Blue")) +
@@ -769,15 +772,22 @@ for(this.country in countries){
     return(c)
   }
   # Charts 8-16
-  c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Boys","Girls","Both"),percent=T,fill=yellowOrangeRedFill,legend=T,byrow=T,nrow=3,subset.years=c(1993,2000,2003,2009,2014))
-  c9 = grouped_line(countrydat, "stunting_percent","gender",c("Boys","Girls","Both"),percent=T,color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
-  c10 = grouped_line(countrydat, "overweight_percent","gender",c("Boys","Girls","Both"),percent=T,color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
-  c11 = grouped_bar(countrydat, "wasting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,fill=quintileFill,legend=T,byrow=T,nrow=3)
-  c12 = grouped_line(countrydat, "stunting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,color=quintileColor,fill=quintileFill)
-  c13 = grouped_line(countrydat, "overweight_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),percent=T,color=quintileColor,fill=quintileFill)
-  c14 = grouped_bar(countrydat, "wasting_percent","location",c("Urban","Rural"),percent=T,legend=T)
-  c15 = grouped_line(countrydat, "stunting_percent","location",c("Urban","Rural"),percent=T)
-  c16 = grouped_line(countrydat, "overweight_percent","location",c("Urban","Rural"),percent=T)
+  wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="gender" & !is.na(value))
+  if(nrow(wasting_dat)>0){
+    wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
+    max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
+    wasting_years = subset(wasting_years,count==max_wasting_count)$year
+    c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Boys","Girls","Both"),fill=yellowOrangeRedFill,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
+  }else{c8=no.data}
+  
+  c9 = grouped_line(countrydat, "stunting_percent","gender",c("Boys","Girls","Both"),color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
+  c10 = grouped_line(countrydat, "overweight_percent","gender",c("Boys","Girls","Both"),color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
+  c11 = grouped_bar(countrydat, "wasting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),fill=quintileFill,legend=T,byrow=T,nrow=3)
+  c12 = grouped_line(countrydat, "stunting_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),color=quintileColor,fill=quintileFill)
+  c13 = grouped_line(countrydat, "overweight_percent","income",c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"),color=quintileColor,fill=quintileFill)
+  c14 = grouped_bar(countrydat, "wasting_percent","location",c("Urban","Rural"),legend=T)
+  c15 = grouped_line(countrydat, "stunting_percent","location",c("Urban","Rural"))
+  c16 = grouped_line(countrydat, "overweight_percent","location",c("Urban","Rural"))
   
   # Chart 17
   wasting = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Wasting alone")$value)/100
@@ -952,8 +962,8 @@ for(this.country in countries){
   c23 = grouped_line(countrydat, "adult_overweight","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
   c24 = grouped_line(countrydat, "adult_obesity","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
   c25 = grouped_line(countrydat, "adult_blood_pressure","gender",c("Male","Female"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
-  c26 = grouped_line(countrydat, "adult_anemia","pregnancy",c("All women","Pregnant women","Non-pregnant women"),percent=T,color=quintileColor,fill=quintileFill,legend=T,factor.years=F)
-  c27 = tryCatch({single_bar(countrydat, "adult_sodium",c("All (grams)"),percent=T,fill=yellowOrangeRedFill,legend=T)},error=function(e){message(e);no.data})
+  c26 = grouped_line(countrydat, "adult_anemia","pregnancy",c("All women","Pregnant women","Non-pregnant women"),color=quintileColor,fill=quintileFill,legend=T,factor.years=F)
+  c27 = tryCatch({single_bar(countrydat, "adult_sodium",c("All (grams)"),fill=yellowOrangeRedFill,legend=T)},error=function(e){message(e);no.data})
   
   # Chart 28
   c28.data = subset(countrydat,component == "M")

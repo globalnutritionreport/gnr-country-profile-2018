@@ -128,7 +128,7 @@ class ReportMaker(object):
                         fontSize = float(font["size"])
                         height = int(text.get("height"))
                         textLen = float(len(replacement))
-                        divisor = max(((textLen/25.0)+(2.0/3.0)), 1)
+                        divisor = max(((textLen/35.0)+(2.0/3.0)), 1)
                         fontSizeAdj = int(fontSize / divisor)
                         fontSizeDiff = int(float(fontSize-fontSizeAdj)/2.0)
                         heightAdj = height-fontSizeDiff
@@ -156,10 +156,14 @@ class ReportMaker(object):
                     replacement = innerText
 
                     if text.get("shrink"):
+                        fontSize = float(font["size"])
+                        height = int(text.get("height"))
                         textLen = float(len(replacement))
-                        fontSizeAdj = int(font["size"])
-                        heightAdj = int(text.get("height"))*2 if textLen > 30 else int(text.get("height"))
-                        width = int(text.get("width"))
+                        divisor = max(((textLen/35.0)+(2.0/3.0)), 1)
+                        fontSizeAdj = int(fontSize / divisor)
+                        fontSizeDiff = int(float(fontSize-fontSizeAdj)/2.0)
+                        heightAdj = height-fontSizeDiff
+                        width = self.width
                     else:
                         fontSizeAdj = int(font["size"])
                         heightAdj = int(text.get("height"))
@@ -236,6 +240,7 @@ class ReportMaker(object):
 if __name__ == "__main__":
     countries = list(dataDictionary.keys())
     countries.sort()
+    # countries = ["Kenya","United Kingdom of Great Britain and Northern Ireland"]
     for country in countries:
         print(country)
         safeFileName = "".join([c for c in country.replace(" ", "_") if re.match(r'\w', c)])

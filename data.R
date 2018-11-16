@@ -220,6 +220,7 @@ names(pov190) = c("iso3","country","year","value")
 pov190$indicator = "190_percent"
 pov190$disaggregation = "all"
 pov190$component = "R"
+pov190$value = 100*as.numeric(pov190$value)
 master_dat_list[[master_dat_index]] = pov190
 master_dat_index = master_dat_index + 1
 
@@ -229,6 +230,7 @@ names(pov320) = c("iso3","country","year","value")
 pov320$indicator = "320_percent"
 pov320$disaggregation = "all"
 pov320$component = "R"
+pov320$value = 100*as.numeric(pov320$value)
 master_dat_list[[master_dat_index]] = pov320
 master_dat_index = master_dat_index + 1
 
@@ -262,11 +264,20 @@ master_dat_index = master_dat_index + 1
 
 dat = read.csv("u5mr_wdi.csv",na.strings="",as.is=T)
 u5mr = dat[c("country","iso3c","year","SH.DYN.MORT")]
-names(u5mr) = c("country","iso3c","year","value")
+names(u5mr) = c("country","iso3","year","value")
 u5mr$component = "R"
 u5mr$indicator = "u5mr"
 u5mr$disaggregation = "all"
 master_dat_list[[master_dat_index]] = u5mr
+master_dat_index = master_dat_index + 1
+
+dat = read.csv("fem_sec_enrol_net.csv",na.strings="",as.is=T)
+female_secondary_enroll_net = dat[c("country","iso3c","year","SE.SEC.NENR.FE")]
+names(female_secondary_enroll_net) = c("country","iso3","year","value")
+female_secondary_enroll_net$component = "U"
+female_secondary_enroll_net$indicator = "female_secondary_enroll_net"
+female_secondary_enroll_net$disaggregation = "all"
+master_dat_list[[master_dat_index]] = female_secondary_enroll_net
 master_dat_index = master_dat_index + 1
 
 dat = read.xls("ADULT STATUS - Anaemia pregnant.xls",sheet=1,na.strings="",skip=2)
@@ -995,7 +1006,9 @@ salt_leg_isos = salt_leg[c("iso3","country")]
 salt_leg$indicator = "salt_leg"
 salt_leg$component = "O"
 salt_leg$disaggregation = "all"
-salt_leg$value = sapply(salt_leg$value,firstup)
+salt_leg$value[which(salt_leg$value=="MANDATORY")] = "Yes"
+salt_leg$value[which(salt_leg$value=="NO")] = "No"
+salt_leg$value[which(salt_leg$value=="UNKNOWN")] = NA
 master_dat_list[[master_dat_index]] = salt_leg
 master_dat_index = master_dat_index + 1
 
@@ -1259,22 +1272,23 @@ sanitation$component = "V"
 master_dat_list[[master_dat_index]] = sanitation
 master_dat_index = master_dat_index + 1
 
-dat = read.xlsx(
-  "UNDERLYING_Female enrollment rate, secondary (%), net.xlsx",
-  rows=c(4:285),
-  na.strings=".."
-)
-female_secondary_enroll_net = dat
-names(female_secondary_enroll_net)[1] = "country"
-female_secondary_enroll_net = melt(female_secondary_enroll_net,id.vars="country",variable.name="year")
-female_secondary_enroll_net = subset(female_secondary_enroll_net,!is.na(value))
-female_secondary_enroll_net = data.table(female_secondary_enroll_net)
-female_secondary_enroll_net = female_secondary_enroll_net[,.SD[which.max(.SD$year)],by=.(country)]
-female_secondary_enroll_net$indicator = "female_secondary_enroll_net"
-female_secondary_enroll_net$disaggregation = "all"
-female_secondary_enroll_net$component = "U"
-master_dat_list[[master_dat_index]] = female_secondary_enroll_net
-master_dat_index = master_dat_index + 1
+# Replaced by csv
+# dat = read.xlsx(
+#   "UNDERLYING_Female enrollment rate, secondary (%), net.xlsx",
+#   rows=c(4:285),
+#   na.strings=".."
+# )
+# female_secondary_enroll_net = dat
+# names(female_secondary_enroll_net)[1] = "country"
+# female_secondary_enroll_net = melt(female_secondary_enroll_net,id.vars="country",variable.name="year")
+# female_secondary_enroll_net = subset(female_secondary_enroll_net,!is.na(value))
+# female_secondary_enroll_net = data.table(female_secondary_enroll_net)
+# female_secondary_enroll_net = female_secondary_enroll_net[,.SD[which.max(.SD$year)],by=.(country)]
+# female_secondary_enroll_net$indicator = "female_secondary_enroll_net"
+# female_secondary_enroll_net$disaggregation = "all"
+# female_secondary_enroll_net$component = "U"
+# master_dat_list[[master_dat_index]] = female_secondary_enroll_net
+# master_dat_index = master_dat_index + 1
 
 # dat = read.xlsx(
 #   "UNDERLYING_Food stuffs.xlsx",
@@ -1416,6 +1430,9 @@ regions = region_key[c("ISO-alpha3.Code","GNR1")]
 names(regions) = c("iso3","region")
 master_dat = merge(master_dat,regions,all.x=T)
 
+master_dat$year = unfactor(master_dat$year)
+master_dat = subset(master_dat,year>=1999 | is.na(year))
+
 backup = read.csv("../data.backup.csv",na.strings="",as.is=T)
 diff = setdiff(backup$indicator,master_dat$indicator)
 depr = c("calcium","eggs","fish ","fruit ",                       
@@ -1429,4 +1446,9 @@ depr = c("calcium","eggs","fish ","fruit ",
          ,"gini_year","specific_nutrition_plan","blood_pressure_plan","diabetes_plan")
 diff[which(!(diff %in% depr))]
 write.csv(master_dat,"../data.csv",na="",row.names=F)
+
+master_dat_melt = melt(master_dat[,c("iso3","country","year","indicator","disaggregation","disagg.value","value")],id.vars=c("iso3","country","year","indicator","disaggregation","disagg.value"))
+return_one = function(vec){return(vec[1])}
+master_dat_wide = dcast(master_dat_melt,iso3+country+year~indicator+disaggregation+disagg.value+variable,sep=".",fun=return_one)
+write.csv(master_dat_wide,"../data_wide.csv",na="",row.names=T)
 
