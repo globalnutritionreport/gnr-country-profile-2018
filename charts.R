@@ -160,7 +160,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 
 ####End setup####
 ####Loop####
-countries = c("Saint Kitts and Nevis")
+# countries = c("Saint Kitts and Nevis")
 for(this.country in countries){
   message(this.country)
   dir.create(paste(wd,this.country,sep="/"))
