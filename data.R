@@ -179,6 +179,7 @@ dietary_needs$disaggregation = "location"
 dietary_needs$disagg.value = "National"
 dietary_needs$component = "M"
 dietary_needs = merge(dietary_needs,diet_mapping,by="country")
+dietary_needs$region = NULL
 master_dat_list[[master_dat_index]] = dietary_needs
 master_dat_index = master_dat_index + 1
 
@@ -195,6 +196,7 @@ dietary_needs_reg$disaggregation = "location"
 dietary_needs_reg$disagg.value = "Regional"
 dietary_needs_reg$component = "M"
 dietary_needs_reg = join(diet_mapping,dietary_needs_reg,by="region")
+dietary_needs_reg$region = NULL
 master_dat_list[[master_dat_index]] = dietary_needs_reg
 master_dat_index = master_dat_index + 1
 
@@ -208,6 +210,7 @@ dietary_needs_global$component = "M"
 diet_mapping$global = "global"
 dietary_needs_global = join(diet_mapping,dietary_needs_global,by="global")
 dietary_needs_global$global = NULL
+dietary_needs_global$region = NULL
 master_dat_list[[master_dat_index]] = dietary_needs_global
 master_dat_index = master_dat_index + 1
 
@@ -1376,6 +1379,35 @@ for(i in 1:length(master_dat_list)){
 }
 
 master_dat = rbindlist(master_dat_list,fill=T)
+master_dat$country = trimws(master_dat$country)
+
+region_key = read.xlsx("Regional dataset - key.xlsx")
+isos = region_key[c("ISO-alpha3.Code","Country.or.Area")]
+names(isos) = c("iso3","key.country")
+isos = subset(isos,!is.na(iso3))
+master_dat = merge(master_dat,isos,by="iso3",all.x=T)
+master_dat$country[which(!is.na(master_dat$key.country))] = master_dat$key.country[which(!is.na(master_dat$key.country))]
+master_dat$key.country = NULL
+
+names(isos) = c("key.iso3","country")
+master_dat = merge(master_dat,isos,by="country",all.x=T)
+master_dat$iso3[which(!is.na(master_dat$key.iso3))] = master_dat$key.iso3[which(!is.na(master_dat$key.iso3))]
+master_dat$key.iso3 = NULL
+
+# write.csv(unique(master_dat[,c("iso3","country")]),"master_countries.csv",na="",row.names=F)
+master_countries = read.csv("master_countries.csv",na.strings="")
+master_countries = subset(master_countries,!is.na(iso3))
+
+names(master_countries) = c("key.iso3","country")
+master_dat = merge(master_dat,master_countries,by="country")
+master_dat$iso3 = master_dat$key.iso3
+master_dat$key.iso3 = NULL
+
+names(isos) = c("iso3","key.country")
+master_dat = merge(master_dat,isos,by="iso3")
+master_dat$country = master_dat$key.country
+master_dat$key.country = NULL
+
 backup = read.csv("../data.backup.csv",na.strings="",as.is=T)
 diff = setdiff(backup$indicator,master_dat$indicator)
 depr = c("calcium","eggs","fish ","fruit ",                       
