@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import Select
 from optparse import OptionParser
 import pandas as pd
 import re
+from django.template.defaultfilters import slugify
 
 
 class Error(Exception):
@@ -194,6 +195,7 @@ for region_name in nested_countries:
         {"input_id": "id_description", "input_str": description},
         {"input_id": "id_profile_title", "input_str": profile_title},
         {"input_id": "id_profile_description", "input_str": profile_description},
+        {"input_id": "id_slug", "input_str": slugify(title)},
     ]
     input_text(browser, queries)
 
@@ -294,6 +296,7 @@ for region_name in nested_countries:
             {"input_id": "id_description", "input_str": description},
             {"input_id": "id_profile_title", "input_str": profile_title},
             {"input_id": "id_profile_description", "input_str": profile_description},
+            {"input_id": "id_slug", "input_str": slugify(title)},
         ]
         input_text(browser, queries)
 
@@ -394,6 +397,7 @@ for region_name in nested_countries:
                 {"input_id": "id_description", "input_str": description},
                 {"input_id": "id_profile_title", "input_str": profile_title},
                 {"input_id": "id_profile_description", "input_str": profile_description},
+                {"input_id": "id_slug", "input_str": slugify(title)},
             ]
             input_text(browser, queries)
 
