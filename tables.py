@@ -234,7 +234,7 @@ for country in dataDictionary.keys():
 
     dataDictionary[country]["table4"][0][1] = safeFormat(indicator(ctryDat, "early_childbearing_prev"))
     dataDictionary[country]["table4"][0][2] = safeFormat(year(ctryDat, "early_childbearing_prev"))
-    dataDictionary[country]["table4"][1][1] = safeFormat(indicator(ctryDat, "gender_inequality_score"), False, 3)
+    dataDictionary[country]["table4"][1][1] = safeFormat(indicator(ctryDat, "gender_inequality_score"), False, 2)
     dataDictionary[country]["table4"][1][2] = safeFormat(year(ctryDat, "gender_inequality_score"))
     dataDictionary[country]["table4"][2][1] = safeFormat(indicator(ctryDat, "gender_inequality_rank"))
     dataDictionary[country]["table4"][2][2] = safeFormat(year(ctryDat, "gender_inequality_rank"))
@@ -317,7 +317,8 @@ tableStyles["table4"] = generic_style + [
 ]
 tableStyles["table5"] = generic_style + [
     ('LINEABOVE', (0, 1), (-1, 1), 1, grey),
-    ('LINEABOVE', (0, 2), (-1, 2), 1, grey)
+    ('LINEABOVE', (0, 2), (-1, 2), 1, grey),
+    ('FONTNAME', (0, 0), (0, -1), "Averta-Bold")
 ]
 tableStyles["table6"] = generic_style + [
     ('LINEABOVE', (0, 1), (-1, 1), 1, grey),

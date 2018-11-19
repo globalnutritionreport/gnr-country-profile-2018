@@ -130,7 +130,7 @@ ind.names = c(
   "Saturated fat",
   "Red meat",
   "Processed meat",
-  "Sodium",
+  "Salt",
   "Sugar-sweetened beverages"
 )
 ind.units = c(
@@ -392,7 +392,7 @@ master_dat_index = master_dat_index + 1
 #   "continued_breastfeeding_1yr",
 #   "continued_breastfeeding_2yr"
 # )
-# disagg.values = c("Poorest quintile","Wealthiest quintile")
+# disagg.values = c("Lowest quintile","Highest quintile")
 # start_col = 3
 # names(dat)[1:2] = c("iso3","country")
 # for(disagg.value in disagg.values){
@@ -462,7 +462,7 @@ master_dat_index = master_dat_index + 1
 dat = read.xlsx("CHILD STATUS - UNICEF_Expanded_Global_Databases_Overweight_May_2018.xlsx",sheet=2,rows=c(7:693),na.strings="")
 dat = subset(dat,!is.na(ISO))
 child_overweight = dat[c("ISO","Countries.and.areas","Year*","National","Male","Female","Urban.1","Rural.1","Wealth.Quintile.1.1","Wealth.Quintile.2","Wealth.Quintile.3.1","Wealth.Quintile.4.1","Wealth.Quintile.5.1")]
-names(child_overweight) = c("iso3","country","year","Both","Boys","Girls","Urban","Rural","Poorest","Second poorest","Middle","Second wealthiest","Wealthiest")
+names(child_overweight) = c("iso3","country","year","Both","Boys","Girls","Urban","Rural","Lowest","Second lowest","Middle","Second highest","Highest")
 child_overweight = melt(child_overweight,id.vars=c("iso3","country","year"))
 setnames(child_overweight,"variable","disagg.value")
 child_overweight$indicator = "overweight_percent"
@@ -471,7 +471,7 @@ child_overweight_gender = subset(child_overweight,disagg.value %in% c("Boys","Gi
 child_overweight_gender$disaggregation = "gender"
 child_overweight_location = subset(child_overweight,disagg.value %in% c("Urban","Rural"))
 child_overweight_location$disaggregation = "location"
-child_overweight_income = subset(child_overweight,disagg.value %in% c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"))
+child_overweight_income = subset(child_overweight,disagg.value %in% c("Lowest","Second lowest","Middle","Second highest","Highest"))
 child_overweight_income$disaggregation = "income"
 master_dat_list[[master_dat_index]] = child_overweight_gender
 master_dat_index = master_dat_index + 1
@@ -483,7 +483,7 @@ master_dat_index = master_dat_index + 1
 dat = read.xlsx("CHILD STATUS - UNICEF_Expanded_Global_Databases_Stunting_May_2018c.xlsx",na.strings="")
 dat = subset(dat,!is.na(ISO))
 child_stunting = dat[c("ISO","Countries.and.areas","Year*","National","Male","Female","Urban.1","Rural.1","Wealth.Quintile.1.1","Wealth.Quintile.2","Wealth.Quintile.3.1","Wealth.Quintile.4.1","Wealth.Quintile.5.1")]
-names(child_stunting) = c("iso3","country","year","Both","Boys","Girls","Urban","Rural","Poorest","Second poorest","Middle","Second wealthiest","Wealthiest")
+names(child_stunting) = c("iso3","country","year","Both","Boys","Girls","Urban","Rural","Lowest","Second lowest","Middle","Second highest","Highest")
 child_stunting = melt(child_stunting,id.vars=c("iso3","country","year"))
 setnames(child_stunting,"variable","disagg.value")
 child_stunting$indicator = "stunting_percent"
@@ -492,7 +492,7 @@ child_stunting_gender = subset(child_stunting,disagg.value %in% c("Boys","Girls"
 child_stunting_gender$disaggregation = "gender"
 child_stunting_location = subset(child_stunting,disagg.value %in% c("Urban","Rural"))
 child_stunting_location$disaggregation = "location"
-child_stunting_income = subset(child_stunting,disagg.value %in% c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"))
+child_stunting_income = subset(child_stunting,disagg.value %in% c("Lowest","Second lowest","Middle","Second highest","Highest"))
 child_stunting_income$disaggregation = "income"
 master_dat_list[[master_dat_index]] = child_stunting_gender
 master_dat_index = master_dat_index + 1
@@ -504,7 +504,7 @@ master_dat_index = master_dat_index + 1
 dat = read.xlsx("CHILD STATUS - UNICEF_Expanded_Global_Databases_Wasting_May_2018b.xlsx",na.strings="")
 dat = subset(dat,!is.na(ISO))
 child_wasting = dat[c("ISO","Countries.and.areas","Year*","National","Male","Female","Urban.1","Rural.1","Wealth.Quintile.1.1","Wealth.Quintile.2","Wealth.Quintile.3.1","Wealth.Quintile.4.1","Wealth.Quintile.5.1")]
-names(child_wasting) = c("iso3","country","year","Both","Boys","Girls","Urban","Rural","Poorest","Second poorest","Middle","Second wealthiest","Wealthiest")
+names(child_wasting) = c("iso3","country","year","Both","Boys","Girls","Urban","Rural","Lowest","Second lowest","Middle","Second highest","Highest")
 child_wasting = melt(child_wasting,id.vars=c("iso3","country","year"))
 setnames(child_wasting,"variable","disagg.value")
 child_wasting$indicator = "wasting_percent"
@@ -513,7 +513,7 @@ child_wasting_gender = subset(child_wasting,disagg.value %in% c("Boys","Girls","
 child_wasting_gender$disaggregation = "gender"
 child_wasting_location = subset(child_wasting,disagg.value %in% c("Urban","Rural"))
 child_wasting_location$disaggregation = "location"
-child_wasting_income = subset(child_wasting,disagg.value %in% c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"))
+child_wasting_income = subset(child_wasting,disagg.value %in% c("Lowest","Second lowest","Middle","Second highest","Highest"))
 child_wasting_income$disaggregation = "income"
 master_dat_list[[master_dat_index]] = child_wasting_gender
 master_dat_index = master_dat_index + 1
@@ -755,7 +755,7 @@ dat = read.xlsx(
   ,fillMergedCells = T
 )
 minimum_accept_diet = dat
-names(minimum_accept_diet) = c("iso3","country","survey","Urban","Rural","Poorest","Second poorest","Middle","Second wealthiest","Wealthiest")
+names(minimum_accept_diet) = c("iso3","country","survey","Urban","Rural","Lowest","Second lowest","Middle","Second highest","Highest")
 minimum_accept_diet$year = substr(minimum_accept_diet$survey,1,4)
 minimum_accept_diet$survey = NULL
 minimum_accept_diet = melt(minimum_accept_diet,id.vars=c("iso3","country","year"))
@@ -764,7 +764,7 @@ minimum_accept_diet$indicator = "minimum_accept_diet"
 minimum_accept_diet$component = "K"
 minimum_accept_diet_location = subset(minimum_accept_diet,disagg.value %in% c("Urban","Rural"))
 minimum_accept_diet_location$disaggregation = "location"
-minimum_accept_diet_income = subset(minimum_accept_diet,disagg.value %in% c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"))
+minimum_accept_diet_income = subset(minimum_accept_diet,disagg.value %in% c("Lowest","Second lowest","Middle","Second highest","Highest"))
 minimum_accept_diet_income$disaggregation = "income"
 master_dat_list[[master_dat_index]] = minimum_accept_diet_location
 master_dat_index = master_dat_index + 1
@@ -780,7 +780,7 @@ dat = read.xlsx(
   ,fillMergedCells = T
 )
 minimum_diet_diversity = dat
-names(minimum_diet_diversity) = c("iso3","country","survey","Urban","Rural","Poorest","Second poorest","Middle","Second wealthiest","Wealthiest")
+names(minimum_diet_diversity) = c("iso3","country","survey","Urban","Rural","Lowest","Second lowest","Middle","Second highest","Highest")
 minimum_diet_diversity$year = substr(minimum_diet_diversity$survey,1,4)
 minimum_diet_diversity$survey = NULL
 minimum_diet_diversity = melt(minimum_diet_diversity,id.vars=c("iso3","country","year"))
@@ -789,7 +789,7 @@ minimum_diet_diversity$indicator = "minimum_diet_diversity"
 minimum_diet_diversity$component = "K"
 minimum_diet_diversity_location = subset(minimum_diet_diversity,disagg.value %in% c("Urban","Rural"))
 minimum_diet_diversity_location$disaggregation = "location"
-minimum_diet_diversity_income = subset(minimum_diet_diversity,disagg.value %in% c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"))
+minimum_diet_diversity_income = subset(minimum_diet_diversity,disagg.value %in% c("Lowest","Second lowest","Middle","Second highest","Highest"))
 minimum_diet_diversity_income$disaggregation = "income"
 master_dat_list[[master_dat_index]] = minimum_diet_diversity_location
 master_dat_index = master_dat_index + 1
@@ -805,7 +805,7 @@ dat = read.xlsx(
   ,fillMergedCells = T
 )
 minimum_meal = dat
-names(minimum_meal) = c("iso3","country","survey","Urban","Rural","Poorest","Second poorest","Middle","Second wealthiest","Wealthiest")
+names(minimum_meal) = c("iso3","country","survey","Urban","Rural","Lowest","Second lowest","Middle","Second highest","Highest")
 minimum_meal$year = substr(minimum_meal$survey,1,4)
 minimum_meal$survey = NULL
 minimum_meal = melt(minimum_meal,id.vars=c("iso3","country","year"))
@@ -814,7 +814,7 @@ minimum_meal$indicator = "minimum_meal"
 minimum_meal$component = "K"
 minimum_meal_location = subset(minimum_meal,disagg.value %in% c("Urban","Rural"))
 minimum_meal_location$disaggregation = "location"
-minimum_meal_income = subset(minimum_meal,disagg.value %in% c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"))
+minimum_meal_income = subset(minimum_meal,disagg.value %in% c("Lowest","Second lowest","Middle","Second highest","Highest"))
 minimum_meal_income$disaggregation = "income"
 master_dat_list[[master_dat_index]] = minimum_meal_location
 master_dat_index = master_dat_index + 1
@@ -829,7 +829,7 @@ dat = read.xlsx(
 )
 dat = subset(dat,!is.na(ISO))
 continued_breastfeeding_1yr = dat
-names(continued_breastfeeding_1yr) = c("iso3","country","survey","Urban","Rural","Poorest","Second poorest","Middle","Second wealthiest","Wealthiest")
+names(continued_breastfeeding_1yr) = c("iso3","country","survey","Urban","Rural","Lowest","Second lowest","Middle","Second highest","Highest")
 continued_breastfeeding_1yr$year = substr(continued_breastfeeding_1yr$survey,1,4)
 continued_breastfeeding_1yr$survey = NULL
 continued_breastfeeding_1yr = melt(continued_breastfeeding_1yr,id.vars=c("iso3","country","year"))
@@ -838,7 +838,7 @@ continued_breastfeeding_1yr$indicator = "continued_breastfeeding_1yr"
 continued_breastfeeding_1yr$component = "K"
 continued_breastfeeding_1yr_location = subset(continued_breastfeeding_1yr,disagg.value %in% c("Urban","Rural"))
 continued_breastfeeding_1yr_location$disaggregation = "location"
-continued_breastfeeding_1yr_income = subset(continued_breastfeeding_1yr,disagg.value %in% c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"))
+continued_breastfeeding_1yr_income = subset(continued_breastfeeding_1yr,disagg.value %in% c("Lowest","Second lowest","Middle","Second highest","Highest"))
 continued_breastfeeding_1yr_income$disaggregation = "income"
 master_dat_list[[master_dat_index]] = continued_breastfeeding_1yr_location
 master_dat_index = master_dat_index + 1
@@ -853,7 +853,7 @@ dat = read.xlsx(
 )
 dat = subset(dat,!is.na(ISO))
 continued_breastfeeding_2yr = dat
-names(continued_breastfeeding_2yr) = c("iso3","country","survey","Urban","Rural","Poorest","Second poorest","Middle","Second wealthiest","Wealthiest")
+names(continued_breastfeeding_2yr) = c("iso3","country","survey","Urban","Rural","Lowest","Second lowest","Middle","Second highest","Highest")
 continued_breastfeeding_2yr$year = substr(continued_breastfeeding_2yr$survey,1,4)
 continued_breastfeeding_2yr$survey = NULL
 continued_breastfeeding_2yr = melt(continued_breastfeeding_2yr,id.vars=c("iso3","country","year"))
@@ -862,7 +862,7 @@ continued_breastfeeding_2yr$indicator = "continued_breastfeeding_2yr"
 continued_breastfeeding_2yr$component = "K"
 continued_breastfeeding_2yr_location = subset(continued_breastfeeding_2yr,disagg.value %in% c("Urban","Rural"))
 continued_breastfeeding_2yr_location$disaggregation = "location"
-continued_breastfeeding_2yr_income = subset(continued_breastfeeding_2yr,disagg.value %in% c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"))
+continued_breastfeeding_2yr_income = subset(continued_breastfeeding_2yr,disagg.value %in% c("Lowest","Second lowest","Middle","Second highest","Highest"))
 continued_breastfeeding_2yr_income$disaggregation = "income"
 master_dat_list[[master_dat_index]] = continued_breastfeeding_2yr_location
 master_dat_index = master_dat_index + 1
@@ -877,14 +877,14 @@ dat = read.xlsx(
   ,na.strings=""
 )
 early_initiation = dat
-names(early_initiation) = c("iso3","country","year","Urban","Rural","Poorest","Second poorest","Middle","Second wealthiest","Wealthiest")
+names(early_initiation) = c("iso3","country","year","Urban","Rural","Lowest","Second lowest","Middle","Second highest","Highest")
 early_initiation = melt(early_initiation,id.vars=c("iso3","country","year"))
 setnames(early_initiation,"variable","disagg.value")
 early_initiation$indicator = "early_initiation"
 early_initiation$component = "K"
 early_initiation_location = subset(early_initiation,disagg.value %in% c("Urban","Rural"))
 early_initiation_location$disaggregation = "location"
-early_initiation_income = subset(early_initiation,disagg.value %in% c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"))
+early_initiation_income = subset(early_initiation,disagg.value %in% c("Lowest","Second lowest","Middle","Second highest","Highest"))
 early_initiation_income$disaggregation = "income"
 master_dat_list[[master_dat_index]] = early_initiation_location
 master_dat_index = master_dat_index + 1
@@ -899,14 +899,14 @@ dat = read.xlsx(
   ,na.strings=""
 )
 exclusive_breastfeeding = dat
-names(exclusive_breastfeeding) = c("iso3","country","year","Urban","Rural","Poorest","Second poorest","Middle","Second wealthiest","Wealthiest")
+names(exclusive_breastfeeding) = c("iso3","country","year","Urban","Rural","Lowest","Second lowest","Middle","Second highest","Highest")
 exclusive_breastfeeding = melt(exclusive_breastfeeding,id.vars=c("iso3","country","year"))
 setnames(exclusive_breastfeeding,"variable","disagg.value")
 exclusive_breastfeeding$indicator = "exclusive_breastfeeding"
 exclusive_breastfeeding$component = "K"
 exclusive_breastfeeding_location = subset(exclusive_breastfeeding,disagg.value %in% c("Urban","Rural"))
 exclusive_breastfeeding_location$disaggregation = "location"
-exclusive_breastfeeding_income = subset(exclusive_breastfeeding,disagg.value %in% c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"))
+exclusive_breastfeeding_income = subset(exclusive_breastfeeding,disagg.value %in% c("Lowest","Second lowest","Middle","Second highest","Highest"))
 exclusive_breastfeeding_income$disaggregation = "income"
 master_dat_list[[master_dat_index]] = exclusive_breastfeeding_location
 master_dat_index = master_dat_index + 1
@@ -921,7 +921,7 @@ dat = read.xlsx(
   ,na.strings=""
 )
 solid_foods = dat
-names(solid_foods) = c("iso3","country","survey","Urban","Rural","Poorest","Second poorest","Middle","Second wealthiest","Wealthiest")
+names(solid_foods) = c("iso3","country","survey","Urban","Rural","Lowest","Second lowest","Middle","Second highest","Highest")
 solid_foods$year = substr(solid_foods$survey,1,4)
 solid_foods$survey = NULL
 solid_foods = melt(solid_foods,id.vars=c("iso3","country","year"))
@@ -930,7 +930,7 @@ solid_foods$indicator = "solid_foods"
 solid_foods$component = "K"
 solid_foods_location = subset(solid_foods,disagg.value %in% c("Urban","Rural"))
 solid_foods_location$disaggregation = "location"
-solid_foods_income = subset(solid_foods,disagg.value %in% c("Poorest","Second poorest","Middle","Second wealthiest","Wealthiest"))
+solid_foods_income = subset(solid_foods,disagg.value %in% c("Lowest","Second lowest","Middle","Second highest","Highest"))
 solid_foods_income$disaggregation = "income"
 master_dat_list[[master_dat_index]] = solid_foods_location
 master_dat_index = master_dat_index + 1
@@ -951,9 +951,9 @@ overview$count = 1
 overview$count[which(grepl("and",overview$burden_text))] = overview$count[which(grepl("and",overview$burden_text))] + 1
 overview$count[which(grepl(",",overview$burden_text))] = overview$count[which(grepl(",",overview$burden_text))] + 1
 country_classes = c(
-  "a country experiencing one form of malnutrition",
-  "a country experiencing two forms of malnutrition",
-  "a country experiencing three forms of malnutrition"
+  "experiencing one form of malnutrition",
+  "experiencing two forms of malnutrition",
+  "experiencing three forms of malnutrition"
 )
 overview$country_class = country_classes[overview$count]
 overview$count = NULL

@@ -40,7 +40,7 @@
 <text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Burden classification</b></text>
 
 {% if country_data.country_class != "NA" %}
-<text top="{{top+32}}" left="{{left}}" width="530" height="11" font="6">The Global Nutrition Report classifies {{country_data.country}} as {{country_data.country_class}} – {{country_data.burden_text}}</text>
+<text top="{{top+32}}" left="{{left}}" width="530" height="11" font="6">The Global Nutrition Report classifies this country as {{country_data.country_class}} – {{country_data.burden_text}}</text>
 {% else %}
 <text top="{{top+32}}" left="{{left}}" width="530" height="11" font="6">There is insufficient data for the Global Nutrition Report to classify this country's burden</text>
 {% endif %}
@@ -197,19 +197,19 @@
 
 <!-- Row -->
 {% set top = 95 %}
-<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Children (under-5) nutrition status</b></text>
+<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Children (under 5) nutrition status</b></text>
 
 <!-- Charts 8, 9, and 10 -->
 {% set top = top + 30 %}
-<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Under-5 by gender: wasting (%)</b></text>
+<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Under 5 by gender: wasting (%)</b></text>
 <image top="{{top + 28}}" left="{{left}}" width="240" height="200" src="charts/{{country_data.country}}/c8.png"/>
 
 <line x1="{{left+256}}" x2="{{left+256}}" y1="{{top+10}}" y2="{{top+256}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+276}}" width="151" height="18" font="6"><b>Under-5 by gender: stunting (%)</b></text>
+<text top="{{top}}" left="{{left+276}}" width="151" height="18" font="6"><b>Under 5 by gender: stunting (%)</b></text>
 <image top="{{top + 28}}" left="{{left+276}}" width="240" height="200" src="charts/{{country_data.country}}/c9.png"/>
 
 <line x1="{{left+536}}" x2="{{left+536}}" y1="{{top+10}}" y2="{{top+256}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+556}}" width="151" height="18" font="6"><b>Under-5 by gender: overweight (%)</b></text>
+<text top="{{top}}" left="{{left+556}}" width="151" height="18" font="6"><b>Under 5 by gender: overweight (%)</b></text>
 <image top="{{top + 28}}" left="{{left+556}}" width="240" height="200" src="charts/{{country_data.country}}/c10.png"/>
 
 {% set top = top + 245 %}
@@ -221,15 +221,15 @@
 
 <!-- Charts 11, 12, and 13 -->
 {% set top = top + 26 %}
-<text top="{{top}}" left="{{left-10}}" width="151" height="18" font="6"><b>Under-5 by household income: wasting (%)</b></text>
+<text top="{{top}}" left="{{left-10}}" width="151" height="18" font="6"><b>Under 5 by household income: wasting (%)</b></text>
 <image top="{{top + 28}}" left="{{left}}" width="240" height="200" src="charts/{{country_data.country}}/c11.png"/>
 
 <line x1="{{left+256}}" x2="{{left+256}}" y1="{{top+10}}" y2="{{top+256}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+266}}" width="151" height="18" font="6"><b>Under-5 by household income: stunting (%)</b></text>
+<text top="{{top}}" left="{{left+266}}" width="151" height="18" font="6"><b>Under 5 by household income: stunting (%)</b></text>
 <image top="{{top + 28}}" left="{{left+276}}" width="240" height="200" src="charts/{{country_data.country}}/c12.png"/>
 
 <line x1="{{left+536}}" x2="{{left+536}}" y1="{{top+10}}" y2="{{top+256}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+546}}" width="151" height="18" font="6"><b>Under-5 by household income: overweight (%)</b></text>
+<text top="{{top}}" left="{{left+546}}" width="151" height="18" font="6"><b>Under 5 by household income: overweight (%)</b></text>
 <image top="{{top + 28}}" left="{{left+556}}" width="240" height="200" src="charts/{{country_data.country}}/c13.png"/>
 
 {% set top = top + 245 %}
@@ -241,15 +241,15 @@
 
 <!-- Charts 14, 15, and 16 -->
 {% set top = top + 26 %}
-<text top="{{top}}" left="{{left-15}}" width="151" height="18" font="6"><b>Under-5 by household location: wasting (%)</b></text>
+<text top="{{top}}" left="{{left-15}}" width="151" height="18" font="6"><b>Under 5 by household location: wasting (%)</b></text>
 <image top="{{top + 28}}" left="{{left}}" width="240" height="200" src="charts/{{country_data.country}}/c14.png"/>
 
 <line x1="{{left+256}}" x2="{{left+256}}" y1="{{top+10}}" y2="{{top+256}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+261}}" width="151" height="18" font="6"><b>Under-5 by household location: stunting (%)</b></text>
+<text top="{{top}}" left="{{left+261}}" width="151" height="18" font="6"><b>Under 5 by household location: stunting (%)</b></text>
 <image top="{{top + 28}}" left="{{left+276}}" width="240" height="200" src="charts/{{country_data.country}}/c15.png"/>
 
 <line x1="{{left+536}}" x2="{{left+536}}" y1="{{top+10}}" y2="{{top+256}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+546}}" width="151" height="18" font="6"><b>Under-5 by household location: overweight (%)</b></text>
+<text top="{{top}}" left="{{left+546}}" width="151" height="18" font="6"><b>Under 5 by household location: overweight (%)</b></text>
 <image top="{{top + 28}}" left="{{left+556}}" width="240" height="200" src="charts/{{country_data.country}}/c16.png"/>
 
 {% set top = top + 245 %}
@@ -261,7 +261,7 @@
 <!-- Chart 17 -->
 {% set top = top + 26 %}
 <text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Under-5 coexistence of wasting, stunting and overweight</b></text>
-<image top="{{top+25}}" left="{{left+280}}" width="458" height="250" src="charts/{{country_data.country}}/c17.png"/>
+<image top="{{top+25}}" left="{{left}}" width="800" height="250" src="charts/{{country_data.country}}/c17.png"/>
 
 <line x1="{{left}}" x2="{{left}}" y1="{{top+275}}" y2="{{top+293}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top+271}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: UNICEF, Division of Data Research and Policy (2018), Global UNICEF Global Databases: Overlapping Stunting, Wasting and Overweight, New York, May 2018.</text>
@@ -431,7 +431,7 @@
 {% set top = top + 40 %}
 <table data="table8" top="{{top}}" left="{{left}}" widths="550,65,65,65,65" height="200"></table>
 <line x1="{{left}}" x2="{{left}}" y1="{{top+215}}" y2="{{top+231}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
-<text top="{{top+210}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: Based on <i>2016 Global Nutrition Report</i> and UNICEF global databases, 2018.</text>
+<text top="{{top+210}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: Kothari M. and Huestis A., based on <i>2016 Global Nutrition Report</i> and UNICEF global databases, 2018.</text>
 <text top="{{top+220}}" left="{{left+4}}" width="28" height="10" font="9"><b>Notes</b>: Data is compiled using STATcompiler and taken from country Demographic and Health Surveys for 2005–2017.</text>
 
 
