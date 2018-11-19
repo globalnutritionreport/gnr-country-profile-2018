@@ -162,7 +162,6 @@ region_count = -1
 subregion_count = -1
 
 img_path = "/home/alex/git/gnr-country-profile-2018/hero.jpg"
-title = "Country, region and global nutrition profiles"
 description = """
 Explore the Global Nutrition Report’s nutrition profiles, which capture the status of nutrition at the country, regional and global level.
 
@@ -176,6 +175,7 @@ for region_name in nested_countries:
     img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs/Kenya.jpg"
     pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/Kenya.pdf"
     profile_title = "{} nutrition profile".format(region_name)
+    title = "2018 {} {} nutrition profile".format(region_name, "regional")
 
     browser.get("https://dev.globalnutritionreport.org/admin") # Load page
 
@@ -268,6 +268,7 @@ for region_name in nested_countries:
         img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs/Kenya.jpg"
         pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/Kenya.pdf"
         profile_title = "{} nutrition profile".format(subregion_name)
+        title = "2018 {} {} nutrition profile".format(subregion_name, "subregional")
 
         browser.get("https://dev.globalnutritionreport.org/admin") # Load page
 
@@ -367,6 +368,7 @@ for region_name in nested_countries:
             img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs/{}.jpg".format(safeFileName)
             pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/{}.pdf".format(safeFileName)
             profile_title = "{} nutrition profile".format(country_name)
+            title = "2018 {} {} nutrition profile".format(country_name, "country")
 
             browser.get("https://dev.globalnutritionreport.org/admin") # Load page
 
