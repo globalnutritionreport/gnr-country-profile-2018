@@ -1129,7 +1129,7 @@ for(this.country in countries){
   
   c29data = subset(countrydat,indicator %in% indicators)
   c29data$value = as.numeric(c29data$value)
-  # c29data$value[which(c29data$indicator==indicators[1])] = c29data$value[which(c29data$indicator==indicators[1])] / 100
+  c29data$value[which(c29data$indicator==indicators[1])] = c29data$value[which(c29data$indicator==indicators[1])] * 100
   c29data = subset(c29data, !is.na(value))
   c29data = c29data[c("year","indicator","value")]
   c29.oda.max <- max(subset(c29data,indicator==indicators[2])$value,na.rm=TRUE)
@@ -1154,7 +1154,7 @@ for(this.country in countries){
     scale_y_continuous(
       expand = c(0,0),
       limits=c(0,max(c29.oda.max*1.1,1)),
-      sec.axis = sec_axis(~./c29.ratio, name="% of total ODA",labels=percent)
+      sec.axis = sec_axis(~./c29.ratio, name="% of total ODA")
       ) +
     theme(
       legend.position="top"

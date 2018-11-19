@@ -59,7 +59,7 @@ dataDictionary["Kenya"]["table1"] = [
         Paragraph("<b>Under-5 wasting</b>", style=dark_greyParaBold),
         Paragraph("<b>Under-5 overweight</b>", style=dark_greyParaBold),
         Paragraph("<b>WRA anaemia</b>", style=dark_greyParaBold),
-        Paragraph("<b>EBF</b>", style=dark_greyParaBold)
+        Paragraph("<b>Exclusive breastfeeding</b>", style=dark_greyParaBold)
      ],
     ["Off course, some progress", "On course", "Off course, no progress", "Off course", "On course"]
 ]
@@ -239,11 +239,11 @@ for country in dataDictionary.keys():
     dataDictionary[country]["table4"][2][1] = safeFormat(indicator(ctryDat, "gender_inequality_rank"))
     dataDictionary[country]["table4"][2][2] = safeFormat(year(ctryDat, "gender_inequality_rank"))
 
-    dataDictionary[country]["table5"][0][1] = safeFormat(indicator(ctryDat, "physicians"), False, 3)
+    dataDictionary[country]["table5"][0][1] = safeFormat(indicator(ctryDat, "physicians"), False, 2)
     dataDictionary[country]["table5"][0][2] = safeFormat(year(ctryDat, "physicians"))
-    dataDictionary[country]["table5"][1][1] = safeFormat(indicator(ctryDat, "nurses_and_midwives"), False, 3)
+    dataDictionary[country]["table5"][1][1] = safeFormat(indicator(ctryDat, "nurses_and_midwives"), False, 2)
     dataDictionary[country]["table5"][1][2] = safeFormat(year(ctryDat, "nurses_and_midwives"))
-    dataDictionary[country]["table5"][2][1] = safeFormat(indicator(ctryDat, "community_health_workers"), False, 3)
+    dataDictionary[country]["table5"][2][1] = safeFormat(indicator(ctryDat, "community_health_workers"), False, 2)
     dataDictionary[country]["table5"][2][2] = safeFormat(year(ctryDat, "community_health_workers"))
 
     dataDictionary[country]["table6"][0][1] = safeFormat(indicator(ctryDat, "salt_leg"))
