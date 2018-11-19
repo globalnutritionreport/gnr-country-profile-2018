@@ -131,7 +131,7 @@ ind.names = c(
   "Red meat",
   "Processed meat",
   "Sodium",
-  "Sugar-sweeted beverages"
+  "Sugar-sweetened beverages"
 )
 ind.units = c(
   "g",
@@ -346,7 +346,8 @@ coexistence = dat[c(
   "Wasted.and.Stunted",
   "Stunted.Only",
   "Stunted.and.Overweight",
-  "Overweight.Only"
+  "Overweight.Only",
+  "Free.from.Wasting,.Overweight,.Stunting"
 )]
 coexistence = melt(coexistence,id.vars=c("ISO","Countries.and.areas","Year*"))
 names(coexistence) = c("iso3","country","year","disagg.value","value")
@@ -356,14 +357,16 @@ indicators = c(
   "Wasted.and.Stunted",
   "Stunted.Only",
   "Stunted.and.Overweight",
-  "Overweight.Only"
+  "Overweight.Only",
+  "Free.from.Wasting,.Overweight,.Stunting"
 )
 ind.names = c(
   "Wasting alone",
   "Wasting and stunting",
   "Stunting alone",
   "Stunting and overweight",
-  "Overweight alone"
+  "Overweight alone",
+  "Free from"
 )
 coexistence$disagg.value = unfactor(coexistence$disagg.value)
 for(i in 1:length(indicators)){
@@ -519,7 +522,7 @@ master_dat_index = master_dat_index + 1
 master_dat_list[[master_dat_index]] = child_wasting_income
 master_dat_index = master_dat_index + 1
 
-dat = read.xlsx("ECONOMICS AND DEMOGRAPHY_ANNUAL_POPULATION_BY_AGE_BOTH_SEXES.xlsx",sheet=2,rows=c(17:15923))
+dat = read.xlsx("ECONOMICS AND DEMOGRAPHY_ANNUAL_POPULATION_BY_AGE_BOTH_SEXES.xlsx",sheet=2,rows=c(17:20743))
 u5_pop = dat[c("Region,.subregion,.country.or.area.*","Reference.date.(as.of.1.July)","0-4")]
 names(u5_pop) = c("country","year","value")
 u5_pop = subset(u5_pop,year==2018)
@@ -529,7 +532,7 @@ u5_pop$disaggregation = "all"
 master_dat_list[[master_dat_index]] = u5_pop
 master_dat_index = master_dat_index + 1
 
-dat = read.xlsx("ECONOMICS AND DEMOGRAPHY_ANNUAL_POPULATION_BY_AGE_BOTH_SEXES.xlsx",sheet=2,rows=c(17:15923))
+dat = read.xlsx("ECONOMICS AND DEMOGRAPHY_ANNUAL_POPULATION_BY_AGE_BOTH_SEXES.xlsx",sheet=2,rows=c(17:20743))
 dat$value = rowSums(dat[c(20:27)])
 o65_pop = dat[c(3,6,28)]
 names(o65_pop) = c("country","year","value")

@@ -89,6 +89,7 @@ quintileFillValues <- c(red, orange, yellow, lighter.blue, light.blue)
 yellowOrangeFill <- scale_fill_manual(values=c(yellow,orange))
 orangeYellowFill <- scale_fill_manual(values=c(orange,yellow))
 yellowOrangeRedFill <- scale_fill_manual(values=c(yellow,orange,red))
+lightBlueYellowRedFill <- scale_fill_manual(values=c(light.blue,yellow,red))
 orangeLightBlueFill <- scale_fill_manual(values=c(orange,light.blue))
 orangeFill <- scale_fill_manual(values=c(orange))
 yellowFill <- scale_fill_manual(values=c(yellow))
@@ -101,6 +102,7 @@ quintileFill <-  scale_fill_manual(values=quintileFillValues)
 yellowOrangeColor <- scale_color_manual(values=c(yellow,orange))
 orangeYellowColor <- scale_color_manual(values=c(orange,yellow))
 yellowOrangeRedColor <- scale_color_manual(values=c(yellow,orange,red))
+lightBlueYellowRedColor <- scale_color_manual(values=c(light.blue,yellow,red))
 orangeLightBlueColor <- scale_color_manual(values=c(orange,light.blue))
 orangeColor <- scale_color_manual(values=c(orange))
 blueColor <- scale_color_manual(values=c(blue))
@@ -160,7 +162,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 
 ####End setup####
 ####Loop####
-# countries = c("Saint Kitts and Nevis")
+countries = c("Zimbabwe","United Kingdom of Great Britain and Northern Ireland")
 for(this.country in countries){
   message(this.country)
   dir.create(paste(wd,this.country,sep="/"))
@@ -743,11 +745,11 @@ for(this.country in countries){
     wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
     max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
     wasting_years = max(subset(wasting_years,count==max_wasting_count)$year)
-    c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Boys","Girls","Both"),fill=yellowOrangeRedFill,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
+    c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Boys","Girls","Both"),fill=lightBlueYellowRedFill,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
   }else{c8=no.data}
   
-  c9 = grouped_line(countrydat, "stunting_percent","gender",c("Boys","Girls","Both"),color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
-  c10 = grouped_line(countrydat, "overweight_percent","gender",c("Boys","Girls","Both"),color=yellowOrangeRedColor,fill=yellowOrangeRedFill)
+  c9 = grouped_line(countrydat, "stunting_percent","gender",c("Boys","Girls","Both"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill)
+  c10 = grouped_line(countrydat, "overweight_percent","gender",c("Boys","Girls","Both"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill)
   wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="income" & !is.na(value))
   if(nrow(wasting_dat)>0){
     wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
@@ -777,7 +779,7 @@ for(this.country in countries){
   stunting_and_overweight = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Stunting and overweight")$value)/100
   all = 1
   
-  free = all-((wasting+stunting+overweight)-wasting_and_stunting-stunting_and_overweight)
+  free = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Free from")$value)/100
 
   combinations = c(
     A=0
@@ -1047,10 +1049,10 @@ for(this.country in countries){
       geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
       geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2) +
       geom_text(data=subset(c28.data.sub,is.na(example)),aes(y=1,label=paste(round(recommended,1),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
-      geom_text(data=subset(c28.data.sub,example==T),aes(y=1,label="Midpoint of TRMEL"),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
+      geom_text(data=subset(c28.data.sub,example==T),aes(y=1,label="Midpoint of TMREL"),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
       geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round(value)),color=blue,size=8,family="Averta Regular",vjust=2) +
-      annotate("text", x=8, y=0.3, label="0%/0g of TRMEL",size=9,color=blue,family="Averta Regular") +
-      annotate("text", x=8, y=1.7, label="200% of TRMEL",size=9,color=blue,family="Averta Regular") +
+      annotate("text", x=8, y=0.3, label="0%/0g of TMREL",size=9,color=blue,family="Averta Regular") +
+      annotate("text", x=8, y=1.7, label="200% of TMREL",size=9,color=blue,family="Averta Regular") +
       trmelColor + 
       coord_flip() +
       theme_classic() +
@@ -1421,7 +1423,7 @@ for(this.country in countries){
   if(length(free)>0){
     png(filename="c17.png",width=1100,height=600,units="px",bg="white",type="cairo",family="Averta Regular")
     print(plot(c17,
-               legend = list(labels=c("Wasted","Stunting","Overweight","No wasting, stunting or overweight"),font="arial",vgap=2,fontsize=25,fontcolor=blue,fontfamily="Averta Regular")
+               legend = list(labels=c("Wasting only","Stunting only","Overweight only","No wasting, stunting or overweight"),font="arial",vgap=2,fontsize=25,fontcolor=blue,fontfamily="Averta Regular")
                ,edges = list(col=blue,lwd=3)
                ,quantities = list(labels=label.text,fontsize=20,col=blue,family="Averta Regular")
                ,fills=list(fill=c(yellow,orange,light.blue,grey),alpha=1)
