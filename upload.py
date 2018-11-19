@@ -403,7 +403,7 @@ for region_name in nested_countries:
             scroll_and_click(browser, upload_button)
 
             image_title_field = browser.find_elements_by_xpath("//*[@id='id_title']")[1]
-            set_element_value(browser, image_title_field, subregion_name+" hero")
+            set_element_value(browser, image_title_field, country_name+" hero")
 
             image_file_field = browser.find_elements_by_xpath("//*[@id='id_file']")[0]
             image_file_field.send_keys(img_path)
@@ -422,7 +422,7 @@ for region_name in nested_countries:
             scroll_and_click(browser, upload_button)
 
             document_title_field = browser.find_elements_by_xpath("//*[@id='id_title']")[1]
-            set_element_value(browser, document_title_field, subregion_name+" subregional profile")
+            set_element_value(browser, document_title_field, country_name+" country profile")
 
             document_file_field = browser.find_elements_by_xpath("//*[@id='id_file']")[0]
             document_file_field.send_keys(pdf_path)
