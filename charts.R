@@ -88,6 +88,7 @@ quintileFillValues <- c(red, orange, yellow, lighter.blue, light.blue)
 
 yellowOrangeFill <- scale_fill_manual(values=c(yellow,orange))
 orangeYellowFill <- scale_fill_manual(values=c(orange,yellow))
+redYellowFill <- scale_fill_manual(values=c(red,yellow))
 yellowOrangeRedFill <- scale_fill_manual(values=c(yellow,orange,red))
 lightBlueYellowRedFill <- scale_fill_manual(values=c(light.blue,yellow,red))
 orangeLightBlueFill <- scale_fill_manual(values=c(orange,light.blue))
@@ -101,6 +102,7 @@ quintileFill <-  scale_fill_manual(values=quintileFillValues)
 
 yellowOrangeColor <- scale_color_manual(values=c(yellow,orange))
 orangeYellowColor <- scale_color_manual(values=c(orange,yellow))
+redYellowColor <- scale_color_manual(values=c(red,yellow))
 yellowOrangeRedColor <- scale_color_manual(values=c(yellow,orange,red))
 lightBlueYellowRedColor <- scale_color_manual(values=c(light.blue,yellow,red))
 orangeLightBlueColor <- scale_color_manual(values=c(orange,light.blue))
@@ -172,7 +174,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 
 ####End setup####
 ####Loop####
-# countries = c("China","Zimbabwe","United Kingdom of Great Britain and Northern Ireland")
+countries = c("China","Zimbabwe","United Kingdom of Great Britain and Northern Ireland")
 for(this.country in countries){
   message(this.country)
   dir.create(paste(wd,this.country,sep="/"))
@@ -659,7 +661,7 @@ for(this.country in countries){
   }else{
     c7 <- no.data
   }
-  grouped_line = function(countrydat, ind, disagg, disagg.values, fill=orangeYellowFill, color=orangeYellowColor, percent=F, legend=F, factor.years=T){
+  grouped_line = function(countrydat, ind, disagg, disagg.values, fill=redYellowFill, color=redYellowColor, percent=F, legend=F, factor.years=T){
     cdata = subset(countrydat, (indicator==ind & disaggregation==disagg))
     cdata$value = as.numeric(cdata$value)
     if(percent){
@@ -708,7 +710,7 @@ for(this.country in countries){
     }
     return(c)
   }
-  grouped_bar = function(countrydat, ind, disagg, disagg.values, fill=orangeYellowFill, percent=F, legend=F, spacing=1,byrow=F,nrow=2,subset.years=F){
+  grouped_bar = function(countrydat, ind, disagg, disagg.values, fill=redYellowFill, percent=F, legend=F, spacing=1,byrow=F,nrow=2,subset.years=F){
     cdata = subset(countrydat, (indicator==ind & disaggregation==disagg))
     cdata$value = as.numeric(cdata$value)
     if(percent){

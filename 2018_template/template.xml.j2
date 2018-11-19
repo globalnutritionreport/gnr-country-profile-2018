@@ -197,7 +197,7 @@
 
 <!-- Row -->
 {% set top = 95 %}
-<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Child nutrition status</b></text>
+<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Children (under-5) nutrition status</b></text>
 
 <!-- Charts 8, 9, and 10 -->
 {% set top = top + 30 %}
@@ -294,18 +294,18 @@
 
 <!-- Row -->
 {% set top = top + 300 %}
-<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Adolescent nutrition status</b></text>
+<text top="{{top}}" left="0" width="241" height="18" font="3"><b>Children and adolescent (aged 5–19) nutrition status</b></text>
 <!-- Charts 19, 20, and 21 -->
 {% set top = top + 21 %}
-<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Adolescent by gender: underweight (%)</b></text>
+<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Ages 5–19 by gender: underweight (%)</b></text>
 <image top="{{top + 28}}" left="{{left}}" width="240" height="190" src="charts/{{country_data.country}}/c19.png"/>
 
 <line x1="{{left+256}}" x2="{{left+256}}" y1="{{top+10}}" y2="{{top+236}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+276}}" width="151" height="18" font="6"><b>Adolescent by gender: overweight (%)</b></text>
+<text top="{{top}}" left="{{left+276}}" width="151" height="18" font="6"><b>Ages 5–19 by gender: overweight (%)</b></text>
 <image top="{{top + 28}}" left="{{left+276}}" width="240" height="190" src="charts/{{country_data.country}}/c20.png"/>
 
 <line x1="{{left+536}}" x2="{{left+536}}" y1="{{top+10}}" y2="{{top+236}}" on="1"  off="0" color="{{dark_grey}}"></line>
-<text top="{{top}}" left="{{left+556}}" width="151" height="18" font="6"><b>Adolescent by gender: obesity (%)</b></text>
+<text top="{{top}}" left="{{left+556}}" width="151" height="18" font="6"><b>Ages 5–19 by gender: obesity (%)</b></text>
 <image top="{{top + 28}}" left="{{left+556}}" width="240" height="190" src="charts/{{country_data.country}}/c21.png"/>
 
 {% set top = top + 225 %}
@@ -431,7 +431,7 @@
 {% set top = top + 40 %}
 <table data="table8" top="{{top}}" left="{{left}}" widths="550,65,65,65,65" height="200"></table>
 <line x1="{{left}}" x2="{{left}}" y1="{{top+215}}" y2="{{top+231}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
-<text top="{{top+210}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>:Based on <i>2016 Global Nutrition Report</i> and UNICEF global databases, 2018.</text>
+<text top="{{top+210}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: Based on <i>2016 Global Nutrition Report</i> and UNICEF global databases, 2018.</text>
 <text top="{{top+220}}" left="{{left+4}}" width="28" height="10" font="9"><b>Notes</b>: Data is compiled using STATcompiler and taken from country Demographic and Health Surveys for 2005–2017.</text>
 
 

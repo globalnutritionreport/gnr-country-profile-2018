@@ -163,11 +163,9 @@ region_count = -1
 subregion_count = -1
 
 img_path = "/home/alex/git/gnr-country-profile-2018/hero.jpg"
-description = """
-Explore the Global Nutrition Report’s nutrition profiles, which capture the status of nutrition at the country, regional and global level.
+description = """Explore the Global Nutrition Report’s nutrition profiles, which capture the status of nutrition at the country, regional and global level.
 
-Photo credit: Curt Carnemark / World Bank"
-"""
+Photo credit: Curt Carnemark / World Bank"""
 profile_description = "Country profiles aggregate the very latest data on child, adolescent and adult anthropometry and nutritional status, as well as intervention coverage, food supply, nutrition spending and demography."
 
 
