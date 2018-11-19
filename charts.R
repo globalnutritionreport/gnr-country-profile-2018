@@ -124,6 +124,16 @@ firstAndLast <- function(vec,year_vec){
   return(label_df$vec)
 }
 
+round.simple = function(x,digits=0){
+  tipping.val = 1*(10^((digits+2)*-1))
+  floorx = floor(x)
+  native.roundx = round(x,digits)
+  round.is.floor = floorx==native.roundx
+  tipping.point = cumsum(rle(round.is.floor)$lengths)
+  x[tipping.point] = x[tipping.point] + tipping.val
+  return(round(x,digits))
+}
+
 safeFormat <- function(vec, precision=0, prefix="", suffix=""){
   results <- c()
   for(x in vec){
@@ -132,25 +142,25 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
       result <- ""
       #Large Negative
     }else if(x<= -1000){
-      result <- format(round(x, digits = 0),format="d",big.mark=",")
+      result <- format(round.simple(x, digits = 0),format="d",big.mark=",")
       #Middle Negative
     }else if(x< -1){
-      result <- round(x,digits=0)
+      result <- round.simple(x,digits=0)
       #Small negative
     }else if(x<0){
-      result <- round(x,digits=1)
+      result <- round.simple(x,digits=1)
       #Zero
     }else if(x==0){
       result <- "0"
       #Small positive
     }else if(x<1){
-      result <- round(x,digits=1)
+      result <- round.simple(x,digits=1)
       #Middle positive
     }else if(x<1000){
-      result <- round(x,digits=precision)
+      result <- round.simple(x,digits=precision)
       #Large positive
     }else{
-      result <- format(round(x, digits = 0),format="d",big.mark=",")
+      result <- format(round.simple(x, digits = 0),format="d",big.mark=",")
     }
     if(result!=""){
       result = paste0(prefix,result,suffix)
@@ -162,7 +172,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 
 ####End setup####
 ####Loop####
-countries = c("Zimbabwe","United Kingdom of Great Britain and Northern Ireland")
+# countries = c("China","Zimbabwe","United Kingdom of Great Britain and Northern Ireland")
 for(this.country in countries){
   message(this.country)
   dir.create(paste(wd,this.country,sep="/"))
@@ -518,7 +528,7 @@ for(this.country in countries){
         ,legend.key = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key.size = unit(2.2,"lines")
       ) + geom_text(data=subset(c5data,value>3),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
-      scale_color_manual(breaks=c5names,values=c(white,white,white,blue,blue),drop=FALSE)
+      scale_color_manual(breaks=c5names,values=c(white,white,blue,blue,blue),drop=FALSE)
   }else{
     c5 = no.data
   }
@@ -578,7 +588,7 @@ for(this.country in countries){
         ,legend.key = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key.size = unit(2.2,"lines")
       ) + geom_text(data=subset(c6data,value>5),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
-      scale_color_manual(breaks=c6names,values=c(white,white,white,blue,blue),drop=FALSE)
+      scale_color_manual(breaks=c6names,values=c(white,white,blue,blue,blue),drop=FALSE)
   }else{
     c6 = no.data
   }
@@ -645,7 +655,7 @@ for(this.country in countries){
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.2,"lines")
     ) + geom_text(data=subset(c7data,value>5),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
-    scale_color_manual(breaks=c7names,values=c(white,white,white,blue),drop=FALSE)
+    scale_color_manual(breaks=c7names,values=c(white,white,blue,blue),drop=FALSE)
   }else{
     c7 <- no.data
   }
@@ -847,7 +857,9 @@ for(this.country in countries){
   c18data$indicator <- factor(c18data$indicator,levels=rev(c18names))
   c18a.data = subset(c18data,disaggregation=="income")
   c18a.data = subset(c18a.data, disagg.value %in% c("Poorest","Wealthiest"))
-  c18a.data$disagg.value = factor(c18a.data$disagg.value,levels=c("Poorest","Wealthiest"))
+  c18a.data[which(c18a.data$disagg.value=="Poorest")] = "Lowest"
+  c18a.data[which(c18a.data$disagg.value=="Wealthiest")] = "Highest"
+  c18a.data$disagg.value = factor(c18a.data$disagg.value,levels=c("Lowest","Highest"))
   c18b.data = subset(c18data,disaggregation=="location")
   if(nrow(c18a.data)==0){
     c18a <- no.data
@@ -1048,9 +1060,9 @@ for(this.country in countries){
       geom_bar(data=bar.dat.sub,aes(y=c28.max),fill="white",color=blue,stat="identity",width=0.4) +
       geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
       geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2) +
-      geom_text(data=subset(c28.data.sub,is.na(example)),aes(y=1,label=paste(round(recommended,1),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
+      geom_text(data=subset(c28.data.sub,is.na(example)),aes(y=1,label=paste(round.simple(recommended,1),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
       geom_text(data=subset(c28.data.sub,example==T),aes(y=1,label="Midpoint of TMREL"),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
-      geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round(value)),color=blue,size=8,family="Averta Regular",vjust=2) +
+      geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round.simple(value)),color=blue,size=8,family="Averta Regular",vjust=2) +
       annotate("text", x=8, y=0.3, label="0%/0g of TMREL",size=9,color=blue,family="Averta Regular") +
       annotate("text", x=8, y=1.7, label="200% of TMREL",size=9,color=blue,family="Averta Regular") +
       trmelColor + 
@@ -1077,8 +1089,8 @@ for(this.country in countries){
       geom_bar(data=bar.dat.sub,aes(y=c28.max),fill="white",color=blue,stat="identity",width=0.4) +
       geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
       geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2,show.legend=F) +
-      geom_text(aes(y=1,label=paste(round(recommended,1),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
-      geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round(value)),color=blue,size=7,family="Averta Regular",vjust=2) +
+      geom_text(aes(y=1,label=paste(round.simple(recommended,1),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
+      geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round.simple(value)),color=blue,size=7,family="Averta Regular",vjust=2) +
       trmelColor + 
       coord_flip() +
       theme_classic() +
@@ -1104,14 +1116,14 @@ for(this.country in countries){
   if(!is.na(recipient)){
     if(recipient){
       c29names = c("% of total ODA","ODA received")
-      y.lab = "ODA, US$ billions"
+      y.lab = "ODA, US$ millions"
     }else{
       c29names = c("% of total ODA","ODA disbursed")
-      y.lab = "ODA, US$ billions"
+      y.lab = "ODA, US$ millions"
     }
   }else{
     c29names = c("% of total ODA","ODA received")
-    y.lab = "ODA, US$ billions"
+    y.lab = "ODA, US$ millions"
   }
   
   
@@ -1510,10 +1522,10 @@ for(this.country in countries){
   Cairo(family="Averta Regular",file="c27.png",width=800,height=700,units="px",bg="white")
   tryCatch({print(c27)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(family="Averta Regular",file="c28a.png",width=1350,height=960,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c28a.png",width=1200,height=960,units="px",bg="white")
   tryCatch({print(c28a)},error=function(e){message(e);print(no.data)})
   dev.off()
-  Cairo(family="Averta Regular",file="c28b.png",width=1050,height=960,units="px",bg="white")
+  Cairo(family="Averta Regular",file="c28b.png",width=1200,height=960,units="px",bg="white")
   tryCatch({print(c28b)},error=function(e){message(e);print(no.data)})
   dev.off()
   Cairo(family="Averta Regular",file="c29.png",width=1000,height=500,units="px",bg="white")

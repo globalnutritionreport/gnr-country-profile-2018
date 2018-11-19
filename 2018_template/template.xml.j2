@@ -39,7 +39,11 @@
 {% set page = 1 %}
 <text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Burden classification</b></text>
 
+{% if country_data.country_class != "NA" %}
 <text top="{{top+32}}" left="{{left}}" width="530" height="11" font="6">The Global Nutrition Report classifies {{country_data.country}} as {{country_data.country_class}} – {{country_data.burden_text}}</text>
+{% else %}
+<text top="{{top+32}}" left="{{left}}" width="530" height="11" font="6">There is insufficient data for the Global Nutrition Report to classify this country's burden</text>
+{% endif %}
 
 {% set top = top + 45 %}
 <line x1="{{left}}" x2="{{left}}" y1="{{top+5}}" y2="{{top+22}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
@@ -373,8 +377,8 @@
 
 <!-- Chart 28 -->
 {% set top = top + 20 %}
-<image top="{{top+20}}" left="{{left}}" width="450" height="320" src="charts/{{country_data.country}}/c28a.png"/>
-<image top="{{top+20}}" left="{{left+450}}" width="350" height="320" src="charts/{{country_data.country}}/c28b.png"/>
+<image top="{{top+20}}" left="{{left}}" width="400" height="320" src="charts/{{country_data.country}}/c28a.png"/>
+<image top="{{top+20}}" left="{{left+450}}" width="400" height="320" src="charts/{{country_data.country}}/c28b.png"/>
 <line x1="{{left}}" x2="{{left}}" y1="{{top+355}}" y2="{{top+370}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top+350}}" left="{{left+4}}" width="28" height="10" font="9"><b>Source</b>: Global Burden of Disease, the Institute for Health Metrics and Evaluation.</text>
 <text top="{{top+361}}" left="{{left+4}}" width="28" height="10" font="9"><b>Notes</b>: Men and women aged 25 and older. TMREL = theoretical minimum risk exposure level.</text>

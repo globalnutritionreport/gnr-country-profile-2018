@@ -98,7 +98,7 @@ dataDictionary["Kenya"]["table5"] = [
 
 dataDictionary["Kenya"]["table6"] = [
     [Paragraph("Mandatory legislation for salt iodisation", style=dark_greyParaBold), "Yes"],
-    [Paragraph("Sugar-sweeted beverage tax", style=dark_greyParaBold), "Yes"],
+    [Paragraph("Sugar-sweetened beverage tax", style=dark_greyParaBold), "Yes"],
     [Paragraph("Food-based dietary guidelines", style=dark_greyParaBold), "Yes"],
     [Paragraph("Multisectoral comprehensive nutrition plan", style=dark_greyParaBold), "Yes"],
 ]
@@ -125,7 +125,7 @@ dataDictionary["Kenya"]["table8"] = [
         Paragraph("<b>Female</b>", style=dark_greyParaBold),
         Paragraph("<b>Year</b>", style=dark_greyParaBold)
      ],
-    [u"Children 0\u201359 months with diarrhea who received zinc treatment", "8.1", "NA", "NA", "2014"],
+    [u"Children 0\u201359 months with diarrhoea who received zinc treatment", "8.1", "NA", "NA", "2014"],
     [u"Children 6\u201359 months who received vitamin A supplements in last 6 months", "71.7", "71.6", "71.9", "2014"],
     [u"Children 6\u201359 months given iron supplements in past 7 days", "2.7", "2.6", "2.7", "2014"],
     [Paragraph("Women with a birth in last five years who received iron and folic acid during their most recent pregnancy", style=dark_greyParaStyle), "69.4", "", "NA", "2014"],

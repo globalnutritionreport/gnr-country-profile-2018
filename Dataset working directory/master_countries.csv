@@ -51,7 +51,7 @@ BRB,Barbados
 BLR,BELARUS
 BLR,Belarus
 BEL,Belgium
-BEL,Belgium-Luxembourg
+,Belgium-Luxembourg
 BLZ,BELIZE
 BLZ,Belize
 BEN,BENIN
@@ -115,7 +115,7 @@ CHN,China
 ,"China, Hong Kong Special Administrative Region"
 ,"China, Macao SAR"
 ,"China, Macao Special Administrative Region"
-CHN,"China, mainland"
+,"China, mainland"
 ,"China, Taiwan Province of"
 ,"China, Taiwan Province of"
 ,"China, Taiwan Province of China"
@@ -149,7 +149,7 @@ CYP,Cyprus
 CZE,Czech Republic
 CZE,CZECH REPUBLIC (THE)
 CZE,Czechia
-CZE,Czechoslovakia
+,Czechoslovakia
 PRK,Dem. People's Republic of Korea
 PRK,DEMOCRATIC PEOPLE S REP. OF KOREA (THE)
 PRK,Democratic People's Republic of Korea
@@ -193,7 +193,7 @@ SWZ,Eswatini
 SWZ,Eswatini (Kingdom of)
 ETH,ETHIOPIA
 ETH,Ethiopia
-ETH,Ethiopia PDR
+,Ethiopia PDR
 ,Euro area
 ,Euro area
 ,EUROPE
@@ -513,7 +513,7 @@ SEN,SENEGAL
 SEN,Senegal
 SRB,SERBIA
 SRB,Serbia
-SRB,Serbia and Montenegro
+,Serbia and Montenegro
 SYC,SEYCHELLES
 SYC,Seychelles
 SLE,SIERRA LEONE
@@ -566,7 +566,7 @@ PSE,State of Palestine
 ,Sub-Saharan Africa (including Sudan)
 SDN,Sudan
 SDN,Sudan (former)
-SDN,SUDAN (THE)
+,SUDAN (THE)
 SUR,SURINAME
 SUR,Suriname
 SWZ,SWAZILAND
@@ -626,7 +626,7 @@ USA,UNITED STATES OF AMERICA (THE)
 ,Upper-middle-income countries
 URY,URUGUAY
 URY,Uruguay
-RUS,USSR
+,USSR
 UZB,UZBEKISTAN
 UZB,Uzbekistan
 VUT,VANUATU

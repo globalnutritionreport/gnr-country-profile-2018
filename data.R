@@ -529,6 +529,7 @@ u5_pop = subset(u5_pop,year==2018)
 u5_pop$component = "R"
 u5_pop$indicator = "u5_pop"
 u5_pop$disaggregation = "all"
+u5_pop = subset(u5_pop,country!="Micronesia")
 master_dat_list[[master_dat_index]] = u5_pop
 master_dat_index = master_dat_index + 1
 
@@ -540,6 +541,7 @@ o65_pop = subset(o65_pop,year==2018)
 o65_pop$component = "R"
 o65_pop$indicator = "65_years"
 o65_pop$disaggregation = "all"
+o65_pop = subset(o65_pop,country!="Micronesia")
 master_dat_list[[master_dat_index]] = o65_pop
 master_dat_index = master_dat_index + 1
 
@@ -550,6 +552,7 @@ population$year = 2017
 population$component = "R"
 population$indicator = "population"
 population$disaggregation = "all"
+population = subset(population,country!="Micronesia")
 master_dat_list[[master_dat_index]] = population
 master_dat_index = master_dat_index + 1
 
@@ -633,6 +636,8 @@ oda_recip = melt(oda_recip,id.vars=c("country","iso3","year"),variable.name="ind
 oda_recip$component = "P"
 oda_recip$disaggregation = "all"
 oda_recip$recip = T
+oda_recip = subset(oda_recip,country!="States Ex-Yugoslavia unspecified")
+oda_recip = subset(oda_recip,!country %in% c("United Arab Emirates","Kuwait","Korea","Slovenia"))
 master_dat_list[[master_dat_index]] = oda_recip
 master_dat_index = master_dat_index + 1
 
@@ -654,6 +659,8 @@ oda_donor = melt(oda_donor,id.vars=c("country","iso3","year"),variable.name="ind
 oda_donor$component = "P"
 oda_donor$disaggregation = "all"
 oda_donor$recip = F
+oda_donor = subset(oda_donor,country!="States Ex-Yugoslavia unspecified")
+oda_donor = subset(oda_donor,!country %in% c("Azerbaijan","Cyprus","Croatia","Israel","Kazakhstan","Malta","SaudiArabia","Timor-Leste","Thailand","Turkey"))
 master_dat_list[[master_dat_index]] = oda_donor
 master_dat_index = master_dat_index + 1
 
@@ -1314,7 +1321,9 @@ fruit_veg = dat[c("Area",paste0("Y",1961:2013))]
 fruit_veg = melt(fruit_veg,id.vars="Area",variable.name="year")
 fruit_veg$year = substr(fruit_veg$year,2,5)
 names(fruit_veg)[1] = "country"
-fruit_veg = data.table(fruit_veg)[,.(value=sum(value)),by=.(country,year)]
+fruit_veg$country[which(fruit_veg$country=="Sudan (former)")] = "Sudan"
+fruit_veg = data.table(fruit_veg)[,.(value=sum(value,na.rm=T)),by=.(country,year)]
+fruit_veg$value[which(fruit_veg$value==0)] = NA
 fruit_veg$indicator = "fruit_veg_availability"
 fruit_veg$disaggregation = "all"
 fruit_veg$component = "S"
@@ -1397,6 +1406,7 @@ undernourishment_prev = melt(undernourishment_prev,id.vars=c("iso3","country"),v
 undernourishment_prev$indicator = "undernourishment_prev"
 undernourishment_prev$disaggregation = "all"
 undernourishment_prev$component = "S"
+undernourishment_prev = subset(undernourishment_prev,country!="Micronesia")
 master_dat_list[[master_dat_index]] = undernourishment_prev
 master_dat_index = master_dat_index + 1
 
@@ -1426,6 +1436,7 @@ master_dat$key.iso3 = NULL
 # write.csv(unique(master_dat[,c("iso3","country")]),"master_countries.csv",na="",row.names=F)
 master_countries = read.csv("master_countries.csv",na.strings="")
 master_countries = subset(master_countries,!is.na(iso3))
+master_countries = unique(master_countries)
 
 names(master_countries) = c("key.iso3","country")
 master_dat = merge(master_dat,master_countries,by="country")
@@ -1459,7 +1470,12 @@ diff[which(!(diff %in% depr))]
 write.csv(master_dat,"../data.csv",na="",row.names=F)
 
 master_dat_melt = melt(master_dat[,c("iso3","country","year","indicator","disaggregation","disagg.value","value")],id.vars=c("iso3","country","year","indicator","disaggregation","disagg.value"))
-return_one = function(vec){return(vec[1])}
-master_dat_wide = dcast(master_dat_melt,iso3+country+year~indicator+disaggregation+disagg.value+variable,sep=".",fun=return_one)
+# return_one = function(vec){return(vec[1])}
+master_dat_wide = dcast(master_dat_melt,iso3+country+year~indicator+disaggregation+disagg.value+variable,sep="."
+                        # ,fun=return_one
+                        )
+# master_dat_unwide = melt(master_dat_wide,id.vars=c("iso3","country","year"))
+# master_dat_unwide = subset(master_dat_unwide,value>1)
+# write.csv(master_dat_unwide,"../dups.csv")
 write.csv(master_dat_wide,"../data_wide.csv",na="",row.names=T)
 
