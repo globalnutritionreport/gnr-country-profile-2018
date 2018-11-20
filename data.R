@@ -1282,7 +1282,7 @@ sanitation$sum = rowSums(sanitation[,c("basic_sanitation",
                                                "unimproved_sanitation",
                                                "open_defecation",
                                                "safely_managed_sanitation")],na.rm=T)
-sanitation$basic_sanitation[which(sanitation$sum>100)] = sanitation$basic_sanitation[which(sanitation$sum>100)] - sanitation$safely_managed_sanitation[which(sanitation$sum>100)]
+sanitation$basic_sanitation[which(sanitation$sum>100.1)] = sanitation$basic_sanitation[which(sanitation$sum>100.1)] - sanitation$safely_managed_sanitation[which(sanitation$sum>100.1)]
 sanitation$sum = NULL
 sanitation = melt(sanitation,id.vars=c("iso3","country","year"),variable.name="indicator")
 sanitation$disaggregation = "all"
