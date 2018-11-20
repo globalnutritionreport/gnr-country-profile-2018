@@ -33,6 +33,7 @@ population$country = NULL
 master_dat = read.csv("../data.csv",na.strings="",as.is=T)
 master_dat$year[which(is.na(master_dat$year))] = 2018
 master_dat = merge(master_dat,population,by=c("iso3","year"))
+master_dat$year_range = ""
 
 numericable = function(vec){
   vec = vec[complete.cases(vec)]
@@ -52,7 +53,7 @@ must_sum_to_100s = c("basic_water","limited_water","safely_managed_water","surfa
 must_sum_to_100s_sub = subset(master_dat,indicator %in% must_sum_to_100s)
 country.years = unique(must_sum_to_100s_sub[,c("iso3","country","region","subregion","year","total.pop")])
 
-latest.year.inds = c("coexistence")
+latest.year.inds = c("coexistence","physicians")
 
 just.recips = c("ODA_received","ODA_specific")
 
@@ -81,7 +82,7 @@ for(this.indicator in indicators){
       if(this.indicator %in% latest.year.inds){
         # Only take latest year for each combo
         master_dat_sub = master_dat_sub[master_dat_sub[,.I[year==max(year)],by=.(country,indicator,disaggregation,disagg.value)]$V1]
-        master_dat_sub$year = paste(min(master_dat_sub$year,na.rm=T),max(master_dat_sub$year,na.rm=T),sep="–")
+        master_dat_sub$year_range = paste(min(master_dat_sub$year,na.rm=T),max(master_dat_sub$year,na.rm=T),sep="–")
       }
       if(this.indicator %in% just.recips){
         master_dat_sub = subset(master_dat_sub,recip)
@@ -92,7 +93,7 @@ for(this.indicator in indicators){
         value.sum=sum(as.numeric(value)),
         total.pop=sum(as.numeric(total.pop)),
         n=nrow(.SD)
-      ),by=.(region,year,indicator,disaggregation,disagg.value,component,rec,unit)]
+      ),by=.(region,year,indicator,disaggregation,disagg.value,component,rec,unit,year_range)]
       dat_reg$regional = 1
       master_dat_reg_list[[master_dat_reg_index]] = dat_reg
       master_dat_reg_index = master_dat_reg_index + 1
@@ -144,7 +145,7 @@ for(this.indicator in indicators){
       if(this.indicator %in% latest.year.inds){
         # Only take latest year for each combo
         master_dat_sub = master_dat_sub[master_dat_sub[,.I[year==max(year)],by=.(country,indicator,disaggregation,disagg.value)]$V1]
-        master_dat_sub$year = paste(min(master_dat_sub$year,na.rm=T),max(master_dat_sub$year,na.rm=T),sep="–")
+        master_dat_sub$year_range = paste(min(master_dat_sub$year,na.rm=T),max(master_dat_sub$year,na.rm=T),sep="–")
       }
       if(this.indicator %in% just.recips){
         master_dat_sub = subset(master_dat_sub,recip)
@@ -155,7 +156,7 @@ for(this.indicator in indicators){
         value.sum=sum(as.numeric(value)),
         total.pop=sum(as.numeric(total.pop)),
         n=nrow(.SD)
-      ),by=.(subregion,year,indicator,disaggregation,disagg.value,component,rec,unit)]
+      ),by=.(subregion,year,indicator,disaggregation,disagg.value,component,rec,unit,year_range)]
       dat_reg$regional = 0
       setnames(dat_reg,"subregion","region")
       master_dat_reg_list[[master_dat_reg_index]] = dat_reg

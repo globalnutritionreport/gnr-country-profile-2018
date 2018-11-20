@@ -1351,6 +1351,7 @@ non_staples = melt(non_staples,id.vars=c("iso3","country"),variable.name="year")
 non_staples$indicator = "total_calories_non_staple"
 non_staples$disaggregation = "all"
 non_staples$component = "S"
+non_staples$value = 100-as.numeric(non_staples$value)
 master_dat_list[[master_dat_index]] = non_staples
 master_dat_index = master_dat_index + 1
 
