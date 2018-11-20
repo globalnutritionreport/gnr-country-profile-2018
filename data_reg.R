@@ -19,35 +19,63 @@ numericable = function(vec){
   return(F)
 }
 
-adaptive_mean = function(vec){
-  vec = vec[complete.cases(vec)]
-  if(numericable(vec)){
-    return(
-      list(
-        "numeric"=T,
-        "n"=length(vec),
-        "mean"=mean(as.numeric(vec))
-      )
-    )
+master_dat_reg_list = list()
+master_dat_reg_index = 1
+
+indicators = unique(master_dat$indicator)
+for(this.indicator in indicators){
+  master_dat_sub = subset(master_dat,indicator==this.indicator)
+  master_dat_sub = master_dat_sub[complete.cases(master_dat_sub$value),]
+  master_dat_sub = data.table(master_dat_sub)
+  if(nrow(master_dat_sub)>0){
+    if(numericable(master_dat_sub$value)){
+      dat_reg = master_dat_sub[,.(value=mean(as.numeric(value)),n=nrow(.SD)),by=.(region,year,indicator,disaggregation,disagg.value,component)]
+      master_dat_reg_list[[master_dat_reg_index]] = dat_reg
+      master_dat_reg_index = master_dat_reg_index + 1
+    }else{
+      uni.vals = unique(master_dat_sub$value)
+      master_dat_sub$count = 1
+      for(uni.val in uni.vals){
+        master_dat_clone = master_dat_sub
+        master_dat_clone$value = uni.val
+        master_dat_clone$count = 0 
+        master_dat_sub = rbind(master_dat_sub,master_dat_clone)
+      }
+      dat_reg = data.table(master_dat_sub)[,.(n=sum(count)),by=.(region,year,indicator,disaggregation,disagg.value,component,value)]
+      master_dat_reg_list[[master_dat_reg_index]] = dat_reg
+      master_dat_reg_index = master_dat_reg_index + 1
+    }
   }
-  t = table(vec)
-  l = list()
-  tnames = names(t)
-  for(tname in tnames){
-    l[[tname]] = t[tname][[1]]
-  }
-  return(
-    list(
-      "numeric"=F,
-      "n"=length(vec),
-      "counts"=l
-    )
-  )
 }
 
 indicators = unique(master_dat$indicator)
-for(indicator in indicators){
-  message(indicator)
-  vec = master_dat[,indicator]
-  am = adaptive_mean(vec)
+for(this.indicator in indicators){
+  master_dat_sub = subset(master_dat,indicator==this.indicator)
+  master_dat_sub = master_dat_sub[complete.cases(master_dat_sub$value),]
+  master_dat_sub = data.table(master_dat_sub)
+  if(nrow(master_dat_sub)>0){
+    if(numericable(master_dat_sub$value)){
+      dat_reg = master_dat_sub[,.(value=mean(as.numeric(value)),n=nrow(.SD)),by=.(subregion,year,indicator,disaggregation,disagg.value,component)]
+      setnames(dat_reg,"subregion","region")
+      master_dat_reg_list[[master_dat_reg_index]] = dat_reg
+      master_dat_reg_index = master_dat_reg_index + 1
+    }else{
+      uni.vals = unique(master_dat_sub$value)
+      master_dat_sub$count = 1
+      for(uni.val in uni.vals){
+        master_dat_clone = master_dat_sub
+        master_dat_clone$value = uni.val
+        master_dat_clone$count = 0 
+        master_dat_sub = rbind(master_dat_sub,master_dat_clone)
+      }
+      dat_reg = data.table(master_dat_sub)[,.(n=sum(count)),by=.(subregion,year,indicator,disaggregation,disagg.value,component,value)]
+      setnames(dat_reg,"subregion","region")
+      master_dat_reg_list[[master_dat_reg_index]] = dat_reg
+      master_dat_reg_index = master_dat_reg_index + 1
+    }
+  }
 }
+
+master_dat_reg = rbindlist(master_dat_reg_list)
+
+write.csv(master_dat_reg,"../data_reg.csv",na="",row.names=F)
