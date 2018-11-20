@@ -188,4 +188,31 @@ for(this.indicator in indicators){
 
 master_dat_reg = rbindlist(master_dat_reg_list,fill=T)
 
+# Fix data here
+
+# Three year avgs for under5s
+indicators = c("stunting_percent","overweight_percent")
+to_average = subset(master_dat_reg,indicator %in% indicators)
+master_dat_reg = subset(master_dat_reg,!indicator %in% indicators)
+year_seq = c(1999,2002,2005,2008,2011,2014,2016)
+to_average$old.year = to_average$year
+to_average$year = NA
+for(i in 2:length(year_seq)){
+  start = year_seq[i-1]
+  end = year_seq[i]
+  if(i==length(year_seq)){
+    to_average$year[which(to_average$old.year>=start & to_average$old.year<=end)] = round((end+start)/2)
+  }else{
+    to_average$year[which(to_average$old.year>=start & to_average$old.year<end)] = round((end+start)/2)
+  }
+}
+to_average = to_average[,.(
+  value.unweighted=mean(as.numeric(value)),
+  value=weighted.mean(as.numeric(value),total.pop),
+  value.sum=sum(as.numeric(value)),
+  total.pop=sum(as.numeric(total.pop)),
+  n=sum(n)
+),by=.(region,year,indicator,disaggregation,disagg.value,component,rec,unit,year_range)]
+master_dat_reg = rbindlist(list(master_dat_reg,to_average),fill=T)
+
 write.csv(master_dat_reg,"../data_reg.csv",na="",row.names=F)
