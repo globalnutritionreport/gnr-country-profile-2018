@@ -545,17 +545,6 @@ o65_pop = subset(o65_pop,country!="Micronesia")
 master_dat_list[[master_dat_index]] = o65_pop
 master_dat_index = master_dat_index + 1
 
-dat = read.xlsx("ECONOMICS AND DEMOGRAPHY total pop country and region.xlsx",sheet=2,rows=c(17:290))
-population = dat[c("Region,.subregion,.country.or.area.*","2017")]
-names(population) = c("country","value")
-population$year = 2017
-population$component = "R"
-population$indicator = "population"
-population$disaggregation = "all"
-population = subset(population,country!="Micronesia")
-master_dat_list[[master_dat_index]] = population
-master_dat_index = master_dat_index + 1
-
 dat = read.xlsx("ECONOMICS AND DEMOGRAPHY_GDP PER CAPITA_COUNTRY.xlsx",rows=c(4:268))
 gdp_per_cap = dat[c("Country.Name","Country.Code",as.character(c(1990:2017)))]
 gdp_per_cap = melt(gdp_per_cap,id.vars=c("Country.Name","Country.Code"))

@@ -174,7 +174,8 @@ for region_name in nested_countries:
     img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs/Kenya-0.jpg"
     pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/Kenya.pdf"
     profile_title = "{} nutrition profile".format(region_name)
-    title = "2018 {} {} nutrition profile".format(region_name, "regional")
+    title = "{} {} nutrition profile".format(region_name, "regional")
+    seo_title = "2018 "+title
 
     browser.get("https://dev.globalnutritionreport.org/admin") # Load page
 
@@ -193,7 +194,12 @@ for region_name in nested_countries:
         {"input_id": "id_description", "input_str": description},
         {"input_id": "id_profile_title", "input_str": profile_title},
         {"input_id": "id_profile_description", "input_str": profile_description},
-        {"input_id": "id_slug", "input_str": slugify(title)},
+        {"input_id": "id_seo_title", "input_str": seo_title},
+    ]
+    input_text(browser, queries)
+
+    queries = [
+        {"input_id": "id_slug", "input_str": slugify(seo_title)},
     ]
     input_text(browser, queries)
 
@@ -268,7 +274,8 @@ for region_name in nested_countries:
         img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs/Kenya-0.jpg"
         pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/Kenya.pdf"
         profile_title = "{} nutrition profile".format(subregion_name)
-        title = "2018 {} {} nutrition profile".format(subregion_name, "subregional")
+        title = "{} {} nutrition profile".format(subregion_name, "subregional")
+        seo_title = "2018 "+title
 
         browser.get("https://dev.globalnutritionreport.org/admin") # Load page
 
@@ -294,7 +301,12 @@ for region_name in nested_countries:
             {"input_id": "id_description", "input_str": description},
             {"input_id": "id_profile_title", "input_str": profile_title},
             {"input_id": "id_profile_description", "input_str": profile_description},
-            {"input_id": "id_slug", "input_str": slugify(title)},
+            {"input_id": "id_seo_title", "input_str": seo_title},
+        ]
+        input_text(browser, queries)
+
+        queries = [
+            {"input_id": "id_slug", "input_str": slugify(seo_title)},
         ]
         input_text(browser, queries)
 
@@ -369,7 +381,8 @@ for region_name in nested_countries:
             img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs/{}-0.jpg".format(safeFileName)
             pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/{}.pdf".format(safeFileName)
             profile_title = "{} nutrition profile".format(country_name)
-            title = "2018 {} {} nutrition profile".format(country_name, "country")
+            title = "{} {} nutrition profile".format(country_name, "country")
+            seo_title = "2018 "+title
 
             browser.get("https://dev.globalnutritionreport.org/admin") # Load page
 
@@ -395,7 +408,12 @@ for region_name in nested_countries:
                 {"input_id": "id_description", "input_str": description},
                 {"input_id": "id_profile_title", "input_str": profile_title},
                 {"input_id": "id_profile_description", "input_str": profile_description},
-                {"input_id": "id_slug", "input_str": slugify(title)},
+                {"input_id": "id_seo_title", "input_str": seo_title},
+            ]
+            input_text(browser, queries)
+
+            queries = [
+                {"input_id": "id_slug", "input_str": slugify(seo_title)},
             ]
             input_text(browser, queries)
 
