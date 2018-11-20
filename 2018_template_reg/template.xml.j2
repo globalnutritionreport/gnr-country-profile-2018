@@ -24,7 +24,7 @@
 	<fontspec id="25" size="10" family="Averta" color="{{dark_grey}}"/>
 
 <image top="0" left="0" width="892" height="124" src="{{template_folder}}/banner.png"/>
-<text top="15" left="44" width="28" height="17" font="5">2018 Nutrition country profile</text>
+<text top="15" left="44" width="28" height="17" font="5">2018 Nutrition regional profile</text>
 <text top="15" left="212" width="28" height="17" font="5">|</text>
 <text top="15" left="220" width="28" height="17" font="5"><link href="http://www.globalnutritionreport.org">globalnutritionreport.org</link></text>
 <text top="20" left="39" width="800" height="72" font="2" shrink="True"><b>{{country_data.country}}</b></text>
@@ -37,22 +37,7 @@
 {% set right = 852 %}
 {% set bottom = 1234 %}
 {% set page = 1 %}
-<text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Burden classification</b></text>
 
-{% if country_data.country_class != "NA" %}
-<text top="{{top+32}}" left="{{left}}" width="530" height="11" font="6">The Global Nutrition Report classifies this country as {{country_data.country_class}} – {{country_data.burden_text}}</text>
-{% else %}
-<text top="{{top+32}}" left="{{left}}" width="530" height="11" font="6">There is insufficient data for the Global Nutrition Report to classify this country's burden</text>
-{% endif %}
-
-{% set top = top + 45 %}
-<line x1="{{left}}" x2="{{left}}" y1="{{top+5}}" y2="{{top+22}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
-<text top="{{top}}" left="{{left+4}}" width="530" height="11" font="9"><b>Sources</b>: UNICEF/WHO/World Bank Group: Joint child malnutrition estimates, NCD Risk Factor Collaboration, WHO Global Health Observatory.</text>
-<text top="{{top+11}}" left="{{left+4}}" width="530" height="11" font="9"><b>Notes</b>: Thresholds for a country having the form or not: stunting in children aged under 5 years ≥20%; anaemia in women of reproductive age ≥20%; overweight (body mass index ≥25) in adult women aged ≥18 years ≥35%. </text>
-
-<line x1="{{left}}" x2="{{right}}" y1="{{top+35}}" y2="{{top+35}}" width="1" color="{{dark_grey}}" on="1" off="0"></line>
-
-{% set top = top + 40 %}
 <text top="{{top}}" left="{{left}}" width="151" height="18" font="6"><b>Progress against global nutrition targets 2018</b></text>
 {% set top = top + 30 %}
 <table data="table1" top="{{top}}" left="{{left+38}}" widths="165,165,165,165,130" height="30"></table>
@@ -102,14 +87,6 @@
 <text top="{{top+224}}" left="{{left+287}}" width="105" height="11" font="9">Mortality Estimation 2018.</text>
 
 <line x1="{{left+510}}" x2="{{left+510}}" y1="{{top+10}}" y2="{{top+235}}" on="1"  off="0" color="{{dark_grey}}"></line>
-
-<!-- Table 2 -->
-<text top="{{top}}" left="{{left+529}}" width="117" height="18" font="6"><b>Income inequality</b></text>
-<table top="{{top+27}}" left="{{left+529}}" height="30" data="table2" widths="110,107,58"></table>
-<line x1="{{left+531}}" x2="{{left+531}}" y1="{{top+72}}" y2="{{top+102}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
-<text top="{{top+67}}" left="{{left+535}}" width="104" height="11" font="9"><b>Source</b>: World Bank 2018.</text>
-<text top="{{top+78}}" left="{{left+535}}" width="240" height="11" font="9"><b>Notes</b>: 0 = perfect equality, 100 = perfect inequality.<super>1</super> Countries</text>
-<text top="{{top+89}}" left="{{left+535}}" width="260" height="11" font="9"><b></b>are ranked from most equal (1) to most unequal (155).<super>2</super></text>
 
 
 <!-- Table 3 -->
@@ -426,13 +403,6 @@
 <!-- Row -->
 {% set top = top + 125 %}
 <text top="{{top}}" left="0" width="241" height="18" font="3"><b>Intervention coverage</b></text>
-
-<!-- Table 8 -->
-{% set top = top + 40 %}
-<table data="table8" top="{{top}}" left="{{left}}" widths="550,65,65,65,65" height="200"></table>
-<line x1="{{left}}" x2="{{left}}" y1="{{top+215}}" y2="{{top+231}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
-<text top="{{top+210}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: Kothari M. and Huestis A., based on <i>2016 Global Nutrition Report</i> and UNICEF global databases, 2018.</text>
-<text top="{{top+220}}" left="{{left+4}}" width="28" height="10" font="9"><b>Notes</b>: Data is compiled using STATcompiler and taken from country Demographic and Health Surveys for 2005–2017.</text>
 
 
 <!-- Footer -->

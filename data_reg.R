@@ -74,6 +74,10 @@ for(this.indicator in indicators){
       dat_reg = data.table(master_dat_sub)[,.(
         n=sum(count)
       ),by=.(region,year,indicator,disaggregation,disagg.value,component,value)]
+      dat_reg_N = data.table(master_dat_sub)[,.(
+        N=sum(count)
+      ),by=.(region,year,indicator,disaggregation,disagg.value,component)]
+      dat_reg = merge(dat_reg,dat_reg_N)
       master_dat_reg_list[[master_dat_reg_index]] = dat_reg
       master_dat_reg_index = master_dat_reg_index + 1
     }
@@ -106,6 +110,10 @@ for(this.indicator in indicators){
       dat_reg = data.table(master_dat_sub)[,.(
         n=sum(count)
       ),by=.(subregion,year,indicator,disaggregation,disagg.value,component,value)]
+      dat_reg_N = data.table(master_dat_sub)[,.(
+        N=sum(count)
+      ),by=.(subregion,year,indicator,disaggregation,disagg.value,component)]
+      dat_reg = merge(dat_reg,dat_reg_N)
       setnames(dat_reg,"subregion","region")
       master_dat_reg_list[[master_dat_reg_index]] = dat_reg
       master_dat_reg_index = master_dat_reg_index + 1
