@@ -662,7 +662,7 @@ for(this.country in countries){
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.2,"lines")
-    ) + geom_text(data=subset(c7data,value>5),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
+    ) + geom_text(data=subset(c7data,value>3),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
     scale_color_manual(breaks=c7names,values=c(white,white,blue,blue),drop=FALSE)
   }else{
     c7 <- no.data
@@ -711,9 +711,9 @@ for(this.country in countries){
         ,legend.key = element_blank()
       )
     if(factor.years){
-      c = c + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value),unfactor(year))),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
+      c = c + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),unfactor(year))),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
     }else{
-      c = c + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value),year)),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
+      c = c + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),year)),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
     }
     return(c)
   }

@@ -1251,7 +1251,7 @@ drinking_water$sum = rowSums(drinking_water[,c("basic_water",
                                                "unimproved_water",
                                                "surface_water",
                                                "safely_managed_water")],na.rm=T)
-drinking_water$basic_water[which(drinking_water$sum>100)] = drinking_water$basic_water[which(drinking_water$sum>100)] - drinking_water$safely_managed_water[which(drinking_water$sum>100)]
+drinking_water$basic_water[which(drinking_water$sum>100.1)] = drinking_water$basic_water[which(drinking_water$sum>100.1)] - drinking_water$safely_managed_water[which(drinking_water$sum>100.1)]
 drinking_water$sum = NULL
 drinking_water = melt(drinking_water,id.vars=c("iso3","country","year"),variable.name="indicator")
 drinking_water$disaggregation = "all"
