@@ -83,7 +83,14 @@ for(this.indicator in indicators){
         # Only take latest year for each combo
         master_dat_sub = master_dat_sub[master_dat_sub[,.I[year==max(year)],by=.(country,indicator,disaggregation,disagg.value)]$V1]
         master_dat_sub$year = max(master_dat_sub$year,na.rm=T)
-        master_dat_sub$year_range = paste(min(master_dat_sub$year,na.rm=T),max(master_dat_sub$year,na.rm=T),sep="–")
+        year.min = min(master_dat_sub$year,na.rm=T)
+        year.max = max(master_dat_sub$year,na.rm=T)
+        if(year.min==year.max){
+          master_dat_sub$year_range = master_dat_sub$year
+        }else{
+          master_dat_sub$year_range = paste(year.min,year.max,sep="–")
+        }
+        
       }
       if(this.indicator %in% just.recips){
         master_dat_sub = subset(master_dat_sub,recip)
@@ -147,7 +154,13 @@ for(this.indicator in indicators){
         # Only take latest year for each combo
         master_dat_sub = master_dat_sub[master_dat_sub[,.I[year==max(year)],by=.(country,indicator,disaggregation,disagg.value)]$V1]
         master_dat_sub$year = max(master_dat_sub$year,na.rm=T)
-        master_dat_sub$year_range = paste(min(master_dat_sub$year,na.rm=T),max(master_dat_sub$year,na.rm=T),sep="–")
+        year.min = min(master_dat_sub$year,na.rm=T)
+        year.max = max(master_dat_sub$year,na.rm=T)
+        if(year.min==year.max){
+          master_dat_sub$year_range = master_dat_sub$year
+        }else{
+          master_dat_sub$year_range = paste(year.min,year.max,sep="–")
+        }
       }
       if(this.indicator %in% just.recips){
         master_dat_sub = subset(master_dat_sub,recip)
