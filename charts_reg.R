@@ -15,11 +15,11 @@ CairoFonts(
 
 set.seed(12345)
 
-dat <- read.csv("data.csv",na.strings=c("","."," "),as.is=TRUE)
+dat <- read.csv("data_reg.csv",na.strings=c("","."," "),as.is=TRUE)
 
-countries <- unique(dat$country)
+countries <- unique(dat$region)
 
-wd <- "~/git/gnr-country-profile-2018/charts"
+wd <- "~/git/gnr-country-profile-2018/charts_reg"
 setwd(wd)
 
 unlink(
@@ -176,20 +176,24 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 
 ####End setup####
 ####Loop####
-# countries = c("Venezuela (Bolivarian Republic of)","Zimbabwe")
+# countries = c("Asia")
 for(this.country in countries){
   message(this.country)
   dir.create(paste(wd,this.country,sep="/"))
   setwd(paste(wd,this.country,sep="/"))
-  countrydat <- subset(dat,country==this.country)
+  countrydat <- subset(dat,region==this.country)
   if(is.factor(countrydat$year)){
     countrydat$year = unfactor(countrydat$year)
   }
   countrydat$year = as.numeric(countrydat$year)
+  regional = countrydat[1,"regional"]
   if(nchar(this.country)>20){
-    this.country = "National"
+    if(regional==1){
+      this.country = "Regional"
+    }else{
+      this.country = "Subregional"
+    }
   }
-  recipient = subset(countrydat,indicator=="ODA_specific")[1,"recip"]
   #Chart 1 part a and b
   indicators = c("190_percent","320_percent","GDP_capita_PPP")
   c1data = subset(countrydat,indicator %in% indicators)

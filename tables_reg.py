@@ -166,7 +166,7 @@ def safeFormat(x, commas=False, precision=0, percent=False, divisor=False):
 
 def indicator(ctryDat, indicator):
     try:
-        return ctryDat.loc[(ctryDat["indicator"] == indicator)].iloc[0]["value.weighted"]
+        return ctryDat.loc[(ctryDat["indicator"] == indicator)].iloc[0]["value"]
     except IndexError:
         return "NA"
 
@@ -189,12 +189,12 @@ def indicator_frac(ctryDat, indicator, value):
 def indicator_disagg(ctryDat, indicator, disagg, disagg_value=None):
     if disagg_value:
         try:
-            return ctryDat.loc[(ctryDat["indicator"] == indicator) & (ctryDat["disaggregation"] == disagg) & (ctryDat["disagg.value"] == disagg_value)].iloc[0]["value.weighted"]
+            return ctryDat.loc[(ctryDat["indicator"] == indicator) & (ctryDat["disaggregation"] == disagg) & (ctryDat["disagg.value"] == disagg_value)].iloc[0]["value"]
         except IndexError:
             return "NA"
     else:
         try:
-            return ctryDat.loc[(ctryDat["indicator"] == indicator) & (ctryDat["disaggregation"] == disagg)].iloc[0]["value.weighted"]
+            return ctryDat.loc[(ctryDat["indicator"] == indicator) & (ctryDat["disaggregation"] == disagg)].iloc[0]["value"]
         except IndexError:
             return "NA"
 
@@ -222,6 +222,7 @@ def year(ctryDat, indicator):
 for country in dataDictionary.keys():
     ctryDat = dat.loc[(dat.region == country)]
     dataDictionary[country]["country"] = country
+    dataDictionary[country]["regional"] = ctryDat.iloc[0]["regional"]
     dataDictionary[country]["table1"][1] = [
         Paragraph(safeFormat(indicator_frac(ctryDat, "under_5_stunting_track", "On course"))+" on course", style=offCourseStyle),
         Paragraph(safeFormat(indicator_frac(ctryDat, "under_5_wasting_track", "On course"))+" on course", style=offCourseStyle),
