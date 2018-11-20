@@ -91,6 +91,8 @@ white <- "#ffffff"
 
 quintileFillValues <- c(red, orange, yellow, lighter.blue, light.blue)
 
+lightBlueYellowRed = c(light.blue,yellow,red)
+
 yellowOrangeFill <- scale_fill_manual(values=c(yellow,orange))
 orangeYellowFill <- scale_fill_manual(values=c(orange,yellow))
 redYellowFill <- scale_fill_manual(values=c(red,yellow))
@@ -672,7 +674,7 @@ for(this.country in countries){
       ,legend.background = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.2,"lines")
-    ) + geom_text(data=subset(c7data,value>5),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
+    ) + geom_text(data=subset(c7data,value>3),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
     scale_color_manual(breaks=c7names,values=c(white,white,blue,blue),drop=FALSE)
   }else{
     c7 <- no.data
@@ -721,13 +723,13 @@ for(this.country in countries){
         ,legend.key = element_blank()
       )
     if(factor.years){
-      c = c + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value),unfactor(year))),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
+      c = c + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),unfactor(year))),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
     }else{
-      c = c + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value),year)),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
+      c = c + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),year)),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
     }
     return(c)
   }
-  grouped_bar = function(countrydat, ind, disagg, disagg.values, fill=yellowRedFill, percent=F, legend=F, spacing=1,byrow=F,nrow=2,subset.years=F){
+  grouped_bar = function(countrydat, ind, disagg, disagg.values, fill=c(yellow,red), percent=F, legend=F, spacing=1,byrow=F,nrow=2,subset.years=F){
     cdata = subset(countrydat, (indicator==ind & disaggregation==disagg))
     cdata$value = as.numeric(cdata$value)
     if(percent){
@@ -746,7 +748,11 @@ for(this.country in countries){
     c = ggplot(cdata,aes(year,value,group=disagg.value,fill=disagg.value)) +
       geom_bar(position=position_dodge(spacing),stat="identity",color=blue,show.legend=F,size=1) +
       geom_point(data=c.key.data,aes(group=disagg.value,fill=disagg.value),size=12,color=blue,stroke=1.5,shape=21,show.legend=legend) +
-      fill +
+      scale_fill_manual(
+        labels=disagg.values
+        ,values=fill
+        ,drop = FALSE
+      ) +
       guides(fill=guide_legend(title=element_blank(),bycol=byrow,nrow=nrow)) +
       simple_style  +
       scale_y_continuous(expand = c(0,0),limits=c(0,max(c.max*1.1,1))) +
@@ -771,10 +777,11 @@ for(this.country in countries){
   # Charts 8-16
   wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="gender" & !is.na(value))
   if(nrow(wasting_dat)>0){
-    wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
-    max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
-    wasting_years = max(subset(wasting_years,count==max_wasting_count)$year)
-    c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Girls","Boys","Both"),fill=lightBlueYellowRedFill,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
+    # wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
+    # max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
+    # wasting_years = max(subset(wasting_years,count==max_wasting_count)$year)
+    wasting_years = 2017
+    c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Girls","Boys","Both"),fill=lightBlueYellowRed,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
   }else{c8=no.data}
   
   c9 = grouped_line(countrydat, "stunting_percent","gender",c("Girls","Boys","Both"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
@@ -784,7 +791,7 @@ for(this.country in countries){
     wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
     max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
     wasting_years = max(subset(wasting_years,count==max_wasting_count)$year)
-    c11 = grouped_bar(countrydat, "wasting_percent","income",c("Lowest","Second lowest","Middle","Second highest","Highest"),fill=quintileFill,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
+    c11 = grouped_bar(countrydat, "wasting_percent","income",c("Lowest","Second lowest","Middle","Second highest","Highest"),fill=quintileFillValues,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
   }else{c11=no.data}
   
   c12 = grouped_line(countrydat, "stunting_percent","income",c("Lowest","Second lowest","Middle","Second highest","Highest"),color=quintileColor,fill=quintileFill,factor.years=F)

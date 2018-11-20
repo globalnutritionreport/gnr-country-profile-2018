@@ -82,6 +82,7 @@ for(this.indicator in indicators){
       if(this.indicator %in% latest.year.inds){
         # Only take latest year for each combo
         master_dat_sub = master_dat_sub[master_dat_sub[,.I[year==max(year)],by=.(country,indicator,disaggregation,disagg.value)]$V1]
+        master_dat_sub$year = max(master_dat_sub$year,na.rm=T)
         master_dat_sub$year_range = paste(min(master_dat_sub$year,na.rm=T),max(master_dat_sub$year,na.rm=T),sep="–")
       }
       if(this.indicator %in% just.recips){
@@ -145,6 +146,7 @@ for(this.indicator in indicators){
       if(this.indicator %in% latest.year.inds){
         # Only take latest year for each combo
         master_dat_sub = master_dat_sub[master_dat_sub[,.I[year==max(year)],by=.(country,indicator,disaggregation,disagg.value)]$V1]
+        master_dat_sub$year = max(master_dat_sub$year,na.rm=T)
         master_dat_sub$year_range = paste(min(master_dat_sub$year,na.rm=T),max(master_dat_sub$year,na.rm=T),sep="–")
       }
       if(this.indicator %in% just.recips){
@@ -187,14 +189,15 @@ for(this.indicator in indicators){
 }
 
 master_dat_reg = rbindlist(master_dat_reg_list,fill=T)
-
-# Fix data here
+master_dat_class = unique(master_dat_reg[,c("region","regional")])
+master_dat_class_list = master_dat_class$regional
+names(master_dat_class_list) = master_dat_class$region
 
 # Three year avgs for under5s
 indicators = c("stunting_percent","overweight_percent")
 to_average = subset(master_dat_reg,indicator %in% indicators)
 master_dat_reg = subset(master_dat_reg,!indicator %in% indicators)
-year_seq = c(1999,2002,2005,2008,2011,2014,2016)
+year_seq = c(1999,2005,2010,2016)
 to_average$old.year = to_average$year
 to_average$year = NA
 for(i in 2:length(year_seq)){
@@ -213,6 +216,147 @@ to_average = to_average[,.(
   total.pop=sum(as.numeric(total.pop)),
   n=sum(n)
 ),by=.(region,year,indicator,disaggregation,disagg.value,component,rec,unit,year_range)]
+to_average$regional = master_dat_class_list[to_average$region]
 master_dat_reg = rbindlist(list(master_dat_reg,to_average),fill=T)
+
+
+# Fix data here
+ex.num <- function(s){
+  # Uppercase
+  s_upper <- toupper(s)
+  # Convert string to a vector of single letters
+  s_split <- unlist(strsplit(s_upper, split=""))
+  # Convert each letter to the corresponding number
+  s_number <- sapply(s_split, function(x) {which(LETTERS == x)})
+  # Derive the numeric value associated with each letter
+  numbers <- 26^((length(s_number)-1):0)
+  # Calculate the column number
+  column_number <- sum(s_number * numbers)
+  column_number
+}
+ex.num <- Vectorize(ex.num)
+
+master_dat_fix_list = list()
+master_dat_fix_index = 1
+
+wd <- "~/git/gnr-country-profile-2018/Dataset working directory_reg"
+setwd(wd)
+
+master_dat_reg = subset(master_dat_reg,indicator!="coexistence")
+coexistence = read.xlsx("CHILD STATUS coexistence.xlsx")
+names(coexistence) = c(
+  "region",
+  "Wasting alone",
+  "Wasting and stunting",
+  "Stunting alone",
+  "Stunting and overweight",
+  "Overweight alone",
+  "Free from",
+  "n"
+)
+coexistence = subset(coexistence,!is.na(region))
+coexistence = melt(coexistence,id.vars=c("region","n"),variable.name="disagg.value")
+coexistence$indicator = "coexistence"
+coexistence$disaggregation = "all"
+coexistence$component = "G"
+coexistence$value = coexistence$value*100
+# unique(coexistence$region) %in% unique(master_dat_reg$region)
+master_dat_fix_list[[master_dat_fix_index]] = coexistence
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,!(indicator=="stunting_percent" & disagg.value=="Both"))
+stunting = read.xlsx(
+  "CHILD STATUS U5.xlsx",
+  sheet=1,
+  rows=c(7:29),
+  cols=ex.num(c("a","m","r","w","ab","ag","al","aq","av","ba","bf")),
+  na.strings="-"
+)
+names(stunting) = c(
+  "region",
+  "2000","2005","2010","2011","2012","2013","2014","2015","2016","2017"
+)
+stunting$region = gsub('[0-9]+', '', stunting$region)
+stunting$region[which(stunting$region=="Latin American and Caribbean")] = "Latin America and Caribbean"
+stunting = subset(stunting,region %in% unique(master_dat_reg$region))
+stunting = melt(stunting,id.vars="region",variable.name="year")
+stunting$indicator = "stunting_percent"
+stunting$component = "C"
+stunting$disaggregation = "gender"
+stunting$disagg.value = "Both"
+# unique(stunting$region) %in% unique(master_dat_reg$region)
+master_dat_fix_list[[master_dat_fix_index]] = stunting
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,!(indicator=="overweight_percent" & disagg.value=="Both"))
+overweight = read.xlsx(
+  "CHILD STATUS U5.xlsx",
+  sheet=3,
+  rows=c(7:29),
+  cols=ex.num(c("a","m","r","w","ab","ag","al","aq","av","ba","bf")),
+  na.strings="-"
+)
+names(overweight) = c(
+  "region",
+  "2000","2005","2010","2011","2012","2013","2014","2015","2016","2017"
+)
+overweight$region = gsub('[0-9]+', '', overweight$region)
+overweight$region[which(overweight$region=="Latin American and Caribbean")] = "Latin America and Caribbean"
+overweight = subset(overweight,region %in% unique(master_dat_reg$region))
+overweight = melt(overweight,id.vars="region",variable.name="year")
+overweight$indicator = "overweight_percent"
+overweight$component = "C"
+overweight$disaggregation = "gender"
+overweight$disagg.value = "Both"
+# unique(overweight$region) %in% unique(master_dat_reg$region)
+master_dat_fix_list[[master_dat_fix_index]] = overweight
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,!(indicator=="wasting_percent" & disagg.value=="Both"))
+wasting = read.xlsx(
+  "CHILD STATUS U5.xlsx",
+  sheet=5,
+  rows=c(7:29),
+  cols=ex.num(c("a","c")),
+  na.strings="-"
+)
+names(wasting) = c(
+  "region",
+  "2017"
+)
+wasting$region = gsub('[0-9]+', '', wasting$region)
+wasting$region[which(wasting$region=="Latin American and Caribbean")] = "Latin America and Caribbean"
+wasting = subset(wasting,region %in% unique(master_dat_reg$region))
+wasting = melt(wasting,id.vars="region",variable.name="year")
+wasting$indicator = "wasting_percent"
+wasting$component = "C"
+wasting$disaggregation = "gender"
+wasting$disagg.value = "Both"
+# unique(wasting$region) %in% unique(master_dat_reg$region)
+master_dat_fix_list[[master_dat_fix_index]] = wasting
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,indicator!="u5mr")
+u5mr = read.xlsx(
+  "DEMOGRAPHY U5 mort.xlsx",
+  rows=c(17,19,20,71,92,102,92,110,116,133,134,140,149,161,171,190,191,202,214,227,235,236,254
+         ,263,277,280,281,284,290,294)
+  ,cols=c(ex.num("c"),ex.num("p"):ex.num("s"))
+)
+names(u5mr) = c("region",seq(2000,2015,5))
+u5mr = melt(u5mr,id.vars="region",variable.name="year")
+u5mr$year = unfactor(u5mr$year)
+u5mr$region[which(u5mr$region=="Sub-Saharan Africa")] = "Southern Africa"
+u5mr$region[which(u5mr$region=="South-Eastern Asia")] = "South-eastern Asia"
+u5mr$region[which(u5mr$region=="Australia/New Zealand")] = "Australia and New Zealand"
+u5mr$component = "R"
+u5mr$indicator = "u5mr"
+u5mr$disaggregation = "all"
+master_dat_fix_list[[master_dat_fix_index]] = u5mr
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_fix = rbindlist(master_dat_fix_list,fill=T)
+master_dat_fix$regional = master_dat_class_list[master_dat_fix$region]
+master_dat_reg = rbindlist(list(master_dat_reg,master_dat_fix),fill=T)
 
 write.csv(master_dat_reg,"../data_reg.csv",na="",row.names=F)
