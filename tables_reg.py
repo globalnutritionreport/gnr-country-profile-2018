@@ -170,6 +170,12 @@ def indicator(ctryDat, indicator):
     except IndexError:
         return "NA"
 
+def indicator_sum(ctryDat, indicator):
+    try:
+        return ctryDat.loc[(ctryDat["indicator"] == indicator)].iloc[0]["value.sum"]
+    except IndexError:
+        return "NA"
+
 
 def indicator_n(ctryDat, indicator):
     try:
@@ -244,13 +250,13 @@ for country in dataDictionary.keys():
     #     safeFormat(year(ctryDat, "gini"))
     # ]
 
-    dataDictionary[country]["table3"][0][1] = safeFormat(indicator(ctryDat, "population"), True, divisor=1000)
+    dataDictionary[country]["table3"][0][1] = safeFormat(indicator_sum(ctryDat, "population"), True, divisor=1000)
     dataDictionary[country]["table3"][0][2] = safeFormat(year(ctryDat, "population"))
-    dataDictionary[country]["table3"][1][1] = safeFormat(indicator(ctryDat, "u5_pop"), True, divisor=1000)
+    dataDictionary[country]["table3"][1][1] = safeFormat(indicator_sum(ctryDat, "u5_pop"), True, divisor=1000)
     dataDictionary[country]["table3"][1][2] = safeFormat(year(ctryDat, "u5_pop"))
     dataDictionary[country]["table3"][2][1] = safeFormat(indicator(ctryDat, "rural_percent"))
     dataDictionary[country]["table3"][2][2] = safeFormat(year(ctryDat, "rural_percent"))
-    dataDictionary[country]["table3"][3][1] = safeFormat(indicator(ctryDat, "65_years"), True, divisor=1000)
+    dataDictionary[country]["table3"][3][1] = safeFormat(indicator_sum(ctryDat, "65_years"), True, divisor=1000)
     dataDictionary[country]["table3"][3][2] = safeFormat(year(ctryDat, "65_years"))
     dataDictionary[country]["table3_n"] = safeFormat(indicator_n(ctryDat, "population"))
 

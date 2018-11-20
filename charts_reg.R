@@ -17,6 +17,11 @@ set.seed(12345)
 
 dat <- read.csv("data_reg.csv",na.strings=c("","."," "),as.is=TRUE)
 
+master_dat = read.csv("data.csv",na.strings=c("","."," "),as.is=TRUE)
+regions = unique(master_dat[,c("region","subregion")])
+subregion_list = c(regions$region,unique(regions$region))
+names(subregion_list) = c(regions$subregion,unique(regions$region))
+
 countries <- unique(dat$region)
 
 wd <- "~/git/gnr-country-profile-2018/charts_reg"
@@ -176,9 +181,10 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 
 ####End setup####
 ####Loop####
-# countries = c("Asia")
+countries = c("Asia","Africa","Latin America and the Caribbean","Western Asia","Western Europe")
 for(this.country in countries){
   message(this.country)
+  real.country = this.country
   dir.create(paste(wd,this.country,sep="/"))
   setwd(paste(wd,this.country,sep="/"))
   countrydat <- subset(dat,region==this.country)
@@ -1018,7 +1024,7 @@ for(this.country in countries){
   # Chart 28
   c28.data = subset(countrydat,component == "M")
   if(nrow(c28.data)>0){
-    this.region = c28.data$region[1]
+    this.region = subregion_list[real.country][[1]]
     if(nchar(this.region)>20){
       this.region = "Regional"
     }
@@ -1058,10 +1064,19 @@ for(this.country in countries){
     bar.dat$class = this.country
     c28.max = min(max(c28.data$percent,na.rm=T),2)
     
-    c28.data$class[which(c28.data$class=="National")] = this.country
-    c28.data$class[which(c28.data$class=="Regional")] = this.region
+    if(regional==1){
+      c28.data = subset(c28.data,class %in% c("National","Global"))
+    }
     
-    c28.data$class = factor(c28.data$class,levels=c(this.country,this.region,"Global"))
+    c28.data$class[which(c28.data$class=="National")] = this.country
+    
+    if(regional==0){
+      c28.data$class[which(c28.data$class=="Regional")] = this.region
+      c28.data$class = factor(c28.data$class,levels=c(this.country,this.region,"Global"))
+    }else{
+      c28.data$class = factor(c28.data$class,levels=c(this.country,"Global"))
+    }
+    
     
     i = 1
     c28.data.sub = subset(c28.data,column==i)
@@ -1126,49 +1141,34 @@ for(this.country in countries){
   }
   
   # Chart 29
-  indicators = c("ODA_received","ODA_specific")
-  if(!is.na(recipient)){
-    if(recipient){
-      c29names = c("% of total ODA","Basic nutrition ODA received")
-      y.lab = "ODA, US$ millions"
-    }else{
-      c29names = c("% of total ODA","Basic nutrition ODA disbursed")
-      y.lab = "ODA, US$ millions"
-    }
-  }else{
-    c29names = c("% of total ODA","Basic nutrition ODA received")
-    y.lab = "ODA, US$ millions"
-  }
+  indicators = c("ODA_specific")
+  c29names = c("Basic nutrition ODA received")
+  y.lab = "ODA, US$ millions, per 1000 people"
   
   
   c29data = subset(countrydat,indicator %in% indicators)
+  c29data$value = c29data$value.sum/c29data$total.pop
   c29data$value = as.numeric(c29data$value)
-  c29data$value[which(c29data$indicator==indicators[1])] = c29data$value[which(c29data$indicator==indicators[1])] * 100
+  c29data$value= c29data$value * 100 * 1000
   c29data = subset(c29data, !is.na(value))
   c29data = c29data[c("year","indicator","value")]
-  c29.oda.max <- max(subset(c29data,indicator==indicators[2])$value,na.rm=TRUE)
-  c29.perc.max <- max(subset(c29data,indicator==indicators[1])$value,na.rm=TRUE)
-  c29.ratio = c29.oda.max/c29.perc.max
+  c29.oda.max <- max(c29data$value,na.rm=TRUE)
   for(j in 1:length(indicators)){
     ind = indicators[j]
     indname = c29names[j]
     c29data$indicator[which(c29data$indicator==ind)] = indname
   }
   
-  c29.key.data.2 = data.frame(year=as.numeric(rep(NA,1)),indicator=c29names[2],value=as.numeric(rep(NA,1)))
   c29.key.data.1 = data.frame(year=as.numeric(rep(NA,1)),indicator=c29names[1],value=as.numeric(rep(NA,1)))
-  c29 = ggplot(subset(c29data,indicator==c29names[2]),aes(x=year,y=value)) +
+  c29 = ggplot(c29data,aes(x=year,y=value)) +
     geom_area(alpha=1,show.legend=F,color=blue,fill=yellow) +
-    geom_point(data=c29.key.data.2,aes(group=indicator,fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
-    geom_line(data=subset(c29data,indicator==c29names[1]),aes(y=value*c29.ratio,color=indicator),size=2) +
+    geom_point(data=c29.key.data.1,aes(group=indicator,fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
     yellowFill +
-    orangeColor +
     guides(fill=guide_legend(title=element_blank(),byrow=TRUE),color=guide_legend(title=element_blank(),byrow=TRUE)) +
     simple_style  +
     scale_y_continuous(
       expand = c(0,0),
       limits=c(0,max(c29.oda.max*1.1,1)),
-      sec.axis = sec_axis(~./c29.ratio, name="% of total ODA")
       ) +
     theme(
       legend.position="top"

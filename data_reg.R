@@ -54,6 +54,8 @@ country.years = unique(must_sum_to_100s_sub[,c("iso3","country","region","subreg
 
 latest.year.inds = c("coexistence")
 
+just.recips = c("ODA_received","ODA_specific")
+
 indicators = unique(master_dat$indicator)
 for(this.indicator in indicators){
   master_dat_sub = subset(master_dat,indicator==this.indicator)
@@ -81,12 +83,16 @@ for(this.indicator in indicators){
         master_dat_sub = master_dat_sub[master_dat_sub[,.I[year==max(year)],by=.(country,indicator,disaggregation,disagg.value)]$V1]
         master_dat_sub$year = paste(min(master_dat_sub$year,na.rm=T),max(master_dat_sub$year,na.rm=T),sep="–")
       }
+      if(this.indicator %in% just.recips){
+        master_dat_sub = subset(master_dat_sub,recip)
+      }
       dat_reg = master_dat_sub[,.(
         value.unweighted=mean(as.numeric(value)),
         value=weighted.mean(as.numeric(value),total.pop),
         value.sum=sum(as.numeric(value)),
+        total.pop=sum(as.numeric(total.pop)),
         n=nrow(.SD)
-      ),by=.(region,year,indicator,disaggregation,disagg.value,component)]
+      ),by=.(region,year,indicator,disaggregation,disagg.value,component,rec,unit)]
       dat_reg$regional = 1
       master_dat_reg_list[[master_dat_reg_index]] = dat_reg
       master_dat_reg_index = master_dat_reg_index + 1
@@ -100,6 +106,7 @@ for(this.indicator in indicators){
         master_dat_sub = rbind(master_dat_sub,master_dat_clone)
       }
       dat_reg = data.table(master_dat_sub)[,.(
+        total.pop=sum(as.numeric(total.pop)),
         n=sum(count)
       ),by=.(region,year,indicator,disaggregation,disagg.value,component,value)]
       dat_reg_N = data.table(master_dat_sub)[,.(
@@ -139,12 +146,16 @@ for(this.indicator in indicators){
         master_dat_sub = master_dat_sub[master_dat_sub[,.I[year==max(year)],by=.(country,indicator,disaggregation,disagg.value)]$V1]
         master_dat_sub$year = paste(min(master_dat_sub$year,na.rm=T),max(master_dat_sub$year,na.rm=T),sep="–")
       }
+      if(this.indicator %in% just.recips){
+        master_dat_sub = subset(master_dat_sub,recip)
+      }
       dat_reg = master_dat_sub[,.(
         value.unweighted=mean(as.numeric(value)),
         value=weighted.mean(as.numeric(value),total.pop),
         value.sum=sum(as.numeric(value)),
+        total.pop=sum(as.numeric(total.pop)),
         n=nrow(.SD)
-      ),by=.(subregion,year,indicator,disaggregation,disagg.value,component)]
+      ),by=.(subregion,year,indicator,disaggregation,disagg.value,component,rec,unit)]
       dat_reg$regional = 0
       setnames(dat_reg,"subregion","region")
       master_dat_reg_list[[master_dat_reg_index]] = dat_reg
@@ -159,6 +170,7 @@ for(this.indicator in indicators){
         master_dat_sub = rbind(master_dat_sub,master_dat_clone)
       }
       dat_reg = data.table(master_dat_sub)[,.(
+        total.pop=sum(as.numeric(total.pop)),
         n=sum(count)
       ),by=.(subregion,year,indicator,disaggregation,disagg.value,component,value)]
       dat_reg_N = data.table(master_dat_sub)[,.(
