@@ -175,7 +175,7 @@ for region_name in nested_countries:
     pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/Kenya.pdf"
     profile_title = "{} nutrition profile".format(region_name)
     title = "{} {} nutrition profile".format(region_name, "regional")
-    seo_title = "2018 "+title
+    seo_title = title
 
     browser.get("https://dev.globalnutritionreport.org/admin") # Load page
 
@@ -275,7 +275,7 @@ for region_name in nested_countries:
         pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/Kenya.pdf"
         profile_title = "{} nutrition profile".format(subregion_name)
         title = "{} {} nutrition profile".format(subregion_name, "subregional")
-        seo_title = "2018 "+title
+        seo_title = title
 
         browser.get("https://dev.globalnutritionreport.org/admin") # Load page
 
@@ -382,7 +382,7 @@ for region_name in nested_countries:
             pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/{}.pdf".format(safeFileName)
             profile_title = "{} nutrition profile".format(country_name)
             title = "{} {} nutrition profile".format(country_name, "country")
-            seo_title = "2018 "+title
+            seo_title = title
 
             browser.get("https://dev.globalnutritionreport.org/admin") # Load page
 
