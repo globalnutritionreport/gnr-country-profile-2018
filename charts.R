@@ -85,7 +85,7 @@ white <- "#ffffff"
 # light_grey = "#CFD9E5"
 
 quintileFillValues <- c(red, orange, yellow, lighter.blue, light.blue)
-
+lightBlueYellowRed = c(light.blue,yellow,red)
 yellowOrangeFill <- scale_fill_manual(values=c(yellow,orange))
 orangeYellowFill <- scale_fill_manual(values=c(orange,yellow))
 redYellowFill <- scale_fill_manual(values=c(red,yellow))

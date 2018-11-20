@@ -368,6 +368,45 @@ u5mr$disaggregation = "all"
 master_dat_fix_list[[master_dat_fix_index]] = u5mr
 master_dat_fix_index = master_dat_fix_index + 1
 
+oda_per_cap = read.xlsx(
+  "FINANCIAL regional.xlsx"
+)
+oda_per_cap = melt(oda_per_cap,id.vars="region")
+oda_per_cap$variable = unfactor(oda_per_cap$variable)
+oda_per_cap$year = substr(oda_per_cap$variable,nchar(oda_per_cap$variable)-3,nchar(oda_per_cap$variable))
+oda_per_cap$variable = NULL
+oda_per_cap$indicator = "oda_per_capita"
+oda_per_cap$disaggregation = "all"
+oda_per_cap$component = "P"
+master_dat_fix_list[[master_dat_fix_index]] = oda_per_cap
+master_dat_fix_index = master_dat_fix_index + 1
+
+
+indicators = c(
+  "under_5_stunting_track",       
+  "under_5_wasting_track",
+  "under_5_overweight_track",   
+  "wra_anaemia_track",        
+  "ebf_track",            
+  "adult_fem_obesity_track", 
+  "adult_mal_obesity_track",   
+  "adult_fem_diabetes_track",
+  "adult_mal_diabetes_track"
+)
+master_dat_reg = subset(master_dat_reg,!indicator %in% indicators)
+overview = read.xlsx(
+  "OVERVIEW progress.xlsx"
+)
+names(overview) = c("region",indicators)
+overview = melt(overview,id.vars="region",variable.name="indicator")
+overview$n = sapply(strsplit(overview$value,split="/"),`[`,index=1)
+overview$N = sapply(strsplit(overview$value,split="/"),`[`,index=2)
+overview$value = "On course"
+overview$disaggregation = "all"
+overview$component = "A"
+overview$region[which(overview$region=="Latin American and Caribbean")] = "Latin America and Caribbean"
+master_dat_fix_list[[master_dat_fix_index]] = overview
+master_dat_fix_index = master_dat_fix_index + 1
 
 master_dat_fix = rbindlist(master_dat_fix_list,fill=T)
 master_dat_fix$regional = master_dat_class_list[master_dat_fix$region]

@@ -1153,15 +1153,12 @@ for(this.country in countries){
   }
   
   # Chart 29
-  indicators = c("ODA_specific")
+  indicators = c("oda_per_capita")
   c29names = c("Basic nutrition ODA received")
   y.lab = "ODA, US$ millions, per 1000 people"
-  
-  
   c29data = subset(countrydat,indicator %in% indicators)
-  c29data$value = c29data$value.sum/c29data$total.pop
   c29data$value = as.numeric(c29data$value)
-  c29data$value= c29data$value * 100 * 1000
+  c29data$value= c29data$value * 1000
   c29data = subset(c29data, !is.na(value))
   c29data = c29data[c("year","indicator","value")]
   c29.oda.max <- max(c29data$value,na.rm=TRUE)
