@@ -225,6 +225,13 @@ def year(ctryDat, indicator):
     except IndexError:
         return "NA"
 
+
+def year_range(ctryDat, indicator):
+    try:
+        return ctryDat.loc[(ctryDat["indicator"] == indicator)].iloc[0]["year_range"]
+    except IndexError:
+        return "NA"
+
 for country in dataDictionary.keys():
     ctryDat = dat.loc[(dat.region == country)]
     dataDictionary[country]["country"] = country
@@ -269,7 +276,7 @@ for country in dataDictionary.keys():
     dataDictionary[country]["table4_n"] = safeFormat(indicator_n(ctryDat, "early_childbearing_prev"))
 
     dataDictionary[country]["table5"][0][1] = safeFormat(indicator(ctryDat, "physicians"), False, 2)
-    dataDictionary[country]["table5"][0][2] = safeFormat(year(ctryDat, "physicians"))
+    dataDictionary[country]["table5"][0][2] = safeFormat(year_range(ctryDat, "physicians"))
     dataDictionary[country]["table5"][1][1] = safeFormat(indicator(ctryDat, "nurses_and_midwives"), False, 2)
     dataDictionary[country]["table5"][1][2] = safeFormat(year(ctryDat, "nurses_and_midwives"))
     dataDictionary[country]["table5"][2][1] = safeFormat(indicator(ctryDat, "community_health_workers"), False, 2)

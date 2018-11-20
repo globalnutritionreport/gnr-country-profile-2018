@@ -197,12 +197,6 @@ def year(ctryDat, indicator):
     except IndexError:
         return "NA"
 
-def year_range(ctryDat, indicator):
-    try:
-        return ctryDat.loc[(ctryDat["indicator"] == indicator)].iloc[0]["year_range"]
-    except IndexError:
-        return "NA"
-
 for country in dataDictionary.keys():
     ctryDat = dat.loc[(dat.country == country)]
     dataDictionary[country]["country"] = country
