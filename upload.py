@@ -171,7 +171,7 @@ profile_description = "Country profiles aggregate the very latest data on child,
 
 for region_name in nested_countries:
     safeFileName = "".join([c for c in region_name.replace(" ", "_") if re.match(r'\w', c)])
-    img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs/Kenya.jpg"
+    img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs/Kenya-0.jpg"
     pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/Kenya.pdf"
     profile_title = "{} nutrition profile".format(region_name)
     title = "2018 {} {} nutrition profile".format(region_name, "regional")
@@ -265,7 +265,7 @@ for region_name in nested_countries:
     region_count += 1
     for subregion_name in nested_countries[region_name]:
         safeFileName = "".join([c for c in subregion_name.replace(" ", "_") if re.match(r'\w', c)])
-        img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs/Kenya.jpg"
+        img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs/Kenya-0.jpg"
         pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/Kenya.pdf"
         profile_title = "{} nutrition profile".format(subregion_name)
         title = "2018 {} {} nutrition profile".format(subregion_name, "subregional")
@@ -366,7 +366,7 @@ for region_name in nested_countries:
         subregion_count += 1
         for country_name in nested_countries[region_name][subregion_name]:
             safeFileName = "".join([c for c in country_name.replace(" ", "_") if re.match(r'\w', c)])
-            img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs/{}.jpg".format(safeFileName)
+            img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs/{}-0.jpg".format(safeFileName)
             pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/{}.pdf".format(safeFileName)
             profile_title = "{} nutrition profile".format(country_name)
             title = "2018 {} {} nutrition profile".format(country_name, "country")
@@ -445,7 +445,7 @@ for region_name in nested_countries:
             scroll_and_click(browser, upload_button)
 
             image_title_field = browser.find_elements_by_xpath("//*[@id='id_title']")[1]
-            set_element_value(browser, image_title_field, subregion_name+" thumbnail")
+            set_element_value(browser, image_title_field, country_name+" thumbnail")
 
             image_file_field = browser.find_elements_by_xpath("//*[@id='id_file']")[0]
             image_file_field.send_keys(img_path2)
