@@ -184,6 +184,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 ####End setup####
 ####Loop####
 countries = c("Asia","Africa","Latin America and the Caribbean","Western Asia","Western Europe")
+countries = c("Asia")
 for(this.country in countries){
   message(this.country)
   real.country = this.country
@@ -1066,7 +1067,11 @@ for(this.country in countries){
     nat.order = nat.order[order(nat.order$food),]
     c28.data$food = factor(c28.data$food,levels=rev(nat.order$food))
     c28.data = c28.data[order(-c28.data$food),]
-    c28.data$column = c(rep(1,21),rep(2,24))
+    if(regional==1){
+      c28.data$column = c(rep(1,21),rep(2,24))
+    }else{
+      c28.data$column = c(rep(1,21),rep(2,24))
+    }
     bar.dat = unique(c28.data[,c("food","recommended","column"),with=F])
     bar.dat$class = this.country
     c28.max = min(max(c28.data$percent,na.rm=T),2)
