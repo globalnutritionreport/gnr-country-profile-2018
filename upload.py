@@ -217,7 +217,7 @@ for region_name in nested_countries:
     image_file_field.send_keys(img_path)
 
     image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-    image_collection_field.select_by_value('4')
+    image_collection_field.select_by_value('6')
 
     upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
     scroll_and_click(browser, upload_button)
@@ -236,7 +236,7 @@ for region_name in nested_countries:
     document_file_field.send_keys(pdf_path)
 
     document_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-    document_collection_field.select_by_value('4')
+    document_collection_field.select_by_value('6')
 
     upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
     scroll_and_click(browser, upload_button)
@@ -255,7 +255,7 @@ for region_name in nested_countries:
     image_file_field.send_keys(img_path2)
 
     image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-    image_collection_field.select_by_value('4')
+    image_collection_field.select_by_value('6')
 
     upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
     scroll_and_click(browser, upload_button)
@@ -324,7 +324,7 @@ for region_name in nested_countries:
         image_file_field.send_keys(img_path)
 
         image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-        image_collection_field.select_by_value('4')
+        image_collection_field.select_by_value('6')
 
         upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
         scroll_and_click(browser, upload_button)
@@ -343,7 +343,7 @@ for region_name in nested_countries:
         document_file_field.send_keys(pdf_path)
 
         document_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-        document_collection_field.select_by_value('4')
+        document_collection_field.select_by_value('6')
 
         upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
         scroll_and_click(browser, upload_button)
@@ -362,7 +362,7 @@ for region_name in nested_countries:
         image_file_field.send_keys(img_path2)
 
         image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-        image_collection_field.select_by_value('4')
+        image_collection_field.select_by_value('6')
 
         upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
         scroll_and_click(browser, upload_button)
@@ -431,7 +431,7 @@ for region_name in nested_countries:
             image_file_field.send_keys(img_path)
 
             image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-            image_collection_field.select_by_value('4')
+            image_collection_field.select_by_value('6')
 
             upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
             scroll_and_click(browser, upload_button)
@@ -450,7 +450,7 @@ for region_name in nested_countries:
             document_file_field.send_keys(pdf_path)
 
             document_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-            document_collection_field.select_by_value('4')
+            document_collection_field.select_by_value('6')
 
             upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
             scroll_and_click(browser, upload_button)
@@ -469,7 +469,7 @@ for region_name in nested_countries:
             image_file_field.send_keys(img_path2)
 
             image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-            image_collection_field.select_by_value('4')
+            image_collection_field.select_by_value('6')
 
             upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
             scroll_and_click(browser, upload_button)
