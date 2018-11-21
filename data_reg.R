@@ -444,7 +444,7 @@ total_calories_non_staple = read.xlsx(
 )
 names(total_calories_non_staple) = c("region","year","value")
 total_calories_non_staple$year = substr(total_calories_non_staple$year,1,4)
-unique(total_calories_non_staple$region) %in% unique(master_dat_reg$region)
+# unique(total_calories_non_staple$region) %in% unique(master_dat_reg$region)
 total_calories_non_staple$region[which(total_calories_non_staple$region=="Sub-Saharan Africa")] = "Southern Africa"
 total_calories_non_staple$region[which(total_calories_non_staple$region=="South-Eastern Asia")] = "South-eastern Asia"
 total_calories_non_staple$region[which(total_calories_non_staple$region=="Australia & New Zealand")] = "Australia and New Zealand"
@@ -472,8 +472,8 @@ undernourishment_prev$disaggregation = "all"
 undernourishment_prev$component = "S"
 undernourishment_prev$region[which(undernourishment_prev$region=="Australia & New Zealand")] = "Australia and New Zealand"
 undernourishment_prev = subset(undernourishment_prev,region %in% unique(master_dat_reg$region))
-master_dat_list[[master_dat_index]] = undernourishment_prev
-master_dat_index = master_dat_index + 1
+master_dat_fix_list[[master_dat_fix_index]] = undernourishment_prev
+master_dat_fix_index = master_dat_fix_index + 1
 
 master_dat_fix = rbindlist(master_dat_fix_list,fill=T)
 master_dat_fix$regional = master_dat_class_list[master_dat_fix$region]

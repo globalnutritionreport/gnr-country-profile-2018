@@ -2252,31 +2252,6 @@
 "Europe","2000","limited_sanitation","all",,"V",,,,0,"0",0,80035.409,"3",1,
 "Latin America and the Caribbean","2015","limited_sanitation","all",,"V",,,,0,"0",0,54.288,"1",1,
 "Africa","2000","limited_sanitation","all",,"V",,,,0,"0",0,6700.656,"1",1,
-"Asia","2000","undernourishment_prev","all",,"S",,,"",20.5470588235294,"18.2449189380384",698.6,3417229.298,"34",1,
-"Asia","2004","undernourishment_prev","all",,"S",,,"",16.9,"18.8326517139883",591.5,3600756.323,"35",1,
-"Asia","2008","undernourishment_prev","all",,"S",,,"",13.9527777777778,"15.7783231237408",502.3,3774757.729,"36",1,
-"Asia","2012","undernourishment_prev","all",,"S",,,"",12.9,"13.7196105157726",438.6,3922708.219,"34",1,
-"Asia","2016","undernourishment_prev","all",,"S",,,"",13.0294117647059,"12.2842110806541",443,4090823.329,"34",1,
-"Africa","2000","undernourishment_prev","all",,"S",,,"",26.9659090909091,"23.5164129902377",1186.5,709933.585,"44",1,
-"Africa","2004","undernourishment_prev","all",,"S",,,"",24.3704545454545,"21.1032064806691",1072.3,781393.39,"44",1,
-"Africa","2008","undernourishment_prev","all",,"S",,,"",22.1477272727273,"18.85271011816",974.5,861583.43,"44",1,
-"Africa","2012","undernourishment_prev","all",,"S",,,"",20.44,"17.5290505591805",919.8,989225.943,"45",1,
-"Africa","2016","undernourishment_prev","all",,"S",,,"",21.3222222222222,"18.5331055068811",959.5,1094253.093,"45",1,
-"Europe","2000","undernourishment_prev","all",,"S",,,"",6.11,"5.13046526284003",61.1,225768.428,"10",1,
-"Europe","2004","undernourishment_prev","all",,"S",,,"",5.32222222222222,"3.16111531324997",47.9,181547.758,"9",1,
-"Europe","2008","undernourishment_prev","all",,"S",,,"",5.17142857142857,"5.52497911245066",36.2,32171.079,"7",1,
-"Europe","2012","undernourishment_prev","all",,"S",,,"",4.75,"5.11434194920154",28.5,28003.446,"6",1,
-"Europe","2016","undernourishment_prev","all",,"S",,,"",3.85714285714286,"3.60943249959919",27,72154.416,"7",1,
-"Latin America and the Caribbean","2000","undernourishment_prev","all",,"S",,,"",14.9107142857143,"11.9070870631541",417.5,519859.767,"28",1,
-"Latin America and the Caribbean","2004","undernourishment_prev","all",,"S",,,"",13.9814814814815,"9.85839684785171",377.5,537249.344,"27",1,
-"Latin America and the Caribbean","2008","undernourishment_prev","all",,"S",,,"",11.9333333333333,"7.37804152224063",322.2,565817.587,"27",1,
-"Latin America and the Caribbean","2012","undernourishment_prev","all",,"S",,,"",11.152,"8.82672060452198",278.8,390224.884,"25",1,
-"Latin America and the Caribbean","2016","undernourishment_prev","all",,"S",,,"",10.164,"8.22254385222376",254.1,410281.93,"25",1,
-"Oceania","2000","undernourishment_prev","all",,"S",,,"",7.54,"7.73263165720473",37.7,1667.911,"5",1,
-"Oceania","2004","undernourishment_prev","all",,"S",,,"",6.48,"6.75256436041834",32.4,1750.144,"5",1,
-"Oceania","2008","undernourishment_prev","all",,"S",,,"",5.78,"6.2031521899087",28.9,1855.123,"5",1,
-"Oceania","2012","undernourishment_prev","all",,"S",,,"",5.8,"6.60098520690971",29,1968.419,"5",1,
-"Oceania","2016","undernourishment_prev","all",,"S",,,"",6,"6.83641646868944",30,2078.101,"5",1,
 "Asia","2010","social_protection_spending",,,"V",,,"",11.7931034482759,"10.8348053856891",342,2367066.624,"29",1,
 "Africa","2000","social_protection_spending",,,"V",,,"",5.08695652173913,"7.21200031695704",117,547367.559,"23",1,
 "Africa","2010","social_protection_spending",,,"V",,,"",7.66666666666667,"11.5276261829874",161,608017.999,"21",1,
@@ -2405,36 +2380,6 @@
 "N. America","2000","agriculture_expenditure",,,"V",,,"",2,"2",4,312718.551,"2",1,
 "N. America","2010","agriculture_expenditure",,,"V",,,"",1,"1",1,308641.391,"1",1,
 "N. America","2012","agriculture_expenditure",,,"V",,,"",1,"1",1,313335.423,"1",1,
-"Asia","2000","total_calories_non_staple","all",,"S",,,"",42.8095238095238,"38.7689230313386",1798,3676060.643,"42",1,
-"Asia","2003","total_calories_non_staple","all",,"S",,,"",43.9761904761905,"40.4960780797644",1847,3814456.593,"42",1,
-"Asia","2006","total_calories_non_staple","all",,"S",,,"",45.2857142857143,"42.2960267035241",1902,3950696.228,"42",1,
-"Asia","2009","total_calories_non_staple","all",,"S",,,"",46.3571428571429,"43.7042419262448",1947,4084785.496,"42",1,
-"Asia","2012","total_calories_non_staple","all",,"S",,,"",47.2857142857143,"44.8437715983744",1986,4220932.533,"42",1,
-"Africa","2000","total_calories_non_staple","all",,"S",,,"",38.2954545454545,"35.5366553168491",1685,709933.585,"44",1,
-"Africa","2003","total_calories_non_staple","all",,"S",,,"",39.1363636363636,"36.5335699672148",1722,762847.93,"44",1,
-"Africa","2006","total_calories_non_staple","all",,"S",,,"",39.2954545454545,"36.8466268434887",1729,820246.775,"44",1,
-"Africa","2009","total_calories_non_staple","all",,"S",,,"",39.5681818181818,"37.078447897092",1741,883321.868,"44",1,
-"Africa","2012","total_calories_non_staple","all",,"S",,,"",40.2666666666667,"38.2474052704863",1812,989225.943,"45",1,
-"Europe","2000","total_calories_non_staple","all",,"S",,,"",64.3783783783784,"63.8047272494784",2382,716641.086,"37",1,
-"Europe","2003","total_calories_non_staple","all",,"S",,,"",65.3513513513514,"64.6801979396705",2418,718003.62,"37",1,
-"Europe","2006","total_calories_non_staple","all",,"S",,,"",66.2820512820513,"65.7522742176618",2585,731036.997,"39",1,
-"Europe","2009","total_calories_non_staple","all",,"S",,,"",66.4102564102564,"65.8998957380531",2590,735403.494,"39",1,
-"Europe","2012","total_calories_non_staple","all",,"S",,,"",66.2051282051282,"65.9672103404014",2582,738462.012,"39",1,
-"Latin America and the Caribbean","2000","total_calories_non_staple","all",,"S",,,"",60.1515151515151,"59.8446160205847",1985,520545.183,"33",1,
-"Latin America and the Caribbean","2003","total_calories_non_staple","all",,"S",,,"",59.8787878787879,"59.0935644993482",1976,542164.874,"33",1,
-"Latin America and the Caribbean","2006","total_calories_non_staple","all",,"S",,,"",60.3636363636364,"59.4944761366658",1992,563502.627,"33",1,
-"Latin America and the Caribbean","2009","total_calories_non_staple","all",,"S",,,"",60.3939393939394,"60.4150888109215",1993,585077.197,"33",1,
-"Latin America and the Caribbean","2012","total_calories_non_staple","all",,"S",,,"",60.3333333333333,"60.6293210901638",1991,606366.513,"33",1,
-"Oceania","2000","total_calories_non_staple","all",,"S",,,"",58.7142857142857,"72.6024532761631",411,24592.747,"7",1,
-"Oceania","2003","total_calories_non_staple","all",,"S",,,"",58.5714285714286,"72.087980297359",410,25447.959,"7",1,
-"Oceania","2006","total_calories_non_staple","all",,"S",,,"",59.7142857142857,"73.7417805116162",418,26558.344,"7",1,
-"Oceania","2009","total_calories_non_staple","all",,"S",,,"",59.7142857142857,"72.0747125953514",418,27946.747,"7",1,
-"Oceania","2012","total_calories_non_staple","all",,"S",,,"",59.7142857142857,"72.848959965187",418,29258.011,"7",1,
-"N. America","2000","total_calories_non_staple","all",,"S",,,"",73.5,"74.7051427914809",147,312718.551,"2",1,
-"N. America","2003","total_calories_non_staple","all",,"S",,,"",74,"75.6066871185728",148,321655.43,"2",1,
-"N. America","2006","total_calories_non_staple","all",,"S",,,"",74,"75.6048633455169",148,330472.839,"2",1,
-"N. America","2009","total_calories_non_staple","all",,"S",,,"",74,"75.6023160679591",148,339866.193,"2",1,
-"N. America","2012","total_calories_non_staple","all",,"S",,,"",74,"75.5991144836069",148,348236.128,"2",1,
 "Africa","2016","wasting_percent","income","Highest","C",,,"",4.83006063333333,"7.12506530430107",28.9803638,384629.995,"6",1,
 "Africa","2016","wasting_percent","income","Second lowest","C",,,"",7.37224766666667,"9.21783262826748",44.233486,384629.995,"6",1,
 "Africa","2016","wasting_percent","location","Rural","C",,,"",7.28378053333333,"9.241597495265",43.7026832,384629.995,"6",1,
@@ -6031,114 +5976,12 @@
 "Latin America and the Caribbean","2018","65_years","all",,"R",,,"",1720.74841935484,"9067.78678716388",53343.201,646507.22,"31",1,
 "Oceania","2018","65_years","all",,"R",,,"",509.1163,"2555.68899609587",5091.163,40289.174,"10",1,
 "N. America","2018","65_years","all",,"R",,,"",29023.46,"47026.3195862353",58046.92,363720.513,"2",1,
-"Africa","2018","anaemia_plan","all",,"Q",,,,,"No",,2945266.914,"19",1,"54"
-"Africa","2018","anaemia_plan","all",,"Q",,,,,"Yes",,2199557.462,"35",1,"54"
-"Africa","2018","anaemia_plan","all",,"Q",,,,,"No data",,5144824.376,"0",1,"54"
-"Asia","2018","anaemia_plan","all",,"Q",,,,,"Yes",,8525897.559,"27",1,"47"
-"Asia","2018","anaemia_plan","all",,"Q",,,,,"No data",,18042841.311,"1",1,"47"
-"Asia","2018","anaemia_plan","all",,"Q",,,,,"No",,9497860.522,"19",1,"47"
-"Europe","2018","anaemia_plan","all",,"Q",,,,,"No",,2056319.974,"37",1,"42"
-"Europe","2018","anaemia_plan","all",,"Q",,,,,"Yes",,912736.801,"4",1,"42"
-"Europe","2018","anaemia_plan","all",,"Q",,,,,"No data",,2969134.569,"1",1,"42"
-"Latin America and the Caribbean","2018","anaemia_plan","all",,"Q",,,,,"No",,1590790.01,"18",1,"33"
-"Latin America and the Caribbean","2018","anaemia_plan","all",,"Q",,,,,"Yes",,995360.217,"14",1,"33"
-"Latin America and the Caribbean","2018","anaemia_plan","all",,"Q",,,,,"No data",,2586948.797,"1",1,"33"
-"N. America","2018","anaemia_plan","all",,"Q",,,,,"No",,764394.791,"1",1,"2"
-"N. America","2018","anaemia_plan","all",,"Q",,,,,"Yes",,690487.261,"1",1,"2"
-"N. America","2018","anaemia_plan","all",,"Q",,,,,"No data",,1454882.052,"0",1,"2"
-"Oceania","2018","anaemia_plan","all",,"Q",,,,,"No",,111122.891,"8",1,"14"
-"Oceania","2018","anaemia_plan","all",,"Q",,,,,"Yes",,50424.725,"6",1,"14"
-"Oceania","2018","anaemia_plan","all",,"Q",,,,,"No data",,161547.616,"0",1,"14"
-"Africa","2018","stunting_plan","all",,"Q",,,,,"Yes",,2434459.7,"47",1,"54"
-"Africa","2018","stunting_plan","all",,"Q",,,,,"No",,2710364.676,"7",1,"54"
-"Africa","2018","stunting_plan","all",,"Q",,,,,"No data",,5144824.376,"0",1,"54"
-"Asia","2018","stunting_plan","all",,"Q",,,,,"Yes",,7334550.646,"30",1,"47"
-"Asia","2018","stunting_plan","all",,"Q",,,,,"No data",,18042841.311,"1",1,"47"
-"Asia","2018","stunting_plan","all",,"Q",,,,,"No",,10689207.435,"16",1,"47"
-"Europe","2018","stunting_plan","all",,"Q",,,,,"No",,2043935.085,"36",1,"42"
-"Europe","2018","stunting_plan","all",,"Q",,,,,"Yes",,925121.69,"5",1,"42"
-"Europe","2018","stunting_plan","all",,"Q",,,,,"No data",,2969134.569,"1",1,"42"
-"Latin America and the Caribbean","2018","stunting_plan","all",,"Q",,,,,"No",,1346912.29,"8",1,"33"
-"Latin America and the Caribbean","2018","stunting_plan","all",,"Q",,,,,"Yes",,1239237.937,"24",1,"33"
-"Latin America and the Caribbean","2018","stunting_plan","all",,"Q",,,,,"No data",,2586948.797,"1",1,"33"
-"N. America","2018","stunting_plan","all",,"Q",,,,,"No",,1091161.539,"2",1,"2"
-"N. America","2018","stunting_plan","all",,"Q",,,,,"Yes",,363720.513,"0",1,"2"
-"N. America","2018","stunting_plan","all",,"Q",,,,,"No data",,1454882.052,"0",1,"2"
-"Oceania","2018","stunting_plan","all",,"Q",,,,,"No",,111520.859,"9",1,"14"
-"Oceania","2018","stunting_plan","all",,"Q",,,,,"Yes",,50026.757,"5",1,"14"
-"Oceania","2018","stunting_plan","all",,"Q",,,,,"No data",,161547.616,"0",1,"14"
 "Asia","2018","u5_pop","all",,"R",,,"",7570.97722916667,"66716.9162024982",363406.907,4513377.7,"48",1,
 "Africa","2018","u5_pop","all",,"R",,,"",3631.3262962963,"11112.535425131",196091.62,1286206.094,"54",1,
 "Europe","2018","u5_pop","all",,"R",,,"",1008.80474358974,"3586.83401531836",39343.385,742124.511,"39",1,
 "Latin America and the Caribbean","2018","u5_pop","all",,"R",,,"",1700.96119354839,"8172.65993576456",52729.797,646507.22,"31",1,
 "Oceania","2018","u5_pop","all",,"R",,,"",323.4055,"1248.56331717458",3234.055,40289.174,"10",1,
 "N. America","2018","u5_pop","all",,"R",,,"",11018.9835,"18238.7918475338",22037.967,363720.513,"2",1,
-"Africa","2018","sugar_tax","all",,"O",,,,,"No",,2513745.452,"52",1,"54"
-"Africa","2018","sugar_tax","all",,"O",,,,,"Yes",,2631078.924,"2",1,"54"
-"Asia","2018","sugar_tax","all",,"O",,,,,"No",,7430961.231,"40",1,"48"
-"Asia","2018","sugar_tax","all",,"O",,,,,"Yes",,10622549.569,"8",1,"48"
-"Europe","2018","sugar_tax","all",,"O",,,,,"No",,1302402.455,"33",1,"43"
-"Europe","2018","sugar_tax","all",,"O",,,,,"Yes",,1666845.837,"10",1,"43"
-"Latin America and the Caribbean","2018","sugar_tax","all",,"O",,,,,"No",,1094542.537,"27",1,"33"
-"Latin America and the Caribbean","2018","sugar_tax","all",,"O",,,,,"Yes",,1492006.975,"6",1,"33"
-"N. America","2018","sugar_tax","all",,"O",,,,,"No",,727441.026,"2",1,"2"
-"N. America","2018","sugar_tax","all",,"O",,,,,"Yes",,727441.026,"0",1,"2"
-"Oceania","2018","sugar_tax","all",,"O",,,,,"No",,78983.627,"6",1,"14"
-"Oceania","2018","sugar_tax","all",,"O",,,,,"Yes",,82563.989,"8",1,"14"
-"Africa","2018","multi_sec","all",,"Q",,,,,"No",,2754619.645,"5",1,"54"
-"Africa","2018","multi_sec","all",,"Q",,,,,"Yes",,2390204.731,"49",1,"54"
-"Africa","2018","multi_sec","all",,"Q",,,,,"No data",,5144824.376,"0",1,"54"
-"Asia","2018","multi_sec","all",,"Q",,,,,"Yes",,7548512.491,"38",1,"47"
-"Asia","2018","multi_sec","all",,"Q",,,,,"No data",,18042841.311,"1",1,"47"
-"Asia","2018","multi_sec","all",,"Q",,,,,"No",,10475245.59,"8",1,"47"
-"Europe","2018","multi_sec","all",,"Q",,,,,"No",,1545764.666,"6",1,"42"
-"Europe","2018","multi_sec","all",,"Q",,,,,"Yes",,1423292.109,"35",1,"42"
-"Europe","2018","multi_sec","all",,"Q",,,,,"No data",,2969134.569,"1",1,"42"
-"Latin America and the Caribbean","2018","multi_sec","all",,"Q",,,,,"Yes",,1280762.238,"29",1,"33"
-"Latin America and the Caribbean","2018","multi_sec","all",,"Q",,,,,"No data",,2586948.797,"1",1,"33"
-"Latin America and the Caribbean","2018","multi_sec","all",,"Q",,,,,"No",,1305387.989,"3",1,"33"
-"N. America","2018","multi_sec","all",,"Q",,,,,"Yes",,727441.026,"2",1,"2"
-"N. America","2018","multi_sec","all",,"Q",,,,,"No",,727441.026,"0",1,"2"
-"N. America","2018","multi_sec","all",,"Q",,,,,"No data",,1454882.052,"0",1,"2"
-"Oceania","2018","multi_sec","all",,"Q",,,,,"Yes",,80676.078,"10",1,"14"
-"Oceania","2018","multi_sec","all",,"Q",,,,,"No",,80871.538,"4",1,"14"
-"Oceania","2018","multi_sec","all",,"Q",,,,,"No data",,161547.616,"0",1,"14"
-"Africa","2018","salt_leg","all",,"O",,,,,"Yes",,2295185.796,"36",1,"44"
-"Africa","2018","salt_leg","all",,"O",,,,,"No",,2612963.592,"8",1,"44"
-"Asia","2018","salt_leg","all",,"O",,,,,"Yes",,8307737.571,"30",1,"44"
-"Asia","2018","salt_leg","all",,"O",,,,,"No",,9333525.941,"14",1,"44"
-"Europe","2018","salt_leg","all",,"O",,,,,"Yes",,898875.283,"15",1,"33"
-"Europe","2018","salt_leg","all",,"O",,,,,"No",,1971452.921,"18",1,"33"
-"Latin America and the Caribbean","2018","salt_leg","all",,"O",,,,,"Yes",,1234652.824,"19",1,"19"
-"Latin America and the Caribbean","2018","salt_leg","all",,"O",,,,,"No",,1234652.824,"0",1,"19"
-"N. America","2018","salt_leg","all",,"O",,,,,"Yes",,400674.278,"1",1,"2"
-"N. America","2018","salt_leg","all",,"O",,,,,"No",,1054207.774,"1",1,"2"
-"Oceania","2018","salt_leg","all",,"O",,,,,"Yes",,79981.031,"6",1,"14"
-"Oceania","2018","salt_leg","all",,"O",,,,,"No",,81566.585,"8",1,"14"
-"Africa","2018","wasting_plan","all",,"Q",,,,,"Yes",,2370632.797,"46",1,"54"
-"Africa","2018","wasting_plan","all",,"Q",,,,,"No",,2774191.579,"8",1,"54"
-"Africa","2018","wasting_plan","all",,"Q",,,,,"No data",,5144824.376,"0",1,"54"
-"Asia","2018","wasting_plan","all",,"Q",,,,,"Yes",,7097300.599,"25",1,"47"
-"Asia","2018","wasting_plan","all",,"Q",,,,,"No data",,18042841.311,"1",1,"47"
-"Asia","2018","wasting_plan","all",,"Q",,,,,"No",,10926457.482,"21",1,"47"
-"Europe","2018","wasting_plan","all",,"Q",,,,,"No",,2052697.112,"37",1,"42"
-"Europe","2018","wasting_plan","all",,"Q",,,,,"Yes",,916359.663,"4",1,"42"
-"Europe","2018","wasting_plan","all",,"Q",,,,,"No data",,2969134.569,"1",1,"42"
-"Latin America and the Caribbean","2018","wasting_plan","all",,"Q",,,,,"No",,1424116.633,"12",1,"33"
-"Latin America and the Caribbean","2018","wasting_plan","all",,"Q",,,,,"Yes",,1162033.594,"20",1,"33"
-"Latin America and the Caribbean","2018","wasting_plan","all",,"Q",,,,,"No data",,2586948.797,"1",1,"33"
-"N. America","2018","wasting_plan","all",,"Q",,,,,"No",,1091161.539,"2",1,"2"
-"N. America","2018","wasting_plan","all",,"Q",,,,,"Yes",,363720.513,"0",1,"2"
-"N. America","2018","wasting_plan","all",,"Q",,,,,"No data",,1454882.052,"0",1,"2"
-"Oceania","2018","wasting_plan","all",,"Q",,,,,"No",,111467.692,"8",1,"14"
-"Oceania","2018","wasting_plan","all",,"Q",,,,,"Yes",,50079.924,"6",1,"14"
-"Oceania","2018","wasting_plan","all",,"Q",,,,,"No data",,161547.616,"0",1,"14"
-"Africa","2018","fbdg","all",,"A",,,,,"Yes",,652225.952,"7",1,"7"
-"Asia","2018","fbdg","all",,"A",,,,,"Yes",,7964500.498,"23",1,"23"
-"Europe","2018","fbdg","all",,"A",,,,,"Yes",,1023448.604,"29",1,"29"
-"Latin America and the Caribbean","2018","fbdg","all",,"A",,,,,"Yes",,1155767.074,"27",1,"27"
-"N. America","2018","fbdg","all",,"A",,,,,"Yes",,727441.026,"2",1,"2"
-"Oceania","2018","fbdg","all",,"A",,,,,"Yes",,60868.172,"3",1,"3"
 "Africa","2018","burden_text","all",,"A",,,,,"overweight, anaemia and stunting",,3273581.781,"30",1,"51"
 "Africa","2018","burden_text","all",,"A",,,,,"anaemia and stunting",,1674291.223,"13",1,"51"
 "Africa","2018","burden_text","all",,"A",,,,,"overweight and anaemia",,10309711.688,"8",1,"51"
@@ -6181,78 +6024,6 @@
 "Oceania","2018","burden_text","all",,"A",,,,,"anaemia only",,565038.96,"0",1,"7"
 "Oceania","2018","burden_text","all",,"A",,,,,"overweight and stunting",,1130077.92,"0",1,"7"
 "Oceania","2018","burden_text","all",,"A",,,,,"stunting only",,2260155.84,"0",1,"7"
-"Africa","2018","sodium_plan","all",,"Q",,,,,"No",,3167284.248,"33",1,"54"
-"Africa","2018","sodium_plan","all",,"Q",,,,,"Yes",,1977540.128,"21",1,"54"
-"Africa","2018","sodium_plan","all",,"Q",,,,,"No data",,5144824.376,"0",1,"54"
-"Asia","2018","sodium_plan","all",,"Q",,,,,"Yes",,8550551.601,"32",1,"47"
-"Asia","2018","sodium_plan","all",,"Q",,,,,"No data",,18042841.311,"1",1,"47"
-"Asia","2018","sodium_plan","all",,"Q",,,,,"No",,9473206.48,"14",1,"47"
-"Europe","2018","sodium_plan","all",,"Q",,,,,"No",,1748140.253,"18",1,"42"
-"Europe","2018","sodium_plan","all",,"Q",,,,,"Yes",,1220916.522,"23",1,"42"
-"Europe","2018","sodium_plan","all",,"Q",,,,,"No data",,2969134.569,"1",1,"42"
-"Latin America and the Caribbean","2018","sodium_plan","all",,"Q",,,,,"Yes",,1187579.14,"22",1,"33"
-"Latin America and the Caribbean","2018","sodium_plan","all",,"Q",,,,,"No data",,2586948.797,"1",1,"33"
-"Latin America and the Caribbean","2018","sodium_plan","all",,"Q",,,,,"No",,1398571.087,"10",1,"33"
-"N. America","2018","sodium_plan","all",,"Q",,,,,"Yes",,727441.026,"2",1,"2"
-"N. America","2018","sodium_plan","all",,"Q",,,,,"No",,727441.026,"0",1,"2"
-"N. America","2018","sodium_plan","all",,"Q",,,,,"No data",,1454882.052,"0",1,"2"
-"Oceania","2018","sodium_plan","all",,"Q",,,,,"Yes",,74294.508,"7",1,"14"
-"Oceania","2018","sodium_plan","all",,"Q",,,,,"No",,87253.108,"7",1,"14"
-"Oceania","2018","sodium_plan","all",,"Q",,,,,"No data",,161547.616,"0",1,"14"
-"Africa","2018","LBW_plan","all",,"Q",,,,,"No",,3199855.389,"18",1,"54"
-"Africa","2018","LBW_plan","all",,"Q",,,,,"Yes",,1944968.987,"36",1,"54"
-"Africa","2018","LBW_plan","all",,"Q",,,,,"No data",,5144824.376,"0",1,"54"
-"Asia","2018","LBW_plan","all",,"Q",,,,,"Yes",,7351491.433,"27",1,"47"
-"Asia","2018","LBW_plan","all",,"Q",,,,,"No data",,18042841.311,"1",1,"47"
-"Asia","2018","LBW_plan","all",,"Q",,,,,"No",,10672266.648,"19",1,"47"
-"Europe","2018","LBW_plan","all",,"Q",,,,,"No",,2039179.981,"34",1,"42"
-"Europe","2018","LBW_plan","all",,"Q",,,,,"Yes",,929876.794,"7",1,"42"
-"Europe","2018","LBW_plan","all",,"Q",,,,,"No data",,2969134.569,"1",1,"42"
-"Latin America and the Caribbean","2018","LBW_plan","all",,"Q",,,,,"No",,1372987.891,"11",1,"33"
-"Latin America and the Caribbean","2018","LBW_plan","all",,"Q",,,,,"No data",,2586948.797,"1",1,"33"
-"Latin America and the Caribbean","2018","LBW_plan","all",,"Q",,,,,"Yes",,1213162.336,"21",1,"33"
-"N. America","2018","LBW_plan","all",,"Q",,,,,"No",,764394.791,"1",1,"2"
-"N. America","2018","LBW_plan","all",,"Q",,,,,"Yes",,690487.261,"1",1,"2"
-"N. America","2018","LBW_plan","all",,"Q",,,,,"No data",,1454882.052,"0",1,"2"
-"Oceania","2018","LBW_plan","all",,"Q",,,,,"Yes",,75764.412,"8",1,"14"
-"Oceania","2018","LBW_plan","all",,"Q",,,,,"No",,85783.204,"6",1,"14"
-"Oceania","2018","LBW_plan","all",,"Q",,,,,"No data",,161547.616,"0",1,"14"
-"Africa","2018","child_overweight_plan","all",,"Q",,,,,"No",,3159900.782,"23",1,"54"
-"Africa","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,1984923.594,"31",1,"54"
-"Africa","2018","child_overweight_plan","all",,"Q",,,,,"No data",,5144824.376,"0",1,"54"
-"Asia","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,7279866.001,"33",1,"47"
-"Asia","2018","child_overweight_plan","all",,"Q",,,,,"No data",,18042841.311,"1",1,"47"
-"Asia","2018","child_overweight_plan","all",,"Q",,,,,"No",,10743892.08,"13",1,"47"
-"Europe","2018","child_overweight_plan","all",,"Q",,,,,"No",,1578313.61,"5",1,"42"
-"Europe","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,1390743.165,"36",1,"42"
-"Europe","2018","child_overweight_plan","all",,"Q",,,,,"No data",,2969134.569,"1",1,"42"
-"Latin America and the Caribbean","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,1257671.246,"26",1,"33"
-"Latin America and the Caribbean","2018","child_overweight_plan","all",,"Q",,,,,"No data",,2586948.797,"1",1,"33"
-"Latin America and the Caribbean","2018","child_overweight_plan","all",,"Q",,,,,"No",,1328478.981,"6",1,"33"
-"N. America","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,727441.026,"2",1,"2"
-"N. America","2018","child_overweight_plan","all",,"Q",,,,,"No",,727441.026,"0",1,"2"
-"N. America","2018","child_overweight_plan","all",,"Q",,,,,"No data",,1454882.052,"0",1,"2"
-"Oceania","2018","child_overweight_plan","all",,"Q",,,,,"No",,105687.068,"4",1,"14"
-"Oceania","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,55860.548,"10",1,"14"
-"Oceania","2018","child_overweight_plan","all",,"Q",,,,,"No data",,161547.616,"0",1,"14"
-"Africa","2018","EBF_plan","all",,"Q",,,,,"Yes",,2502333.622,"46",1,"54"
-"Africa","2018","EBF_plan","all",,"Q",,,,,"No",,2642490.754,"8",1,"54"
-"Africa","2018","EBF_plan","all",,"Q",,,,,"No data",,5144824.376,"0",1,"54"
-"Asia","2018","EBF_plan","all",,"Q",,,,,"Yes",,7235010.9,"31",1,"47"
-"Asia","2018","EBF_plan","all",,"Q",,,,,"No data",,18042841.311,"1",1,"47"
-"Asia","2018","EBF_plan","all",,"Q",,,,,"No",,10788747.181,"15",1,"47"
-"Europe","2018","EBF_plan","all",,"Q",,,,,"No",,1907690.749,"29",1,"42"
-"Europe","2018","EBF_plan","all",,"Q",,,,,"Yes",,1061366.026,"12",1,"42"
-"Europe","2018","EBF_plan","all",,"Q",,,,,"No data",,2969134.569,"1",1,"42"
-"Latin America and the Caribbean","2018","EBF_plan","all",,"Q",,,,,"No",,1357222.226,"7",1,"33"
-"Latin America and the Caribbean","2018","EBF_plan","all",,"Q",,,,,"Yes",,1228928.001,"25",1,"33"
-"Latin America and the Caribbean","2018","EBF_plan","all",,"Q",,,,,"No data",,2586948.797,"1",1,"33"
-"N. America","2018","EBF_plan","all",,"Q",,,,,"Yes",,727441.026,"2",1,"2"
-"N. America","2018","EBF_plan","all",,"Q",,,,,"No",,727441.026,"0",1,"2"
-"N. America","2018","EBF_plan","all",,"Q",,,,,"No data",,1454882.052,"0",1,"2"
-"Oceania","2018","EBF_plan","all",,"Q",,,,,"Yes",,75283.415,"10",1,"14"
-"Oceania","2018","EBF_plan","all",,"Q",,,,,"No",,86264.201,"4",1,"14"
-"Oceania","2018","EBF_plan","all",,"Q",,,,,"No data",,161547.616,"0",1,"14"
 "Africa","2018","country_class","all",,"A",,,,,"experiencing three forms of malnutrition",,3273581.781,"30",1,"51"
 "Africa","2018","country_class","all",,"A",,,,,"experiencing two forms of malnutrition",,1812279.783,"21",1,"51"
 "Africa","2018","country_class","all",,"A",,,,,"experiencing one form of malnutrition",,5085861.564,"0",1,"51"
@@ -6271,24 +6042,6 @@
 "Oceania","2018","country_class","all",,"A",,,,,"experiencing one form of malnutrition",,166031.987,"1",1,"7"
 "Oceania","2018","country_class","all",,"A",,,,,"experiencing two forms of malnutrition",,36533.879,"3",1,"7"
 "Oceania","2018","country_class","all",,"A",,,,,"experiencing three forms of malnutrition",,79953.614,"3",1,"7"
-"Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,2079428.329,"37",1,"54"
-"Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,5637808.235,"17",1,"54"
-"Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,2572412.188,"0",1,"54"
-"Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,8774740.939,"41",1,"47"
-"Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,9026191.463,"1",1,"47"
-"Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,18265666.99,"5",1,"47"
-"Europe","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,1469863.224,"39",1,"42"
-"Europe","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,2983741.387,"2",1,"42"
-"Europe","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,1484586.733,"1",1,"42"
-"Latin America and the Caribbean","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,1270190.688,"26",1,"33"
-"Latin America and the Caribbean","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,1293674.041,"1",1,"33"
-"Latin America and the Caribbean","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,2609234.295,"6",1,"33"
-"N. America","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,727441.026,"2",1,"2"
-"N. America","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,727441.026,"0",1,"2"
-"N. America","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,1454882.052,"0",1,"2"
-"Oceania","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,80150.527,"13",1,"14"
-"Oceania","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,162170.897,"1",1,"14"
-"Oceania","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,80773.808,"0",1,"14"
 "Africa","1999","190_percent","all",,"R",,,"",45.4114749604167,"48.14014875013",2179.7507981,772236.545,"48",1,
 "Africa","2005","190_percent","all",,"R",,,"",41.3961764632653,"42.7137993631811",2028.4126467,894308.408,"49",1,
 "Africa","2010","190_percent","all",,"R",,,"",37.741049626,"39.4824274136181",1887.0524813,1024358.349,"50",1,
@@ -14585,101 +14338,6 @@
 "Eastern Europe","2000","limited_sanitation","all",,"V",,,,0,"0",0,22128.128,"1",0,
 "Eastern Africa","2000","limited_sanitation","all",,"V",,,,0,"0",0,6700.656,"1",0,
 "Polynesia","2000","limited_sanitation","all",,"V",,,,0,"0",0,9.42,"1",0,
-"Southern Asia","2000","undernourishment_prev","all",,"S",,,"",21,"18.7784700206675",168,1452184.283,"8",0,
-"Southern Asia","2004","undernourishment_prev","all",,"S",,,"",19.975,"21.7533495813396",159.8,1556952.055,"8",0,
-"Southern Asia","2008","undernourishment_prev","all",,"S",,,"",16.2375,"17.7333302205522",129.9,1656503.641,"8",0,
-"Southern Asia","2012","undernourishment_prev","all",,"S",,,"",14.5875,"16.9858284941657",116.7,1752315.653,"8",0,
-"Southern Asia","2016","undernourishment_prev","all",,"S",,,"",14.6375,"15.1644136887903",117.1,1845468.869,"8",0,
-"Middle Africa","2000","undernourishment_prev","all",,"S",,,"",35.7142857142857,"46.9796168550764",250,48408.158,"7",0,
-"Middle Africa","2004","undernourishment_prev","all",,"S",,,"",31.1285714285714,"39.5626803302685",217.9,54711.489,"7",0,
-"Middle Africa","2008","undernourishment_prev","all",,"S",,,"",28.4,"33.1045751261119",198.8,61964.434,"7",0,
-"Middle Africa","2012","undernourishment_prev","all",,"S",,,"",26.2142857142857,"27.4128942860619",183.5,69947.153,"7",0,
-"Middle Africa","2016","undernourishment_prev","all",,"S",,,"",27.1142857142857,"24.5572235944856",189.8,78605.333,"7",0,
-"Southern Europe","2000","undernourishment_prev","all",,"S",,,"",7.475,"7.57804003829663",29.9,13351.567,"4",0,
-"Southern Europe","2004","undernourishment_prev","all",,"S",,,"",6.075,"5.64538678337937",24.3,13320.001,"4",0,
-"Southern Europe","2008","undernourishment_prev","all",,"S",,,"",5.55,"5.65107613582723",22.2,17922.18,"4",0,
-"Southern Europe","2012","undernourishment_prev","all",,"S",,,"",5.56666666666667,"5.85607171469922",16.7,13951.059,"3",0,
-"Southern Europe","2016","undernourishment_prev","all",,"S",,,"",5.06666666666667,"5.3530710561754",15.2,13827.637,"3",0,
-"Western Asia","2004","undernourishment_prev","all",,"S",,,"",11.2,"17.1481234570778",123.2,102487.344,"11",0,
-"Western Asia","2008","undernourishment_prev","all",,"S",,,"",9.77272727272727,"16.2296138898086",107.5,114814.944,"11",0,
-"Western Asia","2012","undernourishment_prev","all",,"S",,,"",10.31,"15.9619059995786",103.1,120171.674,"10",0,
-"Western Asia","2016","undernourishment_prev","all",,"S",,,"",11.62,"18.2071784708457",116.2,134239.662,"10",0,
-"South America","2000","undernourishment_prev","all",,"S",,,"",13.1916666666667,"12.1773989821584",158.3,349232.714,"12",0,
-"South America","2004","undernourishment_prev","all",,"S",,,"",12,"8.79884772960481",144,368516.02,"12",0,
-"South America","2008","undernourishment_prev","all",,"S",,,"",9.76666666666667,"5.89799383101717",117.2,386415.405,"12",0,
-"South America","2012","undernourishment_prev","all",,"S",,,"",9.26,"7.85264699743193",92.6,199668.063,"10",0,
-"South America","2016","undernourishment_prev","all",,"S",,,"",8.8,"7.74659356364269",88,209082.55,"10",0,
-"Western Asia","2000","undernourishment_prev","all",,"S",,,"",16.9555555555556,"20.203277505085",152.6,86433.245,"9",0,
-"Western Africa","2000","undernourishment_prev","all",,"S",,,"",22.625,"15.6197778978639",362,235503.183,"16",0,
-"Western Africa","2004","undernourishment_prev","all",,"S",,,"",20.39375,"13.2121037556977",326.3,261533.666,"16",0,
-"Western Africa","2008","undernourishment_prev","all",,"S",,,"",16.95625,"10.7507568830223",271.3,291383.336,"16",0,
-"Western Africa","2012","undernourishment_prev","all",,"S",,,"",15.41875,"10.3719174796434",246.7,325064.228,"16",0,
-"Western Africa","2016","undernourishment_prev","all",,"S",,,"",16.31875,"13.1104080794098",261.1,362197.544,"16",0,
-"Eastern Europe","2000","undernourishment_prev","all",,"S",,,"",5.075,"4.96874590891612",20.3,208633.586,"4",0,
-"Eastern Europe","2004","undernourishment_prev","all",,"S",,,"",4.7,"2.94941486487407",18.8,166864.192,"4",0,
-"Eastern Europe","2008","undernourishment_prev","all",,"S",,,"",5.6,"5.6327127494551",11.2,12909.187,"2",0,
-"Eastern Europe","2012","undernourishment_prev","all",,"S",,,"",4.45,"4.53181701004906",8.9,12727.453,"2",0,
-"Eastern Europe","2016","undernourishment_prev","all",,"S",,,"",3,"3.20518211235185",9,57014.337,"3",0,
-"Central America","2000","undernourishment_prev","all",,"S",,,"",15.8375,"8.31999748522065",126.7,137992.226,"8",0,
-"Central America","2004","undernourishment_prev","all",,"S",,,"",13.5625,"8.52946727805522",108.5,146039.807,"8",0,
-"Central America","2008","undernourishment_prev","all",,"S",,,"",12.0375,"7.41007649373015",96.3,155497.581,"8",0,
-"Central America","2012","undernourishment_prev","all",,"S",,,"",11.225,"7.20050960878488",89.8,165467.124,"8",0,
-"Central America","2016","undernourishment_prev","all",,"S",,,"",10.1875,"6.35431715566913",81.5,174988.756,"8",0,
-"Caribbean","2000","undernourishment_prev","all",,"S",,,"",16.5625,"24.1819709048864",132.5,32634.827,"8",0,
-"Caribbean","2004","undernourishment_prev","all",,"S",,,"",17.8571428571429,"35.6163012722973",125,22693.517,"7",0,
-"Caribbean","2008","undernourishment_prev","all",,"S",,,"",15.5285714285714,"31.0944744988632",108.7,23904.601,"7",0,
-"Caribbean","2012","undernourishment_prev","all",,"S",,,"",13.7714285714286,"27.3034621462348",96.4,25089.697,"7",0,
-"Caribbean","2016","undernourishment_prev","all",,"S",,,"",12.0857142857143,"24.4919606187171",84.6,26210.624,"7",0,
-"South-eastern Asia","2000","undernourishment_prev","all",,"S",,,"",24.29,"21.8448435897546",242.9,520743.157,"10",0,
-"South-eastern Asia","2008","undernourishment_prev","all",,"S",,,"",15.81,"15.2711038344126",158.1,578145.583,"10",0,
-"South-eastern Asia","2012","undernourishment_prev","all",,"S",,,"",12.84,"10.6364871485304",128.4,606951.247,"10",0,
-"South-eastern Asia","2016","undernourishment_prev","all",,"S",,,"",11.95,"9.67114660194617",119.5,636153.342,"10",0,
-"Southern Africa","2000","undernourishment_prev","all",,"S",,,"",19.94,"7.38051783152452",99.7,52286.079,"5",0,
-"Southern Africa","2004","undernourishment_prev","all",,"S",,,"",17.72,"6.45825236496651",88.6,55114.734,"5",0,
-"Southern Africa","2008","undernourishment_prev","all",,"S",,,"",20.92,"7.19708008072098",104.6,57623.682,"5",0,
-"Southern Africa","2012","undernourishment_prev","all",,"S",,,"",19.72,"6.95943261432759",98.6,60689.548,"5",0,
-"Southern Africa","2016","undernourishment_prev","all",,"S",,,"",18.7,"8.16306170880477",93.5,64292.365,"5",0,
-"Eastern Asia","2000","undernourishment_prev","all",,"S",,,"",29.5,"16.3136708066138",88.5,1308525.481,"3",0,
-"Eastern Asia","2004","undernourishment_prev","all",,"S",,,"",27.2666666666667,"15.8604339439257",81.8,1340233.808,"3",0,
-"Eastern Asia","2008","undernourishment_prev","all",,"S",,,"",26.1333333333333,"13.9069109754691",78.4,1371378.504,"3",0,
-"Eastern Asia","2012","undernourishment_prev","all",,"S",,,"",23.5333333333333,"10.9692076175961",70.6,1402866.879,"3",0,
-"Eastern Asia","2016","undernourishment_prev","all",,"S",,,"",23.6,"9.33591549277627",70.8,1431896.383,"3",0,
-"Eastern Africa","2000","undernourishment_prev","all",,"S",,,"",37.2666666666667,"40.2208529448211",447.2,234097.699,"12",0,
-"Eastern Africa","2004","undernourishment_prev","all",,"S",,,"",34.475,"36.6015014680249",413.7,261623.62,"12",0,
-"Eastern Africa","2008","undernourishment_prev","all",,"S",,,"",31.4083333333333,"33.4001366602818",376.9,292793.191,"12",0,
-"Eastern Africa","2012","undernourishment_prev","all",,"S",,,"",28.925,"30.3052181155963",347.1,327935.261,"12",0,
-"Eastern Africa","2016","undernourishment_prev","all",,"S",,,"",30.9666666666667,"30.6466796067419",371.6,366604.256,"12",0,
-"Northern Africa","2000","undernourishment_prev","all",,"S",,,"",6.9,"6.73796994948369",27.6,139638.466,"4",0,
-"Northern Africa","2004","undernourishment_prev","all",,"S",,,"",6.45,"6.32168688687245",25.8,148409.881,"4",0,
-"Northern Africa","2008","undernourishment_prev","all",,"S",,,"",5.725,"5.48242799699126",22.9,157818.787,"4",0,
-"Northern Africa","2012","undernourishment_prev","all",,"S",,,"",8.78,"8.2235804719314",43.9,205589.753,"5",0,
-"Northern Africa","2016","undernourishment_prev","all",,"S",,,"",8.7,"8.27214657844552",43.5,222553.595,"5",0,
-"Northern Europe","2000","undernourishment_prev","all",,"S",,,"",5.45,"5.41094451236032",10.9,3783.275,"2",0,
-"Northern Europe","2004","undernourishment_prev","all",,"S",,,"",4.8,"4.8",4.8,1363.565,"1",0,
-"Northern Europe","2008","undernourishment_prev","all",,"S",,,"",2.8,"2.8",2.8,1339.712,"1",0,
-"Northern Europe","2012","undernourishment_prev","all",,"S",,,"",2.9,"2.9",2.9,1324.934,"1",0,
-"Northern Europe","2016","undernourishment_prev","all",,"S",,,"",2.8,"2.8",2.8,1312.442,"1",0,
-"Melanesia","2000","undernourishment_prev","all",,"S",,,"",9.33333333333333,"8.23377327622002",28,1408.895,"3",0,
-"Melanesia","2004","undernourishment_prev","all",,"S",,,"",8.03333333333333,"7.25867677457302",24.1,1480.821,"3",0,
-"Melanesia","2008","undernourishment_prev","all",,"S",,,"",7,"6.63133641461087",21,1573.157,"3",0,
-"Melanesia","2012","undernourishment_prev","all",,"S",,,"",7.6,"7.22014609485045",22.8,1672.612,"3",0,
-"Melanesia","2016","undernourishment_prev","all",,"S",,,"",7.93333333333333,"7.49032806526815",23.8,1768.581,"3",0,
-"South-eastern Asia","2004","undernourishment_prev","all",,"S",,,"",20.9,"18.7632107544152",188.1,549795.547,"9",0,
-"Central Asia","2000","undernourishment_prev","all",,"S",,,"",11.65,"12.3346633792926",46.6,49343.132,"4",0,
-"Central Asia","2004","undernourishment_prev","all",,"S",,,"",9.65,"11.9479688167712",38.6,51287.569,"4",0,
-"Central Asia","2008","undernourishment_prev","all",,"S",,,"",7.1,"7.79112366513867",28.4,53915.057,"4",0,
-"Central Asia","2012","undernourishment_prev","all",,"S",,,"",6.6,"7.20642799307354",19.8,40402.766,"3",0,
-"Central Asia","2016","undernourishment_prev","all",,"S",,,"",6.46666666666667,"7.02570609830384",19.4,43065.073,"3",0,
-"Micronesia","2000","undernourishment_prev","all",,"S",,,"",4.4,"4.4",4.4,84.406,"1",0,
-"Micronesia","2004","undernourishment_prev","all",,"S",,,"",4.7,"4.7",4.7,90.542,"1",0,
-"Micronesia","2008","undernourishment_prev","all",,"S",,,"",4.4,"4.4",4.4,98.44,"1",0,
-"Micronesia","2012","undernourishment_prev","all",,"S",,,"",3.1,"3.1",3.1,106.613,"1",0,
-"Micronesia","2016","undernourishment_prev","all",,"S",,,"",3.1,"3.1",3.1,114.395,"1",0,
-"Polynesia","2000","undernourishment_prev","all",,"S",,,"",5.3,"5.3",5.3,174.61,"1",0,
-"Polynesia","2004","undernourishment_prev","all",,"S",,,"",3.6,"3.6",3.6,178.781,"1",0,
-"Polynesia","2008","undernourishment_prev","all",,"S",,,"",3.5,"3.5",3.5,183.526,"1",0,
-"Polynesia","2012","undernourishment_prev","all",,"S",,,"",3.1,"3.1",3.1,189.194,"1",0,
-"Polynesia","2016","undernourishment_prev","all",,"S",,,"",3.1,"3.1",3.1,195.125,"1",0,
 "Southern Asia","2010","social_protection_spending",,,"V",,,"",4.5,"3.54386322701147",27,399098.452,"6",0,
 "Middle Africa","2000","social_protection_spending",,,"V",,,"",2,"2.67195970478146",4,19666.651,"2",0,
 "Middle Africa","2010","social_protection_spending",,,"V",,,"",11.5,"19.3219016368597",23,27817.656,"2",0,
@@ -15094,116 +14752,6 @@
 "Northern Africa","2012","agriculture_expenditure",,,"V",,,"",5,"5",5,10886.668,"1",0,
 "Northern America","2010","agriculture_expenditure",,,"V",,,"",1,"1",1,308641.391,"1",0,
 "Northern America","2012","agriculture_expenditure",,,"V",,,"",1,"1",1,313335.423,"1",0,
-"Southern Asia","2000","total_calories_non_staple","all",,"S",,,"",36.875,"36.2629776623192",295,1452184.283,"8",0,
-"Southern Asia","2003","total_calories_non_staple","all",,"S",,,"",37.125,"37.0919455660007",297,1531095.953,"8",0,
-"Southern Asia","2006","total_calories_non_staple","all",,"S",,,"",38.625,"38.3897327217682",309,1607499.186,"8",0,
-"Southern Asia","2009","total_calories_non_staple","all",,"S",,,"",39.375,"39.9300056635787",315,1680637.006,"8",0,
-"Southern Asia","2012","total_calories_non_staple","all",,"S",,,"",40.125,"41.4690507840827",321,1752315.653,"8",0,
-"Middle Africa","2000","total_calories_non_staple","all",,"S",,,"",43.5714285714286,"39.8844061160104",305,48408.158,"7",0,
-"Middle Africa","2003","total_calories_non_staple","all",,"S",,,"",44.7142857142857,"41.5473705860188",313,53031.094,"7",0,
-"Middle Africa","2006","total_calories_non_staple","all",,"S",,,"",44.7142857142857,"41.2526438064748",313,58231.853,"7",0,
-"Middle Africa","2009","total_calories_non_staple","all",,"S",,,"",44.7142857142857,"41.2523767971782",313,63900.383,"7",0,
-"Middle Africa","2012","total_calories_non_staple","all",,"S",,,"",44.2857142857143,"41.3595674866138",310,69947.153,"7",0,
-"Southern Europe","2000","total_calories_non_staple","all",,"S",,,"",61.6,"67.8615002597404",616,135431.402,"10",0,
-"Southern Europe","2003","total_calories_non_staple","all",,"S",,,"",62.9,"68.5347108275426",629,138255.923,"10",0,
-"Southern Europe","2006","total_calories_non_staple","all",,"S",,,"",64.3333333333333,"68.7064705184477",772,151215.24,"12",0,
-"Southern Europe","2009","total_calories_non_staple","all",,"S",,,"",64.6666666666667,"68.2706214790459",776,153478.819,"12",0,
-"Southern Europe","2012","total_calories_non_staple","all",,"S",,,"",64.3333333333333,"67.6876310420942",772,153554.666,"12",0,
-"Western Asia","2000","total_calories_non_staple","all",,"S",,,"",51.0714285714286,"45.6394174310354",715,164128.139,"14",0,
-"Western Asia","2003","total_calories_non_staple","all",,"S",,,"",51.9285714285714,"46.0458822529976",727,174427.812,"14",0,
-"Western Asia","2006","total_calories_non_staple","all",,"S",,,"",52.8571428571429,"47.579788301001",740,186222.326,"14",0,
-"Western Asia","2009","total_calories_non_staple","all",,"S",,,"",53.3571428571429,"48.3413646019436",747,199709.462,"14",0,
-"Western Asia","2012","total_calories_non_staple","all",,"S",,,"",53.8571428571429,"50.088785470242",754,215101.119,"14",0,
-"South America","2000","total_calories_non_staple","all",,"S",,,"",57.8333333333333,"62.43259369453",694,349232.714,"12",0,
-"South America","2003","total_calories_non_staple","all",,"S",,,"",57.1666666666667,"61.1662047798761",686,363823.279,"12",0,
-"South America","2006","total_calories_non_staple","all",,"S",,,"",57.0833333333333,"61.2531570017695",685,377634.489,"12",0,
-"South America","2009","total_calories_non_staple","all",,"S",,,"",57.4166666666667,"62.2932263328789",689,390736.783,"12",0,
-"South America","2012","total_calories_non_staple","all",,"S",,,"",57.6666666666667,"62.9199139619964",692,403625.823,"12",0,
-"Caribbean","2000","total_calories_non_staple","all",,"S",,,"",65.4615384615385,"58.8087893296576",851,33320.243,"13",0,
-"Caribbean","2003","total_calories_non_staple","all",,"S",,,"",65.7692307692308,"57.3339116325359",855,34350.154,"13",0,
-"Caribbean","2006","total_calories_non_staple","all",,"S",,,"",66.0769230769231,"57.2326989699911",859,35339.211,"13",0,
-"Caribbean","2009","total_calories_non_staple","all",,"S",,,"",65.8461538461538,"58.2390655950381",856,36298.523,"13",0,
-"Caribbean","2012","total_calories_non_staple","all",,"S",,,"",65.2307692307692,"58.1789144349645",848,37273.566,"13",0,
-"Australia and New Zealand","2000","total_calories_non_staple","all",,"S",,,"",73,"74.3266692943845",146,22924.836,"2",0,
-"Australia and New Zealand","2003","total_calories_non_staple","all",,"S",,,"",73.5,"73.8304286838578",147,23719.041,"2",0,
-"Australia and New Zealand","2006","total_calories_non_staple","all",,"S",,,"",74.5,"75.492811271041",149,24759.523,"2",0,
-"Australia and New Zealand","2009","total_calories_non_staple","all",,"S",,,"",73,"73.6682222848579",146,26062.522,"2",0,
-"Australia and New Zealand","2012","total_calories_non_staple","all",,"S",,,"",73.5,"74.5088519828365",147,27289.592,"2",0,
-"Western Europe","2000","total_calories_non_staple","all",,"S",,,"",74.5714285714286,"73.6198200484512",522,182976.808,"7",0,
-"Western Europe","2003","total_calories_non_staple","all",,"S",,,"",74.2857142857143,"72.9924578469677",520,184771.642,"7",0,
-"Western Europe","2006","total_calories_non_staple","all",,"S",,,"",74.1428571428571,"72.7504858127132",519,186424.722,"7",0,
-"Western Europe","2009","total_calories_non_staple","all",,"S",,,"",73.4285714285714,"72.2682181342772",514,187743.827,"7",0,
-"Western Europe","2012","total_calories_non_staple","all",,"S",,,"",72.8571428571429,"71.7585266411323",510,189660.351,"7",0,
-"Western Africa","2000","total_calories_non_staple","all",,"S",,,"",36.25,"35.1382968356738",580,235503.183,"16",0,
-"Western Africa","2003","total_calories_non_staple","all",,"S",,,"",37.3125,"36.2744073593184",597,254716.525,"16",0,
-"Western Africa","2006","total_calories_non_staple","all",,"S",,,"",37.125,"36.1377875491262",594,275937.806,"16",0,
-"Western Africa","2009","total_calories_non_staple","all",,"S",,,"",37,"35.2927784464974",592,299468.653,"16",0,
-"Western Africa","2012","total_calories_non_staple","all",,"S",,,"",37.1875,"35.4260129878087",595,325064.228,"16",0,
-"Eastern Europe","2000","total_calories_non_staple","all",,"S",,,"",56.9,"54.3980042812031",569,303957.552,"10",0,
-"Eastern Europe","2003","total_calories_non_staple","all",,"S",,,"",58.3,"56.6291565466302",583,299829.699,"10",0,
-"Eastern Europe","2006","total_calories_non_staple","all",,"S",,,"",60.4,"58.7834670667326",604,296621.738,"10",0,
-"Eastern Europe","2009","total_calories_non_staple","all",,"S",,,"",61.5,"59.5937889122407",615,294914.429,"10",0,
-"Eastern Europe","2012","total_calories_non_staple","all",,"S",,,"",61.5,"60.2663543576829",615,293987.914,"10",0,
-"Central America","2000","total_calories_non_staple","all",,"S",,,"",55,"53.5450403488672",440,137992.226,"8",0,
-"Central America","2003","total_calories_non_staple","all",,"S",,,"",54.375,"54.2764001507562",435,143991.441,"8",0,
-"Central America","2006","total_calories_non_staple","all",,"S",,,"",56,"55.6134338617852",448,150528.927,"8",0,
-"Central America","2009","total_calories_non_staple","all",,"S",,,"",56,"56.271434362931",448,158041.891,"8",0,
-"Central America","2012","total_calories_non_staple","all",,"S",,,"",56.375,"55.5938371902808",451,165467.124,"8",0,
-"South-eastern Asia","2000","total_calories_non_staple","all",,"S",,,"",35.8,"34.557447722736",358,520743.157,"10",0,
-"South-eastern Asia","2003","total_calories_non_staple","all",,"S",,,"",38.2,"36.6846734079836",382,542940.4,"10",0,
-"South-eastern Asia","2006","total_calories_non_staple","all",,"S",,,"",38.9,"37.7941791648039",389,564299.158,"10",0,
-"South-eastern Asia","2009","total_calories_non_staple","all",,"S",,,"",40.5,"38.5209996153676",405,585132.741,"10",0,
-"South-eastern Asia","2012","total_calories_non_staple","all",,"S",,,"",41.8,"39.220354558395",418,606951.247,"10",0,
-"Southern Africa","2000","total_calories_non_staple","all",,"S",,,"",40.4,"43.3085288724748",202,52286.079,"5",0,
-"Southern Africa","2003","total_calories_non_staple","all",,"S",,,"",40.6,"44.1921192709939",203,54445.09,"5",0,
-"Southern Africa","2006","total_calories_non_staple","all",,"S",,,"",40.4,"45.0282454580744",202,56390.73,"5",0,
-"Southern Africa","2009","total_calories_non_staple","all",,"S",,,"",41.2,"46.059891547475",206,58287.624,"5",0,
-"Southern Africa","2012","total_calories_non_staple","all",,"S",,,"",41.6,"46.972614757322",208,60689.548,"5",0,
-"Northern America","2000","total_calories_non_staple","all",,"S",,,"",73.5,"74.7051427914809",147,312718.551,"2",0,
-"Northern America","2003","total_calories_non_staple","all",,"S",,,"",74,"75.6066871185728",148,321655.43,"2",0,
-"Northern America","2006","total_calories_non_staple","all",,"S",,,"",74,"75.6048633455169",148,330472.839,"2",0,
-"Northern America","2009","total_calories_non_staple","all",,"S",,,"",74,"75.6023160679591",148,339866.193,"2",0,
-"Northern America","2012","total_calories_non_staple","all",,"S",,,"",74,"75.5991144836069",148,348236.128,"2",0,
-"Eastern Asia","2000","total_calories_non_staple","all",,"S",,,"",47.4,"41.8854232865373",237,1483445.727,"5",0,
-"Eastern Asia","2003","total_calories_non_staple","all",,"S",,,"",48,"44.6504227967649",240,1508684.557,"5",0,
-"Eastern Asia","2006","total_calories_non_staple","all",,"S",,,"",49,"47.2803352913145",245,1533157.042,"5",0,
-"Eastern Asia","2009","total_calories_non_staple","all",,"S",,,"",50,"49.0033970510708",250,1557145.268,"5",0,
-"Eastern Asia","2012","total_calories_non_staple","all",,"S",,,"",50,"49.8048213337943",250,1581245.507,"5",0,
-"Eastern Africa","2000","total_calories_non_staple","all",,"S",,,"",36.5,"32.1614998488302",438,234097.699,"12",0,
-"Eastern Africa","2003","total_calories_non_staple","all",,"S",,,"",37.3333333333333,"33.4842526911582",448,254486.15,"12",0,
-"Eastern Africa","2006","total_calories_non_staple","all",,"S",,,"",38.0833333333333,"34.3115783506929",457,276683.941,"12",0,
-"Eastern Africa","2009","total_calories_non_staple","all",,"S",,,"",38.6666666666667,"35.4816539338113",464,301222.695,"12",0,
-"Eastern Africa","2012","total_calories_non_staple","all",,"S",,,"",39.0833333333333,"35.8294441414155",469,327935.261,"12",0,
-"Northern Europe","2000","total_calories_non_staple","all",,"S",,,"",67.5,"69.2557366655139",675,94275.324,"10",0,
-"Northern Europe","2003","total_calories_non_staple","all",,"S",,,"",68.6,"68.3078951336823",686,95146.356,"10",0,
-"Northern Europe","2006","total_calories_non_staple","all",,"S",,,"",69,"69.0148892128949",690,96775.297,"10",0,
-"Northern Europe","2009","total_calories_non_staple","all",,"S",,,"",68.5,"68.9250123045136",685,99266.419,"10",0,
-"Northern Europe","2012","total_calories_non_staple","all",,"S",,,"",68.5,"69.0624492730682",685,101259.081,"10",0,
-"Northern Africa","2000","total_calories_non_staple","all",,"S",,,"",40,"37.449476507426",160,139638.466,"4",0,
-"Northern Africa","2003","total_calories_non_staple","all",,"S",,,"",40.25,"37.6224752567525",161,146169.071,"4",0,
-"Northern Africa","2006","total_calories_non_staple","all",,"S",,,"",40.75,"38.0169662386768",163,153002.445,"4",0,
-"Northern Africa","2009","total_calories_non_staple","all",,"S",,,"",41.5,"38.4840600134454",166,160442.513,"4",0,
-"Northern Africa","2012","total_calories_non_staple","all",,"S",,,"",46,"42.930773470991",230,205589.753,"5",0,
-"Melanesia","2000","total_calories_non_staple","all",,"S",,,"",45,"45.688433133768",135,1408.895,"3",0,
-"Melanesia","2003","total_calories_non_staple","all",,"S",,,"",44,"44.7537010355172",132,1462.361,"3",0,
-"Melanesia","2006","total_calories_non_staple","all",,"S",,,"",45.6666666666667,"46.3981451518149",137,1523.467,"3",0,
-"Melanesia","2009","total_calories_non_staple","all",,"S",,,"",46.6666666666667,"46.8670810110637",140,1598.831,"3",0,
-"Melanesia","2012","total_calories_non_staple","all",,"S",,,"",46.6666666666667,"46.7456684514998",140,1672.612,"3",0,
-"Central Asia","2000","total_calories_non_staple","all",,"S",,,"",38.6,"40.2338609620198",193,55559.337,"5",0,
-"Central Asia","2003","total_calories_non_staple","all",,"S",,,"",40.2,"41.2949766184823",201,57307.871,"5",0,
-"Central Asia","2006","total_calories_non_staple","all",,"S",,,"",43.8,"45.5567092432211",219,59518.516,"5",0,
-"Central Asia","2009","total_calories_non_staple","all",,"S",,,"",46,"46.8955395341894",230,62161.019,"5",0,
-"Central Asia","2012","total_calories_non_staple","all",,"S",,,"",48.6,"50.2613391841673",243,65319.007,"5",0,
-"Micronesia","2000","total_calories_non_staple","all",,"S",,,"",61,"61",61,84.406,"1",0,
-"Micronesia","2003","total_calories_non_staple","all",,"S",,,"",61,"61",61,88.895,"1",0,
-"Micronesia","2006","total_calories_non_staple","all",,"S",,,"",61,"61",61,94.26,"1",0,
-"Micronesia","2009","total_calories_non_staple","all",,"S",,,"",60,"60",60,100.568,"1",0,
-"Micronesia","2012","total_calories_non_staple","all",,"S",,,"",59,"59",59,106.613,"1",0,
-"Polynesia","2000","total_calories_non_staple","all",,"S",,,"",69,"69",69,174.61,"1",0,
-"Polynesia","2003","total_calories_non_staple","all",,"S",,,"",70,"70",70,177.662,"1",0,
-"Polynesia","2006","total_calories_non_staple","all",,"S",,,"",71,"71",71,181.094,"1",0,
-"Polynesia","2009","total_calories_non_staple","all",,"S",,,"",72,"72",72,184.826,"1",0,
-"Polynesia","2012","total_calories_non_staple","all",,"S",,,"",72,"72",72,189.194,"1",0,
 "Middle Africa","2016","wasting_percent","income","Highest","C",,,"",3.5499644,"3.5499644",3.5499644,28813.463,"1",0,
 "Middle Africa","2016","wasting_percent","income","Second lowest","C",,,"",5.5871429,"5.5871429",5.5871429,28813.463,"1",0,
 "Middle Africa","2016","wasting_percent","location","Rural","C",,,"",5.3910351,"5.3910351",5.3910351,28813.463,"1",0,
@@ -24264,138 +23812,6 @@
 "Micronesia","2018","65_years","all",,"R",,,"",5.049,"5.03163967842023",10.098,224.641,"2",0,
 "Central Asia","2018","65_years","all",,"R",,,"",738.4834,"1101.28276156266",3692.417,71860.465,"5",0,
 "Polynesia","2018","65_years","all",,"R",,,"",8.8565,"9.58793649230689",17.713,306.703,"2",0,
-"Australia and New Zealand","2018","anaemia_plan","all",,"Q",,,,,"No",,88565.535,"2",0,"2"
-"Australia and New Zealand","2018","anaemia_plan","all",,"Q",,,,,"Yes",,29521.845,"0",0,"2"
-"Australia and New Zealand","2018","anaemia_plan","all",,"Q",,,,,"No data",,118087.38,"0",0,"2"
-"Caribbean","2018","anaemia_plan","all",,"Q",,,,,"Yes",,75668.474,"6",0,"13"
-"Caribbean","2018","anaemia_plan","all",,"Q",,,,,"No data",,156692.825,"1",0,"13"
-"Caribbean","2018","anaemia_plan","all",,"Q",,,,,"No",,80225.781,"6",0,"13"
-"Central America","2018","anaemia_plan","all",,"Q",,,,,"No",,501738.601,"4",0,"8"
-"Central America","2018","anaemia_plan","all",,"Q",,,,,"Yes",,216726.051,"4",0,"8"
-"Central America","2018","anaemia_plan","all",,"Q",,,,,"No data",,718464.652,"0",0,"8"
-"Central Asia","2018","anaemia_plan","all",,"Q",,,,,"No",,167976.256,"2",0,"5"
-"Central Asia","2018","anaemia_plan","all",,"Q",,,,,"Yes",,119465.604,"3",0,"5"
-"Central Asia","2018","anaemia_plan","all",,"Q",,,,,"No data",,287441.86,"0",0,"5"
-"Eastern Africa","2018","anaemia_plan","all",,"Q",,,,,"Yes",,832057.291,"12",0,"18"
-"Eastern Africa","2018","anaemia_plan","all",,"Q",,,,,"No",,897943.521,"6",0,"18"
-"Eastern Africa","2018","anaemia_plan","all",,"Q",,,,,"No data",,1730000.812,"0",0,"18"
-"Eastern Asia","2018","anaemia_plan","all",,"Q",,,,,"Yes",,3065906.511,"3",0,"5"
-"Eastern Asia","2018","anaemia_plan","all",,"Q",,,,,"No",,3422606.045,"2",0,"5"
-"Eastern Asia","2018","anaemia_plan","all",,"Q",,,,,"No data",,6488512.556,"0",0,"5"
-"Eastern Europe","2018","anaemia_plan","all",,"Q",,,,,"No",,708273.576,"7",0,"10"
-"Eastern Europe","2018","anaemia_plan","all",,"Q",,,,,"Yes",,459539.736,"3",0,"10"
-"Eastern Europe","2018","anaemia_plan","all",,"Q",,,,,"No data",,1167813.312,"0",0,"10"
-"Melanesia","2018","anaemia_plan","all",,"Q",,,,,"Yes",,19848.689,"3",0,"4"
-"Melanesia","2018","anaemia_plan","all",,"Q",,,,,"No",,21095.251,"1",0,"4"
-"Melanesia","2018","anaemia_plan","all",,"Q",,,,,"No data",,40943.94,"0",0,"4"
-"Micronesia","2018","anaemia_plan","all",,"Q",,,,,"No",,814.838,"4",0,"5"
-"Micronesia","2018","anaemia_plan","all",,"Q",,,,,"Yes",,429.498,"1",0,"5"
-"Micronesia","2018","anaemia_plan","all",,"Q",,,,,"No data",,1244.336,"0",0,"5"
-"Middle Africa","2018","anaemia_plan","all",,"Q",,,,,"No",,498147.153,"7",0,"9"
-"Middle Africa","2018","anaemia_plan","all",,"Q",,,,,"Yes",,176005.659,"2",0,"9"
-"Middle Africa","2018","anaemia_plan","all",,"Q",,,,,"No data",,674152.812,"0",0,"9"
-"Northern Africa","2018","anaemia_plan","all",,"Q",,,,,"Yes",,321888.071,"3",0,"6"
-"Northern Africa","2018","anaemia_plan","all",,"Q",,,,,"No",,626980.953,"3",0,"6"
-"Northern Africa","2018","anaemia_plan","all",,"Q",,,,,"No data",,948869.024,"0",0,"6"
-"Northern America","2018","anaemia_plan","all",,"Q",,,,,"No",,764394.791,"1",0,"2"
-"Northern America","2018","anaemia_plan","all",,"Q",,,,,"Yes",,690487.261,"1",0,"2"
-"Northern America","2018","anaemia_plan","all",,"Q",,,,,"No data",,1454882.052,"0",0,"2"
-"Northern Europe","2018","anaemia_plan","all",,"Q",,,,,"No",,310507.059,"9",0,"10"
-"Northern Europe","2018","anaemia_plan","all",,"Q",,,,,"Yes",,107337.653,"1",0,"10"
-"Northern Europe","2018","anaemia_plan","all",,"Q",,,,,"No data",,417844.712,"0",0,"10"
-"Polynesia","2018","anaemia_plan","all",,"Q",,,,,"Yes",,624.693,"2",0,"3"
-"Polynesia","2018","anaemia_plan","all",,"Q",,,,,"No",,647.267,"1",0,"3"
-"Polynesia","2018","anaemia_plan","all",,"Q",,,,,"No data",,1271.96,"0",0,"3"
-"South America","2018","anaemia_plan","all",,"Q",,,,,"No",,1008825.628,"8",0,"12"
-"South America","2018","anaemia_plan","all",,"Q",,,,,"Yes",,702965.692,"4",0,"12"
-"South America","2018","anaemia_plan","all",,"Q",,,,,"No data",,1711791.32,"0",0,"12"
-"South-eastern Asia","2018","anaemia_plan","all",,"Q",,,,,"Yes",,1236298.078,"9",0,"11"
-"South-eastern Asia","2018","anaemia_plan","all",,"Q",,,,,"No",,1386248.226,"2",0,"11"
-"South-eastern Asia","2018","anaemia_plan","all",,"Q",,,,,"No data",,2622546.304,"0",0,"11"
-"Southern Africa","2018","anaemia_plan","all",,"Q",,,,,"No",,134280.837,"1",0,"5"
-"Southern Africa","2018","anaemia_plan","all",,"Q",,,,,"Yes",,129614.435,"4",0,"5"
-"Southern Africa","2018","anaemia_plan","all",,"Q",,,,,"No data",,263895.272,"0",0,"5"
-"Southern Asia","2018","anaemia_plan","all",,"Q",,,,,"Yes",,3782908.242,"9",0,"9"
-"Southern Asia","2018","anaemia_plan","all",,"Q",,,,,"No",,3782908.242,"0",0,"9"
-"Southern Asia","2018","anaemia_plan","all",,"Q",,,,,"No data",,7565816.484,"0",0,"9"
-"Southern Europe","2018","anaemia_plan","all",,"Q",,,,,"No",,455473.902,"14",0,"14"
-"Southern Europe","2018","anaemia_plan","all",,"Q",,,,,"Yes",,151824.634,"0",0,"14"
-"Southern Europe","2018","anaemia_plan","all",,"Q",,,,,"No data",,607298.536,"0",0,"14"
-"Western Africa","2018","anaemia_plan","all",,"Q",,,,,"Yes",,739992.006,"14",0,"16"
-"Western Africa","2018","anaemia_plan","all",,"Q",,,,,"No",,787914.45,"2",0,"16"
-"Western Africa","2018","anaemia_plan","all",,"Q",,,,,"No data",,1527906.456,"0",0,"16"
-"Western Asia","2018","anaemia_plan","all",,"Q",,,,,"No data",,1078524.107,"1",0,"17"
-"Western Asia","2018","anaemia_plan","all",,"Q",,,,,"No",,738121.753,"13",0,"17"
-"Western Asia","2018","anaemia_plan","all",,"Q",,,,,"Yes",,321319.124,"3",0,"17"
-"Western Europe","2018","anaemia_plan","all",,"Q",,,,,"No",,582065.437,"7",0,"8"
-"Western Europe","2018","anaemia_plan","all",,"Q",,,,,"No data",,776178.009,"1",0,"8"
-"Western Europe","2018","anaemia_plan","all",,"Q",,,,,"Yes",,194034.778,"0",0,"8"
-"Australia and New Zealand","2018","stunting_plan","all",,"Q",,,,,"No",,88565.535,"2",0,"2"
-"Australia and New Zealand","2018","stunting_plan","all",,"Q",,,,,"Yes",,29521.845,"0",0,"2"
-"Australia and New Zealand","2018","stunting_plan","all",,"Q",,,,,"No data",,118087.38,"0",0,"2"
-"Caribbean","2018","stunting_plan","all",,"Q",,,,,"Yes",,75778.674,"7",0,"13"
-"Caribbean","2018","stunting_plan","all",,"Q",,,,,"No data",,156692.825,"1",0,"13"
-"Caribbean","2018","stunting_plan","all",,"Q",,,,,"No",,80115.581,"5",0,"13"
-"Central America","2018","stunting_plan","all",,"Q",,,,,"Yes",,352820.768,"7",0,"8"
-"Central America","2018","stunting_plan","all",,"Q",,,,,"No",,365643.884,"1",0,"8"
-"Central America","2018","stunting_plan","all",,"Q",,,,,"No data",,718464.652,"0",0,"8"
-"Central Asia","2018","stunting_plan","all",,"Q",,,,,"No",,174109.188,"3",0,"5"
-"Central Asia","2018","stunting_plan","all",,"Q",,,,,"Yes",,113332.672,"2",0,"5"
-"Central Asia","2018","stunting_plan","all",,"Q",,,,,"No data",,287441.86,"0",0,"5"
-"Eastern Africa","2018","stunting_plan","all",,"Q",,,,,"Yes",,844535.298,"15",0,"18"
-"Eastern Africa","2018","stunting_plan","all",,"Q",,,,,"No",,885465.514,"3",0,"18"
-"Eastern Africa","2018","stunting_plan","all",,"Q",,,,,"No data",,1730000.812,"0",0,"18"
-"Eastern Asia","2018","stunting_plan","all",,"Q",,,,,"Yes",,3117070.946,"4",0,"5"
-"Eastern Asia","2018","stunting_plan","all",,"Q",,,,,"No",,3371441.61,"1",0,"5"
-"Eastern Asia","2018","stunting_plan","all",,"Q",,,,,"No data",,6488512.556,"0",0,"5"
-"Eastern Europe","2018","stunting_plan","all",,"Q",,,,,"Yes",,462535.519,"3",0,"10"
-"Eastern Europe","2018","stunting_plan","all",,"Q",,,,,"No",,705277.793,"7",0,"10"
-"Eastern Europe","2018","stunting_plan","all",,"Q",,,,,"No data",,1167813.312,"0",0,"10"
-"Melanesia","2018","stunting_plan","all",,"Q",,,,,"No",,21384.211,"1",0,"4"
-"Melanesia","2018","stunting_plan","all",,"Q",,,,,"Yes",,19559.729,"3",0,"4"
-"Melanesia","2018","stunting_plan","all",,"Q",,,,,"No data",,40943.94,"0",0,"4"
-"Micronesia","2018","stunting_plan","all",,"Q",,,,,"No",,814.838,"4",0,"5"
-"Micronesia","2018","stunting_plan","all",,"Q",,,,,"Yes",,429.498,"1",0,"5"
-"Micronesia","2018","stunting_plan","all",,"Q",,,,,"No data",,1244.336,"0",0,"5"
-"Middle Africa","2018","stunting_plan","all",,"Q",,,,,"Yes",,228393.183,"7",0,"9"
-"Middle Africa","2018","stunting_plan","all",,"Q",,,,,"No",,445759.629,"2",0,"9"
-"Middle Africa","2018","stunting_plan","all",,"Q",,,,,"No data",,674152.812,"0",0,"9"
-"Northern Africa","2018","stunting_plan","all",,"Q",,,,,"Yes",,467963.556,"5",0,"6"
-"Northern Africa","2018","stunting_plan","all",,"Q",,,,,"No",,480905.468,"1",0,"6"
-"Northern Africa","2018","stunting_plan","all",,"Q",,,,,"No data",,948869.024,"0",0,"6"
-"Northern America","2018","stunting_plan","all",,"Q",,,,,"No",,1091161.539,"2",0,"2"
-"Northern America","2018","stunting_plan","all",,"Q",,,,,"Yes",,363720.513,"0",0,"2"
-"Northern America","2018","stunting_plan","all",,"Q",,,,,"No data",,1454882.052,"0",0,"2"
-"Northern Europe","2018","stunting_plan","all",,"Q",,,,,"No",,313383.534,"10",0,"10"
-"Northern Europe","2018","stunting_plan","all",,"Q",,,,,"Yes",,104461.178,"0",0,"10"
-"Northern Europe","2018","stunting_plan","all",,"Q",,,,,"No data",,417844.712,"0",0,"10"
-"Polynesia","2018","stunting_plan","all",,"Q",,,,,"No",,756.275,"2",0,"3"
-"Polynesia","2018","stunting_plan","all",,"Q",,,,,"Yes",,515.685,"1",0,"3"
-"Polynesia","2018","stunting_plan","all",,"Q",,,,,"No data",,1271.96,"0",0,"3"
-"South America","2018","stunting_plan","all",,"Q",,,,,"No",,901152.825,"2",0,"12"
-"South America","2018","stunting_plan","all",,"Q",,,,,"Yes",,810638.495,"10",0,"12"
-"South America","2018","stunting_plan","all",,"Q",,,,,"No data",,1711791.32,"0",0,"12"
-"South-eastern Asia","2018","stunting_plan","all",,"Q",,,,,"Yes",,1236298.078,"9",0,"11"
-"South-eastern Asia","2018","stunting_plan","all",,"Q",,,,,"No",,1386248.226,"2",0,"11"
-"South-eastern Asia","2018","stunting_plan","all",,"Q",,,,,"No data",,2622546.304,"0",0,"11"
-"Southern Africa","2018","stunting_plan","all",,"Q",,,,,"No",,134280.837,"1",0,"5"
-"Southern Africa","2018","stunting_plan","all",,"Q",,,,,"Yes",,129614.435,"4",0,"5"
-"Southern Africa","2018","stunting_plan","all",,"Q",,,,,"No data",,263895.272,"0",0,"5"
-"Southern Asia","2018","stunting_plan","all",,"Q",,,,,"Yes",,2428856.388,"8",0,"9"
-"Southern Asia","2018","stunting_plan","all",,"Q",,,,,"No",,5136960.096,"1",0,"9"
-"Southern Asia","2018","stunting_plan","all",,"Q",,,,,"No data",,7565816.484,"0",0,"9"
-"Southern Europe","2018","stunting_plan","all",,"Q",,,,,"No",,443208.321,"12",0,"14"
-"Southern Europe","2018","stunting_plan","all",,"Q",,,,,"Yes",,164090.215,"2",0,"14"
-"Southern Europe","2018","stunting_plan","all",,"Q",,,,,"No data",,607298.536,"0",0,"14"
-"Western Africa","2018","stunting_plan","all",,"Q",,,,,"Yes",,763953.228,"16",0,"16"
-"Western Africa","2018","stunting_plan","all",,"Q",,,,,"No",,763953.228,"0",0,"16"
-"Western Africa","2018","stunting_plan","all",,"Q",,,,,"No data",,1527906.456,"0",0,"16"
-"Western Asia","2018","stunting_plan","all",,"Q",,,,,"No data",,1078524.107,"1",0,"17"
-"Western Asia","2018","stunting_plan","all",,"Q",,,,,"Yes",,438992.562,"7",0,"17"
-"Western Asia","2018","stunting_plan","all",,"Q",,,,,"No",,620448.315,"9",0,"17"
-"Western Europe","2018","stunting_plan","all",,"Q",,,,,"No",,582065.437,"7",0,"8"
-"Western Europe","2018","stunting_plan","all",,"Q",,,,,"No data",,776178.009,"1",0,"8"
-"Western Europe","2018","stunting_plan","all",,"Q",,,,,"Yes",,194034.778,"0",0,"8"
 "Southern Asia","2018","u5_pop","all",,"R",,,"",19658.3452222222,"90566.4252693294",176925.107,1891454.121,"9",0,
 "Middle Africa","2018","u5_pop","all",,"R",,,"",3274.00322222222,"9449.656621025",29466.029,168538.203,"9",0,
 "Southern Europe","2018","u5_pop","all",,"R",,,"",547.569083333333,"1670.34756531605",6570.829,151714.124,"12",0,
@@ -24418,243 +23834,6 @@
 "Micronesia","2018","u5_pop","all",,"R",,,"",13.332,"13.4138105154446",26.664,224.641,"2",0,
 "Central Asia","2018","u5_pop","all",,"R",,,"",1548.3298,"2197.08635406807",7741.649,71860.465,"5",0,
 "Polynesia","2018","u5_pop","all",,"R",,,"",17.6535,"19.1627835625996",35.307,306.703,"2",0,
-"Australia and New Zealand","2018","sugar_tax","all",,"O",,,,,"No",,59043.69,"2",0,"2"
-"Australia and New Zealand","2018","sugar_tax","all",,"O",,,,,"Yes",,59043.69,"0",0,"2"
-"Caribbean","2018","sugar_tax","all",,"O",,,,,"No",,77786.074,"11",0,"13"
-"Caribbean","2018","sugar_tax","all",,"O",,,,,"Yes",,78507.466,"2",0,"13"
-"Central America","2018","sugar_tax","all",,"O",,,,,"No",,228473.252,"7",0,"8"
-"Central America","2018","sugar_tax","all",,"O",,,,,"Yes",,489991.4,"1",0,"8"
-"Central Asia","2018","sugar_tax","all",,"O",,,,,"No",,143720.93,"5",0,"5"
-"Central Asia","2018","sugar_tax","all",,"O",,,,,"Yes",,143720.93,"0",0,"5"
-"Eastern Africa","2018","sugar_tax","all",,"O",,,,,"No",,863732.091,"17",0,"18"
-"Eastern Africa","2018","sugar_tax","all",,"O",,,,,"Yes",,866268.721,"1",0,"18"
-"Eastern Asia","2018","sugar_tax","all",,"O",,,,,"No",,3244256.278,"5",0,"5"
-"Eastern Asia","2018","sugar_tax","all",,"O",,,,,"Yes",,3244256.278,"0",0,"5"
-"Eastern Europe","2018","sugar_tax","all",,"O",,,,,"No",,574217.809,"9",0,"10"
-"Eastern Europe","2018","sugar_tax","all",,"O",,,,,"Yes",,593595.503,"1",0,"10"
-"Melanesia","2018","sugar_tax","all",,"O",,,,,"Yes",,21666.328,"2",0,"4"
-"Melanesia","2018","sugar_tax","all",,"O",,,,,"No",,19277.612,"2",0,"4"
-"Micronesia","2018","sugar_tax","all",,"O",,,,,"Yes",,911.288,"4",0,"5"
-"Micronesia","2018","sugar_tax","all",,"O",,,,,"No",,333.048,"1",0,"5"
-"Middle Africa","2018","sugar_tax","all",,"O",,,,,"No",,337076.406,"9",0,"9"
-"Middle Africa","2018","sugar_tax","all",,"O",,,,,"Yes",,337076.406,"0",0,"9"
-"Northern Africa","2018","sugar_tax","all",,"O",,,,,"No",,474434.512,"6",0,"6"
-"Northern Africa","2018","sugar_tax","all",,"O",,,,,"Yes",,474434.512,"0",0,"6"
-"Northern America","2018","sugar_tax","all",,"O",,,,,"No",,727441.026,"2",0,"2"
-"Northern America","2018","sugar_tax","all",,"O",,,,,"Yes",,727441.026,"0",0,"2"
-"Northern Europe","2018","sugar_tax","all",,"O",,,,,"No",,123412.498,"4",0,"10"
-"Northern Europe","2018","sugar_tax","all",,"O",,,,,"Yes",,294432.214,"6",0,"10"
-"Polynesia","2018","sugar_tax","all",,"O",,,,,"Yes",,942.683,"2",0,"3"
-"Polynesia","2018","sugar_tax","all",,"O",,,,,"No",,329.277,"1",0,"3"
-"South America","2018","sugar_tax","all",,"O",,,,,"No",,788283.211,"9",0,"12"
-"South America","2018","sugar_tax","all",,"O",,,,,"Yes",,923508.109,"3",0,"12"
-"South-eastern Asia","2018","sugar_tax","all",,"O",,,,,"Yes",,1487402.475,"3",0,"11"
-"South-eastern Asia","2018","sugar_tax","all",,"O",,,,,"No",,1135143.829,"8",0,"11"
-"Southern Africa","2018","sugar_tax","all",,"O",,,,,"No",,74549.215,"4",0,"5"
-"Southern Africa","2018","sugar_tax","all",,"O",,,,,"Yes",,189346.057,"1",0,"5"
-"Southern Asia","2018","sugar_tax","all",,"O",,,,,"No",,2407906.347,"7",0,"9"
-"Southern Asia","2018","sugar_tax","all",,"O",,,,,"Yes",,5157910.137,"2",0,"9"
-"Southern Europe","2018","sugar_tax","all",,"O",,,,,"No",,293358.072,"13",0,"14"
-"Southern Europe","2018","sugar_tax","all",,"O",,,,,"Yes",,313940.464,"1",0,"14"
-"Western Africa","2018","sugar_tax","all",,"O",,,,,"No",,763953.228,"16",0,"16"
-"Western Africa","2018","sugar_tax","all",,"O",,,,,"Yes",,763953.228,"0",0,"16"
-"Western Asia","2018","sugar_tax","all",,"O",,,,,"Yes",,589259.749,"3",0,"18"
-"Western Asia","2018","sugar_tax","all",,"O",,,,,"No",,499933.847,"15",0,"18"
-"Western Europe","2018","sugar_tax","all",,"O",,,,,"No",,311414.076,"7",0,"9"
-"Western Europe","2018","sugar_tax","all",,"O",,,,,"Yes",,464877.656,"2",0,"9"
-"Australia and New Zealand","2018","multi_sec","all",,"Q",,,,,"Yes",,59043.69,"2",0,"2"
-"Australia and New Zealand","2018","multi_sec","all",,"Q",,,,,"No",,59043.69,"0",0,"2"
-"Australia and New Zealand","2018","multi_sec","all",,"Q",,,,,"No data",,118087.38,"0",0,"2"
-"Caribbean","2018","multi_sec","all",,"Q",,,,,"Yes",,66202.553,"10",0,"13"
-"Caribbean","2018","multi_sec","all",,"Q",,,,,"No data",,156692.825,"1",0,"13"
-"Caribbean","2018","multi_sec","all",,"Q",,,,,"No",,89691.702,"2",0,"13"
-"Central America","2018","multi_sec","all",,"Q",,,,,"Yes",,359232.326,"8",0,"8"
-"Central America","2018","multi_sec","all",,"Q",,,,,"No",,359232.326,"0",0,"8"
-"Central America","2018","multi_sec","all",,"Q",,,,,"No data",,718464.652,"0",0,"8"
-"Central Asia","2018","multi_sec","all",,"Q",,,,,"Yes",,131736.532,"3",0,"5"
-"Central Asia","2018","multi_sec","all",,"Q",,,,,"No",,155705.328,"2",0,"5"
-"Central Asia","2018","multi_sec","all",,"Q",,,,,"No data",,287441.86,"0",0,"5"
-"Eastern Africa","2018","multi_sec","all",,"Q",,,,,"Yes",,839580.197,"16",0,"18"
-"Eastern Africa","2018","multi_sec","all",,"Q",,,,,"No",,890420.615,"2",0,"18"
-"Eastern Africa","2018","multi_sec","all",,"Q",,,,,"No data",,1730000.812,"0",0,"18"
-"Eastern Asia","2018","multi_sec","all",,"Q",,,,,"Yes",,3244256.278,"5",0,"5"
-"Eastern Asia","2018","multi_sec","all",,"Q",,,,,"No",,3244256.278,"0",0,"5"
-"Eastern Asia","2018","multi_sec","all",,"Q",,,,,"No data",,6488512.556,"0",0,"5"
-"Eastern Europe","2018","multi_sec","all",,"Q",,,,,"Yes",,536349.711,"8",0,"10"
-"Eastern Europe","2018","multi_sec","all",,"Q",,,,,"No",,631463.601,"2",0,"10"
-"Eastern Europe","2018","multi_sec","all",,"Q",,,,,"No data",,1167813.312,"0",0,"10"
-"Melanesia","2018","multi_sec","all",,"Q",,,,,"Yes",,20471.97,"4",0,"4"
-"Melanesia","2018","multi_sec","all",,"Q",,,,,"No",,20471.97,"0",0,"4"
-"Melanesia","2018","multi_sec","all",,"Q",,,,,"No data",,40943.94,"0",0,"4"
-"Micronesia","2018","multi_sec","all",,"Q",,,,,"Yes",,535.725,"2",0,"5"
-"Micronesia","2018","multi_sec","all",,"Q",,,,,"No",,708.611,"3",0,"5"
-"Micronesia","2018","multi_sec","all",,"Q",,,,,"No data",,1244.336,"0",0,"5"
-"Middle Africa","2018","multi_sec","all",,"Q",,,,,"No",,451855.6,"2",0,"9"
-"Middle Africa","2018","multi_sec","all",,"Q",,,,,"Yes",,222297.212,"7",0,"9"
-"Middle Africa","2018","multi_sec","all",,"Q",,,,,"No data",,674152.812,"0",0,"9"
-"Northern Africa","2018","multi_sec","all",,"Q",,,,,"No",,516442.566,"1",0,"6"
-"Northern Africa","2018","multi_sec","all",,"Q",,,,,"Yes",,432426.458,"5",0,"6"
-"Northern Africa","2018","multi_sec","all",,"Q",,,,,"No data",,948869.024,"0",0,"6"
-"Northern America","2018","multi_sec","all",,"Q",,,,,"Yes",,727441.026,"2",0,"2"
-"Northern America","2018","multi_sec","all",,"Q",,,,,"No",,727441.026,"0",0,"2"
-"Northern America","2018","multi_sec","all",,"Q",,,,,"No data",,1454882.052,"0",0,"2"
-"Northern Europe","2018","multi_sec","all",,"Q",,,,,"Yes",,206992.418,"9",0,"10"
-"Northern Europe","2018","multi_sec","all",,"Q",,,,,"No",,210852.294,"1",0,"10"
-"Northern Europe","2018","multi_sec","all",,"Q",,,,,"No data",,417844.712,"0",0,"10"
-"Polynesia","2018","multi_sec","all",,"Q",,,,,"Yes",,624.693,"2",0,"3"
-"Polynesia","2018","multi_sec","all",,"Q",,,,,"No",,647.267,"1",0,"3"
-"Polynesia","2018","multi_sec","all",,"Q",,,,,"No data",,1271.96,"0",0,"3"
-"South America","2018","multi_sec","all",,"Q",,,,,"Yes",,855327.359,"11",0,"12"
-"South America","2018","multi_sec","all",,"Q",,,,,"No",,856463.961,"1",0,"12"
-"South America","2018","multi_sec","all",,"Q",,,,,"No data",,1711791.32,"0",0,"12"
-"South-eastern Asia","2018","multi_sec","all",,"Q",,,,,"Yes",,1236298.078,"9",0,"11"
-"South-eastern Asia","2018","multi_sec","all",,"Q",,,,,"No",,1386248.226,"2",0,"11"
-"South-eastern Asia","2018","multi_sec","all",,"Q",,,,,"No data",,2622546.304,"0",0,"11"
-"Southern Africa","2018","multi_sec","all",,"Q",,,,,"Yes",,131947.636,"5",0,"5"
-"Southern Africa","2018","multi_sec","all",,"Q",,,,,"No",,131947.636,"0",0,"5"
-"Southern Africa","2018","multi_sec","all",,"Q",,,,,"No data",,263895.272,"0",0,"5"
-"Southern Asia","2018","multi_sec","all",,"Q",,,,,"Yes",,2428856.388,"8",0,"9"
-"Southern Asia","2018","multi_sec","all",,"Q",,,,,"No",,5136960.096,"1",0,"9"
-"Southern Asia","2018","multi_sec","all",,"Q",,,,,"No data",,7565816.484,"0",0,"9"
-"Southern Europe","2018","multi_sec","all",,"Q",,,,,"No",,315379.215,"3",0,"14"
-"Southern Europe","2018","multi_sec","all",,"Q",,,,,"Yes",,291919.321,"11",0,"14"
-"Southern Europe","2018","multi_sec","all",,"Q",,,,,"No data",,607298.536,"0",0,"14"
-"Western Africa","2018","multi_sec","all",,"Q",,,,,"Yes",,763953.228,"16",0,"16"
-"Western Africa","2018","multi_sec","all",,"Q",,,,,"No",,763953.228,"0",0,"16"
-"Western Africa","2018","multi_sec","all",,"Q",,,,,"No data",,1527906.456,"0",0,"16"
-"Western Asia","2018","multi_sec","all",,"Q",,,,,"No data",,1078524.107,"1",0,"17"
-"Western Asia","2018","multi_sec","all",,"Q",,,,,"Yes",,507365.215,"13",0,"17"
-"Western Asia","2018","multi_sec","all",,"Q",,,,,"No",,552075.662,"3",0,"17"
-"Western Europe","2018","multi_sec","all",,"Q",,,,,"Yes",,388030.659,"7",0,"8"
-"Western Europe","2018","multi_sec","all",,"Q",,,,,"No data",,776178.009,"1",0,"8"
-"Western Europe","2018","multi_sec","all",,"Q",,,,,"No",,388069.556,"0",0,"8"
-"Australia and New Zealand","2018","salt_leg","all",,"O",,,,,"Yes",,59043.69,"2",0,"2"
-"Australia and New Zealand","2018","salt_leg","all",,"O",,,,,"No",,59043.69,"0",0,"2"
-"Caribbean","2018","salt_leg","all",,"O",,,,,"Yes",,22225.89,"1",0,"1"
-"Caribbean","2018","salt_leg","all",,"O",,,,,"No",,22225.89,"0",0,"1"
-"Central America","2018","salt_leg","all",,"O",,,,,"Yes",,359232.326,"8",0,"8"
-"Central America","2018","salt_leg","all",,"O",,,,,"No",,359232.326,"0",0,"8"
-"Central Asia","2018","salt_leg","all",,"O",,,,,"Yes",,143720.93,"5",0,"5"
-"Central Asia","2018","salt_leg","all",,"O",,,,,"No",,143720.93,"0",0,"5"
-"Eastern Africa","2018","salt_leg","all",,"O",,,,,"Yes",,746273.398,"9",0,"11"
-"Eastern Africa","2018","salt_leg","all",,"O",,,,,"No",,772301.974,"2",0,"11"
-"Eastern Asia","2018","salt_leg","all",,"O",,,,,"Yes",,3040295.839,"2",0,"5"
-"Eastern Asia","2018","salt_leg","all",,"O",,,,,"No",,3448216.717,"3",0,"5"
-"Eastern Europe","2018","salt_leg","all",,"O",,,,,"Yes",,374682.233,"7",0,"9"
-"Eastern Europe","2018","salt_leg","all",,"O",,,,,"No",,750630.079,"2",0,"9"
-"Melanesia","2018","salt_leg","all",,"O",,,,,"Yes",,20189.853,"3",0,"4"
-"Melanesia","2018","salt_leg","all",,"O",,,,,"No",,20754.087,"1",0,"4"
-"Micronesia","2018","salt_leg","all",,"O",,,,,"No",,814.838,"4",0,"5"
-"Micronesia","2018","salt_leg","all",,"O",,,,,"Yes",,429.498,"1",0,"5"
-"Middle Africa","2018","salt_leg","all",,"O",,,,,"Yes",,251757.523,"7",0,"9"
-"Middle Africa","2018","salt_leg","all",,"O",,,,,"No",,422395.289,"2",0,"9"
-"Northern Africa","2018","salt_leg","all",,"O",,,,,"Yes",,426452.03,"4",0,"6"
-"Northern Africa","2018","salt_leg","all",,"O",,,,,"No",,522416.994,"2",0,"6"
-"Northern America","2018","salt_leg","all",,"O",,,,,"Yes",,400674.278,"1",0,"2"
-"Northern America","2018","salt_leg","all",,"O",,,,,"No",,1054207.774,"1",0,"2"
-"Northern Europe","2018","salt_leg","all",,"O",,,,,"Yes",,113092.009,"2",0,"10"
-"Northern Europe","2018","salt_leg","all",,"O",,,,,"No",,304752.703,"8",0,"10"
-"Polynesia","2018","salt_leg","all",,"O",,,,,"No",,953.97,"3",0,"3"
-"Polynesia","2018","salt_leg","all",,"O",,,,,"Yes",,317.99,"0",0,"3"
-"South America","2018","salt_leg","all",,"O",,,,,"Yes",,853194.608,"10",0,"10"
-"South America","2018","salt_leg","all",,"O",,,,,"No",,853194.608,"0",0,"10"
-"South-eastern Asia","2018","salt_leg","all",,"O",,,,,"No",,1350865.681,"4",0,"11"
-"South-eastern Asia","2018","salt_leg","all",,"O",,,,,"Yes",,1271680.623,"7",0,"11"
-"Southern Africa","2018","salt_leg","all",,"O",,,,,"Yes",,119322.862,"2",0,"2"
-"Southern Africa","2018","salt_leg","all",,"O",,,,,"No",,119322.862,"0",0,"2"
-"Southern Asia","2018","salt_leg","all",,"O",,,,,"Yes",,3416809.641,"5",0,"8"
-"Southern Asia","2018","salt_leg","all",,"O",,,,,"No",,3820959.903,"3",0,"8"
-"Southern Europe","2018","salt_leg","all",,"O",,,,,"Yes",,208943.661,"5",0,"8"
-"Southern Europe","2018","salt_leg","all",,"O",,,,,"No",,344605.279,"3",0,"8"
-"Western Africa","2018","salt_leg","all",,"O",,,,,"Yes",,751379.983,"14",0,"16"
-"Western Africa","2018","salt_leg","all",,"O",,,,,"No",,776526.473,"2",0,"16"
-"Western Asia","2018","salt_leg","all",,"O",,,,,"Yes",,435230.538,"11",0,"15"
-"Western Asia","2018","salt_leg","all",,"O",,,,,"No",,569762.71,"4",0,"15"
-"Western Europe","2018","salt_leg","all",,"O",,,,,"Yes",,202157.38,"1",0,"6"
-"Western Europe","2018","salt_leg","all",,"O",,,,,"No",,571464.86,"5",0,"6"
-"Australia and New Zealand","2018","wasting_plan","all",,"Q",,,,,"No",,88565.535,"2",0,"2"
-"Australia and New Zealand","2018","wasting_plan","all",,"Q",,,,,"Yes",,29521.845,"0",0,"2"
-"Australia and New Zealand","2018","wasting_plan","all",,"Q",,,,,"No data",,118087.38,"0",0,"2"
-"Caribbean","2018","wasting_plan","all",,"Q",,,,,"Yes",,64289.592,"6",0,"13"
-"Caribbean","2018","wasting_plan","all",,"Q",,,,,"No data",,156692.825,"1",0,"13"
-"Caribbean","2018","wasting_plan","all",,"Q",,,,,"No",,91604.663,"6",0,"13"
-"Central America","2018","wasting_plan","all",,"Q",,,,,"Yes",,352820.768,"7",0,"8"
-"Central America","2018","wasting_plan","all",,"Q",,,,,"No",,365643.884,"1",0,"8"
-"Central America","2018","wasting_plan","all",,"Q",,,,,"No data",,718464.652,"0",0,"8"
-"Central Asia","2018","wasting_plan","all",,"Q",,,,,"No",,174109.188,"3",0,"5"
-"Central Asia","2018","wasting_plan","all",,"Q",,,,,"Yes",,113332.672,"2",0,"5"
-"Central Asia","2018","wasting_plan","all",,"Q",,,,,"No data",,287441.86,"0",0,"5"
-"Eastern Africa","2018","wasting_plan","all",,"Q",,,,,"Yes",,831616.245,"14",0,"18"
-"Eastern Africa","2018","wasting_plan","all",,"Q",,,,,"No",,898384.567,"4",0,"18"
-"Eastern Africa","2018","wasting_plan","all",,"Q",,,,,"No data",,1730000.812,"0",0,"18"
-"Eastern Asia","2018","wasting_plan","all",,"Q",,,,,"No",,4786487.538,"2",0,"5"
-"Eastern Asia","2018","wasting_plan","all",,"Q",,,,,"Yes",,1702025.018,"3",0,"5"
-"Eastern Asia","2018","wasting_plan","all",,"Q",,,,,"No data",,6488512.556,"0",0,"5"
-"Eastern Europe","2018","wasting_plan","all",,"Q",,,,,"Yes",,462535.519,"3",0,"10"
-"Eastern Europe","2018","wasting_plan","all",,"Q",,,,,"No",,705277.793,"7",0,"10"
-"Eastern Europe","2018","wasting_plan","all",,"Q",,,,,"No data",,1167813.312,"0",0,"10"
-"Melanesia","2018","wasting_plan","all",,"Q",,,,,"No",,21384.211,"1",0,"4"
-"Melanesia","2018","wasting_plan","all",,"Q",,,,,"Yes",,19559.729,"3",0,"4"
-"Melanesia","2018","wasting_plan","all",,"Q",,,,,"No data",,40943.94,"0",0,"4"
-"Micronesia","2018","wasting_plan","all",,"Q",,,,,"No",,761.671,"3",0,"5"
-"Micronesia","2018","wasting_plan","all",,"Q",,,,,"Yes",,482.665,"2",0,"5"
-"Micronesia","2018","wasting_plan","all",,"Q",,,,,"No data",,1244.336,"0",0,"5"
-"Middle Africa","2018","wasting_plan","all",,"Q",,,,,"Yes",,312398.172,"8",0,"9"
-"Middle Africa","2018","wasting_plan","all",,"Q",,,,,"No",,361754.64,"1",0,"9"
-"Middle Africa","2018","wasting_plan","all",,"Q",,,,,"No data",,674152.812,"0",0,"9"
-"Northern Africa","2018","wasting_plan","all",,"Q",,,,,"No",,615818.307,"2",0,"6"
-"Northern Africa","2018","wasting_plan","all",,"Q",,,,,"Yes",,333050.717,"4",0,"6"
-"Northern Africa","2018","wasting_plan","all",,"Q",,,,,"No data",,948869.024,"0",0,"6"
-"Northern America","2018","wasting_plan","all",,"Q",,,,,"No",,1091161.539,"2",0,"2"
-"Northern America","2018","wasting_plan","all",,"Q",,,,,"Yes",,363720.513,"0",0,"2"
-"Northern America","2018","wasting_plan","all",,"Q",,,,,"No data",,1454882.052,"0",0,"2"
-"Northern Europe","2018","wasting_plan","all",,"Q",,,,,"No",,313383.534,"10",0,"10"
-"Northern Europe","2018","wasting_plan","all",,"Q",,,,,"Yes",,104461.178,"0",0,"10"
-"Northern Europe","2018","wasting_plan","all",,"Q",,,,,"No data",,417844.712,"0",0,"10"
-"Polynesia","2018","wasting_plan","all",,"Q",,,,,"No",,756.275,"2",0,"3"
-"Polynesia","2018","wasting_plan","all",,"Q",,,,,"Yes",,515.685,"1",0,"3"
-"Polynesia","2018","wasting_plan","all",,"Q",,,,,"No data",,1271.96,"0",0,"3"
-"South America","2018","wasting_plan","all",,"Q",,,,,"No",,966868.086,"5",0,"12"
-"South America","2018","wasting_plan","all",,"Q",,,,,"Yes",,744923.234,"7",0,"12"
-"South America","2018","wasting_plan","all",,"Q",,,,,"No data",,1711791.32,"0",0,"12"
-"South-eastern Asia","2018","wasting_plan","all",,"Q",,,,,"No",,1490134.658,"5",0,"11"
-"South-eastern Asia","2018","wasting_plan","all",,"Q",,,,,"Yes",,1132411.646,"6",0,"11"
-"South-eastern Asia","2018","wasting_plan","all",,"Q",,,,,"No data",,2622546.304,"0",0,"11"
-"Southern Africa","2018","wasting_plan","all",,"Q",,,,,"No",,134280.837,"1",0,"5"
-"Southern Africa","2018","wasting_plan","all",,"Q",,,,,"Yes",,129614.435,"4",0,"5"
-"Southern Africa","2018","wasting_plan","all",,"Q",,,,,"No data",,263895.272,"0",0,"5"
-"Southern Asia","2018","wasting_plan","all",,"Q",,,,,"Yes",,3782908.242,"9",0,"9"
-"Southern Asia","2018","wasting_plan","all",,"Q",,,,,"No",,3782908.242,"0",0,"9"
-"Southern Asia","2018","wasting_plan","all",,"Q",,,,,"No data",,7565816.484,"0",0,"9"
-"Southern Europe","2018","wasting_plan","all",,"Q",,,,,"No",,451970.348,"13",0,"14"
-"Southern Europe","2018","wasting_plan","all",,"Q",,,,,"Yes",,155328.188,"1",0,"14"
-"Southern Europe","2018","wasting_plan","all",,"Q",,,,,"No data",,607298.536,"0",0,"14"
-"Western Africa","2018","wasting_plan","all",,"Q",,,,,"Yes",,763953.228,"16",0,"16"
-"Western Africa","2018","wasting_plan","all",,"Q",,,,,"No",,763953.228,"0",0,"16"
-"Western Africa","2018","wasting_plan","all",,"Q",,,,,"No data",,1527906.456,"0",0,"16"
-"Western Asia","2018","wasting_plan","all",,"Q",,,,,"No data",,1078524.107,"1",0,"17"
-"Western Asia","2018","wasting_plan","all",,"Q",,,,,"Yes",,366623.021,"5",0,"17"
-"Western Asia","2018","wasting_plan","all",,"Q",,,,,"No",,692817.856,"11",0,"17"
-"Western Europe","2018","wasting_plan","all",,"Q",,,,,"No",,582065.437,"7",0,"8"
-"Western Europe","2018","wasting_plan","all",,"Q",,,,,"No data",,776178.009,"1",0,"8"
-"Western Europe","2018","wasting_plan","all",,"Q",,,,,"Yes",,194034.778,"0",0,"8"
-"Australia and New Zealand","2018","fbdg","all",,"A",,,,,"Yes",,59043.69,"2",0,"2"
-"Caribbean","2018","fbdg","all",,"A",,,,,"Yes",,53175.684,"11",0,"11"
-"Central America","2018","fbdg","all",,"A",,,,,"Yes",,346662.812,"7",0,"7"
-"Eastern Africa","2018","fbdg","all",,"A",,,,,"Yes",,102092.228,"2",0,"2"
-"Eastern Asia","2018","fbdg","all",,"A",,,,,"Yes",,3193034.934,"4",0,"4"
-"Eastern Europe","2018","fbdg","all",,"A",,,,,"Yes",,148822.322,"4",0,"4"
-"Melanesia","2018","fbdg","all",,"A",,,,,"Yes",,1824.482,"1",0,"1"
-"Northern America","2018","fbdg","all",,"A",,,,,"Yes",,727441.026,"2",0,"2"
-"Northern Europe","2018","fbdg","all",,"A",,,,,"Yes",,203169.406,"9",0,"9"
-"South America","2018","fbdg","all",,"A",,,,,"Yes",,755928.578,"9",0,"9"
-"South-eastern Asia","2018","fbdg","all",,"A",,,,,"Yes",,1174539.12,"6",0,"6"
-"Southern Africa","2018","fbdg","all",,"A",,,,,"Yes",,119972.444,"2",0,"2"
-"Southern Asia","2018","fbdg","all",,"A",,,,,"Yes",,3378757.98,"6",0,"6"
-"Southern Europe","2018","fbdg","all",,"A",,,,,"Yes",,284645.756,"10",0,"10"
-"Western Africa","2018","fbdg","all",,"A",,,,,"Yes",,430161.28,"3",0,"3"
-"Western Asia","2018","fbdg","all",,"A",,,,,"Yes",,218168.464,"7",0,"7"
-"Western Europe","2018","fbdg","all",,"A",,,,,"Yes",,386811.12,"6",0,"6"
 "Australia and New Zealand","2018","burden_text","all",,"A",,,,,"overweight only",,123861.235,"1",0,"1"
 "Australia and New Zealand","2018","burden_text","all",,"A",,,,,"anaemia and stunting",,24772.247,"0",0,"1"
 "Australia and New Zealand","2018","burden_text","all",,"A",,,,,"overweight, anaemia and stunting",,49544.494,"0",0,"1"
@@ -24795,270 +23974,6 @@
 "Western Europe","2018","burden_text","all",,"A",,,,,"anaemia only",,1316695.312,"0",0,"1"
 "Western Europe","2018","burden_text","all",,"A",,,,,"overweight and stunting",,2633390.624,"0",0,"1"
 "Western Europe","2018","burden_text","all",,"A",,,,,"stunting only",,5266781.248,"0",0,"1"
-"Australia and New Zealand","2018","sodium_plan","all",,"Q",,,,,"Yes",,54294.092,"1",0,"2"
-"Australia and New Zealand","2018","sodium_plan","all",,"Q",,,,,"No",,63793.288,"1",0,"2"
-"Australia and New Zealand","2018","sodium_plan","all",,"Q",,,,,"No data",,118087.38,"0",0,"2"
-"Caribbean","2018","sodium_plan","all",,"Q",,,,,"Yes",,65077.434,"8",0,"13"
-"Caribbean","2018","sodium_plan","all",,"Q",,,,,"No data",,156692.825,"1",0,"13"
-"Caribbean","2018","sodium_plan","all",,"Q",,,,,"No",,90816.821,"4",0,"13"
-"Central America","2018","sodium_plan","all",,"Q",,,,,"No",,370062.145,"3",0,"8"
-"Central America","2018","sodium_plan","all",,"Q",,,,,"Yes",,348402.507,"5",0,"8"
-"Central America","2018","sodium_plan","all",,"Q",,,,,"No data",,718464.652,"0",0,"8"
-"Central Asia","2018","sodium_plan","all",,"Q",,,,,"No",,162124.79,"1",0,"5"
-"Central Asia","2018","sodium_plan","all",,"Q",,,,,"Yes",,125317.07,"4",0,"5"
-"Central Asia","2018","sodium_plan","all",,"Q",,,,,"No data",,287441.86,"0",0,"5"
-"Eastern Africa","2018","sodium_plan","all",,"Q",,,,,"No",,1099209.226,"12",0,"18"
-"Eastern Africa","2018","sodium_plan","all",,"Q",,,,,"Yes",,630791.586,"6",0,"18"
-"Eastern Africa","2018","sodium_plan","all",,"Q",,,,,"No data",,1730000.812,"0",0,"18"
-"Eastern Asia","2018","sodium_plan","all",,"Q",,,,,"Yes",,3193091.843,"4",0,"5"
-"Eastern Asia","2018","sodium_plan","all",,"Q",,,,,"No",,3295420.713,"1",0,"5"
-"Eastern Asia","2018","sodium_plan","all",,"Q",,,,,"No data",,6488512.556,"0",0,"5"
-"Eastern Europe","2018","sodium_plan","all",,"Q",,,,,"Yes",,523822.376,"7",0,"10"
-"Eastern Europe","2018","sodium_plan","all",,"Q",,,,,"No",,643990.936,"3",0,"10"
-"Eastern Europe","2018","sodium_plan","all",,"Q",,,,,"No data",,1167813.312,"0",0,"10"
-"Melanesia","2018","sodium_plan","all",,"Q",,,,,"No",,22007.492,"2",0,"4"
-"Melanesia","2018","sodium_plan","all",,"Q",,,,,"Yes",,18936.448,"2",0,"4"
-"Melanesia","2018","sodium_plan","all",,"Q",,,,,"No data",,40943.94,"0",0,"4"
-"Micronesia","2018","sodium_plan","all",,"Q",,,,,"Yes",,439.275,"2",0,"5"
-"Micronesia","2018","sodium_plan","all",,"Q",,,,,"No",,805.061,"3",0,"5"
-"Micronesia","2018","sodium_plan","all",,"Q",,,,,"No data",,1244.336,"0",0,"5"
-"Middle Africa","2018","sodium_plan","all",,"Q",,,,,"No",,488193.864,"7",0,"9"
-"Middle Africa","2018","sodium_plan","all",,"Q",,,,,"Yes",,185958.948,"2",0,"9"
-"Middle Africa","2018","sodium_plan","all",,"Q",,,,,"No data",,674152.812,"0",0,"9"
-"Northern Africa","2018","sodium_plan","all",,"Q",,,,,"Yes",,426452.03,"4",0,"6"
-"Northern Africa","2018","sodium_plan","all",,"Q",,,,,"No",,522416.994,"2",0,"6"
-"Northern Africa","2018","sodium_plan","all",,"Q",,,,,"No data",,948869.024,"0",0,"6"
-"Northern America","2018","sodium_plan","all",,"Q",,,,,"Yes",,727441.026,"2",0,"2"
-"Northern America","2018","sodium_plan","all",,"Q",,,,,"No",,727441.026,"0",0,"2"
-"Northern America","2018","sodium_plan","all",,"Q",,,,,"No data",,1454882.052,"0",0,"2"
-"Northern Europe","2018","sodium_plan","all",,"Q",,,,,"No",,226927.139,"4",0,"10"
-"Northern Europe","2018","sodium_plan","all",,"Q",,,,,"Yes",,190917.573,"6",0,"10"
-"Northern Europe","2018","sodium_plan","all",,"Q",,,,,"No data",,417844.712,"0",0,"10"
-"Polynesia","2018","sodium_plan","all",,"Q",,,,,"Yes",,624.693,"2",0,"3"
-"Polynesia","2018","sodium_plan","all",,"Q",,,,,"No",,647.267,"1",0,"3"
-"Polynesia","2018","sodium_plan","all",,"Q",,,,,"No data",,1271.96,"0",0,"3"
-"South America","2018","sodium_plan","all",,"Q",,,,,"Yes",,774099.199,"9",0,"12"
-"South America","2018","sodium_plan","all",,"Q",,,,,"No",,937692.121,"3",0,"12"
-"South America","2018","sodium_plan","all",,"Q",,,,,"No data",,1711791.32,"0",0,"12"
-"South-eastern Asia","2018","sodium_plan","all",,"Q",,,,,"Yes",,1202028.895,"8",0,"11"
-"South-eastern Asia","2018","sodium_plan","all",,"Q",,,,,"No",,1420517.409,"3",0,"11"
-"South-eastern Asia","2018","sodium_plan","all",,"Q",,,,,"No data",,2622546.304,"0",0,"11"
-"Southern Africa","2018","sodium_plan","all",,"Q",,,,,"No",,191679.258,"2",0,"5"
-"Southern Africa","2018","sodium_plan","all",,"Q",,,,,"Yes",,72216.014,"3",0,"5"
-"Southern Africa","2018","sodium_plan","all",,"Q",,,,,"No data",,263895.272,"0",0,"5"
-"Southern Asia","2018","sodium_plan","all",,"Q",,,,,"Yes",,3582094.424,"8",0,"9"
-"Southern Asia","2018","sodium_plan","all",,"Q",,,,,"No",,3983722.06,"1",0,"9"
-"Southern Asia","2018","sodium_plan","all",,"Q",,,,,"No data",,7565816.484,"0",0,"9"
-"Southern Europe","2018","sodium_plan","all",,"Q",,,,,"No",,368934.046,"6",0,"14"
-"Southern Europe","2018","sodium_plan","all",,"Q",,,,,"Yes",,238364.49,"8",0,"14"
-"Southern Europe","2018","sodium_plan","all",,"Q",,,,,"No data",,607298.536,"0",0,"14"
-"Western Africa","2018","sodium_plan","all",,"Q",,,,,"No",,865784.906,"10",0,"16"
-"Western Africa","2018","sodium_plan","all",,"Q",,,,,"Yes",,662121.55,"6",0,"16"
-"Western Africa","2018","sodium_plan","all",,"Q",,,,,"No data",,1527906.456,"0",0,"16"
-"Western Asia","2018","sodium_plan","all",,"Q",,,,,"No data",,1078524.107,"1",0,"17"
-"Western Asia","2018","sodium_plan","all",,"Q",,,,,"No",,611421.508,"8",0,"17"
-"Western Asia","2018","sodium_plan","all",,"Q",,,,,"Yes",,448019.369,"8",0,"17"
-"Western Europe","2018","sodium_plan","all",,"Q",,,,,"No",,508288.132,"5",0,"8"
-"Western Europe","2018","sodium_plan","all",,"Q",,,,,"Yes",,267812.083,"2",0,"8"
-"Western Europe","2018","sodium_plan","all",,"Q",,,,,"No data",,776178.009,"1",0,"8"
-"Australia and New Zealand","2018","LBW_plan","all",,"Q",,,,,"Yes",,54294.092,"1",0,"2"
-"Australia and New Zealand","2018","LBW_plan","all",,"Q",,,,,"No",,63793.288,"1",0,"2"
-"Australia and New Zealand","2018","LBW_plan","all",,"Q",,,,,"No data",,118087.38,"0",0,"2"
-"Caribbean","2018","LBW_plan","all",,"Q",,,,,"No",,83043,"6",0,"13"
-"Caribbean","2018","LBW_plan","all",,"Q",,,,,"No data",,156692.825,"1",0,"13"
-"Caribbean","2018","LBW_plan","all",,"Q",,,,,"Yes",,72851.255,"6",0,"13"
-"Central America","2018","LBW_plan","all",,"Q",,,,,"Yes",,346536.011,"6",0,"8"
-"Central America","2018","LBW_plan","all",,"Q",,,,,"No",,371928.641,"2",0,"8"
-"Central America","2018","LBW_plan","all",,"Q",,,,,"No data",,718464.652,"0",0,"8"
-"Central Asia","2018","LBW_plan","all",,"Q",,,,,"No",,215581.395,"5",0,"5"
-"Central Asia","2018","LBW_plan","all",,"Q",,,,,"Yes",,71860.465,"0",0,"5"
-"Central Asia","2018","LBW_plan","all",,"Q",,,,,"No data",,287441.86,"0",0,"5"
-"Eastern Africa","2018","LBW_plan","all",,"Q",,,,,"Yes",,779693.958,"12",0,"18"
-"Eastern Africa","2018","LBW_plan","all",,"Q",,,,,"No",,950306.854,"6",0,"18"
-"Eastern Africa","2018","LBW_plan","all",,"Q",,,,,"No data",,1730000.812,"0",0,"18"
-"Eastern Asia","2018","LBW_plan","all",,"Q",,,,,"No",,4659302.206,"1",0,"5"
-"Eastern Asia","2018","LBW_plan","all",,"Q",,,,,"Yes",,1829210.35,"4",0,"5"
-"Eastern Asia","2018","LBW_plan","all",,"Q",,,,,"No data",,6488512.556,"0",0,"5"
-"Eastern Europe","2018","LBW_plan","all",,"Q",,,,,"Yes",,462535.519,"3",0,"10"
-"Eastern Europe","2018","LBW_plan","all",,"Q",,,,,"No",,705277.793,"7",0,"10"
-"Eastern Europe","2018","LBW_plan","all",,"Q",,,,,"No data",,1167813.312,"0",0,"10"
-"Melanesia","2018","LBW_plan","all",,"Q",,,,,"Yes",,20471.97,"4",0,"4"
-"Melanesia","2018","LBW_plan","all",,"Q",,,,,"No",,20471.97,"0",0,"4"
-"Melanesia","2018","LBW_plan","all",,"Q",,,,,"No data",,40943.94,"0",0,"4"
-"Micronesia","2018","LBW_plan","all",,"Q",,,,,"No",,761.671,"3",0,"5"
-"Micronesia","2018","LBW_plan","all",,"Q",,,,,"Yes",,482.665,"2",0,"5"
-"Micronesia","2018","LBW_plan","all",,"Q",,,,,"No data",,1244.336,"0",0,"5"
-"Middle Africa","2018","LBW_plan","all",,"Q",,,,,"No",,493200.912,"5",0,"9"
-"Middle Africa","2018","LBW_plan","all",,"Q",,,,,"Yes",,180951.9,"4",0,"9"
-"Middle Africa","2018","LBW_plan","all",,"Q",,,,,"No data",,674152.812,"0",0,"9"
-"Northern Africa","2018","LBW_plan","all",,"Q",,,,,"Yes",,333547.245,"4",0,"6"
-"Northern Africa","2018","LBW_plan","all",,"Q",,,,,"No",,615321.779,"2",0,"6"
-"Northern Africa","2018","LBW_plan","all",,"Q",,,,,"No data",,948869.024,"0",0,"6"
-"Northern America","2018","LBW_plan","all",,"Q",,,,,"No",,764394.791,"1",0,"2"
-"Northern America","2018","LBW_plan","all",,"Q",,,,,"Yes",,690487.261,"1",0,"2"
-"Northern America","2018","LBW_plan","all",,"Q",,,,,"No data",,1454882.052,"0",0,"2"
-"Northern Europe","2018","LBW_plan","all",,"Q",,,,,"No",,313383.534,"10",0,"10"
-"Northern Europe","2018","LBW_plan","all",,"Q",,,,,"Yes",,104461.178,"0",0,"10"
-"Northern Europe","2018","LBW_plan","all",,"Q",,,,,"No data",,417844.712,"0",0,"10"
-"Polynesia","2018","LBW_plan","all",,"Q",,,,,"No",,756.275,"2",0,"3"
-"Polynesia","2018","LBW_plan","all",,"Q",,,,,"Yes",,515.685,"1",0,"3"
-"Polynesia","2018","LBW_plan","all",,"Q",,,,,"No data",,1271.96,"0",0,"3"
-"South America","2018","LBW_plan","all",,"Q",,,,,"No",,918016.25,"3",0,"12"
-"South America","2018","LBW_plan","all",,"Q",,,,,"Yes",,793775.07,"9",0,"12"
-"South America","2018","LBW_plan","all",,"Q",,,,,"No data",,1711791.32,"0",0,"12"
-"South-eastern Asia","2018","LBW_plan","all",,"Q",,,,,"Yes",,1229336.868,"8",0,"11"
-"South-eastern Asia","2018","LBW_plan","all",,"Q",,,,,"No",,1393209.436,"3",0,"11"
-"South-eastern Asia","2018","LBW_plan","all",,"Q",,,,,"No data",,2622546.304,"0",0,"11"
-"Southern Africa","2018","LBW_plan","all",,"Q",,,,,"No",,134280.837,"1",0,"5"
-"Southern Africa","2018","LBW_plan","all",,"Q",,,,,"Yes",,129614.435,"4",0,"5"
-"Southern Africa","2018","LBW_plan","all",,"Q",,,,,"No data",,263895.272,"0",0,"5"
-"Southern Asia","2018","LBW_plan","all",,"Q",,,,,"Yes",,3782091.188,"8",0,"9"
-"Southern Asia","2018","LBW_plan","all",,"Q",,,,,"No",,3783725.296,"1",0,"9"
-"Southern Asia","2018","LBW_plan","all",,"Q",,,,,"No data",,7565816.484,"0",0,"9"
-"Southern Europe","2018","LBW_plan","all",,"Q",,,,,"No",,439043.538,"11",0,"14"
-"Southern Europe","2018","LBW_plan","all",,"Q",,,,,"Yes",,168254.998,"3",0,"14"
-"Southern Europe","2018","LBW_plan","all",,"Q",,,,,"No data",,607298.536,"0",0,"14"
-"Western Africa","2018","LBW_plan","all",,"Q",,,,,"Yes",,521161.449,"12",0,"16"
-"Western Africa","2018","LBW_plan","all",,"Q",,,,,"No",,1006745.007,"4",0,"16"
-"Western Africa","2018","LBW_plan","all",,"Q",,,,,"No data",,1527906.456,"0",0,"16"
-"Western Asia","2018","LBW_plan","all",,"Q",,,,,"No data",,1078524.107,"1",0,"17"
-"Western Asia","2018","LBW_plan","all",,"Q",,,,,"Yes",,438992.562,"7",0,"17"
-"Western Asia","2018","LBW_plan","all",,"Q",,,,,"No",,620448.315,"9",0,"17"
-"Western Europe","2018","LBW_plan","all",,"Q",,,,,"No",,581475.116,"6",0,"8"
-"Western Europe","2018","LBW_plan","all",,"Q",,,,,"Yes",,194625.099,"1",0,"8"
-"Western Europe","2018","LBW_plan","all",,"Q",,,,,"No data",,776178.009,"1",0,"8"
-"Australia and New Zealand","2018","child_overweight_plan","all",,"Q",,,,,"No",,83815.937,"1",0,"2"
-"Australia and New Zealand","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,34271.443,"1",0,"2"
-"Australia and New Zealand","2018","child_overweight_plan","all",,"Q",,,,,"No data",,118087.38,"0",0,"2"
-"Caribbean","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,53772.86,"9",0,"13"
-"Caribbean","2018","child_overweight_plan","all",,"Q",,,,,"No data",,156692.825,"1",0,"13"
-"Caribbean","2018","child_overweight_plan","all",,"Q",,,,,"No",,102121.395,"3",0,"13"
-"Central America","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,348784.951,"6",0,"8"
-"Central America","2018","child_overweight_plan","all",,"Q",,,,,"No",,369679.701,"2",0,"8"
-"Central America","2018","child_overweight_plan","all",,"Q",,,,,"No data",,718464.652,"0",0,"8"
-"Central Asia","2018","child_overweight_plan","all",,"Q",,,,,"No",,174109.188,"3",0,"5"
-"Central Asia","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,113332.672,"2",0,"5"
-"Central Asia","2018","child_overweight_plan","all",,"Q",,,,,"No data",,287441.86,"0",0,"5"
-"Eastern Africa","2018","child_overweight_plan","all",,"Q",,,,,"No",,1035383.835,"11",0,"18"
-"Eastern Africa","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,694616.977,"7",0,"18"
-"Eastern Africa","2018","child_overweight_plan","all",,"Q",,,,,"No data",,1730000.812,"0",0,"18"
-"Eastern Asia","2018","child_overweight_plan","all",,"Q",,,,,"No",,4684912.878,"2",0,"5"
-"Eastern Asia","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,1803599.678,"3",0,"5"
-"Eastern Asia","2018","child_overweight_plan","all",,"Q",,,,,"No data",,6488512.556,"0",0,"5"
-"Eastern Europe","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,583906.656,"10",0,"10"
-"Eastern Europe","2018","child_overweight_plan","all",,"Q",,,,,"No",,583906.656,"0",0,"10"
-"Eastern Europe","2018","child_overweight_plan","all",,"Q",,,,,"No data",,1167813.312,"0",0,"10"
-"Melanesia","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,20471.97,"4",0,"4"
-"Melanesia","2018","child_overweight_plan","all",,"Q",,,,,"No",,20471.97,"0",0,"4"
-"Melanesia","2018","child_overweight_plan","all",,"Q",,,,,"No data",,40943.94,"0",0,"4"
-"Micronesia","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,492.442,"3",0,"5"
-"Micronesia","2018","child_overweight_plan","all",,"Q",,,,,"No",,751.894,"2",0,"5"
-"Micronesia","2018","child_overweight_plan","all",,"Q",,,,,"No data",,1244.336,"0",0,"5"
-"Middle Africa","2018","child_overweight_plan","all",,"Q",,,,,"No",,497938.335,"6",0,"9"
-"Middle Africa","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,176214.477,"3",0,"9"
-"Middle Africa","2018","child_overweight_plan","all",,"Q",,,,,"No data",,674152.812,"0",0,"9"
-"Northern Africa","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,467963.556,"5",0,"6"
-"Northern Africa","2018","child_overweight_plan","all",,"Q",,,,,"No",,480905.468,"1",0,"6"
-"Northern Africa","2018","child_overweight_plan","all",,"Q",,,,,"No data",,948869.024,"0",0,"6"
-"Northern America","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,727441.026,"2",0,"2"
-"Northern America","2018","child_overweight_plan","all",,"Q",,,,,"No",,727441.026,"0",0,"2"
-"Northern America","2018","child_overweight_plan","all",,"Q",,,,,"No data",,1454882.052,"0",0,"2"
-"Northern Europe","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,208922.356,"10",0,"10"
-"Northern Europe","2018","child_overweight_plan","all",,"Q",,,,,"No",,208922.356,"0",0,"10"
-"Northern Europe","2018","child_overweight_plan","all",,"Q",,,,,"No data",,417844.712,"0",0,"10"
-"Polynesia","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,624.693,"2",0,"3"
-"Polynesia","2018","child_overweight_plan","all",,"Q",,,,,"No",,647.267,"1",0,"3"
-"Polynesia","2018","child_overweight_plan","all",,"Q",,,,,"No data",,1271.96,"0",0,"3"
-"South America","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,855113.435,"11",0,"12"
-"South America","2018","child_overweight_plan","all",,"Q",,,,,"No",,856677.885,"1",0,"12"
-"South America","2018","child_overweight_plan","all",,"Q",,,,,"No data",,1711791.32,"0",0,"12"
-"South-eastern Asia","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,1293703.329,"9",0,"11"
-"South-eastern Asia","2018","child_overweight_plan","all",,"Q",,,,,"No",,1328842.975,"2",0,"11"
-"South-eastern Asia","2018","child_overweight_plan","all",,"Q",,,,,"No data",,2622546.304,"0",0,"11"
-"Southern Africa","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,131947.636,"5",0,"5"
-"Southern Africa","2018","child_overweight_plan","all",,"Q",,,,,"No",,131947.636,"0",0,"5"
-"Southern Africa","2018","child_overweight_plan","all",,"Q",,,,,"No data",,263895.272,"0",0,"5"
-"Southern Asia","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,3581277.37,"7",0,"9"
-"Southern Asia","2018","child_overweight_plan","all",,"Q",,,,,"No",,3984539.114,"2",0,"9"
-"Southern Asia","2018","child_overweight_plan","all",,"Q",,,,,"No data",,7565816.484,"0",0,"9"
-"Southern Europe","2018","child_overweight_plan","all",,"Q",,,,,"No",,332181.771,"4",0,"14"
-"Southern Europe","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,275116.765,"10",0,"14"
-"Southern Europe","2018","child_overweight_plan","all",,"Q",,,,,"No data",,607298.536,"0",0,"14"
-"Western Africa","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,514180.948,"11",0,"16"
-"Western Africa","2018","child_overweight_plan","all",,"Q",,,,,"No",,1013725.508,"5",0,"16"
-"Western Africa","2018","child_overweight_plan","all",,"Q",,,,,"No data",,1527906.456,"0",0,"16"
-"Western Asia","2018","child_overweight_plan","all",,"Q",,,,,"No data",,1078524.107,"1",0,"17"
-"Western Asia","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,487952.952,"12",0,"17"
-"Western Asia","2018","child_overweight_plan","all",,"Q",,,,,"No",,571487.925,"4",0,"17"
-"Western Europe","2018","child_overweight_plan","all",,"Q",,,,,"Yes",,322797.388,"6",0,"8"
-"Western Europe","2018","child_overweight_plan","all",,"Q",,,,,"No",,453302.827,"1",0,"8"
-"Western Europe","2018","child_overweight_plan","all",,"Q",,,,,"No data",,776178.009,"1",0,"8"
-"Australia and New Zealand","2018","EBF_plan","all",,"Q",,,,,"Yes",,54294.092,"1",0,"2"
-"Australia and New Zealand","2018","EBF_plan","all",,"Q",,,,,"No",,63793.288,"1",0,"2"
-"Australia and New Zealand","2018","EBF_plan","all",,"Q",,,,,"No data",,118087.38,"0",0,"2"
-"Caribbean","2018","EBF_plan","all",,"Q",,,,,"Yes",,76134.529,"8",0,"13"
-"Caribbean","2018","EBF_plan","all",,"Q",,,,,"No data",,156692.825,"1",0,"13"
-"Caribbean","2018","EBF_plan","all",,"Q",,,,,"No",,79759.726,"4",0,"13"
-"Central America","2018","EBF_plan","all",,"Q",,,,,"Yes",,359232.326,"8",0,"8"
-"Central America","2018","EBF_plan","all",,"Q",,,,,"No",,359232.326,"0",0,"8"
-"Central America","2018","EBF_plan","all",,"Q",,,,,"No data",,718464.652,"0",0,"8"
-"Central Asia","2018","EBF_plan","all",,"Q",,,,,"No",,174109.188,"3",0,"5"
-"Central Asia","2018","EBF_plan","all",,"Q",,,,,"Yes",,113332.672,"2",0,"5"
-"Central Asia","2018","EBF_plan","all",,"Q",,,,,"No data",,287441.86,"0",0,"5"
-"Eastern Africa","2018","EBF_plan","all",,"Q",,,,,"Yes",,850259.527,"15",0,"18"
-"Eastern Africa","2018","EBF_plan","all",,"Q",,,,,"No",,879741.285,"3",0,"18"
-"Eastern Africa","2018","EBF_plan","all",,"Q",,,,,"No data",,1730000.812,"0",0,"18"
-"Eastern Asia","2018","EBF_plan","all",,"Q",,,,,"No",,4837651.973,"3",0,"5"
-"Eastern Asia","2018","EBF_plan","all",,"Q",,,,,"Yes",,1650860.583,"2",0,"5"
-"Eastern Asia","2018","EBF_plan","all",,"Q",,,,,"No data",,6488512.556,"0",0,"5"
-"Eastern Europe","2018","EBF_plan","all",,"Q",,,,,"No",,708273.576,"7",0,"10"
-"Eastern Europe","2018","EBF_plan","all",,"Q",,,,,"Yes",,459539.736,"3",0,"10"
-"Eastern Europe","2018","EBF_plan","all",,"Q",,,,,"No data",,1167813.312,"0",0,"10"
-"Melanesia","2018","EBF_plan","all",,"Q",,,,,"Yes",,19848.689,"3",0,"4"
-"Melanesia","2018","EBF_plan","all",,"Q",,,,,"No",,21095.251,"1",0,"4"
-"Melanesia","2018","EBF_plan","all",,"Q",,,,,"No data",,40943.94,"0",0,"4"
-"Micronesia","2018","EBF_plan","all",,"Q",,,,,"No",,728.395,"1",0,"5"
-"Micronesia","2018","EBF_plan","all",,"Q",,,,,"Yes",,515.941,"4",0,"5"
-"Micronesia","2018","EBF_plan","all",,"Q",,,,,"No data",,1244.336,"0",0,"5"
-"Middle Africa","2018","EBF_plan","all",,"Q",,,,,"Yes",,295731.094,"6",0,"9"
-"Middle Africa","2018","EBF_plan","all",,"Q",,,,,"No",,378421.718,"3",0,"9"
-"Middle Africa","2018","EBF_plan","all",,"Q",,,,,"No data",,674152.812,"0",0,"9"
-"Northern Africa","2018","EBF_plan","all",,"Q",,,,,"Yes",,462775.338,"5",0,"6"
-"Northern Africa","2018","EBF_plan","all",,"Q",,,,,"No",,486093.686,"1",0,"6"
-"Northern Africa","2018","EBF_plan","all",,"Q",,,,,"No data",,948869.024,"0",0,"6"
-"Northern America","2018","EBF_plan","all",,"Q",,,,,"Yes",,727441.026,"2",0,"2"
-"Northern America","2018","EBF_plan","all",,"Q",,,,,"No",,727441.026,"0",0,"2"
-"Northern America","2018","EBF_plan","all",,"Q",,,,,"No data",,1454882.052,"0",0,"2"
-"Northern Europe","2018","EBF_plan","all",,"Q",,,,,"No",,297681.241,"6",0,"10"
-"Northern Europe","2018","EBF_plan","all",,"Q",,,,,"Yes",,120163.471,"4",0,"10"
-"Northern Europe","2018","EBF_plan","all",,"Q",,,,,"No data",,417844.712,"0",0,"10"
-"Polynesia","2018","EBF_plan","all",,"Q",,,,,"Yes",,624.693,"2",0,"3"
-"Polynesia","2018","EBF_plan","all",,"Q",,,,,"No",,647.267,"1",0,"3"
-"Polynesia","2018","EBF_plan","all",,"Q",,,,,"No data",,1271.96,"0",0,"3"
-"South America","2018","EBF_plan","all",,"Q",,,,,"No",,918230.174,"3",0,"12"
-"South America","2018","EBF_plan","all",,"Q",,,,,"Yes",,793561.146,"9",0,"12"
-"South America","2018","EBF_plan","all",,"Q",,,,,"No data",,1711791.32,"0",0,"12"
-"South-eastern Asia","2018","EBF_plan","all",,"Q",,,,,"Yes",,1236298.078,"9",0,"11"
-"South-eastern Asia","2018","EBF_plan","all",,"Q",,,,,"No",,1386248.226,"2",0,"11"
-"South-eastern Asia","2018","EBF_plan","all",,"Q",,,,,"No data",,2622546.304,"0",0,"11"
-"Southern Africa","2018","EBF_plan","all",,"Q",,,,,"No",,134280.837,"1",0,"5"
-"Southern Africa","2018","EBF_plan","all",,"Q",,,,,"Yes",,129614.435,"4",0,"5"
-"Southern Africa","2018","EBF_plan","all",,"Q",,,,,"No data",,263895.272,"0",0,"5"
-"Southern Asia","2018","EBF_plan","all",,"Q",,,,,"Yes",,3782908.242,"9",0,"9"
-"Southern Asia","2018","EBF_plan","all",,"Q",,,,,"No",,3782908.242,"0",0,"9"
-"Southern Asia","2018","EBF_plan","all",,"Q",,,,,"No data",,7565816.484,"0",0,"9"
-"Southern Europe","2018","EBF_plan","all",,"Q",,,,,"No",,384903.766,"10",0,"14"
-"Southern Europe","2018","EBF_plan","all",,"Q",,,,,"Yes",,222394.77,"4",0,"14"
-"Southern Europe","2018","EBF_plan","all",,"Q",,,,,"No data",,607298.536,"0",0,"14"
-"Western Africa","2018","EBF_plan","all",,"Q",,,,,"Yes",,763953.228,"16",0,"16"
-"Western Africa","2018","EBF_plan","all",,"Q",,,,,"No",,763953.228,"0",0,"16"
-"Western Africa","2018","EBF_plan","all",,"Q",,,,,"No data",,1527906.456,"0",0,"16"
-"Western Asia","2018","EBF_plan","all",,"Q",,,,,"No data",,1078524.107,"1",0,"17"
-"Western Asia","2018","EBF_plan","all",,"Q",,,,,"Yes",,451611.325,"9",0,"17"
-"Western Asia","2018","EBF_plan","all",,"Q",,,,,"No",,607829.552,"7",0,"17"
-"Western Europe","2018","EBF_plan","all",,"Q",,,,,"No",,516832.166,"6",0,"8"
-"Western Europe","2018","EBF_plan","all",,"Q",,,,,"Yes",,259268.049,"1",0,"8"
-"Western Europe","2018","EBF_plan","all",,"Q",,,,,"No data",,776178.009,"1",0,"8"
 "Australia and New Zealand","2018","country_class","all",,"A",,,,,"experiencing one form of malnutrition",,123861.235,"1",0,"1"
 "Australia and New Zealand","2018","country_class","all",,"A",,,,,"experiencing two forms of malnutrition",,24772.247,"0",0,"1"
 "Australia and New Zealand","2018","country_class","all",,"A",,,,,"experiencing three forms of malnutrition",,49544.494,"0",0,"1"
@@ -25119,72 +24034,6 @@
 "Western Europe","2018","country_class","all",,"A",,,,,"experiencing one form of malnutrition",,411467.285,"1",0,"1"
 "Western Europe","2018","country_class","all",,"A",,,,,"experiencing two forms of malnutrition",,82293.457,"0",0,"1"
 "Western Europe","2018","country_class","all",,"A",,,,,"experiencing three forms of malnutrition",,164586.914,"0",0,"1"
-"Australia and New Zealand","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,59043.69,"2",0,"2"
-"Australia and New Zealand","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,59043.69,"0",0,"2"
-"Australia and New Zealand","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,118087.38,"0",0,"2"
-"Caribbean","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,66292.302,"9",0,"13"
-"Caribbean","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,78546.055,"1",0,"13"
-"Caribbean","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,167748.723,"3",0,"13"
-"Central America","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,348784.951,"6",0,"8"
-"Central America","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,728912.027,"2",0,"8"
-"Central America","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,359232.326,"0",0,"8"
-"Central Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,137869.464,"4",0,"5"
-"Central Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,293293.326,"1",0,"5"
-"Central Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,143720.93,"0",0,"5"
-"Eastern Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,1881942.716,"9",0,"18"
-"Eastern Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,713058.502,"9",0,"18"
-"Eastern Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,865000.406,"0",0,"18"
-"Eastern Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,3244256.278,"5",0,"5"
-"Eastern Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,3244256.278,"0",0,"5"
-"Eastern Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,6488512.556,"0",0,"5"
-"Eastern Europe","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,583906.656,"10",0,"10"
-"Eastern Europe","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,583906.656,"0",0,"10"
-"Eastern Europe","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,1167813.312,"0",0,"10"
-"Melanesia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,19848.689,"3",0,"4"
-"Melanesia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,41567.221,"1",0,"4"
-"Melanesia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,20471.97,"0",0,"4"
-"Micronesia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,622.168,"5",0,"5"
-"Micronesia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,622.168,"0",0,"5"
-"Micronesia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,1244.336,"0",0,"5"
-"Middle Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,222341.866,"5",0,"9"
-"Middle Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,788887.352,"4",0,"9"
-"Middle Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,337076.406,"0",0,"9"
-"Northern Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,467963.556,"5",0,"6"
-"Northern Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,955339.98,"1",0,"6"
-"Northern Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,474434.512,"0",0,"6"
-"Northern America","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,727441.026,"2",0,"2"
-"Northern America","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,727441.026,"0",0,"2"
-"Northern America","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,1454882.052,"0",0,"2"
-"Northern Europe","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,208922.356,"10",0,"10"
-"Northern Europe","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,208922.356,"0",0,"10"
-"Northern Europe","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,417844.712,"0",0,"10"
-"Polynesia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,635.98,"3",0,"3"
-"Polynesia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,635.98,"0",0,"3"
-"Polynesia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,1271.96,"0",0,"3"
-"South America","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,855113.435,"11",0,"12"
-"South America","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,1712573.545,"1",0,"12"
-"South America","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,855895.66,"0",0,"12"
-"South-eastern Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,1309949.058,"10",0,"11"
-"South-eastern Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,2623870.398,"1",0,"11"
-"South-eastern Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,1311273.152,"0",0,"11"
-"Southern Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,131947.636,"5",0,"5"
-"Southern Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,131947.636,"0",0,"5"
-"Southern Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,263895.272,"0",0,"5"
-"Southern Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,3582094.424,"8",0,"9"
-"Southern Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,7766630.302,"1",0,"9"
-"Southern Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,3782908.242,"0",0,"9"
-"Southern Europe","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,289003.553,"12",0,"14"
-"Southern Europe","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,621944.251,"2",0,"14"
-"Southern Europe","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,303649.268,"0",0,"14"
-"Western Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,544116.769,"13",0,"16"
-"Western Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,1747742.915,"3",0,"16"
-"Western Africa","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,763953.228,"0",0,"16"
-"Western Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,544032.861,"1",0,"17"
-"Western Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,500571.715,"14",0,"17"
-"Western Asia","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,1093360.408,"2",0,"17"
-"Western Europe","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"Yes",,388030.659,"7",0,"8"
-"Western Europe","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No data",,388108.453,"1",0,"8"
-"Western Europe","2018","overweight_adults_adoles_plan","all",,"Q",,,,,"No",,776139.112,"0",0,"8"
 "Middle Africa","1999","190_percent","all",,"R",,,"",51.324703,"67.3813525216057",359.272921,92795.795,"7",0,
 "Middle Africa","2005","190_percent","all",,"R",,,"",45.029784125,"65.5276440758413",360.238273,111196.731,"8",0,
 "Middle Africa","2010","190_percent","all",,"R",,,"",40.75156775,"59.5051649266364",326.012542,130400.295,"8",0,
@@ -27813,3 +26662,816 @@
 "Melanesia",,"adult_mal_diabetes_track","all",,"A",,,,,"On course",,,"0",0,"4"
 "Micronesia",,"adult_mal_diabetes_track","all",,"A",,,,,"On course",,,"1",0,"5"
 "Polynesia",,"adult_mal_diabetes_track","all",,"A",,,,,"On course",,,"0",0,"3"
+"Africa",,"sugar_tax","all",,"O",,,,,"Yes",,,"3",1,"54"
+"Latin America and the Caribbean",,"sugar_tax","all",,"O",,,,,"Yes",,,"6",1,"33"
+"Northern America",,"sugar_tax","all",,"O",,,,,"Yes",,,"0",0,"2"
+"Asia",,"sugar_tax","all",,"O",,,,,"Yes",,,"8",1,"48"
+"Europe",,"sugar_tax","all",,"O",,,,,"Yes",,,"10",1,"43"
+"Oceania",,"sugar_tax","all",,"O",,,,,"Yes",,,"11",1,"14"
+"Northern Africa",,"sugar_tax","all",,"O",,,,,"Yes",,,"0",0,"6"
+"Eastern Africa",,"sugar_tax","all",,"O",,,,,"Yes",,,"1",0,"18"
+"Middle Africa",,"sugar_tax","all",,"O",,,,,"Yes",,,"0",0,"9"
+"Southern Africa",,"sugar_tax","all",,"O",,,,,"Yes",,,"1",0,"5"
+"Western Africa",,"sugar_tax","all",,"O",,,,,"Yes",,,"1",0,"16"
+"Caribbean",,"sugar_tax","all",,"O",,,,,"Yes",,,"2",0,"13"
+"Central America",,"sugar_tax","all",,"O",,,,,"Yes",,,"1",0,"8"
+"South America",,"sugar_tax","all",,"O",,,,,"Yes",,,"3",0,"12"
+"Central Asia",,"sugar_tax","all",,"O",,,,,"Yes",,,"0",0,"5"
+"Eastern Asia",,"sugar_tax","all",,"O",,,,,"Yes",,,"0",0,"5"
+"South-eastern Asia",,"sugar_tax","all",,"O",,,,,"Yes",,,"3",0,"11"
+"Southern Asia",,"sugar_tax","all",,"O",,,,,"Yes",,,"2",0,"9"
+"Western Asia",,"sugar_tax","all",,"O",,,,,"Yes",,,"3",0,"18"
+"Eastern Europe",,"sugar_tax","all",,"O",,,,,"Yes",,,"1",0,"10"
+"Northern Europe",,"sugar_tax","all",,"O",,,,,"Yes",,,"6",0,"10"
+"Southern Europe",,"sugar_tax","all",,"O",,,,,"Yes",,,"1",0,"14"
+"Western Europe",,"sugar_tax","all",,"O",,,,,"Yes",,,"2",0,"9"
+"Australia and New Zealand",,"sugar_tax","all",,"O",,,,,"Yes",,,"0",0,"2"
+"Melanesia",,"sugar_tax","all",,"O",,,,,"Yes",,,"2",0,"4"
+"Micronesia",,"sugar_tax","all",,"O",,,,,"Yes",,,"4",0,"5"
+"Polynesia",,"sugar_tax","all",,"O",,,,,"Yes",,,"5",0,"3"
+"Africa",,"salt_leg","all",,"O",,,,,"Yes",,,"36",1,"54"
+"Latin America and the Caribbean",,"salt_leg","all",,"O",,,,,"Yes",,,"19",1,"33"
+"Northern America",,"salt_leg","all",,"O",,,,,"Yes",,,"1",0,"2"
+"Asia",,"salt_leg","all",,"O",,,,,"Yes",,,"30",1,"48"
+"Europe",,"salt_leg","all",,"O",,,,,"Yes",,,"15",1,"43"
+"Oceania",,"salt_leg","all",,"O",,,,,"Yes",,,"6",1,"14"
+"Northern Africa",,"salt_leg","all",,"O",,,,,"Yes",,,"4",0,"6"
+"Eastern Africa",,"salt_leg","all",,"O",,,,,"Yes",,,"9",0,"18"
+"Middle Africa",,"salt_leg","all",,"O",,,,,"Yes",,,"7",0,"9"
+"Southern Africa",,"salt_leg","all",,"O",,,,,"Yes",,,"2",0,"5"
+"Western Africa",,"salt_leg","all",,"O",,,,,"Yes",,,"14",0,"16"
+"Caribbean",,"salt_leg","all",,"O",,,,,"Yes",,,"1",0,"13"
+"Central America",,"salt_leg","all",,"O",,,,,"Yes",,,"8",0,"8"
+"South America",,"salt_leg","all",,"O",,,,,"Yes",,,"10",0,"12"
+"Central Asia",,"salt_leg","all",,"O",,,,,"Yes",,,"5",0,"5"
+"Eastern Asia",,"salt_leg","all",,"O",,,,,"Yes",,,"2",0,"5"
+"South-eastern Asia",,"salt_leg","all",,"O",,,,,"Yes",,,"7",0,"11"
+"Southern Asia",,"salt_leg","all",,"O",,,,,"Yes",,,"5",0,"9"
+"Western Asia",,"salt_leg","all",,"O",,,,,"Yes",,,"11",0,"18"
+"Eastern Europe",,"salt_leg","all",,"O",,,,,"Yes",,,"7",0,"10"
+"Northern Europe",,"salt_leg","all",,"O",,,,,"Yes",,,"2",0,"10"
+"Southern Europe",,"salt_leg","all",,"O",,,,,"Yes",,,"5",0,"14"
+"Western Europe",,"salt_leg","all",,"O",,,,,"Yes",,,"1",0,"9"
+"Australia and New Zealand",,"salt_leg","all",,"O",,,,,"Yes",,,"2",0,"2"
+"Melanesia",,"salt_leg","all",,"O",,,,,"Yes",,,"3",0,"4"
+"Micronesia",,"salt_leg","all",,"O",,,,,"Yes",,,"1",0,"5"
+"Polynesia",,"salt_leg","all",,"O",,,,,"Yes",,,"0",0,"3"
+"Africa",,"multi_sec","all",,"O",,,,,"Yes",,,"32",1,"54"
+"Latin America and the Caribbean",,"multi_sec","all",,"O",,,,,"Yes",,,"20",1,"33"
+"Northern America",,"multi_sec","all",,"O",,,,,"Yes",,,"0",0,"2"
+"Asia",,"multi_sec","all",,"O",,,,,"Yes",,,"24",1,"48"
+"Europe",,"multi_sec","all",,"O",,,,,"Yes",,,"18",1,"43"
+"Oceania",,"multi_sec","all",,"O",,,,,"Yes",,,"10",1,"14"
+"Northern Africa",,"multi_sec","all",,"O",,,,,"Yes",,,"1",0,"6"
+"Eastern Africa",,"multi_sec","all",,"O",,,,,"Yes",,,"11",0,"18"
+"Middle Africa",,"multi_sec","all",,"O",,,,,"Yes",,,"4",0,"9"
+"Southern Africa",,"multi_sec","all",,"O",,,,,"Yes",,,"3",0,"5"
+"Western Africa",,"multi_sec","all",,"O",,,,,"Yes",,,"13",0,"16"
+"Caribbean",,"multi_sec","all",,"O",,,,,"Yes",,,"7",0,"13"
+"Central America",,"multi_sec","all",,"O",,,,,"Yes",,,"5",0,"8"
+"South America",,"multi_sec","all",,"O",,,,,"Yes",,,"8",0,"12"
+"Central Asia",,"multi_sec","all",,"O",,,,,"Yes",,,"1",0,"5"
+"Eastern Asia",,"multi_sec","all",,"O",,,,,"Yes",,,"3",0,"5"
+"South-eastern Asia",,"multi_sec","all",,"O",,,,,"Yes",,,"7",0,"11"
+"Southern Asia",,"multi_sec","all",,"O",,,,,"Yes",,,"7",0,"9"
+"Western Asia",,"multi_sec","all",,"O",,,,,"Yes",,,"6",0,"18"
+"Eastern Europe",,"multi_sec","all",,"O",,,,,"Yes",,,"6",0,"10"
+"Northern Europe",,"multi_sec","all",,"O",,,,,"Yes",,,"2",0,"10"
+"Southern Europe",,"multi_sec","all",,"O",,,,,"Yes",,,"7",0,"14"
+"Western Europe",,"multi_sec","all",,"O",,,,,"Yes",,,"3",0,"9"
+"Australia and New Zealand",,"multi_sec","all",,"O",,,,,"Yes",,,"1",0,"2"
+"Melanesia",,"multi_sec","all",,"O",,,,,"Yes",,,"4",0,"4"
+"Micronesia",,"multi_sec","all",,"O",,,,,"Yes",,,"0",0,"5"
+"Polynesia",,"multi_sec","all",,"O",,,,,"Yes",,,"0",0,"3"
+"Africa",,"fbdg","all",,"O",,,,,"Yes",,,"7",1,"54"
+"Latin America and the Caribbean",,"fbdg","all",,"O",,,,,"Yes",,,"27",1,"33"
+"Northern America",,"fbdg","all",,"O",,,,,"Yes",,,"2",0,"2"
+"Asia",,"fbdg","all",,"O",,,,,"Yes",,,"23",1,"48"
+"Europe",,"fbdg","all",,"O",,,,,"Yes",,,"29",1,"43"
+"Oceania",,"fbdg","all",,"O",,,,,"Yes",,,"3",1,"14"
+"Northern Africa",,"fbdg","all",,"O",,,,,"Yes",,,"0",0,"6"
+"Eastern Africa",,"fbdg","all",,"O",,,,,"Yes",,,"2",0,"18"
+"Middle Africa",,"fbdg","all",,"O",,,,,"Yes",,,"0",0,"9"
+"Southern Africa",,"fbdg","all",,"O",,,,,"Yes",,,"2",0,"5"
+"Western Africa",,"fbdg","all",,"O",,,,,"Yes",,,"3",0,"16"
+"Caribbean",,"fbdg","all",,"O",,,,,"Yes",,,"11",0,"13"
+"Central America",,"fbdg","all",,"O",,,,,"Yes",,,"7",0,"8"
+"South America",,"fbdg","all",,"O",,,,,"Yes",,,"9",0,"12"
+"Central Asia",,"fbdg","all",,"O",,,,,"Yes",,,"0",0,"5"
+"Eastern Asia",,"fbdg","all",,"O",,,,,"Yes",,,"4",0,"5"
+"South-eastern Asia",,"fbdg","all",,"O",,,,,"Yes",,,"6",0,"11"
+"Southern Asia",,"fbdg","all",,"O",,,,,"Yes",,,"6",0,"9"
+"Western Asia",,"fbdg","all",,"O",,,,,"Yes",,,"7",0,"18"
+"Eastern Europe",,"fbdg","all",,"O",,,,,"Yes",,,"4",0,"10"
+"Northern Europe",,"fbdg","all",,"O",,,,,"Yes",,,"9",0,"10"
+"Southern Europe",,"fbdg","all",,"O",,,,,"Yes",,,"10",0,"14"
+"Western Europe",,"fbdg","all",,"O",,,,,"Yes",,,"6",0,"9"
+"Australia and New Zealand",,"fbdg","all",,"O",,,,,"Yes",,,"2",0,"2"
+"Melanesia",,"fbdg","all",,"O",,,,,"Yes",,,"1",0,"4"
+"Micronesia",,"fbdg","all",,"O",,,,,"Yes",,,"0",0,"5"
+"Polynesia",,"fbdg","all",,"O",,,,,"Yes",,,"0",0,"3"
+"Africa",,"stunting_plan","all",,"O",,,,,"Yes",,,"47",1,"54"
+"Latin America and the Caribbean",,"stunting_plan","all",,"O",,,,,"Yes",,,"24",1,"33"
+"Northern America",,"stunting_plan","all",,"O",,,,,"Yes",,,"0",0,"2"
+"Asia",,"stunting_plan","all",,"O",,,,,"Yes",,,"30",1,"48"
+"Europe",,"stunting_plan","all",,"O",,,,,"Yes",,,"5",1,"43"
+"Oceania",,"stunting_plan","all",,"O",,,,,"Yes",,,"5",1,"14"
+"Northern Africa",,"stunting_plan","all",,"O",,,,,"Yes",,,"5",0,"6"
+"Eastern Africa",,"stunting_plan","all",,"O",,,,,"Yes",,,"15",0,"18"
+"Middle Africa",,"stunting_plan","all",,"O",,,,,"Yes",,,"7",0,"9"
+"Southern Africa",,"stunting_plan","all",,"O",,,,,"Yes",,,"4",0,"5"
+"Western Africa",,"stunting_plan","all",,"O",,,,,"Yes",,,"16",0,"16"
+"Caribbean",,"stunting_plan","all",,"O",,,,,"Yes",,,"7",0,"13"
+"Central America",,"stunting_plan","all",,"O",,,,,"Yes",,,"7",0,"8"
+"South America",,"stunting_plan","all",,"O",,,,,"Yes",,,"10",0,"12"
+"Central Asia",,"stunting_plan","all",,"O",,,,,"Yes",,,"2",0,"5"
+"Eastern Asia",,"stunting_plan","all",,"O",,,,,"Yes",,,"4",0,"5"
+"South-eastern Asia",,"stunting_plan","all",,"O",,,,,"Yes",,,"9",0,"11"
+"Southern Asia",,"stunting_plan","all",,"O",,,,,"Yes",,,"8",0,"9"
+"Western Asia",,"stunting_plan","all",,"O",,,,,"Yes",,,"7",0,"18"
+"Eastern Europe",,"stunting_plan","all",,"O",,,,,"Yes",,,"3",0,"10"
+"Northern Europe",,"stunting_plan","all",,"O",,,,,"Yes",,,"0",0,"10"
+"Southern Europe",,"stunting_plan","all",,"O",,,,,"Yes",,,"2",0,"14"
+"Western Europe",,"stunting_plan","all",,"O",,,,,"Yes",,,"0",0,"9"
+"Australia and New Zealand",,"stunting_plan","all",,"O",,,,,"Yes",,,"0",0,"2"
+"Melanesia",,"stunting_plan","all",,"O",,,,,"Yes",,,"3",0,"4"
+"Micronesia",,"stunting_plan","all",,"O",,,,,"Yes",,,"1",0,"5"
+"Polynesia",,"stunting_plan","all",,"O",,,,,"Yes",,,"1",0,"3"
+"Africa",,"anaemia_plan","all",,"O",,,,,"Yes",,,"35",1,"54"
+"Latin America and the Caribbean",,"anaemia_plan","all",,"O",,,,,"Yes",,,"14",1,"33"
+"Northern America",,"anaemia_plan","all",,"O",,,,,"Yes",,,"1",0,"2"
+"Asia",,"anaemia_plan","all",,"O",,,,,"Yes",,,"27",1,"48"
+"Europe",,"anaemia_plan","all",,"O",,,,,"Yes",,,"4",1,"43"
+"Oceania",,"anaemia_plan","all",,"O",,,,,"Yes",,,"6",1,"14"
+"Northern Africa",,"anaemia_plan","all",,"O",,,,,"Yes",,,"3",0,"6"
+"Eastern Africa",,"anaemia_plan","all",,"O",,,,,"Yes",,,"12",0,"18"
+"Middle Africa",,"anaemia_plan","all",,"O",,,,,"Yes",,,"2",0,"9"
+"Southern Africa",,"anaemia_plan","all",,"O",,,,,"Yes",,,"4",0,"5"
+"Western Africa",,"anaemia_plan","all",,"O",,,,,"Yes",,,"14",0,"16"
+"Caribbean",,"anaemia_plan","all",,"O",,,,,"Yes",,,"6",0,"13"
+"Central America",,"anaemia_plan","all",,"O",,,,,"Yes",,,"4",0,"8"
+"South America",,"anaemia_plan","all",,"O",,,,,"Yes",,,"4",0,"12"
+"Central Asia",,"anaemia_plan","all",,"O",,,,,"Yes",,,"3",0,"5"
+"Eastern Asia",,"anaemia_plan","all",,"O",,,,,"Yes",,,"3",0,"5"
+"South-eastern Asia",,"anaemia_plan","all",,"O",,,,,"Yes",,,"9",0,"11"
+"Southern Asia",,"anaemia_plan","all",,"O",,,,,"Yes",,,"9",0,"9"
+"Western Asia",,"anaemia_plan","all",,"O",,,,,"Yes",,,"3",0,"18"
+"Eastern Europe",,"anaemia_plan","all",,"O",,,,,"Yes",,,"3",0,"10"
+"Northern Europe",,"anaemia_plan","all",,"O",,,,,"Yes",,,"1",0,"10"
+"Southern Europe",,"anaemia_plan","all",,"O",,,,,"Yes",,,"0",0,"14"
+"Western Europe",,"anaemia_plan","all",,"O",,,,,"Yes",,,"0",0,"9"
+"Australia and New Zealand",,"anaemia_plan","all",,"O",,,,,"Yes",,,"0",0,"2"
+"Melanesia",,"anaemia_plan","all",,"O",,,,,"Yes",,,"3",0,"4"
+"Micronesia",,"anaemia_plan","all",,"O",,,,,"Yes",,,"1",0,"5"
+"Polynesia",,"anaemia_plan","all",,"O",,,,,"Yes",,,"2",0,"3"
+"Africa",,"LBW_plan","all",,"O",,,,,"Yes",,,"36",1,"54"
+"Latin America and the Caribbean",,"LBW_plan","all",,"O",,,,,"Yes",,,"21",1,"33"
+"Northern America",,"LBW_plan","all",,"O",,,,,"Yes",,,"1",0,"2"
+"Asia",,"LBW_plan","all",,"O",,,,,"Yes",,,"27",1,"48"
+"Europe",,"LBW_plan","all",,"O",,,,,"Yes",,,"7",1,"43"
+"Oceania",,"LBW_plan","all",,"O",,,,,"Yes",,,"8",1,"14"
+"Northern Africa",,"LBW_plan","all",,"O",,,,,"Yes",,,"4",0,"6"
+"Eastern Africa",,"LBW_plan","all",,"O",,,,,"Yes",,,"12",0,"18"
+"Middle Africa",,"LBW_plan","all",,"O",,,,,"Yes",,,"4",0,"9"
+"Southern Africa",,"LBW_plan","all",,"O",,,,,"Yes",,,"4",0,"5"
+"Western Africa",,"LBW_plan","all",,"O",,,,,"Yes",,,"12",0,"16"
+"Caribbean",,"LBW_plan","all",,"O",,,,,"Yes",,,"6",0,"13"
+"Central America",,"LBW_plan","all",,"O",,,,,"Yes",,,"6",0,"8"
+"South America",,"LBW_plan","all",,"O",,,,,"Yes",,,"9",0,"12"
+"Central Asia",,"LBW_plan","all",,"O",,,,,"Yes",,,"0",0,"5"
+"Eastern Asia",,"LBW_plan","all",,"O",,,,,"Yes",,,"4",0,"5"
+"South-eastern Asia",,"LBW_plan","all",,"O",,,,,"Yes",,,"8",0,"11"
+"Southern Asia",,"LBW_plan","all",,"O",,,,,"Yes",,,"8",0,"9"
+"Western Asia",,"LBW_plan","all",,"O",,,,,"Yes",,,"7",0,"18"
+"Eastern Europe",,"LBW_plan","all",,"O",,,,,"Yes",,,"3",0,"10"
+"Northern Europe",,"LBW_plan","all",,"O",,,,,"Yes",,,"0",0,"10"
+"Southern Europe",,"LBW_plan","all",,"O",,,,,"Yes",,,"3",0,"14"
+"Western Europe",,"LBW_plan","all",,"O",,,,,"Yes",,,"1",0,"9"
+"Australia and New Zealand",,"LBW_plan","all",,"O",,,,,"Yes",,,"1",0,"2"
+"Melanesia",,"LBW_plan","all",,"O",,,,,"Yes",,,"4",0,"4"
+"Micronesia",,"LBW_plan","all",,"O",,,,,"Yes",,,"2",0,"5"
+"Polynesia",,"LBW_plan","all",,"O",,,,,"Yes",,,"1",0,"3"
+"Africa",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"31",1,"54"
+"Latin America and the Caribbean",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"26",1,"33"
+"Northern America",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"2",0,"2"
+"Asia",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"33",1,"48"
+"Europe",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"36",1,"43"
+"Oceania",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"10",1,"14"
+"Northern Africa",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"5",0,"6"
+"Eastern Africa",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"7",0,"18"
+"Middle Africa",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"3",0,"9"
+"Southern Africa",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"5",0,"5"
+"Western Africa",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"11",0,"16"
+"Caribbean",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"9",0,"13"
+"Central America",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"6",0,"8"
+"South America",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"11",0,"12"
+"Central Asia",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"2",0,"5"
+"Eastern Asia",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"3",0,"5"
+"South-eastern Asia",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"9",0,"11"
+"Southern Asia",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"7",0,"9"
+"Western Asia",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"12",0,"18"
+"Eastern Europe",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"10",0,"10"
+"Northern Europe",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"10",0,"10"
+"Southern Europe",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"10",0,"14"
+"Western Europe",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"6",0,"9"
+"Australia and New Zealand",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"1",0,"2"
+"Melanesia",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"4",0,"4"
+"Micronesia",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"3",0,"5"
+"Polynesia",,"child_overweight_plan","all",,"O",,,,,"Yes",,,"2",0,"3"
+"Africa",,"EBF_plan","all",,"O",,,,,"Yes",,,"46",1,"54"
+"Latin America and the Caribbean",,"EBF_plan","all",,"O",,,,,"Yes",,,"25",1,"33"
+"Northern America",,"EBF_plan","all",,"O",,,,,"Yes",,,"2",0,"2"
+"Asia",,"EBF_plan","all",,"O",,,,,"Yes",,,"31",1,"48"
+"Europe",,"EBF_plan","all",,"O",,,,,"Yes",,,"12",1,"43"
+"Oceania",,"EBF_plan","all",,"O",,,,,"Yes",,,"10",1,"14"
+"Northern Africa",,"EBF_plan","all",,"O",,,,,"Yes",,,"5",0,"6"
+"Eastern Africa",,"EBF_plan","all",,"O",,,,,"Yes",,,"15",0,"18"
+"Middle Africa",,"EBF_plan","all",,"O",,,,,"Yes",,,"6",0,"9"
+"Southern Africa",,"EBF_plan","all",,"O",,,,,"Yes",,,"4",0,"5"
+"Western Africa",,"EBF_plan","all",,"O",,,,,"Yes",,,"16",0,"16"
+"Caribbean",,"EBF_plan","all",,"O",,,,,"Yes",,,"8",0,"13"
+"Central America",,"EBF_plan","all",,"O",,,,,"Yes",,,"8",0,"8"
+"South America",,"EBF_plan","all",,"O",,,,,"Yes",,,"9",0,"12"
+"Central Asia",,"EBF_plan","all",,"O",,,,,"Yes",,,"2",0,"5"
+"Eastern Asia",,"EBF_plan","all",,"O",,,,,"Yes",,,"2",0,"5"
+"South-eastern Asia",,"EBF_plan","all",,"O",,,,,"Yes",,,"9",0,"11"
+"Southern Asia",,"EBF_plan","all",,"O",,,,,"Yes",,,"9",0,"9"
+"Western Asia",,"EBF_plan","all",,"O",,,,,"Yes",,,"9",0,"18"
+"Eastern Europe",,"EBF_plan","all",,"O",,,,,"Yes",,,"3",0,"10"
+"Northern Europe",,"EBF_plan","all",,"O",,,,,"Yes",,,"4",0,"10"
+"Southern Europe",,"EBF_plan","all",,"O",,,,,"Yes",,,"4",0,"14"
+"Western Europe",,"EBF_plan","all",,"O",,,,,"Yes",,,"1",0,"9"
+"Australia and New Zealand",,"EBF_plan","all",,"O",,,,,"Yes",,,"1",0,"2"
+"Melanesia",,"EBF_plan","all",,"O",,,,,"Yes",,,"3",0,"4"
+"Micronesia",,"EBF_plan","all",,"O",,,,,"Yes",,,"4",0,"5"
+"Polynesia",,"EBF_plan","all",,"O",,,,,"Yes",,,"2",0,"3"
+"Africa",,"wasting_plan","all",,"O",,,,,"Yes",,,"46",1,"54"
+"Latin America and the Caribbean",,"wasting_plan","all",,"O",,,,,"Yes",,,"20",1,"33"
+"Northern America",,"wasting_plan","all",,"O",,,,,"Yes",,,"0",0,"2"
+"Asia",,"wasting_plan","all",,"O",,,,,"Yes",,,"25",1,"48"
+"Europe",,"wasting_plan","all",,"O",,,,,"Yes",,,"4",1,"43"
+"Oceania",,"wasting_plan","all",,"O",,,,,"Yes",,,"6",1,"14"
+"Northern Africa",,"wasting_plan","all",,"O",,,,,"Yes",,,"4",0,"6"
+"Eastern Africa",,"wasting_plan","all",,"O",,,,,"Yes",,,"14",0,"18"
+"Middle Africa",,"wasting_plan","all",,"O",,,,,"Yes",,,"8",0,"9"
+"Southern Africa",,"wasting_plan","all",,"O",,,,,"Yes",,,"4",0,"5"
+"Western Africa",,"wasting_plan","all",,"O",,,,,"Yes",,,"16",0,"16"
+"Caribbean",,"wasting_plan","all",,"O",,,,,"Yes",,,"6",0,"13"
+"Central America",,"wasting_plan","all",,"O",,,,,"Yes",,,"7",0,"8"
+"South America",,"wasting_plan","all",,"O",,,,,"Yes",,,"7",0,"12"
+"Central Asia",,"wasting_plan","all",,"O",,,,,"Yes",,,"2",0,"5"
+"Eastern Asia",,"wasting_plan","all",,"O",,,,,"Yes",,,"3",0,"5"
+"South-eastern Asia",,"wasting_plan","all",,"O",,,,,"Yes",,,"6",0,"11"
+"Southern Asia",,"wasting_plan","all",,"O",,,,,"Yes",,,"9",0,"9"
+"Western Asia",,"wasting_plan","all",,"O",,,,,"Yes",,,"5",0,"18"
+"Eastern Europe",,"wasting_plan","all",,"O",,,,,"Yes",,,"3",0,"10"
+"Northern Europe",,"wasting_plan","all",,"O",,,,,"Yes",,,"0",0,"10"
+"Southern Europe",,"wasting_plan","all",,"O",,,,,"Yes",,,"1",0,"14"
+"Western Europe",,"wasting_plan","all",,"O",,,,,"Yes",,,"0",0,"9"
+"Australia and New Zealand",,"wasting_plan","all",,"O",,,,,"Yes",,,"0",0,"2"
+"Melanesia",,"wasting_plan","all",,"O",,,,,"Yes",,,"3",0,"4"
+"Micronesia",,"wasting_plan","all",,"O",,,,,"Yes",,,"2",0,"5"
+"Polynesia",,"wasting_plan","all",,"O",,,,,"Yes",,,"1",0,"3"
+"Africa",,"sodium_plan","all",,"O",,,,,"Yes",,,"21",1,"54"
+"Latin America and the Caribbean",,"sodium_plan","all",,"O",,,,,"Yes",,,"22",1,"33"
+"Northern America",,"sodium_plan","all",,"O",,,,,"Yes",,,"2",0,"2"
+"Asia",,"sodium_plan","all",,"O",,,,,"Yes",,,"32",1,"48"
+"Europe",,"sodium_plan","all",,"O",,,,,"Yes",,,"23",1,"43"
+"Oceania",,"sodium_plan","all",,"O",,,,,"Yes",,,"7",1,"14"
+"Northern Africa",,"sodium_plan","all",,"O",,,,,"Yes",,,"4",0,"6"
+"Eastern Africa",,"sodium_plan","all",,"O",,,,,"Yes",,,"6",0,"18"
+"Middle Africa",,"sodium_plan","all",,"O",,,,,"Yes",,,"2",0,"9"
+"Southern Africa",,"sodium_plan","all",,"O",,,,,"Yes",,,"3",0,"5"
+"Western Africa",,"sodium_plan","all",,"O",,,,,"Yes",,,"6",0,"16"
+"Caribbean",,"sodium_plan","all",,"O",,,,,"Yes",,,"8",0,"13"
+"Central America",,"sodium_plan","all",,"O",,,,,"Yes",,,"5",0,"8"
+"South America",,"sodium_plan","all",,"O",,,,,"Yes",,,"9",0,"12"
+"Central Asia",,"sodium_plan","all",,"O",,,,,"Yes",,,"4",0,"5"
+"Eastern Asia",,"sodium_plan","all",,"O",,,,,"Yes",,,"4",0,"5"
+"South-eastern Asia",,"sodium_plan","all",,"O",,,,,"Yes",,,"8",0,"11"
+"Southern Asia",,"sodium_plan","all",,"O",,,,,"Yes",,,"8",0,"9"
+"Western Asia",,"sodium_plan","all",,"O",,,,,"Yes",,,"8",0,"18"
+"Eastern Europe",,"sodium_plan","all",,"O",,,,,"Yes",,,"7",0,"10"
+"Northern Europe",,"sodium_plan","all",,"O",,,,,"Yes",,,"6",0,"10"
+"Southern Europe",,"sodium_plan","all",,"O",,,,,"Yes",,,"8",0,"14"
+"Western Europe",,"sodium_plan","all",,"O",,,,,"Yes",,,"2",0,"9"
+"Australia and New Zealand",,"sodium_plan","all",,"O",,,,,"Yes",,,"1",0,"2"
+"Melanesia",,"sodium_plan","all",,"O",,,,,"Yes",,,"2",0,"4"
+"Micronesia",,"sodium_plan","all",,"O",,,,,"Yes",,,"2",0,"5"
+"Polynesia",,"sodium_plan","all",,"O",,,,,"Yes",,,"2",0,"3"
+"Africa",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"37",1,"54"
+"Latin America and the Caribbean",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"26",1,"33"
+"Northern America",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"2",0,"2"
+"Asia",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"41",1,"48"
+"Europe",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"39",1,"43"
+"Oceania",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"13",1,"14"
+"Northern Africa",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"5",0,"6"
+"Eastern Africa",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"9",0,"18"
+"Middle Africa",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"5",0,"9"
+"Southern Africa",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"5",0,"5"
+"Western Africa",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"13",0,"16"
+"Caribbean",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"9",0,"13"
+"Central America",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"6",0,"8"
+"South America",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"11",0,"12"
+"Central Asia",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"4",0,"5"
+"Eastern Asia",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"5",0,"5"
+"South-eastern Asia",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"10",0,"11"
+"Southern Asia",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"8",0,"9"
+"Western Asia",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"14",0,"18"
+"Eastern Europe",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"10",0,"10"
+"Northern Europe",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"10",0,"10"
+"Southern Europe",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"12",0,"14"
+"Western Europe",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"7",0,"9"
+"Australia and New Zealand",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"2",0,"2"
+"Melanesia",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"3",0,"4"
+"Micronesia",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"5",0,"5"
+"Polynesia",,"overweight_adults_adoles_plan","all",,"O",,,,,"Yes",,,"3",0,"3"
+"Africa","1999","total_calories_non_staple","all",,"R",,,,,"58",,,,1,
+"Africa","2000","total_calories_non_staple","all",,"R",,,,,"58",,,,1,
+"Africa","2001","total_calories_non_staple","all",,"R",,,,,"57",,,,1,
+"Africa","2002","total_calories_non_staple","all",,"R",,,,,"57",,,,1,
+"Africa","2003","total_calories_non_staple","all",,"R",,,,,"57",,,,1,
+"Africa","2004","total_calories_non_staple","all",,"R",,,,,"57",,,,1,
+"Africa","2005","total_calories_non_staple","all",,"R",,,,,"57",,,,1,
+"Africa","2006","total_calories_non_staple","all",,"R",,,,,"56",,,,1,
+"Africa","2007","total_calories_non_staple","all",,"R",,,,,"56",,,,1,
+"Africa","2008","total_calories_non_staple","all",,"R",,,,,"56",,,,1,
+"Africa","2009","total_calories_non_staple","all",,"R",,,,,"56",,,,1,
+"Africa","2010","total_calories_non_staple","all",,"R",,,,,"57",,,,1,
+"Africa","2011","total_calories_non_staple","all",,"R",,,,,"55",,,,1,
+"Eastern Africa","1999","total_calories_non_staple","all",,"R",,,,,"61",,,,0,
+"Eastern Africa","2000","total_calories_non_staple","all",,"R",,,,,"60",,,,0,
+"Eastern Africa","2001","total_calories_non_staple","all",,"R",,,,,"60",,,,0,
+"Eastern Africa","2002","total_calories_non_staple","all",,"R",,,,,"59",,,,0,
+"Eastern Africa","2003","total_calories_non_staple","all",,"R",,,,,"59",,,,0,
+"Eastern Africa","2004","total_calories_non_staple","all",,"R",,,,,"59",,,,0,
+"Eastern Africa","2005","total_calories_non_staple","all",,"R",,,,,"59",,,,0,
+"Eastern Africa","2006","total_calories_non_staple","all",,"R",,,,,"58",,,,0,
+"Eastern Africa","2007","total_calories_non_staple","all",,"R",,,,,"58",,,,0,
+"Eastern Africa","2008","total_calories_non_staple","all",,"R",,,,,"58",,,,0,
+"Eastern Africa","2009","total_calories_non_staple","all",,"R",,,,,"58",,,,0,
+"Eastern Africa","2010","total_calories_non_staple","all",,"R",,,,,"59",,,,0,
+"Eastern Africa","2011","total_calories_non_staple","all",,"R",,,,,"57",,,,0,
+"Middle Africa","1999","total_calories_non_staple","all",,"R",,,,,"30",,,,0,
+"Middle Africa","2000","total_calories_non_staple","all",,"R",,,,,"30",,,,0,
+"Middle Africa","2001","total_calories_non_staple","all",,"R",,,,,"30",,,,0,
+"Middle Africa","2002","total_calories_non_staple","all",,"R",,,,,"29",,,,0,
+"Middle Africa","2003","total_calories_non_staple","all",,"R",,,,,"29",,,,0,
+"Middle Africa","2004","total_calories_non_staple","all",,"R",,,,,"29",,,,0,
+"Middle Africa","2005","total_calories_non_staple","all",,"R",,,,,"30",,,,0,
+"Middle Africa","2006","total_calories_non_staple","all",,"R",,,,,"30",,,,0,
+"Middle Africa","2007","total_calories_non_staple","all",,"R",,,,,"30",,,,0,
+"Middle Africa","2008","total_calories_non_staple","all",,"R",,,,,"30",,,,0,
+"Middle Africa","2009","total_calories_non_staple","all",,"R",,,,,"29",,,,0,
+"Middle Africa","2010","total_calories_non_staple","all",,"R",,,,,"29",,,,0,
+"Middle Africa","2011","total_calories_non_staple","all",,"R",,,,,"29",,,,0,
+"Northern Africa","1999","total_calories_non_staple","all",,"R",,,,,"60",,,,0,
+"Northern Africa","2000","total_calories_non_staple","all",,"R",,,,,"60",,,,0,
+"Northern Africa","2001","total_calories_non_staple","all",,"R",,,,,"60",,,,0,
+"Northern Africa","2002","total_calories_non_staple","all",,"R",,,,,"60",,,,0,
+"Northern Africa","2003","total_calories_non_staple","all",,"R",,,,,"60",,,,0,
+"Northern Africa","2004","total_calories_non_staple","all",,"R",,,,,"60",,,,0,
+"Northern Africa","2005","total_calories_non_staple","all",,"R",,,,,"60",,,,0,
+"Northern Africa","2006","total_calories_non_staple","all",,"R",,,,,"59",,,,0,
+"Northern Africa","2007","total_calories_non_staple","all",,"R",,,,,"59",,,,0,
+"Northern Africa","2008","total_calories_non_staple","all",,"R",,,,,"59",,,,0,
+"Northern Africa","2009","total_calories_non_staple","all",,"R",,,,,"59",,,,0,
+"Northern Africa","2010","total_calories_non_staple","all",,"R",,,,,"58",,,,0,
+"Northern Africa","2011","total_calories_non_staple","all",,"R",,,,,"55",,,,0,
+"Southern Africa","1999","total_calories_non_staple","all",,"R",,,,,"57",,,,0,
+"Southern Africa","2000","total_calories_non_staple","all",,"R",,,,,"57",,,,0,
+"Southern Africa","2001","total_calories_non_staple","all",,"R",,,,,"57",,,,0,
+"Southern Africa","2002","total_calories_non_staple","all",,"R",,,,,"56",,,,0,
+"Southern Africa","2003","total_calories_non_staple","all",,"R",,,,,"56",,,,0,
+"Southern Africa","2004","total_calories_non_staple","all",,"R",,,,,"56",,,,0,
+"Southern Africa","2005","total_calories_non_staple","all",,"R",,,,,"55",,,,0,
+"Southern Africa","2006","total_calories_non_staple","all",,"R",,,,,"55",,,,0,
+"Southern Africa","2007","total_calories_non_staple","all",,"R",,,,,"54",,,,0,
+"Southern Africa","2008","total_calories_non_staple","all",,"R",,,,,"54",,,,0,
+"Southern Africa","2009","total_calories_non_staple","all",,"R",,,,,"54",,,,0,
+"Southern Africa","2010","total_calories_non_staple","all",,"R",,,,,"54",,,,0,
+"Southern Africa","2011","total_calories_non_staple","all",,"R",,,,,"53",,,,0,
+"Western Africa","1999","total_calories_non_staple","all",,"R",,,,,"65",,,,0,
+"Western Africa","2000","total_calories_non_staple","all",,"R",,,,,"65",,,,0,
+"Western Africa","2001","total_calories_non_staple","all",,"R",,,,,"64",,,,0,
+"Western Africa","2002","total_calories_non_staple","all",,"R",,,,,"64",,,,0,
+"Western Africa","2003","total_calories_non_staple","all",,"R",,,,,"64",,,,0,
+"Western Africa","2004","total_calories_non_staple","all",,"R",,,,,"64",,,,0,
+"Western Africa","2005","total_calories_non_staple","all",,"R",,,,,"64",,,,0,
+"Western Africa","2006","total_calories_non_staple","all",,"R",,,,,"64",,,,0,
+"Western Africa","2007","total_calories_non_staple","all",,"R",,,,,"64",,,,0,
+"Western Africa","2008","total_calories_non_staple","all",,"R",,,,,"65",,,,0,
+"Western Africa","2009","total_calories_non_staple","all",,"R",,,,,"65",,,,0,
+"Western Africa","2010","total_calories_non_staple","all",,"R",,,,,"65",,,,0,
+"Western Africa","2011","total_calories_non_staple","all",,"R",,,,,"65",,,,0,
+"Southern Africa","1999","total_calories_non_staple","all",,"R",,,,,"58",,,,0,
+"Southern Africa","2000","total_calories_non_staple","all",,"R",,,,,"58",,,,0,
+"Southern Africa","2001","total_calories_non_staple","all",,"R",,,,,"57",,,,0,
+"Southern Africa","2002","total_calories_non_staple","all",,"R",,,,,"57",,,,0,
+"Southern Africa","2003","total_calories_non_staple","all",,"R",,,,,"57",,,,0,
+"Southern Africa","2004","total_calories_non_staple","all",,"R",,,,,"57",,,,0,
+"Southern Africa","2005","total_calories_non_staple","all",,"R",,,,,"57",,,,0,
+"Southern Africa","2006","total_calories_non_staple","all",,"R",,,,,"56",,,,0,
+"Southern Africa","2007","total_calories_non_staple","all",,"R",,,,,"56",,,,0,
+"Southern Africa","2008","total_calories_non_staple","all",,"R",,,,,"56",,,,0,
+"Southern Africa","2009","total_calories_non_staple","all",,"R",,,,,"56",,,,0,
+"Southern Africa","2010","total_calories_non_staple","all",,"R",,,,,"56",,,,0,
+"Southern Africa","2011","total_calories_non_staple","all",,"R",,,,,"55",,,,0,
+"Northern America","1999","total_calories_non_staple","all",,"R",,,,,"25",,,,0,
+"Northern America","2000","total_calories_non_staple","all",,"R",,,,,"25",,,,0,
+"Northern America","2001","total_calories_non_staple","all",,"R",,,,,"24",,,,0,
+"Northern America","2002","total_calories_non_staple","all",,"R",,,,,"24",,,,0,
+"Northern America","2003","total_calories_non_staple","all",,"R",,,,,"23",,,,0,
+"Northern America","2004","total_calories_non_staple","all",,"R",,,,,"23",,,,0,
+"Northern America","2005","total_calories_non_staple","all",,"R",,,,,"24",,,,0,
+"Northern America","2006","total_calories_non_staple","all",,"R",,,,,"24",,,,0,
+"Northern America","2007","total_calories_non_staple","all",,"R",,,,,"24",,,,0,
+"Northern America","2008","total_calories_non_staple","all",,"R",,,,,"24",,,,0,
+"Northern America","2009","total_calories_non_staple","all",,"R",,,,,"24",,,,0,
+"Northern America","2010","total_calories_non_staple","all",,"R",,,,,"24",,,,0,
+"Northern America","2011","total_calories_non_staple","all",,"R",,,,,"24",,,,0,
+"Europe","1999","total_calories_non_staple","all",,"R",,,,,"36",,,,1,
+"Europe","2000","total_calories_non_staple","all",,"R",,,,,"36",,,,1,
+"Europe","2001","total_calories_non_staple","all",,"R",,,,,"36",,,,1,
+"Europe","2002","total_calories_non_staple","all",,"R",,,,,"35",,,,1,
+"Europe","2003","total_calories_non_staple","all",,"R",,,,,"35",,,,1,
+"Europe","2004","total_calories_non_staple","all",,"R",,,,,"35",,,,1,
+"Europe","2005","total_calories_non_staple","all",,"R",,,,,"34",,,,1,
+"Europe","2006","total_calories_non_staple","all",,"R",,,,,"34",,,,1,
+"Europe","2007","total_calories_non_staple","all",,"R",,,,,"34",,,,1,
+"Europe","2008","total_calories_non_staple","all",,"R",,,,,"34",,,,1,
+"Europe","2009","total_calories_non_staple","all",,"R",,,,,"34",,,,1,
+"Europe","2010","total_calories_non_staple","all",,"R",,,,,"34",,,,1,
+"Europe","2011","total_calories_non_staple","all",,"R",,,,,"34",,,,1,
+"Eastern Europe","1999","total_calories_non_staple","all",,"R",,,,,"46",,,,0,
+"Eastern Europe","2000","total_calories_non_staple","all",,"R",,,,,"45",,,,0,
+"Eastern Europe","2001","total_calories_non_staple","all",,"R",,,,,"44",,,,0,
+"Eastern Europe","2002","total_calories_non_staple","all",,"R",,,,,"43",,,,0,
+"Eastern Europe","2003","total_calories_non_staple","all",,"R",,,,,"43",,,,0,
+"Eastern Europe","2004","total_calories_non_staple","all",,"R",,,,,"42",,,,0,
+"Eastern Europe","2005","total_calories_non_staple","all",,"R",,,,,"41",,,,0,
+"Eastern Europe","2006","total_calories_non_staple","all",,"R",,,,,"40",,,,0,
+"Eastern Europe","2007","total_calories_non_staple","all",,"R",,,,,"40",,,,0,
+"Eastern Europe","2008","total_calories_non_staple","all",,"R",,,,,"40",,,,0,
+"Eastern Europe","2009","total_calories_non_staple","all",,"R",,,,,"40",,,,0,
+"Eastern Europe","2010","total_calories_non_staple","all",,"R",,,,,"40",,,,0,
+"Eastern Europe","2011","total_calories_non_staple","all",,"R",,,,,"40",,,,0,
+"Northern Europe","1999","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Northern Europe","2000","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Northern Europe","2001","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Northern Europe","2002","total_calories_non_staple","all",,"R",,,,,"32",,,,0,
+"Northern Europe","2003","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Northern Europe","2004","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Northern Europe","2005","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Northern Europe","2006","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Northern Europe","2007","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Northern Europe","2008","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Northern Europe","2009","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Northern Europe","2010","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Northern Europe","2011","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Southern Europe","1999","total_calories_non_staple","all",,"R",,,,,"32",,,,0,
+"Southern Europe","2000","total_calories_non_staple","all",,"R",,,,,"32",,,,0,
+"Southern Europe","2001","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Southern Europe","2002","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Southern Europe","2003","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Southern Europe","2004","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Southern Europe","2005","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Southern Europe","2006","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Southern Europe","2007","total_calories_non_staple","all",,"R",,,,,"31",,,,0,
+"Southern Europe","2008","total_calories_non_staple","all",,"R",,,,,"32",,,,0,
+"Southern Europe","2009","total_calories_non_staple","all",,"R",,,,,"32",,,,0,
+"Southern Europe","2010","total_calories_non_staple","all",,"R",,,,,"32",,,,0,
+"Southern Europe","2011","total_calories_non_staple","all",,"R",,,,,"32",,,,0,
+"Western Europe","1999","total_calories_non_staple","all",,"R",,,,,"26",,,,0,
+"Western Europe","2000","total_calories_non_staple","all",,"R",,,,,"27",,,,0,
+"Western Europe","2001","total_calories_non_staple","all",,"R",,,,,"27",,,,0,
+"Western Europe","2002","total_calories_non_staple","all",,"R",,,,,"27",,,,0,
+"Western Europe","2003","total_calories_non_staple","all",,"R",,,,,"27",,,,0,
+"Western Europe","2004","total_calories_non_staple","all",,"R",,,,,"27",,,,0,
+"Western Europe","2005","total_calories_non_staple","all",,"R",,,,,"27",,,,0,
+"Western Europe","2006","total_calories_non_staple","all",,"R",,,,,"28",,,,0,
+"Western Europe","2007","total_calories_non_staple","all",,"R",,,,,"27",,,,0,
+"Western Europe","2008","total_calories_non_staple","all",,"R",,,,,"28",,,,0,
+"Western Europe","2009","total_calories_non_staple","all",,"R",,,,,"28",,,,0,
+"Western Europe","2010","total_calories_non_staple","all",,"R",,,,,"28",,,,0,
+"Western Europe","2011","total_calories_non_staple","all",,"R",,,,,"28",,,,0,
+"Latin America and the Caribbean","1999","total_calories_non_staple","all",,"R",,,,,"40",,,,1,
+"Latin America and the Caribbean","2000","total_calories_non_staple","all",,"R",,,,,"40",,,,1,
+"Latin America and the Caribbean","2001","total_calories_non_staple","all",,"R",,,,,"40",,,,1,
+"Latin America and the Caribbean","2002","total_calories_non_staple","all",,"R",,,,,"41",,,,1,
+"Latin America and the Caribbean","2003","total_calories_non_staple","all",,"R",,,,,"40",,,,1,
+"Latin America and the Caribbean","2004","total_calories_non_staple","all",,"R",,,,,"40",,,,1,
+"Latin America and the Caribbean","2005","total_calories_non_staple","all",,"R",,,,,"40",,,,1,
+"Latin America and the Caribbean","2006","total_calories_non_staple","all",,"R",,,,,"40",,,,1,
+"Latin America and the Caribbean","2007","total_calories_non_staple","all",,"R",,,,,"39",,,,1,
+"Latin America and the Caribbean","2008","total_calories_non_staple","all",,"R",,,,,"39",,,,1,
+"Latin America and the Caribbean","2009","total_calories_non_staple","all",,"R",,,,,"39",,,,1,
+"Latin America and the Caribbean","2010","total_calories_non_staple","all",,"R",,,,,"39",,,,1,
+"Latin America and the Caribbean","2011","total_calories_non_staple","all",,"R",,,,,"39",,,,1,
+"Central America","1999","total_calories_non_staple","all",,"R",,,,,"46",,,,0,
+"Central America","2000","total_calories_non_staple","all",,"R",,,,,"46",,,,0,
+"Central America","2001","total_calories_non_staple","all",,"R",,,,,"46",,,,0,
+"Central America","2002","total_calories_non_staple","all",,"R",,,,,"46",,,,0,
+"Central America","2003","total_calories_non_staple","all",,"R",,,,,"45",,,,0,
+"Central America","2004","total_calories_non_staple","all",,"R",,,,,"45",,,,0,
+"Central America","2005","total_calories_non_staple","all",,"R",,,,,"44",,,,0,
+"Central America","2006","total_calories_non_staple","all",,"R",,,,,"44",,,,0,
+"Central America","2007","total_calories_non_staple","all",,"R",,,,,"44",,,,0,
+"Central America","2008","total_calories_non_staple","all",,"R",,,,,"44",,,,0,
+"Central America","2009","total_calories_non_staple","all",,"R",,,,,"44",,,,0,
+"Central America","2010","total_calories_non_staple","all",,"R",,,,,"44",,,,0,
+"Central America","2011","total_calories_non_staple","all",,"R",,,,,"44",,,,0,
+"Caribbean","1999","total_calories_non_staple","all",,"R",,,,,"36",,,,0,
+"Caribbean","2000","total_calories_non_staple","all",,"R",,,,,"37",,,,0,
+"Caribbean","2001","total_calories_non_staple","all",,"R",,,,,"37",,,,0,
+"Caribbean","2002","total_calories_non_staple","all",,"R",,,,,"37",,,,0,
+"Caribbean","2003","total_calories_non_staple","all",,"R",,,,,"37",,,,0,
+"Caribbean","2004","total_calories_non_staple","all",,"R",,,,,"37",,,,0,
+"Caribbean","2005","total_calories_non_staple","all",,"R",,,,,"38",,,,0,
+"Caribbean","2006","total_calories_non_staple","all",,"R",,,,,"37",,,,0,
+"Caribbean","2007","total_calories_non_staple","all",,"R",,,,,"37",,,,0,
+"Caribbean","2008","total_calories_non_staple","all",,"R",,,,,"37",,,,0,
+"Caribbean","2009","total_calories_non_staple","all",,"R",,,,,"37",,,,0,
+"Caribbean","2010","total_calories_non_staple","all",,"R",,,,,"37",,,,0,
+"Caribbean","2011","total_calories_non_staple","all",,"R",,,,,"37",,,,0,
+"South America","1999","total_calories_non_staple","all",,"R",,,,,"38",,,,0,
+"South America","2000","total_calories_non_staple","all",,"R",,,,,"38",,,,0,
+"South America","2001","total_calories_non_staple","all",,"R",,,,,"38",,,,0,
+"South America","2002","total_calories_non_staple","all",,"R",,,,,"39",,,,0,
+"South America","2003","total_calories_non_staple","all",,"R",,,,,"39",,,,0,
+"South America","2004","total_calories_non_staple","all",,"R",,,,,"39",,,,0,
+"South America","2005","total_calories_non_staple","all",,"R",,,,,"39",,,,0,
+"South America","2006","total_calories_non_staple","all",,"R",,,,,"38",,,,0,
+"South America","2007","total_calories_non_staple","all",,"R",,,,,"38",,,,0,
+"South America","2008","total_calories_non_staple","all",,"R",,,,,"38",,,,0,
+"South America","2009","total_calories_non_staple","all",,"R",,,,,"37",,,,0,
+"South America","2010","total_calories_non_staple","all",,"R",,,,,"37",,,,0,
+"South America","2011","total_calories_non_staple","all",,"R",,,,,"37",,,,0,
+"Asia","1999","total_calories_non_staple","all",,"R",,,,,"61",,,,1,
+"Asia","2000","total_calories_non_staple","all",,"R",,,,,"60",,,,1,
+"Asia","2001","total_calories_non_staple","all",,"R",,,,,"60",,,,1,
+"Asia","2002","total_calories_non_staple","all",,"R",,,,,"59",,,,1,
+"Asia","2003","total_calories_non_staple","all",,"R",,,,,"59",,,,1,
+"Asia","2004","total_calories_non_staple","all",,"R",,,,,"59",,,,1,
+"Asia","2005","total_calories_non_staple","all",,"R",,,,,"57",,,,1,
+"Asia","2006","total_calories_non_staple","all",,"R",,,,,"57",,,,1,
+"Asia","2007","total_calories_non_staple","all",,"R",,,,,"56",,,,1,
+"Asia","2008","total_calories_non_staple","all",,"R",,,,,"56",,,,1,
+"Asia","2009","total_calories_non_staple","all",,"R",,,,,"56",,,,1,
+"Asia","2010","total_calories_non_staple","all",,"R",,,,,"55",,,,1,
+"Asia","2011","total_calories_non_staple","all",,"R",,,,,"55",,,,1,
+"Central Asia","1999","total_calories_non_staple","all",,"R",,,,,"60",,,,0,
+"Central Asia","2000","total_calories_non_staple","all",,"R",,,,,"59",,,,0,
+"Central Asia","2001","total_calories_non_staple","all",,"R",,,,,"59",,,,0,
+"Central Asia","2002","total_calories_non_staple","all",,"R",,,,,"59",,,,0,
+"Central Asia","2003","total_calories_non_staple","all",,"R",,,,,"57",,,,0,
+"Central Asia","2004","total_calories_non_staple","all",,"R",,,,,"56",,,,0,
+"Central Asia","2005","total_calories_non_staple","all",,"R",,,,,"54",,,,0,
+"Central Asia","2006","total_calories_non_staple","all",,"R",,,,,"53",,,,0,
+"Central Asia","2007","total_calories_non_staple","all",,"R",,,,,"53",,,,0,
+"Central Asia","2008","total_calories_non_staple","all",,"R",,,,,"53",,,,0,
+"Central Asia","2009","total_calories_non_staple","all",,"R",,,,,"52",,,,0,
+"Central Asia","2010","total_calories_non_staple","all",,"R",,,,,"51",,,,0,
+"Central Asia","2011","total_calories_non_staple","all",,"R",,,,,"50",,,,0,
+"Eastern Asia","1999","total_calories_non_staple","all",,"R",,,,,"58",,,,0,
+"Eastern Asia","2000","total_calories_non_staple","all",,"R",,,,,"58",,,,0,
+"Eastern Asia","2001","total_calories_non_staple","all",,"R",,,,,"57",,,,0,
+"Eastern Asia","2002","total_calories_non_staple","all",,"R",,,,,"56",,,,0,
+"Eastern Asia","2003","total_calories_non_staple","all",,"R",,,,,"56",,,,0,
+"Eastern Asia","2004","total_calories_non_staple","all",,"R",,,,,"55",,,,0,
+"Eastern Asia","2005","total_calories_non_staple","all",,"R",,,,,"53",,,,0,
+"Eastern Asia","2006","total_calories_non_staple","all",,"R",,,,,"52",,,,0,
+"Eastern Asia","2007","total_calories_non_staple","all",,"R",,,,,"51",,,,0,
+"Eastern Asia","2008","total_calories_non_staple","all",,"R",,,,,"51",,,,0,
+"Eastern Asia","2009","total_calories_non_staple","all",,"R",,,,,"51",,,,0,
+"Eastern Asia","2010","total_calories_non_staple","all",,"R",,,,,"51",,,,0,
+"Eastern Asia","2011","total_calories_non_staple","all",,"R",,,,,"50",,,,0,
+"Southern Asia","1999","total_calories_non_staple","all",,"R",,,,,"64",,,,0,
+"Southern Asia","2000","total_calories_non_staple","all",,"R",,,,,"64",,,,0,
+"Southern Asia","2001","total_calories_non_staple","all",,"R",,,,,"63",,,,0,
+"Southern Asia","2002","total_calories_non_staple","all",,"R",,,,,"63",,,,0,
+"Southern Asia","2003","total_calories_non_staple","all",,"R",,,,,"63",,,,0,
+"Southern Asia","2004","total_calories_non_staple","all",,"R",,,,,"62",,,,0,
+"Southern Asia","2005","total_calories_non_staple","all",,"R",,,,,"62",,,,0,
+"Southern Asia","2006","total_calories_non_staple","all",,"R",,,,,"61",,,,0,
+"Southern Asia","2007","total_calories_non_staple","all",,"R",,,,,"61",,,,0,
+"Southern Asia","2008","total_calories_non_staple","all",,"R",,,,,"60",,,,0,
+"Southern Asia","2009","total_calories_non_staple","all",,"R",,,,,"60",,,,0,
+"Southern Asia","2010","total_calories_non_staple","all",,"R",,,,,"59",,,,0,
+"Southern Asia","2011","total_calories_non_staple","all",,"R",,,,,"59",,,,0,
+"South-eastern Asia","1999","total_calories_non_staple","all",,"R",,,,,"65",,,,0,
+"South-eastern Asia","2000","total_calories_non_staple","all",,"R",,,,,"64",,,,0,
+"South-eastern Asia","2001","total_calories_non_staple","all",,"R",,,,,"63",,,,0,
+"South-eastern Asia","2002","total_calories_non_staple","all",,"R",,,,,"63",,,,0,
+"South-eastern Asia","2003","total_calories_non_staple","all",,"R",,,,,"63",,,,0,
+"South-eastern Asia","2004","total_calories_non_staple","all",,"R",,,,,"63",,,,0,
+"South-eastern Asia","2005","total_calories_non_staple","all",,"R",,,,,"62",,,,0,
+"South-eastern Asia","2006","total_calories_non_staple","all",,"R",,,,,"62",,,,0,
+"South-eastern Asia","2007","total_calories_non_staple","all",,"R",,,,,"61",,,,0,
+"South-eastern Asia","2008","total_calories_non_staple","all",,"R",,,,,"61",,,,0,
+"South-eastern Asia","2009","total_calories_non_staple","all",,"R",,,,,"61",,,,0,
+"South-eastern Asia","2010","total_calories_non_staple","all",,"R",,,,,"61",,,,0,
+"South-eastern Asia","2011","total_calories_non_staple","all",,"R",,,,,"60",,,,0,
+"Western Asia","1999","total_calories_non_staple","all",,"R",,,,,"48",,,,0,
+"Western Asia","2000","total_calories_non_staple","all",,"R",,,,,"48",,,,0,
+"Western Asia","2001","total_calories_non_staple","all",,"R",,,,,"48",,,,0,
+"Western Asia","2002","total_calories_non_staple","all",,"R",,,,,"48",,,,0,
+"Western Asia","2003","total_calories_non_staple","all",,"R",,,,,"47",,,,0,
+"Western Asia","2004","total_calories_non_staple","all",,"R",,,,,"47",,,,0,
+"Western Asia","2005","total_calories_non_staple","all",,"R",,,,,"46",,,,0,
+"Western Asia","2006","total_calories_non_staple","all",,"R",,,,,"46",,,,0,
+"Western Asia","2007","total_calories_non_staple","all",,"R",,,,,"46",,,,0,
+"Western Asia","2008","total_calories_non_staple","all",,"R",,,,,"45",,,,0,
+"Western Asia","2009","total_calories_non_staple","all",,"R",,,,,"45",,,,0,
+"Western Asia","2010","total_calories_non_staple","all",,"R",,,,,"44",,,,0,
+"Western Asia","2011","total_calories_non_staple","all",,"R",,,,,"44",,,,0,
+"Oceania","1999","total_calories_non_staple","all",,"R",,,,,"22",,,,1,
+"Oceania","2000","total_calories_non_staple","all",,"R",,,,,"22",,,,1,
+"Oceania","2001","total_calories_non_staple","all",,"R",,,,,"22",,,,1,
+"Oceania","2002","total_calories_non_staple","all",,"R",,,,,"22",,,,1,
+"Oceania","2003","total_calories_non_staple","all",,"R",,,,,"22",,,,1,
+"Oceania","2004","total_calories_non_staple","all",,"R",,,,,"21",,,,1,
+"Oceania","2005","total_calories_non_staple","all",,"R",,,,,"21",,,,1,
+"Oceania","2006","total_calories_non_staple","all",,"R",,,,,"21",,,,1,
+"Oceania","2007","total_calories_non_staple","all",,"R",,,,,"21",,,,1,
+"Oceania","2008","total_calories_non_staple","all",,"R",,,,,"22",,,,1,
+"Oceania","2009","total_calories_non_staple","all",,"R",,,,,"22",,,,1,
+"Oceania","2010","total_calories_non_staple","all",,"R",,,,,"21",,,,1,
+"Oceania","2011","total_calories_non_staple","all",,"R",,,,,"21",,,,1,
+"Australia and New Zealand","1999","total_calories_non_staple","all",,"R",,,,,"26",,,,0,
+"Australia and New Zealand","2000","total_calories_non_staple","all",,"R",,,,,"26",,,,0,
+"Australia and New Zealand","2001","total_calories_non_staple","all",,"R",,,,,"26",,,,0,
+"Australia and New Zealand","2002","total_calories_non_staple","all",,"R",,,,,"26",,,,0,
+"Australia and New Zealand","2003","total_calories_non_staple","all",,"R",,,,,"25",,,,0,
+"Australia and New Zealand","2004","total_calories_non_staple","all",,"R",,,,,"25",,,,0,
+"Australia and New Zealand","2005","total_calories_non_staple","all",,"R",,,,,"25",,,,0,
+"Australia and New Zealand","2006","total_calories_non_staple","all",,"R",,,,,"25",,,,0,
+"Australia and New Zealand","2007","total_calories_non_staple","all",,"R",,,,,"25",,,,0,
+"Australia and New Zealand","2008","total_calories_non_staple","all",,"R",,,,,"26",,,,0,
+"Australia and New Zealand","2009","total_calories_non_staple","all",,"R",,,,,"25",,,,0,
+"Australia and New Zealand","2010","total_calories_non_staple","all",,"R",,,,,"25",,,,0,
+"Australia and New Zealand","2011","total_calories_non_staple","all",,"R",,,,,"25",,,,0,
+"Melanesia","1999","total_calories_non_staple","all",,"R",,,,,"12",,,,0,
+"Melanesia","2000","total_calories_non_staple","all",,"R",,,,,"12",,,,0,
+"Melanesia","2001","total_calories_non_staple","all",,"R",,,,,"12",,,,0,
+"Melanesia","2002","total_calories_non_staple","all",,"R",,,,,"11",,,,0,
+"Melanesia","2003","total_calories_non_staple","all",,"R",,,,,"11",,,,0,
+"Melanesia","2004","total_calories_non_staple","all",,"R",,,,,"11",,,,0,
+"Melanesia","2005","total_calories_non_staple","all",,"R",,,,,"11",,,,0,
+"Melanesia","2006","total_calories_non_staple","all",,"R",,,,,"11",,,,0,
+"Melanesia","2007","total_calories_non_staple","all",,"R",,,,,"11",,,,0,
+"Melanesia","2008","total_calories_non_staple","all",,"R",,,,,"11",,,,0,
+"Melanesia","2009","total_calories_non_staple","all",,"R",,,,,"11",,,,0,
+"Melanesia","2010","total_calories_non_staple","all",,"R",,,,,"10",,,,0,
+"Melanesia","2011","total_calories_non_staple","all",,"R",,,,,"10",,,,0,
+"Micronesia","1999","total_calories_non_staple","all",,"R",,,,,"7",,,,0,
+"Micronesia","2000","total_calories_non_staple","all",,"R",,,,,"7",,,,0,
+"Micronesia","2001","total_calories_non_staple","all",,"R",,,,,"7",,,,0,
+"Micronesia","2002","total_calories_non_staple","all",,"R",,,,,"7",,,,0,
+"Micronesia","2003","total_calories_non_staple","all",,"R",,,,,"7",,,,0,
+"Micronesia","2004","total_calories_non_staple","all",,"R",,,,,"7",,,,0,
+"Micronesia","2005","total_calories_non_staple","all",,"R",,,,,"7",,,,0,
+"Micronesia","2006","total_calories_non_staple","all",,"R",,,,,"7",,,,0,
+"Micronesia","2007","total_calories_non_staple","all",,"R",,,,,"8",,,,0,
+"Micronesia","2008","total_calories_non_staple","all",,"R",,,,,"8",,,,0,
+"Micronesia","2009","total_calories_non_staple","all",,"R",,,,,"8",,,,0,
+"Micronesia","2010","total_calories_non_staple","all",,"R",,,,,"8",,,,0,
+"Micronesia","2011","total_calories_non_staple","all",,"R",,,,,"9",,,,0,
+"Polynesia","1999","total_calories_non_staple","all",,"R",,,,,"22",,,,0,
+"Polynesia","2000","total_calories_non_staple","all",,"R",,,,,"22",,,,0,
+"Polynesia","2001","total_calories_non_staple","all",,"R",,,,,"22",,,,0,
+"Polynesia","2002","total_calories_non_staple","all",,"R",,,,,"22",,,,0,
+"Polynesia","2003","total_calories_non_staple","all",,"R",,,,,"22",,,,0,
+"Polynesia","2004","total_calories_non_staple","all",,"R",,,,,"22",,,,0,
+"Polynesia","2005","total_calories_non_staple","all",,"R",,,,,"22",,,,0,
+"Polynesia","2006","total_calories_non_staple","all",,"R",,,,,"22",,,,0,
+"Polynesia","2007","total_calories_non_staple","all",,"R",,,,,"22",,,,0,
+"Polynesia","2008","total_calories_non_staple","all",,"R",,,,,"22",,,,0,
+"Polynesia","2009","total_calories_non_staple","all",,"R",,,,,"22",,,,0,
+"Polynesia","2010","total_calories_non_staple","all",,"R",,,,,"22",,,,0,
+"Polynesia","2011","total_calories_non_staple","all",,"R",,,,,"22",,,,0,
+"Africa","2000","undernourishment_prev","all",,"S",,,,,"24.4",,,,1,
+"Asia","2000","undernourishment_prev","all",,"S",,,,,"16.8",,,,1,
+"Australia and New Zealand","2000","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Caribbean","2000","undernourishment_prev","all",,"S",,,,,"23.7",,,,0,
+"Central America","2000","undernourishment_prev","all",,"S",,,,,"8.1",,,,0,
+"Central Asia","2000","undernourishment_prev","all",,"S",,,,,"12.7",,,,0,
+"Eastern Africa","2000","undernourishment_prev","all",,"S",,,,,"39.1",,,,0,
+"Eastern Asia","2000","undernourishment_prev","all",,"S",,,,,"14.7",,,,0,
+"Eastern Europe","2000","undernourishment_prev","all",,"S",,,,,"3.9",,,,0,
+"Europe","2000","undernourishment_prev","all",,"S",,,,,,,,,1,
+"Latin America and the Caribbean","2000","undernourishment_prev","all",,"S",,,,,"11.9",,,,1,
+"Melanesia","2000","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Middle Africa","2000","undernourishment_prev","all",,"S",,,,,"39.2",,,,0,
+"Northern Africa","2000","undernourishment_prev","all",,"S",,,,,"6.7",,,,0,
+"Northern America","2000","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Northern Europe","2000","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Oceania","2000","undernourishment_prev","all",,"S",,,,,"5.4",,,,1,
+"Polynesia","2000","undernourishment_prev","all",,"S",,,,,"4.6",,,,0,
+"South America","2000","undernourishment_prev","all",,"S",,,,,"12.2",,,,0,
+"Southern Africa","2000","undernourishment_prev","all",,"S",,,,,"7.3",,,,0,
+"Southern Asia","2000","undernourishment_prev","all",,"S",,,,,"18.2",,,,0,
+"Southern Europe","2000","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Western Africa","2000","undernourishment_prev","all",,"S",,,,,"15.3",,,,0,
+"Western Asia","2000","undernourishment_prev","all",,"S",,,,,"10.3",,,,0,
+"Western Europe","2000","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Africa","2004","undernourishment_prev","all",,"S",,,,,"22.1",,,,1,
+"Asia","2004","undernourishment_prev","all",,"S",,,,,"17.7",,,,1,
+"Australia and New Zealand","2004","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Caribbean","2004","undernourishment_prev","all",,"S",,,,,"24.5",,,,0,
+"Central America","2004","undernourishment_prev","all",,"S",,,,,"8.9",,,,0,
+"Central Asia","2004","undernourishment_prev","all",,"S",,,,,"12.3",,,,0,
+"Eastern Africa","2004","undernourishment_prev","all",,"S",,,,,"35.6",,,,0,
+"Eastern Asia","2004","undernourishment_prev","all",,"S",,,,,"14.2",,,,0,
+"Eastern Europe","2004","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Europe","2004","undernourishment_prev","all",,"S",,,,,,,,,1,
+"Latin America and the Caribbean","2004","undernourishment_prev","all",,"S",,,,,"9.8",,,,1,
+"Melanesia","2004","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Middle Africa","2004","undernourishment_prev","all",,"S",,,,,"33.9",,,,0,
+"Northern Africa","2004","undernourishment_prev","all",,"S",,,,,"6.3",,,,0,
+"Northern America","2004","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Northern Europe","2004","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Oceania","2004","undernourishment_prev","all",,"S",,,,,"5.7",,,,1,
+"Polynesia","2004","undernourishment_prev","all",,"S",,,,,"3.7",,,,0,
+"South America","2004","undernourishment_prev","all",,"S",,,,,"8.6",,,,0,
+"Southern Africa","2004","undernourishment_prev","all",,"S",,,,,"6.4",,,,0,
+"Southern Asia","2004","undernourishment_prev","all",,"S",,,,,"21.9",,,,0,
+"Southern Europe","2004","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Western Africa","2004","undernourishment_prev","all",,"S",,,,,"13.1",,,,0,
+"Western Asia","2004","undernourishment_prev","all",,"S",,,,,"9.7",,,,0,
+"Western Europe","2004","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Africa","2008","undernourishment_prev","all",,"S",,,,,"20",,,,1,
+"Asia","2008","undernourishment_prev","all",,"S",,,,,"14.7",,,,1,
+"Australia and New Zealand","2008","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Caribbean","2008","undernourishment_prev","all",,"S",,,,,"21.8",,,,0,
+"Central America","2008","undernourishment_prev","all",,"S",,,,,"7.4",,,,0,
+"Central Asia","2008","undernourishment_prev","all",,"S",,,,,"8.2",,,,0,
+"Eastern Africa","2008","undernourishment_prev","all",,"S",,,,,"33",,,,0,
+"Eastern Asia","2008","undernourishment_prev","all",,"S",,,,,"12.5",,,,0,
+"Eastern Europe","2008","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Europe","2008","undernourishment_prev","all",,"S",,,,,,,,,1,
+"Latin America and the Caribbean","2008","undernourishment_prev","all",,"S",,,,,"7.3",,,,1,
+"Melanesia","2008","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Middle Africa","2008","undernourishment_prev","all",,"S",,,,,"29.7",,,,0,
+"Northern Africa","2008","undernourishment_prev","all",,"S",,,,,"5.3",,,,0,
+"Northern America","2008","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Northern Europe","2008","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Oceania","2008","undernourishment_prev","all",,"S",,,,,"5.1",,,,1,
+"Polynesia","2008","undernourishment_prev","all",,"S",,,,,"3.9",,,,0,
+"South America","2008","undernourishment_prev","all",,"S",,,,,"5.7",,,,0,
+"Southern Africa","2008","undernourishment_prev","all",,"S",,,,,"7.2",,,,0,
+"Southern Asia","2008","undernourishment_prev","all",,"S",,,,,"17.6",,,,0,
+"Southern Europe","2008","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Western Africa","2008","undernourishment_prev","all",,"S",,,,,"10.7",,,,0,
+"Western Asia","2008","undernourishment_prev","all",,"S",,,,,"9.1",,,,0,
+"Western Europe","2008","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Africa","2012","undernourishment_prev","all",,"S",,,,,"18.6",,,,1,
+"Asia","2012","undernourishment_prev","all",,"S",,,,,"12.9",,,,1,
+"Australia and New Zealand","2012","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Caribbean","2012","undernourishment_prev","all",,"S",,,,,"19.3",,,,0,
+"Central America","2012","undernourishment_prev","all",,"S",,,,,"7.2",,,,0,
+"Central Asia","2012","undernourishment_prev","all",,"S",,,,,"6.2",,,,0,
+"Eastern Africa","2012","undernourishment_prev","all",,"S",,,,,"30.9",,,,0,
+"Eastern Asia","2012","undernourishment_prev","all",,"S",,,,,"9.9",,,,0,
+"Eastern Europe","2012","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Europe","2012","undernourishment_prev","all",,"S",,,,,,,,,1,
+"Latin America and the Caribbean","2012","undernourishment_prev","all",,"S",,,,,"6.4",,,,1,
+"Melanesia","2012","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Middle Africa","2012","undernourishment_prev","all",,"S",,,,,"26",,,,0,
+"Northern Africa","2012","undernourishment_prev","all",,"S",,,,,"8.3",,,,0,
+"Northern America","2012","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Northern Europe","2012","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Oceania","2012","undernourishment_prev","all",,"S",,,,,"5.4",,,,1,
+"Polynesia","2012","undernourishment_prev","all",,"S",,,,,"3.7",,,,0,
+"South America","2012","undernourishment_prev","all",,"S",,,,,"4.7",,,,0,
+"Southern Africa","2012","undernourishment_prev","all",,"S",,,,,"6.9",,,,0,
+"Southern Asia","2012","undernourishment_prev","all",,"S",,,,,"17.1",,,,0,
+"Southern Europe","2012","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Western Africa","2012","undernourishment_prev","all",,"S",,,,,"10.4",,,,0,
+"Western Asia","2012","undernourishment_prev","all",,"S",,,,,"9.5",,,,0,
+"Western Europe","2012","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Africa","2016","undernourishment_prev","all",,"S",,,,,"19.7",,,,1,
+"Asia","2016","undernourishment_prev","all",,"S",,,,,"11.5",,,,1,
+"Australia and New Zealand","2016","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Caribbean","2016","undernourishment_prev","all",,"S",,,,,"17.1",,,,0,
+"Central America","2016","undernourishment_prev","all",,"S",,,,,"6.3",,,,0,
+"Central Asia","2016","undernourishment_prev","all",,"S",,,,,"6",,,,0,
+"Eastern Africa","2016","undernourishment_prev","all",,"S",,,,,"31.6",,,,0,
+"Eastern Asia","2016","undernourishment_prev","all",,"S",,,,,"8.5",,,,0,
+"Eastern Europe","2016","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Europe","2016","undernourishment_prev","all",,"S",,,,,,,,,1,
+"Latin America and the Caribbean","2016","undernourishment_prev","all",,"S",,,,,"6.1",,,,1,
+"Melanesia","2016","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Middle Africa","2016","undernourishment_prev","all",,"S",,,,,"25.7",,,,0,
+"Northern Africa","2016","undernourishment_prev","all",,"S",,,,,"8.5",,,,0,
+"Northern America","2016","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Northern Europe","2016","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Oceania","2016","undernourishment_prev","all",,"S",,,,,"6.6",,,,1,
+"Polynesia","2016","undernourishment_prev","all",,"S",,,,,"3.9",,,,0,
+"South America","2016","undernourishment_prev","all",,"S",,,,,"4.9",,,,0,
+"Southern Africa","2016","undernourishment_prev","all",,"S",,,,,"8.2",,,,0,
+"Southern Asia","2016","undernourishment_prev","all",,"S",,,,,"15.1",,,,0,
+"Southern Europe","2016","undernourishment_prev","all",,"S",,,,,,,,,0,
+"Western Africa","2016","undernourishment_prev","all",,"S",,,,,"12.8",,,,0,
+"Western Asia","2016","undernourishment_prev","all",,"S",,,,,"11.1",,,,0,
+"Western Europe","2016","undernourishment_prev","all",,"S",,,,,,,,,0,
