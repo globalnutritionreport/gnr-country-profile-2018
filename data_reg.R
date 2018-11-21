@@ -458,6 +458,7 @@ total_calories_non_staple$indicator = "total_calories_non_staple"
 total_calories_non_staple$disaggregation = "all"
 total_calories_non_staple = subset(total_calories_non_staple,region %in% unique(master_dat_reg$region))
 total_calories_non_staple = subset(total_calories_non_staple,year %in% c(2001,2004,2008,2012,2013))
+total_calories_non_staple$value = 100-as.numeric(total_calories_non_staple$value)
 master_dat_fix_list[[master_dat_fix_index]] = total_calories_non_staple
 master_dat_fix_index = master_dat_fix_index + 1
 

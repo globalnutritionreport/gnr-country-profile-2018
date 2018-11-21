@@ -144,7 +144,7 @@ browser = webdriver.Chrome("/home/alex/chromedriver")
 browser.maximize_window()
 browser.implicitly_wait(30) # Configure the WebDriver to wait up to 30 seconds for each page to load
 
-browser.get("https://dev.globalnutritionreport.org/admin") # Load page
+browser.get("https://gnr.fffdev.co/admin") # Load page
 queries = []
 userInput = {}
 userInput["input_id"] = "id_username"
@@ -177,7 +177,7 @@ for region_name in nested_countries:
     profile_title = "{} {} nutrition profile".format(region_name, "regional")
     seo_title = profile_title
 
-    browser.get("https://dev.globalnutritionreport.org/admin") # Load page
+    browser.get("https://gnr.fffdev.co/admin") # Load page
 
     profile_button = browser.find_element_by_xpath("//*[text()='Profiles']")
     scroll_and_click(browser, profile_button)
@@ -217,7 +217,7 @@ for region_name in nested_countries:
     image_file_field.send_keys(img_path)
 
     image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-    image_collection_field.select_by_value('6')
+    image_collection_field.select_by_value('8')
 
     upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
     scroll_and_click(browser, upload_button)
@@ -236,7 +236,7 @@ for region_name in nested_countries:
     document_file_field.send_keys(pdf_path)
 
     document_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-    document_collection_field.select_by_value('6')
+    document_collection_field.select_by_value('8')
 
     upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
     scroll_and_click(browser, upload_button)
@@ -255,7 +255,7 @@ for region_name in nested_countries:
     image_file_field.send_keys(img_path2)
 
     image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-    image_collection_field.select_by_value('6')
+    image_collection_field.select_by_value('8')
 
     upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
     scroll_and_click(browser, upload_button)
@@ -277,7 +277,7 @@ for region_name in nested_countries:
         profile_title = "{} {} nutrition profile".format(subregion_name, "subregional")
         seo_title = profile_title
 
-        browser.get("https://dev.globalnutritionreport.org/admin") # Load page
+        browser.get("https://gnr.fffdev.co/admin") # Load page
 
         profile_button = browser.find_element_by_xpath("//*[text()='Profiles']")
         scroll_and_click(browser, profile_button)
@@ -324,7 +324,7 @@ for region_name in nested_countries:
         image_file_field.send_keys(img_path)
 
         image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-        image_collection_field.select_by_value('6')
+        image_collection_field.select_by_value('8')
 
         upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
         scroll_and_click(browser, upload_button)
@@ -343,7 +343,7 @@ for region_name in nested_countries:
         document_file_field.send_keys(pdf_path)
 
         document_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-        document_collection_field.select_by_value('6')
+        document_collection_field.select_by_value('8')
 
         upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
         scroll_and_click(browser, upload_button)
@@ -362,7 +362,7 @@ for region_name in nested_countries:
         image_file_field.send_keys(img_path2)
 
         image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-        image_collection_field.select_by_value('6')
+        image_collection_field.select_by_value('8')
 
         upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
         scroll_and_click(browser, upload_button)
@@ -384,7 +384,7 @@ for region_name in nested_countries:
             profile_title = "{} {} nutrition profile".format(country_name, "country")
             seo_title = profile_title
 
-            browser.get("https://dev.globalnutritionreport.org/admin") # Load page
+            browser.get("https://gnr.fffdev.co/admin") # Load page
 
             profile_button = browser.find_element_by_xpath("//*[text()='Profiles']")
             scroll_and_click(browser, profile_button)
@@ -431,7 +431,7 @@ for region_name in nested_countries:
             image_file_field.send_keys(img_path)
 
             image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-            image_collection_field.select_by_value('6')
+            image_collection_field.select_by_value('8')
 
             upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
             scroll_and_click(browser, upload_button)
@@ -450,7 +450,7 @@ for region_name in nested_countries:
             document_file_field.send_keys(pdf_path)
 
             document_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-            document_collection_field.select_by_value('6')
+            document_collection_field.select_by_value('8')
 
             upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
             scroll_and_click(browser, upload_button)
@@ -469,7 +469,7 @@ for region_name in nested_countries:
             image_file_field.send_keys(img_path2)
 
             image_collection_field = Select(browser.find_elements_by_xpath("//*[@id='id_collection']")[0])
-            image_collection_field.select_by_value('6')
+            image_collection_field.select_by_value('8')
 
             upload_button = browser.find_elements_by_xpath('//*[@type="submit"]')[4]
             scroll_and_click(browser, upload_button)

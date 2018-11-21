@@ -184,7 +184,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 ####End setup####
 ####Loop####
 # countries = c("Asia","Africa","Latin America and the Caribbean","Western Asia","Western Europe")
-# countries = c("Asia")
+# countries = c("Polynesia")
 for(this.country in countries){
   message(this.country)
   real.country = this.country
@@ -687,6 +687,13 @@ for(this.country in countries){
       cdata$value = cdata$value*100
     }
     cdata = subset(cdata, !is.na(value))
+    cdata = subset(cdata, disagg.value %in% disagg.values)
+    if(nrow(cdata)==0){
+      return(no.data)
+    }
+    if(sum(cdata$value)==0){
+      return(no.data)
+    }
     cdata <- cdata[order(cdata$year),]
     if(factor.years){
       cdata$year = as.factor(cdata$year)
