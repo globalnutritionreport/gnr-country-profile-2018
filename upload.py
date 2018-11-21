@@ -140,11 +140,13 @@ for index, row in countries.iterrows():
         nested_countries[region][subregion] = list()
     nested_countries[region][subregion].append(country)
 
+admin_url = "https://gnr.fffdev.co/admin"
+
 browser = webdriver.Chrome("/home/alex/chromedriver")
 browser.maximize_window()
 browser.implicitly_wait(30) # Configure the WebDriver to wait up to 30 seconds for each page to load
 
-browser.get("https://gnr.fffdev.co/admin") # Load page
+browser.get(admin_url) # Load page
 queries = []
 userInput = {}
 userInput["input_id"] = "id_username"
@@ -177,7 +179,7 @@ for region_name in nested_countries:
     profile_title = "{} {} nutrition profile".format(region_name, "regional")
     seo_title = profile_title
 
-    browser.get("https://gnr.fffdev.co/admin") # Load page
+    browser.get(admin_url) # Load page
 
     profile_button = browser.find_element_by_xpath("//*[text()='Profiles']")
     scroll_and_click(browser, profile_button)
@@ -277,7 +279,7 @@ for region_name in nested_countries:
         profile_title = "{} {} nutrition profile".format(subregion_name, "subregional")
         seo_title = profile_title
 
-        browser.get("https://gnr.fffdev.co/admin") # Load page
+        browser.get(admin_url) # Load page
 
         profile_button = browser.find_element_by_xpath("//*[text()='Profiles']")
         scroll_and_click(browser, profile_button)
@@ -384,7 +386,7 @@ for region_name in nested_countries:
             profile_title = "{} {} nutrition profile".format(country_name, "country")
             seo_title = profile_title
 
-            browser.get("https://gnr.fffdev.co/admin") # Load page
+            browser.get(admin_url) # Load page
 
             profile_button = browser.find_element_by_xpath("//*[text()='Profiles']")
             scroll_and_click(browser, profile_button)
