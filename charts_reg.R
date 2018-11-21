@@ -183,7 +183,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 
 ####End setup####
 ####Loop####
-countries = c("Asia","Africa","Latin America and the Caribbean","Western Asia","Western Europe")
+# countries = c("Asia","Africa","Latin America and the Caribbean","Western Asia","Western Europe")
 # countries = c("Asia")
 for(this.country in countries){
   message(this.country)
@@ -782,11 +782,11 @@ for(this.country in countries){
     # max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
     # wasting_years = max(subset(wasting_years,count==max_wasting_count)$year)
     wasting_years = 2017
-    c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Girls","Boys","Both"),fill=lightBlueYellowRed,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
+    c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Children under 5"),fill=lightBlueYellowRed,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
   }else{c8=no.data}
   
-  c9 = grouped_line(countrydat, "stunting_percent","gender",c("Girls","Boys","Both"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
-  c10 = grouped_line(countrydat, "overweight_percent","gender",c("Girls","Boys","Both"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
+  c9 = grouped_line(countrydat, "stunting_percent","gender",c("Children under 5"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
+  c10 = grouped_line(countrydat, "overweight_percent","gender",c("Children under 5"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
   wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="income" & !is.na(value))
   if(nrow(wasting_dat)>0){
     wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
@@ -1160,43 +1160,48 @@ for(this.country in countries){
   c29data$value = as.numeric(c29data$value)
   c29data$value= c29data$value * 1000
   c29data = subset(c29data, !is.na(value))
-  c29data = c29data[c("year","indicator","value")]
-  c29.oda.max <- max(c29data$value,na.rm=TRUE)
-  for(j in 1:length(indicators)){
-    ind = indicators[j]
-    indname = c29names[j]
-    c29data$indicator[which(c29data$indicator==ind)] = indname
+  if(sum(c29data$value)>0){
+    c29data = c29data[c("year","indicator","value")]
+    c29.oda.max <- max(c29data$value,na.rm=TRUE)
+    for(j in 1:length(indicators)){
+      ind = indicators[j]
+      indname = c29names[j]
+      c29data$indicator[which(c29data$indicator==ind)] = indname
+    }
+    
+    c29.key.data.1 = data.frame(year=as.numeric(rep(NA,1)),indicator=c29names[1],value=as.numeric(rep(NA,1)))
+    c29 = ggplot(c29data,aes(x=year,y=value)) +
+      geom_area(alpha=1,show.legend=F,color=blue,fill=yellow) +
+      geom_point(data=c29.key.data.1,aes(group=indicator,fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
+      yellowFill +
+      guides(fill=guide_legend(title=element_blank(),byrow=TRUE),color=guide_legend(title=element_blank(),byrow=TRUE)) +
+      simple_style  +
+      scale_y_continuous(
+        expand = c(0,0),
+        limits=c(0,max(c29.oda.max*1.1,1)),
+      ) +
+      theme(
+        legend.position="top"
+        ,legend.box = "vertical"
+        ,legend.text = element_text(size=25,color=blue,family="Averta Regular")
+        ,legend.justification=c(0,0)
+        ,legend.box.just = "left"
+        ,legend.direction="vertical"
+        ,axis.title.x=element_blank()
+        ,axis.title.y=element_text(size=20,color=blue,family="Averta Regular")
+        ,axis.ticks=element_blank()
+        ,axis.line.y = element_blank()
+        ,axis.line.x = element_line(color=blue, size = 1.1)
+        ,axis.text.y = element_text(size=25,color=dark.grey,family="Averta Regular")
+        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
+        ,panel.grid.major.y = element_line(color=dark.grey)
+        ,legend.background = element_rect(fill = "transparent", colour = "transparent")
+        ,legend.key.width = unit(1,"cm")
+      ) + labs(y = y.lab)
+  }else{
+    c29 = no.data
   }
   
-  c29.key.data.1 = data.frame(year=as.numeric(rep(NA,1)),indicator=c29names[1],value=as.numeric(rep(NA,1)))
-  c29 = ggplot(c29data,aes(x=year,y=value)) +
-    geom_area(alpha=1,show.legend=F,color=blue,fill=yellow) +
-    geom_point(data=c29.key.data.1,aes(group=indicator,fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
-    yellowFill +
-    guides(fill=guide_legend(title=element_blank(),byrow=TRUE),color=guide_legend(title=element_blank(),byrow=TRUE)) +
-    simple_style  +
-    scale_y_continuous(
-      expand = c(0,0),
-      limits=c(0,max(c29.oda.max*1.1,1)),
-      ) +
-    theme(
-      legend.position="top"
-      ,legend.box = "vertical"
-      ,legend.text = element_text(size=25,color=blue,family="Averta Regular")
-      ,legend.justification=c(0,0)
-      ,legend.box.just = "left"
-      ,legend.direction="vertical"
-      ,axis.title.x=element_blank()
-      ,axis.title.y=element_text(size=20,color=blue,family="Averta Regular")
-      ,axis.ticks=element_blank()
-      ,axis.line.y = element_blank()
-      ,axis.line.x = element_line(color=blue, size = 1.1)
-      ,axis.text.y = element_text(size=25,color=dark.grey,family="Averta Regular")
-      ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
-      ,panel.grid.major.y = element_line(color=dark.grey)
-      ,legend.background = element_rect(fill = "transparent", colour = "transparent")
-      ,legend.key.width = unit(1,"cm")
-    ) + labs(y = y.lab)
   #Have both c1a and c1b
   if(!c1a.missing && !c1b.missing){
     Cairo(family="Averta Regular",file="c1a.png",width=400,height=600,units="px",bg="white")

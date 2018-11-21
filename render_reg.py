@@ -240,7 +240,7 @@ class ReportMaker(object):
 if __name__ == "__main__":
     countries = list(dataDictionary.keys())
     countries.sort()
-    countries = ["Asia","Africa","Latin America and the Caribbean","Western Asia","Western Europe"]
+    # countries = ["Asia","Africa","Latin America and the Caribbean","Western Asia","Western Europe"]
     for country in countries:
         print(country)
         safeFileName = "".join([c for c in country.replace(" ", "_") if re.match(r'\w', c)])

@@ -383,14 +383,14 @@ master_dat_index = master_dat_index + 1
 # dat = read.xlsx("CHILD FEEDING - Differences in infant and young child feeding practices.xlsx",rows=c(2:197))
 # dat = subset(dat,X1!="ISO")
 # indicators = c(
-#   "early_initiation",
-#   "exclusive_breastfeeding",
-#   "solid_foods",
-#   "minimum_meal",
-#   "minimum_diet_diversity",
-#   "minimum_accept_diet",
-#   "continued_breastfeeding_1yr",
-#   "continued_breastfeeding_2yr"
+  # "early_initiation",
+  # "exclusive_breastfeeding",
+  # "solid_foods",
+  # "minimum_meal",
+  # "minimum_diet_diversity",
+  # "minimum_accept_diet",
+  # "continued_breastfeeding_1yr",
+  # "continued_breastfeeding_2yr"
 # )
 # disagg.values = c("Lowest quintile","Highest quintile")
 # start_col = 3

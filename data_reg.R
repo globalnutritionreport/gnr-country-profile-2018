@@ -60,6 +60,37 @@ latest.year.inds = c("coexistence",
 
 just.recips = c("ODA_received","ODA_specific")
 
+# three year avgs
+indicators = c(
+  "stunting_percent",
+  "overweight_percent",
+  "continued_breastfeeding_2yr",
+  "continued_breastfeeding_1yr",
+  "minimum_accept_diet",
+  "minimum_diet_diversity",
+  "minimum_meal",
+  "solid_foods",
+  "exclusive_breastfeeding",
+  "early_initiation"
+)
+to_average = data.table(subset(master_dat,indicator %in% indicators))
+master_dat = subset(master_dat,!indicator %in% indicators)
+year_seq = c(1999,2005,2010,2016)
+to_average$old.year = to_average$year
+to_average$year = NA
+for(i in 2:length(year_seq)){
+  start = year_seq[i-1]
+  end = year_seq[i]
+  if(i==length(year_seq)){
+    to_average$year[which(to_average$old.year>=start & to_average$old.year<=end)] = round((end+start)/2)
+  }else{
+    to_average$year[which(to_average$old.year>=start & to_average$old.year<end)] = round((end+start)/2)
+  }
+}
+to_average$old.year = NULL
+
+master_dat = rbind(master_dat,to_average)
+
 indicators = unique(master_dat$indicator)
 for(this.indicator in indicators){
   master_dat_sub = subset(master_dat,indicator==this.indicator)
@@ -92,7 +123,7 @@ for(this.indicator in indicators){
         value=weighted.mean(as.numeric(value),total.pop),
         value.sum=sum(as.numeric(value)),
         total.pop=sum(as.numeric(total.pop)),
-        n=nrow(.SD)
+        n=length(unique(iso3))
       ),by=.(region,year,indicator,disaggregation,disagg.value,component,rec,unit,year_range)]
       dat_reg$regional = 1
       master_dat_reg_list[[master_dat_reg_index]] = dat_reg
@@ -151,7 +182,7 @@ for(this.indicator in indicators){
         value=weighted.mean(as.numeric(value),total.pop),
         value.sum=sum(as.numeric(value)),
         total.pop=sum(as.numeric(total.pop)),
-        n=nrow(.SD)
+        n=length(unique(iso3))
       ),by=.(subregion,year,indicator,disaggregation,disagg.value,component,rec,unit,year_range)]
       dat_reg$regional = 0
       setnames(dat_reg,"subregion","region")
@@ -205,32 +236,6 @@ sanitation$value.sum = NA
 sanitation$value.unweighted = NA
 sanitation$sanitation.sum = NULL
 master_dat_reg = rbind(master_dat_reg,sanitation)
-
-# Three year avgs for under5s
-indicators = c("stunting_percent","overweight_percent")
-to_average = subset(master_dat_reg,indicator %in% indicators)
-master_dat_reg = subset(master_dat_reg,!indicator %in% indicators)
-year_seq = c(1999,2005,2010,2016)
-to_average$old.year = to_average$year
-to_average$year = NA
-for(i in 2:length(year_seq)){
-  start = year_seq[i-1]
-  end = year_seq[i]
-  if(i==length(year_seq)){
-    to_average$year[which(to_average$old.year>=start & to_average$old.year<=end)] = round((end+start)/2)
-  }else{
-    to_average$year[which(to_average$old.year>=start & to_average$old.year<end)] = round((end+start)/2)
-  }
-}
-to_average = to_average[,.(
-  value.unweighted=mean(as.numeric(value)),
-  value=weighted.mean(as.numeric(value),total.pop),
-  value.sum=sum(as.numeric(value)),
-  total.pop=sum(as.numeric(total.pop)),
-  n=sum(n)
-),by=.(region,year,indicator,disaggregation,disagg.value,component,rec,unit,year_range)]
-to_average$regional = master_dat_class_list[to_average$region]
-master_dat_reg = rbindlist(list(master_dat_reg,to_average),fill=T)
 
 
 # Fix data here
@@ -296,7 +301,7 @@ stunting = melt(stunting,id.vars="region",variable.name="year")
 stunting$indicator = "stunting_percent"
 stunting$component = "C"
 stunting$disaggregation = "gender"
-stunting$disagg.value = "Both"
+stunting$disagg.value = "Children under 5"
 # unique(stunting$region) %in% unique(master_dat_reg$region)
 master_dat_fix_list[[master_dat_fix_index]] = stunting
 master_dat_fix_index = master_dat_fix_index + 1
@@ -320,7 +325,7 @@ overweight = melt(overweight,id.vars="region",variable.name="year")
 overweight$indicator = "overweight_percent"
 overweight$component = "C"
 overweight$disaggregation = "gender"
-overweight$disagg.value = "Both"
+overweight$disagg.value = "Children under 5"
 # unique(overweight$region) %in% unique(master_dat_reg$region)
 master_dat_fix_list[[master_dat_fix_index]] = overweight
 master_dat_fix_index = master_dat_fix_index + 1
@@ -344,7 +349,7 @@ wasting = melt(wasting,id.vars="region",variable.name="year")
 wasting$indicator = "wasting_percent"
 wasting$component = "C"
 wasting$disaggregation = "gender"
-wasting$disagg.value = "Both"
+wasting$disagg.value = "Children under 5"
 # unique(wasting$region) %in% unique(master_dat_reg$region)
 master_dat_fix_list[[master_dat_fix_index]] = wasting
 master_dat_fix_index = master_dat_fix_index + 1

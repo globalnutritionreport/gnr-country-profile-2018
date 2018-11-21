@@ -185,6 +185,23 @@ def indicator_n(ctryDat, indicator):
         return "NA"
 
 
+def indicator_n_max(ctryDat, indicator):
+    try:
+        row = ctryDat.loc[(ctryDat["indicator"] == indicator)]
+        max_year = row["year"].max()
+        max_row = row[(row["year"] == max_year)].iloc[0]
+        return max_row["n"]
+    except IndexError:
+        return "NA"
+
+
+def indicator_n_disagg(ctryDat, indicator, disaggregation):
+    try:
+        return ctryDat.loc[(ctryDat["indicator"] == indicator) & (ctryDat["disaggregation"] == disaggregation)].iloc[0]["n"]
+    except IndexError:
+        return "NA"
+
+
 def indicator_frac(ctryDat, indicator, value):
     try:
         row = ctryDat.loc[(ctryDat["indicator"] == indicator) & (ctryDat["value"] == value)].iloc[0]
@@ -314,7 +331,61 @@ for country in dataDictionary.keys():
     # dataDictionary[country]["table8"][4][4] = safeFormat(year(ctryDat, "iron_and_folic"))
     #
     # dataDictionary[country]["table8"][5][1] = safeFormat(indicator_disagg(ctryDat, "iodised_salt", "all"))
-    # dataDictionary[country]["table8"][5][4] = safeFormat(year(ctryDat, "iodised_salt"))
+    # dataDictionary[country]["table8"][5][4] = safeFormat(year(ctryDat, "iodised_salt
+    dataDictionary[country]["pov_percent_n"] = safeFormat(indicator_n(ctryDat, "190_percent"))
+    n_indicators = [
+        "190_percent",
+        "GDP_capita_PPP",
+        "fruit_veg_availability",
+        "female_secondary_enroll_net",
+        "basic_water",
+        "basic_sanitation",
+        "agriculture_expenditure",
+        "coexistence",
+        "adolescent_underweight",
+        "adolescent_overweight",
+        "adolescent_obesity",
+        "adult_diabetes",
+        "adult_overweight",
+        "adult_obesity",
+        "adult_blood_pressure",
+        "adult_anemia",
+        "adult_sodium",
+        "Calcium"
+    ]
+    for n_indicator in n_indicators:
+        dataDictionary[country][n_indicator+"_n"] = safeFormat(indicator_n(ctryDat, n_indicator))
+    n_indicators_disagg = [
+        ("wasting_percent", "income"),
+        ("stunting_percent", "income"),
+        ("overweight_percent", "income"),
+        ("wasting_percent", "location"),
+        ("stunting_percent", "location"),
+        ("overweight_percent", "location"),
+    ]
+    for n_indicator, disagg in n_indicators_disagg:
+        dataDictionary[country][n_indicator+"_"+disagg+"_n"] = safeFormat(indicator_n_disagg(ctryDat, n_indicator, disagg))
+
+    c_feeding_n_max = 0
+    c_feeding_inds = [
+        "continued_breastfeeding_2yr",
+        "continued_breastfeeding_1yr",
+        "minimum_accept_diet",
+        "minimum_diet_diversity",
+        "minimum_meal",
+        "solid_foods",
+        "exclusive_breastfeeding",
+        "early_initiation"
+    ]
+    for ind in c_feeding_inds:
+        this_n = indicator_n_max(ctryDat, ind)
+        try:
+            if this_n > c_feeding_n_max:
+                c_feeding_n_max = this_n
+        except TypeError:
+            pass
+    dataDictionary[country]["c_feeding_n"] = safeFormat(c_feeding_n_max)
+
 
 generic_style = [
     ('TEXTCOLOR', (0, 0), (-1, -1), dark_grey),
