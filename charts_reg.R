@@ -1079,6 +1079,23 @@ for(this.country in countries){
   }
  
   # Chart 28
+  food.order = c(
+    "Calcium",
+    "Fruit",
+    "Legumes",
+    "Milk",
+    "Nuts and seeds",
+    "Omega 3",
+    "Polyunsaturated fat",
+    "Processed meat",
+    "Red meat",
+    "Salt",
+    "Saturated fat",
+    "Sugar-sweetened beverages",
+    "Trans fat",
+    "Vegetables",
+    "Whole grain"
+  )
   c28.data = subset(countrydat,component == "M")
   if(nrow(c28.data)>0){
     this.region = subregion_list[real.country][[1]]
@@ -1112,9 +1129,7 @@ for(this.country in countries){
     c28.data$percent[which(c28.data$percent>2)] = 2.1
     c28.data = data.table(c28.data)
     c28.data[,percent:=calc_outlier(.SD),by=.(food)]
-    nat.order = subset(c28.data,class=="National")
-    nat.order = nat.order[order(nat.order$food),]
-    c28.data$food = factor(c28.data$food,levels=rev(nat.order$food))
+    c28.data$food = factor(c28.data$food,levels=rev(food.order))
     c28.data = c28.data[order(-c28.data$food),]
     if(regional==1){
       c28.data$column = c(rep(1,21),rep(2,24))
