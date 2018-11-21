@@ -140,7 +140,7 @@ for index, row in countries.iterrows():
         nested_countries[region][subregion] = list()
     nested_countries[region][subregion].append(country)
 
-admin_url = "https://staging.globalnutritionreport.org/admin"
+admin_url = "https://gnr.fffdev.co/admin"
 
 browser = webdriver.Chrome("/home/alex/chromedriver")
 browser.maximize_window()
