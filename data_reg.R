@@ -481,6 +481,16 @@ undernourishment_prev = subset(undernourishment_prev,region %in% unique(master_d
 master_dat_fix_list[[master_dat_fix_index]] = undernourishment_prev
 master_dat_fix_index = master_dat_fix_index + 1
 
+master_dat_reg = subset(master_dat_reg,indicator!="fruit_veg_availability")
+food = read.csv("UNDERLYING_Food stuffs2.csv",na.strings="",as.is=T,check.names=F)
+names(food)[1] = "region"
+food = melt(food,id.vars="region",variable.name="year")
+food$indicator = "fruit_veg_availability"
+food$component = "S"
+food$disaggregation = "all"
+master_dat_fix_list[[master_dat_fix_index]] = food
+master_dat_fix_index = master_dat_fix_index + 1
+
 master_dat_fix = rbindlist(master_dat_fix_list,fill=T)
 master_dat_fix$regional = master_dat_class_list[master_dat_fix$region]
 master_dat_reg = rbindlist(list(master_dat_reg,master_dat_fix),fill=T)
