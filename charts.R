@@ -176,7 +176,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 
 ####End setup####
 ####Loop####
-# countries = c("Venezuela (Bolivarian Republic of)","Zimbabwe")
+# countries = c("Tuvalu")
 for(this.country in countries){
   message(this.country)
   dir.create(paste(wd,this.country,sep="/"))
@@ -764,15 +764,16 @@ for(this.country in countries){
   }
   # Charts 8-16
   wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="gender" & !is.na(value))
+  disaggs = unique(wasting_dat$disagg.value)
   if(nrow(wasting_dat)>0){
     wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
     max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
     wasting_years = max(subset(wasting_years,count==max_wasting_count)$year)
-    c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Girls","Boys","Both"),fill=lightBlueYellowRed,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
+    c8 = grouped_bar(countrydat, "wasting_percent","gender",disaggs,fill=lightBlueYellowRed,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
   }else{c8=no.data}
   
-  c9 = grouped_line(countrydat, "stunting_percent","gender",c("Girls","Boys","Both"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
-  c10 = grouped_line(countrydat, "overweight_percent","gender",c("Girls","Boys","Both"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
+  c9 = grouped_line(countrydat, "stunting_percent","gender",disaggs,color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
+  c10 = grouped_line(countrydat, "overweight_percent","gender",disaggs,color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
   wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="income" & !is.na(value))
   if(nrow(wasting_dat)>0){
     wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
