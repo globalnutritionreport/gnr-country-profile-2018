@@ -765,6 +765,7 @@ for(this.country in countries){
   # Charts 8-16
   wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="gender" & !is.na(value))
   disaggs = unique(wasting_dat$disagg.value)
+  disaggs = disaggs[order(-disaggs)]
   if(nrow(wasting_dat)>0){
     wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
     max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
