@@ -171,8 +171,8 @@ profile_description = "Country profiles aggregate the very latest data on child,
 
 for region_name in nested_countries:
     safeFileName = "".join([c for c in region_name.replace(" ", "_") if re.match(r'\w', c)])
-    img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs/Kenya-0.jpg"
-    pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/Kenya.pdf"
+    img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs_reg/Kenya-0.jpg"
+    pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs_reg/Kenya.pdf"
     title = region_name
     profile_title = "{} {} nutrition profile".format(region_name, "regional")
     seo_title = profile_title
@@ -271,8 +271,8 @@ for region_name in nested_countries:
     region_count += 1
     for subregion_name in nested_countries[region_name]:
         safeFileName = "".join([c for c in subregion_name.replace(" ", "_") if re.match(r'\w', c)])
-        img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs/Kenya-0.jpg"
-        pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs/Kenya.pdf"
+        img_path2 = "/home/alex/git/gnr-country-profile-2018/thumbs_reg/Kenya-0.jpg"
+        pdf_path = "/home/alex/git/gnr-country-profile-2018/pdfs_reg/Kenya.pdf"
         title = subregion_name
         profile_title = "{} {} nutrition profile".format(subregion_name, "subregional")
         seo_title = profile_title
