@@ -790,7 +790,7 @@ for(this.country in countries){
     max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
     wasting_years = max(subset(wasting_years,count==max_wasting_count)$year)
     c14 = grouped_bar(countrydat, "wasting_percent","location",c("Urban","Rural"),legend=T,subset.years=wasting_years)
-  }else{c1r4=no.data}
+  }else{c14=no.data}
   c15 = grouped_line(countrydat, "stunting_percent","location",c("Urban","Rural"),factor.years=F)
   c16 = grouped_line(countrydat, "overweight_percent","location",c("Urban","Rural"),factor.years=F)
   

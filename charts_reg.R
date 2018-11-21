@@ -783,17 +783,58 @@ for(this.country in countries){
     return(c)
   }
   # Charts 8-16
-  wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="gender" & !is.na(value))
-  if(nrow(wasting_dat)>0){
+  global_wasting = data.frame(
+    region=real.country,
+    disagg.value="Global",
+    disaggregation="global",
+    indicator = "wasting_percent",
+    year=c(2017),
+    value=c(7.5)
+  )
+  global_stunting = data.frame(
+    region=real.country,
+    disagg.value="Global",
+    disaggregation="global",
+    indicator = "stunting_percent",
+    year=c(2000,2005,2010:2017),
+    value=c(32.6,29.3,26.1,25.5,24.9,24.3,23.8,23.2,22.7,22.2)
+  )
+  global_overweight = data.frame(
+    region=real.country,
+    disagg.value="Global",
+    disaggregation="global",
+    indicator = "overweight_percent",
+    year=c(2000,2005,2010:2017),
+    value=c(4.9,5.1,5.3,5.3,5.4,5.4,5.5,5.6,5.6,5.6)
+  )
+  countrydat = rbindlist(list(countrydat,global_wasting,global_stunting,global_overweight),fill=T)
+  countrydat$disagg.value = unfactor(countrydat$disagg.value)
+  countrydat$disagg.value[which(
+    countrydat$disaggregation=="gender" &
+      countrydat$indicator %in% c("wasting_percent","stunting_percent","overweight_percent") &
+      countrydat$disagg.value=="Children under 5")] = this.country
+  countrydat$disaggregation = unfactor(countrydat$disaggregation)
+  countrydat$disaggregation[which(countrydat$disaggregation=="gender" & countrydat$indicator %in% c("wasting_percent","stunting_percent","overweight_percent"))] = "global"
+  wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="global" & !is.na(value))
+  if(nrow(wasting_dat)>1){
     # wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
     # max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
     # wasting_years = max(subset(wasting_years,count==max_wasting_count)$year)
     wasting_years = 2017
-    c8 = grouped_bar(countrydat, "wasting_percent","gender",c("Children under 5"),fill=lightBlueYellowRed,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
+    c8 = grouped_bar(countrydat, "wasting_percent","global",c(this.country,"Global"),fill=lightBlueYellowRed,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
   }else{c8=no.data}
-  
-  c9 = grouped_line(countrydat, "stunting_percent","gender",c("Children under 5"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
-  c10 = grouped_line(countrydat, "overweight_percent","gender",c("Children under 5"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
+  stunting_dat = subset(countrydat,indicator=="stunting_percent" & disaggregation=="global" & !is.na(value))
+  if(length(unique(stunting_dat$disagg.value))>1){
+    c9 = grouped_line(countrydat, "stunting_percent","global",c(this.country,"Global"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
+  }else{
+    c9=no.data
+  }
+  overweight_dat = subset(countrydat,indicator=="overweight_percent" & disaggregation=="global" & !is.na(value))
+  if(length(unique(overweight_dat$disagg.value))>1){
+    c10 = grouped_line(countrydat, "overweight_percent","global",c(this.country,"Global"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
+  }else{
+    c10=no.data
+  }
   wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="income" & !is.na(value))
   if(nrow(wasting_dat)>0){
     wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
@@ -811,7 +852,7 @@ for(this.country in countries){
     max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
     wasting_years = max(subset(wasting_years,count==max_wasting_count)$year)
     c14 = grouped_bar(countrydat, "wasting_percent","location",c("Urban","Rural"),legend=T,subset.years=wasting_years)
-  }else{c1r4=no.data}
+  }else{c14=no.data}
   c15 = grouped_line(countrydat, "stunting_percent","location",c("Urban","Rural"),factor.years=F)
   c16 = grouped_line(countrydat, "overweight_percent","location",c("Urban","Rural"),factor.years=F)
   
@@ -881,6 +922,7 @@ for(this.country in countries){
   c18data = subset(c18data, !is.na(value))
   c18data = data.table(c18data)
   c18data = c18data[,.SD[which.max(.SD$year)],by=.(indicator,disagg.value)]
+  c18data$indicator = unfactor(c18data$indicator)
   c18.max <- max(c18data$value,na.rm=TRUE)
   c18.min = 0
   for(j in 1:length(indicators)){
@@ -1162,13 +1204,13 @@ for(this.country in countries){
   # Chart 29
   indicators = c("oda_per_capita")
   c29names = c("Basic nutrition ODA received")
-  y.lab = "ODA, US$ millions, per 1000 people"
+  y.lab = "ODA, US$ millions, per 1,000 people"
   c29data = subset(countrydat,indicator %in% indicators)
   c29data$value = as.numeric(c29data$value)
   c29data$value= c29data$value * 1000
   c29data = subset(c29data, !is.na(value))
   if(sum(c29data$value)>0){
-    c29data = c29data[c("year","indicator","value")]
+    c29data = c29data[,c("year","indicator","value")]
     c29.oda.max <- max(c29data$value,na.rm=TRUE)
     for(j in 1:length(indicators)){
       ind = indicators[j]

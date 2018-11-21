@@ -489,6 +489,7 @@ food = melt(food,id.vars="region",variable.name="year")
 food$indicator = "fruit_veg_availability"
 food$component = "S"
 food$disaggregation = "all"
+food = subset(food,region!="Americas")
 master_dat_fix_list[[master_dat_fix_index]] = food
 master_dat_fix_index = master_dat_fix_index + 1
 

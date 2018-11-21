@@ -81,7 +81,7 @@
 <line x1="{{left}}" x2="{{left}}" y1="{{top+218}}" y2="{{top+245}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top+213}}" left="{{left+4}}" width="104" height="11" font="9"><b>Source</b>: World Bank 2018.</text>
 <text top="{{top+224}}" left="{{left+4}}" width="150" height="11" font="9"><b>Note</b>: GDP = gross domestic product. PPP =  purchasing power</text>
-<text top="{{top+234}}" left="{{left+4}}" width="150" height="11" font="9"> parity. n = {{country_data.pov_percent_n}}</text>
+<text top="{{top+234}}" left="{{left+4}}" width="150" height="11" font="9"> parity. n = {{country_data.pov_percent_n}} (poverty); n = {{country_data.GDP_capita_PPP_n}} (GDP).</text>
 
 <line x1="{{left+260}}" x2="{{left+260}}" y1="{{top+10}}" y2="{{top+235}}" on="1"  off="0" color="{{dark_grey}}"></line>
 
@@ -100,7 +100,7 @@
 <table top="{{top+27}}" left="{{left+528}}" height="175" data="table3" widths="160,57.5,57.5"></table>
 <line x1="{{left+531}}" x2="{{left+531}}" y1="{{top+218}}" y2="{{top+235}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top+213}}" left="{{left+535}}" width="173" height="11" font="9"><b>Source</b>: UN Population Division 2017.</text>
-<text top="{{top+224}}" left="{{left+535}}" width="173" height="11" font="9"><b>Notes</b>: n = {{country_data.table3_n}}.</text>
+<text top="{{top+224}}" left="{{left+535}}" width="173" height="11" font="9"><b>Notes</b>: n = {{country_data.table3_n}} (rural only).</text>
 
 <line x1="{{left}}" x2="{{right}}" y1="{{top+254}}" y2="{{top+254}}" width="4" color="{{dark_grey}}" on="1" off="0"></line>
 
@@ -124,13 +124,14 @@
 
 <!-- Table 4 (prev 9) -->
 <text top="{{top}}" left="{{left+330}}" width="183" height="15" font="6"><b>Gender-related determinants</b></text>
-<table top="{{top+20}}" left="{{left+330}}" height="70" data="table4" widths="165,30,60"></table>
-<text top="{{top+95}}" left="{{left+330}}" width="32" height="10" font="9"><b>Sources</b>: UNICEF 2018;<super>1</super> UNDP 2018.<super>2</super></text>
-<text top="{{top+106}}" left="{{left+330}}" width="152" height="10" font="9"><b>Note</b>:  *0 = low inequality, 1 = high  inequality. n = {{country_data.table4_n}}</text>
+<table top="{{top+20}}" left="{{left+330}}" height="40" data="table4" widths="165,30,60"></table>
+<line x1="{{left+330}}" x2="{{left+330}}" y1="{{top+70}}" y2="{{top+86}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
+<text top="{{top+65}}" left="{{left+334}}" width="32" height="10" font="9"><b>Source</b>: UNICEF 2018.</text>
+<text top="{{top+76}}" left="{{left+334}}" width="152" height="10" font="9"><b>Note</b>: n = {{country_data.table4_n}}.</text>
 <!-- Table  5 (prev 10) -->
-<text top="{{top+120}}" left="{{left+330}}" width="236" height="15" font="6"><b>Population density of health workers</b></text>
-<text top="{{top+135}}" left="{{left+330}}" width="96" height="15" font="6"><b>per 1,000 people</b></text>
-<table top="{{top+155}}" left="{{left+330}}" height="60" data="table5" widths="165,30,60"></table>
+<text top="{{top+90}}" left="{{left+330}}" width="236" height="15" font="6"><b>Population density of health workers</b></text>
+<text top="{{top+105}}" left="{{left+330}}" width="96" height="15" font="6"><b>per 1,000 people</b></text>
+<table top="{{top+125}}" left="{{left+330}}" height="90" data="table5" widths="165,30,60"></table>
 <line x1="{{left+330}}" x2="{{left+330}}" y1="{{top+220}}" y2="{{top+236}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top+215}}" left="{{left+334}}" width="67" height="10" font="9"><b>Source</b>: WHO's Global Health Workforce Statistics, OECD,</text>
 <text top="{{top+224}}" left="{{left+334}}" width="67" height="10" font="9">supplemented by country data. n = {{country_data.table5_n}}</text>
@@ -157,8 +158,9 @@
 <!-- Chart 6 (prev 12) -->
 <text top="{{top}}" left="{{left+300}}" width="201" height="15" font="6"><b>Sanitation coverage (% population)</b></text>
 <image top="{{top+25}}" left="{{left+300}}" width="200" height="185" src="charts_reg/{{country_data.country}}/c6.png"/>
-<line x1="{{left+300}}" x2="{{left+300}}" y1="{{top+217}}" y2="{{top+224}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
-<text top="{{top+212}}" left="{{left+304}}" width="114" height="10" font="9"><b>Source</b>: WHO/UNICEF Joint Monitoring Programme 2017. n = {{country_data.basic_sanitation_n}}</text>
+<line x1="{{left+300}}" x2="{{left+300}}" y1="{{top+217}}" y2="{{top+232}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
+<text top="{{top+212}}" left="{{left+304}}" width="114" height="10" font="9"><b>Source</b>: WHO/UNICEF Joint Monitoring Programme 2017.</text>
+<text top="{{top+222}}" left="{{left+304}}" width="114" height="10" font="9"><b>Note</b>: n = {{country_data.basic_sanitation_n}}</text>
 
 <line x1="{{left+542}}" x2="{{left+542}}" y1="{{top+5}}" y2="{{top+223}}" on="1"  off="0" color="{{dark_grey}}"></line>
 
@@ -296,6 +298,12 @@
 <line x1="{{left}}" x2="{{left}}" y1="{{top+5}}" y2="{{top+11}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top}}" left="{{left+4}}" width="28" height="10" font="9"><b>Source</b>: NCD Risk Factor Collaboration. n = {{country_data.adolescent_underweight_n}}</text>
 
+<line x1="{{left+276}}" x2="{{left+276}}" y1="{{top+5}}" y2="{{top+11}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
+<text top="{{top}}" left="{{left+280}}" width="28" height="10" font="9"><b>Source</b>: NCD Risk Factor Collaboration. n = {{country_data.adolescent_overweight_n}}</text>
+
+<line x1="{{left+556}}" x2="{{left+556}}" y1="{{top+5}}" y2="{{top+11}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
+<text top="{{top}}" left="{{left+560}}" width="28" height="10" font="9"><b>Source</b>: NCD Risk Factor Collaboration. n = {{country_data.adolescent_obesity_n}}</text>
+
 <line x1="{{left}}" x2="{{right}}" y1="{{top+21}}" y2="{{top+21}}" width="4" color="{{dark_grey}}" on="1" off="0"></line>
 
 <!-- Row -->
@@ -317,6 +325,12 @@
 {% set top = top + 235 %}
 <line x1="{{left}}" x2="{{left}}" y1="{{top+5}}" y2="{{top+11}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top}}" left="{{left+4}}" width="28" height="10" font="9"><b>Source</b>: NCD Risk Factor Collaboration. n = {{country_data.adult_diabetes_n}}</text>
+
+<line x1="{{left+276}}" x2="{{left+276}}" y1="{{top+5}}" y2="{{top+11}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
+<text top="{{top}}" left="{{left+280}}" width="28" height="10" font="9"><b>Source</b>: NCD Risk Factor Collaboration. n = {{country_data.adolescent_overweight_n}}</text>
+
+<line x1="{{left+556}}" x2="{{left+556}}" y1="{{top+5}}" y2="{{top+11}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
+<text top="{{top}}" left="{{left+560}}" width="28" height="10" font="9"><b>Source</b>: NCD Risk Factor Collaboration. n = {{country_data.adolescent_obesity_n}}</text>
 
 <line x1="{{left}}" x2="{{right}}" y1="{{top+21}}" y2="{{top+21}}" width="1" color="{{dark_grey}}" on="1" off="0"></line>
 

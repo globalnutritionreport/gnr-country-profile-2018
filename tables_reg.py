@@ -77,7 +77,7 @@ dataDictionary["Asia"]["table3"] = [
 ]
 
 dataDictionary["Asia"]["table4"] = [
-    [Paragraph("Early childbearing: births by age 18 (%)<super>1</super>", style=dark_greyParaBold), "33", "2011"]
+    [Paragraph("Early childbearing: births by age 18 (%)", style=dark_greyParaBold), "33", "2011"]
 ]
 dataDictionary["Asia"]["table5"] = [
     ["Physicians", "0.117", "2005"],
