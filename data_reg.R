@@ -443,7 +443,7 @@ total_calories_non_staple = read.xlsx(
   ,cols=c(ex.num("d"),ex.num("j"),ex.num("l"))
 )
 names(total_calories_non_staple) = c("region","year","value")
-total_calories_non_staple$year = substr(total_calories_non_staple$year,1,4)
+total_calories_non_staple$year = substr(total_calories_non_staple$year,6,9)
 # unique(total_calories_non_staple$region) %in% unique(master_dat_reg$region)
 total_calories_non_staple$region[which(total_calories_non_staple$region=="Sub-Saharan Africa")] = "Southern Africa"
 total_calories_non_staple$region[which(total_calories_non_staple$region=="South-Eastern Asia")] = "South-eastern Asia"
@@ -452,6 +452,7 @@ total_calories_non_staple$component = "R"
 total_calories_non_staple$indicator = "total_calories_non_staple"
 total_calories_non_staple$disaggregation = "all"
 total_calories_non_staple = subset(total_calories_non_staple,region %in% unique(master_dat_reg$region))
+total_calories_non_staple = subset(total_calories_non_staple,year %in% c(2001,2004,2008,2012,2013))
 master_dat_fix_list[[master_dat_fix_index]] = total_calories_non_staple
 master_dat_fix_index = master_dat_fix_index + 1
 
