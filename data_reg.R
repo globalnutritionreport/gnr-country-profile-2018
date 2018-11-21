@@ -408,6 +408,73 @@ overview$region[which(overview$region=="Latin American and Caribbean")] = "Latin
 master_dat_fix_list[[master_dat_fix_index]] = overview
 master_dat_fix_index = master_dat_fix_index + 1
 
+indicators = c(
+  "sugar_tax"                            
+  ,"salt_leg"
+  ,"multi_sec"    
+  ,"fbdg"                                 
+  ,"stunting_plan"                        
+  ,"anaemia_plan"                         
+  ,"LBW_plan"                             
+  ,"child_overweight_plan"                
+  ,"EBF_plan"                             
+  ,"wasting_plan"                          
+  ,"sodium_plan"                          
+  ,"overweight_adults_adoles_plan"    
+)
+master_dat_reg = subset(master_dat_reg,!indicator %in% indicators)
+policy = read.xlsx(
+  "POLICY regional.xlsx"
+)
+names(policy) = c("region",indicators)
+policy = melt(policy,id.vars="region",variable.name="indicator")
+policy$n = sapply(strsplit(policy$value,split="/"),`[`,index=1)
+policy$N = sapply(strsplit(policy$value,split="/"),`[`,index=2)
+policy$value = "Yes"
+policy$disaggregation = "all"
+policy$component = "O"
+policy$region[which(policy$region=="Latin American and Caribbean")] = "Latin America and Caribbean"
+master_dat_fix_list[[master_dat_fix_index]] = policy
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,indicator!="total_calories_non_staple")
+total_calories_non_staple = read.xlsx(
+  "UNDERLYING_non_staples.xlsx"
+  ,cols=c(ex.num("d"),ex.num("j"),ex.num("l"))
+)
+names(total_calories_non_staple) = c("region","year","value")
+total_calories_non_staple$year = substr(total_calories_non_staple$year,1,4)
+unique(total_calories_non_staple$region) %in% unique(master_dat_reg$region)
+total_calories_non_staple$region[which(total_calories_non_staple$region=="Sub-Saharan Africa")] = "Southern Africa"
+total_calories_non_staple$region[which(total_calories_non_staple$region=="South-Eastern Asia")] = "South-eastern Asia"
+total_calories_non_staple$region[which(total_calories_non_staple$region=="Australia & New Zealand")] = "Australia and New Zealand"
+total_calories_non_staple$component = "R"
+total_calories_non_staple$indicator = "total_calories_non_staple"
+total_calories_non_staple$disaggregation = "all"
+total_calories_non_staple = subset(total_calories_non_staple,region %in% unique(master_dat_reg$region))
+master_dat_fix_list[[master_dat_fix_index]] = total_calories_non_staple
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,indicator!="undernourishment_prev")
+undernourishment_prev = read.xlsx(
+  "UNDERLYING_Undernourishment.xlsx"
+  ,rows=c(4:252)
+  ,cols=ex.num(c("a","b","c","g","k","o","s"))
+)
+names(undernourishment_prev) = c(
+  "iso3","region","2000","2004","2008","2012","2016"
+)
+undernourishment_prev = subset(undernourishment_prev,is.na(iso3))
+undernourishment_prev$iso3 = NULL
+undernourishment_prev = melt(undernourishment_prev,id.vars=c("region"),variable.name="year")
+undernourishment_prev$indicator = "undernourishment_prev"
+undernourishment_prev$disaggregation = "all"
+undernourishment_prev$component = "S"
+undernourishment_prev$region[which(undernourishment_prev$region=="Australia & New Zealand")] = "Australia and New Zealand"
+undernourishment_prev = subset(undernourishment_prev,region %in% unique(master_dat_reg$region))
+master_dat_list[[master_dat_index]] = undernourishment_prev
+master_dat_index = master_dat_index + 1
+
 master_dat_fix = rbindlist(master_dat_fix_list,fill=T)
 master_dat_fix$regional = master_dat_class_list[master_dat_fix$region]
 master_dat_reg = rbindlist(list(master_dat_reg,master_dat_fix),fill=T)
