@@ -3,7 +3,7 @@
 
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import Paragraph
-from reportlab.lib.enums import TA_LEFT, TA_CENTER
+from reportlab.lib.enums import TA_LEFT, TA_CENTER, TA_RIGHT
 import copy
 import pandas as pd
 import numbers
@@ -35,6 +35,7 @@ style = getSampleStyleSheet()
 dark_greyParaBold = ParagraphStyle('dark_greyParaBold', parent=style['BodyText'], textColor=dark_grey, alignment=TA_LEFT, fontName="Averta-Bold")
 dark_greyParaBoldCenter = ParagraphStyle('dark_greyParaBold', parent=style['BodyText'], textColor=dark_grey, alignment=TA_CENTER, fontName="Averta-Bold")
 dark_greyParaStyle = ParagraphStyle('dark_greyParaStyle', parent=style['BodyText'], textColor=dark_grey, alignment=TA_LEFT)
+dark_greyParaStyleRight = ParagraphStyle('dark_greyParaStyle', parent=style['BodyText'], textColor=dark_grey, alignment=TA_RIGHT)
 NACourseStyle = ParagraphStyle('offCourseStyle', parent=style['BodyText'], textColor=grey, alignment=TA_LEFT)
 offCourseStyle = ParagraphStyle('offCourseStyle', parent=style['BodyText'], textColor=orange, alignment=TA_LEFT)
 progressStyle = ParagraphStyle('progressStyle', parent=style['BodyText'], textColor=aqua, alignment=TA_LEFT)
@@ -268,19 +269,15 @@ for country in dataDictionary.keys():
     dataDictionary[country]["table3_n"] = safeFormat(indicator_n(ctryDat, "population"))
 
     dataDictionary[country]["table4"][0][1] = safeFormat(indicator(ctryDat, "early_childbearing_prev"))
-    dataDictionary[country]["table4"][0][2] = safeFormat(year(ctryDat, "early_childbearing_prev"))
-    # dataDictionary[country]["table4"][1][1] = safeFormat(indicator(ctryDat, "gender_inequality_score"), False, 2)
-    # dataDictionary[country]["table4"][1][2] = safeFormat(year(ctryDat, "gender_inequality_score"))
-    # dataDictionary[country]["table4"][2][1] = safeFormat(indicator(ctryDat, "gender_inequality_rank"))
-    # dataDictionary[country]["table4"][2][2] = safeFormat(year(ctryDat, "gender_inequality_rank"))
+    dataDictionary[country]["table4"][0][2] = Paragraph(str(safeFormat(year_range(ctryDat, "early_childbearing_prev"))), style=dark_greyParaStyleRight)
     dataDictionary[country]["table4_n"] = safeFormat(indicator_n(ctryDat, "early_childbearing_prev"))
 
     dataDictionary[country]["table5"][0][1] = safeFormat(indicator(ctryDat, "physicians"), False, 2)
-    dataDictionary[country]["table5"][0][2] = safeFormat(year(ctryDat, "physicians"))
+    dataDictionary[country]["table5"][0][2] = Paragraph(str(safeFormat(year_range(ctryDat, "physicians"))), style=dark_greyParaStyleRight)
     dataDictionary[country]["table5"][1][1] = safeFormat(indicator(ctryDat, "nurses_and_midwives"), False, 2)
-    dataDictionary[country]["table5"][1][2] = safeFormat(year(ctryDat, "nurses_and_midwives"))
+    dataDictionary[country]["table5"][1][2] = Paragraph(str(safeFormat(year_range(ctryDat, "nurses_and_midwives"))), style=dark_greyParaStyleRight)
     dataDictionary[country]["table5"][2][1] = safeFormat(indicator(ctryDat, "community_health_workers"), False, 2)
-    dataDictionary[country]["table5"][2][2] = safeFormat(year(ctryDat, "community_health_workers"))
+    dataDictionary[country]["table5"][2][2] = Paragraph(str(safeFormat(year_range(ctryDat, "community_health_workers"))), style=dark_greyParaStyleRight)
     dataDictionary[country]["table5_n"] = safeFormat(indicator_n(ctryDat, "physicians"))
 
     dataDictionary[country]["table6"][0][1] = safeFormat(indicator_frac(ctryDat, "salt_leg", "Yes"))

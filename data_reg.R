@@ -48,12 +48,15 @@ numericable = function(vec){
 master_dat_reg_list = list()
 master_dat_reg_index = 1
 
-must_sum_to_100s = c("basic_water","limited_water","safely_managed_water","surface_water","unimproved_water",
-                     "basic_sanitation","limited_sanitation","open_defecation","safely_managed_sanitation","unimproved_sanitation")
-must_sum_to_100s_sub = subset(master_dat,indicator %in% must_sum_to_100s)
-country.years = unique(must_sum_to_100s_sub[,c("iso3","country","region","subregion","year","total.pop")])
+must_sum_to_100s = c("basic_water","limited_water","safely_managed_water","surface_water","unimproved_water"
+                     ,"basic_sanitation","limited_sanitation","open_defecation","safely_managed_sanitation","unimproved_sanitation"
+                    )
 
-latest.year.inds = c("coexistence","physicians")
+latest.year.inds = c("coexistence",
+                     "physicians",
+                     "nurses_and_midwives",
+                     "community_health_workers",
+                     "early_childbearing_prev")
 
 just.recips = c("ODA_received","ODA_specific")
 
@@ -65,19 +68,8 @@ for(this.indicator in indicators){
   if(nrow(master_dat_sub)>0){
     if(numericable(master_dat_sub$value)){
       if(this.indicator %in% must_sum_to_100s){
-        # Ensure we have a 0 to mean
-        for(i in 1:nrow(country.years)){
-          row = country.years[i,]
-          master_dat_sub_sub = subset(master_dat_sub,country==row$country[1] & year==row$year[1] )
-          if(nrow(master_dat_sub_sub)==0){
-            dummy_row = row
-            dummy_row$value = 0
-            dummy_row$disaggregation = "all"
-            dummy_row$component = "V"
-            dummy_row$indicator = this.indicator
-            master_dat_sub = rbindlist(list(master_dat_sub,dummy_row),fill=T)
-          }
-        }
+        # Multiply by population
+        master_dat_sub$value = (as.numeric(master_dat_sub$value)/100)*master_dat_sub$total.pop
       }
       if(this.indicator %in% latest.year.inds){
         # Only take latest year for each combo
@@ -136,19 +128,8 @@ for(this.indicator in indicators){
   if(nrow(master_dat_sub)>0){
     if(numericable(master_dat_sub$value)){
       if(this.indicator %in% must_sum_to_100s){
-        # Ensure we have a 0 to mean
-        for(i in 1:nrow(country.years)){
-          row = country.years[i,]
-          master_dat_sub_sub = subset(master_dat_sub,country==row$country[1] & year==row$year[1] )
-          if(nrow(master_dat_sub_sub)==0){
-            dummy_row = row
-            dummy_row$value = 0
-            dummy_row$disaggregation = "all"
-            dummy_row$component = "V"
-            dummy_row$indicator = this.indicator
-            master_dat_sub = rbindlist(list(master_dat_sub,dummy_row),fill=T)
-          }
-        }
+        # Multiply by population
+        master_dat_sub$value = (as.numeric(master_dat_sub$value)/100)*master_dat_sub$total.pop
       }
       if(this.indicator %in% latest.year.inds){
         # Only take latest year for each combo
@@ -205,6 +186,25 @@ master_dat_reg = rbindlist(master_dat_reg_list,fill=T)
 master_dat_class = unique(master_dat_reg[,c("region","regional")])
 master_dat_class_list = master_dat_class$regional
 names(master_dat_class_list) = master_dat_class$region
+
+# Ensure that some vars sum to 100
+water = subset(master_dat_reg,indicator %in% must_sum_to_100s[1:5])
+master_dat_reg = subset(master_dat_reg,!indicator %in% must_sum_to_100s[1:5])
+water[,water.sum:=sum(.SD$value.sum),by=.(region,year)]
+water$value = (water$value.sum/water$water.sum)*100
+water$value.sum = NA
+water$value.unweighted = NA
+water$water.sum = NULL
+master_dat_reg = rbind(master_dat_reg,water)
+
+sanitation = subset(master_dat_reg,indicator %in% must_sum_to_100s[6:10])
+master_dat_reg = subset(master_dat_reg,!indicator %in% must_sum_to_100s[6:10])
+sanitation[,sanitation.sum:=sum(.SD$value.sum),by=.(region,year)]
+sanitation$value = (sanitation$value.sum/sanitation$sanitation.sum)*100
+sanitation$value.sum = NA
+sanitation$value.unweighted = NA
+sanitation$sanitation.sum = NULL
+master_dat_reg = rbind(master_dat_reg,sanitation)
 
 # Three year avgs for under5s
 indicators = c("stunting_percent","overweight_percent")
@@ -290,7 +290,7 @@ names(stunting) = c(
   "2000","2005","2010","2011","2012","2013","2014","2015","2016","2017"
 )
 stunting$region = gsub('[0-9]+', '', stunting$region)
-stunting$region[which(stunting$region=="Latin American and Caribbean")] = "Latin America and Caribbean"
+stunting$region[which(stunting$region=="Latin American and Caribbean")] = "Latin America and the Caribbean"
 stunting = subset(stunting,region %in% unique(master_dat_reg$region))
 stunting = melt(stunting,id.vars="region",variable.name="year")
 stunting$indicator = "stunting_percent"
@@ -314,7 +314,7 @@ names(overweight) = c(
   "2000","2005","2010","2011","2012","2013","2014","2015","2016","2017"
 )
 overweight$region = gsub('[0-9]+', '', overweight$region)
-overweight$region[which(overweight$region=="Latin American and Caribbean")] = "Latin America and Caribbean"
+overweight$region[which(overweight$region=="Latin American and Caribbean")] = "Latin America and the Caribbean"
 overweight = subset(overweight,region %in% unique(master_dat_reg$region))
 overweight = melt(overweight,id.vars="region",variable.name="year")
 overweight$indicator = "overweight_percent"
@@ -338,7 +338,7 @@ names(wasting) = c(
   "2017"
 )
 wasting$region = gsub('[0-9]+', '', wasting$region)
-wasting$region[which(wasting$region=="Latin American and Caribbean")] = "Latin America and Caribbean"
+wasting$region[which(wasting$region=="Latin American and Caribbean")] = "Latin America and the Caribbean"
 wasting = subset(wasting,region %in% unique(master_dat_reg$region))
 wasting = melt(wasting,id.vars="region",variable.name="year")
 wasting$indicator = "wasting_percent"
@@ -404,7 +404,7 @@ overview$N = sapply(strsplit(overview$value,split="/"),`[`,index=2)
 overview$value = "On course"
 overview$disaggregation = "all"
 overview$component = "A"
-overview$region[which(overview$region=="Latin American and Caribbean")] = "Latin America and Caribbean"
+overview$region[which(overview$region=="Latin American and Caribbean")] = "Latin America and the Caribbean"
 master_dat_fix_list[[master_dat_fix_index]] = overview
 master_dat_fix_index = master_dat_fix_index + 1
 
@@ -433,7 +433,7 @@ policy$N = sapply(strsplit(policy$value,split="/"),`[`,index=2)
 policy$value = "Yes"
 policy$disaggregation = "all"
 policy$component = "O"
-policy$region[which(policy$region=="Latin American and Caribbean")] = "Latin America and Caribbean"
+policy$region[which(policy$region=="Latin American and Caribbean")] = "Latin America and the Caribbean"
 master_dat_fix_list[[master_dat_fix_index]] = policy
 master_dat_fix_index = master_dat_fix_index + 1
 
