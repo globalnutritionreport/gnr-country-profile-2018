@@ -1,8 +1,2 @@
-charts/*
-charts_reg/*
-pdfs/*
-pdfs_reg/*
-thumbs/*
-thumbs_reg/*
 __pycache__
 *.pyc
