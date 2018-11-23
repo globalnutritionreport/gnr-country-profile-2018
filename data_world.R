@@ -234,7 +234,7 @@ stunting = melt(stunting,id.vars="region",variable.name="year")
 stunting$indicator = "stunting_percent"
 stunting$component = "C"
 stunting$disaggregation = "gender"
-stunting$disagg.value = "Children under 5"
+stunting$disagg.value = "Both"
 # unique(stunting$region) %in% unique(master_dat_reg$region)
 master_dat_fix_list[[master_dat_fix_index]] = stunting
 master_dat_fix_index = master_dat_fix_index + 1
