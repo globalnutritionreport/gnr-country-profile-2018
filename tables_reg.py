@@ -73,7 +73,7 @@ dataDictionary["Asia"]["table3"] = [
     ["Population (millions)", format(12428, ",d"), 2015],
     ["Under-5 population (millions)", format(1935, ",d"), 2015],
     ["Rural (%)", format(20, ",d"), 2015],
-    [">65 years (millions)", format(5, ",d"), 2015],
+    ["≥65 years (millions)", format(5, ",d"), 2015],
 ]
 
 dataDictionary["Asia"]["table4"] = [
@@ -277,13 +277,13 @@ for country in dataDictionary.keys():
     #     safeFormat(year(ctryDat, "gini"))
     # ]
 
-    dataDictionary[country]["table3"][0][1] = safeFormat(indicator_sum(ctryDat, "population"), True, divisor=1000)
+    dataDictionary[country]["table3"][0][1] = safeFormat(indicator_sum(ctryDat, "population"), True, divisor=1000) if safeFormat(indicator_sum(ctryDat, "population"), True, divisor=1000) != "0.0" else "<100,000"
     dataDictionary[country]["table3"][0][2] = safeFormat(year(ctryDat, "population"))
-    dataDictionary[country]["table3"][1][1] = safeFormat(indicator_sum(ctryDat, "u5_pop"), True, divisor=1000)
+    dataDictionary[country]["table3"][1][1] = safeFormat(indicator_sum(ctryDat, "u5_pop"), True, divisor=1000) if safeFormat(indicator_sum(ctryDat, "u5_pop"), True, divisor=1000) != "0.0" else "<100,000"
     dataDictionary[country]["table3"][1][2] = safeFormat(year(ctryDat, "u5_pop"))
     dataDictionary[country]["table3"][2][1] = safeFormat(indicator(ctryDat, "rural_percent"))
     dataDictionary[country]["table3"][2][2] = safeFormat(year(ctryDat, "rural_percent"))
-    dataDictionary[country]["table3"][3][1] = safeFormat(indicator_sum(ctryDat, "65_years"), True, divisor=1000)
+    dataDictionary[country]["table3"][3][1] = safeFormat(indicator_sum(ctryDat, "65_years"), True, divisor=1000) if safeFormat(indicator_sum(ctryDat, "65_years"), True, divisor=1000) != "0.0" else "<100,000"
     dataDictionary[country]["table3"][3][2] = safeFormat(year(ctryDat, "65_years"))
     dataDictionary[country]["table3_n"] = safeFormat(indicator_n(ctryDat, "population"))
 
@@ -358,6 +358,8 @@ for country in dataDictionary.keys():
     for n_indicator in n_indicators:
         dataDictionary[country][n_indicator+"_n"] = safeFormat(indicator_n(ctryDat, n_indicator))
     n_indicators_disagg = [
+        ("stunting_percent", "gender"),
+        ("overweight_percent", "gender"),
         ("wasting_percent", "income"),
         ("stunting_percent", "income"),
         ("overweight_percent", "income"),

@@ -167,7 +167,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 ####End setup####
 ####Loop####
 # countries = c("Asia","Africa","Latin America and the Caribbean","Western Asia","Western Europe")
-# countries = c("Asia")
+# countries = c("Asia","Australia and New Zealand")
 for(this.country in countries){
   message(this.country)
   real.country = this.country
@@ -804,21 +804,22 @@ for(this.country in countries){
   countrydat$disaggregation[which(countrydat$disaggregation=="gender" & countrydat$indicator %in% c("wasting_percent","stunting_percent","overweight_percent"))] = "global"
   wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="global" & !is.na(value))
   disaggs = c("Global",this.country)
-  if(nrow(wasting_dat)>0){
+  stunting_dat = subset(countrydat,indicator=="stunting_percent" & disaggregation=="global" & !is.na(value))
+  overweight_dat = subset(countrydat,indicator=="overweight_percent" & disaggregation=="global" & !is.na(value))
+  show.row = length(unique(wasting_dat$disagg.value))>1 | length(unique(stunting_dat$disagg.value))>1 | length(unique(overweight_dat$disagg.value))>1
+  if(show.row){
     # wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
     # max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
     # wasting_years = max(subset(wasting_years,count==max_wasting_count)$year)
     wasting_years = 2017
     c8 = grouped_bar(countrydat, "wasting_percent","global",disaggs,fill=lightBlueYellowRed,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
   }else{c8=no.data}
-  stunting_dat = subset(countrydat,indicator=="stunting_percent" & disaggregation=="global" & !is.na(value))
-  if(nrow(stunting_dat)>0){
+  if(length(unique(stunting_dat$disagg.value))>1){
     c9 = grouped_line(countrydat, "stunting_percent","global",disaggs,color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
   }else{
     c9=no.data
   }
-  overweight_dat = subset(countrydat,indicator=="overweight_percent" & disaggregation=="global" & !is.na(value))
-  if(nrow(overweight_dat)>0){
+  if(length(unique(overweight_dat$disagg.value))>1){
     c10 = grouped_line(countrydat, "overweight_percent","global",disaggs,color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
   }else{
     c10=no.data

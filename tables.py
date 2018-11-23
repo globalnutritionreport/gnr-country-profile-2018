@@ -82,7 +82,7 @@ dataDictionary["Kenya"]["table3"] = [
     ["Population (000)", format(12428, ",d"), 2015],
     ["Under-5 population (000)", format(1935, ",d"), 2015],
     ["Rural (%)", format(20, ",d"), 2015],
-    [">65 years (000)", format(5, ",d"), 2015],
+    ["≥65 years (000)", format(5, ",d"), 2015],
 ]
 
 dataDictionary["Kenya"]["table4"] = [
