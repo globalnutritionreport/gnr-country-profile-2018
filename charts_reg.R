@@ -196,8 +196,11 @@ for(this.country in countries){
   }else{
     minimum.n = 2
   }
-  without.n = subset(countrydat,is.na(n))
-  with.n = subset(countrydat,!is.na(n))
+  must_sum_to_100s = c("basic_water","limited_water","safely_managed_water","surface_water","unimproved_water"
+                       ,"basic_sanitation","limited_sanitation","open_defecation","safely_managed_sanitation","unimproved_sanitation"
+  )
+  without.n = subset(countrydat,is.na(n) | indicator %in% must_sum_to_100s)
+  with.n = subset(countrydat,!is.na(n) & !indicator %in% must_sum_to_100s)
   with.n = subset(with.n,n>=minimum.n)
   countrydat = rbind(without.n,with.n)
   #Chart 1 part a and b
