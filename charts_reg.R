@@ -167,7 +167,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 ####End setup####
 ####Loop####
 # countries = c("Asia","Africa","Latin America and the Caribbean","Western Asia","Western Europe")
-# countries = c("South America")
+# countries = c("Europe")
 for(this.country in countries){
   message(this.country)
   real.country = this.country
@@ -555,6 +555,9 @@ for(this.country in countries){
   }else{
     c5 = no.data
   }
+  if(real.country %in% c("N. America","Northern America")){
+    c5 = no.data
+  }
 
   #Chart 6
   indicators = c("basic_sanitation","limited_sanitation","open_defecation","safely_managed_sanitation","unimproved_sanitation")
@@ -613,9 +616,6 @@ for(this.country in countries){
       ) + geom_text(data=subset(c6data,value>4.4),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
       scale_color_manual(breaks=c6names,values=c(white,white,blue,blue,blue),drop=FALSE)
   }else{
-    c6 = no.data
-  }
-  if(real.country %in% c("N. America","North America")){
     c6 = no.data
   }
  
@@ -830,10 +830,10 @@ for(this.country in countries){
       countrydat$disagg.value=="Children under 5")] = this.country
   countrydat$disaggregation = unfactor(countrydat$disaggregation)
   countrydat$disaggregation[which(countrydat$disaggregation=="gender" & countrydat$indicator %in% c("wasting_percent","stunting_percent","overweight_percent"))] = "global"
-  wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="global" & !is.na(value))
+  wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="global" & !is.na(value) & !disagg.value %in% c("Boys","Girls"))
   disaggs = c("Global",this.country)
-  stunting_dat = subset(countrydat,indicator=="stunting_percent" & disaggregation=="global" & !is.na(value))
-  overweight_dat = subset(countrydat,indicator=="overweight_percent" & disaggregation=="global" & !is.na(value))
+  stunting_dat = subset(countrydat,indicator=="stunting_percent" & disaggregation=="global" & !is.na(value) & !disagg.value %in% c("Boys","Girls"))
+  overweight_dat = subset(countrydat,indicator=="overweight_percent" & disaggregation=="global" & !is.na(value) & !disagg.value %in% c("Boys","Girls"))
   show.row = length(unique(wasting_dat$disagg.value))>1 | length(unique(stunting_dat$disagg.value))>1 | length(unique(overweight_dat$disagg.value))>1
   if(show.row){
     # wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
