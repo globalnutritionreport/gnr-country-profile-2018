@@ -217,7 +217,7 @@ setwd(wd)
 # master_dat_fix_list[[master_dat_fix_index]] = coexistence
 # master_dat_fix_index = master_dat_fix_index + 1
 
-master_dat_reg = subset(master_dat_reg,!(indicator=="stunting_percent" & disagg.value=="Both"))
+master_dat_reg = subset(master_dat_reg,!(indicator=="stunting_percent" & disagg.value %in% c("Both","Girls","Boys")))
 stunting = read.xlsx(
   "CHILD STATUS U5.xlsx",
   sheet=1,
@@ -239,7 +239,7 @@ stunting$disagg.value = "Both"
 master_dat_fix_list[[master_dat_fix_index]] = stunting
 master_dat_fix_index = master_dat_fix_index + 1
 
-master_dat_reg = subset(master_dat_reg,!(indicator=="overweight_percent" & disagg.value=="Both"))
+master_dat_reg = subset(master_dat_reg,!(indicator=="overweight_percent" & disagg.value %in% c("Both","Girls","Boys")))
 overweight = read.xlsx(
   "CHILD STATUS U5.xlsx",
   sheet=3,
@@ -256,12 +256,12 @@ overweight = melt(overweight,id.vars="region",variable.name="year")
 overweight$indicator = "overweight_percent"
 overweight$component = "C"
 overweight$disaggregation = "gender"
-overweight$disagg.value = "Children under 5"
+overweight$disagg.value = "Both"
 # unique(overweight$region) %in% unique(master_dat_reg$region)
 master_dat_fix_list[[master_dat_fix_index]] = overweight
 master_dat_fix_index = master_dat_fix_index + 1
 
-master_dat_reg = subset(master_dat_reg,!(indicator=="wasting_percent" & disagg.value=="Both"))
+master_dat_reg = subset(master_dat_reg,!(indicator=="wasting_percent" & disagg.value %in% c("Both","Girls","Boys")))
 wasting = read.xlsx(
   "CHILD STATUS U5.xlsx",
   sheet=5,
@@ -278,7 +278,7 @@ wasting = melt(wasting,id.vars="region",variable.name="year")
 wasting$indicator = "wasting_percent"
 wasting$component = "C"
 wasting$disaggregation = "gender"
-wasting$disagg.value = "Children under 5"
+wasting$disagg.value = "Both"
 # unique(wasting$region) %in% unique(master_dat_reg$region)
 master_dat_fix_list[[master_dat_fix_index]] = wasting
 master_dat_fix_index = master_dat_fix_index + 1
