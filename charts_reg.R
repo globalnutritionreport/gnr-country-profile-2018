@@ -550,7 +550,7 @@ for(this.country in countries){
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key.size = unit(2.2,"lines")
-      ) + geom_text(data=subset(c5data,value>3),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
+      ) + geom_text(data=subset(c5data,value>4.4),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
       scale_color_manual(breaks=c5names,values=c(white,white,blue,blue,blue),drop=FALSE)
   }else{
     c5 = no.data
@@ -610,7 +610,7 @@ for(this.country in countries){
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key.size = unit(2.2,"lines")
-      ) + geom_text(data=subset(c6data,value>5),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
+      ) + geom_text(data=subset(c6data,value>4.4),size=10,aes(y=pos,label=safeFormat(value),color=indicator),show.legend=FALSE,family="Averta Regular") +
       scale_color_manual(breaks=c6names,values=c(white,white,blue,blue,blue),drop=FALSE)
   }else{
     c6 = no.data
