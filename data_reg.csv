@@ -19362,7 +19362,6 @@
 "Europe","2017","wasting_percent","gender","Children under 5","C",,,,,,,,,1,
 "Northern America","2017","wasting_percent","gender","Children under 5","C",,,,,"0.5",,,,0,
 "Africa","2000","u5mr","all",,"R",,,,,"129.146183124862",,,,1,
-"Southern Africa","2000","u5mr","all",,"R",,,,,"141.065293432457",,,,0,
 "Eastern Africa","2000","u5mr","all",,"R",,,,,"119.741392729929",,,,0,
 "Middle Africa","2000","u5mr","all",,"R",,,,,"163.431977417234",,,,0,
 "Northern Africa","2000","u5mr","all",,"R",,,,,"54.5245927729488",,,,0,
@@ -19390,7 +19389,6 @@
 "Micronesia","2000","u5mr","all",,"R",,,,,"38.7529691708753",,,,0,
 "Polynesia","2000","u5mr","all",,"R",,,,,"23.7190988599239",,,,0,
 "Africa","2005","u5mr","all",,"R",,,,,"105.60533817505",,,,1,
-"Southern Africa","2005","u5mr","all",,"R",,,,,"115.199042620279",,,,0,
 "Eastern Africa","2005","u5mr","all",,"R",,,,,"94.9663998375147",,,,0,
 "Middle Africa","2005","u5mr","all",,"R",,,,,"135.279861618633",,,,0,
 "Northern Africa","2005","u5mr","all",,"R",,,,,"45.2266605600863",,,,0,
@@ -19418,7 +19416,6 @@
 "Micronesia","2005","u5mr","all",,"R",,,,,"36.190977221092",,,,0,
 "Polynesia","2005","u5mr","all",,"R",,,,,"20.7891459623414",,,,0,
 "Africa","2010","u5mr","all",,"R",,,,,"86.9206505519788",,,,1,
-"Southern Africa","2010","u5mr","all",,"R",,,,,"95.3068199567886",,,,0,
 "Eastern Africa","2010","u5mr","all",,"R",,,,,"77.4645682125026",,,,0,
 "Middle Africa","2010","u5mr","all",,"R",,,,,"113.167304102998",,,,0,
 "Northern Africa","2010","u5mr","all",,"R",,,,,"37.3042653676148",,,,0,
@@ -19446,7 +19443,6 @@
 "Micronesia","2010","u5mr","all",,"R",,,,,"34.6882263299874",,,,0,
 "Polynesia","2010","u5mr","all",,"R",,,,,"17.8570249749286",,,,0,
 "Africa","2015","u5mr","all",,"R",,,,,"75.2784681398033",,,,1,
-"Southern Africa","2015","u5mr","all",,"R",,,,,"81.8372675776693",,,,0,
 "Eastern Africa","2015","u5mr","all",,"R",,,,,"66.9454256318698",,,,0,
 "Middle Africa","2015","u5mr","all",,"R",,,,,"98.9647360921253",,,,0,
 "Northern Africa","2015","u5mr","all",,"R",,,,,"32.7123367968806",,,,0,
@@ -19985,7 +19981,7 @@
 "Australia and New Zealand",,"sugar_tax","all",,"O",,,,,"Yes",,,"0",0,"2"
 "Melanesia",,"sugar_tax","all",,"O",,,,,"Yes",,,"2",0,"4"
 "Micronesia",,"sugar_tax","all",,"O",,,,,"Yes",,,"4",0,"5"
-"Polynesia",,"sugar_tax","all",,"O",,,,,"Yes",,,"5",0,"3"
+"Polynesia",,"sugar_tax","all",,"O",,,,,"Yes",,,"3",0,"5"
 "Africa",,"salt_leg","all",,"O",,,,,"Yes",,,"36",1,"54"
 "Latin America and the Caribbean",,"salt_leg","all",,"O",,,,,"Yes",,,"19",1,"33"
 "Northern America",,"salt_leg","all",,"O",,,,,"Yes",,,"1",0,"2"
@@ -20313,11 +20309,6 @@
 "Western Africa","2008","total_calories_non_staple","all",,"R",,,,,"36",,,,0,
 "Western Africa","2012","total_calories_non_staple","all",,"R",,,,,"35",,,,0,
 "Western Africa","2013","total_calories_non_staple","all",,"R",,,,,"35",,,,0,
-"Southern Africa","2001","total_calories_non_staple","all",,"R",,,,,"42",,,,0,
-"Southern Africa","2004","total_calories_non_staple","all",,"R",,,,,"43",,,,0,
-"Southern Africa","2008","total_calories_non_staple","all",,"R",,,,,"44",,,,0,
-"Southern Africa","2012","total_calories_non_staple","all",,"R",,,,,"44",,,,0,
-"Southern Africa","2013","total_calories_non_staple","all",,"R",,,,,"45",,,,0,
 "Northern America","2001","total_calories_non_staple","all",,"R",,,,,"75",,,,0,
 "Northern America","2004","total_calories_non_staple","all",,"R",,,,,"76",,,,0,
 "Northern America","2008","total_calories_non_staple","all",,"R",,,,,"76",,,,0,

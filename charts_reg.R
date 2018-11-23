@@ -135,15 +135,16 @@ firstAndLast <- function(vec,year_vec){
   return(label_df$vec)
 }
 
-round.simple = function(x,digits=0){
-  tipping.val = 1*(10^((digits+2)*-1))
-  floorx = floor(x)
-  native.roundx = round(x,digits)
-  round.is.floor = floorx==native.roundx
-  tipping.point = cumsum(rle(round.is.floor)$lengths)
-  x[tipping.point] = x[tipping.point] + tipping.val
-  return(round(x,digits))
+round.simple = function(x, digits=0) {
+  posneg = sign(x)
+  z = abs(x)*10^digits
+  z = z + 0.5
+  z = trunc(z)
+  z = z/10^digits
+  z*posneg
 }
+
+round.simple = Vectorize(round.simple)
 
 safeFormat <- function(vec, precision=0, prefix="", suffix=""){
   results <- c()
@@ -151,27 +152,9 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
     #Missing
     if(is.na(x)){
       result <- ""
-      #Large Negative
-    }else if(x<= -1000){
-      result <- format(round.simple(x, digits = 0),format="d",big.mark=",")
-      #Middle Negative
-    }else if(x< -1){
-      result <- round.simple(x,digits=0)
-      #Small negative
-    }else if(x<0){
-      result <- round.simple(x,digits=1)
-      #Zero
-    }else if(x==0){
-      result <- "0"
-      #Small positive
-    }else if(x<1){
-      result <- round.simple(x,digits=1)
-      #Middle positive
-    }else if(x<1000){
-      result <- round.simple(x,digits=precision)
-      #Large positive
+      
     }else{
-      result <- format(round.simple(x, digits = 0),format="d",big.mark=",")
+      result <- format(round.simple(x, digits = precision),format="d",big.mark=",",nsmall=precision)
     }
     if(result!=""){
       result = paste0(prefix,result,suffix)
@@ -184,7 +167,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 ####End setup####
 ####Loop####
 # countries = c("Asia","Africa","Latin America and the Caribbean","Western Asia","Western Europe")
-# countries = c("Polynesia")
+# countries = c("Asia")
 for(this.country in countries){
   message(this.country)
   real.country = this.country
@@ -702,6 +685,10 @@ for(this.country in countries){
     }
     cdata$disagg.value = factor(cdata$disagg.value,levels=disagg.values,ordered=T)
     c.max <- max(cdata$value,na.rm=TRUE)
+    c.min.year = min(cdata$year,na.rm=T)
+    c.max.year = max(cdata$year,na.rm=T)
+    c.year.step = round((c.max.year-c.min.year)/4)
+    c.year.seq = seq(c.min.year,c.max.year,max(c.year.step,1))
     c.key.data = data.frame(year=as.numeric(rep(NA,length(disagg.values))),disagg.value=disagg.values,value=as.numeric(rep(NA,length(disagg.values))))
     c.key.data$disagg.value = factor(c.key.data$disagg.value,levels=disagg.values)
     c = ggplot(cdata,aes(year,value,group=disagg.value,color=disagg.value)) +
@@ -711,7 +698,7 @@ for(this.country in countries){
       color +
       guides(fill=guide_legend(title=element_blank(),byrow=TRUE),color=F) +
       simple_style  +
-      scale_x_continuous(labels=round) +
+      scale_x_continuous(labels=round,breaks=c.year.seq) +
       scale_y_continuous(expand = c(0,0),limits=c(0,max(c.max*1.1,1))) +
       # expand_limits(y=c1a.max*1.1) +
       theme(
@@ -816,22 +803,23 @@ for(this.country in countries){
   countrydat$disaggregation = unfactor(countrydat$disaggregation)
   countrydat$disaggregation[which(countrydat$disaggregation=="gender" & countrydat$indicator %in% c("wasting_percent","stunting_percent","overweight_percent"))] = "global"
   wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="global" & !is.na(value))
-  if(nrow(wasting_dat)>1){
+  disaggs = c("Global",this.country)
+  if(nrow(wasting_dat)>0){
     # wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
     # max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
     # wasting_years = max(subset(wasting_years,count==max_wasting_count)$year)
     wasting_years = 2017
-    c8 = grouped_bar(countrydat, "wasting_percent","global",c(this.country,"Global"),fill=lightBlueYellowRed,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
+    c8 = grouped_bar(countrydat, "wasting_percent","global",disaggs,fill=lightBlueYellowRed,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
   }else{c8=no.data}
   stunting_dat = subset(countrydat,indicator=="stunting_percent" & disaggregation=="global" & !is.na(value))
-  if(length(unique(stunting_dat$disagg.value))>1){
-    c9 = grouped_line(countrydat, "stunting_percent","global",c(this.country,"Global"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
+  if(nrow(stunting_dat)>0){
+    c9 = grouped_line(countrydat, "stunting_percent","global",disaggs,color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
   }else{
     c9=no.data
   }
   overweight_dat = subset(countrydat,indicator=="overweight_percent" & disaggregation=="global" & !is.na(value))
-  if(length(unique(overweight_dat$disagg.value))>1){
-    c10 = grouped_line(countrydat, "overweight_percent","global",c(this.country,"Global"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
+  if(nrow(overweight_dat)>0){
+    c10 = grouped_line(countrydat, "overweight_percent","global",disaggs,color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
   }else{
     c10=no.data
   }
@@ -933,6 +921,8 @@ for(this.country in countries){
   c18data$indicator <- factor(c18data$indicator,levels=rev(c18names))
   c18a.data = subset(c18data,disaggregation=="income")
   c18a.data = subset(c18a.data, disagg.value %in% c("Lowest","Highest"))
+  c18a.indicators = unique(c18a.data$indicator)
+  c18data = subset(c18data,indicator %in% c18a.indicators)
   c18a.data$disagg.value = factor(c18a.data$disagg.value,levels=c("Lowest","Highest"))
   c18b.data = subset(c18data,disaggregation=="location")
   if(nrow(c18a.data)==0){
@@ -1031,7 +1021,7 @@ for(this.country in countries){
   c23 = grouped_line(countrydat, "adult_overweight","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
   c24 = grouped_line(countrydat, "adult_obesity","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
   c25 = grouped_line(countrydat, "adult_blood_pressure","gender",c("Male","Female"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
-  c26 = grouped_line(countrydat, "adult_anemia","pregnancy",c("All women","Pregnant women","Non-pregnant women"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,legend=T,factor.years=F)
+  c26 = grouped_line(countrydat, "adult_anemia","pregnancy",c("Pregnant women","Non-pregnant women"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,legend=T,factor.years=F)
   ind = "adult_sodium"
   spacing = 1
   legend = T
@@ -1227,6 +1217,7 @@ for(this.country in countries){
   if(sum(c29data$value)>0){
     c29data = c29data[,c("year","indicator","value")]
     c29.oda.max <- max(c29data$value,na.rm=TRUE)
+    c29data$indicator = unfactor(c29data$indicator)
     for(j in 1:length(indicators)){
       ind = indicators[j]
       indname = c29names[j]

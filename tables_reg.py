@@ -148,6 +148,8 @@ def safeFormat(x, commas=False, precision=0, percent=False, divisor=False):
         if divisor:
             try:
                 x = float(x) / divisor
+                if x < 1:
+                    precision += 1
             except ValueError:
                 return replaceDash(x)
         if not isinstance(x, numbers.Number):

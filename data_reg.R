@@ -364,12 +364,12 @@ u5mr = read.xlsx(
 names(u5mr) = c("region",seq(2000,2015,5))
 u5mr = melt(u5mr,id.vars="region",variable.name="year")
 u5mr$year = unfactor(u5mr$year)
-u5mr$region[which(u5mr$region=="Sub-Saharan Africa")] = "Southern Africa"
 u5mr$region[which(u5mr$region=="South-Eastern Asia")] = "South-eastern Asia"
 u5mr$region[which(u5mr$region=="Australia/New Zealand")] = "Australia and New Zealand"
 u5mr$component = "R"
 u5mr$indicator = "u5mr"
 u5mr$disaggregation = "all"
+u5mr = subset(u5mr,region %in% master_dat_reg$region)
 master_dat_fix_list[[master_dat_fix_index]] = u5mr
 master_dat_fix_index = master_dat_fix_index + 1
 
@@ -450,7 +450,6 @@ total_calories_non_staple = read.xlsx(
 names(total_calories_non_staple) = c("region","year","value")
 total_calories_non_staple$year = substr(total_calories_non_staple$year,6,9)
 # unique(total_calories_non_staple$region) %in% unique(master_dat_reg$region)
-total_calories_non_staple$region[which(total_calories_non_staple$region=="Sub-Saharan Africa")] = "Southern Africa"
 total_calories_non_staple$region[which(total_calories_non_staple$region=="South-Eastern Asia")] = "South-eastern Asia"
 total_calories_non_staple$region[which(total_calories_non_staple$region=="Australia & New Zealand")] = "Australia and New Zealand"
 total_calories_non_staple$component = "R"

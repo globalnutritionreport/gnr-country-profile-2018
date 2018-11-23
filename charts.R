@@ -128,15 +128,16 @@ firstAndLast <- function(vec,year_vec){
   return(label_df$vec)
 }
 
-round.simple = function(x,digits=0){
-  tipping.val = 1*(10^((digits+2)*-1))
-  floorx = floor(x)
-  native.roundx = round(x,digits)
-  round.is.floor = floorx==native.roundx
-  tipping.point = cumsum(rle(round.is.floor)$lengths)
-  x[tipping.point] = x[tipping.point] + tipping.val
-  return(round(x,digits))
+round.simple = function(x, digits=0) {
+  posneg = sign(x)
+  z = abs(x)*10^digits
+  z = z + 0.5
+  z = trunc(z)
+  z = z/10^digits
+  z*posneg
 }
+
+round.simple = Vectorize(round.simple)
 
 safeFormat <- function(vec, precision=0, prefix="", suffix=""){
   results <- c()
@@ -144,27 +145,9 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
     #Missing
     if(is.na(x)){
       result <- ""
-      #Large Negative
-    }else if(x<= -1000){
-      result <- format(round.simple(x, digits = 0),format="d",big.mark=",")
-      #Middle Negative
-    }else if(x< -1){
-      result <- round.simple(x,digits=0)
-      #Small negative
-    }else if(x<0){
-      result <- round.simple(x,digits=1)
-      #Zero
-    }else if(x==0){
-      result <- "0"
-      #Small positive
-    }else if(x<1){
-      result <- round.simple(x,digits=1)
-      #Middle positive
-    }else if(x<1000){
-      result <- round.simple(x,digits=precision)
-      #Large positive
+      
     }else{
-      result <- format(round.simple(x, digits = 0),format="d",big.mark=",")
+      result <- format(round.simple(x, digits = precision),format="d",big.mark=",",nsmall=precision)
     }
     if(result!=""){
       result = paste0(prefix,result,suffix)
@@ -682,6 +665,10 @@ for(this.country in countries){
     }
     cdata$disagg.value = factor(cdata$disagg.value,levels=disagg.values,ordered=T)
     c.max <- max(cdata$value,na.rm=TRUE)
+    c.min.year = min(cdata$year,na.rm=T)
+    c.max.year = max(cdata$year,na.rm=T)
+    c.year.step = round((c.max.year-c.min.year)/4)
+    c.year.seq = seq(c.min.year,c.max.year,max(c.year.step,1))
     c.key.data = data.frame(year=as.numeric(rep(NA,length(disagg.values))),disagg.value=disagg.values,value=as.numeric(rep(NA,length(disagg.values))))
     c.key.data$disagg.value = factor(c.key.data$disagg.value,levels=disagg.values)
     c = ggplot(cdata,aes(year,value,group=disagg.value,color=disagg.value)) +
@@ -691,7 +678,7 @@ for(this.country in countries){
       color +
       guides(fill=guide_legend(title=element_blank(),byrow=TRUE),color=F) +
       simple_style  +
-      scale_x_continuous(labels=round) +
+      scale_x_continuous(labels=round,breaks=c.year.seq) +
       scale_y_continuous(expand = c(0,0),limits=c(0,max(c.max*1.1,1))) +
       # expand_limits(y=c1a.max*1.1) +
       theme(
