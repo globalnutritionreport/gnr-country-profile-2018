@@ -19981,7 +19981,7 @@
 "Australia and New Zealand",,"sugar_tax","all",,"O",,,,,"Yes",,,"0",0,"2"
 "Melanesia",,"sugar_tax","all",,"O",,,,,"Yes",,,"2",0,"4"
 "Micronesia",,"sugar_tax","all",,"O",,,,,"Yes",,,"4",0,"5"
-"Polynesia",,"sugar_tax","all",,"O",,,,,"Yes",,,"3",0,"5"
+"Polynesia",,"sugar_tax","all",,"O",,,,,"Yes",,,"2",0,"3"
 "Africa",,"salt_leg","all",,"O",,,,,"Yes",,,"36",1,"54"
 "Latin America and the Caribbean",,"salt_leg","all",,"O",,,,,"Yes",,,"19",1,"33"
 "Northern America",,"salt_leg","all",,"O",,,,,"Yes",,,"1",0,"2"
@@ -21052,3 +21052,22 @@
 "Western Africa","2013","fruit_veg_availability","all",,"S",,,,,"315.04",,,,0,
 "Western Asia","2013","fruit_veg_availability","all",,"S",,,,,"686.11",,,,0,
 "Western Europe","2013","fruit_veg_availability","all",,"S",,,,,"562.04",,,,0,
+"Latin America and the Caribbean","1995","fruit_veg_availability","all",,"S",,,,,"378.386666666667",,,,1,
+"Latin America and the Caribbean","1996","fruit_veg_availability","all",,"S",,,,,"398.03",,,,1,
+"Latin America and the Caribbean","1997","fruit_veg_availability","all",,"S",,,,,"417.013333333333",,,,1,
+"Latin America and the Caribbean","1998","fruit_veg_availability","all",,"S",,,,,"400.953333333333",,,,1,
+"Latin America and the Caribbean","1999","fruit_veg_availability","all",,"S",,,,,"441.743333333333",,,,1,
+"Latin America and the Caribbean","2000","fruit_veg_availability","all",,"S",,,,,"458.65",,,,1,
+"Latin America and the Caribbean","2001","fruit_veg_availability","all",,"S",,,,,"469.816666666667",,,,1,
+"Latin America and the Caribbean","2002","fruit_veg_availability","all",,"S",,,,,"468.366666666667",,,,1,
+"Latin America and the Caribbean","2003","fruit_veg_availability","all",,"S",,,,,"493.09",,,,1,
+"Latin America and the Caribbean","2004","fruit_veg_availability","all",,"S",,,,,"481.633333333333",,,,1,
+"Latin America and the Caribbean","2005","fruit_veg_availability","all",,"S",,,,,"465.593333333333",,,,1,
+"Latin America and the Caribbean","2006","fruit_veg_availability","all",,"S",,,,,"473.596666666667",,,,1,
+"Latin America and the Caribbean","2007","fruit_veg_availability","all",,"S",,,,,"474.31",,,,1,
+"Latin America and the Caribbean","2008","fruit_veg_availability","all",,"S",,,,,"458.003333333333",,,,1,
+"Latin America and the Caribbean","2009","fruit_veg_availability","all",,"S",,,,,"470.623333333333",,,,1,
+"Latin America and the Caribbean","2010","fruit_veg_availability","all",,"S",,,,,"473.136666666667",,,,1,
+"Latin America and the Caribbean","2011","fruit_veg_availability","all",,"S",,,,,"481.063333333333",,,,1,
+"Latin America and the Caribbean","2012","fruit_veg_availability","all",,"S",,,,,"480.76",,,,1,
+"Latin America and the Caribbean","2013","fruit_veg_availability","all",,"S",,,,,"479.843333333333",,,,1,

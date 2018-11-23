@@ -1,5 +1,5 @@
 ####Setup#####
-list.of.packages <- c("ggplot2","reshape2","data.table","scales","varhandle","Cairo","plyr","eulerr","extrafont")
+list.of.packages <- c("ggplot2","reshape2","data.table","scales","varhandle","Cairo","plyr","eulerr","extrafont","ggrepel")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, require, character.only=T)
@@ -698,9 +698,9 @@ for(this.country in countries){
         ,legend.key = element_blank()
       )
     if(factor.years){
-      c = c + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),unfactor(year))),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
+      c = c + geom_text_repel(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),unfactor(year))),vjust=-0.3,show.legend=F,family="Averta Regular") 
     }else{
-      c = c + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),year)),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
+      c = c + geom_text_repel(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),year)),vjust=-0.3,show.legend=F,family="Averta Regular") 
     }
     return(c)
   }

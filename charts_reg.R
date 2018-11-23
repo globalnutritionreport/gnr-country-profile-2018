@@ -1,5 +1,5 @@
 ####Setup#####
-list.of.packages <- c("ggplot2","reshape2","data.table","scales","varhandle","Cairo","plyr","eulerr","extrafont")
+list.of.packages <- c("ggplot2","reshape2","data.table","scales","varhandle","Cairo","plyr","eulerr","extrafont","ggrepel")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, require, character.only=T)
@@ -167,7 +167,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 ####End setup####
 ####Loop####
 # countries = c("Asia","Africa","Latin America and the Caribbean","Western Asia","Western Europe")
-# countries = c("Asia","Australia and New Zealand")
+# countries = c("South America")
 for(this.country in countries){
   message(this.country)
   real.country = this.country
@@ -186,6 +186,20 @@ for(this.country in countries){
       this.country = "Subregional"
     }
   }
+  max.n = max(countrydat$n,na.rm=T)
+  if(max.n>=50){
+    minimum.n = 10
+  }else if(max.n>=20){
+    minimum.n = 5
+  }else if(max.n>2){
+    minimum.n = 3
+  }else{
+    minimum.n = 2
+  }
+  without.n = subset(countrydat,is.na(n))
+  with.n = subset(countrydat,!is.na(n))
+  with.n = subset(with.n,n>=minimum.n)
+  countrydat = rbind(without.n,with.n)
   #Chart 1 part a and b
   indicators = c("190_percent","320_percent","GDP_capita_PPP")
   c1data = subset(countrydat,indicator %in% indicators)
@@ -229,14 +243,15 @@ for(this.country in countries){
     if(nrow(c1a.melt)==0){c1a.missing<-TRUE}else{c1a.missing<-FALSE}
     c1b.melt <- subset(c1data,indicator == "GDP_capita_PPP")
     if(nrow(c1b.melt)>0){
-      c1b.melt$variable = "GDP per capita"
+      c1b.melt$variable = "GDP per capita\n(thousands)"
       c1b.melt <- subset(c1b.melt,!is.na(value))
       c1b.melt <- c1b.melt[order(c1b.melt$year),]
       top4 = c1b.melt$year[c(max(nrow(c1b.melt)-3,1):nrow(c1b.melt))]
       c1b.melt = subset(c1b.melt,year %in% top4)
       c1b.melt$year = as.factor(c1b.melt$year)
+      c1b.melt$value = c1b.melt$value/1000
       c1b.max <- max(c1b.melt$value,na.rm=TRUE)
-      c1b.key.data = data.frame(year=as.numeric(c(NA)),variable=c("GDP per capita"),value=as.numeric(c(NA)))
+      c1b.key.data = data.frame(year=as.numeric(c(NA)),variable=c("GDP per capita\n(thousands)"),value=as.numeric(c(NA)))
       c1b = ggplot(c1b.melt,aes(year,value,fill=variable)) +
         geom_bar(position="dodge",stat="identity",color=blue,show.legend=F,size=1) +
         geom_point(data=c1b.key.data,aes(fill=variable),size=12,color=blue,stroke=1.5,shape=21) +
@@ -260,7 +275,7 @@ for(this.country in countries){
           ,legend.background = element_rect(fill = "transparent", colour = "transparent")
           ,legend.key = element_blank()
           ,legend.key.size = unit(2.2,"lines")
-        ) + geom_text(size=9,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
+        ) + geom_text(size=9,aes(label=safeFormat(value,precision = 2)),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
     }
     
     if(nrow(c1b.melt)==0){c1b.missing<-TRUE}else{c1b.missing<-FALSE}
@@ -477,6 +492,7 @@ for(this.country in countries){
       ,legend.key = element_rect(fill = "transparent", colour = "transparent")
       ,legend.key.size = unit(2.5,"lines")
     ) + geom_text(size=13,aes(label=safeFormat(value)),position=position_dodge(1),vjust=-0.3,color=blue,family="Averta Regular")
+  if(real.country=="Middle Africa"){c4=no.data}
   #Chart 5
   indicators = c("basic_water","limited_water","safely_managed_water","surface_water","unimproved_water")
   c5names = c("Basic","Limited","Safely managed","Surface water","Unimproved")
@@ -596,6 +612,9 @@ for(this.country in countries){
   }else{
     c6 = no.data
   }
+  if(real.country %in% c("N. America","North America")){
+    c6 = no.data
+  }
  
   #Chart 7
   indicators = c("agriculture_expenditure","education_spending","health_spending","social_protection_spending")
@@ -663,7 +682,7 @@ for(this.country in countries){
   }else{
     c7 <- no.data
   }
-  grouped_line = function(countrydat, ind, disagg, disagg.values, fill=yellowRedFill, color=yellowRedColor, percent=F, legend=F, factor.years=T){
+  grouped_line = function(countrydat, ind, disagg, disagg.values, fill=yellowRedFill, color=yellowRedColor, percent=F, legend=F, factor.years=T, subset.years=F){
     cdata = subset(countrydat, (indicator==ind & disaggregation==disagg))
     cdata$value = as.numeric(cdata$value)
     if(percent){
@@ -677,6 +696,12 @@ for(this.country in countries){
     if(sum(cdata$value)==0){
       return(no.data)
     }
+    if(length(subset.years)>0){
+      if(subset.years){
+        cdata = subset(cdata, year %in% subset.years)
+      }
+    }
+    
     cdata <- cdata[order(cdata$year),]
     if(factor.years){
       cdata$year = as.factor(cdata$year)
@@ -718,9 +743,9 @@ for(this.country in countries){
         ,legend.key = element_blank()
       )
     if(factor.years){
-      c = c + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),unfactor(year))),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
+      c = c + geom_text_repel(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),unfactor(year))),vjust=-0.3,show.legend=F,family="Averta Regular") 
     }else{
-      c = c + geom_text(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),year)),position=position_dodge(0.5),vjust=-0.3,show.legend=F,family="Averta Regular") 
+      c = c + geom_text_repel(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),year)),vjust=-0.3,show.legend=F,family="Averta Regular") 
     }
     return(c)
   }
@@ -815,35 +840,43 @@ for(this.country in countries){
     c8 = grouped_bar(countrydat, "wasting_percent","global",disaggs,fill=lightBlueYellowRed,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
   }else{c8=no.data}
   if(length(unique(stunting_dat$disagg.value))>1){
-    c9 = grouped_line(countrydat, "stunting_percent","global",disaggs,color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
+    reg.years = subset(countrydat,indicator=="stunting_percent" & disaggregation=="global" & disagg.value==this.country & !is.na(value))$year
+    c9 = grouped_line(countrydat, "stunting_percent","global",disaggs,color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F,subset.years=reg.years)
   }else{
     c9=no.data
   }
   if(length(unique(overweight_dat$disagg.value))>1){
-    c10 = grouped_line(countrydat, "overweight_percent","global",disaggs,color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F)
+    reg.years = subset(countrydat,indicator=="overweight_percent" & disaggregation=="global" & disagg.value==this.country & !is.na(value))$year
+    c10 = grouped_line(countrydat, "overweight_percent","global",disaggs,color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,factor.years=F,subset.years=reg.years)
   }else{
     c10=no.data
   }
   wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="income" & !is.na(value))
-  if(nrow(wasting_dat)>0){
+  wasting_missing = nrow(wasting_dat)==0
+  if(!wasting_missing){
     wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
     max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
     wasting_years = max(subset(wasting_years,count==max_wasting_count)$year)
     c11 = grouped_bar(countrydat, "wasting_percent","income",c("Lowest","Second lowest","Middle","Second highest","Highest"),fill=quintileFillValues,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
   }else{c11=no.data}
   
-  c12 = grouped_line(countrydat, "stunting_percent","income",c("Lowest","Second lowest","Middle","Second highest","Highest"),color=quintileColor,fill=quintileFill,factor.years=F)
-  c13 = grouped_line(countrydat, "overweight_percent","income",c("Lowest","Second lowest","Middle","Second highest","Highest"),color=quintileColor,fill=quintileFill,factor.years=F)
+  max.year = max(subset(countrydat,indicator=="stunting_percent" & disaggregation=="income")$year,na.rm=T)
+  c12 = grouped_bar(countrydat, "stunting_percent","income",c("Lowest","Second lowest","Middle","Second highest","Highest"),fill=quintileFillValues,subset.years=max.year,legend=wasting_missing,byrow=T,nrow=3)
+  max.year = max(subset(countrydat,indicator=="overweight_percent" & disaggregation=="income")$year,na.rm=T)
+  c13 = grouped_bar(countrydat, "overweight_percent","income",c("Lowest","Second lowest","Middle","Second highest","Highest"),fill=quintileFillValues,subset.years=max.year,legend=wasting_missing,byrow=T,nrow=3)
   
   wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="location" & !is.na(value))
-  if(nrow(wasting_dat)>0){
+  wasting_missing = nrow(wasting_dat)==0
+  if(!wasting_missing){
     wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
     max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
     wasting_years = max(subset(wasting_years,count==max_wasting_count)$year)
     c14 = grouped_bar(countrydat, "wasting_percent","location",c("Urban","Rural"),legend=T,subset.years=wasting_years)
   }else{c14=no.data}
-  c15 = grouped_line(countrydat, "stunting_percent","location",c("Urban","Rural"),factor.years=F)
-  c16 = grouped_line(countrydat, "overweight_percent","location",c("Urban","Rural"),factor.years=F)
+  max.year = max(subset(countrydat,indicator=="stunting_percent" & disaggregation=="location")$year,na.rm=T)
+  c15 = grouped_bar(countrydat, "stunting_percent","location",c("Urban","Rural"),subset.years=max.year,legend=wasting_missing,byrow=T,nrow=3)
+  max.year = max(subset(countrydat,indicator=="overweight_percent" & disaggregation=="location")$year,na.rm=T)
+  c16 = grouped_bar(countrydat, "overweight_percent","location",c("Urban","Rural"),subset.years=max.year,legend=wasting_missing,byrow=T,nrow=3)
   
   # Chart 17
   wasting = as.numeric(subset(countrydat, indicator=="coexistence" & disagg.value=="Wasting alone")$value)/100
@@ -1022,7 +1055,7 @@ for(this.country in countries){
   c23 = grouped_line(countrydat, "adult_overweight","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
   c24 = grouped_line(countrydat, "adult_obesity","gender",c("Male","Female"),percent=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
   c25 = grouped_line(countrydat, "adult_blood_pressure","gender",c("Male","Female"),percent=T,legend=T,color=orangeLightBlueColor,fill=orangeLightBlueFill,factor.years=F)
-  c26 = grouped_line(countrydat, "adult_anemia","pregnancy",c("Pregnant women","Non-pregnant women"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,legend=T,factor.years=F)
+  c26 = grouped_line(countrydat, "adult_anemia","pregnancy",c("All women","Pregnant women","Non-pregnant women"),color=lightBlueYellowRedColor,fill=lightBlueYellowRedFill,legend=T,factor.years=F)
   ind = "adult_sodium"
   spacing = 1
   legend = T
@@ -1119,21 +1152,20 @@ for(this.country in countries){
     c28.data$outlier[which(c28.data$percent>2)] = 1
     c28.data$percent[which(c28.data$percent>2)] = 2.1
     c28.data = data.table(c28.data)
+    if(regional==1){
+      c28.data = subset(c28.data,class %in% c("National","Global"))
+    }
     c28.data[,percent:=calc_outlier(.SD),by=.(food)]
     c28.data$food = factor(c28.data$food,levels=rev(food.order))
     c28.data = c28.data[order(-c28.data$food),]
     if(regional==1){
-      c28.data$column = c(rep(1,21),rep(2,24))
+      c28.data$column = c(rep(1,14),rep(2,16))
     }else{
       c28.data$column = c(rep(1,21),rep(2,24))
     }
     bar.dat = unique(c28.data[,c("food","recommended","column"),with=F])
     bar.dat$class = this.country
     c28.max = min(max(c28.data$percent,na.rm=T),2)
-    
-    if(regional==1){
-      c28.data = subset(c28.data,class %in% c("National","Global"))
-    }
     
     c28.data$class[which(c28.data$class=="National")] = this.country
     
@@ -1158,9 +1190,9 @@ for(this.country in countries){
       geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2) +
       geom_text(data=subset(c28.data.sub,is.na(example) & class=="Global"),aes(y=1,label=paste0(round.simple(recommended,1),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
       geom_text(data=subset(c28.data.sub,example==T),aes(y=1,label="Midpoint of TMREL"),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
-      geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round.simple(value)),color=blue,size=8,family="Averta Regular",vjust=2) +
-      annotate("text", x=8, y=0.3, label="0%/0g of TMREL",size=9,color=blue,family="Averta Regular") +
-      annotate("text", x=8, y=1.7, label="200% of TMREL",size=9,color=blue,family="Averta Regular") +
+      geom_text_repel(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round.simple(value)),color=blue,size=8,family="Averta Regular",vjust=2) +
+      annotate("text", x=8, y=0.4, label="0%/0g of TMREL",size=9,color=blue,family="Averta Regular") +
+      annotate("text", x=8, y=1.6, label="200% of TMREL",size=9,color=blue,family="Averta Regular") +
       trmelColor + 
       coord_flip() +
       theme_classic() +
@@ -1186,7 +1218,7 @@ for(this.country in countries){
       geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
       geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2,show.legend=F) +
       geom_text(data=subset(c28.data.sub, class=="Global"),aes(y=1,label=paste0(round.simple(recommended,1),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
-      geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round.simple(value)),color=blue,size=7,family="Averta Regular",vjust=2) +
+      geom_text_repel(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round.simple(value)),color=blue,size=7,family="Averta Regular",vjust=2) +
       trmelColor + 
       coord_flip() +
       theme_classic() +
@@ -1210,7 +1242,7 @@ for(this.country in countries){
   # Chart 29
   indicators = c("oda_per_capita")
   c29names = c("Basic nutrition ODA received")
-  y.lab = "ODA, US$ millions, per 1,000 people"
+  y.lab = "ODA, US$, per 1,000 people"
   c29data = subset(countrydat,indicator %in% indicators)
   c29data$value = as.numeric(c29data$value)
   c29data$value= c29data$value * 1000

@@ -489,6 +489,10 @@ food$indicator = "fruit_veg_availability"
 food$component = "S"
 food$disaggregation = "all"
 food = subset(food,region!="Americas")
+lac_food = subset(food,region %in% c("Caribbean","Central America","South America"))
+lac_food = data.table(lac_food)[,.(value=mean(value)),by=.(year,indicator,component,disaggregation)]
+lac_food$region = "Latin America and the Caribbean"
+food = rbind(food,lac_food)
 master_dat_fix_list[[master_dat_fix_index]] = food
 master_dat_fix_index = master_dat_fix_index + 1
 

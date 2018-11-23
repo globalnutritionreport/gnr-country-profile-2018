@@ -256,6 +256,48 @@ for country in dataDictionary.keys():
     ctryDat = dat.loc[(dat.region == country)]
     dataDictionary[country]["country"] = country
     dataDictionary[country]["regional"] = ctryDat.iloc[0]["regional"]
+
+    max_n = ctryDat["n"].max()
+    if max_n >= 50:
+        minimum_n = 10
+    elif max_n >= 20:
+        minimum_n = 5
+    elif max_n > 2:
+        minimum_n = 3
+    else:
+        minimum_n = 2
+
+    summed_vars = [
+        "population",
+        "u5_pop",
+        "65_years",
+        "under_5_stunting_track",
+        "under_5_wasting_track",
+        "under_5_overweight_track",
+        "wra_anaemia_track",
+        "ebf_track",
+        "adult_fem_obesity_track",
+        "adult_mal_obesity_track",
+        "adult_fem_diabetes_track",
+        "adult_mal_diabetes_track",
+        "salt_leg",
+        "sugar_tax",
+        "fbdg",
+        "multi_sec",
+        "stunting_plan",
+        "anaemia_plan",
+        "LBW_plan",
+        "child_overweight_plan",
+        "EBF_plan",
+        "wasting_plan",
+        "sodium_plan",
+        "overweight_adults_adoles_plan",
+     ]
+    ctryDat_with_n = ctryDat.loc[(ctryDat["n"] >= minimum_n) & (~ctryDat["indicator"].isin(summed_vars))]
+    ctryDat_without_n = ctryDat.loc[(pd.isnull(ctryDat["n"])) | (ctryDat["indicator"].isin(summed_vars))]
+
+    ctryDat = pd.concat([ctryDat_with_n, ctryDat_without_n])
+
     dataDictionary[country]["table1"][1] = [
         Paragraph(safeFormat(indicator_frac(ctryDat, "under_5_stunting_track", "On course"))+" on course", style=offCourseStyle),
         Paragraph(safeFormat(indicator_frac(ctryDat, "under_5_wasting_track", "On course"))+" on course", style=offCourseStyle),
@@ -277,13 +319,22 @@ for country in dataDictionary.keys():
     #     safeFormat(year(ctryDat, "gini"))
     # ]
 
-    dataDictionary[country]["table3"][0][1] = safeFormat(indicator_sum(ctryDat, "population"), True, divisor=1000) if safeFormat(indicator_sum(ctryDat, "population"), True, divisor=1000) != "0.0" else "<100,000"
+    dataDictionary[country]["table3"][0][1] = safeFormat(indicator_sum(ctryDat, "population"), True, divisor=1000)
+    if safeFormat(indicator_sum(ctryDat, "population"), True, divisor=1000) == "0.0":
+        dataDictionary[country]["table3"][0][0] = "Population (000)"
+        dataDictionary[country]["table3"][0][1] = safeFormat(indicator_sum(ctryDat, "population"), True)
     dataDictionary[country]["table3"][0][2] = safeFormat(year(ctryDat, "population"))
-    dataDictionary[country]["table3"][1][1] = safeFormat(indicator_sum(ctryDat, "u5_pop"), True, divisor=1000) if safeFormat(indicator_sum(ctryDat, "u5_pop"), True, divisor=1000) != "0.0" else "<100,000"
+    dataDictionary[country]["table3"][1][1] = safeFormat(indicator_sum(ctryDat, "u5_pop"), True, divisor=1000)
+    if safeFormat(indicator_sum(ctryDat, "u5_pop"), True, divisor=1000) == "0.0":
+        dataDictionary[country]["table3"][1][0] = "Under-5 population (000)"
+        dataDictionary[country]["table3"][1][1] = safeFormat(indicator_sum(ctryDat, "u5_pop"), True)
     dataDictionary[country]["table3"][1][2] = safeFormat(year(ctryDat, "u5_pop"))
     dataDictionary[country]["table3"][2][1] = safeFormat(indicator(ctryDat, "rural_percent"))
     dataDictionary[country]["table3"][2][2] = safeFormat(year(ctryDat, "rural_percent"))
-    dataDictionary[country]["table3"][3][1] = safeFormat(indicator_sum(ctryDat, "65_years"), True, divisor=1000) if safeFormat(indicator_sum(ctryDat, "65_years"), True, divisor=1000) != "0.0" else "<100,000"
+    dataDictionary[country]["table3"][3][1] = safeFormat(indicator_sum(ctryDat, "65_years"), True, divisor=1000)
+    if safeFormat(indicator_sum(ctryDat, "65_years"), True, divisor=1000) == "0.0":
+        dataDictionary[country]["table3"][3][0] = "≥65 years (000)"
+        dataDictionary[country]["table3"][3][1] = safeFormat(indicator_sum(ctryDat, "65_years"), True)
     dataDictionary[country]["table3"][3][2] = safeFormat(year(ctryDat, "65_years"))
     dataDictionary[country]["table3_n"] = safeFormat(indicator_n(ctryDat, "population"))
 
