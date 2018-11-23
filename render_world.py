@@ -10,7 +10,7 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.fonts import addMapping
 from xml.etree import ElementTree
-from tables_reg import dataDictionary, tableStyles
+from tables_world import dataDictionary, tableStyles
 
 
 def year(num):
@@ -240,11 +240,10 @@ class ReportMaker(object):
 if __name__ == "__main__":
     countries = list(dataDictionary.keys())
     countries.sort()
-    # countries = ["South America"]
     for country in countries:
         print(country)
         safeFileName = "".join([c for c in country.replace(" ", "_") if re.match(r'\w', c)])
         countryDat = dataDictionary[country]
-        doc = ReportMaker("2018_template_reg", "pdfs_reg/"+safeFileName+".pdf", country, countryDat)
+        doc = ReportMaker("2018_template_world", "pdfs_world/"+safeFileName+".pdf", country, countryDat)
         doc.createDocument()
         doc.savePDF()

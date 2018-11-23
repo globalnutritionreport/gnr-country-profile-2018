@@ -56,7 +56,8 @@ latest.year.inds = c("coexistence",
                      "physicians",
                      "nurses_and_midwives",
                      "community_health_workers",
-                     "early_childbearing_prev")
+                     "early_childbearing_prev",
+                     "diarrhea_zinc","vit_a","iron_supp","iron_and_folic","iodised_salt")
 
 just.recips = c("ODA_received","ODA_specific")
 
@@ -234,7 +235,7 @@ stunting = melt(stunting,id.vars="region",variable.name="year")
 stunting$indicator = "stunting_percent"
 stunting$component = "C"
 stunting$disaggregation = "gender"
-stunting$disagg.value = "Both"
+stunting$disagg.value = "Children under 5"
 # unique(stunting$region) %in% unique(master_dat_reg$region)
 master_dat_fix_list[[master_dat_fix_index]] = stunting
 master_dat_fix_index = master_dat_fix_index + 1
@@ -256,12 +257,13 @@ overweight = melt(overweight,id.vars="region",variable.name="year")
 overweight$indicator = "overweight_percent"
 overweight$component = "C"
 overweight$disaggregation = "gender"
-overweight$disagg.value = "Both"
+overweight$disagg.value = "Children under 5"
 # unique(overweight$region) %in% unique(master_dat_reg$region)
 master_dat_fix_list[[master_dat_fix_index]] = overweight
 master_dat_fix_index = master_dat_fix_index + 1
 
 master_dat_reg = subset(master_dat_reg,!(indicator=="wasting_percent" & disagg.value %in% c("Both","Girls","Boys")))
+# master_dat_reg = subset(master_dat_reg,!(indicator=="wasting_percent" & disaggregation=="income" & year==2014))
 wasting = read.xlsx(
   "CHILD STATUS U5.xlsx",
   sheet=5,
@@ -278,7 +280,7 @@ wasting = melt(wasting,id.vars="region",variable.name="year")
 wasting$indicator = "wasting_percent"
 wasting$component = "C"
 wasting$disaggregation = "gender"
-wasting$disagg.value = "Both"
+wasting$disagg.value = "Children under 5"
 # unique(wasting$region) %in% unique(master_dat_reg$region)
 master_dat_fix_list[[master_dat_fix_index]] = wasting
 master_dat_fix_index = master_dat_fix_index + 1
@@ -359,6 +361,7 @@ indicators = c(
 master_dat_reg = subset(master_dat_reg,!indicator %in% indicators)
 policy = read.xlsx(
   "POLICY regional.xlsx"
+  ,rows = c(1:7)
 )
 names(policy) = c("region",indicators)
 policy = melt(policy,id.vars="region",variable.name="indicator")
