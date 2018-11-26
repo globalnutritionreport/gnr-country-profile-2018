@@ -75,6 +75,8 @@ for(this.section in sections){
   ctry.sub = ctry.sub[order(ctry.sub$year),]
   ctry.sub = melt(ctry.sub,id.vars=c("iso3","country","disaggregation","disagg.value","indicator","region","subregion","section","year"))
   ctry.sub = dcast(ctry.sub,iso3+country+disaggregation+disagg.value+region+subregion+section~indicator+year)
+  na.names = names(ctry.sub)[which(substr(names(ctry.sub),nchar(names(ctry.sub))-2,nchar(names(ctry.sub)))=="_NA")]
+  names(ctry.sub)[which(substr(names(ctry.sub),nchar(names(ctry.sub))-2,nchar(names(ctry.sub)))=="_NA")] = substr(na.names,1,nchar(na.names)-3)
   
   reg.sub = subset(region,section==this.section)
   reg.sub = reg.sub[order(reg.sub$year),]
@@ -84,8 +86,14 @@ for(this.section in sections){
   reg.sub$value.type[which(reg.sub$variable=="value")] = "weighted mean"
   reg.sub$value.type[which(reg.sub$variable=="value.sum")] = "sum"
   reg.sub$variable = NULL
-  reg.sub = dcast(reg.sub,region+disaggregation+disagg.value+n+N+value.type~indicator+year)
-  
+  if(this.section %in% c("overview","policy")){
+    reg.sub$value = paste0(reg.sub$n,"/",reg.sub$N)
+  }
+  reg.sub$N = NULL
+  reg.sub = dcast(reg.sub,region+disaggregation+disagg.value+n+value.type~indicator+year)
+  na.names = names(reg.sub)[which(substr(names(reg.sub),nchar(names(reg.sub))-2,nchar(names(reg.sub)))=="_NA")]
+  names(reg.sub)[which(substr(names(reg.sub),nchar(names(reg.sub))-2,nchar(names(reg.sub)))=="_NA")] = substr(na.names,1,nchar(na.names)-3)
+
   wld.sub = subset(world,section==this.section)
   wld.sub = wld.sub[order(wld.sub$year),]
   wld.sub = melt(wld.sub,id.vars=c("region","disaggregation","disagg.value","indicator","section","year","year_range","n","N"))
@@ -94,7 +102,13 @@ for(this.section in sections){
   wld.sub$value.type[which(wld.sub$variable=="value")] = "weighted mean"
   wld.sub$value.type[which(wld.sub$variable=="value.sum")] = "sum"
   wld.sub$variable = NULL
-  wld.sub = dcast(wld.sub,region+disaggregation+disagg.value+n+N+value.type~indicator+year)
+  if(this.section %in% c("overview","policy")){
+    wld.sub$value = paste0(wld.sub$n,"/",wld.sub$N)
+  }
+  wld.sub$N = NULL
+  wld.sub = dcast(wld.sub,region+disaggregation+disagg.value+n+value.type~indicator+year)
+  na.names = names(wld.sub)[which(substr(names(wld.sub),nchar(names(wld.sub))-2,nchar(names(wld.sub)))=="_NA")]
+  names(wld.sub)[which(substr(names(wld.sub),nchar(names(wld.sub))-2,nchar(names(wld.sub)))=="_NA")] = substr(na.names,1,nchar(na.names)-3)
   
   ctry.sheet = paste("Country",this.section)
   addWorksheet(wb,ctry.sheet)
