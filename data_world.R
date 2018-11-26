@@ -1,5 +1,5 @@
 ####Setup#####
-list.of.packages <- c("reshape2","data.table","openxlsx","plyr","gdata","varhandle")
+list.of.packages <- c("reshape2","data.table","openxlsx","plyr","gdata","varhandle","WDI")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, require, character.only=T)
@@ -596,6 +596,97 @@ master_dat_fix_list[[master_dat_fix_index]] = oda
 master_dat_fix_index = master_dat_fix_index + 1
 
 master_dat_reg = subset(master_dat_reg,!indicator %in% c("vit_a","diarrhea_zinc","iron_supp","iodised_salt","iron_and_folic"))
+
+master_dat_reg = subset(master_dat_reg,indicator != "adult_diabetes")
+dia = read.xlsx(
+  "ADULT STATUS - Age standardised (Country-Region-World) (NCD-RisC_Lancet_2016_Diabetes_age_standardised_by_Country_Region_World).xlsx",
+  sheet=2,
+  rows=c(5:7)
+  )
+names(dia)[1]="disagg.value"
+dia$disagg.value[which(dia$disagg.value=="Men")] = "Male"
+dia$disagg.value[which(dia$disagg.value=="Women")] = "Female"
+dia$Grand.Total=NULL
+dia = melt(dia,id.vars="disagg.value",variable.name="year")
+dia$region = "World"
+dia$disaggregation = "gender"
+dia$component = "H"
+dia$year = unfactor(dia$year)
+dia$indicator = "adult_diabetes"
+dia = subset(dia,year>=1999)
+master_dat_fix_list[[master_dat_fix_index]] = dia
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,indicator != "adult_blood_pressure")
+bp = read.xlsx(
+  "ADULT STATUS - Age standardised (Country-Region-World) (NCD-RisC_Lancet_2017_BP_age_standardised_by_Country_Region_World).xlsx",
+  sheet=2,
+  rows=c(5:7)
+)
+names(bp)[1]="disagg.value"
+bp$disagg.value[which(bp$disagg.value=="Men")] = "Male"
+bp$disagg.value[which(bp$disagg.value=="Women")] = "Female"
+bp$Grand.Total=NULL
+bp = melt(bp,id.vars="disagg.value",variable.name="year")
+bp$region = "World"
+bp$disaggregation = "gender"
+bp$component = "H"
+bp$year = unfactor(bp$year)
+bp = subset(bp,year>=1999)
+bp$indicator = "adult_blood_pressure"
+master_dat_fix_list[[master_dat_fix_index]] = bp
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,!indicator %in% c("adult_obesity","adult_overweight"))
+adult = read.csv("ADULT overweight and obseity.csv",na.strings="",as.is=T,check.names=F)
+adult = adult[,c(1,3,4,8,23)]
+names(adult) = c("region","disagg.value","year","adult_obesity","adult_overweight")
+adult = subset(adult,!is.na(region) & year>=1999)
+adult$disagg.value[which(adult$disagg.value=="Men")] = "Male"
+adult$disagg.value[which(adult$disagg.value=="Women")] = "Female"
+adult = melt(adult,id.vars=c("region","disagg.value","year"),variable.name="indicator")
+adult$value = adult$value
+adult$disaggregation = "gender"
+adult$component = "H"
+master_dat_fix_list[[master_dat_fix_index]] = adult
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,indicator != "adult_anemia")
+# all_anemia = WDI(indicator="SH.ANM.ALLW.ZS",country="1W",start=1999,end=2018)
+# write.csv(all_anemia,"all_anemia.csv",na="",row.names=F)
+all_anemia = read.csv("all_anemia.csv",na.strings="",as.is=T)
+all_anemia$iso2c = NULL
+names(all_anemia) = c("region","value","year")
+all_anemia$disaggregation = "pregnancy"
+all_anemia$disagg.value = "All women"
+all_anemia$indicator = "adult_anemia"
+all_anemia$component = "I"
+master_dat_fix_list[[master_dat_fix_index]] = all_anemia
+master_dat_fix_index = master_dat_fix_index + 1
+
+# np_anemia = WDI(indicator="SH.ANM.NPRG.ZS",country="1W",start=1999,end=2018)
+# write.csv(np_anemia,"np_anemia.csv",na="",row.names=F)
+np_anemia = read.csv("np_anemia.csv",na.strings="",as.is=T)
+np_anemia$iso2c = NULL
+names(np_anemia) = c("region","value","year")
+np_anemia$disaggregation = "pregnancy"
+np_anemia$disagg.value = "Non-pregnant women"
+np_anemia$indicator = "adult_anemia"
+np_anemia$component = "I"
+master_dat_fix_list[[master_dat_fix_index]] = np_anemia
+master_dat_fix_index = master_dat_fix_index + 1
+
+# p_anemia = WDI(indicator="SH.PRG.ANEM",country="1W",start=1999,end=2018)
+# write.csv(p_anemia,"p_anemia.csv",na="",row.names=F)
+p_anemia = read.csv("p_anemia.csv",na.strings="",as.is=T)
+p_anemia$iso2c = NULL
+names(p_anemia) = c("region","value","year")
+p_anemia$disaggregation = "pregnancy"
+p_anemia$disagg.value = "Pregnant women"
+p_anemia$indicator = "adult_anemia"
+p_anemia$component = "I"
+master_dat_fix_list[[master_dat_fix_index]] = p_anemia
+master_dat_fix_index = master_dat_fix_index + 1
 
 master_dat_fix = rbindlist(master_dat_fix_list,fill=T)
 master_dat_reg = rbindlist(list(master_dat_reg,master_dat_fix),fill=T)
