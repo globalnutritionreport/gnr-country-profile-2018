@@ -92,6 +92,7 @@ for(this.section in sections){
     reg.sub$value = paste0(reg.sub$n,"/",reg.sub$N)
   }
   reg.sub$N = NULL
+  reg.sub = subset(reg.sub,(value.type=="sum" & indicator %in% c("population","u5_pop","65_years")) | (value.type=="weighted mean" & !indicator %in% c("population","u5_pop","65_years")))
   reg.sub = dcast(reg.sub,region+disaggregation+disagg.value+n+value.type~indicator+year)
   na.names = names(reg.sub)[which(substr(names(reg.sub),nchar(names(reg.sub))-2,nchar(names(reg.sub)))=="_NA")]
   names(reg.sub)[which(substr(names(reg.sub),nchar(names(reg.sub))-2,nchar(names(reg.sub)))=="_NA")] = substr(na.names,1,nchar(na.names)-3)
@@ -118,6 +119,7 @@ for(this.section in sections){
       wld.sub$value = paste0(wld.sub$n,"/",wld.sub$N)
     }
     wld.sub$N = NULL
+    wld.sub = subset(wld.sub,(value.type=="sum" & indicator %in% c("population","u5_pop","65_years")) | (value.type=="weighted mean" & !indicator %in% c("population","u5_pop","65_years")))
     wld.sub = dcast(wld.sub,region+disaggregation+disagg.value+n+value.type~indicator+year)
     na.names = names(wld.sub)[which(substr(names(wld.sub),nchar(names(wld.sub))-2,nchar(names(wld.sub)))=="_NA")]
     names(wld.sub)[which(substr(names(wld.sub),nchar(names(wld.sub))-2,nchar(names(wld.sub)))=="_NA")] = substr(na.names,1,nchar(na.names)-3)
@@ -129,13 +131,22 @@ for(this.section in sections){
   addWorksheet(wb,ctry.sheet)
   writeData(wb,sheet=ctry.sheet,ctry.sub,colNames=TRUE,rowNames=FALSE)
   
-  reg.sheet = paste("Region",this.section)
-  addWorksheet(wb,reg.sheet)
-  writeData(wb,sheet=reg.sheet,reg.sub,colNames=TRUE,rowNames=FALSE)
+  if(this.section!="intervention"){
+    reg.sub = rbindlist(list(reg.sub,wld.sub),fill=T)
+    reg.sheet = paste("Region/World",this.section)
+    addWorksheet(wb,reg.sheet)
+    writeData(wb,sheet=reg.sheet,reg.sub,colNames=TRUE,rowNames=FALSE)
+  }else{
+    reg.sheet = paste("Region",this.section)
+    addWorksheet(wb,reg.sheet)
+    writeData(wb,sheet=reg.sheet,reg.sub,colNames=TRUE,rowNames=FALSE)
+    
+    wld.sheet = paste("World",this.section)
+    addWorksheet(wb,wld.sheet)
+    writeData(wb,sheet=wld.sheet,wld.sub,colNames=TRUE,rowNames=FALSE)
+  }
   
-  wld.sheet = paste("World",this.section)
-  addWorksheet(wb,wld.sheet)
-  writeData(wb,sheet=wld.sheet,wld.sub,colNames=TRUE,rowNames=FALSE)
+  
 }
 
 saveWorkbook(wb, "profile_data.xlsx", overwrite = TRUE)
