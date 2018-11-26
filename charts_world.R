@@ -1181,7 +1181,8 @@ this.country = "World"
   c29data = c29data[c("year","indicator","value")]
   c29.oda.max <- max(subset(c29data,indicator==indicators[2])$value,na.rm=TRUE)
   c29.perc.max <- max(subset(c29data,indicator==indicators[1])$value,na.rm=TRUE)
-  c29.ratio = c29.oda.max/c29.perc.max
+  c29.ratio = (c29.oda.max/c29.perc.max)*1.25
+  c29.oda.max = c29.oda.max*1.25
   for(j in 1:length(indicators)){
     ind = indicators[j]
     indname = c29names[j]
