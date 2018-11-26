@@ -76,7 +76,7 @@
 <line x1="{{left}}" x2="{{left}}" y1="{{top+218}}" y2="{{top+245}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top+213}}" left="{{left+4}}" width="104" height="11" font="9"><b>Source</b>: World Bank 2018.</text>
 <text top="{{top+224}}" left="{{left+4}}" width="150" height="11" font="9"><b>Note</b>: GDP = gross domestic product. PPP =  purchasing power</text>
-<text top="{{top+234}}" left="{{left+4}}" width="150" height="11" font="9"> parity. n = {{country_data.pov_percent_n}} (poverty); n = {{country_data.GDP_capita_PPP_n}} (GDP).</text>
+<text top="{{top+234}}" left="{{left+4}}" width="150" height="11" font="9"> parity.</text>
 
 <line x1="{{left+260}}" x2="{{left+260}}" y1="{{top+10}}" y2="{{top+235}}" on="1"  off="0" color="{{dark_grey}}"></line>
 
@@ -93,9 +93,8 @@
 <!-- Table 3 -->
 <text top="{{top}}" left="{{left+528}}" width="72" height="18" font="6"><b>Population</b></text>
 <table top="{{top+27}}" left="{{left+528}}" height="175" data="table3" widths="160,57.5,57.5"></table>
-<line x1="{{left+531}}" x2="{{left+531}}" y1="{{top+218}}" y2="{{top+235}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
+<line x1="{{left+531}}" x2="{{left+531}}" y1="{{top+218}}" y2="{{top+226}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top+213}}" left="{{left+535}}" width="173" height="11" font="9"><b>Source</b>: UN Population Division 2017.</text>
-<text top="{{top+224}}" left="{{left+535}}" width="173" height="11" font="9"><b>Notes</b>: n = {{country_data.table3_n}} (rural only).</text>
 
 <line x1="{{left}}" x2="{{right}}" y1="{{top+254}}" y2="{{top+254}}" width="4" color="{{dark_grey}}" on="1" off="0"></line>
 
@@ -138,7 +137,7 @@
 <text top="{{top+15}}" left="{{left+625}}" width="156" height="15" font="6"><b>enrolment (net, % population)</b></text>
 <image top="{{top+34}}" left="{{left+625}}" width="200" height="180" src="charts_world/{{country_data.country}}/c4.png"/>
 <line x1="{{left+625}}" x2="{{left+625}}" y1="{{top+231}}" y2="{{top+238}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
-<text top="{{top+226}}" left="{{left+629}}" width="156" height="10" font="9"><b>Source</b>: UNESCO Institute for Statistics 2018. n = {{country_data.female_secondary_enroll_net_n}}</text>
+<text top="{{top+226}}" left="{{left+629}}" width="156" height="10" font="9"><b>Source</b>: UNESCO Institute for Statistics 2018.</text>
 
 <!-- Row -->
 <!-- Chart 5 (prev 11) -->
@@ -146,16 +145,15 @@
 <text top="{{top}}" left="{{left}}" width="229" height="15" font="6"><b>Drinking water coverage (% population)</b></text>
 <image top="{{top+25}}" left="{{left}}" width="200" height="185" src="charts_world/{{country_data.country}}/c5.png"/>
 <line x1="{{left}}" x2="{{left}}" y1="{{top+217}}" y2="{{top+224}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
-<text top="{{top+212}}" left="{{left+4}}" width="114" height="10" font="9"><b>Source</b>: WHO/UNICEF Joint Monitoring Programme 2017. n = {{country_data.basic_water_n}}</text>
+<text top="{{top+212}}" left="{{left+4}}" width="114" height="10" font="9"><b>Source</b>: WHO/UNICEF Joint Monitoring Programme 2017.</text>
 
 <line x1="{{left+250}}" x2="{{left+250}}" y1="{{top+5}}" y2="{{top+223}}" on="1"  off="0" color="{{dark_grey}}"></line>
 
 <!-- Chart 6 (prev 12) -->
 <text top="{{top}}" left="{{left+300}}" width="201" height="15" font="6"><b>Sanitation coverage (% population)</b></text>
 <image top="{{top+25}}" left="{{left+300}}" width="200" height="185" src="charts_world/{{country_data.country}}/c6.png"/>
-<line x1="{{left+300}}" x2="{{left+300}}" y1="{{top+217}}" y2="{{top+232}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
+<line x1="{{left+300}}" x2="{{left+300}}" y1="{{top+217}}" y2="{{top+225}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top+212}}" left="{{left+304}}" width="114" height="10" font="9"><b>Source</b>: WHO/UNICEF Joint Monitoring Programme 2017.</text>
-<text top="{{top+222}}" left="{{left+304}}" width="114" height="10" font="9"><b>Note</b>: n = {{country_data.basic_sanitation_n}}</text>
 
 <line x1="{{left+542}}" x2="{{left+542}}" y1="{{top+5}}" y2="{{top+223}}" on="1"  off="0" color="{{dark_grey}}"></line>
 
@@ -163,7 +161,7 @@
 <text top="{{top}}" left="{{left+585}}" width="177" height="15" font="6"><b>Government expenditures (% total)</b></text>
 <image top="{{top+25}}" left="{{left+585}}" width="220" height="185" src="charts_world/{{country_data.country}}/c7.png"/>
 <line x1="{{left+585}}" x2="{{left+585}}" y1="{{top+217}}" y2="{{top+224}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
-<text top="{{top+212}}" left="{{left+589}}" width="68" height="10" font="9"><b>Source</b>: IFPRI 2015. n = {{country_data.agriculture_expenditure_n}}</text>
+<text top="{{top+212}}" left="{{left+589}}" width="68" height="10" font="9"><b>Source</b>: IFPRI 2015.</text>
 
 <!-- Footer -->
 <image top="1233" left="0" width="892" height="29" src="{{template_folder}}/footer.png"/>
@@ -224,7 +222,7 @@
 {% set top = top + 245 %}
 <line x1="{{left}}" x2="{{left}}" y1="{{top-2}}" y2="{{top+16}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top-6}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: UNICEF/WHO/World Bank Group: Joint child</text>
-<text top="{{top+5}}" left="{{left+4}}" width="28" height="10" font="9"> malnutrition estimates. n = {{country_data.wasting_percent_income_n}}</text>
+<text top="{{top+5}}" left="{{left+4}}" width="28" height="10" font="9"> malnutrition estimates.</text>
 
 <line x1="{{left+276}}" x2="{{left+276}}" y1="{{top-2}}" y2="{{top+16}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top-6}}" left="{{left+280}}" width="28" height="10" font="9"><b>Sources</b>: UNICEF/WHO/World Bank Group: Joint child</text>
@@ -252,7 +250,7 @@
 {% set top = top + 245 %}
 <line x1="{{left}}" x2="{{left}}" y1="{{top-2}}" y2="{{top+16}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top-6}}" left="{{left+4}}" width="28" height="10" font="9"><b>Sources</b>: UNICEF/WHO/World Bank Group: Joint child</text>
-<text top="{{top+5}}" left="{{left+4}}" width="28" height="10" font="9"> malnutrition estimates. n = {{country_data.wasting_percent_location_n}}</text>
+<text top="{{top+5}}" left="{{left+4}}" width="28" height="10" font="9"> malnutrition estimates.</text>
 
 <line x1="{{left+276}}" x2="{{left+276}}" y1="{{top-2}}" y2="{{top+16}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top-6}}" left="{{left+280}}" width="28" height="10" font="9"><b>Sources</b>: UNICEF/WHO/World Bank Group: Joint child</text>
@@ -372,11 +370,11 @@
 
 <line x1="{{left+276}}" x2="{{left+276}}" y1="{{top-6}}" y2="{{top+11}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top-11}}" left="{{left+280}}" width="28" height="10" font="9"><b>Source</b>: WHO Global Health Observatory.</text>
-<text top="{{top}}" left="{{left+280}}" width="28" height="10" font="9"><b>Note</b>: WRA = women of reproductive age. n = {{country_data.adult_anemia_n}}</text>
+<text top="{{top}}" left="{{left+280}}" width="28" height="10" font="9"><b>Note</b>: WRA = women of reproductive age.</text>
 
 <line x1="{{left+556}}" x2="{{left+556}}" y1="{{top-6}}" y2="{{top+11}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top-11}}" left="{{left+560}}" width="28" height="10" font="9"><b>Source</b>: Global Burden of Disease, the Institute for</text>
-<text top="{{top}}" left="{{left+560}}" width="28" height="10" font="9">Health Metrics and Evaluation. n = {{country_data.adult_sodium_n}}</text>
+<text top="{{top}}" left="{{left+560}}" width="28" height="10" font="9">Health Metrics and Evaluation.</text>
 
 <!-- Footer -->
 <image top="1233" left="0" width="892" height="29" src="{{template_folder}}/footer.png"/>
@@ -396,8 +394,7 @@
 
 <!-- Chart 28 -->
 {% set top = top + 20 %}
-<image top="{{top+20}}" left="{{left}}" width="400" height="320" src="charts_world/{{country_data.country}}/c28a.png"/>
-<image top="{{top+20}}" left="{{left+450}}" width="400" height="320" src="charts_world/{{country_data.country}}/c28b.png"/>
+<image top="{{top+20}}" left="{{left}}" width="653" height="320" src="{{template_folder}}/Fig-4-7.png"/>
 <line x1="{{left}}" x2="{{left}}" y1="{{top+355}}" y2="{{top+370}}" on="1" off="0" color="{{aqua_light}}" width="2"></line>
 <text top="{{top+350}}" left="{{left+4}}" width="28" height="10" font="9"><b>Source</b>: Global Burden of Disease, the Institute for Health Metrics and Evaluation.</text>
 <text top="{{top+361}}" left="{{left+4}}" width="28" height="10" font="9"><b>Notes</b>: Men and women aged 25 and older. TMREL = theoretical minimum risk exposure level. n = {{country_data.Calcium_n}}</text>

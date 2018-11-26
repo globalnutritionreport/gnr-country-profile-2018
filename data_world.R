@@ -285,21 +285,21 @@ wasting$disagg.value = "Children under 5"
 master_dat_fix_list[[master_dat_fix_index]] = wasting
 master_dat_fix_index = master_dat_fix_index + 1
 
-master_dat_reg = subset(master_dat_reg,indicator!="u5mr")
-u5mr = read.xlsx(
-  "DEMOGRAPHY U5 mort.xlsx",
-  rows=c(17,18)
-  ,cols=c(ex.num("c"),ex.num("p"):ex.num("s"))
-)
-names(u5mr) = c("region",seq(2000,2015,5))
-u5mr = melt(u5mr,id.vars="region",variable.name="year")
-u5mr$year = unfactor(u5mr$year)
-u5mr$region = "World"
-u5mr$component = "R"
-u5mr$indicator = "u5mr"
-u5mr$disaggregation = "all"
-master_dat_fix_list[[master_dat_fix_index]] = u5mr
-master_dat_fix_index = master_dat_fix_index + 1
+# master_dat_reg = subset(master_dat_reg,indicator!="u5mr")
+# u5mr = read.xlsx(
+#   "DEMOGRAPHY U5 mort.xlsx",
+#   rows=c(17,18)
+#   ,cols=c(ex.num("c"),ex.num("p"):ex.num("s"))
+# )
+# names(u5mr) = c("region",seq(2000,2015,5))
+# u5mr = melt(u5mr,id.vars="region",variable.name="year")
+# u5mr$year = unfactor(u5mr$year)
+# u5mr$region = "World"
+# u5mr$component = "R"
+# u5mr$indicator = "u5mr"
+# u5mr$disaggregation = "all"
+# master_dat_fix_list[[master_dat_fix_index]] = u5mr
+# master_dat_fix_index = master_dat_fix_index + 1
 
 # oda_per_cap = read.xlsx(
 #   "FINANCIAL regional.xlsx"
@@ -419,6 +419,70 @@ food$indicator = "fruit_veg_availability"
 food$component = "S"
 food$disaggregation = "all"
 master_dat_fix_list[[master_dat_fix_index]] = food
+master_dat_fix_index = master_dat_fix_index + 1
+
+wd <- "~/git/gnr-country-profile-2018/Dataset working directory_world"
+setwd(wd)
+
+master_dat_reg = subset(master_dat_reg,!indicator %in% c("190_percent","320_percent"))
+pov190 = read.csv("ECONOMICS_AND_DEMOGRAPHY_1.90 Poverty Line.csv",na.strings="",as.is=T,skip=4,check.names=F)
+names(pov190)[1:4] = c("region","code","ind","ind.code")
+pov190 = subset(pov190,region=="World")
+pov190$code = NULL
+pov190$ind = NULL
+pov190$ind.code = NULL
+pov190 = melt(pov190,id.vars="region",variable.name="year")
+pov190$year = unfactor(pov190$year)
+pov190 = subset(pov190,year %in% c(1999,2005,2010,2015))
+pov190$component = "R"
+pov190$indicator = "190_percent"
+pov190$disaggregation = "all"
+master_dat_fix_list[[master_dat_fix_index]] = pov190
+master_dat_fix_index = master_dat_fix_index + 1
+
+pov320 = read.csv("ECONOMICS_AND_DEMOGRAPHY_3.20 Poverty Line.csv",na.strings="",as.is=T,skip=4,check.names=F)
+names(pov320)[1:4] = c("region","code","ind","ind.code")
+pov320 = subset(pov320,region=="World")
+pov320$code = NULL
+pov320$ind = NULL
+pov320$ind.code = NULL
+pov320 = melt(pov320,id.vars="region",variable.name="year")
+pov320$year = unfactor(pov320$year)
+pov320 = subset(pov320,year %in% c(1999,2005,2010,2015))
+pov320$component = "R"
+pov320$indicator = "320_percent"
+pov320$disaggregation = "all"
+master_dat_fix_list[[master_dat_fix_index]] = pov320
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,!indicator %in% c("GDP_capita_PPP"))
+gdp_cap = read.csv("ECONOMICS_AND_DEMOGRAPHY_GDP Per Capita.csv",na.strings="",as.is=T,skip=4,check.names=F)
+names(gdp_cap)[1:4] = c("region","code","ind","ind.code")
+gdp_cap = subset(gdp_cap,region=="World")
+gdp_cap$code = NULL
+gdp_cap$ind = NULL
+gdp_cap$ind.code = NULL
+gdp_cap = melt(gdp_cap,id.vars="region",variable.name="year")
+gdp_cap$year = unfactor(gdp_cap$year)
+gdp_cap = subset(gdp_cap,year>=1999 & !is.na(value))
+gdp_cap$component = "R"
+gdp_cap$indicator = "GDP_capita_PPP"
+gdp_cap$disaggregation = "all"
+master_dat_fix_list[[master_dat_fix_index]] = gdp_cap
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,indicator!="u5mr")
+u5mr = read.xlsx(
+  "ECONOMICS_AND_DEMOGRAPHY_U5MR_GLOBAL.xlsx",
+  rows=c(16:352)
+  ,cols=c(ex.num("a"),ex.num("b"),ex.num("d"))
+)
+names(u5mr) = c("region","year","value")
+u5mr = subset(u5mr,region=="World" & year>=1999)
+u5mr$component = "R"
+u5mr$disaggregation = "all"
+u5mr$indicator = "u5mr"
+master_dat_fix_list[[master_dat_fix_index]] = u5mr
 master_dat_fix_index = master_dat_fix_index + 1
 
 master_dat_fix = rbindlist(master_dat_fix_list,fill=T)

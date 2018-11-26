@@ -1040,126 +1040,126 @@ this.country = "World"
   }
  
   # Chart 28
-  food.order = c(
-    "Calcium",
-    "Fruit",
-    "Legumes",
-    "Milk",
-    "Nuts and seeds",
-    "Omega 3",
-    "Polyunsaturated fat",
-    "Processed meat",
-    "Red meat",
-    "Salt",
-    "Saturated fat",
-    "Sugar-sweetened beverages",
-    "Trans fat",
-    "Vegetables",
-    "Whole grain"
-  )
-  c28.data = subset(countrydat,component == "M")
-  if(nrow(c28.data)>0){
-    c28.data = subset(c28.data,disagg.value=="National")
-    c28.data$value = as.numeric(c28.data$value)
-    c28.data$value[which(c28.data$unit=="%")] = c28.data$value[which(c28.data$unit=="%")]*100
-    setnames(c28.data,"rec","recommended")
-    c28.data$percent = c28.data$value/c28.data$recommended
-    # Outliers
-    calc_outlier = function(sd){
-      results = c()
-      outlier_val = 2.1
-      for(i in 1:nrow(sd)){
-        row = sd[i,]
-        if(row$outlier==1){
-          results = c(results,outlier_val)
-          outlier_val = outlier_val + 0.1
-        }else{
-          results = c(results,row$percent)
-        }
-      }
-      return(results)
-    }
-    setnames(c28.data,"indicator","food")
-    setnames(c28.data,"disagg.value","class")
-    c28.data = c28.data[order(c28.data$food, c28.data$percent),]
-    c28.data$outlier = 0
-    c28.data$outlier[which(c28.data$percent>2)] = 1
-    c28.data$percent[which(c28.data$percent>2)] = 2.1
-    c28.data = data.table(c28.data)
-    c28.data[,percent:=calc_outlier(.SD),by=.(food)]
-    c28.data$food = factor(c28.data$food,levels=rev(food.order))
-    c28.data = c28.data[order(-c28.data$food),]
-    c28.data$column = c(rep(1,7),rep(2,8))
-    bar.dat = unique(c28.data[,c("food","recommended","column"),with=F])
-    bar.dat$class = this.country
-    c28.max = min(max(c28.data$percent,na.rm=T),2)
-    
-    c28.data$class[which(c28.data$class=="National")] = this.country
-    
-    c28.data$class = factor(c28.data$class,levels=c(this.country))
-    
-    
-    i = 1
-    c28.data.sub = subset(c28.data,column==i)
-    trmel = data.frame(food="",recommended=0,example=T,class=this.country)
-    c28.data.sub = rbindlist(list(c28.data.sub,trmel),fill=T)
-    bar.dat.sub = subset(bar.dat,column==i)
-    bar.dat.sub = rbindlist(list(bar.dat.sub,trmel),fill=T)
-    c28a =
-      ggplot(c28.data.sub,aes(x=food,colour=class)) +
-      geom_bar(data=bar.dat.sub,aes(y=c28.max),fill="white",color=blue,stat="identity",width=0.4) +
-      geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
-      geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2) +
-      geom_text(data=subset(c28.data.sub,is.na(example) & class==this.country),aes(y=1,label=paste0(round.simple(recommended,1),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
-      geom_text(data=subset(c28.data.sub,example==T),aes(y=1,label="Midpoint of TMREL"),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
-      geom_text_repel(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round.simple(value)),color=blue,size=8,family="Averta Regular",vjust=2) +
-      annotate("text", x=8, y=0.4, label="0%/0g of TMREL",size=9,color=blue,family="Averta Regular") +
-      annotate("text", x=8, y=1.6, label="200% of TMREL",size=9,color=blue,family="Averta Regular") +
-      trmelColor + 
-      coord_flip() +
-      theme_classic() +
-      theme(
-        axis.title=element_blank(),
-        axis.line=element_blank(),
-        axis.ticks=element_blank(),
-        axis.text.x = element_blank(),
-        axis.text.y = element_text(size=25,color=blue,family="Averta Regular"),
-        legend.title=element_blank(),
-        legend.position="left",
-        legend.text = element_text(size=22,color=blue,family="Averta Regular"),
-        legend.background = element_rect(fill = "transparent", colour = "transparent"),
-        legend.key = element_rect(fill = "transparent", colour = "transparent"),
-        legend.key.size = unit(2.5,"lines")
-      )
-    
-    i = 2
-    c28.data.sub = subset(c28.data,column==i)
-    bar.dat.sub = subset(bar.dat,column==i)
-    c28b = ggplot(c28.data.sub,aes(x=food,colour=class)) +
-      geom_bar(data=bar.dat.sub,aes(y=c28.max),fill="white",color=blue,stat="identity",width=0.4) +
-      geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
-      geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2,show.legend=F) +
-      geom_text(data=subset(c28.data.sub, class==this.country),aes(y=1,label=paste0(round.simple(recommended,1),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
-      geom_text_repel(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round.simple(value)),color=blue,size=7,family="Averta Regular",vjust=2) +
-      trmelColor + 
-      coord_flip() +
-      theme_classic() +
-      theme(
-        axis.title=element_blank(),
-        axis.line=element_blank(),
-        axis.ticks=element_blank(),
-        axis.text.x = element_blank(),
-        axis.text.y = element_text(size=25,color=blue,family="Averta Regular"),
-        legend.title=element_blank(),
-        legend.text = element_text(size=22,color=blue,family="Averta Regular"),
-        legend.background = element_rect(fill = "transparent", colour = "transparent"),
-        legend.key = element_rect(fill = "transparent", colour = "transparent"),
-        legend.key.size = unit(2.5,"lines")
-      )
-  }else{
-    c28a = no.data
-    c28b = no.data
-  }
+  # food.order = c(
+  #   "Calcium",
+  #   "Fruit",
+  #   "Legumes",
+  #   "Milk",
+  #   "Nuts and seeds",
+  #   "Omega 3",
+  #   "Polyunsaturated fat",
+  #   "Processed meat",
+  #   "Red meat",
+  #   "Salt",
+  #   "Saturated fat",
+  #   "Sugar-sweetened beverages",
+  #   "Trans fat",
+  #   "Vegetables",
+  #   "Whole grain"
+  # )
+  # c28.data = subset(countrydat,component == "M")
+  # if(nrow(c28.data)>0){
+  #   c28.data = subset(c28.data,disagg.value=="National")
+  #   c28.data$value = as.numeric(c28.data$value)
+  #   c28.data$value[which(c28.data$unit=="%")] = c28.data$value[which(c28.data$unit=="%")]*100
+  #   setnames(c28.data,"rec","recommended")
+  #   c28.data$percent = c28.data$value/c28.data$recommended
+  #   # Outliers
+  #   calc_outlier = function(sd){
+  #     results = c()
+  #     outlier_val = 2.1
+  #     for(i in 1:nrow(sd)){
+  #       row = sd[i,]
+  #       if(row$outlier==1){
+  #         results = c(results,outlier_val)
+  #         outlier_val = outlier_val + 0.1
+  #       }else{
+  #         results = c(results,row$percent)
+  #       }
+  #     }
+  #     return(results)
+  #   }
+  #   setnames(c28.data,"indicator","food")
+  #   setnames(c28.data,"disagg.value","class")
+  #   c28.data = c28.data[order(c28.data$food, c28.data$percent),]
+  #   c28.data$outlier = 0
+  #   c28.data$outlier[which(c28.data$percent>2)] = 1
+  #   c28.data$percent[which(c28.data$percent>2)] = 2.1
+  #   c28.data = data.table(c28.data)
+  #   c28.data[,percent:=calc_outlier(.SD),by=.(food)]
+  #   c28.data$food = factor(c28.data$food,levels=rev(food.order))
+  #   c28.data = c28.data[order(-c28.data$food),]
+  #   c28.data$column = c(rep(1,7),rep(2,8))
+  #   bar.dat = unique(c28.data[,c("food","recommended","column"),with=F])
+  #   bar.dat$class = this.country
+  #   c28.max = min(max(c28.data$percent,na.rm=T),2)
+  #   
+  #   c28.data$class[which(c28.data$class=="National")] = this.country
+  #   
+  #   c28.data$class = factor(c28.data$class,levels=c(this.country))
+  #   
+  #   
+  #   i = 1
+  #   c28.data.sub = subset(c28.data,column==i)
+  #   trmel = data.frame(food="",recommended=0,example=T,class=this.country)
+  #   c28.data.sub = rbindlist(list(c28.data.sub,trmel),fill=T)
+  #   bar.dat.sub = subset(bar.dat,column==i)
+  #   bar.dat.sub = rbindlist(list(bar.dat.sub,trmel),fill=T)
+  #   c28a =
+  #     ggplot(c28.data.sub,aes(x=food,colour=class)) +
+  #     geom_bar(data=bar.dat.sub,aes(y=c28.max),fill="white",color=blue,stat="identity",width=0.4) +
+  #     geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
+  #     geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2) +
+  #     geom_text(data=subset(c28.data.sub,is.na(example) & class==this.country),aes(y=1,label=paste0(round.simple(recommended,1),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
+  #     geom_text(data=subset(c28.data.sub,example==T),aes(y=1,label="Midpoint of TMREL"),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
+  #     geom_text_repel(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round.simple(value)),color=blue,size=8,family="Averta Regular",vjust=2) +
+  #     annotate("text", x=8, y=0.4, label="0%/0g of TMREL",size=9,color=blue,family="Averta Regular") +
+  #     annotate("text", x=8, y=1.6, label="200% of TMREL",size=9,color=blue,family="Averta Regular") +
+  #     trmelColor + 
+  #     coord_flip() +
+  #     theme_classic() +
+  #     theme(
+  #       axis.title=element_blank(),
+  #       axis.line=element_blank(),
+  #       axis.ticks=element_blank(),
+  #       axis.text.x = element_blank(),
+  #       axis.text.y = element_text(size=25,color=blue,family="Averta Regular"),
+  #       legend.title=element_blank(),
+  #       legend.position="left",
+  #       legend.text = element_text(size=22,color=blue,family="Averta Regular"),
+  #       legend.background = element_rect(fill = "transparent", colour = "transparent"),
+  #       legend.key = element_rect(fill = "transparent", colour = "transparent"),
+  #       legend.key.size = unit(2.5,"lines")
+  #     )
+  #   
+  #   i = 2
+  #   c28.data.sub = subset(c28.data,column==i)
+  #   bar.dat.sub = subset(bar.dat,column==i)
+  #   c28b = ggplot(c28.data.sub,aes(x=food,colour=class)) +
+  #     geom_bar(data=bar.dat.sub,aes(y=c28.max),fill="white",color=blue,stat="identity",width=0.4) +
+  #     geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
+  #     geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2,show.legend=F) +
+  #     geom_text(data=subset(c28.data.sub, class==this.country),aes(y=1,label=paste0(round.simple(recommended,1),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
+  #     geom_text_repel(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round.simple(value)),color=blue,size=7,family="Averta Regular",vjust=2) +
+  #     trmelColor + 
+  #     coord_flip() +
+  #     theme_classic() +
+  #     theme(
+  #       axis.title=element_blank(),
+  #       axis.line=element_blank(),
+  #       axis.ticks=element_blank(),
+  #       axis.text.x = element_blank(),
+  #       axis.text.y = element_text(size=25,color=blue,family="Averta Regular"),
+  #       legend.title=element_blank(),
+  #       legend.text = element_text(size=22,color=blue,family="Averta Regular"),
+  #       legend.background = element_rect(fill = "transparent", colour = "transparent"),
+  #       legend.key = element_rect(fill = "transparent", colour = "transparent"),
+  #       legend.key.size = unit(2.5,"lines")
+  #     )
+  # }else{
+  #   c28a = no.data
+  #   c28b = no.data
+  # }
   
   # Chart 29
   indicators = c("oda_per_capita")
