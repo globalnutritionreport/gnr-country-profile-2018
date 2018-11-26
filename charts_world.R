@@ -795,7 +795,8 @@ this.country = "World"
     wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
     max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
     wasting_years = max(subset(wasting_years,count==max_wasting_count)$year)
-    c11 = grouped_bar(countrydat, "wasting_percent","income",c("Lowest","Second lowest","Middle","Second highest","Highest"),fill=quintileFillValues,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
+    # c11 = grouped_bar(countrydat, "wasting_percent","income",c("Lowest","Second lowest","Middle","Second highest","Highest"),fill=quintileFillValues,legend=T,byrow=T,nrow=3,subset.years=wasting_years)
+    c11 = no.data
   }else{c11=no.data}
   
   max.year = max(subset(countrydat,indicator=="stunting_percent" & disaggregation=="income")$year,na.rm=T)
@@ -809,7 +810,8 @@ this.country = "World"
     wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
     max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
     wasting_years = max(subset(wasting_years,count==max_wasting_count)$year)
-    c14 = grouped_bar(countrydat, "wasting_percent","location",c("Urban","Rural"),legend=T,subset.years=wasting_years)
+    # c14 = grouped_bar(countrydat, "wasting_percent","location",c("Urban","Rural"),legend=T,subset.years=wasting_years)
+    c14 = no.data
   }else{c14=no.data}
   max.year = max(subset(countrydat,indicator=="stunting_percent" & disaggregation=="location")$year,na.rm=T)
   c15 = grouped_bar(countrydat, "stunting_percent","location",c("Urban","Rural"),subset.years=max.year,legend=wasting_missing,byrow=T,nrow=3)
@@ -996,18 +998,12 @@ this.country = "World"
   ind = "adult_sodium"
   spacing = 1
   legend = T
-  fill=yellowOrangeRedFill
-  c27data = subset(countrydat, (indicator==ind))
-  c27data$value = as.numeric(c27data$value)
-  c27data = subset(c27data, !is.na(value))
+  fill=scale_fill_manual(values=c(orange,yellow,light.blue))
+  c27data = data.frame(year=c(2016,2016,2016),disagg.value=c("Male","World","Female"),value=c(5.8,5.6,5.4))
   if(nrow(c27data)>0){
-    c27data$disagg.value = this.country
-    c27.global = data.frame(year=max(c27data$year),disagg.value="Global",value=5.6)
-    disagg.values = c(this.country,"Global")
-    c27data = rbindlist(list(c27data,c27.global),fill=T)
+    disagg.values = c("Male","World","Female")
     c27data <- c27data[order(c27data$year),]
     c27data$year = as.factor(c27data$year)
-    c27data$disagg.value = disagg.values
     c27data$disagg.value = factor(c27data$disagg.value,levels=disagg.values)
     c27.max <- max(c27data$value,na.rm=TRUE)
     c27.key.data = data.frame(year=as.numeric(rep(NA,length(disagg.values))),disagg.value=disagg.values,value=as.numeric(rep(NA,length(disagg.values))))
@@ -1162,55 +1158,69 @@ this.country = "World"
   # }
   
   # Chart 29
-  indicators = c("oda_per_capita")
-  c29names = c("Basic nutrition ODA received")
-  y.lab = "ODA, US$, per 1,000 people"
+  indicators = c("ODA_received","ODA_specific")
+  recipient = T
+  if(!is.na(recipient)){
+    if(recipient){
+      c29names = c("% of total ODA","Basic nutrition ODA received")
+      y.lab = "ODA, US$ millions"
+    }else{
+      c29names = c("% of total ODA","Basic nutrition ODA disbursed")
+      y.lab = "ODA, US$ millions"
+    }
+  }else{
+    c29names = c("% of total ODA","Basic nutrition ODA received")
+    y.lab = "ODA, US$ millions"
+  }
+  
+  
   c29data = subset(countrydat,indicator %in% indicators)
   c29data$value = as.numeric(c29data$value)
-  c29data$value= c29data$value * 1000
+  c29data$value[which(c29data$indicator==indicators[1])] = c29data$value[which(c29data$indicator==indicators[1])] * 100
   c29data = subset(c29data, !is.na(value))
-  if(sum(c29data$value)>0){
-    c29data = c29data[,c("year","indicator","value")]
-    c29.oda.max <- max(c29data$value,na.rm=TRUE)
-    c29data$indicator = unfactor(c29data$indicator)
-    for(j in 1:length(indicators)){
-      ind = indicators[j]
-      indname = c29names[j]
-      c29data$indicator[which(c29data$indicator==ind)] = indname
-    }
-    
-    c29.key.data.1 = data.frame(year=as.numeric(rep(NA,1)),indicator=c29names[1],value=as.numeric(rep(NA,1)))
-    c29 = ggplot(c29data,aes(x=year,y=value)) +
-      geom_area(alpha=1,show.legend=F,color=blue,fill=yellow) +
-      geom_point(data=c29.key.data.1,aes(group=indicator,fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
-      yellowFill +
-      guides(fill=guide_legend(title=element_blank(),byrow=TRUE),color=guide_legend(title=element_blank(),byrow=TRUE)) +
-      simple_style  +
-      scale_y_continuous(
-        expand = c(0,0),
-        limits=c(0,max(c29.oda.max*1.1,1)),
-      ) +
-      theme(
-        legend.position="top"
-        ,legend.box = "vertical"
-        ,legend.text = element_text(size=25,color=blue,family="Averta Regular")
-        ,legend.justification=c(0,0)
-        ,legend.box.just = "left"
-        ,legend.direction="vertical"
-        ,axis.title.x=element_blank()
-        ,axis.title.y=element_text(size=20,color=blue,family="Averta Regular")
-        ,axis.ticks=element_blank()
-        ,axis.line.y = element_blank()
-        ,axis.line.x = element_line(color=blue, size = 1.1)
-        ,axis.text.y = element_text(size=25,color=dark.grey,family="Averta Regular")
-        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
-        ,panel.grid.major.y = element_line(color=dark.grey)
-        ,legend.background = element_rect(fill = "transparent", colour = "transparent")
-        ,legend.key.width = unit(1,"cm")
-      ) + labs(y = y.lab)
-  }else{
-    c29 = no.data
+  c29data = c29data[c("year","indicator","value")]
+  c29.oda.max <- max(subset(c29data,indicator==indicators[2])$value,na.rm=TRUE)
+  c29.perc.max <- max(subset(c29data,indicator==indicators[1])$value,na.rm=TRUE)
+  c29.ratio = c29.oda.max/c29.perc.max
+  for(j in 1:length(indicators)){
+    ind = indicators[j]
+    indname = c29names[j]
+    c29data$indicator[which(c29data$indicator==ind)] = indname
   }
+  
+  c29.key.data.2 = data.frame(year=as.numeric(rep(NA,1)),indicator=c29names[2],value=as.numeric(rep(NA,1)))
+  c29.key.data.1 = data.frame(year=as.numeric(rep(NA,1)),indicator=c29names[1],value=as.numeric(rep(NA,1)))
+  c29 = ggplot(subset(c29data,indicator==c29names[2]),aes(x=year,y=value)) +
+    geom_area(alpha=1,show.legend=F,color=blue,fill=yellow) +
+    geom_point(data=c29.key.data.2,aes(group=indicator,fill=indicator),size=12,color=blue,stroke=1.5,shape=21) +
+    geom_line(data=subset(c29data,indicator==c29names[1]),aes(y=value*c29.ratio,color=indicator),size=2) +
+    yellowFill +
+    orangeColor +
+    guides(fill=guide_legend(title=element_blank(),byrow=TRUE),color=guide_legend(title=element_blank(),byrow=TRUE)) +
+    simple_style  +
+    scale_y_continuous(
+      expand = c(0,0),
+      limits=c(0,max(c29.oda.max*1.1,1)),
+      sec.axis = sec_axis(~./c29.ratio, name="% of total ODA")
+    ) +
+    theme(
+      legend.position="top"
+      ,legend.box = "vertical"
+      ,legend.text = element_text(size=25,color=blue,family="Averta Regular")
+      ,legend.justification=c(0,0)
+      ,legend.box.just = "left"
+      ,legend.direction="vertical"
+      ,axis.title.x=element_blank()
+      ,axis.title.y=element_text(size=20,color=blue,family="Averta Regular")
+      ,axis.ticks=element_blank()
+      ,axis.line.y = element_blank()
+      ,axis.line.x = element_line(color=blue, size = 1.1)
+      ,axis.text.y = element_text(size=25,color=dark.grey,family="Averta Regular")
+      ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
+      ,panel.grid.major.y = element_line(color=dark.grey)
+      ,legend.background = element_rect(fill = "transparent", colour = "transparent")
+      ,legend.key.width = unit(1,"cm")
+    ) + labs(y = y.lab)
   
   #Have both c1a and c1b
   if(!c1a.missing && !c1b.missing){

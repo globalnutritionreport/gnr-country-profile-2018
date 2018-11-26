@@ -317,7 +317,6 @@ for country in dataDictionary.keys():
     #     safeFormat(indicator(ctryDat, "gini_rank")),
     #     safeFormat(year(ctryDat, "gini"))
     # ]
-
     dataDictionary[country]["table3"][0][1] = safeFormat(indicator_sum(ctryDat, "population"), True, divisor=1000)
     if safeFormat(indicator_sum(ctryDat, "population"), True, divisor=1000) == "0.0":
         dataDictionary[country]["table3"][0][0] = "Population (000)"

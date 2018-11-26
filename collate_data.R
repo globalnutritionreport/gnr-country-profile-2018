@@ -53,6 +53,7 @@ region$unit = NULL
 region$rec = NULL
 region$total.pop = NULL
 region$regional = NULL
+region$value.unweighted = NULL
 region = subset(region,!indicator %in% c("burden_text","country_class"))
 
 world$section = NA
@@ -62,6 +63,7 @@ world$component = NULL
 world$unit = NULL
 world$rec = NULL
 world$total.pop = NULL
+world$value.unweighted = NULL
 world = subset(world,!indicator %in% c("burden_text","country_class"))
 
 sections = unique(country$section)

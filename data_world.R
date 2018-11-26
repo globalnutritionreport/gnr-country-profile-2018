@@ -424,6 +424,18 @@ master_dat_fix_index = master_dat_fix_index + 1
 wd <- "~/git/gnr-country-profile-2018/Dataset working directory_world"
 setwd(wd)
 
+master_dat_reg = subset(master_dat_reg,indicator!="population")
+pop = data.frame(
+  region = "World",
+  year = 2018,
+  component = "R",
+  indicator = "population",
+  disaggregation = "all",
+  value.sum =  7632819
+)
+master_dat_fix_list[[master_dat_fix_index]] = pop
+master_dat_fix_index = master_dat_fix_index + 1
+
 master_dat_reg = subset(master_dat_reg,!indicator %in% c("190_percent","320_percent"))
 pov190 = read.csv("ECONOMICS_AND_DEMOGRAPHY_1.90 Poverty Line.csv",na.strings="",as.is=T,skip=4,check.names=F)
 names(pov190)[1:4] = c("region","code","ind","ind.code")
@@ -483,6 +495,104 @@ u5mr$component = "R"
 u5mr$disaggregation = "all"
 u5mr$indicator = "u5mr"
 master_dat_fix_list[[master_dat_fix_index]] = u5mr
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,indicator!="female_secondary_enroll_net")
+enrol = read.xlsx(
+  "UNDERLYING_DETERMINANTS_FEMALE_ENROLMENT_NET_GLOBAL.xlsx"
+  ,rows = c(5,263)
+  )
+names(enrol)[1:4] = c("region","code","ind","ind.code")
+enrol = subset(enrol,region=="World")
+enrol$code = NULL
+enrol$ind = NULL
+enrol$ind.code = NULL
+enrol = melt(enrol,id.vars="region",variable.name="year")
+enrol$year = unfactor(enrol$year)
+enrol = subset(enrol,year>=2013 & !is.na(value))
+enrol$component = "U"
+enrol$indicator = "female_secondary_enroll_net"
+enrol$disaggregation = "all"
+master_dat_fix_list[[master_dat_fix_index]] = enrol
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,!indicator %in% must_sum_to_100s)
+drinking = read.xlsx("UNDERLYING_DETERMINANTS_DRINKING_WATER_GLOBAL.xlsx")
+names(drinking) = c("region","safely_managed_water","basic_water","limited_water","unimproved_water","surface_water")
+drinking = melt(drinking,id.vars="region",variable.name="indicator")
+drinking$year = 2015
+drinking$disaggregation = "all"
+drinking$component = "V"
+master_dat_fix_list[[master_dat_fix_index]] = drinking
+master_dat_fix_index = master_dat_fix_index + 1
+
+sanitation = read.xlsx("UNDERLYING_DETERMINANTS_SANITATION_GLOBAL.xlsx",rows=c(1,2),cols=c(1:6))
+names(sanitation) = c("safely_managed_sanitation","basic_sanitation","limited_sanitation","unimproved_sanitation","open_defecation")
+sanitation$region = "World"
+sanitation = melt(sanitation,id.vars="region",variable.name="indicator")
+sanitation$year = 2015
+sanitation$disaggregation = "all"
+sanitation$component = "V"
+master_dat_fix_list[[master_dat_fix_index]] = sanitation
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,!indicator %in% c("social_protection_spending","education_spending","health_spending","agriculture_expenditure"))
+exp = read.xlsx("UNDERLYING_DETERMINANTS_GOV_EXP_GLOBAL.xlsx",rows=c(7:10))
+names(exp) = c("year","agriculture_expenditure","education_spending","health_spending","social_protection_spending")
+exp$region = "World"
+exp = melt(exp,id.vars=c("region","year"),variable.name="indicator")
+exp$value = exp$value*100
+exp$disaggregation = "all"
+exp$component = "V"
+master_dat_fix_list[[master_dat_fix_index]] = exp
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,indicator!="coexistence")
+coexistence = read.xlsx("U5 coexistence global.xlsx")
+names(coexistence) = c(
+  "region",
+  "Wasting alone",
+  "Wasting and stunting",
+  "Stunting alone",
+  "Stunting and overweight",
+  "Overweight alone",
+  "Free from"
+)
+coexistence = subset(coexistence,region=="Global")
+coexistence$region = "World"
+coexistence$n = 106
+coexistence = melt(coexistence,id.vars=c("region","n"),variable.name="disagg.value")
+coexistence$indicator = "coexistence"
+coexistence$disaggregation = "all"
+coexistence$component = "G"
+coexistence$value = coexistence$value*100
+master_dat_fix_list[[master_dat_fix_index]] = coexistence
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,!indicator %in% c("adolescent_obesity","adolescent_overweight","adolescent_underweight"))
+adol = read.csv("ADOLESCENT STATUS - NCD_RisC_Lancet_2017_BMI_child_adolescent__world.csv",na.strings="",as.is=T,check.names=F)
+adol = adol[,c("Country/Region/World","Sex","Year","Prevalence of BMI>2SD (obesity)","Prevalence of BMI>1SD (overweight)","Prevalence of BMI<minus1SD (underweight)")]
+names(adol) = c("region","disagg.value","year","adolescent_obesity","adolescent_overweight","adolescent_underweight")
+adol = melt(adol,id.vars=c("region","disagg.value","year"),variable.name="indicator")
+adol = subset(adol,year>=1999)
+adol$disaggregation = "gender"
+adol$component = "G"
+master_dat_fix_list[[master_dat_fix_index]] = adol
+master_dat_fix_index = master_dat_fix_index + 1
+
+master_dat_reg = subset(master_dat_reg,!indicator %in% c("ODA_specific","ODA_received"))
+oda = read.xlsx(
+  "ODA.xlsx"
+)
+names(oda)[1]="indicator"
+oda$indicator[which(oda$indicator=="% of total ODA")] = "ODA_received"
+oda$indicator[which(oda$indicator=="total ODA")] = "ODA_specific"
+oda$region = "World"
+oda = melt(oda,id.vars=c("region","indicator"),variable.name="year")
+oda$year = unfactor(oda$year)
+oda$disaggregation = "all"
+oda$component = "P"
+master_dat_fix_list[[master_dat_fix_index]] = oda
 master_dat_fix_index = master_dat_fix_index + 1
 
 master_dat_fix = rbindlist(master_dat_fix_list,fill=T)
