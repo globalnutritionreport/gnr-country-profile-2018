@@ -109,16 +109,17 @@ dataDictionary["World"]["table7"] = [
 dataDictionary["World"]["table8"] = [
     [
         Paragraph("<b>Coverage/practice indicator</b>", style=dark_greyParaBold),
-        Paragraph("<b>%</b>", style=dark_greyParaBold),
-        Paragraph("<b>Male</b>", style=dark_greyParaBold),
-        Paragraph("<b>Female</b>", style=dark_greyParaBold),
-        Paragraph("<b>n</b>", style=dark_greyParaBold),
+        Paragraph("<b>Number of countries with data</b>", style=dark_greyParaBold),
+        Paragraph("<b>Minimum %</b>", style=dark_greyParaBold),
+        Paragraph("<b>Maximum %</b>", style=dark_greyParaBold),
+        Paragraph("<b>Mean %</b>", style=dark_greyParaBold),
+        Paragraph("<b>Median % for countries with data</b>", style=dark_greyParaBold),
      ],
-    [u"Children 0\u201359 months with diarrhoea who received zinc treatment", "8.1", "NA", "NA", "1"],
-    [u"Children 6\u201359 months who received vitamin A supplements in last 6 months", "71.7", "71.6", "71.9", "1"],
-    [u"Children 6\u201359 months given iron supplements in past 7 days", "2.7", "2.6", "2.7", "1"],
-    [Paragraph("Women with a birth in last five years who received iron and folic acid during their most recent pregnancy", style=dark_greyParaStyle), "69.4", "", "NA", "1"],
-    ["Household consumption of any iodised salt", "99.5", "NA", "NA", "1"],
+    [u"Children 0\u201359 months with diarrhoea who received zinc treatment", "46", "0.1", "50.2", "8.6", "2.8"],
+    [u"Children 6\u201359 months who received vitamin A supplements in last 6 months", "58", "4.5", "86.4", "57.0", "60.9"],
+    [u"Children 6\u201359 months given iron supplements in past 7 days", "56", "1.3", "45.4", "14.6", "11.6"],
+    [Paragraph("Women with a birth in last five years who received iron and folic acid during their most recent pregnancy", style=dark_greyParaStyle), "62", "22.6", "96.6", "74.6", "81.0"],
+    ["Household consumption of any iodised salt", "52", "18.0", "99.8", "82.7", "90.9"],
 ]
 
 dat = pd.read_csv("data_world.csv")
@@ -364,20 +365,20 @@ for country in dataDictionary.keys():
         safeFormat(indicator_frac(ctryDat, "overweight_adults_adoles_plan", "Yes")),
     ]
 
-    dataDictionary[country]["table8"][1][1] = safeFormat(indicator_disagg(ctryDat, "diarrhea_zinc", "all"))
-
-    dataDictionary[country]["table8"][2][1] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Both"))
-    dataDictionary[country]["table8"][2][2] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Boys"))
-    dataDictionary[country]["table8"][2][3] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Girls"))
-
-    dataDictionary[country]["table8"][3][1] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Both"))
-    dataDictionary[country]["table8"][3][2] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Boys"))
-    dataDictionary[country]["table8"][3][3] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Girls"))
-
-    dataDictionary[country]["table8"][4][1] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "all"))
-    dataDictionary[country]["table8"][4][3] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "all"))
-
-    dataDictionary[country]["table8"][5][1] = safeFormat(indicator_disagg(ctryDat, "iodised_salt", "all"))
+    # dataDictionary[country]["table8"][1][1] = safeFormat(indicator_disagg(ctryDat, "diarrhea_zinc", "all"))
+    #
+    # dataDictionary[country]["table8"][2][1] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Both"))
+    # dataDictionary[country]["table8"][2][2] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Boys"))
+    # dataDictionary[country]["table8"][2][3] = safeFormat(indicator_disagg(ctryDat, "vit_a", "gender", "Girls"))
+    #
+    # dataDictionary[country]["table8"][3][1] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Both"))
+    # dataDictionary[country]["table8"][3][2] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Boys"))
+    # dataDictionary[country]["table8"][3][3] = safeFormat(indicator_disagg(ctryDat, "iron_supp", "gender", "Girls"))
+    #
+    # dataDictionary[country]["table8"][4][1] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "all"))
+    # dataDictionary[country]["table8"][4][3] = safeFormat(indicator_disagg(ctryDat, "iron_and_folic", "all"))
+    #
+    # dataDictionary[country]["table8"][5][1] = safeFormat(indicator_disagg(ctryDat, "iodised_salt", "all"))
 
     dataDictionary[country]["pov_percent_n"] = safeFormat(indicator_n(ctryDat, "190_percent"))
     n_indicators = [
@@ -409,11 +410,11 @@ for country in dataDictionary.keys():
         dataDictionary[country][n_indicator+"_n"] = safeFormat(indicator_n(ctryDat, n_indicator))
 
 
-    dataDictionary[country]["table8"][1][4] = safeFormat(indicator_n(ctryDat, "diarrhea_zinc"))
-    dataDictionary[country]["table8"][2][4] = safeFormat(indicator_n(ctryDat, "vit_a"))
-    dataDictionary[country]["table8"][3][4] = safeFormat(indicator_n(ctryDat, "iron_supp"))
-    dataDictionary[country]["table8"][4][4] = safeFormat(indicator_n(ctryDat, "iron_and_folic"))
-    dataDictionary[country]["table8"][5][4] = safeFormat(indicator_n(ctryDat, "iodised_salt"))
+    # dataDictionary[country]["table8"][1][4] = safeFormat(indicator_n(ctryDat, "diarrhea_zinc"))
+    # dataDictionary[country]["table8"][2][4] = safeFormat(indicator_n(ctryDat, "vit_a"))
+    # dataDictionary[country]["table8"][3][4] = safeFormat(indicator_n(ctryDat, "iron_supp"))
+    # dataDictionary[country]["table8"][4][4] = safeFormat(indicator_n(ctryDat, "iron_and_folic"))
+    # dataDictionary[country]["table8"][5][4] = safeFormat(indicator_n(ctryDat, "iodised_salt"))
 
     n_indicators_disagg = [
         ("stunting_percent", "gender"),

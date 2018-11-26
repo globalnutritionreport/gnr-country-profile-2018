@@ -595,6 +595,8 @@ oda$component = "P"
 master_dat_fix_list[[master_dat_fix_index]] = oda
 master_dat_fix_index = master_dat_fix_index + 1
 
+master_dat_reg = subset(master_dat_reg,!indicator %in% c("vit_a","diarrhea_zinc","iron_supp","iodised_salt","iron_and_folic"))
+
 master_dat_fix = rbindlist(master_dat_fix_list,fill=T)
 master_dat_reg = rbindlist(list(master_dat_reg,master_dat_fix),fill=T)
 
