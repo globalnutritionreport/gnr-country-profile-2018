@@ -95,22 +95,35 @@ for(this.section in sections){
   reg.sub = dcast(reg.sub,region+disaggregation+disagg.value+n+value.type~indicator+year)
   na.names = names(reg.sub)[which(substr(names(reg.sub),nchar(names(reg.sub))-2,nchar(names(reg.sub)))=="_NA")]
   names(reg.sub)[which(substr(names(reg.sub),nchar(names(reg.sub))-2,nchar(names(reg.sub)))=="_NA")] = substr(na.names,1,nchar(na.names)-3)
-
-  wld.sub = subset(world,section==this.section)
-  wld.sub = wld.sub[order(wld.sub$year),]
-  wld.sub = melt(wld.sub,id.vars=c("region","disaggregation","disagg.value","indicator","section","year","year_range","n","N"))
-  wld.sub$value.type = NA
-  wld.sub$value.type[which(wld.sub$variable=="value.unweighted")] = "unweighted mean"
-  wld.sub$value.type[which(wld.sub$variable=="value")] = "weighted mean"
-  wld.sub$value.type[which(wld.sub$variable=="value.sum")] = "sum"
-  wld.sub$variable = NULL
-  if(this.section %in% c("overview","policy")){
-    wld.sub$value = paste0(wld.sub$n,"/",wld.sub$N)
+  
+  if(this.section=="intervention"){
+    wld.sub = data.frame(
+      "indicator"=c("diarrhea_zinc","vit_a","iron_supp","iron_and_folic","iodised_salt"),
+      "n"=c(46,58,56,62,52),
+      "minimum"=c(0.1,4.5,1.3,22.6,18),
+      "maximum"=c(50.2,86.4,45.4,96.6,99.8),
+      "mean"=c(8.6,57,14.6,74.6,82.7),
+      "median"=c(2.8,60.9,11.6,81,90.9)
+    )
+  }else{
+    wld.sub = subset(world,section==this.section)
+    wld.sub = wld.sub[order(wld.sub$year),]
+    wld.sub = melt(wld.sub,id.vars=c("region","disaggregation","disagg.value","indicator","section","year","year_range","n","N"))
+    wld.sub$value.type = NA
+    wld.sub$value.type[which(wld.sub$variable=="value.unweighted")] = "unweighted mean"
+    wld.sub$value.type[which(wld.sub$variable=="value")] = "weighted mean"
+    wld.sub$value.type[which(wld.sub$variable=="value.sum")] = "sum"
+    wld.sub$variable = NULL
+    if(this.section %in% c("overview","policy")){
+      wld.sub$value = paste0(wld.sub$n,"/",wld.sub$N)
+    }
+    wld.sub$N = NULL
+    wld.sub = dcast(wld.sub,region+disaggregation+disagg.value+n+value.type~indicator+year)
+    na.names = names(wld.sub)[which(substr(names(wld.sub),nchar(names(wld.sub))-2,nchar(names(wld.sub)))=="_NA")]
+    names(wld.sub)[which(substr(names(wld.sub),nchar(names(wld.sub))-2,nchar(names(wld.sub)))=="_NA")] = substr(na.names,1,nchar(na.names)-3)
   }
-  wld.sub$N = NULL
-  wld.sub = dcast(wld.sub,region+disaggregation+disagg.value+n+value.type~indicator+year)
-  na.names = names(wld.sub)[which(substr(names(wld.sub),nchar(names(wld.sub))-2,nchar(names(wld.sub)))=="_NA")]
-  names(wld.sub)[which(substr(names(wld.sub),nchar(names(wld.sub))-2,nchar(names(wld.sub)))=="_NA")] = substr(na.names,1,nchar(na.names)-3)
+
+  
   
   ctry.sheet = paste("Country",this.section)
   addWorksheet(wb,ctry.sheet)
