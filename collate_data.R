@@ -133,7 +133,7 @@ for(this.section in sections){
   
   if(this.section!="intervention"){
     reg.sub = rbindlist(list(reg.sub,wld.sub),fill=T)
-    reg.sheet = paste("Region/World",this.section)
+    reg.sheet = paste("Region+World",this.section)
     addWorksheet(wb,reg.sheet)
     writeData(wb,sheet=reg.sheet,reg.sub,colNames=TRUE,rowNames=FALSE)
   }else{
