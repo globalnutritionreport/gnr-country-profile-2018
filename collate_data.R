@@ -40,24 +40,61 @@ country$section = NA
 country$section = com.dict[country$component]
 country$section[which(country$indicator %in% names(com.dict.override))] = com.dict.override[country$indicator[which(country$indicator %in% names(com.dict.override))]]
 country$component = NULL
+country$unit = NULL
+country$rec = NULL
+country$recip = NULL
+country = subset(country,!indicator %in% c("burden_text","country_class"))
 
 region$section = NA
 region$section = com.dict[region$component]
 region$section[which(region$indicator %in% names(com.dict.override))] = com.dict.override[region$indicator[which(region$indicator %in% names(com.dict.override))]]
 region$component = NULL
+region$unit = NULL
+region$rec = NULL
+region$total.pop = NULL
+region$regional = NULL
+region = subset(region,!indicator %in% c("burden_text","country_class"))
 
 world$section = NA
 world$section = com.dict[world$component]
 world$section[which(world$indicator %in% names(com.dict.override))] = com.dict.override[world$indicator[which(world$indicator %in% names(com.dict.override))]]
 world$component = NULL
+world$unit = NULL
+world$rec = NULL
+world$total.pop = NULL
+world = subset(world,!indicator %in% c("burden_text","country_class"))
 
 sections = unique(country$section)
 sections = sort(sections)
 
+# this.section = sections[1]
+
 for(this.section in sections){
+  message(this.section)
   ctry.sub = subset(country,section==this.section)
+  ctry.sub = ctry.sub[order(ctry.sub$year),]
+  ctry.sub = melt(ctry.sub,id.vars=c("iso3","country","disaggregation","disagg.value","indicator","region","subregion","section","year"))
+  ctry.sub = dcast(ctry.sub,iso3+country+disaggregation+disagg.value+region+subregion+section~indicator+year)
+  
   reg.sub = subset(region,section==this.section)
+  reg.sub = reg.sub[order(reg.sub$year),]
+  reg.sub = melt(reg.sub,id.vars=c("region","disaggregation","disagg.value","indicator","section","year","year_range","n","N"))
+  reg.sub$value.type = NA
+  reg.sub$value.type[which(reg.sub$variable=="value.unweighted")] = "unweighted mean"
+  reg.sub$value.type[which(reg.sub$variable=="value")] = "weighted mean"
+  reg.sub$value.type[which(reg.sub$variable=="value.sum")] = "sum"
+  reg.sub$variable = NULL
+  reg.sub = dcast(reg.sub,region+disaggregation+disagg.value+n+N+value.type~indicator+year)
+  
   wld.sub = subset(world,section==this.section)
+  wld.sub = wld.sub[order(wld.sub$year),]
+  wld.sub = melt(wld.sub,id.vars=c("region","disaggregation","disagg.value","indicator","section","year","year_range","n","N"))
+  wld.sub$value.type = NA
+  wld.sub$value.type[which(wld.sub$variable=="value.unweighted")] = "unweighted mean"
+  wld.sub$value.type[which(wld.sub$variable=="value")] = "weighted mean"
+  wld.sub$value.type[which(wld.sub$variable=="value.sum")] = "sum"
+  wld.sub$variable = NULL
+  wld.sub = dcast(wld.sub,region+disaggregation+disagg.value+n+N+value.type~indicator+year)
   
   ctry.sheet = paste("Country",this.section)
   addWorksheet(wb,ctry.sheet)
