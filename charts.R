@@ -658,6 +658,9 @@ for(this.country in countries){
     }
     cdata = subset(cdata, !is.na(value))
     cdata <- cdata[order(cdata$year),]
+    if(nrow(cdata)==0){
+      return(no.data)
+    }
     if(factor.years){
       cdata$year = as.factor(cdata$year)
     }else{
@@ -1065,7 +1068,7 @@ for(this.country in countries){
       geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2) +
       geom_text(data=subset(c28.data.sub,is.na(example) & class=="Global"),aes(y=1,label=paste0(round.simple(recommended,1),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
       geom_text(data=subset(c28.data.sub,example==T),aes(y=1,label="Midpoint of TMREL"),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
-      geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round.simple(value)),color=blue,size=8,family="Averta Regular",vjust=2) +
+      geom_text_repel(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round.simple(value)),color=blue,size=8,family="Averta Regular",vjust=2) +
       annotate("text", x=8, y=0.3, label="0%/0g of TMREL",size=9,color=blue,family="Averta Regular") +
       annotate("text", x=8, y=1.7, label="200% of TMREL",size=9,color=blue,family="Averta Regular") +
       trmelColor + 
@@ -1093,7 +1096,7 @@ for(this.country in countries){
       geom_bar(data=bar.dat.sub,aes(y=1),fill="white",color=blue,stat="identity",width=0.4) +
       geom_point(aes(y=percent),size=8,shape=21,fill="transparent",stroke=2,show.legend=F) +
       geom_text(data=subset(c28.data.sub, class=="Global"),aes(y=1,label=paste0(round.simple(recommended,1),unit)),color=blue,vjust=-1.3,size=10,family="Averta Regular") +
-      geom_text(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round.simple(value)),color=blue,size=7,family="Averta Regular",vjust=2) +
+      geom_text_repel(data=subset(c28.data.sub,outlier==1),aes(y=percent,label=round.simple(value)),color=blue,size=7,family="Averta Regular",vjust=2) +
       trmelColor + 
       coord_flip() +
       theme_classic() +
