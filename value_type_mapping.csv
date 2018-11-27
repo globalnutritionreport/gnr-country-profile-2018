@@ -1,8 +1,8 @@
 indicator,value.type,location
 190_percent,modelled.estimates,world
-190_percent,modelled.estimates,region
+190_percent,weighted.mean,region
 320_percent,modelled.estimates,world
-320_percent,modelled.estimates,region
+320_percent,weighted.mean,region
 65_years,sum,world
 65_years,sum,region
 adolescent_obesity,modelled.estimates,world
