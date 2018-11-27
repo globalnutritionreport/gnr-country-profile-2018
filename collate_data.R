@@ -13,11 +13,15 @@ region = read.csv("data_reg.csv",na.strings="",as.is=T)
 world = read.csv("data_world.csv",na.strings="",as.is=T)
 
 value_type_mapping = read.csv("value_type_mapping.csv",na.strings="",as.is=T)
-region = merge(region,value_type_mapping,by="indicator",all.x=T)
-world = merge(world,value_type_mapping,by="indicator",all.x=T)
+vtm_region = subset(value_type_mapping,location=="region")
+vtm_region$location = NULL
+vtm_world = subset(value_type_mapping,location=="world")
+vtm_world$location = NULL
+region = merge(region,vtm_region,by="indicator",all.x=T)
+world = merge(world,vtm_world,by="indicator",all.x=T)
 
-region$value[which(region$value.type=="sum")] = region$value.sum[which(region$value.type=="sum")]
-world$value[which(world$value.type=="sum")] = world$value.sum[which(world$value.type=="sum")]
+region$value[which(region$indicator %in% c("population","65_years","u5_pop"))] = region$value.sum[which(region$indicator %in% c("population","65_years","u5_pop"))]
+world$value[which(world$indicator %in% c("population","65_years","u5_pop"))] = world$value.sum[which(world$indicator %in% c("population","65_years","u5_pop"))]
 
 world$value.type[which(world$indicator=="population")] = "modelled estimate"
 
@@ -138,7 +142,7 @@ region$total.pop = NULL
 region$regional = NULL
 region$value.sum = NULL
 region$value.unweighted = NULL
-region = subset(region,!indicator %in% c("burden_text","country_class","gini","gini_rank"))
+region = subset(region,!indicator %in% c("burden_text","country_class","gini","gini_rank","gender_inequality_rank","gender_inequality_score"))
 
 world$section = NA
 world$section = com.dict[world$component]
@@ -150,7 +154,7 @@ world$rec = NULL
 world$total.pop = NULL
 world$value.sum = NULL
 world$value.unweighted = NULL
-world = subset(world,!indicator %in% c("burden_text","country_class","gini","gini_rank"))
+world = subset(world,!indicator %in% c("burden_text","country_class","gini","gini_rank","gender_inequality_rank","gender_inequality_score"))
 
 sections = c(
   "overview",

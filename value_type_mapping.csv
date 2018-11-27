@@ -1,99 +1,197 @@
-indicator,value.type
-adult_obesity,weighted.mean
-adult_overweight,weighted.mean
-Salt,weighted.mean
-Legumes,weighted.mean
-Red meat,weighted.mean
-Trans fat,weighted.mean
-Saturated fat,weighted.mean
-Calcium,weighted.mean
-Polyunsaturated fat,weighted.mean
-Omega 3,weighted.mean
-Sugar-sweetened beverages,weighted.mean
-Milk,weighted.mean
-Vegetables,weighted.mean
-Nuts and seeds,weighted.mean
-Processed meat,weighted.mean
-Fruit,weighted.mean
-Whole grain,weighted.mean
-adult_diabetes,weighted.mean
-adult_blood_pressure,weighted.mean
-u5_pop,sum
-65_years,sum
-population,sum
-diarrhea_zinc,weighted.mean
-iron_supp,weighted.mean
-vit_a,weighted.mean
-iron_and_folic,weighted.mean
-ebf_track,weighted.mean
-wra_anaemia_track,weighted.mean
-fruit_veg_availability,weighted.mean
-gender_inequality_score,weighted.mean
-gender_inequality_rank,weighted.mean
-adolescent_underweight,weighted.mean
-adolescent_overweight,weighted.mean
-adolescent_obesity,weighted.mean
-adult_anemia,weighted.mean
-adult_sodium,weighted.mean
-agriculture_expenditure,weighted.mean
-education_spending,weighted.mean
-health_spending,weighted.mean
-social_protection_spending,weighted.mean
-u5mr,weighted.mean
-female_secondary_enroll_net,weighted.mean
-overweight_percent,weighted.mean
-stunting_percent,weighted.mean
-wasting_percent,weighted.mean
-GDP_capita_PPP,weighted.mean
-rural_percent,weighted.mean
-ODA_specific,weighted.mean
-ODA_received,weighted.mean
-iodised_salt,weighted.mean
-minimum_accept_diet,weighted.mean
-minimum_diet_diversity,weighted.mean
-minimum_meal,weighted.mean
-continued_breastfeeding_1yr,weighted.mean
-continued_breastfeeding_2yr,weighted.mean
-early_initiation,weighted.mean
-exclusive_breastfeeding,weighted.mean
-solid_foods,weighted.mean
-fbdg,weighted.mean
-multi_sec,weighted.mean
-stunting_plan,weighted.mean
-anaemia_plan,weighted.mean
-LBW_plan,weighted.mean
-child_overweight_plan,weighted.mean
-EBF_plan,weighted.mean
-wasting_plan,weighted.mean
-sodium_plan,weighted.mean
-overweight_adults_adoles_plan,weighted.mean
-salt_leg,weighted.mean
-sugar_tax,weighted.mean
-adult_fem_diabetes_track,weighted.mean
-adult_mal_diabetes_track,weighted.mean
-adult_fem_obesity_track,weighted.mean
-adult_mal_obesity_track,weighted.mean
-under_5_stunting_track,weighted.mean
-early_childbearing_prev,weighted.mean
-basic_water,weighted.mean
-limited_water,weighted.mean
-unimproved_water,weighted.mean
-surface_water,weighted.mean
-safely_managed_water,weighted.mean
-basic_sanitation,weighted.mean
-limited_sanitation,weighted.mean
-unimproved_sanitation,weighted.mean
-open_defecation,weighted.mean
-safely_managed_sanitation,weighted.mean
-total_calories_non_staple,weighted.mean
-nurses_and_midwives,weighted.mean
-physicians,weighted.mean
-undernourishment_prev,weighted.mean
-under_5_overweight_track,weighted.mean
-under_5_wasting_track,weighted.mean
-190_percent,weighted.mean
-320_percent,weighted.mean
-coexistence,weighted.mean
-gini,weighted.mean
-gini_rank,weighted.mean
-community_health_workers,weighted.mean
+indicator,value.type,location
+190_percent,modelled.estimates,world
+320_percent,modelled.estimates,world
+65_years,sum,world
+adolescent_obesity,weighted.mean,world
+adolescent_overweight,weighted.mean,world
+adolescent_underweight,weighted.mean,world
+adult_anemia,modelled.estimates,world
+adult_blood_pressure,modelled.estimates,world
+adult_diabetes,modelled.estimates,world
+adult_fem_diabetes_track,sum,world
+adult_fem_obesity_track,sum,world
+adult_mal_diabetes_track,sum,world
+adult_mal_obesity_track,sum,world
+adult_obesity,modelled.estimates,world
+adult_overweight,modelled.estimates,world
+adult_sodium,modelled.estimates,world
+agriculture_expenditure,sum,world
+anaemia_plan,sum,world
+basic_sanitation,modelled.estimates,world
+basic_water,modelled.estimates,world
+Calcium,weighted.mean,world
+child_overweight_plan,sum,world
+coexistence,sum,world
+community_health_workers,weighted.mean,world
+continued_breastfeeding_1yr,weighted.mean,world
+continued_breastfeeding_2yr,weighted.mean,world
+diarrhea_zinc,sum,world
+early_childbearing_prev,weighted.mean,world
+early_initiation,weighted.mean,world
+EBF_plan,sum,world
+ebf_track,sum,world
+education_spending,sum,world
+exclusive_breastfeeding,weighted.mean,world
+fbdg,sum,world
+female_secondary_enroll_net,modelled.estimates,world
+Fruit,weighted.mean,world
+fruit_veg_availability,modelled.estimates,world
+GDP_capita_PPP,modelled.estimates,world
+gender_inequality_rank,weighted.mean,world
+gender_inequality_score,weighted.mean,world
+gini,weighted.mean,world
+gini_rank,weighted.mean,world
+health_spending,sum,world
+iodised_salt,sum,world
+iron_and_folic,sum,world
+iron_supp,sum,world
+LBW_plan,sum,world
+Legumes,weighted.mean,world
+limited_sanitation,modelled.estimates,world
+limited_water,modelled.estimates,world
+Milk,weighted.mean,world
+minimum_accept_diet,weighted.mean,world
+minimum_diet_diversity,weighted.mean,world
+minimum_meal,weighted.mean,world
+multi_sec,sum,world
+nurses_and_midwives,weighted.mean,world
+Nuts and seeds,weighted.mean,world
+ODA_received,sums,world
+ODA_specific,sums,world
+Omega 3,weighted.mean,world
+open_defecation,modelled.estimates,world
+overweight_adults_adoles_plan,sum,world
+overweight_percent,modelled.estimates,world
+physicians,weighted.mean,world
+Polyunsaturated fat,weighted.mean,world
+population,modelled.estimates,world
+Processed meat,weighted.mean,world
+Red meat,weighted.mean,world
+rural_percent,weighted.mean,world
+safely_managed_sanitation,modelled.estimates,world
+safely_managed_water,modelled.estimates,world
+Salt,weighted.mean,world
+salt_leg,sum,world
+Saturated fat,weighted.mean,world
+social_protection_spending,sum,world
+sodium_plan,sum,world
+solid_foods,weighted.mean,world
+stunting_percent,modelled.estimates,world
+stunting_plan,sum,world
+sugar_tax,sum,world
+Sugar-sweetened beverages,sum,world
+surface_water,modelled.estimates,world
+total_calories_non_staple,modelled.estimates,world
+Trans fat,weighted.mean,world
+u5_pop,sum ,world
+u5mr,modelled.estimates,world
+under_5_overweight_track,sum,world
+under_5_stunting_track,sum,world
+under_5_wasting_track,sum,world
+undernourishment_prev,modelled.estimates,world
+unimproved_sanitation,modelled.estimates,world
+unimproved_water,modelled.estimates,world
+Vegetables,weighted.mean,world
+vit_a,sum,world
+wasting_percent,modelled.estimates,world
+wasting_plan,sum,world
+Whole grain,weighted.mean,world
+wra_anaemia_track,sum,world
+190_percent,modelled.estimates,region
+320_percent,modelled.estimates,region
+65_years,sum,region
+adolescent_obesity,weighted.mean,region
+adolescent_overweight,weighted.mean,region
+adolescent_underweight,weighted.mean,region
+adult_anemia,weighted.mean ,region
+adult_blood_pressure,weighted.mean ,region
+adult_diabetes,weighted.mean ,region
+adult_fem_diabetes_track,sum,region
+adult_fem_obesity_track,sum,region
+adult_mal_diabetes_track,sum,region
+adult_mal_obesity_track,sum,region
+adult_obesity,modelled.estimates,region
+adult_overweight,modelled.estimates,region
+adult_sodium,modelled.estimates,region
+agriculture_expenditure,weighted.mean,region
+anaemia_plan,sum,region
+basic_sanitation,weighted.mean,region
+basic_water,weighted.mean,region
+Calcium,weighted.mean,region
+child_overweight_plan,sum,region
+coexistence,sum,region
+community_health_workers,weighted.mean,region
+continued_breastfeeding_1yr,weighted.mean,region
+continued_breastfeeding_2yr,weighted.mean,region
+diarrhea_zinc,sum,region
+early_childbearing_prev,weighted.mean,region
+early_initiation,weighted.mean,region
+EBF_plan,sum,region
+ebf_track,sum,region
+education_spending,weighted.mean,region
+exclusive_breastfeeding,weighted.mean,region
+fbdg,sum,region
+female_secondary_enroll_net,weighted.mean,region
+Fruit,weighted.mean,region
+fruit_veg_availability,modelled.estimates,region
+GDP_capita_PPP,weighted.mean,region
+gender_inequality_rank,weighted.mean,region
+gender_inequality_score,weighted.mean,region
+gini,weighted.mean,region
+gini_rank,weighted.mean,region
+health_spending,weighted.mean,region
+iodised_salt,sum,region
+iron_and_folic,sum,region
+iron_supp,sum,region
+LBW_plan,sum,region
+Legumes,weighted.mean,region
+limited_sanitation,weighted.mean,region
+limited_water,weighted.mean,region
+Milk,weighted.mean,region
+minimum_accept_diet,weighted.mean,region
+minimum_diet_diversity,weighted.mean,region
+minimum_meal,weighted.mean,region
+multi_sec,sum,region
+nurses_and_midwives,weighted.mean,region
+Nuts and seeds,weighted.mean,region
+ODA_received,sums,region
+ODA_specific,sums,region
+Omega 3,weighted.mean,region
+open_defecation,weighted.mean,region
+overweight_adults_adoles_plan,sum,region
+overweight_percent,modelled.estimates,region
+physicians,weighted.mean,region
+Polyunsaturated fat,weighted.mean,region
+population,sum,region
+Processed meat,weighted.mean,region
+Red meat,weighted.mean,region
+rural_percent,weighted.mean,region
+safely_managed_sanitation,weighted.mean,region
+safely_managed_water,weighted.mean,region
+Salt,weighted.mean,region
+salt_leg,sum,region
+Saturated fat,weighted.mean,region
+social_protection_spending,weighted.mean,region
+sodium_plan,sum,region
+solid_foods,weighted.mean,region
+stunting_percent,modelled.estimates,region
+stunting_plan,sum,region
+sugar_tax,sum,region
+Sugar-sweetened beverages,sum,region
+surface_water,weighted.mean,region
+total_calories_non_staple,modelled.estimates,region
+Trans fat,weighted.mean,region
+u5_pop,sum ,region
+u5mr,modelled.estimates,region
+under_5_overweight_track,sum,region
+under_5_stunting_track,sum,region
+under_5_wasting_track,sum,region
+undernourishment_prev,modelled.estimates,region
+unimproved_sanitation,weighted.mean,region
+unimproved_water,weighted.mean,region
+Vegetables,weighted.mean,region
+vit_a,sum,region
+wasting_percent,modelled.estimates,region
+wasting_plan,sum,region
+Whole grain,weighted.mean,region
+wra_anaemia_track,sum,region
