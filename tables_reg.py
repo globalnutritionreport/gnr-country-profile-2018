@@ -336,7 +336,10 @@ for country in dataDictionary.keys():
         dataDictionary[country]["table3"][3][0] = "≥65 years (000)"
         dataDictionary[country]["table3"][3][1] = safeFormat(indicator_sum(ctryDat, "65_years"), True)
     dataDictionary[country]["table3"][3][2] = safeFormat(year(ctryDat, "65_years"))
-    dataDictionary[country]["table3_n"] = safeFormat(indicator_n(ctryDat, "population"))
+    dataDictionary[country]["table3_n0"] = safeFormat(indicator_n(ctryDat, "population"))
+    dataDictionary[country]["table3_n1"] = safeFormat(indicator_n(ctryDat, "u5_pop"))
+    dataDictionary[country]["table3_n2"] = safeFormat(indicator_n(ctryDat, "rural_percent"))
+    dataDictionary[country]["table3_n3"] = safeFormat(indicator_n(ctryDat, "65_years"))
 
     dataDictionary[country]["table4"][0][1] = safeFormat(indicator(ctryDat, "early_childbearing_prev"))
     dataDictionary[country]["table4"][0][2] = Paragraph(str(safeFormat(year_range(ctryDat, "early_childbearing_prev"))), style=dark_greyParaStyleRight)
