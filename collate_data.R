@@ -23,10 +23,10 @@ world = merge(world,vtm_world,by="indicator",all.x=T)
 region$value[which(region$indicator %in% c("population","65_years","u5_pop"))] = region$value.sum[which(region$indicator %in% c("population","65_years","u5_pop"))]
 world$value[which(world$indicator %in% c("population","65_years","u5_pop"))] = world$value.sum[which(world$indicator %in% c("population","65_years","u5_pop"))]
 
-world$value.type[which(world$indicator=="population")] = "modelled estimate"
+world$value.type[which(world$indicator=="population")] = "modelled.estimates"
 
-region$value.type[which(region$indicator %in% c("overweight_percent","stunting_percent","wasting_percent") & region$disagg.value=="Children under 5")] = "modelled estimate"
-world$value.type[which(world$indicator %in% c("overweight_percent","stunting_percent","wasting_percent") & world$disagg.value=="Children under 5")] = "modelled estimate"
+region$value.type[which(region$indicator %in% c("overweight_percent","stunting_percent","wasting_percent") & region$disagg.value=="Children under 5")] = "modelled.estimates"
+world$value.type[which(world$indicator %in% c("overweight_percent","stunting_percent","wasting_percent") & world$disagg.value=="Children under 5")] = "modelled.estimates"
 
 # region = subset(region,!(indicator %in% c("overweight_percent","stunting_percent","wasting_percent") & disagg.value %in% c("Boys","Girls")))
 
@@ -69,7 +69,6 @@ numericable = function(x){
 numericable = Vectorize(numericable)
 
 country$value[which(numericable(country$value))] = round.simple(as.numeric(country$value[which(numericable(country$value))]),digits=2)
-country$value.sum[which(numericable(country$value.sum))] = round.simple(as.numeric(country$value.sum[which(numericable(country$value.sum))]),digits=2)
 country$value[which(country$indicator=="gini_rank")] = round.simple(as.numeric(country$value[which(country$indicator=="gini_rank")]))
 region$value[which(numericable(region$value))] = round.simple(as.numeric(region$value[which(numericable(region$value))]),digits=2)
 region$value.sum[which(numericable(region$value.sum))] = round.simple(as.numeric(region$value.sum[which(numericable(region$value.sum))]),digits=2)
@@ -107,7 +106,7 @@ com.dict = c(
 # total_calories_non_staple move to underlying X
 # For recip==0, change name to ODA_disbursed X
 # Round gini rank to whole number X
-# change value.type to "modelled estimate" for World population X
+# change value.type to "modelled.estimates" for World population X
 # Add dummy rows for 4 missing countries in adolescent tab
 # Make sure all country tabs have 194
 
@@ -147,7 +146,7 @@ region = subset(region,!indicator %in% c("burden_text","country_class","gini","g
 world$section = NA
 world$section = com.dict[world$component]
 world$section[which(world$indicator %in% names(com.dict.override))] = com.dict.override[world$indicator[which(world$indicator %in% names(com.dict.override))]]
-region = subset(region,!(component=="M" & disagg.value %in% c("National","Regional")))
+world = subset(world,!(component=="M" & disagg.value %in% c("National","Regional")))
 world$component = NULL
 world$unit = NULL
 world$rec = NULL
@@ -224,7 +223,7 @@ for(this.section in sections){
       "mean"=c(8.6,57,14.6,74.6,82.7),
       "median"=c(2.8,60.9,11.6,81,90.9),
       "section"=section.names[this.section],
-      "value.type"="modelled estimate"
+      "value.type"="modelled.estimates"
     )
   }else{
     wld.sub = subset(world,section==this.section)
