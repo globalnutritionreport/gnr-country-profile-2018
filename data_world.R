@@ -688,6 +688,19 @@ p_anemia$component = "I"
 master_dat_fix_list[[master_dat_fix_index]] = p_anemia
 master_dat_fix_index = master_dat_fix_index + 1
 
+master_dat_reg = subset(master_dat_reg,indicator!="adult_sodium")
+adult_sodium = data.frame(
+  year=c(2016,2016,2016),
+  disagg.value=c("Male","World","Female"),
+  value=c(5.8,5.6,5.4),
+  indicator="adult_sodium",
+  disaggregation="gender",
+  component = "H",
+  region="World"
+  )
+master_dat_fix_list[[master_dat_fix_index]] = adult_sodium
+master_dat_fix_index = master_dat_fix_index + 1
+
 master_dat_fix = rbindlist(master_dat_fix_list,fill=T)
 master_dat_reg = rbindlist(list(master_dat_reg,master_dat_fix),fill=T)
 
