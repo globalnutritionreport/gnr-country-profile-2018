@@ -159,8 +159,8 @@ stunting_plan,sum,world
 stunting_plan,sum,region
 sugar_tax,sum,world
 sugar_tax,sum,region
-Sugar-sweetened beverages,sum,world
-Sugar-sweetened beverages,sum,region
+Sugar-sweetened beverages,modelled.estimates,world
+Sugar-sweetened beverages,weighted.mean,region
 surface_water,modelled.estimates,world
 surface_water,weighted.mean,region
 total_calories_non_staple,modelled.estimates,world

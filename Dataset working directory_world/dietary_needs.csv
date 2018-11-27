@@ -1,0 +1,61 @@
+disagg.value,indicator,value,region,component,disaggregation
+High income,Sugar-sweetened beverages,66.96632,World,M,income
+Low income,Sugar-sweetened beverages,5.503978,World,M,income
+Lower-middle,Sugar-sweetened beverages,11.57281,World,M,income
+Upper-middle,Sugar-sweetened beverages,40.88568,World,M,income
+High income,Salt,4.469424,World,M,income
+Low income,Salt,3.066931,World,M,income
+Lower-middle,Salt,4.438446,World,M,income
+Upper-middle,Salt,5.641127,World,M,income
+High income,Processed meat,10.51497,World,M,income
+Low income,Processed meat,0.5288697,World,M,income
+Lower-middle,Processed meat,0.9526622,World,M,income
+Upper-middle,Processed meat,2.099746,World,M,income
+High income,Red meat,44.40853,World,M,income
+Low income,Red meat,7.83603,World,M,income
+Lower-middle,Red meat,7.768737,World,M,income
+Upper-middle,Red meat,37.2182,World,M,income
+High income,Saturated fat,8.95878,World,M,income
+Low income,Saturated fat,6.44405,World,M,income
+Lower-middle,Saturated fat,6.67246,World,M,income
+Upper-middle,Saturated fat,7.35875,World,M,income
+High income,Trans fat,0.61174,World,M,income
+Low income,Trans fat,0.26803,World,M,income
+Lower-middle,Trans fat,0.61461,World,M,income
+Upper-middle,Trans fat,0.38128,World,M,income
+High income,Legumes,23.07048,World,M,income
+Low income,Legumes,72.97813,World,M,income
+Lower-middle,Legumes,72.15932,World,M,income
+Upper-middle,Legumes,27.87334,World,M,income
+High income,Vegetables,183.0241,World,M,income
+Low income,Vegetables,71.24715,World,M,income
+Lower-middle,Vegetables,173.7298,World,M,income
+Upper-middle,Vegetables,236.4582,World,M,income
+High income,Polyunsaturated fat,6.65308,World,M,income
+Low income,Polyunsaturated fat,3.66882,World,M,income
+Lower-middle,Polyunsaturated fat,2.73304,World,M,income
+Upper-middle,Polyunsaturated fat,6.30166,World,M,income
+High income,Omega 3,0.3169306,World,M,income
+Low income,Omega 3,0.0141357,World,M,income
+Lower-middle,Omega 3,0.0234596,World,M,income
+Upper-middle,Omega 3,0.0551125,World,M,income
+High income,Whole grain,27.02119,World,M,income
+Low income,Whole grain,32.64598,World,M,income
+Lower-middle,Whole grain,78.16341,World,M,income
+Upper-middle,Whole grain,55.11339,World,M,income
+High income,Fruit,115.4271,World,M,income
+Low income,Fruit,58.95675,World,M,income
+Lower-middle,Fruit,84.47831,World,M,income
+Upper-middle,Fruit,121.7153,World,M,income
+High income,Calcium,0.7317876,World,M,income
+Low income,Calcium,0.2411854,World,M,income
+Lower-middle,Calcium,0.3112962,World,M,income
+Upper-middle,Calcium,0.4771583,World,M,income
+High income,Milk,137.8951,World,M,income
+Low income,Milk,23.01498,World,M,income
+Lower-middle,Milk,39.72204,World,M,income
+Upper-middle,Milk,43.77263,World,M,income
+High income,Nuts and seeds,5.151486,World,M,income
+Low income,Nuts and seeds,1.399405,World,M,income
+Lower-middle,Nuts and seeds,2.078798,World,M,income
+Upper-middle,Nuts and seeds,2.114634,World,M,income

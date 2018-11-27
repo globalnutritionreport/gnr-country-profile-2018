@@ -701,7 +701,11 @@ adult_sodium = data.frame(
 master_dat_fix_list[[master_dat_fix_index]] = adult_sodium
 master_dat_fix_index = master_dat_fix_index + 1
 
-# master_dat_reg = subset(master_dat_reg,component!="M")
+master_dat_reg = subset(master_dat_reg,component!="M")
+needs = read.csv("dietary_needs.csv")
+needs$year = 2016
+master_dat_fix_list[[master_dat_fix_index]] = needs
+master_dat_fix_index = master_dat_fix_index + 1
 
 master_dat_fix = rbindlist(master_dat_fix_list,fill=T)
 master_dat_reg = rbindlist(list(master_dat_reg,master_dat_fix),fill=T)
