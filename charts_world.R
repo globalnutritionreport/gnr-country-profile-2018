@@ -790,7 +790,7 @@ this.country = "World"
     c10=no.data
   }
   wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="income" & !is.na(value))
-  wasting_missing = nrow(wasting_dat)==0
+  wasting_missing = T
   if(!wasting_missing){
     wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
     max_wasting_count = max(max(wasting_years$count,na.rm=T),1)
@@ -805,7 +805,7 @@ this.country = "World"
   c13 = grouped_bar(countrydat, "overweight_percent","income",c("Lowest","Second lowest","Middle","Second highest","Highest"),fill=quintileFillValues,subset.years=max.year,legend=wasting_missing,byrow=T,nrow=3)
   
   wasting_dat = subset(countrydat,indicator=="wasting_percent" & disaggregation=="location" & !is.na(value))
-  wasting_missing = nrow(wasting_dat)==0
+  wasting_missing = T
   if(!wasting_missing){
     wasting_years = data.table(wasting_dat)[,.(count=nrow(.SD)),by=.(year)]
     max_wasting_count = max(max(wasting_years$count,na.rm=T),1)

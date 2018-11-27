@@ -30,6 +30,21 @@ com.dict = c(
   "V"="underlying"
 )
 
+# Profile order for sections
+# Need verbose name for section, e.g. economics -> Economics and demography
+# Replace world sodium with 5.6
+# two decimal points for numbers, multiply adolescent percents by 100 first
+# add burden text back in
+# fbdg to policy tab
+# Don't melt by n, to keep Africa all in the same line
+# For dietary needs, rename National, replace world
+# Add dummy rows for 4 missing countries in adolescent tab
+# remove gini and gini rank for region+world
+# total_calories_non_staple move to underlying
+# For recip==0, change name to ODA_disbursed
+# Make sure all country tabs have 194
+# Round gini rank to whole number
+
 com.dict.override = c(
   "coexistence"="child nutrition",
   "ODA_specific"="ODA",
