@@ -43,8 +43,8 @@ Calcium,modelled.estimates,world
 Calcium,weighted.mean,region
 child_overweight_plan,sum,world
 child_overweight_plan,sum,region
-coexistence,modelled.estimates,world
-coexistence,modelled.estimates,region
+coexistence,sum,world
+coexistence,sum,region
 community_health_workers,weighted.mean,world
 community_health_workers,weighted.mean,region
 continued_breastfeeding_1yr,weighted.mean,world
