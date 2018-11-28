@@ -27,10 +27,10 @@ countries <- unique(dat$region)
 wd <- "~/git/gnr-country-profile-2018/charts_reg"
 setwd(wd)
 
-unlink(
-  dir(wd, full.names = TRUE)
-  , recursive = TRUE
-)
+# unlink(
+#   dir(wd, full.names = TRUE)
+#   , recursive = TRUE
+# )
 blank <- data.frame(x=0,y=0,text="No data")
 no.data <- ggplot(blank,aes(x,y,label=text)) +
   geom_text(size=20,color="grey",family="Averta Regular") +
@@ -167,7 +167,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 ####End setup####
 ####Loop####
 # countries = c("Asia","Africa","Latin America and the Caribbean","Western Asia","Western Europe")
-# countries = c("Europe")
+# countries = c("Northern America","N. America")
 for(this.country in countries){
   message(this.country)
   real.country = this.country
@@ -185,6 +185,9 @@ for(this.country in countries){
     }else{
       this.country = "Subregional"
     }
+  }
+  if(real.country=="Northern America"){
+    regional=1
   }
   max.n = max(countrydat$n,na.rm=T)
   if(max.n>=50){

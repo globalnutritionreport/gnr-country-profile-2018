@@ -501,6 +501,7 @@ master_dat_fix$regional = master_dat_class_list[master_dat_fix$region]
 master_dat_reg = rbindlist(list(master_dat_reg,master_dat_fix),fill=T)
 
 master_dat_reg = subset(master_dat_reg,region!="N. America")
+master_dat_reg = subset(master_dat_reg,!(region=="Northern America" & component=="M" & disagg.value=="Regional"))
 americas = subset(master_dat_reg,region=="Northern America")
 americas$region = "N. America"
 americas$regional = 1
