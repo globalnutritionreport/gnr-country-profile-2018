@@ -500,4 +500,10 @@ master_dat_fix = rbindlist(master_dat_fix_list,fill=T)
 master_dat_fix$regional = master_dat_class_list[master_dat_fix$region]
 master_dat_reg = rbindlist(list(master_dat_reg,master_dat_fix),fill=T)
 
+master_dat_reg = subset(master_dat_reg,region!="N. America")
+americas = subset(master_dat_reg,region=="Northern America")
+americas$region = "N. America"
+americas$regional = 1
+master_dat_reg = rbind(master_dat_reg,americas)
+
 write.csv(master_dat_reg,"../data_reg.csv",na="",row.names=F)
