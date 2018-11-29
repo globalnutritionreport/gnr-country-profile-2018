@@ -22,10 +22,10 @@ countries <- unique(dat$country)
 wd <- "~/git/gnr-country-profile-2018/charts"
 setwd(wd)
 
-unlink(
-  dir(wd, full.names = TRUE)
-  , recursive = TRUE
-)
+# unlink(
+#   dir(wd, full.names = TRUE)
+#   , recursive = TRUE
+# )
 blank <- data.frame(x=0,y=0,text="No data")
 no.data <- ggplot(blank,aes(x,y,label=text)) +
   geom_text(size=20,color="grey",family="Averta Regular") +
@@ -159,7 +159,7 @@ safeFormat <- function(vec, precision=0, prefix="", suffix=""){
 
 ####End setup####
 ####Loop####
-# countries = c("Tuvalu")
+# countries = c("Somalia")
 for(this.country in countries){
   message(this.country)
   dir.create(paste(wd,this.country,sep="/"))
@@ -650,63 +650,6 @@ for(this.country in countries){
   }else{
     c7 <- no.data
   }
-  grouped_line = function(countrydat, ind, disagg, disagg.values, fill=yellowRedFill, color=yellowRedColor, percent=F, legend=F, factor.years=T){
-    cdata = subset(countrydat, (indicator==ind & disaggregation==disagg))
-    cdata$value = as.numeric(cdata$value)
-    if(percent){
-      cdata$value = cdata$value*100
-    }
-    cdata = subset(cdata, !is.na(value))
-    cdata <- cdata[order(cdata$year),]
-    if(nrow(cdata)==0){
-      return(no.data)
-    }
-    if(factor.years){
-      cdata$year = as.factor(cdata$year)
-    }else{
-      cdata$year = as.numeric(cdata$year)
-    }
-    cdata$disagg.value = factor(cdata$disagg.value,levels=disagg.values,ordered=T)
-    c.max <- max(cdata$value,na.rm=TRUE)
-    c.min.year = min(cdata$year,na.rm=T)
-    c.max.year = max(cdata$year,na.rm=T)
-    c.year.step = round((c.max.year-c.min.year)/4)
-    c.year.seq = seq(c.min.year,c.max.year,max(c.year.step,1))
-    c.key.data = data.frame(year=as.numeric(rep(NA,length(disagg.values))),disagg.value=disagg.values,value=as.numeric(rep(NA,length(disagg.values))))
-    c.key.data$disagg.value = factor(c.key.data$disagg.value,levels=disagg.values)
-    c = ggplot(cdata,aes(year,value,group=disagg.value,color=disagg.value)) +
-      geom_line(show.legend=F,size=1) +
-      geom_point(data=c.key.data,aes(group=disagg.value,fill=disagg.value),size=12,color=blue,stroke=1.5,shape=21,show.legend=legend) +
-      fill +
-      color +
-      guides(fill=guide_legend(title=element_blank(),byrow=TRUE),color=F) +
-      simple_style  +
-      scale_x_continuous(labels=round,breaks=c.year.seq) +
-      scale_y_continuous(expand = c(0,0),limits=c(0,max(c.max*1.1,1))) +
-      # expand_limits(y=c1a.max*1.1) +
-      theme(
-        legend.position="top"
-        ,legend.text = element_text(size=35,color=blue,family="Averta Regular")
-        ,legend.justification=c(0,0)
-        ,legend.direction="vertical"
-        ,axis.title.x=element_blank()
-        ,axis.title.y=element_blank()
-        ,axis.ticks=element_blank()
-        ,axis.line.y = element_blank()
-        ,axis.line.x = element_line(color=blue, size = 1.1)
-        ,axis.text.y = element_text(size=25,color=dark.grey,family="Averta Regular")
-        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
-        ,panel.grid.major.y = element_line(color=dark.grey)
-        ,legend.background = element_rect(fill = "transparent", colour = "transparent")
-        ,legend.key = element_blank()
-      )
-    if(factor.years){
-      c = c + geom_text_repel(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),unfactor(year))),vjust=-0.3,show.legend=F,family="Averta Regular") 
-    }else{
-      c = c + geom_text_repel(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),year)),vjust=-0.3,show.legend=F,family="Averta Regular") 
-    }
-    return(c)
-  }
   grouped_bar = function(countrydat, ind, disagg, disagg.values, fill=c(yellow,red), percent=F, legend=F, spacing=1,byrow=F,nrow=2,subset.years=F){
     cdata = subset(countrydat, (indicator==ind & disaggregation==disagg))
     cdata$value = as.numeric(cdata$value)
@@ -750,6 +693,75 @@ for(this.country in countries){
         ,legend.background = element_rect(fill = "transparent", colour = "transparent")
         ,legend.key = element_blank()
       ) + geom_text(size=9,aes(group=disagg.value,label=safeFormat(value,precision=1)),position=position_dodge(spacing),vjust=-0.3,show.legend=F,color=blue,family="Averta Regular") 
+    return(c)
+  }
+  grouped_line = function(countrydat, ind, disagg, disagg.values, fill=yellowRedFill, color=yellowRedColor, percent=F, legend=F, factor.years=T,bar.fill=F){
+    cdata = subset(countrydat, (indicator==ind & disaggregation==disagg))
+    cdata$value = as.numeric(cdata$value)
+    if(percent){
+      cdata$value = cdata$value*100
+    }
+    cdata = subset(cdata, !is.na(value))
+    cdata <- cdata[order(cdata$year),]
+    if(nrow(cdata)==0){
+      return(no.data)
+    }
+    if(factor.years){
+      cdata$year = as.factor(cdata$year)
+    }else{
+      cdata$year = as.numeric(cdata$year)
+    }
+    if(length(unique(cdata$year))==1){
+      if(!bar.fill){
+        if(length(disagg.values)==5){
+          bar.fill=quintileFillValues
+        }else if(length(disagg.values)==3){
+          bar.fill=c(light.blue,yellow,red)
+        }else{
+          bar.fill=c(yellow,red)
+        }
+      }
+      return(grouped_bar(countrydat, ind, disagg, disagg.values, bar.fill, percent, legend))
+    }
+    cdata$disagg.value = factor(cdata$disagg.value,levels=disagg.values,ordered=T)
+    c.max <- max(cdata$value,na.rm=TRUE)
+    c.min.year = min(cdata$year,na.rm=T)
+    c.max.year = max(cdata$year,na.rm=T)
+    c.year.step = round((c.max.year-c.min.year)/4)
+    c.year.seq = seq(c.min.year,c.max.year,max(c.year.step,1))
+    c.key.data = data.frame(year=as.numeric(rep(NA,length(disagg.values))),disagg.value=disagg.values,value=as.numeric(rep(NA,length(disagg.values))))
+    c.key.data$disagg.value = factor(c.key.data$disagg.value,levels=disagg.values)
+    c = ggplot(cdata,aes(year,value,group=disagg.value,color=disagg.value)) +
+      geom_line(show.legend=F,size=1) +
+      geom_point(data=c.key.data,aes(group=disagg.value,fill=disagg.value),size=12,color=blue,stroke=1.5,shape=21,show.legend=legend) +
+      fill +
+      color +
+      guides(fill=guide_legend(title=element_blank(),byrow=TRUE),color=F) +
+      simple_style  +
+      scale_x_continuous(labels=round,breaks=c.year.seq) +
+      scale_y_continuous(expand = c(0,0),limits=c(0,max(c.max*1.1,1))) +
+      # expand_limits(y=c1a.max*1.1) +
+      theme(
+        legend.position="top"
+        ,legend.text = element_text(size=35,color=blue,family="Averta Regular")
+        ,legend.justification=c(0,0)
+        ,legend.direction="vertical"
+        ,axis.title.x=element_blank()
+        ,axis.title.y=element_blank()
+        ,axis.ticks=element_blank()
+        ,axis.line.y = element_blank()
+        ,axis.line.x = element_line(color=blue, size = 1.1)
+        ,axis.text.y = element_text(size=25,color=dark.grey,family="Averta Regular")
+        ,axis.text.x = element_text(size=25,color=blue,margin=margin(t=20,r=0,b=0,l=0),family="Averta Regular")
+        ,panel.grid.major.y = element_line(color=dark.grey)
+        ,legend.background = element_rect(fill = "transparent", colour = "transparent")
+        ,legend.key = element_blank()
+      )
+    if(factor.years){
+      c = c + geom_text_repel(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),unfactor(year))),vjust=-0.3,show.legend=F,family="Averta Regular") 
+    }else{
+      c = c + geom_text_repel(size=9,aes(group=disagg.value,label=firstAndLast(safeFormat(value,precision=1),year)),vjust=-0.3,show.legend=F,family="Averta Regular") 
+    }
     return(c)
   }
   # Charts 8-16
@@ -1140,7 +1152,8 @@ for(this.country in countries){
   c29data = c29data[c("year","indicator","value")]
   c29.oda.max <- max(subset(c29data,indicator==indicators[2])$value,na.rm=TRUE)
   c29.perc.max <- max(subset(c29data,indicator==indicators[1])$value,na.rm=TRUE)
-  c29.ratio = c29.oda.max/c29.perc.max
+  c29.ratio = (c29.oda.max/c29.perc.max)*1.25
+  c29.oda.max = c29.oda.max*1.25
   for(j in 1:length(indicators)){
     ind = indicators[j]
     indname = c29names[j]
