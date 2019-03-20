@@ -120,9 +120,9 @@ dataDictionary["Kenya"]["table7"] = [
 dataDictionary["Kenya"]["table8"] = [
     [
         Paragraph("<b>Coverage/practice indicator</b>", style=dark_greyParaBold),
-        Paragraph("<b>%</b>", style=dark_greyParaBold),
-        Paragraph("<b>Male</b>", style=dark_greyParaBold),
-        Paragraph("<b>Female</b>", style=dark_greyParaBold),
+        Paragraph("<b>Total (%)</b>", style=dark_greyParaBold),
+        Paragraph("<b>Male (%)</b>", style=dark_greyParaBold),
+        Paragraph("<b>Female (%)</b>", style=dark_greyParaBold),
         Paragraph("<b>Year</b>", style=dark_greyParaBold)
      ],
     [u"Children 0\u201359 months with diarrhoea who received zinc treatment", "8.1", "NA", "NA", "2014"],
