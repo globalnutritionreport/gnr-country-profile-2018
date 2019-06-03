@@ -27,4 +27,12 @@
 
 For time, data processing, chart making, and PDF generation were largely copied and pasted between countries, regions, and the global profile. So you can look at a single process to start.
 
-The command `rerender_countries.sh` first runs the data amalgamation script `data.R`. This takes the data contained in `Dataset working directory` as an input, combines it, and outputs `data.csv`. Next, the chart creation script takes `data.csv` as an input, and outputs country-name labeled folders containing numbered PNG chart files in the `charts` directory (primarily via the `ggplot2` R package). Third, `render.py` is run, which takes the `2018_template/template.xml.j2` Jinja template, substitutes in country names where applicable, and passes the resultant XML to a custom PDF generation script built off of the Python library `reportlab`. Within `render.py`, `tables.py` is imported to create the data-driven tables. `tables.py` is also built off of `reportlab`, but the process of creating table templates and swapping out the data with what's contained in `data.csv` was such a large process I wanted to separate it. If all goes well, you should have 194 country profile PDFs within the `pdfs` directory.
+The command `rerender_countries.sh` first runs the data amalgamation script `data.R`. This takes the data contained in `Dataset working directory` as an input, combines it, and outputs `data.csv`.
+
+Next, the chart creation script takes `data.csv` as an input, and outputs country-name labeled folders containing numbered PNG chart files in the `charts` directory (primarily via the `ggplot2` R package).
+
+Third, `render.py` is run, which takes the `2018_template/template.xml.j2` Jinja template, substitutes in country names where applicable, and passes the resultant XML to a custom PDF generation script built off of the Python library `reportlab`. Within `render.py`, `tables.py` is imported to create the data-driven tables. `tables.py` is also built off of `reportlab`, but the process of creating table templates and swapping out the data with what's contained in `data.csv` was such a large process I wanted to separate it.
+
+Finally `./thumbs.sh` is run, which uses `convert` to create a PNG thumbnail of the top half of the PDF.
+
+If all goes well, you should have 194 country profile PDFs within the `pdfs` directory.
